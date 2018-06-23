@@ -1,9 +1,9 @@
 #! /usr/bin/env python
 
-import subprocess, shutil, os
+import shutil, os
 import gslab_make as gs
 
-for dir in ['output', 'temp']:
+for dir in ['output', 'input', 'temp']:
     shutil.rmtree(dir, ignore_errors='true')
     os.mkdir(dir)
 os.chdir('code')
@@ -11,8 +11,7 @@ os.chdir('code')
 gs.start_make_logging()
 
 # GET EXTERNAL INPUT FILES
-os.system('rsync -v ../../data/output/data.txt ../input')
-
+os.symlink('../../data/output/data.txt', '../input/data.txt')
 
 # RUN SCRIPTS
 gs.run_python(program = 'descriptive.py')

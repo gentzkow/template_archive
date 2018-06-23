@@ -1,10 +1,10 @@
 #! /usr/bin/env python
 
-import subprocess, shutil, os
+import shutil, os
 import gslab_make as gs
 import gslab_fill
 
-for dir in ['output']:
+for dir in ['output', 'input']:
     shutil.rmtree(dir, ignore_errors='true')
     os.mkdir(dir)
 os.chdir('code')
@@ -12,8 +12,8 @@ os.chdir('code')
 gs.start_make_logging()
 
 # GET EXTERNAL INPUT FILES
-os.system('rsync -v ../../analysis/output/plot.eps ../input')
-os.system('rsync -v ../../analysis/output/tables.txt ../input')
+os.symlink('../../analysis/output/plot.eps', '../input/plot.eps')
+os.symlink('../../analysis/output/tables.txt', '../input/tables.txt')
 
 # FILL TABLES
 gslab_fill.tablefill(template = 'tables.lyx', input = '../input/tables.txt', output = '../output/tables_filled.lyx')
