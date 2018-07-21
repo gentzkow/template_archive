@@ -1,74 +1,3 @@
-#####################################################################
-# External dependencies
-#
-# This section defines resources used by the code that are external
-# to the repository. Code should never reference any files external 
-# to the repository except via these paths.
-# 
-# When you run setup.py, you will be asked for local paths to
-# these resources which will then be stored in a non-versioned
-# file called config_local.yaml. In order to run a directory
-# in the repository, this file must exist and any paths
-# referred to in the directory's input.txt must be populated.
-#
-# Each external resource is defined by a key with blank value. These
-# keys should be short descriptive names that will then be used
-# to refer to these resources in code. E.g., "raw_data", 
-# "my_other_repo", etc. Defaults can optionally be placed in
-# brackets after the colon
-#
-# Uncomment the lines with the keys below (keeping the hyphen), replace
-# "resource1", "resource2", etc. with the key you choose, and replace the
-# comment with a description with enough information for a user to
-# locate and obtain the resource. Do not fill in a value after the
-# colon.
-#
-#####################################################################
-external:
-
-  # Comment here contains description of resource 1
-  # -  resource1
-  
-  # Comment here contains description of resource 2
-  # -  resource2
-
-#####################################################################
-# Local settings
-#
-# This section defines parameters specific to each user's local 
-# environment. When you run setup.py, you will be asked for values 
-# of these parameters which will then be stored in a non-versioned 
-# file called config_local.yaml. In order to run directories in the 
-# repository, this file must exist and any relevant parameters
-# must be set.
-#
-# Examples include names of executables, usernames, etc. These
-# variables should NOT be used to store passwords.
-#
-# Each parameter is defined by a key with blank value. These
-# keys should be short descriptive names that will then be used
-# to refer to the parameters in code. Values after the colon will
-# be used as defaults.
-#
-# To change these for your local environment, do NOT change the
-# default values here but enter new values when you run setup.py.
-#
-#####################################################################
-local:
-
-  # Executable names
-  executables:
-    python: python
-    r: r
-    stata: statmp
-    matlab: matlab
-    lyx: lyx
-    latex: latex
-
-  # Other user settings
-  # setting1: default_value1
-  # setting2: default_value2
-
 
 #####################################################################
 # Is git LFS required to run this repository?
@@ -83,7 +12,7 @@ git_lfs_required: Yes
 #####################################################################
 software_required:
   git_lfs: Yes
-  gslab_python: Yes
+  gslab_make: Yes
   r: Yes
   stata: Yes
   lyx: Yes
