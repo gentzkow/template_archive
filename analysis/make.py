@@ -1,20 +1,36 @@
 #! /usr/bin/env python
 
-import shutil, os
+# ENVIRONMENT
 import gslab_make as gs
 
-for dir in ['output', 'input', 'temp']:
-    shutil.rmtree(dir, ignore_errors='true')
-    os.mkdir(dir)
-os.chdir('code')
+PATHS = {
+    'link_dir'        : 'input/',
+    'temp_dir'        : 'temp/',
+    'output_dir'      : 'output/',
+    'pdf_dir'         : 'output/',
+    'makelog'         : 'log/make.log',
+    'output_statslog' : 'log/output_stats.log',
+    'output_headslog' : 'log/output_heads.log', 
+    'linklog'         : 'log/link.log', 
+    'link_maplog'     : 'log/link_map.log',
+    'link_statslog'   : 'log/link_stats.log',
+    'link_headslog'   : 'log/link_heads.log'
+}
 
-gs.start_make_logging()
+# START
+gs.clear_dir(['input', 'output', 'log'])
+gs.start_makelog(PATHS)
 
-# GET EXTERNAL INPUT FILES
-os.symlink('../../data/output/data.txt', '../input/data.txt')
+# GET INPUT FILES
+links = gs.create_links(PATHS, ['inputs.txt', 'externals.txt']) 
+gs.write_link_logs(PATHS, links)
 
 # RUN SCRIPTS
-gs.run_python(program = 'descriptive.py')
+gs.run_python(PATHS, program = 'code/descriptive.py')
 
-gs.end_make_logging()
+# LOG OUTPUTS
+gs.log_files_in_output(PATHS)
+
+# END
+gs.end_makelog(PATHS)
 raw_input('\n Press <Enter> to exit.')

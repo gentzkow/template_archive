@@ -2,10 +2,12 @@ clear all
 set more off
 
 program main
-    * *** Add required packages from SSC to this list ***
-    local ssc_packages ""
-    * *** Add required packages from SSC to this list ***
-
+	* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	* Add required packages from SSC to this list
+	* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	local ssc_packages ""
+    * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	
     if !missing("`ssc_packages'") {
         foreach pkg in "`ssc_packages'" {
             dis "Installing `pkg'"
@@ -24,4 +26,3 @@ program main
     quietly net install preliminaries
 end
 
-main

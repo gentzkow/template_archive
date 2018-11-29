@@ -1,10 +1,14 @@
-# *** Add required packages from CRAN to this list ***
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Add required packages from CRAN to this list 
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 CRAN_packages   <- c("yaml")
-# *** Add required packages from CRAN to this list ***
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# *** Add required packages from GitHub (UserName/RepositoryName) to this vector ***
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Add required packages from GitHub (UserName/RepositoryName) to this vector
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 GitHub_packages <- NULL
-# *** Add required packages from GitHub (UserName/RepositoryName) to this vector ***
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 main <- function(CRAN_packages = NULL, GitHub_packages = NULL,
                  CRAN_repo = "http://cran.cnr.Berkeley.edu/",

@@ -1,21 +1,46 @@
-import pip
 import pkg_resources
-# *** Add required packages to this list ***
-packages = ['pyyaml', 'numpy', 'matplotlib']
-# *** Add required packages to this list ***
+try:
+    from pip import main as pipmain
+except:
+    from pip._internal import main as pipmain
 
-def main(packages, upgrade = False):
-    # Install gslab_tools if it's not installed yet or it has the wrong version
-    pip.main(['install', '--upgrade', 'git+http://git@github.com/gslab-econ/gslab_python.git@v4.1.0'])
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Add required packages to this list
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+packages = ['pyyaml', 'numpy', 'matplotlib']
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+def main(packages, upgrade):
+    # Install gslab_make using pip
+    pipmain(['install', '--upgrade', 'git+ssh://git@github.com/gentzkow/gslab_make.git@issue10_implement'])
 
     # Install required packages using pip
-    installed_packages = [pkg.key for pkg in pip.get_installed_distributions()]
+    installed_packages = [pkg.key for pkg in pkg_resources.working_set]
+
     for pkg in packages:
         if upgrade:
-            pip.main(['install', '--upgrade', pkg])
+            pipmain(['install', '--upgrade', pkg])
         elif pkg not in installed_packages:
-            pip.main(['install', pkg])
+            pipmain(['install', pkg])
 
 # upgrade = TRUE will update all packages to the most current version
 # upgrade = FALSE will skip packages that are already installed
-main(packages, upgrade = False)
+main(packages, upgrade = FALSE)
+
+
+""" NOTES
+(1)
+As of pip 10, all internal APIs are no longer available. Functions in the `pip` namespace have been moved to `pip._internal`.
+See [here](https://mail.python.org/pipermail/distutils-sig/2017-October/031642.html) for more detail.
+Given this, we may want to switch the pip installations to subprocess calls:
+```
+subprocess.call(['pip', 'install', '--upgrade', pkg])
+```
+
+(2)
+As of pip 10, uninstallation of distutils packages is no longer supported.
+Potential (hacky) solutions include:
+
+* Downgrading to pip 9
+* Using the `--ignore-installed` flag
+"""

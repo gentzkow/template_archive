@@ -7,3 +7,7 @@
 # Check that config_local.yaml and config.yaml parse correctly
 # Check that paths to all external resources are valid
 
+import os
+
+def test():
+    print("hi!")

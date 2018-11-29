@@ -1,0 +1,36 @@
+--------------------------------------------------------------------------------
+Makelog started: 2018-11-28 14:02:31
+Working directory: /Users/zong/template/analysis
+--------------------------------------------------------------------------------
+Links successfully created!
+Link logs successfully written!
+Executing: "python  /Users/zong/template/analysis/code/descriptive.py "
+Traceback (most recent call last):
+  File "/Users/zong/template/analysis/code/descriptive.py", line 2, in <module>
+    import matplotlib.pyplot as plt
+  File "/Users/zong/anaconda2/lib/python2.7/site-packages/matplotlib/pyplot.py", line 115, in <module>
+    _backend_mod, new_figure_manager, draw_if_interactive, _show = pylab_setup()
+  File "/Users/zong/anaconda2/lib/python2.7/site-packages/matplotlib/backends/__init__.py", line 62, in pylab_setup
+    [backend_name], 0)
+  File "/Users/zong/anaconda2/lib/python2.7/site-packages/matplotlib/backends/backend_macosx.py", line 17, in <module>
+    from matplotlib.backends import _macosx
+RuntimeError: Python is not installed as a framework. The Mac OS X backend will not be able to function correctly if Python is not installed as a framework. See the Python documentation for more information on installing Python as a framework on Mac OS X. Please either reinstall Python as a framework, or try one of the other backends. If you are using (Ana)Conda please install python.app and replace the use of 'python' with 'pythonw'. See 'Working with Matplotlib on OSX' in the Matplotlib FAQ for more information.
+********************************************************************************
+Error with `run_python`
+********************************************************************************
+Traceback (most recent call last):
+  File "/Users/zong/anaconda2/lib/python2.7/site-packages/gslab_make/run_program.py", line 217, in run_python
+    raise CritError('* Python program executed with errors: *\n%s' % error_message)
+CritError: * Python program executed with errors: *
+Traceback (most recent call last):
+  File "/Users/zong/template/analysis/code/descriptive.py", line 2, in <module>
+    import matplotlib.pyplot as plt
+  File "/Users/zong/anaconda2/lib/python2.7/site-packages/matplotlib/pyplot.py", line 115, in <module>
+    _backend_mod, new_figure_manager, draw_if_interactive, _show = pylab_setup()
+  File "/Users/zong/anaconda2/lib/python2.7/site-packages/matplotlib/backends/__init__.py", line 62, in pylab_setup
+    [backend_name], 0)
+  File "/Users/zong/anaconda2/lib/python2.7/site-packages/matplotlib/backends/backend_macosx.py", line 17, in <module>
+    from matplotlib.backends import _macosx
+RuntimeError: Python is not installed as a framework. The Mac OS X backend will not be able to function correctly if Python is not installed as a framework. See the Python documentation for more information on installing Python as a framework on Mac OS X. Please either reinstall Python as a framework, or try one of the other backends. If you are using (Ana)Conda please install python.app and replace the use of 'python' with 'pythonw'. See 'Working with Matplotlib on OSX' in the Matplotlib FAQ for more information.
+
+

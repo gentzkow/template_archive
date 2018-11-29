@@ -1,0 +1,3 @@
+target	symlink
+/Users/zong/template/data/output/data.txt	/Users/zong/template/analysis/input/data.txt
+/Users/zong/template/raw/data.txt	/Users/zong/template/analysis/input/data_raw.txt
