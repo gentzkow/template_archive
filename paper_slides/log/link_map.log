@@ -1,0 +1,3 @@
+target	symlink
+/Users/zong/template/analysis/output/tables.txt	/Users/zong/template/paper_slides/input/tables.txt
+/Users/zong/template/analysis/output/plot.eps	/Users/zong/template/paper_slides/input/plot.eps

@@ -1,32 +1,45 @@
 #! /usr/bin/env python
 
-import shutil, os
+# ENVIRONMENT
 import gslab_make as gs
-import gslab_fill
 
-for dir in ['output', 'input']:
-    shutil.rmtree(dir, ignore_errors='true')
-    os.mkdir(dir)
-os.chdir('code')
+PATHS = {
+    'link_dir'        : 'input/',
+    'temp_dir'        : 'temp/',
+    'output_dir'      : 'output/',
+    'pdf_dir'         : 'output/',
+    'makelog'         : 'log/make.log',
+    'output_statslog' : 'log/output_stats.log',
+    'output_headslog' : 'log/output_heads.log', 
+    'linklog'         : 'log/link.log', 
+    'link_maplog'     : 'log/link_map.log',
+    'link_statslog'   : 'log/link_stats.log',
+    'link_headslog'   : 'log/link_heads.log'
+}
 
-gs.start_make_logging()
+# START
+gs.clear_dir(['input', 'output', 'log'])
+gs.start_makelog(PATHS)
 
-# GET EXTERNAL INPUT FILES
-os.symlink('../../analysis/output/plot.eps', '../input/plot.eps')
-os.symlink('../../analysis/output/tables.txt', '../input/tables.txt')
+# GET INPUT FILES
+links = gs.create_links(PATHS, ['inputs.txt', 'externals.txt']) 
+gs.write_link_logs(PATHS, links)
 
 # FILL TABLES
-gslab_fill.tablefill(template = 'tables.lyx', input = '../input/tables.txt', output = '../output/tables_filled.lyx')
+gs.tablefill(template = 'code/tables.lyx', 
+             input = 'input/tables.txt', 
+             output = 'output/tables_filled.lyx')
 
 # RUN SCRIPTS
-gs.run_lyx(program = 'paper.lyx')
-gs.run_lyx(program = 'online_appendix.lyx')
-gs.run_lyx(program = 'slides.lyx')
-gs.run_lyx(program = 'ondeck.lyx')
-gs.run_lyx(program = 'text.lyx')
-gs.run_latex(program = 'text.tex')
+gs.run_lyx(PATHS, program = 'code/paper.lyx')
+gs.run_lyx(PATHS, program = 'code/online_appendix.lyx')
+gs.run_lyx(PATHS, program = 'code/slides.lyx')
+gs.run_lyx(PATHS, program = 'code/ondeck.lyx')
+gs.run_lyx(PATHS, program = 'code/text.lyx')
 
-asdfsa
+# LOG OUTPUTS
+gs.log_files_in_output(PATHS)
 
-gs.end_make_logging()
+# END
+gs.end_makelog(PATHS)
 raw_input('\n Press <Enter> to exit.')

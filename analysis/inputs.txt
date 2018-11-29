@@ -1,1 +1,2 @@
-./data.txt	../data/output/data.txt
+# Symlink   Target
+data.txt	../data/output/data.txt

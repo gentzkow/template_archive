@@ -1,1 +1,1 @@
-# This file will contain paths to files that should be copied to /input/
+# Symlink	Target
