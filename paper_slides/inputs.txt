@@ -1,3 +1,7 @@
-# Symlink   Target
+# Each line of instruction should contain a symlink and target delimited by a tab 
+# Lines beginning with # are ignored 
+# Some text editors automatically replace tabs with spaces--watch out for this
+
+# Symlink	Target
 tables.txt	../analysis/output/tables.txt
 plot.eps	../analysis/output/plot.eps

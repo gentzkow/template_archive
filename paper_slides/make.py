@@ -1,9 +1,12 @@
 #! /usr/bin/env python
 
 # ENVIRONMENT
+import os
+import yaml
 import gslab_make as gs
 
 PATHS = {
+    'config_user'     : '../config_user.yaml',
     'link_dir'        : 'input/',
     'temp_dir'        : 'temp/',
     'output_dir'      : 'output/',
@@ -16,6 +19,9 @@ PATHS = {
     'link_statslog'   : 'log/link_stats.log',
     'link_headslog'   : 'log/link_heads.log'
 }
+
+config_user = yaml.load(open(PATHS['config_user'], 'rb'))
+gs.private.metadata.default_executables[os.name].update(config_user['local']['executables'])
 
 # START
 gs.clear_dir(['input', 'output', 'log'])

@@ -1,1 +1,5 @@
+# Each line of instruction should contain a symlink and target delimited by a tab 
+# Lines beginning with # are ignored 
+# Some text editors automatically replace tabs with spaces--watch out for this
+
 # Symlink	Target

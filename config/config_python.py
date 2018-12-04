@@ -1,9 +1,14 @@
+import subprocess
 import pkg_resources
 try:
     from pip import main as pipmain
 except:
     from pip._internal import main as pipmain
 
+pip_check = subprocess.check_output(['which', 'pip'])
+if not pip_check:
+    print("Please set up pip for command-line use on your machine")
+    
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Add required packages to this list
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
