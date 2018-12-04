@@ -25,7 +25,7 @@ def main(packages, upgrade):
 
 # upgrade = TRUE will update all packages to the most current version
 # upgrade = FALSE will skip packages that are already installed
-main(packages, upgrade = FALSE)
+main(packages, upgrade = False)
 
 
 """ NOTES
@@ -43,4 +43,7 @@ Potential (hacky) solutions include:
 
 * Downgrading to pip 9
 * Using the `--ignore-installed` flag
+
+(3)
+Potentially consider switching to using `requirements.txt` as well.
 """
