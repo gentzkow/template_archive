@@ -4,11 +4,22 @@
 import os
 import shutil
 import subprocess
-import config_python
+
+# PYTHON
+def check_executable(executable):
+    try:
+        subprocess.check_output(['which', executable])
+    except:
+        error_message = "Please set up '%s' for command-line use on your machine" % executable
+        raise Exception('\n' + '*'*80 + '\n' + error_message + '\n' + '*'*80)
+
+check_executable('pip')
+subprocess.call(['pip', 'install', '-r', 'requirements.txt'])
+
 import gslab_make as gs
 import yaml
 
-# CONFIGURATIONS
+# GENERAL
 def parse_yaml_files(config = 'config.yaml', config_user = '../config_user.yaml'):
     if not os.path.isfile(config_user):
         shutil.copy('config_user_template.yaml', config_user)
@@ -19,12 +30,6 @@ def parse_yaml_files(config = 'config.yaml', config_user = '../config_user.yaml'
     gs.private.metadata.default_executables[os.name].update(config_user['local']['executables'])
 
     return(config, config_user)
-
-def check_executable(executable):
-    try:
-        subprocess.check_output(['which', executable])
-    except:
-        raise Exception("Please set up '%s' for command-line use on your machine" % executable)
 
 def check_software(config, config_user):
     if config['git_lfs_required']:
@@ -45,7 +50,7 @@ def install_dependencies():
 def check_external_paths(config_user):
     for path in config_user['external'].values():
         if not os.path.isfile(path):
-            print("Missing file: %s" % path)
+            print('*'*80 + '\nMissing file: %s\n' % path + '*'*80)
 
 def configuration():
     (config, config_user) = parse_yaml_files()
