@@ -1,10 +1,11 @@
 --------------------------------------------------------------------------------
-Makelog started: 2018-11-29 11:34:17
+Makelog started: 2018-12-05 11:54:39
 Working directory: /Users/zong/template/data
 --------------------------------------------------------------------------------
 Links successfully created!
 Link logs successfully written!
-Executing: "statamp -e do /Users/zong/template/data/code/create_data.do"
+Executing: "Rscript --no-save /Users/zong/template/data/code/create_table_data.r"
+Executing: "stata-mp -e do /Users/zong/template/data/code/create_graph_data.do"
 
   ___  ____  ____  ____  ____ (R)
  /__    /   ____/   /   ____/
@@ -27,7 +28,7 @@ Notes:
       3.  More than 2 billion observations are allowed; see help obs_advice.
       4.  Maximum number of variables is set to 5000; see help set_maxvar.
 
-. do /Users/zong/template/data/code/create_data.do 
+. do /Users/zong/template/data/code/create_graph_data.do 
 
 . clear all
 
@@ -37,21 +38,21 @@ Notes:
 . program main
   1.     set obs 300000
   2.     gen x = _n
-  3.     export delimited "output/data.txt", delimiter("|") replace
+  3.     export delimited "output/data_graph.txt", delimiter("|") replace
   4. end
 
 . 
 . * EXECUTE
 . main
 number of observations (_N) was 0, now 300,000
-(note: file output/data.txt not found)
-file output/data.txt saved
+(note: file output/data_graph.txt not found)
+file output/data_graph.txt saved
 
 . 
 end of do-file
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2018-11-29 11:34:18
+Makelog ended: 2018-12-05 11:54:40
 Working directory: /Users/zong/template/data
 --------------------------------------------------------------------------------

@@ -32,7 +32,8 @@ links = gs.create_links(PATHS, ['inputs.txt', 'externals.txt'])
 gs.write_link_logs(PATHS, links)
 
 # RUN SCRIPTS
-gs.run_stata(PATHS, program = 'code/create_data.do')
+gs.run_r(PATHS, program = 'code/create_table_data.r')
+gs.run_stata(PATHS, program = 'code/create_graph_data.do')
 
 # LOG OUTPUTS
 gs.log_files_in_output(PATHS)
