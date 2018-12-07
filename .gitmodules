@@ -1,3 +1,4 @@
 [submodule "lib/gslab_make"]
 	path = lib/gslab_make
 	url = ssh://git@github.com/gentzkow/gslab_make.git
+	branch = issue10_implement
