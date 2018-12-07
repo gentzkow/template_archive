@@ -1,3 +1,3 @@
-target	symlink
-/Users/zong/template/data/output/data_table.txt	/Users/zong/template/analysis/input/data_table.txt
-/Users/zong/template/data/output/data_graph.txt	/Users/zong/template/analysis/input/data_graph.txt
+symlink	target
+/Users/zong/template/analysis/input/data_table.txt	/Users/zong/template/data/output/data_table.txt
+/Users/zong/template/analysis/input/data_graph.txt	/Users/zong/template/data/output/data_graph.txt

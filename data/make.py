@@ -20,8 +20,7 @@ PATHS = {
     'link_headslog'   : 'log/link_heads.log'
 }
 
-config_user = yaml.load(open(PATHS['config_user'], 'rb'))
-gs.private.metadata.default_executables[os.name].update(config_user['local']['executables'])
+
 
 # START
 gs.clear_dir(['input', 'output', 'log'])
@@ -29,6 +28,7 @@ gs.start_makelog(PATHS)
 
 # GET INPUT FILES
 links = gs.create_links(PATHS, ['inputs.txt', 'externals.txt']) 
+print(links)
 gs.write_link_logs(PATHS, links)
 
 # RUN SCRIPTS

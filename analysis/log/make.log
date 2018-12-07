@@ -1,12 +1,13 @@
 --------------------------------------------------------------------------------
-Makelog started: 2018-12-05 11:54:46
+Makelog started: 2018-12-07 14:53:22
 Working directory: /Users/zong/template/analysis
 --------------------------------------------------------------------------------
 Links successfully created!
+Links successfully created!
 Link logs successfully written!
-Executing: "python  /Users/zong/template/analysis/code/descriptive.py "
+Executing: "python  '/Users/zong/template/analysis/code/descriptive.py' "
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2018-12-05 11:54:50
+Makelog ended: 2018-12-07 14:53:25
 Working directory: /Users/zong/template/analysis
 --------------------------------------------------------------------------------
