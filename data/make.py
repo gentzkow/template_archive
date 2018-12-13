@@ -5,11 +5,11 @@ import os
 import sys
 import yaml
 import git
-ROOT = git.Repo('.', search_parent_directories = True).working_tree_dir
-sys.path.append(os.path.join(ROOT, "lib", "gslab_make"))
-import gslab_make as gs
 
-help(gs)
+ROOT = git.Repo('.', search_parent_directories = True).working_tree_dir
+sys.path.append(ROOT)
+import lib.gslab_make.gslab_make as gs
+
 PATHS = {
     'config_user'     : '../config_user.yaml',
     'temp_dir'        : 'temp/',
@@ -23,10 +23,10 @@ PATHS = {
     'link_headslog'   : 'log/link_heads.log'
 }
 
+# CONFIG USER
 config_user = yaml.load(open(PATHS['config_user'], 'rb'))
-gs.private.metadata.default_executables[os.name].update(config_user['local']['executables'])
-path_mappings = config_user['external']
-path_mappings['root'] = ROOT
+gs.private.metadata.default_executables[os.name].update(config_user['local']['executables']) 
+path_mappings = dict(config_user['external'], root = ROOT) 
 
 # START
 gs.remove_dir(['input', 'external'])
@@ -34,10 +34,8 @@ gs.clear_dir(['output', 'log'])
 gs.start_makelog(PATHS)
 
 # GET INPUT FILES
-PATHS['link_dir'] = 'input'
-inputs = gs.create_links(PATHS, ['inputs.txt'], path_mappings)
-PATHS['link_dir'] = 'external'
-externals = gs.create_links(PATHS, ['externals.txt'], path_mappings)
+inputs    = gs.create_links(dict(PATHS, link_dir = 'input')   , ['inputs.txt']   , path_mappings)
+externals = gs.create_links(dict(PATHS, link_dir = 'external'), ['externals.txt'], path_mappings)
 gs.write_link_logs(PATHS, inputs + externals)
 
 # RUN SCRIPTS

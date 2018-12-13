@@ -4,7 +4,14 @@
 1. Initialize `gslab_make` submodule using git
    ```
    git submodule deinit --all -f
+   ```
+
+   ```
    git submodule update --init --remote
+   ```
+
+   ```
+   git submodule update --init
    ```
 
 2. Install Python dependencies listed in `requirements.txt` using pip
