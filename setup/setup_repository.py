@@ -4,8 +4,8 @@
 import os
 import shutil
 import subprocess
+import gslab_make as gs
 try:
-    import gslab_make as gs
     import yaml
 except:
     print("Please pip install 'requirements.txt'")

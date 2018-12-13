@@ -1,10 +1,11 @@
 --------------------------------------------------------------------------------
-Makelog started: 2018-12-05 11:54:57
+Makelog started: 2018-12-12 19:00:41
 Working directory: /Users/zong/template/paper_slides
 --------------------------------------------------------------------------------
 Links successfully created!
+Links successfully created!
 Link logs successfully written!
-Executing: "lyx -e pdf2 /Users/zong/template/paper_slides/code/paper.lyx"
+Executing: "lyx -e pdf2 '/Users/zong/template/paper_slides/code/paper.lyx'"
 This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
@@ -18,7 +19,7 @@ entering extended mode
 LaTeX2e <2018-04-01> patch level 5
 
 
-Executing: "lyx -e pdf2 /Users/zong/template/paper_slides/code/online_appendix.lyx"
+Executing: "lyx -e pdf2 '/Users/zong/template/paper_slides/code/online_appendix.lyx'"
 This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
@@ -32,7 +33,7 @@ entering extended mode
 LaTeX2e <2018-04-01> patch level 5
 
 
-Executing: "lyx -e pdf2 /Users/zong/template/paper_slides/code/slides.lyx"
+Executing: "lyx -e pdf2 '/Users/zong/template/paper_slides/code/slides.lyx'"
 This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
@@ -46,7 +47,7 @@ entering extended mode
 LaTeX2e <2018-04-01> patch level 5
 
 
-Executing: "lyx -e pdf2 /Users/zong/template/paper_slides/code/ondeck.lyx"
+Executing: "lyx -e pdf2 '/Users/zong/template/paper_slides/code/ondeck.lyx'"
 This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
@@ -54,7 +55,7 @@ entering extended mode
 LaTeX2e <2018-04-01> patch level 5
 
 
-Executing: "lyx -e pdf2 /Users/zong/template/paper_slides/code/text.lyx"
+Executing: "lyx -e pdf2 '/Users/zong/template/paper_slides/code/text.lyx'"
 This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
@@ -64,6 +65,6 @@ LaTeX2e <2018-04-01> patch level 5
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2018-12-05 11:55:03
+Makelog ended: 2018-12-12 19:00:48
 Working directory: /Users/zong/template/paper_slides
 --------------------------------------------------------------------------------

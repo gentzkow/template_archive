@@ -1,31 +1,37 @@
-# Configuration
+# Setup
 
 ## Instructions
-1. Install Python dependencies listed in `requirements.txt` using pip
+1. Initialize `gslab_make` submodule using git
+   ```
+   git submodule deinit --all -f
+   git submodule update --init --remote
+   ```
+
+2. Install Python dependencies listed in `requirements.txt` using pip
    ```
    pip install --user -r requirements.txt
    ```
 
-2. Run `configuration.py`
+3. Run `setup_repository.py`
    ```
-   python configuration.py
-   ```
-
-3. Install Stata dependencies using `config_stata.do`
-   ```
-   stata-mp -e config_stata.do
+   python setup_repository.py
    ```
 
-4. Install R dependencies using `config_r.r`
+4. Install Stata dependencies using `setup_stata.do`
    ```
-   Rscript config_r.r
+   stata-mp -e setup_stata.do
+   ```
+
+5. Install R dependencies using `setup_r.r`
+   ```
+   Rscript setup_r.r
    ```
 
 
  
 ## FAQ
 
-1. Help! I'm running into 
+1. Help! I'm running into permission errors when trying to install Python dependencies!
 
 <br>
 

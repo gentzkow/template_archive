@@ -1,4 +1,4 @@
 pyyaml
 numpy
 matplotlib
-git+ssh://git@github.com/gentzkow/gslab_make.git@issue10_implement
+git

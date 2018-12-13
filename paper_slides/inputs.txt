@@ -3,5 +3,5 @@
 # Some text editors automatically replace tabs with spaces--watch out for this
 
 # Symlink	Target
-tables.txt	../analysis/output/tables.txt
-plot.eps	../analysis/output/plot.eps
+tables.txt	{root}/analysis/output/tables.txt
+plot.eps	{root}/analysis/output/plot.eps

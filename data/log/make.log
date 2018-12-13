@@ -1,7 +1,8 @@
 --------------------------------------------------------------------------------
-Makelog started: 2018-12-07 14:25:35
+Makelog started: 2018-12-12 19:54:13
 Working directory: /Users/zong/template/data
 --------------------------------------------------------------------------------
+Links successfully created!
 Links successfully created!
 Link logs successfully written!
 Executing: "Rscript --no-save '/Users/zong/template/data/code/create_table_data.r'"
@@ -53,6 +54,6 @@ end of do-file
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2018-12-07 14:25:36
+Makelog ended: 2018-12-12 19:54:14
 Working directory: /Users/zong/template/data
 --------------------------------------------------------------------------------
