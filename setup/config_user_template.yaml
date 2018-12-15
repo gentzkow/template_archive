@@ -24,8 +24,8 @@
 #
 #####################################################################
 external:
-  big_dataset: path_to_big_dataset
-  good_code_library: path_to_good_code_library
+#  big_dataset: path_to_big_dataset
+#  good_code_library: path_to_good_code_library
 
 #####################################################################
 # Local settings
