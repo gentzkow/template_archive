@@ -12,7 +12,7 @@ except:
     raise Exception
 
 # GENERAL
-def parse_yaml_files(config = 'config.yaml', config_user = '../config_user.yaml'):
+def parse_yaml_files(config = '../config.yaml', config_user = '../config_user.yaml'):
     if not os.path.isfile(config_user):
         shutil.copy('config_user_template.yaml', config_user)
 
@@ -37,9 +37,6 @@ def check_software(config, config_user):
     software_list = {key:value for (key, value) in software_list.items() if value == True}
     software_list = {key:config_user['local']['executables'][key] for (key, value) in software_list.items()}
 
-    for software in config_user['local']['executables'].values():
-        check_executable(software)
-    
 def check_external_paths(config_user):
     for path in config_user['external'].values():
         if not os.path.isfile(path):
