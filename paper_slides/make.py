@@ -1,14 +1,14 @@
 #! /usr/bin/env python
 
 # ENVIRONMENT
-import os
-import sys
-import yaml
 import git
+import imp
+import os
+import yaml
 
 ROOT = git.Repo('.', search_parent_directories = True).working_tree_dir
-sys.path.append(ROOT)
-import lib.gslab_make.gslab_make as gs
+file, pathname, description = imp.find_module('gslab_make', [os.path.join(ROOT, 'lib', 'gslab_make')])
+gs = imp.load_module('gslab_make', file, pathname, description)
 
 PATHS = {
     'config_user'     : '../config_user.yaml',
