@@ -1,5 +1,3 @@
-#! /usr/bin/env python
-
 # ENVIRONMENT
 import git
 import imp
@@ -7,12 +5,13 @@ import os
 import yaml
 
 ROOT = git.Repo('.', search_parent_directories = True).working_tree_dir
-file, pathname, description = imp.find_module('gslab_make', [os.path.join(ROOT, 'lib', 'gslab_make')])
-gs = imp.load_module('gslab_make', file, pathname, description)
+f, path, desc = imp.find_module('gslab_make', [os.path.join(ROOT, 'lib', 'gslab_make')])
+gs = imp.load_module('gslab_make', f, path, desc)
 
 PATHS = {
     'config_user'     : '../config_user.yaml',
-    'temp_dir'        : 'temp/',
+    'input_dir'       : 'input', 
+    'external_dir'    : 'external',
     'output_dir'      : 'output/',
     'pdf_dir'         : 'output/',
     'makelog'         : 'log/make.log',
@@ -23,10 +22,16 @@ PATHS = {
     'link_headslog'   : 'log/link_heads.log'
 }
 
+PATH_MAPPINGS = {
+    'root': ROOT
+}
+
 # CONFIG USER
 config_user = yaml.load(open(PATHS['config_user'], 'rb'))
-gs.private.metadata.default_executables[os.name].update(config_user['local']['executables']) 
-path_mappings = dict(config_user['external'], root = ROOT) 
+if config_user['local']['executables']:
+    gs.private.metadata.default_executables[os.name].update(config_user['local']['executables']) 
+if config_user['external']:
+    PATH_MAPPINGS.update(config_user['external'])
 
 # START
 gs.remove_dir(['input', 'external'])
@@ -34,8 +39,8 @@ gs.clear_dir(['output', 'log'])
 gs.start_makelog(PATHS)
 
 # GET INPUT FILES
-inputs    = gs.create_links(dict(PATHS, link_dir = 'input')   , ['inputs.txt']   , path_mappings)
-externals = gs.create_links(dict(PATHS, link_dir = 'external'), ['externals.txt'], path_mappings)
+inputs = gs.create_input_links(PATHS, ['inputs.txt'], PATH_MAPPINGS)
+externals = gs.create_external_links(PATHS, ['externals.txt'], PATH_MAPPINGS)
 gs.write_link_logs(PATHS, inputs + externals)
 
 # FILL TABLES
