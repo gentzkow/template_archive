@@ -1,7 +1,6 @@
-# Each line of instruction should contain a symlink and target delimited by a tab 
+# Each line of instruction should contain a symlink and target delimited by a `|`
 # Lines beginning with # are ignored 
-# Some text editors automatically replace tabs with spaces--watch out for this
 
-# Symlink		Target
-data_table.txt	{root}/data/output/data_table.txt
-data_graph.txt	{root}/data/output/data_graph.txt
+# Symlink      | Target
+data_table.txt | {root}/data/output/data_table.txt
+data_graph.txt | {root}/data/output/data_graph.txt
