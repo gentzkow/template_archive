@@ -4,12 +4,17 @@
 import os
 import shutil
 import subprocess
-import gslab_make as gs
+import imp
 try:
+    import git 
     import yaml
 except:
     print("Please pip install 'requirements.txt'")
     raise Exception
+
+ROOT = git.Repo('.', search_parent_directories = True).working_tree_dir
+f, path, desc = imp.find_module('gslab_make', [os.path.join(ROOT, 'lib', 'gslab_make')])
+gs = imp.load_module('gslab_make', f, path, desc)
 
 # GENERAL
 def parse_yaml_files(config = '../config.yaml', config_user = '../config_user.yaml'):

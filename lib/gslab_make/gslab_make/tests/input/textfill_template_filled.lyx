@@ -1,0 +1,335 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\begin_modules
+text
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Test file for textfill.
+\end_layout
+
+\begin_layout Standard
+This is a test file for textfill.
+ Below we include the smaller test table:
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size small
+\begin_inset Flex Text
+status open
+
+\begin_layout Plain Layout
+
+\size small
+\begin_inset CommandInset label
+LatexCommand label
+name "text:test_small"
+
+\end_inset
+
+
+\end_layout
+\begin_layout Plain Layout
+\begin_inset ERT status collapsed
+\begin_layout Plain Layout
+\backslash
+begin{verbatim}
+\end_layout\begin_layout Plain Layout
+      Source |       SS           df       MS      Number of obs   =       100\end_layout
+\begin_layout Plain Layout
+-------------+----------------------------------   F(1, 98)        =      2.02\end_layout
+\begin_layout Plain Layout
+       Model |  .178571582         1  .178571582   Prob > F        =    0.1585\end_layout
+\begin_layout Plain Layout
+    Residual |  8.66753137        98  .088444198   R-squared       =    0.0202\end_layout
+\begin_layout Plain Layout
+-------------+----------------------------------   Adj R-squared   =    0.0102\end_layout
+\begin_layout Plain Layout
+       Total |  8.84610295        99  .089354575   Root MSE        =     .2974\end_layout
+\begin_layout Plain Layout
+\end_layout
+\begin_layout Plain Layout
+------------------------------------------------------------------------------\end_layout
+\begin_layout Plain Layout
+           y |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]\end_layout
+\begin_layout Plain Layout
+-------------+----------------------------------------------------------------\end_layout
+\begin_layout Plain Layout
+           x |  -.1359885   .0957041    -1.42   0.159    -.3259102    .0539332\end_layout
+\begin_layout Plain Layout
+       _cons |   .5968796   .0544244    10.97   0.000     .4888762    .7048831\end_layout
+\begin_layout Plain Layout
+------------------------------------------------------------------------------\end_layout
+\begin_layout Plain Layout
+\backslash
+end{verbatim}
+\end_layout
+\end_inset
+\end_layout
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The sample table should be included above.
+ 
+\end_layout
+
+\begin_layout Standard
+Below should be printed the longer selection of log output from Stata:
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size small
+\begin_inset Flex Text
+status open
+
+\begin_layout Plain Layout
+
+\size small
+\begin_inset CommandInset label
+LatexCommand label
+name "text:test_long"
+
+\end_inset
+
+
+\end_layout
+\begin_layout Plain Layout
+\begin_inset ERT status collapsed
+\begin_layout Plain Layout
+\backslash
+begin{verbatim}
+\end_layout\begin_layout Plain Layout
+                              x\end_layout
+\begin_layout Plain Layout
+-------------------------------------------------------------\end_layout
+\begin_layout Plain Layout
+      Percentiles      Smallest\end_layout
+\begin_layout Plain Layout
+ 1%     .0047411       .0024686\end_layout
+\begin_layout Plain Layout
+ 5%     .0215199       .0070135\end_layout
+\begin_layout Plain Layout
+10%     .0560629       .0148051       Obs                 100\end_layout
+\begin_layout Plain Layout
+25%     .2085835       .0174648       Sum of Wgt.         100\end_layout
+\begin_layout Plain Layout
+\end_layout
+\begin_layout Plain Layout
+50%     .4723006                      Mean           .4762635\end_layout
+\begin_layout Plain Layout
+                        Largest       Std. Dev.      .3123104\end_layout
+\begin_layout Plain Layout
+75%     .7405439       .9740208\end_layout
+\begin_layout Plain Layout
+90%     .9051134       .9801796       Variance       .0975378\end_layout
+\begin_layout Plain Layout
+95%     .9537738       .9935958       Skewness       .0056333\end_layout
+\begin_layout Plain Layout
+99%     .9966775       .9997593       Kurtosis       1.686211\end_layout
+\begin_layout Plain Layout
+\end_layout
+\begin_layout Plain Layout
+                              y\end_layout
+\begin_layout Plain Layout
+-------------------------------------------------------------\end_layout
+\begin_layout Plain Layout
+      Percentiles      Smallest\end_layout
+\begin_layout Plain Layout
+ 1%     .0224818        .018611\end_layout
+\begin_layout Plain Layout
+ 5%     .0298601       .0263526\end_layout
+\begin_layout Plain Layout
+10%     .0772265       .0268655       Obs                 100\end_layout
+\begin_layout Plain Layout
+25%      .277908       .0273673       Sum of Wgt.         100\end_layout
+\begin_layout Plain Layout
+\end_layout
+\begin_layout Plain Layout
+50%     .5990957                      Mean           .5321133\end_layout
+\begin_layout Plain Layout
+                        Largest       Std. Dev.      .2989224\end_layout
+\begin_layout Plain Layout
+75%     .7775158       .9737868\end_layout
+\begin_layout Plain Layout
+90%     .8913509        .976499       Variance       .0893546\end_layout
+\begin_layout Plain Layout
+95%     .9524078       .9781724       Skewness      -.3125655\end_layout
+\begin_layout Plain Layout
+99%     .9860145       .9938565       Kurtosis       1.783511\end_layout
+\begin_layout Plain Layout
+\end_layout
+\begin_layout Plain Layout
+    Variable |        Obs        Mean    Std. Dev.       Min        Max\end_layout
+\begin_layout Plain Layout
+-------------+---------------------------------------------------------\end_layout
+\begin_layout Plain Layout
+           x |        100    .4762635    .3123104   .0024686   .9997593\end_layout
+\begin_layout Plain Layout
+           y |        100    .5321133    .2989224    .018611   .9938565\end_layout
+\begin_layout Plain Layout
+\end_layout
+\begin_layout Plain Layout
+      Source |       SS           df       MS      Number of obs   =       100\end_layout
+\begin_layout Plain Layout
+-------------+----------------------------------   F(1, 98)        =      2.02\end_layout
+\begin_layout Plain Layout
+       Model |  .178571582         1  .178571582   Prob > F        =    0.1585\end_layout
+\begin_layout Plain Layout
+    Residual |  8.66753137        98  .088444198   R-squared       =    0.0202\end_layout
+\begin_layout Plain Layout
+-------------+----------------------------------   Adj R-squared   =    0.0102\end_layout
+\begin_layout Plain Layout
+       Total |  8.84610295        99  .089354575   Root MSE        =     .2974\end_layout
+\begin_layout Plain Layout
+\end_layout
+\begin_layout Plain Layout
+------------------------------------------------------------------------------\end_layout
+\begin_layout Plain Layout
+           y |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]\end_layout
+\begin_layout Plain Layout
+-------------+----------------------------------------------------------------\end_layout
+\begin_layout Plain Layout
+           x |  -.1359885   .0957041    -1.42   0.159    -.3259102    .0539332\end_layout
+\begin_layout Plain Layout
+       _cons |   .5968796   .0544244    10.97   0.000     .4888762    .7048831\end_layout
+\begin_layout Plain Layout
+------------------------------------------------------------------------------\end_layout
+\begin_layout Plain Layout
+\end_layout
+\begin_layout Plain Layout
+      Source |       SS           df       MS      Number of obs   =       100\end_layout
+\begin_layout Plain Layout
+-------------+----------------------------------   F(1, 98)        =      2.02\end_layout
+\begin_layout Plain Layout
+       Model |  .194925355         1  .194925355   Prob > F        =    0.1585\end_layout
+\begin_layout Plain Layout
+    Residual |    9.461313        98   .09654401   R-squared       =    0.0202\end_layout
+\begin_layout Plain Layout
+-------------+----------------------------------   Adj R-squared   =    0.0102\end_layout
+\begin_layout Plain Layout
+       Total |  9.65623835        99  .097537761   Root MSE        =    .31072\end_layout
+\begin_layout Plain Layout
+\end_layout
+\begin_layout Plain Layout
+------------------------------------------------------------------------------\end_layout
+\begin_layout Plain Layout
+           x |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]\end_layout
+\begin_layout Plain Layout
+-------------+----------------------------------------------------------------\end_layout
+\begin_layout Plain Layout
+           y |  -.1484425   .1044688    -1.42   0.159    -.3557574    .0588725\end_layout
+\begin_layout Plain Layout
+       _cons |   .5552517   .0636836     8.72   0.000     .4288737    .6816298\end_layout
+\begin_layout Plain Layout
+------------------------------------------------------------------------------\end_layout
+\begin_layout Plain Layout
+\end_layout
+\begin_layout Plain Layout
+Linear regression                               Number of obs     =        100\end_layout
+\begin_layout Plain Layout
+                                                F(1, 98)          =       1.98\end_layout
+\begin_layout Plain Layout
+                                                Prob > F          =     0.1627\end_layout
+\begin_layout Plain Layout
+                                                R-squared         =     0.0202\end_layout
+\begin_layout Plain Layout
+                                                Root MSE          =     .31072\end_layout
+\begin_layout Plain Layout
+\end_layout
+\begin_layout Plain Layout
+------------------------------------------------------------------------------\end_layout
+\begin_layout Plain Layout
+             |               Robust\end_layout
+\begin_layout Plain Layout
+           x |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]\end_layout
+\begin_layout Plain Layout
+-------------+----------------------------------------------------------------\end_layout
+\begin_layout Plain Layout
+           y |  -.1484425   .1055281    -1.41   0.163    -.3578596    .0609747\end_layout
+\begin_layout Plain Layout
+       _cons |   .5552517   .0645158     8.61   0.000     .4272222    .6832813\end_layout
+\begin_layout Plain Layout
+------------------------------------------------------------------------------\end_layout
+\begin_layout Plain Layout
+\backslash
+end{verbatim}
+\end_layout
+\end_inset
+\end_layout
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document

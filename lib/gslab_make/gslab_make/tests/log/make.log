@@ -1,0 +1,17 @@
+testArgumentOrder (test_tablefill.testTablefill) ... ok
+testBreaksRoundingString (test_tablefill.testTablefill) ... ok
+testIllegalSyntax (test_tablefill.testTablefill) ... ok
+testInput (test_tablefill.testTablefill) ... ok
+test_alternative_prefix (test_textfill.testTextfill) ... ok
+test_argument_order (test_textfill.testTextfill) ... ok
+test_illegal_syntax (test_textfill.testTextfill) ... ok
+test_input (test_textfill.testTextfill) ... ok
+test_remove_echoes (test_textfill.testTextfill) ... ok
+test_tags_dont_match (test_textfill.testTextfill) ... ok
+test_tags_incorrectly_specified (test_textfill.testTextfill) ... ok
+test_tags_not_closed (test_textfill.testTextfill) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.063s
+
+OK

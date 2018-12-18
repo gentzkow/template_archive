@@ -1,0 +1,107 @@
+\documentclass[english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{array}
+\usepackage{float}
+
+\makeatletter
+
+\providecommand{\tabularnewline}{\\}
+
+\makeatother
+
+\usepackage{babel}
+\begin{document}
+\begin{table}[H]
+\caption{Determinants of Newspaper Affiliation\label{tab:panel_supply}}
+\smallskip{}
+
+Dependent variable: Dummy for newspaper choosing Republican affiliation
+\begin{raggedright}
+\begin{tabular}{lccc}
+\hline 
+ & (1) & (2) & (3)\tabularnewline
+\hline 
+Republican vote share & #4,# & #4,# & #4,#\tabularnewline
+ & (#4,#) & (###) & (###)\tabularnewline
+Number of Republican incumbents & #0# & #4# & #4#\tabularnewline
+ & (#4#) & (#4#) & (#4#)\tabularnewline
+Number of Democratic incumbents & #4# & #4# & #4#\tabularnewline
+ & (#4#) & (#4#) & (#4#)\tabularnewline
+Lag Republican vote share &  &  & #4#\tabularnewline
+ &  &  & (#4#)\tabularnewline
+Instrument with lag vote share? &  & X & \tabularnewline
+\hline 
+R2 & #4# & #4# & #4#\tabularnewline
+Number of markets & #0# & #0# & #0#\tabularnewline
+Number of newspapers & #0# & #0# & #0#\tabularnewline
+\hline 
+\end{tabular}
+\par\end{raggedright}
+\raggedright{}{\footnotesize{}}%
+\begin{tabular}{>{\raggedright}p{6in}}
+\noalign{\vskip\doublerulesep}
+\raggedright{}\tabularnewline
+\end{tabular}{\footnotesize \par}
+\end{table}
+
+\begin{table}[H]
+\caption{Sensitivity of Parameter Estimates to Omitting Unobservables From
+Model\label{tab:unobservables}}
+\smallskip{}
+
+\centering{}%
+\begin{tabular}{lcc}
+\hline 
+ & Baseline & No Unobservables\tabularnewline
+\hline 
+\noalign{\vskip\doublerulesep}
+Demand parameters &  & \tabularnewline
+ &  & \tabularnewline
+\qquad{}$\underline{\beta}$ & ### & #2#\tabularnewline
+ & (#0#) & (#0#)\tabularnewline[\doublerulesep]
+\qquad{}$\overline{\beta}$ & #0# & #0#\tabularnewline
+ & (#10#) & (#10#)\tabularnewline[\doublerulesep]
+\qquad{}$\Gamma$ & #4# & #4#\tabularnewline
+ & (#4#) & (#4#)\tabularnewline[\doublerulesep]
+ &  & \tabularnewline
+Supply parameters &  & \tabularnewline
+ &  & \tabularnewline
+\qquad{}$a_{l}$ & #4# & #4#\tabularnewline
+ & (#4#) & (#4#)\tabularnewline[\doublerulesep]
+\qquad{}$\sigma_{\xi}$ & #4# & #4#\tabularnewline
+ & (#4#) & (#4#)\tabularnewline[\doublerulesep]
+\hline 
+\end{tabular}
+\end{table}
+
+\begin{table}
+\begin{centering}
+\caption{Determinants of Equilibrium Diversity\label{tab:Diversity}}
+\smallskip{}
+\par\end{centering}
+\centering{}%
+\begin{tabular}{lccc}
+\hline 
+ & Markets with & Share of hhlds & Share of hhlds\tabularnewline
+ & diverse & in mkt with & reading\tabularnewline
+ & papers & diverse papers & diverse papers\tabularnewline
+\hline 
+\noalign{\vskip0.01\textheight}
+Baseline & #0# & #2# & #3#\tabularnewline
+When choosing affiliation, newspapers: &  &  & \tabularnewline
+\noalign{\vskip\doublerulesep}
+\quad{}Ignore competitors' choices & #0# & #2# & #3#\tabularnewline[\doublerulesep]
+\noalign{\vskip\doublerulesep}
+\quad{}Ignore household ideology & #0# & #2# & #3#\tabularnewline[\doublerulesep]
+\noalign{\vskip\doublerulesep}
+\quad{}Ignore idiosyncratic cost shocks ($\xi$) & #0# & #2# & #3#\tabularnewline
+Owners chosen at random from &  &  & \tabularnewline
+local households and newspaper &  &  & \tabularnewline
+type equals owner type & #0# & #2# & #3#\tabularnewline[\doublerulesep]
+\hline 
+\noalign{\vskip0.01\textheight}
+\end{tabular}
+\end{table}
+
+\end{document}

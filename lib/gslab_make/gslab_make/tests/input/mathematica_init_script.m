@@ -1,0 +1,1 @@
+Print[startup_option]
