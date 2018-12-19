@@ -7,6 +7,7 @@ import os
 import shutil
 import fileinput
 import traceback
+import re
 
 import gslab_make.private.metadata as metadata
 from gslab_make.private.exceptionclasses import CritError
@@ -57,6 +58,9 @@ def run_stata(paths, program, **kwargs):
         program_name = os.path.split(program_name)[-1]
         program_name = os.path.splitext(program_name)[0]
         program_log = os.path.join(os.getcwd(), program_name + '.log')
+        
+        # Sanitize program
+        direct.program = re.escape(direct.program)
 
         # Execute
         command = metadata.commands[direct.osname]['stata'] % (direct.executable, direct.option, direct.program)
