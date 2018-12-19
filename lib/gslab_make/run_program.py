@@ -61,9 +61,9 @@ def run_stata(paths, program, **kwargs):
         # Execute
         command = metadata.commands[direct.osname]['stata'] % (direct.executable, direct.option, direct.program)
         exit_code, error_message = direct.execute_command(command)
-        direct.move_program_output(program_log, direct.log)
         if exit_code != 0:
             raise CritError('* Stata program executed with errors: *\n%s' % error_message)
+        direct.move_program_output(program_log, direct.log)
     except:
         error_message = 'Error with `run_stata`' 
         error_message = format_error(error_message) + '\n' + traceback.format_exc()
@@ -114,9 +114,9 @@ def run_matlab(paths, program, **kwargs):
         # Execute
         command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.option, direct.program, direct.program_name + '.log')
         exit_code, error_message = direct.execute_command(command)    
-        direct.move_program_output(program_log, direct.log)   
         if exit_code != 0:
             raise CritError('* Matlab program executed with errors: *\n%s' % error_message)
+        direct.move_program_output(program_log, direct.log)   
     except:
         error_message = 'Error with `run_matlab`' 
         error_message = format_error(error_message) + '\n' + traceback.format_exc()
@@ -508,10 +508,10 @@ def run_sas(paths, program, **kwargs):
         # Execute
         command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.option, direct.program)       
         exit_code, error_message = direct.execute_command(command)
-        direct.move_program_output(program_log)
-        direct.move_program_output(program_lst)        
         if exit_code != 0:
             raise CritError('* SAS program executed with errors: *\n%s' % error_message)
+        direct.move_program_output(program_log)
+        direct.move_program_output(program_lst)        
     except:
         error_message = 'Error with `run_sas`' 
         error_message = format_error(error_message) + '\n' + traceback.format_exc()
