@@ -1,6 +1,6 @@
 *config_user.yaml
-*/external/*
-*/input/*
+*external/*
+*input/*
 *.pyc
 *.lyx~
 *.lyx#
@@ -18,4 +18,3 @@
 *.out
 *.svn
 *.ipynb
-*external/
