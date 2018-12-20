@@ -4,10 +4,14 @@
 The majority of the functions in </b><code>gslab_make</code><b> contain a </b><code>paths</code><b> argument that requires passing in a dictionary specifying default paths used for writing and logging purposes. The dictionary <i>must</i> contain values for the following keys (i.e., default paths):
 </b>
 
-> * `link_dir` 
+> * `input_dir` 
 > 
->     * Default path for writing symbolic links to inputs. 
+>     * Default path for writing symbolic links to internal inputs. 
 >
+> * `external_dir` 
+> 
+>     * Default path for writing symbolic links to external inputs. 
+>    
 > * `output_dir` 
 > 
 >     * Default path for finding outputs for logging.
@@ -51,13 +55,13 @@ To suppress writing to make log for any function, set <code>makelog</code> to <c
 The following default paths are recommended:
 <pre>
 paths = {
-    'link_dir'        : '../input/',
+    'input_dir'       : '../input/',
+    'external_dir'    : '../external/',
     'output_dir'      : '../output/',
     'pdf_dir'         : '../output/',
     'makelog'         : '../log/make.log',
     'output_statslog' : '../log/output_stats.log',
     'output_headslog' : '../log/output_heads.log', 
-    'linklog'         : '../log/link.log', 
     'link_maplog'     : '../log/link_map.log',
     'link_statslog'   : '../log/link_stats.log',
     'link_headslog'   : '../log/link_heads.log'
@@ -68,7 +72,7 @@ paths = {
 <br> 
 
 <b>
-The following functions will specify which default paths in </b><code>paths</code><b> are required in their documentation. For example, </b><code>function(paths = {makelog, linklog})</code><b> uses the default paths corresponding to </b><code>paths['makelog']</code><b> and </b><code>paths['linklog']</code><b>.
+The following functions will specify which default paths in </b><code>paths</code><b> are required in their documentation. For example, </b><code>function(paths = {pdf_dir, makelog})</code><b> uses the default paths corresponding to </b><code>paths['pdf_dir']</code><b> and </b><code>paths['makelog']</code><b>.
 </b>
 
 <br> 
@@ -132,31 +136,32 @@ write_logs.<b>log_files_in_output(</b><i>
 
 # Linking functions
 
-<b>The following function is used to create symbolic links to input files. Doing so avoids potential duplication of input files and any associated confusion.</b>
+<b>The following functions are used to create symbolic links to input files. Doing so avoids potential duplication of input files and any associated confusion.</b>
 
 <br>
 
 <pre>
-create_links.<b>create_links(</b><i>
+create_input_links.<b>create_input_links(</b><i>
     paths = {
-        link_dir,
+        input_dir,
         makelog,
     }, 
-    file_list</i><b>
+    file_list, 
+    path_mappings = {}</i><b>
 )</b> 
 </pre>
-> Create symbolic links using instructions contained in files of list `file_list`. Symbolic links are written in directory `link_dir`. Status messages are appended to make log `makelog`.
+> Create symbolic links using instructions contained in files of list `file_list`. Instructions must be formatted in input style and are string formatted using dictionary `path_mappings`. Defaults to no string formatting. Symbolic links are written in directory `input_dir`. Status messages are appended to make log `makelog`.
 
 <ul>
 <b>Notes:</b>
 <br>
 Instruction files on how to create symbolic links should be formatted in the following way:
 <br>
-<code># Each line of instruction should contain a symbolic link and target delimited by a tab</code>
+<code># Each line of instruction should contain a symbolic link and target delimited by a `|`</code>
 <br>
 <code># Lines beginning with # are ignored</code>
 <br>
-<code>symlink  target</code>
+<code>symlink | target</code>
 <br>
 <br>
 Instruction files can be specified with the * shell pattern (see <a href = 'https://www.gnu.org/software/findutils/manual/html_node/find_html/Shell-Pattern-Matching.html'>here</a>).
@@ -172,12 +177,12 @@ Symbolic links and their targets can also be specified with the * shell pattern.
 <br>
 Suppose instruction file <code>'file1'</code> contained the following text:
 <br>
-<code>symlink1  target1</code>
+<code>symlink1 | target1</code>
 <br>
-<code>symlink2  target2</code>
+<code>symlink2 | target2</code>
 <br>
 <br>
-Symbolic links <code>symlink1</code> and <code>symlink2</code> would be created in directory <code>paths['link_dir']</code>. Their targets would be <code>target1</code> and <code>target2</code>, respectively. 
+Symbolic links <code>symlink1</code> and <code>symlink2</code> would be created in directory <code>paths['input_dir']</code>. Their targets would be <code>target1</code> and <code>target2</code>, respectively. 
 <br>
 <br>
 <b>Example 2:</b>
@@ -191,7 +196,7 @@ Suppose you have the following targets:
 <code>target3</code>
 <br>
 <br>
-Specifying <code>symlink*   target*</code> in one of your instruction files would create the following symbolic links in <code>paths['link_dir']</code>:
+Specifying <code>symlink*   target*</code> in one of your instruction files would create the following symbolic links in <code>paths['input_dir']</code>:
 <br>
 <code>symlink1</code>
 <br>
@@ -199,6 +204,45 @@ Specifying <code>symlink*   target*</code> in one of your instruction files woul
 <br>
 <code>symlink3</code>
 </pre>
+</ul>
+
+<br>
+
+<pre>
+create_external_links.<b>create_external_links(</b><i>
+    paths = {
+        external_dir,
+        makelog,
+    }, 
+    file_list, 
+    path_mappings</i><b>
+)</b> 
+</pre>
+> Create symbolic links using instructions contained in files of list `file_list`. Instructions must be formatted in external style and are string formatted using dictionary `path_mappings`. Symbolic links are written in directory `external_dir`. Status messages are appended to make log `makelog`.
+
+<ul>
+<b>Notes:</b>
+<br>
+Instruction files on how to create symbolic links should be formatted in the following way:
+<br>
+<code># Each line of instruction should contain the key for an item in your path mapping</code>
+<br>
+<code># Key</code>
+<br>
+<code>key</code>
+<br>
+<br>
+<b>Example 1:</b>
+<br>
+<code>create_links(paths, ['file1'])</code> uses instruction file <code>'file1'</code> to create symbolic links.
+<br>
+<br>
+Suppose instruction file <code>'file1'</code> contained the following text:
+<br>
+<code>key</code>
+<br>
+<br>
+Symbolic link <code>key</code> would be created in directory <code>paths['external_dir']</code>. Its target would be <code>path_mappings['key']</code>. 
 </ul>
 
 <br>
@@ -222,7 +266,7 @@ write_link_logs.<b>write_link_logs(</b><i>
 )</b>
 </pre>
 
-> Logs the following information for files contained in all mappings of list `link_map` (returned by `create_links.create_links`):
+> Logs the following information for files contained in all mappings of list `link_map` (returned by `create_links.create_input_links` and `create_links.create_external_links`):
 > 
 > * Mapping of symbolic links to targets (in file `link_maplog`)
 >
@@ -241,13 +285,13 @@ write_link_logs.<b>write_link_logs(</b><i>
 <ul>
 <b>Example:</b>
 <br>
-<code>write_link_logs(paths, recursive = 1)</code> will log information for all link mappings and target files linked in <code>paths['input']</code>.
+<code>write_link_logs(paths, recursive = 1)</code> will log information for all link mappings and target files linked in <code>paths['input']</code> and <code>paths['external']</code>.
 <br>
 <br>
-<code>write_link_logs(paths, recursive = 2)</code> will log information for all link mappings, target files linked in <code>paths['input']</code>, and files contained in target directories linked in <code>paths['input']</code>.
+<code>write_link_logs(paths, recursive = 2)</code> will log information for all link mappings, target files linked in <code>paths['input']</code> and <code>paths['external']</code>, and files contained in target directories linked in <code>paths['input']</code> and <code>paths['external']</code>.
 <br>
 <br>
-<code>write_link_logs(paths, recursive = inf(float))</code> will log information for all link mappings, target files linked in <code>paths['input']</code>, and files contained in any level of target directories linked in <code>paths['input']</code>.
+<code>write_link_logs(paths, recursive = inf(float))</code> will log information for all link mappings, target files linked in <code>paths['input']</code> and <code>paths['external']</code>, and files contained in any level of target directories linked in <code>paths['input']</code> and <code>paths['external']</code>.
 </ul>
 
 <br> 
@@ -482,7 +526,7 @@ By default, program log is not written as <code>log = ''</code>.
              'r'         : 'Rscript',
              'sas'       : 'sas', 
              'st'        : 'st',
-             'stata'     : 'statamp'},
+             'stata'     : 'stata-mp'},
         'nt': 
             {'lyx'       : 'lyx',
              'perl'      : 'perl',
@@ -544,6 +588,24 @@ dir_mod.<b>check_os()</b>
 <b>Note:</b> 
 <br>
 <code>gslab_make</code> only supports Unix or Windows. 
+</ul>
+
+<br>
+
+<pre>
+dir_mod.<b>remove_dir(</b><i>dir_list</i><b>)</b>
+</pre>
+> Removes all directories in list <code>dir_list</code> using system command. Safely removes symbolic links.
+
+<ul>
+<b>Example:</b>
+<br>
+<code>remove_dir(['dir1', 'dir2'])</code> removes directories <code>'dir1'</code> and <code>'dir2'</code>. 
+<br>
+<br>
+<b>Notes:</b>
+<br>
+Directories can be specified with the * shell pattern (see <a href = 'https://www.gnu.org/software/findutils/manual/html_node/find_html/Shell-Pattern-Matching.html'>here</a>).
 </ul>
 
 <br>
