@@ -10,9 +10,9 @@ git_lfs_required: Yes
 #####################################################################
 # Other required software
 #####################################################################
+gslab_make_required: Yes
+
 software_required:
-  git_lfs: Yes
-  gslab_make: Yes
   r: Yes
   stata: Yes
   lyx: Yes
