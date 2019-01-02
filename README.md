@@ -1,5 +1,20 @@
 # README
 
+## Requirements
+All requirements must be installed and setup for command line usage. 
+
+* Python 2.7
+* pip (>=10.0)
+
+To initialize the repository as-is, the following software are additionally required:
+
+* git-lfs
+* LyX
+* R
+* Stata
+
+These software are used by the example scripts contained in the repository. By default, the **Setup** instructions below will assume their usage.
+
 ## Setup
 1. Create a `config_local.yaml` file in the root directory. A template can be found in the `setup` subdirectory. See the **Config** section below for further detail.
 
@@ -24,7 +39,7 @@
    ```
  
 ## Config
-`config.yaml` specifies the minimum required software to properly initialize the repository. By default, this includes the following software:
+`config.yaml` specifies the minimum required software to initialize the repository. By default, this includes the following software:
 
    - git-lfs
    - LyX
@@ -50,12 +65,12 @@ All required software must be installed and setup for command line usage. If not
 
 The standard bash command for pip installing `requirements.txt` often runs into issues as depending on your Python environment, pip will attempt to install to a root directory (i.e., a directory that by default you should not have write permission)
 ```
-pip install -r requirements.txtt
+pip install -r requirements.txt
 ```
 
 One way to get around this is to include `sudo` (or the Windows equivalent of running in administrative mode) in your bash command.
 ```
-sudo pip install -r requirements.tx
+sudo pip install -r requirements.txt
 ```
 
 However, we caution against this given the potential security risks. Instead, we recommend including the `--user` flag to your bash command.
@@ -74,10 +89,10 @@ The `--user` flag instructs pip to install to a local directory (i.e., a directo
    
    * If this is a directory that you should have write permission to but do not, use the `sudo chown` bash command (or the Windows equivalent of changing ownership through properties) to get ownership.
 
-   * If this is a directory that you should not have write permission to, change your `PYTHONUSERBASE` environment variable to a diretory that you should and do have write permission to.
+   * If this is a directory that you should not have write permission to, change your `PYTHONUSERBASE` environment variable to a directory that you should and do have write permission to.
 
 If you are using Anaconda, we recommend using the following bash command:
 ```
 conda install --file requirements.txt"
 ```
-Note that you may run into issues if any of the Python depencencies are not available on the conda channels. If this is the case, revert back to using `pip`.
+Note that you may run into issues if any of the Python dependencies are not available on the conda channels. If this is the case, revert back to using `pip`.
