@@ -1,3 +1,18 @@
-# Each line of instruction should contain the key for an external dependency listed in `config_user.yaml`
+# Each line of instruction in this `externals.txt` file should contain the key for an external dependency listed in `config_user.yaml`.
+# Lines beginning with # are ignored.
+#
+# For example, suppose your `config_user.yaml` file contains the following lines of text:
+# > external:
+# >     key: dependency
+# 
+# Now suppose your `externals.txt` file contains the following lines of text:
+# > key
+#
+# Finally, suppose you run the following lines of code:
+# > config_user = yaml.load(open('config_user.yaml', 'rb'))
+# > mapping_dict = config_user['external']
+# > create_external_links(paths, ['externals.txt'], mapping_dict)
+# 
+# This will create a link in `paths['external_dir']` named `key` that links to `dependency`.
 
 # Key

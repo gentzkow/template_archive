@@ -1,4 +1,12 @@
-# Each line of instruction should contain a symlink and target delimited by a `|`
-# Lines beginning with # are ignored 
+# Each line of instruction in this `inputs.txt` file should contain a symlink and target delimited by a `|`.
+# Lines beginning with # are ignored.
+# 
+# For example, suppose your `inputs.txt` file contains the following lines of text:
+# > symlink | target
+#
+# Now suppose you run the following lines of code:
+# > create_input_links(paths, ['inputs.txt'])
+# 
+# This will create a link in `paths['input_dir']` named `symlink` that links to `target`.
 
 # Symlink | Target
