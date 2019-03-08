@@ -133,8 +133,8 @@ def log_files_in_output(paths,
         Dictionary of paths. Dictionary should contain {
             'output_dir' : str
                 Path of output directory.
-            'output_local_dir' : str, optional
-                Path of local output directory. Defaults to `[]`.
+            'output_local_dir' : list, optional
+                List of paths of local output directories. Defaults to `[]`.
             'output_statslog' : str
                 Path to write output statistics log.
             'output_headslog' : str

@@ -6,7 +6,7 @@ All requirements must be installed and setup for command line usage.
 * Python 2.7
 * pip (>=10.0)
 
-To initialize the repository as-is, the following software are additionally required:
+To build the repository as-is, the following software are additionally required:
 
 * git-lfs
 * LyX
@@ -38,6 +38,24 @@ These software are used by the example scripts contained in the repository. By d
    Rscript setup_r.r
    ```
  
+## Build
+To build the repository as-is from start to finish, the following procedure should be implemented:
+
+1. From the `data` subdirectory, use the following bash command:
+   ```
+   python make.py
+   ```
+
+2. From the `analysis` subdirectory, use the following bash command:
+   ```
+   python make.py
+   ```
+
+3. From the `paper_slides` subdirectory, use the following bash command:
+   ```
+   python make.py
+   ```
+
 ## Config
 `config.yaml` specifies the minimum required software to initialize the repository. By default, this includes the following software:
 
@@ -51,6 +69,14 @@ All required software must be installed and setup for command line usage. If not
 `config_user.yaml` specifies local settings for the user. This includes the following.
 
 1. **External dependencies**: Any files external to the repository should be specified in `config_user.yaml`. Furthermore, any reference to external files in code should be made via an import of `config_user.yaml`.
+
+    The following protocol for external dependencies should ideally be used:
+
+    * Specify external dependencies in `config_user.yaml`.
+
+    * Create symbolic links to external dependencies using `gslab_make.create_external_links`.
+
+    * Reference external dependencies via symbolic links as opposed to actual path.
 
 2. **Executable names**: Required software may be setup for command line usage on your computer with a different executable name from the default. If so, specify the correct executable name in `config_user.yaml`
 
