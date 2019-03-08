@@ -6,7 +6,7 @@ from builtins import (bytes, str, open, super, range,
 import os
 import traceback
 
-from gslab_make.private.utility import glob_recursive, format_error
+from gslab_make.private.utility import norm_path, glob_recursive, format_error
 from gslab_make.write_logs import write_to_makelog, write_stats_log, write_heads_log
 
 
@@ -57,10 +57,20 @@ def write_link_logs(paths,
         target_list = [target for target, symlink in link_map]
         target_list = [glob_recursive(target, recursive) for target in target_list]
         target_files = [f for target in target_list for f in target]
+        target_files = set(target_files)
 
-        write_stats_log(link_statslog, target_files)
-        write_heads_log(link_headslog, target_files)    
-        write_link_maplog(link_maplog, link_map)
+        if link_statslog:
+            link_statslog = norm_path(link_statslog)
+            write_stats_log(link_statslog, target_files)
+
+        if link_headslog:
+            link_headslog = norm_path(link_headslog)
+            write_heads_log(link_headslog, target_files)   
+
+        if link_maplog:
+            link_maplog = norm_path(link_maplog)
+            write_link_maplog(link_maplog, link_map)
+
         write_to_makelog(paths, 'Link logs successfully written!')  
     except:
         error_message = 'Error with `write_link_logs`' 
@@ -68,6 +78,7 @@ def write_link_logs(paths,
         write_to_makelog(paths, error_message)
         
         raise
+
 
 def write_link_maplog(link_maplog, link_map):
     """ Write link map log.

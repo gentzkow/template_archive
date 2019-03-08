@@ -7,7 +7,6 @@ import os
 import re
 import glob
 
-from gslab_make.private.exceptionclasses import CritError
 import gslab_make.private.messages as messages
 
 
@@ -59,20 +58,18 @@ def glob_recursive(path, recursive):
 
     path_files = [p for p in path_files if os.path.isfile(p)]
     if not path_files:
-        print('WARNING! `glob_recursive(path = "%s", recursive = %s)` returned no files' % (path, recursive))
+        print(messages.warning_glob % (path, recursive))
 
     return path_files
 
  
-def file_to_array(file_name, file_format):
+def file_to_array(file_name):
     """ Read file and extract lines to list. 
 
     Parameters
     ----------
     file_name : str
         Path of file to read.
-    file_format : str
-        Format of file to read.
 
     Returns
     -------
@@ -80,17 +77,10 @@ def file_to_array(file_name, file_format):
         List of lines contained in file.
     """
        
-    if file_format == "input":
-        with open(file_name, 'r') as f:
-            array = [line.strip() for line in f]
-            array = [line for line in array if line]
-            array = [line for line in array if not re.match('\#',line)]
-    if file_format == "external":
-        with open(file_name, 'r') as f:
-            array = [line.strip() for line in f]
-            array = [line for line in array if line]
-            array = [line for line in array if not re.match('\#',line)]
-            array = ["%s | {%s}" % (line, line) for line in array]
+    with open(file_name, 'r') as f:
+        array = [line.strip() for line in f]
+        array = [line for line in array if line]
+        array = [line for line in array if not re.match('\#',line)]
 
     return array
 
@@ -111,5 +101,29 @@ def format_error(error):
 
     formatted = messages.note_star_line + '\n%s\n' + messages.note_star_line
     formatted = formatted % error.strip()
+    
+    return(formatted)
+
+
+def format_list(list):
+    """ Format list. 
+
+    Parameters
+    ----------
+    list : list
+        List to format.
+
+    Notes
+    -----
+    Format list for readability to pass into user messages 
+
+    Returns
+    -------
+    formatted : str
+        Formatted list.
+    """
+
+    formatted = ['`' + item + '`' for item in list]
+    formatted = ", ".join(formatted)
     
     return(formatted)

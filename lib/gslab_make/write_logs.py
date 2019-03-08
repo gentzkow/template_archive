@@ -41,7 +41,7 @@ def start_makelog(paths):
         makelog = norm_path(makelog)
         print('Starting makelog file at: "%s"' % makelog)
         
-        with open(makelog, 'w') as MAKELOG:
+        with open(makelog, 'w', encoding = 'utf8') as MAKELOG:
             time_start = str(datetime.datetime.now().replace(microsecond = 0))
             working_dir = os.getcwd()
             print(messages.note_dash_line, file = MAKELOG)
@@ -75,7 +75,7 @@ def end_makelog(paths):
         if not (metadata.makelog_started and os.path.isfile(makelog)):
             raise CritError(messages.crit_error_no_makelog % makelog)
 
-        with open(makelog, 'a') as MAKELOG:
+        with open(makelog, 'a', encoding = 'utf8') as MAKELOG:
             time_end = str(datetime.datetime.now().replace(microsecond = 0))
             working_dir = os.getcwd()
             print(messages.note_dash_line, file = MAKELOG)
@@ -110,7 +110,7 @@ def write_to_makelog(paths, message):
         if not (metadata.makelog_started and os.path.isfile(makelog)):
             raise CritError(messages.crit_error_no_makelog % makelog)
 
-        with open(makelog, 'a') as MAKELOG:
+        with open(makelog, 'a', encoding = 'utf8') as MAKELOG:
             print(message, file = MAKELOG)
     
     
@@ -133,11 +133,13 @@ def log_files_in_output(paths,
         Dictionary of paths. Dictionary should contain {
             'output_dir' : str
                 Path of output directory.
+            'output_local_dir' : str, optional
+                Path of local output directory. Defaults to `[]`.
             'output_statslog' : str
                 Path to write output statistics log.
             'output_headslog' : str
                 Path to write output headers log.
-            'makelog' : str
+            'makelog' : 
                 Path of makelog.
         }
     recursive : int, optional
@@ -151,19 +153,35 @@ def log_files_in_output(paths,
     output_dir      = paths['output_dir']
     output_statslog = paths['output_statslog']
     output_headslog = paths['output_headslog']
+    try:
+        output_local_dir = paths['output_local_dir'] # Make required?
+        if type(output_local_dir) is not list:
+            raise TypeError(messages.type_error_dir_list % output_local_dir)
+    except:
+        output_local_dir = []
+  
+    try:
+        output_files = glob_recursive(output_dir, recursive)
+        output_local_files = [f for dir_path in output_local_dir for f in glob_recursive(dir_path, recursive)]   
+        output_files = set(output_files + output_local_files)
 
-    output_files = glob_recursive(output_dir, recursive)
-
-    if output_statslog:
-        output_statslog = norm_path(output_statslog)
-        write_stats_log(output_statslog, output_files)
-    
-    if output_headslog:
-        output_headslog = norm_path(output_headslog)
-        write_heads_log(output_headslog, output_files)
-    
-    write_to_makelog(paths, 'Output logs successfully written!')  
+        if output_statslog:
+            output_statslog = norm_path(output_statslog)
+            write_stats_log(output_statslog, output_files)
         
+        if output_headslog:
+            output_headslog = norm_path(output_headslog)
+            write_heads_log(output_headslog, output_files)
+        
+        write_to_makelog(paths, 'Output logs successfully written!')  
+    except:
+        error_message = 'Error with `log_files_in_output`' 
+        error_message = format_error(error_message) + '\n' + traceback.format_exc()
+        write_to_makelog(paths, error_message)
+        
+        raise
+
+       
     
 def write_stats_log(statslog_file, output_files):
     """ Write statistics log.
@@ -189,7 +207,7 @@ def write_stats_log(statslog_file, output_files):
 
     header = "file name\tlast modified\tfile size"
     
-    with open(statslog_file, 'w') as STATSLOG:
+    with open(statslog_file, 'w', encoding = 'utf8') as STATSLOG:
         print(header, file = STATSLOG)      
 
         for file_name in output_files:
@@ -219,7 +237,7 @@ def write_heads_log(headslog_file, output_files, num_lines = 10):
 
     header = "File headers"
 
-    with open(headslog_file, 'w') as HEADSLOG:      
+    with open(headslog_file, 'w', encoding = 'utf8') as HEADSLOG:      
         print(header, file = HEADSLOG)
         print(messages.note_dash_line, file = HEADSLOG)
         
@@ -228,9 +246,9 @@ def write_heads_log(headslog_file, output_files, num_lines = 10):
             print(messages.note_dash_line, file = HEADSLOG)
             
             try:
-                with open(file_name, 'r') as f:
+                with open(file_name, 'r', encoding = 'utf8') as f:
                     for i in range(num_lines):
-                        line = f.next().strip()
+                        line = f.readline.strip() # Is there any way to make this faster?
                         cleaned_line = filter(lambda x: x in string.printable, line)
                         print(cleaned_line, file = HEADSLOG)
             except:

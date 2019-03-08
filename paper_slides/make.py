@@ -45,6 +45,11 @@ externals = gs.create_external_links(PATHS, ['externals.txt'], PATH_MAPPINGS)
 gs.write_link_logs(PATHS, inputs + externals)
 gs.get_modified_links(PATHS, inputs + externals)
 
+# FILL TABLES
+gs.tablefill(template = 'code/tables.lyx', 
+             input    = 'input/tables.txt', 
+             output   = 'output/tables_filled.lyx')
+
 ### RUN SCRIPTS
 gs.run_lyx(PATHS, program = 'code/paper.lyx')
 gs.run_lyx(PATHS, program = 'code/online_appendix.lyx')

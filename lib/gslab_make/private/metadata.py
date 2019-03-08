@@ -86,13 +86,13 @@ default_executables = {
 }
 
 extensions = {
-    'stata'     : '.do',
-    'matlab'    : '.m',
-    'perl'      : '.pl',
-    'python'    : '.py',
-    'math'      : '.m',
+    'stata'     : ['.do'],
+    'matlab'    : ['.m'],
+    'perl'      : ['.pl'],
+    'python'    : ['.py'],
+    'math'      : ['.m'],
     'st'        : ['.stc', '.stcmd'],
-    'lyx'       : '.lyx',
+    'lyx'       : ['.lyx'],
     'r'         : ['.r', '.R'],
-    'sas'       : '.sas'
+    'sas'       : ['.sas']
 }

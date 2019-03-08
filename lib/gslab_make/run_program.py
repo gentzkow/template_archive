@@ -67,14 +67,21 @@ def run_stata(paths, program, **kwargs):
         exit_code, error_message = direct.execute_command(command)
         if exit_code != 0:
             raise CritError('* Stata program executed with errors: *\n%s' % error_message)
-        direct.move_program_output(program_log, direct.log)
+        output = direct.move_program_output(program_log, direct.log)
+        check_stata_output(output)
     except:
-        error_message = 'Error with `run_stata`' 
+        error_message = 'Error with `run_stata`. Traceback can be found below.' 
         error_message = format_error(error_message) + '\n' + traceback.format_exc()
         write_to_makelog(paths, error_message)
         raise
     
     
+def check_stata_output(output):
+    regex = "end of do-file[\s]*r\([0-9]*\);"
+    if re.search(regex, output):
+        raise CritError('* Stata program executed with errors (check logs for further detail) *')
+
+
 def run_matlab(paths, program, **kwargs):
     """ Run Matlab script using system command.
 
@@ -122,7 +129,7 @@ def run_matlab(paths, program, **kwargs):
             raise CritError('* Matlab program executed with errors: *\n%s' % error_message)
         direct.move_program_output(program_log, direct.log)   
     except:
-        error_message = 'Error with `run_matlab`' 
+        error_message = 'Error with `run_matlab`. Traceback can be found below.' 
         error_message = format_error(error_message) + '\n' + traceback.format_exc()
         write_to_makelog(paths, error_message)
         raise
@@ -172,7 +179,7 @@ def run_perl(paths, program, **kwargs):
         if exit_code != 0:
             raise CritError('* Perl program executed with errors: *\n%s' % error_message)
     except:
-        error_message = 'Error with `run_perl`' 
+        error_message = 'Error with `run_perl`. Traceback can be found below.' 
         error_message = format_error(error_message) + '\n' + traceback.format_exc()
         write_to_makelog(paths, error_message)
         raise
@@ -222,7 +229,7 @@ def run_python(paths, program, **kwargs):
         if exit_code != 0:
             raise CritError('* Python program executed with errors: *\n%s' % error_message)
     except:
-        error_message = 'Error with `run_python`' 
+        error_message = 'Error with `run_python`. Traceback can be found below.' 
         error_message = format_error(error_message) + '\n' + traceback.format_exc()
         write_to_makelog(paths, error_message)
         raise
@@ -272,7 +279,7 @@ def run_mathematica(paths, program, **kwargs):
         if exit_code != 0:
             raise CritError('* Mathematica program executed with errors: *\n%s' % error_message)
     except:
-        error_message = 'Error with `run_mathematica`' 
+        error_message = 'Error with `run_mathematica`. Traceback can be found below.' 
         error_message = format_error(error_message) + '\n' + traceback.format_exc()
         write_to_makelog(paths, error_message)
         raise
@@ -322,7 +329,7 @@ def run_stat_transfer(paths, program, **kwargs):
         if exit_code != 0:
             raise CritError('* StatTransfer program executed with errors: *\n%s' % error_message)
     except:
-        error_message = 'Error with `run_stat_transfer`' 
+        error_message = 'Error with `run_stat_transfer`. Traceback can be found below.' 
         error_message = format_error(error_message) + '\n' + traceback.format_exc()
         write_to_makelog(paths, error_message)
         raise
@@ -410,7 +417,7 @@ def run_lyx(paths, program, **kwargs):
         if direct.doctype:
             os.remove(temp_program)
     except:
-        error_message = 'Error with `run_lyx`' 
+        error_message = 'Error with `run_lyx`. Traceback can be found below.' 
         error_message = format_error(error_message) + '\n' + traceback.format_exc()
         write_to_makelog(paths, error_message)
         raise
@@ -460,7 +467,7 @@ def run_r(paths, program, **kwargs):
         if exit_code != 0:
             raise CritError('* R program executed with errors: *\n%s' % error_message)
     except:
-        error_message = 'Error with `run_r`' 
+        error_message = 'Error with `run_r`. Traceback can be found below.' 
         error_message = format_error(error_message) + '\n' + traceback.format_exc()
         write_to_makelog(paths, error_message)
         raise
@@ -517,7 +524,7 @@ def run_sas(paths, program, **kwargs):
         direct.move_program_output(program_log)
         direct.move_program_output(program_lst)        
     except:
-        error_message = 'Error with `run_sas`' 
+        error_message = 'Error with `run_sas`. Traceback can be found below.' 
         error_message = format_error(error_message) + '\n' + traceback.format_exc()
         write_to_makelog(paths, error_message)
         raise
@@ -559,7 +566,7 @@ def execute_command(paths, command, **kwargs):
         if exit_code != 0:
             raise CritError('* Command executed with errors: *\n%s' % error_message)
     except:
-        error_message = 'Error with `execute_command`' 
+        error_message = 'Error with `execute_command`. Traceback can be found below.' 
         error_message = format_error(error_message) + '\n' + traceback.format_exc()
         write_to_makelog(paths, error_message)
         raise
