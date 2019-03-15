@@ -13,7 +13,7 @@ PATHS = { # Set default paths; used by `gslab_make` functions
     'input_dir'       : 'input', 
     'external_dir'    : 'external',
     'output_dir'      : 'output/',
-	'output_dir_local': [],                     # Optional; include any local directories with outputs
+	'output_local_dir': [],                     # Optional; include any local directories with outputs
     'pdf_dir'         : 'output/',
     'makelog'         : 'log/make.log',         # Set to '' to avoid writing log
     'output_statslog' : 'log/output_stats.log', # Set to '' to avoid writing log
