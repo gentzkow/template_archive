@@ -103,9 +103,9 @@ class Directive(object):
             exit = (process.returncode, stderr)             
              
             if stdout:
-               self.output += '\n' + stdout
+               self.output += '\n' + str(stdout)
             if stderr:
-               self.output += '\n' + stderr 
+               self.output += '\n' + str(stderr) 
                             
             return(exit)
         except:
@@ -264,7 +264,7 @@ class ProgramDirective(Directive):
             with open(program_output, 'r', encoding = 'utf8') as f:
                 out = f.read()
         except:
-            error_message = crit_error_no_program_output % (self.program, program_output)
+            error_message = messages.crit_error_no_program_output % (program_output, self.program)
             error_message = error_message + '\n' + traceback.format_exc().splitlines()[-1]
             raise CritError(error_message)
 

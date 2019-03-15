@@ -59,8 +59,9 @@ def run_stata(paths, program, **kwargs):
         program_name = os.path.splitext(program_name)[0]
         program_log = os.path.join(os.getcwd(), program_name + '.log')
         
-        # Sanitize program
-        direct.program = re.escape(direct.program)
+        # Sanitize program 
+        if direct.osname == "posix":
+            direct.program = re.escape(direct.program)
 
         # Execute
         command = metadata.commands[direct.osname]['stata'] % (direct.executable, direct.option, direct.program)
