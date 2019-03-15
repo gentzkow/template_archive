@@ -123,7 +123,7 @@ def format_list(list):
         Formatted list.
     """
 
-    formatted = ['`' + item + '`' for item in list]
+    formatted = ['`' + str(item) + '`' for item in list]
     formatted = ", ".join(formatted)
     
     return(formatted)
