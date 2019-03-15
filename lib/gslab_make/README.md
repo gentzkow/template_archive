@@ -22,56 +22,42 @@ The majority of the functions in </b><code>gslab_make</code><b> contain a </b><c
 >
 > * `makelog`
 > 
->     * Default path for writing make log. Set to `''` to avoid writing make log.
+>     * Default path for writing make log. 
 >
 > * `output_statslog`
 > 
->     * Default path for writing log containing output statistics. Set to `''` to avoid writing log containing output statistics.
+>     * Default path for writing log containing output statistics.
 >
 > * `output_headslog`
 > 
->     * Default path for writing log containing output headers. Set to `''` to avoid writing log containing output headers.
+>     * Default path for writing log containing output headers.
 >
 > * `link_maplog`
 > 
->     * Default path for writing log containing link mappings. Set to `''` to avoid writing log containing link mappings.
+>     * Default path for writing log containing link mappings.
 >
 > * `link_statslog` 
 > 
->     * Default path for writing log containing link statistics. Set to `''` to avoid writing log containing link statistics.
+>     * Default path for writing log containing link statistics.
 >
 > * `link_headslog`
 > 
->     * Default path for writing log containing link headers. Set to `''` to avoid writing log containing link headers.   
+>     * Default path for writing log containing link headers.   
 
+<ul>
+<b>Note:</b>
+<br> 
+To suppress writing to make log for any function, set <code>makelog</code> to <code>''</code>.
 <br>
-<b>
-The dictionary may optionally also contain values for the following key:
-</b>
-
-> * `output_dir_local` 
-> 
->     * List of local paths for finding outputs for logging.
-
 <br>
-<b>
-Local paths refer to any paths that are not tracked by git (e.g., paths outside the repository or that have been added to </b><code>.gitignore</code><b>). 
-</b>
+<b>Example:</b>
 <br>
-
-<br>
-<b>
 The following default paths are recommended:
-</b>
-<br>
-
-<br>
 <pre>
 paths = {
     'input_dir'       : '../input/',
     'external_dir'    : '../external/',
     'output_dir'      : '../output/',
-    'output_dir_local': [],
     'pdf_dir'         : '../output/',
     'makelog'         : '../log/make.log',
     'output_statslog' : '../log/output_stats.log',
@@ -82,6 +68,7 @@ paths = {
 }
 </pre>
 </ul>
+
 <br> 
 
 <b>
@@ -113,8 +100,7 @@ write_logs.<b>end_makelog(</b><i>paths = {makelog}</i><b>)</b>
 <pre>
 write_logs.<b>log_files_in_output(</b><i> 
     paths = {
-        output_dir,
-        output_dir_local = [],		
+        output_dir, 
         output_statslog,
         output_headslog, 
         makelog
@@ -122,7 +108,7 @@ write_logs.<b>log_files_in_output(</b><i>
     recursive = float('inf'),</i><b>
 )</b>
 </pre>
-> Logs the following information for all files contained in directory `output_dir` and list of directories `output_dir_local`:
+> Logs the following information for all files contained in directory `output_dir`:
 >
 > * File name (in file `output_statslog`)
 >
@@ -132,18 +118,18 @@ write_logs.<b>log_files_in_output(</b><i>
 >
 > * File head (in file `output_headslog`)
 >
-> List of directories `output_dir_local` defaults to none. When walking through directory `output_dir` and list of directories `output_dir_local`, float `recursive` determines level of depth to walk. Status messages are appended to make log `makelog`.
+> When walking through directory `output_dir`, float `recursive` determines level of depth to walk. Status messages are appended to make log `makelog`.
 
 <ul>
 <b>Example:</b>
 <br>
-<code>write_output_logs(paths, recursive = 1)</code> will log information for all files contained in <code>paths['output_dir']</code> and <code>paths['output_dir_local']</code>.
+<code>write_output_logs(paths, recursive = 1)</code> will log information for all files contained in <code>paths['output_dir']</code>.
 <br>
 <br>
-<code>write_output_logs(paths, recursive = 2)</code> will log information for all files contained in <code>paths['output_dir']</code> and <code>paths['output_dir_local']</code>, and all files contained in any directories in <code>paths['output_dir']</code> and <code>paths['output_dir_local']</code>.
+<code>write_output_logs(paths, recursive = 2)</code> will log information for all files contained in <code>paths['output_dir']</code> and all files contained in any directories in <code>paths['output_dir']</code>.
 <br>
 <br>
-<code>write_output_logs(paths, recursive = inf(float))</code> will log information for all files contained in any level of <code>paths['output_dir']</code> and <code>paths['output_dir_local']</code>.
+<code>write_output_logs(paths, recursive = inf(float))</code> will log information for all files contained in any level of <code>paths['output_dir']</code>.
 </ul>
 
 <br>
@@ -161,10 +147,10 @@ create_input_links.<b>create_input_links(</b><i>
         makelog,
     }, 
     file_list, 
-    mapping_dict = {}</i><b>
+    path_mappings = {}</i><b>
 )</b> 
 </pre>
-> Create symbolic links using instructions contained in files of list `file_list`. Instructions must be formatted in input style and are string formatted using dictionary `mapping_dict`. Defaults to no string formatting. Symbolic links are written in directory `input_dir`. Status messages are appended to make log `makelog`.
+> Create symbolic links using instructions contained in files of list `file_list`. Instructions must be formatted in input style and are string formatted using dictionary `path_mappings`. Defaults to no string formatting. Symbolic links are written in directory `input_dir`. Status messages are appended to make log `makelog`.
 
 <ul>
 <b>Notes:</b>
@@ -229,10 +215,10 @@ create_external_links.<b>create_external_links(</b><i>
         makelog,
     }, 
     file_list, 
-    mapping_dict</i><b>
+    path_mappings</i><b>
 )</b> 
 </pre>
-> Create symbolic links using instructions contained in files of list `file_list`. Instructions must be formatted in external style and are string formatted using dictionary `mapping_dict`. Symbolic links are written in directory `external_dir`. Status messages are appended to make log `makelog`.
+> Create symbolic links using instructions contained in files of list `file_list`. Instructions must be formatted in external style and are string formatted using dictionary `path_mappings`. Symbolic links are written in directory `external_dir`. Status messages are appended to make log `makelog`.
 
 <ul>
 <b>Notes:</b>
@@ -256,7 +242,7 @@ Suppose instruction file <code>'file1'</code> contained the following text:
 <code>key</code>
 <br>
 <br>
-Symbolic link <code>key</code> would be created in directory <code>paths['external_dir']</code>. Its target would be <code>mapping_dict['key']</code>. 
+Symbolic link <code>key</code> would be created in directory <code>paths['external_dir']</code>. Its target would be <code>path_mappings['key']</code>. 
 </ul>
 
 <br>
@@ -299,47 +285,13 @@ write_link_logs.<b>write_link_logs(</b><i>
 <ul>
 <b>Example:</b>
 <br>
-<code>write_link_logs(paths, link_map, recursive = 1)</code> will log information for all link mappings and target files linked in <code>paths['input']</code> and <code>paths['external']</code>.
+<code>write_link_logs(paths, recursive = 1)</code> will log information for all link mappings and target files linked in <code>paths['input']</code> and <code>paths['external']</code>.
 <br>
 <br>
-<code>write_link_logs(paths, link_map, recursive = 2)</code> will log information for all link mappings, target files linked in <code>paths['input']</code> and <code>paths['external']</code>, and files contained in target directories linked in <code>paths['input']</code> and <code>paths['external']</code>.
+<code>write_link_logs(paths, recursive = 2)</code> will log information for all link mappings, target files linked in <code>paths['input']</code> and <code>paths['external']</code>, and files contained in target directories linked in <code>paths['input']</code> and <code>paths['external']</code>.
 <br>
 <br>
-<code>write_link_logs(paths, link_map, recursive = inf(float))</code> will log information for all link mappings, target files linked in <code>paths['input']</code> and <code>paths['external']</code>, and files contained in any level of target directories linked in <code>paths['input']</code> and <code>paths['external']</code>.
-</ul>
-
-<br> 
-
-# Link checking functions
-
-<b>The following function is used to check the git status of all input files. The check is intended to facilitate the reproducibility of research.</b>
-
-<br>
-
-<pre>
-check_links.<b>get_modified_links(</b><i>
-    paths = {
-        makelog,
-    }, 
-    link_map, 
-    recursive = float('inf')</i><b>
-)</b>
-</pre>
-
-> Checks git status for files contained in all mappings of list `link_map` (returned by `create_links.create_input_links` and `create_links.create_external_links`). Produces friendly warning if any files are considered changed by git status.
->
-> When walking through targets, float `recursive` determines level of depth to walk. Status messages are appended to make log `makelog`.
-
-<ul>
-<b>Example:</b>
-<br>
-<code>get_modified_links(paths, link_map, recursive = 1)</code> will check git status for all link mappings and target files linked in <code>paths['input']</code> and <code>paths['external']</code>.
-<br>
-<br>
-<code>get_modified_links(paths, link_map, recursive = 2)</code> will check git status for all link mappings, target files linked in <code>paths['input']</code> and <code>paths['external']</code>, and files contained in target directories linked in <code>paths['input']</code> and <code>paths['external']</code>.
-<br>
-<br>
-<code>get_modified_links(paths, link_map, recursive = inf(float))</code> will check git status for all link mappings, target files linked in <code>paths['input']</code> and <code>paths['external']</code>, and files contained in any level of target directories linked in <code>paths['input']</code> and <code>paths['external']</code>.
+<code>write_link_logs(paths, recursive = inf(float))</code> will log information for all link mappings, target files linked in <code>paths['input']</code> and <code>paths['external']</code>, and files contained in any level of target directories linked in <code>paths['input']</code> and <code>paths['external']</code>.
 </ul>
 
 <br> 
