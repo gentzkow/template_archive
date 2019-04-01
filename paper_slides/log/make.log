@@ -1,10 +1,10 @@
 --------------------------------------------------------------------------------
-Makelog started: 2019-03-07 16:31:22
+Makelog started: 2019-04-01 15:28:23
 Working directory: /Users/zong/template/paper_slides
 --------------------------------------------------------------------------------
 Links successfully created!
 Links successfully created!
-Link logs successfully written!
+Source logs successfully written!
 ********************************************************************************
 WARNING! The following target files have been modified according to git status:
 /Users/zong/template/analysis/output/plot.eps
@@ -69,6 +69,6 @@ LaTeX2e <2018-04-01> patch level 5
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2019-03-07 16:31:28
+Makelog ended: 2019-04-01 15:28:29
 Working directory: /Users/zong/template/paper_slides
 --------------------------------------------------------------------------------

@@ -28,19 +28,39 @@ def parse_yaml_files(config = '../config.yaml', config_user = '../config_user.ya
     return(config, config_user)
 
 def check_executable(executable):
-    try:
-        subprocess.check_output(['which', executable])
-    except:
-        error_message = "Please set up '%s' for command-line use on your system" % executable
-        raise Exception('\n' + '*'*80 + '\n' + error_message + '\n' + '*'*80)
-
+    if os.name == 'posix':
+        try:
+            subprocess.check_output(['which', executable])
+        except:
+            error_message = "Please set up '%s' for command-line use on your system" % executable
+            raise Exception('\n' + '*'*80 + '\n' + error_message + '\n' + '*'*80)
+    if os.name == 'nt':
+        try:
+            process = subprocess.Popen(['where', executable], 
+                                       stdout = subprocess.PIPE, 
+                                       stderr = subprocess.PIPE)
+            process.communicate()
+            if process.returncode != 0:
+                raise
+        except:
+            try:
+                subprocess.check_output('dir %s' % executable, shell = True)
+            except:
+                error_message = "Please set up '%s' for command-line use on your system" % executable
+                raise Exception('\n' + '*'*80 + '\n' + error_message + '\n' + '*'*80)
+                       
 def check_software(config, config_user):
     if config['git_lfs_required']:
         check_executable('git-lfs')
 
     software_list = config['software_required']
     software_list = {key:value for (key, value) in software_list.items() if value == True}
-    software_list = {key:config_user['local']['executables'][key] for (key, value) in software_list.items()}
+
+    for key in software_list.keys():
+        try:
+            software_list[key] = config_user['local']['executables'][key]
+        except:
+            software_list[key] = gs.private.metadata.default_executables[os.name][key] 
 
     for software in software_list.values():
         check_executable(software)
@@ -55,5 +75,6 @@ def configuration():
     (config, config_user) = parse_yaml_files()
     check_software(config, config_user)
     check_external_paths(config_user)
+    print('*'*80 + 'Setup complete' + '*'*80)
 
 configuration()

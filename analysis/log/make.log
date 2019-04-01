@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
-Makelog started: 2019-04-01 13:31:02
+Makelog started: 2019-04-01 15:22:26
 Working directory: /Users/zong/template/analysis
 --------------------------------------------------------------------------------
 Links successfully created!
@@ -8,6 +8,6 @@ Source logs successfully written!
 Executing: "python  "/Users/zong/template/analysis/code/descriptive.py" "
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2019-04-01 13:31:06
+Makelog ended: 2019-04-01 15:22:29
 Working directory: /Users/zong/template/analysis
 --------------------------------------------------------------------------------
