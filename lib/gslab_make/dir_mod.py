@@ -72,7 +72,7 @@ def remove_dir(dir_list, quiet = False):
     if type(dir_list) is list:
         dir_list = [norm_path(dir_path) for dir_path in dir_list]
     else:
-        raise TypeError(messages.type_error_file_list)
+        raise TypeError(messages.type_error_dir_list % dir_list)
     
     for dir_path in dir_list:
         if os.path.isdir(dir_path):

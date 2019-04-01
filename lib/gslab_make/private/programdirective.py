@@ -11,7 +11,7 @@ import traceback
 from gslab_make.private.exceptionclasses import CritError
 import gslab_make.private.messages as messages
 import gslab_make.private.metadata as metadata
-from gslab_make.private.utility import norm_path
+from gslab_make.private.utility import norm_path, format_list
 
 
 class Directive(object):
@@ -45,10 +45,10 @@ class Directive(object):
                  osname = os.name,
                  shell = True):
 
-        self.makelog  = makelog
-        self.log      = log
-        self.osname   = osname
-        self.shell    = shell
+        self.makelog = makelog
+        self.log     = log
+        self.osname  = osname
+        self.shell   = shell
         self.check_os()
         self.get_paths()
 
@@ -70,8 +70,9 @@ class Directive(object):
         -------
         None  
         """
+
         self.makelog  = norm_path(self.makelog)
-        self.log      = norm_path(self.log) if self.log != '' else self.log
+        self.log      = norm_path(self.log) if self.log else self.log
 
     def execute_command(self, command):
         """ Execute shell command.
@@ -102,9 +103,9 @@ class Directive(object):
             exit = (process.returncode, stderr)             
              
             if stdout:
-               self.output += '\n' + stdout
+               self.output += '\n' + str(stdout)
             if stderr:
-               self.output += '\n' + stderr 
+               self.output += '\n' + str(stderr) 
                             
             return(exit)
         except:
@@ -215,7 +216,9 @@ class ProgramDirective(Directive):
             raise CritError(messages.crit_error_no_file % self.program)    
         
         if self.program_ext not in metadata.extensions[self.application]:
-            raise CritError(messages.crit_error_extension % self.program)
+            extensions = format_list(metadata.extensions[self.application])
+            raise CritError(messages.crit_error_extension % (self.program, extensions))
+
 
     def get_executable(self):
         """ Set executable to default from metadata if unspecified.
@@ -256,13 +259,19 @@ class ProgramDirective(Directive):
         """
     
         program_output = norm_path(program_output)
-        with open(program_output, 'r') as f:
-            out = f.read()
+
+        try:
+            with open(program_output, 'r', encoding = 'utf8') as f:
+                out = f.read()
+        except:
+            error_message = messages.crit_error_no_program_output % (program_output, self.program)
+            error_message = error_message + '\n' + traceback.format_exc().splitlines()[-1]
+            raise CritError(error_message)
 
         if self.makelog: 
             if not (metadata.makelog_started and os.path.isfile(self.makelog)):
                 raise CritError(messages.crit_error_no_makelog % self.makelog)           
-            with open(self.makelog, 'a') as f:
+            with open(self.makelog, 'a', encoding = 'utf8') as f:
                 print(out, file = f)
 
         if log_file: 
@@ -271,6 +280,8 @@ class ProgramDirective(Directive):
                 os.remove(program_output)
         else: 
             os.remove(program_output)
+
+        return(out)
 
 
 class SASDirective(ProgramDirective):    
@@ -334,5 +345,5 @@ class LyXDirective(ProgramDirective):
         """
     
         if self.doctype not in ['handout', 'comments', '']:
-            print('Document type "%s" unrecognized. Reverting to default' % self.doctype)
+            print(messages.warning_lyx_type % self.doctype)
             self.doctype = ''

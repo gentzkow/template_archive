@@ -4,6 +4,7 @@ from builtins import (bytes, str, open, super, range,
                       zip, round, input, int, pow, object)
 
 import os
+import traceback
 import re
 import glob
 from itertools import chain
@@ -26,6 +27,8 @@ class LinkDirective(object):
     
     Parameters
     ----------
+    line_raw : str
+        Raw text of linking instructions (used for error messaging).
     line : str
         Line of text containing linking instructions.
     link_dir : str
@@ -43,10 +46,11 @@ class LinkDirective(object):
         List of (target, symlink) mappings parsed from line.
     """
     
-    def __init__(self, line, link_dir, osname = os.name):
-        self.line      = line
-        self.link_dir  = link_dir
-        self.osname    = osname
+    def __init__(self, raw, line, link_dir, osname = os.name):
+        self.raw      = raw
+        self.line     = line
+        self.link_dir = link_dir
+        self.osname   = osname
         self.check_os()
         self.get_paths()
         self.check_paths()
@@ -72,12 +76,14 @@ class LinkDirective(object):
         """
         
         try:
-            line_parsed = self.line.strip().split('|')
-            line_parsed = [l.strip() for l in line_parsed]
-            line_parsed = [l.strip('"\'') for l in line_parsed]
-            self.symlink, self.target = line_parsed
+            self.line = self.line.strip().split('|')
+            self.line = [l.strip() for l in self.line]
+            self.line = [l.strip('"\'') for l in self.line]
+            self.symlink, self.target = self.line
         except:
-            raise CritError(messages.crit_error_bad_link % self.line)
+            error_message = messages.crit_error_bad_link % self.line_raw
+            error_message = error_message + '\n' + traceback.format_exc().splitlines()[-1]
+            raise CritError(error_message)
 
         self.target = norm_path(self.target)
         self.symlink = norm_path(os.path.join(self.link_dir, self.symlink))
@@ -90,7 +96,7 @@ class LinkDirective(object):
         None
         """
     
-        if re.findall('\*', self.target)!= re.findall('\*', self.symlink):
+        if re.findall('\*', self.target) != re.findall('\*', self.symlink):
             raise SyntaxError(messages.syn_error_wildcard)
         
         if re.search('\*', self.target):
@@ -247,9 +253,9 @@ class LinksList(object):
                  link_dir, 
                  mapping_dict = {}):
         
-        self.file_list = file_list
-        self.file_format = file_format
-        self.link_dir = link_dir
+        self.file_list    = file_list
+        self.file_format  = file_format
+        self.link_dir     = link_dir
         self.mapping_dict = mapping_dict
         self.parse_file_list()
         self.get_paths()
@@ -264,14 +270,14 @@ class LinksList(object):
         """
         
         if type(self.file_list) is not list:
-            raise TypeError(messages.type_error_file_list)
+            raise TypeError(messages.type_error_file_list % self.file_list)
 
         file_list_parsed = [f for file in self.file_list for f in glob.glob(file)]   
         if file_list_parsed:
             self.file_list = file_list_parsed
         else:
             error_list = [str(f) for f in self.file_list]
-            raise CritError(messages.crit_error_no_files % str(error_list))
+            raise CritError(messages.crit_error_no_files % error_list) 
 
     def get_paths(self):    
         """ Normalize paths. 
@@ -292,13 +298,21 @@ class LinksList(object):
         None
         """
         
-        lines = [line for file in self.file_list for line in file_to_array(file, self.file_format)]
-        try:
-            lines = [str(line).format(**self.mapping_dict) for line in lines]
-        except KeyError as e:
-            raise CritError(messages.crit_error_path_mapping % str(e).strip("'"))
+        lines = [line for file in self.file_list for line in file_to_array(file)]
 
-        self.link_directive_list = [LinkDirective(line, self.link_dir) for line in lines]
+        if self.file_format == "input":
+            lines = [(l, l) for l in lines]
+        if self.file_format == "external":
+            lines = [(l, "%s | {%s}" % (l, l)) for l  in lines]
+
+        try:
+            lines = [(raw, str(line).format(**self.mapping_dict)) for (raw, line) in lines]
+        except KeyError as e:
+            error_message = messages.crit_error_bad_link % messages.crit_error_path_mapping % str(e).strip("'")
+            error_message = error_message + '\n' + traceback.format_exc().splitlines()[-1]
+            raise CritError(error_message)
+			
+        self.link_directive_list = [LinkDirective(raw, line, self.link_dir) for (raw, line) in lines]
 
     def create_symlinks(self):       
         """ Create symlinks according to directives. 
