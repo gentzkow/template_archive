@@ -1,6 +1,7 @@
 *config_user.yaml
 *external/
 *input/
+!*paper_slides/input/
 *.pyc
 *.lyx~
 *.lyx#
