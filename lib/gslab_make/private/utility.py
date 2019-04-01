@@ -6,7 +6,7 @@ from builtins import (bytes, str, open, super, range,
 import os
 import re
 import glob
-
+import filecmp
 import gslab_make.private.messages as messages
 
 
@@ -127,3 +127,60 @@ def format_list(list):
     formatted = ", ".join(formatted)
     
     return(formatted)
+
+
+def check_duplicate(original, copy):
+    """ Check duplicate.
+
+    Parameters
+    ----------
+    original : str
+        Original path.
+    copy : str 
+        Path to check if duplicate.
+
+    Returns
+    -------
+    duplicate : bool
+        Destination is duplicate.
+    """
+
+    duplicate = os.path.exists(copy)
+    
+    if duplicate: 
+        if os.path.isfile(original):
+            duplicate = filecmp.cmp(original, copy)            
+        elif os.path.isdir(copy):
+            dircmp = filecmp.dircmp(original, copy, ignore = ['.DS_Store'])
+            duplicate = parse_dircmp(dircmp)
+        else:
+            duplicate = False
+            
+    return duplicate
+    
+
+def parse_dircmp(dircmp):
+    """ Parse dircmp to see if directories duplicate """
+
+    # Check directory
+    if dircmp.left_only:
+        return False
+    if dircmp.right_only:
+        return False
+    if dircmp.diff_files:
+        return False
+    if dircmp.funny_files:
+        return False
+    if dircmp.common_funny:
+        return False
+
+    # Check subdirectories
+    duplicate = True
+    
+    for subdir in dircmp.subdirs.itervalues():
+        if duplicate:
+            duplicate = dir_identical(subdir)
+        else:
+            break
+        
+    return duplicate

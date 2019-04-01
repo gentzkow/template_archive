@@ -3,7 +3,7 @@
 ## Requirements
 All requirements must be installed and setup for command line usage. 
 
-* Python 2.7
+* Python 2.7/3.7
 * pip (>=10.0)
 
 To build the repository as-is, the following software are additionally required:

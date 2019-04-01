@@ -36,10 +36,10 @@ def get_git_status(repo):
 
     return(file_list)
 
-def get_modified_links(paths, 
-                       link_map, 
-                       recursive = float('inf')):
-    """ Get target files considered changed by git status.
+def get_modified_sources(paths, 
+                         move_map, 
+                         recursive = float('inf')):
+    """ Get source files considered changed by git status.
 
     Parameters
     ----------
@@ -48,22 +48,22 @@ def get_modified_links(paths,
             'makelog' : str
                 Path of makelog.
         }
-    link_map : list 
-        Mapping of symlinks to targets (returned from `LinksList.create_symlinks`).
+    move_map : list 
+        Mapping of symlinks/copies (destination) to sources (returned from `MoveList.create_symlinks` or `MoveList.create_copies`).
     recursive : int, optional
-        Level of depth when walking through target directories. Defaults to infinite.
+        Level of depth when walking through source directories. Defaults to infinite.
 
     Returns
     -------
     overlap : list
-        List of target files considered changed by git status.
+        List of source files considered changed by git status.
     """
     
     try:
-        target_list = [target for target, symlink in link_map]
-        target_list = [glob_recursive(target, recursive) for target in target_list]
-        target_files = [f for target in target_list for f in target]
-        target_files = set(target_files)
+        source_list = [source for source, destination in move_map]
+        source_list = [glob_recursive(source, recursive) for source in source_list]
+        source_files = [f for source in source_list for f in source]
+        source_files = set(source_files)
    
         try:
             repo = git.Repo('.', search_parent_directories = True)    
@@ -71,7 +71,7 @@ def get_modified_links(paths,
             raise CritError(messages.crit_error_no_repo)
         modified = get_git_status(repo)
 
-        overlap = [l for l in target_files if l in modified] 
+        overlap = [l for l in source_files if l in modified] 
 			
         if overlap:
             if len(overlap) > 100:
@@ -81,7 +81,7 @@ def get_modified_links(paths,
             write_to_makelog(paths, message)
             print(message)
     except:
-        error_message = 'Error with `get_modified_links`. Traceback can be found below.' 
+        error_message = 'Error with `get_modified_sources`. Traceback can be found below.' 
         error_message = format_error(error_message) + '\n' + traceback.format_exc()
         write_to_makelog(paths, error_message)
         

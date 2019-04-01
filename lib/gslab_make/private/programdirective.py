@@ -322,7 +322,7 @@ class LyXDirective(ProgramDirective):
     pdf_dir : str
         Directory to write PDFs.
     doctype : str, optional
-        Type of LyX document. Takes either `handout` and `comments`. 
+        Type of LyX document. Takes either `handout` or `comments`. 
         Defaults to no special document type.
     """
     

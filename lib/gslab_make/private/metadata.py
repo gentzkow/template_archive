@@ -13,6 +13,7 @@ makelog_started = False
 commands = {
     'posix': 
         {'makelink'  : 'ln -s \"%s\" \"%s\"', 
+         'makecopy'  : 'cp -a \"%s\" \"%s\"', 
          'rmdir'     : 'rm %s \"%s\"', 
          'stata'     : '%s %s do \\\"%s\\\"',
          'matlab'    : '%s %s -r \"try run(\'%s\'); catch e, fprintf(getReport(e)), exit(1); end; exit(0)\" -logfile \"%s\"',
@@ -25,6 +26,7 @@ commands = {
          'sas'       : '%s %s -log -print %s'},
     'nt': 
         {'makelink'  : 'mklink %s \"%s\" \"%s\"', 
+         'makecopy'  : 'xcopy /E /I /Q \"%s\" \"%s\"',
          'rmdir'     : 'rmdir %s \"%s\"', 
          'stata'     : '%s %s do \\\"%s\\\"',
          'matlab'    : '%s %s -r \"try run(\'%s\'); catch e, fprintf(getReport(e)), exit(1); end; exit(0)\" -logfile \"%s\"',

@@ -18,9 +18,9 @@ PATHS = { # Set default paths; used by `gslab_make` functions
     'makelog'         : 'log/make.log',         # Set to '' to avoid writing log
     'output_statslog' : 'log/output_stats.log', # Set to '' to avoid writing log
     'output_headslog' : 'log/output_heads.log', # Set to '' to avoid writing log
-    'link_maplog'     : 'log/link_map.log',     # Set to '' to avoid writing log
-    'link_statslog'   : 'log/link_stats.log',   # Set to '' to avoid writing log
-    'link_headslog'   : 'log/link_heads.log'    # Set to '' to avoid writing log
+    'source_maplog'   : 'log/source_map.log',   # Set to '' to avoid writing log
+    'source_statslog' : 'log/source_stats.log', # Set to '' to avoid writing log
+    'source_headslog' : 'log/source_heads.log'  # Set to '' to avoid writing log
 }
 
 PATH_MAPPINGS = { # Set path mappings; used by `create_links` functions
@@ -40,10 +40,10 @@ gs.clear_dir(['output', 'log'])
 gs.start_makelog(PATHS)
 
 ### GET INPUT FILES 
-inputs = gs.create_input_links(PATHS, ['inputs.txt'], PATH_MAPPINGS)
-externals = gs.create_external_links(PATHS, ['externals.txt'], PATH_MAPPINGS)
-gs.write_link_logs(PATHS, inputs + externals)
-gs.get_modified_links(PATHS, inputs + externals)
+inputs = gs.link_inputs(PATHS, ['inputs.txt'], PATH_MAPPINGS)
+externals = gs.link_externals(PATHS, ['externals.txt'], PATH_MAPPINGS)
+gs.write_source_logs(PATHS, inputs + externals)
+gs.get_modified_sources(PATHS, inputs + externals)
 
 ### RUN SCRIPTS
 gs.run_python(PATHS, program = 'code/descriptive.py')
