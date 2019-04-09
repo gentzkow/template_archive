@@ -160,7 +160,7 @@ def check_duplicate(original, copy):
     
 
 def parse_dircmp(dircmp):
-    """ Parse dircmp to see if directories duplicate """
+    """ Parse dircmp to see if directories duplicate. """
 
     # Check directory
     if dircmp.left_only:
