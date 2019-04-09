@@ -1,18 +1,12 @@
-# Each line of instruction in this `externals.txt` file should contain the key for an external dependency listed in `config_user.yaml`.
+# Each line of instruction in this `externals.txt` file should contain a destination and source delimited by a `|`.
 # Lines beginning with # are ignored.
-#
-# For example, suppose your `config_user.yaml` file contains the following lines of text:
-# > external:
-# >     key: dependency
 # 
-# Now suppose your `externals.txt` file contains the following lines of text:
-# > key
+# For example, suppose your `externals.txt` file contains the following lines of text:
+# > destination | source
 #
-# Finally, suppose you run the following lines of code:
-# > config_user = yaml.load(open('config_user.yaml', 'rb'))
-# > mapping_dict = config_user['external']
-# > create_external_links(paths, ['externals.txt'], mapping_dict)
+# Now suppose you run the following line of code:
+# > link_externals(paths, ['externals.txt'])
 # 
-# This will create a link in `paths['external_dir']` named `key` that links to `dependency`.
+# This will create a link in `paths['external_dir']` named `destination` that links to `source`.
 
-# Key
+# Destination | Source

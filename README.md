@@ -26,7 +26,7 @@ To setup an application for command line usage, its executable must be added to 
    git-lfs     : git-lfs
    LyX         : lyx
    R           : Rscript
-   Stata       : statamp
+   Stata       : statamp (will need to be updated if using a version of Stata that is not Stata-MP)
    ```
 
 While these are the typical executable names for Mac, it is possible that they may differ on your computer. Default executable names can be updated in `config_user.yaml`. See the **Config** section below for further detail.
@@ -36,12 +36,12 @@ To check if an application is setup for command line usage, type `which executab
 1. Locate the executable for an application. For example, the executable for Stata is typically found at `/Applications/Stata/StataMP.app/Contents/MacOS/statamp`.
 2. In a terminal, from your user directory (`/Users/name`) run the following bash commands:
 
-```
-touch .bash_profile
-nano .bash_profile
-```
+   ```
+   touch .bash_profile
+   nano .bash_profile
+   ```
 
-3. The [Nano editor](https://wiki.gentoo.org/wiki/Nano/Basics_Guide) should appear in your terminal. Type in the path to the executable into the Nano editor in the following format `PATH="$PATH:path_to_executable` where `path_to_executable` refers to the full path of the directory containing the executable. 
+3. The [Nano editor](https://wiki.gentoo.org/wiki/Nano/Basics_Guide) should appear in your terminal. Type in the path to the executable into the Nano editor in the following format `PATH="$PATH:path_to_executable` where `path_to_executable` refers to the full path of the *directory* containing the executable. 
 
    For example, if your Stata executable was located in `/Applications/Stata/StataMP.app/Contents/MacOS/statamp`, you would want to type in the following text into the Nano editor: `PATH="$PATH:/Applications/Stata/StataMP.app/Contents/MacOS/`.
 
@@ -68,10 +68,10 @@ pip         : pip
 git-lfs     : git-lfs
 LyX         : LyX#.# (where #.# refers to the version number)
 R           : Rscript
-Stata       : path_to_stata_executable
+Stata       : stata_executable
 ```
 
-`path_to_stata_executable` refers to full path of your Stata executable. For example, if your Stata executable was located in `C:\Program Files\Stata15\StataMP-64.exe`, you would want to type in the following into your `config_user.yaml`: `stata: '"C:\Program Files\Stata15\StataMP-64.exe"'` (note double quotes to accommodate spaces in the path). As long as you type in the full path of your Stata executable, there is no need to add it to **PATH**.
+`stata_executable` refers to name of your Stata executable. For example, if your Stata executable was located in `C:\Program Files\Stata15\StataMP-64.exe`, you would want to type in the following into your `config_user.yaml`: `stata: StataMP-64`. You would then want to add your Stata executable to **PATH**.
 
 To check if an application is setup for command line usage, type `where executable` into a terminal. If no path appears, then the application is not setup for command line usage. To add the executable of an application to **PATH**:
 
@@ -79,7 +79,7 @@ To check if an application is setup for command line usage, type `where executab
 2. In your start menu, search "environment". Click on `Edit the system environment variables`. 
 3. Click on `Environment Variables`. You should see a panel that is labeled `User Variables`. In the panel, click on the variable called `Path`.
 4. Click on `Edit`. Click on `New`.
-5. Type in the full path of the directory containing the executable.
+5. Type in the full path of the *directory* containing the executable.
 
    For example, if your R executable was located in `C:\Program Files\R\R-3.5.0\bin\x64\RScript.exe`, you would want to type in the following text: `C:\Program Files\R\R-3.5.0\bin\x64\`
 
@@ -100,13 +100,20 @@ To check if an application is setup for command line usage, type `where executab
    python setup_repository.py
    ```
 
-4. Install Stata dependencies using the `setup_stata.do` file. One way to do this is to run the following bash command in a terminal from the `setup` subdirectory:
+4. Install Stata dependencies using the `setup_stata.do` file. One way to do this is to use the following bash command from the `setup` subdirectory:
    ```
    stata-mp -e setup_stata.do
    ```
 
+   If you are using a Windows, you will likely have to adjust this bash command:
    ```
-   stata-mp -e setup_stata.do
+   stata_executable -e setup_stata.do
+   ```
+
+   `stata_executable` refers to the name of your Stata executable. For example, if your Stata executable was located in `C:\Program Files\Stata15\StataMP-64.exe`, you would want to use the following bash command:
+
+   ```
+   StataMP-64 -e setup_stata.do
    ```
 
 5. Install R dependencies using the `setup_r.r` file. One way to do this is to run the following bash command in a terminal from the `setup` subdirectory:
@@ -133,8 +140,6 @@ To build the repository as-is from start to finish, the following procedure shou
    ```
    python make.py
    ```
-
-**If you are using Windows, you will need to run all bash commands in administrator mode. To do so, open your terminal by right clicking and selecting `Run as administrator`.**
 
 ## Config
 `config.yaml` specifies the minimum required applications to initialize the repository. By default, this includes the following applications:
