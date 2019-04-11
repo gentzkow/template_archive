@@ -7,6 +7,7 @@ import os
 import subprocess
 import shutil
 import traceback
+from termcolor import colored
 
 from gslab_make.private.exceptionclasses import CritError
 import gslab_make.private.messages as messages
@@ -60,7 +61,7 @@ class Directive(object):
         None
         """      
         
-        if self.osname not in {'posix', 'nt'}:
+        if self.osname not in ['posix', 'nt']:
             raise CritError(messages.crit_error_unknown_system % self.osname)
 
     def get_paths(self):
@@ -71,8 +72,8 @@ class Directive(object):
         None  
         """
 
-        self.makelog  = norm_path(self.makelog)
-        self.log      = norm_path(self.log) if self.log else self.log
+        self.makelog = norm_path(self.makelog)
+        self.log     = norm_path(self.log) 
 
     def execute_command(self, command):
         """ Execute shell command.
@@ -88,7 +89,7 @@ class Directive(object):
             Tuple (exit code, error message) for shell command.
         """
         
-        self.output = 'Executing: "%s"' % command
+        self.output = 'Executing command:\n\t%s' % colored(command, 'green')
         print(self.output)
 
         try:

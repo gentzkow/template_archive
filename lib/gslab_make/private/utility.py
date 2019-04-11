@@ -16,14 +16,13 @@ def norm_path(path):
     if path:
         path = re.split('[/\\\\]+', path)
         path = os.path.sep.join(path)
-        path = path.rstrip(os.path.sep)
         path = os.path.expanduser(path)
         path = os.path.abspath(path)
 
     return path
 
 
-def glob_recursive(path, recursive):
+def glob_recursive(path, depth):
     """ Walks through path. 
     
     Notes
@@ -34,7 +33,7 @@ def glob_recursive(path, recursive):
     ----------
     path : str
         Path to walk through.
-    recursive : int
+    depth : int
         Level of depth when walking through path.
 
     Returns
@@ -47,7 +46,7 @@ def glob_recursive(path, recursive):
     path_files = glob.glob(path_walk)
 
     i = 0 
-    while i <= recursive:          
+    while i <= depth:          
         path_walk = os.path.join(path_walk, "*")
         glob_files = glob.glob(path_walk)
         if glob_files:
@@ -58,7 +57,7 @@ def glob_recursive(path, recursive):
 
     path_files = [p for p in path_files if os.path.isfile(p)]
     if not path_files:
-        print(messages.warning_glob % (path, recursive))
+        print(messages.warning_glob % (path, depth))
 
     return path_files
 
@@ -86,18 +85,7 @@ def file_to_array(file_name):
 
 
 def format_error(error):
-    """ Format error message. 
-
-    Parameters
-    ----------
-    error : str
-        Error message to format.
-
-    Returns
-    -------
-    formatted : str
-        Formatted error message.
-    """
+    """ Format error message. """
 
     formatted = messages.note_star_line + '\n%s\n' + messages.note_star_line
     formatted = formatted % error.strip()
@@ -129,7 +117,9 @@ def format_list(list):
     return(formatted)
 
 
-def check_duplicate(original, copy):
+# Following functions are not currently actively used in code base
+
+def check_duplicate(original, copy): 
     """ Check duplicate.
 
     Parameters
@@ -160,7 +150,18 @@ def check_duplicate(original, copy):
     
 
 def parse_dircmp(dircmp):
-    """ Parse dircmp to see if directories duplicate. """
+    """ Parse dircmp to see if directories duplicate. 
+
+    Parameters
+    ----------
+    dircmp : filecmp.dircmp
+        dircmp to parse if directories duplicate.
+
+    Returns
+    -------
+    duplicate : bool
+        Directories are duplicates.
+    """
 
     # Check directory
     if dircmp.left_only:

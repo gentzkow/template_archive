@@ -77,6 +77,61 @@ The following functions will specify which default paths in </b><code>paths</cod
 
 <br> 
 
+# Repository checking functions
+
+<b>The following functions are used to check file size and modification status of files tracked by git. The logs are intended to facilitate proper committing activity.</b>
+
+<br>
+
+<pre>
+check_repo.<b>check_repo_size(</b><i> 
+    paths = {
+        config, 
+        makelog
+    },</i><b>
+)</b>
+</pre>
+> Produces warning if any of the following size statistics are larger than limits set in config file `config`:
+>
+> * Individual size of a file tracked by git lfs (file_MB_limit_lfs)
+>
+> * Total size of all files tracked by git lfs (total_MB_limit_lfs)
+>
+> * Individual size of a file tracked by git (file_MB_limit)
+>
+> * Total size of all files tracked by git (total_MB_limit)
+>
+> Warning messages are appended to make log `makelog`.
+
+<br>
+
+<pre>
+check_repo.<b>get_modified_sources(</b><i> 
+    paths = {
+        makelog
+    },
+    move_map, 
+    recursive = float('inf'),</i><b>
+)</b>
+</pre>
+> Checks the modification status for sources contained in all mappings of list `move_map` (returned by `move_sources.link_inputs`, `move_sources.copy_inputs` and `move_sources.link_externals`). Produces warning if sources have been modified according to git.
+>
+> When walking through sources, float `recursive` determines level of depth to walk. Warnings are appended to make log `makelog`.
+
+<ul>
+<b>Example:</b>
+<br>
+<code>get_modified_sources(paths, recursive = 1)</code> will check modification status for all link/copy mappings and source files linked in <code>paths['input']</code> and <code>paths['external']</code>.
+<br>
+<br>
+<code>get_modified_sources(paths, recursive = 2)</code> will check modification status for all link/copy mappings, source files linked in <code>paths['input']</code> and <code>paths['external']</code>, and files contained in source directories linked in <code>paths['input']</code> and <code>paths['external']</code>.
+<br>
+<br>
+<code>get_modified_sourcespaths, recursive = inf(float))</code> will check modification status for all link/copy mappings, source files linked in <code>paths['input']</code> and <code>paths['external']</code>, and files contained in any level of source directories linked in <code>paths['input']</code> and <code>paths['external']</code>.
+</ul>
+
+<br> 
+
 # Logging functions
 
 <b>The following functions are used to create a master log of activity (i.e., a <i>make log</i>) and to log information about output files. The logs are intended to facilitate the reproducibility of research.</b>
@@ -367,7 +422,7 @@ write_source_logs.<b>write_source_logs(</b><i>
 > 
 > * Mapping of symbolic links/copies to sources (in file `source_maplog`)
 >
-> * Details on files contained in targets: 			
+> * Details on files contained in sources: 			
 >
 >     * File name (in file `source_statslog`)
 >

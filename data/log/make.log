@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
-Makelog started: 2019-04-01 15:22:17
+Makelog started: 2019-04-10 14:37:38
 Working directory: /Users/zong/template/data
 --------------------------------------------------------------------------------
 Links successfully created!
@@ -52,7 +52,12 @@ file output/data_graph.txt saved
 end of do-file
 
 Output logs successfully written!
+********************************************************************************
+WARNING! There exists files tracked by git larger than the config suggested limit (0.5 MB).
+WARNING! There exists files tracked by git lfs larger than the config suggested limit (2 MB).
+WARNING! Total size of files tracked by git lfs larger than the config suggested limitt (500 MB).
+********************************************************************************
 --------------------------------------------------------------------------------
-Makelog ended: 2019-04-01 15:22:18
+Makelog ended: 2019-04-10 14:37:40
 Working directory: /Users/zong/template/data
 --------------------------------------------------------------------------------
