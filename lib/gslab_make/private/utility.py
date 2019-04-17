@@ -7,6 +7,8 @@ import os
 import re
 import glob
 import filecmp
+import traceback
+
 import gslab_make.private.messages as messages
 
 
@@ -84,12 +86,18 @@ def file_to_array(file_name):
     return array
 
 
-def format_error(error):
+def format_error(error, traceback = False):
     """ Format error message. """
+    
+    if traceback:
+        traceback_message = traceback.format_exc()
+        traceback_message = re.sub('\n', '\n\t')
+        traceback_message = '\t' + traceback_message
+        error = error.strip() + '\n' + traceback_message
 
     formatted = messages.note_star_line + '\n%s\n' + messages.note_star_line
     formatted = formatted % error.strip()
-    
+
     return(formatted)
 
 

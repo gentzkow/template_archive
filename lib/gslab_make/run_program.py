@@ -8,6 +8,7 @@ import shutil
 import fileinput
 import traceback
 import re
+from termcolor import colored
 
 import gslab_make.private.metadata as metadata
 from gslab_make.private.exceptionclasses import CritError
@@ -228,10 +229,10 @@ def run_python(paths, program, **kwargs):
         exit_code, error_message = direct.execute_command(command)
         direct.write_log()
         if exit_code != 0:
-            raise CritError('* Python program executed with errors: *\n%s' % error_message)
+            raise CritError(colored('* Python program executed with errors: *\n%s' % error_message), red)
     except:
         error_message = 'Error with `run_python`. Traceback can be found below.' 
-        error_message = format_error(error_message) + '\n' + traceback.format_exc()
+        error_message = format_error(error_message)
         write_to_makelog(paths, error_message)
         raise
         

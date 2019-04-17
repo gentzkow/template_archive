@@ -1,14 +1,17 @@
 --------------------------------------------------------------------------------
-Makelog started: 2019-04-10 17:52:06
+Makelog started: 2019-04-12 17:20:16
 Working directory: /Users/zong/template/analysis
 --------------------------------------------------------------------------------
 Links successfully created!
 Links successfully created!
 Source logs successfully written!
 Executing command:
-	[32mpython  "/Users/zong/template/analysis/code/descriptive.py" [0m
-Output logs successfully written!
---------------------------------------------------------------------------------
-Makelog ended: 2019-04-10 17:52:09
-Working directory: /Users/zong/template/analysis
---------------------------------------------------------------------------------
+    python  "/Users/zong/template/analysis/code/descriptive.py" 
+Traceback (most recent call last):
+  File "/Users/zong/template/analysis/code/descriptive.py", line 18, in <module>
+    ascas
+NameError: name 'ascas' is not defined
+
+********************************************************************************
+Error with `run_python`. Traceback can be found below.
+********************************************************************************

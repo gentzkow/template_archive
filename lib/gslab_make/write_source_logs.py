@@ -12,7 +12,7 @@ from gslab_make.write_logs import write_to_makelog, write_stats_log, write_heads
 
 def write_source_logs(paths, 
                       source_map,
-                      recursive = float('inf')):        
+                      depth = float('inf')):        
     """ Write source logs.
 
     Notes
@@ -24,7 +24,7 @@ def write_source_logs(paths,
             * Last modified (source statistics log)
             * File size (source statistics log)
             * File head (source headers log)
-        * When walking through source directories, recursive determines depth.
+        * When walking through source directories, depth determines depth.
 
     Parameters
     ----------
@@ -41,7 +41,7 @@ def write_source_logs(paths,
         }
     source_map : list 
         Mapping of symlinks/copies (destination) to sources (returned from `MoveList.create_symlinks` or `MoveList.create_copies`).
-    recursive : int, optional
+    depth : int, optional
         Level of depth when walking through source directories. Defaults to infinite.
 
     Returns
@@ -55,7 +55,7 @@ def write_source_logs(paths,
 
     try:
         source_list = [source for source, destination in source_map]
-        source_list = [glob_recursive(source, recursive) for source in source_list]
+        source_list = [glob_recursive(source, depth) for source in source_list]
         source_files = [f for source in source_list for f in source]
         source_files = set(source_files)
 
@@ -95,11 +95,11 @@ def write_source_maplog(source_maplog, source_map):
     None
     """
     
-    header = 'destination\tsource'
+    header = 'destination | source'
 
     with open(source_maplog, 'w') as MAPLOG:
         print(header, file = MAPLOG)
 
         for source, destination in source_map:
             destination = os.path.relpath(destination)
-            print("%s\t%s" % (destination, source), file = MAPLOG)
+            print("%s | %s" % (destination, source), file = MAPLOG)

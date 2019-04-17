@@ -115,7 +115,7 @@ def write_to_makelog(paths, message):
     
     
 def log_files_in_output(paths,
-                        recursive = float('inf')):
+                        depth = float('inf')):
     """ Log files in output directory.
 
     Notes
@@ -125,7 +125,7 @@ def log_files_in_output(paths,
         * Last modified (output statistics log)
         * File size (output statistics log)
         * File head (output headers log)
-    * When walking through output directory, recursive determines depth.
+    * When walking through output directory, depth determines depth.
 
     Parameters
     ----------
@@ -142,7 +142,7 @@ def log_files_in_output(paths,
             'makelog' : 
                 Path of makelog.
         }
-    recursive : int, optional
+    depth : int, optional
         Level of depth when walking through output directory.
 
     Returns
@@ -161,8 +161,8 @@ def log_files_in_output(paths,
         output_local_dir = []
   
     try:
-        output_files = glob_recursive(output_dir, recursive)
-        output_local_files = [f for dir_path in output_local_dir for f in glob_recursive(dir_path, recursive)]   
+        output_files = glob_recursive(output_dir, depth)
+        output_local_files = [f for dir_path in output_local_dir for f in glob_recursive(dir_path, depth)]   
         output_files = set(output_files + output_local_files)
 
         if output_statslog:

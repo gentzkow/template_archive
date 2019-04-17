@@ -3,56 +3,119 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 from builtins import (bytes, str, open, super, range,
                       zip, round, input, int, pow, object)
 
+import os
 import yaml
 import git
 import traceback
+from itertools import izip
 
 from gslab_make.private.exceptionclasses import CritError
 import gslab_make.private.messages as messages
 from gslab_make.private.utility import norm_path, format_error, glob_recursive
 from gslab_make.write_logs import write_to_makelog
 
-def convert_size_to_bytes(size):
-    """ Convert human readable size information to bytes. """
+import subprocess
+
+def get_file_sizes(dir_path, exclude):
+    """ Walk through directory and get file sizes.
+    
+    Parameters
+    ----------
+    dir_path : str
+       Path of directory to walk through.
+    exclude : list
+       List of subdirectories to exclude when walking.
+
+    Returns
+    -------
+    file_size : dict
+        Dictionary of {file : size} for each file in dir_path. 
+    """
+
+    file_sizes = []
+    
+    for root, dirs, files in os.walk(dir_path, topdown = True):
+        dirs[:] = [d for d in dirs if d not in exclude]
         
-    multipliers = {
-        ' B': 1024 ** 0,
-        'KB': 1024 ** 1,
-        'MB': 1024 ** 2,
-        'GB': 1024 ** 3,
-        'TB': 1024 ** 4,
-        'PB': 1024 ** 5,
-    }
+        files = [os.path.join(root, f) for f in files]
+        files = [norm_path(f) for f in files]
+        sizes = [os.path.getsize(f) for f in files]
+        file_sizes.extend(zip(files, sizes))
+        
+    file_sizes = dict(file_sizes)
+    return(file_sizes)
 
-    for suffix in multipliers:
-        if size.endswith(suffix):
-            size = float(size[0:-len(suffix)]) * multipliers[suffix]
-            return size
+     
+def get_git_ignore(repo):
+    """ Get files ignored by git.
     
+    Parameters
+    ----------
+    repo : git.Repo 
+        Git repository to get ignored files.
 
-def parse_git_ls(text):
-    """ Parse git ls-tree. """
+    Returns
+    -------
+    ignore_files : list
+        List of files in repository ignored by git. 
+    """
 
-    text = text.split()
-    
-    file = text[4]
-    size = text[3]
-    size = float(size)
-    
-    return (file, size)
-    
+    g = git.Git(repo)
+        
+    ignore = g.execute('git status --porcelain --ignored', shell = True).split('\n')
+    ignore = [i for i in ignore if re.match('!!', i)]
+    ignore = [i.lstrip('!!').strip() for i in ignore]
 
-def parse_git_lfs_ls(text):
-    """ Parse git lfs ls-files. """
+    ignore_dirs = []
+    ignore_files = []
 
-    text = text.split(' ', 2)[2].rsplit('(', 1)
+    for i in ignore:
+        if os.path.isdir(i):
+            ignore_dirs.append(i)
+        elif os.path.isfile(i):
+            ignore_files.append(i)
+
+    for i in ignore_dirs:
+        for root, dirs, files in os.walk(i):
+            files = [os.path.join(root, f) for f in files]
+            ignore_files.extend(files)
+
+    ignore_files = [norm_path(i) for i in ignore_files]
+    return(ignore_files)
+
+
+def parse_git_attributes(attributes):
+    """ Get git lfs patterns from .gitattributes.
     
-    file = text[0].strip()
-    size = text[-1].strip(')')
-    size = convert_size_to_bytes(size)
-    
-    return (file, size)
-   
+    Parameters
+    ----------
+    attributes : str 
+        Path to .gitattributes file.
+
+    Returns
+    -------
+    lfs_list: list
+        List of patterns to determine files tracked by git lfs. 
+    """
+
+    with open(attributes) as f:
+        attributes_list = f.readlines()
+        
+        lfs_regex = 'filter=lfs( )+diff=lfs( )+merge=lfs( )+-text'      
+        lfs_list = [l for l in attributes_list if re.search(lfs_regex, l)]
+        lfs_list = [l.split()[0] for l in lfs_list] 
+
+    return(lfs_list)
+
+
+def check_path_lfs(path, lfs_list):
+    """ Check if file matches git lfs patterns."""
+
+    for l in lfs_list:
+        if fnmatch.fnmatch(path, l):
+            return True
+            
+    return False
 
 def get_repo_size(repo):
     """ Get file sizes for repository.
@@ -61,7 +124,6 @@ def get_repo_size(repo):
     ----------
     repo : git.Repo 
         Git repository to get file sizes.
-
     Returns
     -------
     (git_files, git_lfs_files) : list
@@ -70,21 +132,22 @@ def get_repo_size(repo):
         git_lfs_files : dict
             Dictionary of {file : size} for each file tracked by git lfs. 
     """
+    
+    repo = git.Repo('.', search_parent_directories = True) 
+    git_files = get_file_sizes(repo.working_tree_dir, exclude = ['.git'])
+    git_ignore_files = get_git_ignore(repo)
+    
+    lfs_list = parse_git_attributes(repo.working_tree_dir + os.path.sep + '.gitattributes')
 
-    g = git.Git(repo)
-        
-    git_files = g.execute('git ls-tree -r -l HEAD', shell = True).split('\n')
-    git_files = [parse_git_ls(f) for f in git_files]
-    git_files = {file: size for (file, size) in git_files}
+    for ignore in git_ignore_files: 
+        git_files.pop(ignore)
+    
+    git_lfs_files = dict()
+    for key in list(git_files.keys()):
+        if check_path_lfs(key, lfs_list):         
+            git_lfs_files[key] = git_files.pop(key)
 
-    git_lfs_files = g.execute('git lfs ls-files --size', shell = True).split('\n')
-    git_lfs_files = [parse_git_lfs_ls(f) for f in git_lfs_files]
-    git_lfs_files = {file: size for (file, size) in git_lfs_files}
-
-    for key in git_lfs_files.keys():
-        git_files.pop(key, None)
-
-    return (git_files, git_lfs_files)
+    return(git_files, git_lfs_files)
 
 
 def check_repo_size(paths):
@@ -119,13 +182,13 @@ def check_repo_size(paths):
         
         message = ''
         if file_MB > max_file_sizes['file_MB_limit']:
-            message = message + '\n' + messages.warning_git_file % max_file_sizes['file_MB_limit']
+            message + '\n' + messages.warning_git_file % max_file_sizes['file_MB_limit']
         if total_MB > max_file_sizes['total_MB_limit']:
-            message = message + '\n' + messages.warning_git_repo % max_file_sizes['total_MB_limit']
+            message + '\n' + messages.warning_git_repo % max_file_sizes['total_MB_limit']
         if file_MB_lfs > max_file_sizes['file_MB_limit_lfs']:
-            message = message + '\n' + messages.warning_git_lfs_file % max_file_sizes['file_MB_limit_lfs']
+            message + '\n' + messages.warning_git_file_lfs % max_file_sizes['file_MB_limit_lfs']
         if total_MB_lfs > max_file_sizes['total_MB_limit_lfs']:
-            message = message + '\n' + messages.warning_git_lfs_repo % max_file_sizes['total_MB_limit_lfs']
+            message + '\n' + messages.warning_git_file_repo % max_file_sizes['total_MB_limit_lfs']
 
         message = format_error(message)
         write_to_makelog(paths, message)
@@ -136,6 +199,7 @@ def check_repo_size(paths):
         write_to_makelog(paths, error_message)
         
         raise
+
 
 def get_git_status(repo): 
     """ Get git status.
