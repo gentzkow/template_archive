@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
-Makelog started: 2019-04-18 11:42:34
+Makelog started: 2019-04-18 12:14:02
 Working directory: /Users/zong/template/analysis
 --------------------------------------------------------------------------------
 Input links successfully created!
@@ -10,19 +10,4 @@ Traceback (most recent call last):
   File "/Users/zong/template/analysis/code/descriptive.py", line 18, in <module>
     ascas
 NameError: name 'ascas' is not defined
-
-**********************************************************
-* Error with `run_python`. Traceback can be found below. *
-**********************************************************
-
-Traceback (most recent call last):
-  File "/Users/zong/template/lib/gslab_make/run_program.py", line 231, in run_python
-    raise CritError('* Python program executed with errors: *\n%s' % format_traceback(error_message))
-CritError: * Python program executed with errors: *
-
-  : Traceback (most recent call last):
-  :   File "/Users/zong/template/analysis/code/descriptive.py", line 18, in <module>
-  :     ascas
-  : NameError: name 'ascas' is not defined
-  : 
 
