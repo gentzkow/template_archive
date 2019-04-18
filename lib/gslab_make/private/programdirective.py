@@ -215,7 +215,7 @@ class ProgramDirective(Directive):
         """  
     
         if not os.path.isfile(self.program):
-            raise CritError(colored(messages.crit_error_no_file % self.program, red))    
+            raise CritError(colored(messages.crit_error_no_file % self.program, 'red'))    
         
         if self.program_ext not in metadata.extensions[self.application]:
             extensions = format_list(metadata.extensions[self.application])

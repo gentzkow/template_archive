@@ -229,7 +229,7 @@ def run_python(paths, program, **kwargs):
         exit_code, error_message = direct.execute_command(command)
         direct.write_log()
         if exit_code != 0:
-            raise CritError(colored('* Python program executed with errors: *\n%s' % error_message), red)
+            raise CritError(colored('* Python program executed with errors: *\n%s' % error_message), 'red')
     except:
         error_message = 'Error with `run_python`. Traceback can be found below.' 
         error_message = format_error(error_message)
