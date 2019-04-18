@@ -9,7 +9,7 @@ class CritError(Exception):
     pass
 
 class ColoredError(Exception):
-    def __init__(self, value):
-        self.value = value
-    def __str__(self):
-        return colored(self.value, color = 'green')
+    def __init__(self, message, traceback):
+        message = '\n\n' + colored(message, color = 'red')
+        traceback = '\n\n' + colored(traceback, color = 'red')
+        super(ColoredError, self).__init__(message + traceback)

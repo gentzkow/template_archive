@@ -6,13 +6,12 @@ from builtins import (bytes, str, open, super, range,
 import os
 import subprocess
 import shutil
-import traceback
 from termcolor import colored
 
 from gslab_make.private.exceptionclasses import CritError
 import gslab_make.private.messages as messages
 import gslab_make.private.metadata as metadata
-from gslab_make.private.utility import norm_path, format_list
+from gslab_make.private.utility import norm_path, format_list, format_traceback
 
 
 class Directive(object):
@@ -62,7 +61,7 @@ class Directive(object):
         """      
         
         if self.osname not in ['posix', 'nt']:
-            raise CritError(colored(messages.crit_error_unknown_system % self.osname, red))
+            raise CritError(messages.crit_error_unknown_system % self.osname)
 
     def get_paths(self):
         """ Normalize paths.
@@ -89,8 +88,9 @@ class Directive(object):
             Tuple (exit code, error message) for shell command.
         """
         
-        self.output = 'Executing command:\n    %s' % command
-        print(self.output)
+        self.output = 'Executing command: `%s`' % command
+        print(colored(self.output, 'yellow'))
+        print(colored('...', 'yellow'))
 
         try:
             if not self.shell:
@@ -111,8 +111,8 @@ class Directive(object):
                             
             return(exit)
         except:
-            error_message = colored(messages.crit_error_bad_command % command, red)
-            error_message = error_message + '\n' + traceback.format_exc().splitlines()[-1]
+            error_message = messages.crit_error_bad_command % command
+            error_message = error_message + format_traceback()
             raise CritError(error_message)
              
 
@@ -126,7 +126,7 @@ class Directive(object):
         
         if self.makelog: 
             if not (metadata.makelog_started and os.path.isfile(self.makelog)):
-                raise CritError(colored(messages.crit_error_no_makelog % self.makelog, red))           
+                raise CritError(messages.crit_error_no_makelog % self.makelog)           
             with open(self.makelog, 'a') as f:
                 print(self.output, file = f)
 
@@ -215,11 +215,11 @@ class ProgramDirective(Directive):
         """  
     
         if not os.path.isfile(self.program):
-            raise CritError(colored(messages.crit_error_no_file % self.program, 'red'))    
+            raise CritError(messages.crit_error_no_file % self.program)    
         
         if self.program_ext not in metadata.extensions[self.application]:
             extensions = format_list(metadata.extensions[self.application])
-            raise CritError(colored(messages.crit_error_extension % (self.program, extensions), red))
+            raise CritError(messages.crit_error_extension % (self.program, extensions))
 
 
     def get_executable(self):
@@ -266,13 +266,13 @@ class ProgramDirective(Directive):
             with open(program_output, 'r', encoding = 'utf8') as f:
                 out = f.read()
         except:
-            error_message = colored(messages.crit_error_no_program_output % (program_output, self.program), red)
-            error_message = error_message + '\n' + traceback.format_exc().splitlines()[-1]
+            error_message = messages.crit_error_no_program_output % (program_output, self.program)
+            error_message = error_message + format_traceback()
             raise CritError(error_message)
 
         if self.makelog: 
             if not (metadata.makelog_started and os.path.isfile(self.makelog)):
-                raise CritError(colored(messages.crit_error_no_makelog % self.makelog, red))           
+                raise CritError(messages.crit_error_no_makelog % self.makelog)           
             with open(self.makelog, 'a', encoding = 'utf8') as f:
                 print(out, file = f)
 

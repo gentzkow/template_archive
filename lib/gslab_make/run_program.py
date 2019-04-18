@@ -8,12 +8,11 @@ import shutil
 import fileinput
 import traceback
 import re
-from termcolor import colored
 
 import gslab_make.private.metadata as metadata
-from gslab_make.private.exceptionclasses import CritError
+from gslab_make.private.exceptionclasses import CritError, ColoredError
 from gslab_make.private.programdirective import Directive, ProgramDirective, SASDirective, LyXDirective
-from gslab_make.private.utility import format_error
+from gslab_make.private.utility import format_error, format_traceback
 from gslab_make.write_logs import write_to_makelog
 
 
@@ -227,14 +226,14 @@ def run_python(paths, program, **kwargs):
         # Execute
         command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.option, direct.program, direct.args)
         exit_code, error_message = direct.execute_command(command)
-        direct.write_log()
+        direct.write_log() # need to make clearer
         if exit_code != 0:
-            raise CritError(colored('* Python program executed with errors: *\n%s' % error_message), 'red')
+            raise CritError('* Python program executed with errors: *\n%s' % format_traceback(error_message))
     except:
         error_message = 'Error with `run_python`. Traceback can be found below.' 
-        error_message = format_error(error_message)
-        write_to_makelog(paths, error_message)
-        raise
+        error_message = format_error(error_message) 
+        write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
+        raise ColoredError(error_message, traceback.format_exc())
         
 
 def run_mathematica(paths, program, **kwargs):

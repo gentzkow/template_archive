@@ -4,16 +4,15 @@ from builtins import (bytes, str, open, super, range,
                       zip, round, input, int, pow, object)
 
 import os
-import traceback
 import re
 import glob
-from itertools import chain
 import subprocess
+from itertools import chain
 
 from gslab_make.private.exceptionclasses import CritError
 import gslab_make.private.messages as messages
 import gslab_make.private.metadata as metadata
-from gslab_make.private.utility import norm_path, file_to_array, check_duplicate
+from gslab_make.private.utility import norm_path, file_to_array, format_traceback
 
 
 class MoveDirective(object):
@@ -65,7 +64,7 @@ class MoveDirective(object):
         """      
         
         if self.osname not in {'posix', 'nt'}:
-            raise CritError(colored(messages.crit_error_unknown_system % self.osname, red))
+            raise CritError(messages.crit_error_unknown_system % self.osname)
 
     def get_paths(self):
         """ Parse sources and destinations from line. 
@@ -81,8 +80,8 @@ class MoveDirective(object):
             self.line = [l.strip('"\'') for l in self.line]
             self.destination, self.source = self.line
         except:
-            error_message = colored(messages.crit_error_bad_move % self.line_raw, red)
-            error_message = error_message + '\n' + traceback.format_exc().splitlines()[-1]
+            error_message = messages.crit_error_bad_move % self.line_raw
+            error_message = error_message + format_traceback()
             raise CritError(error_message)
 
         self.source = norm_path(self.source)
@@ -97,14 +96,14 @@ class MoveDirective(object):
         """
     
         if re.findall('\*', self.source) != re.findall('\*', self.destination):
-            raise SyntaxError(colored(messages.syn_error_wildcard, red))
+            raise SyntaxError(messages.syn_error_wildcard)
         
         if re.search('\*', self.source):
             if not glob.glob(self.source):
-                raise CritError(colored(messages.crit_error_no_path_wildcard % self.source, red))
+                raise CritError(messages.crit_error_no_path_wildcard % self.source)
         else:
             if not os.path.exists(self.source):
-                raise CritError(colored(messages.crit_error_no_path % self.source, red))
+                raise CritError(messages.crit_error_no_path % self.source)
 
     def get_move_list(self):
         """ Interpret wildcards to get list of paths that meet criteria. 
@@ -305,14 +304,14 @@ class MoveList(object):
         """
         
         if type(self.file_list) is not list:
-            raise TypeError(colored(messages.type_error_file_list % self.file_list, red))
+            raise TypeError(messages.type_error_file_list % self.file_list)
 
         file_list_parsed = [f for file in self.file_list for f in glob.glob(file)]   
         if file_list_parsed:
             self.file_list = file_list_parsed
         else:
             error_list = [str(f) for f in self.file_list]
-            raise CritError(colored(messages.crit_error_no_files % error_list, red)) 
+            raise CritError(messages.crit_error_no_files % error_list) 
 
     def get_paths(self):    
         """ Normalize paths. 
@@ -338,8 +337,8 @@ class MoveList(object):
         try:
             lines = [(raw, str(line).format(**self.mapping_dict)) for (raw, line) in lines]
         except KeyError as e:
-            error_message = colored(messages.crit_error_bad_move % messages.crit_error_path_mapping % str(e).strip("'"), red)
-            error_message = error_message + '\n' + traceback.format_exc().splitlines()[-1]
+            error_message = messages.crit_error_bad_move % messages.crit_error_path_mapping % str(e).strip("'")
+            error_message = error_message + format_traceback()
             raise CritError(error_message)
 			
         self.move_directive_list = [MoveDirective(raw, line, self.move_dir) for (raw, line) in lines]

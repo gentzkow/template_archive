@@ -44,4 +44,3 @@ note_makelog_end = 'Makelog ended: '
 note_working_directory = 'Working directory: '
 
 note_dash_line = '-' * 80
-note_star_line = '*' * 80 

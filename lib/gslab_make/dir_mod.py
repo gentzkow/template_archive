@@ -7,6 +7,7 @@ import os
 import subprocess
 import zipfile
 import time
+from termcolor import colored
 
 import gslab_make.private.metadata as metadata
 import gslab_make.private.messages as messages
@@ -48,10 +49,11 @@ def remove_path(path, option = '', quiet = False):
         option = metadata.default_options[os.name]['rmdir']
 
     command = metadata.commands[os.name]['rmdir'] % (option, path)
-    subprocess.Popen(command, shell = True)
+    subprocess.Popen(command, shell = True) # Add debugging here?
 
     if not quiet:
-        print('Removed: "%s"' % path)
+        message = 'Removed: `%s`' % path
+        print(colored(message, 'green'))
     
 
 def remove_dir(dir_list, quiet = False):
@@ -99,7 +101,8 @@ def clear_dir(dir_list):
     
     for dir_path in dir_list:
         os.makedirs(dir_path)
-        print('Cleared: "%s"' % dir_path) 
+        message = 'Cleared: `%s`' % dir_path
+        print(colored(message, 'green'))
         
 
 def unzip(zip_path, output_dir):
@@ -144,5 +147,6 @@ def zip_dir(source_dir, zip_dest):
                 file_path = os.path.join(root, f)
                 file_name = os.path.basename(file_path)
                 
-                print('Zipped: "%s" as "%s"' % (file_path, file_name))
+                message = 'Zipped: `%s` as `%s`' % (file_path, file_name)
+                print(colored(message, 'green'))
                 z.write(file_path, file_name)

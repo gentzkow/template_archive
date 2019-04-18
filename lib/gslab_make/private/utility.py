@@ -6,10 +6,8 @@ from builtins import (bytes, str, open, super, range,
 import os
 import re
 import glob
-import filecmp
 import traceback
-
-import gslab_make.private.messages as messages
+import filecmp
 
 
 def norm_path(path):
@@ -86,17 +84,22 @@ def file_to_array(file_name):
     return array
 
 
-def format_error(error, traceback = False):
+def format_traceback(traceback = traceback.format_exc()):
     """ Format error message. """
     
-    if traceback:
-        traceback_message = traceback.format_exc()
-        traceback_message = re.sub('\n', '\n\t')
-        traceback_message = '\t' + traceback_message
-        error = error.strip() + '\n' + traceback_message
+    traceback = '\n' + traceback
+    traceback =  re.sub('\n', '\n  : ', traceback)
 
-    formatted = messages.note_star_line + '\n%s\n' + messages.note_star_line
-    formatted = formatted % error.strip()
+    return(traceback)
+
+
+def format_error(error):
+    """ Format error message. """
+
+    error = error.strip()
+    star_line = '*' * (len(error) + 4)
+    formatted = star_line + '\n* %s *\n' + star_line
+    formatted = formatted % error
 
     return(formatted)
 
