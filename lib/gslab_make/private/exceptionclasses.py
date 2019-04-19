@@ -13,3 +13,6 @@ class ColoredError(Exception):
         message = '\n\n' + colored(message, color = 'red')
         traceback = '\n\n' + colored(traceback, color = 'red')
         super(ColoredError, self).__init__(message + traceback)
+
+class ProgramError(ColoredError):
+    pass

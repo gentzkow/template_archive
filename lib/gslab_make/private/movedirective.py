@@ -232,7 +232,7 @@ class MoveDirective(object):
                 command = metadata.commands[self.osname]['makecopy'] % (source, destination)
             elif movetype == 'symlink':
                 command = metadata.commands[self.osname]['makelink'] % (source, destination)
-            subprocess.Popen(command, shell = True)
+            subprocess.Popen(command, shell = True) # Need to explore permissions issue
 
     def move_nt(self, movetype):   
         """ Create symlinks/copies using NT shell command specified in metadata. 
@@ -256,7 +256,7 @@ class MoveDirective(object):
                 command = metadata.commands[self.osname]['makecopy'] % (source, destination)
             elif movetype == 'symlink':
                 command = metadata.commands[self.osname]['makelink'] % (directory, destination, source)
-            subprocess.Popen(command, shell = True)
+            subprocess.Popen(command, shell = True) # Need to explore permissions issue
 
 
 class MoveList(object):
