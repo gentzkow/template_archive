@@ -9,6 +9,8 @@ import glob
 import traceback
 import filecmp
 
+import gslab_make.private.messages as messages
+
 
 def norm_path(path):
     """ Normalizes path to be OS-compatible. """
@@ -191,7 +193,7 @@ def parse_dircmp(dircmp):
     
     for subdir in dircmp.subdirs.itervalues():
         if duplicate:
-            duplicate = dir_identical(subdir)
+            duplicate = check_duplicate(subdir)
         else:
             break
         

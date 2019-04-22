@@ -5,9 +5,12 @@ from builtins import (bytes, str, open, super, range,
 
 import os
 import subprocess
-import zipfile
 import time
+import zipfile
+
 from termcolor import colored
+import colorama
+colorama.init()
 
 import gslab_make.private.metadata as metadata
 import gslab_make.private.messages as messages

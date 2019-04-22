@@ -6,11 +6,14 @@ from builtins import (bytes, str, open, super, range,
 import os
 import subprocess
 import shutil
-from termcolor import colored
 
-from gslab_make.private.exceptionclasses import CritError
+from termcolor import colored
+import colorama
+colorama.init()
+
 import gslab_make.private.messages as messages
 import gslab_make.private.metadata as metadata
+from gslab_make.private.exceptionclasses import CritError
 from gslab_make.private.utility import norm_path, format_list, format_traceback
 
 
@@ -89,7 +92,7 @@ class Directive(object):
         """
         
         self.output = 'Executing command: `%s`' % command
-        print(colored(self.output, 'yellow'))
+        print(colored(self.output, 'cyan'))
 
         try:
             if not self.shell:

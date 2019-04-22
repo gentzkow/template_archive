@@ -4,15 +4,15 @@ from builtins import (bytes, str, open, super, range,
                       zip, round, input, int, pow, object)
 
 import os
+import re
+import traceback
 import shutil
 import fileinput
-import traceback
-import re
 
 import gslab_make.private.metadata as metadata
-from gslab_make.private.exceptionclasses import CritError, ProgramError, ColoredError
+from gslab_make.private.exceptionclasses import ColoredError, ProgramError
 from gslab_make.private.programdirective import Directive, ProgramDirective, SASDirective, LyXDirective
-from gslab_make.private.utility import format_error, format_traceback
+from gslab_make.private.utility import format_error
 from gslab_make.write_logs import write_to_makelog
 
 

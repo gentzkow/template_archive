@@ -9,9 +9,9 @@ import glob
 import subprocess
 from itertools import chain
 
-from gslab_make.private.exceptionclasses import CritError
 import gslab_make.private.messages as messages
 import gslab_make.private.metadata as metadata
+from gslab_make.private.exceptionclasses import CritError
 from gslab_make.private.utility import norm_path, file_to_array, format_traceback
 
 
@@ -232,7 +232,18 @@ class MoveDirective(object):
                 command = metadata.commands[self.osname]['makecopy'] % (source, destination)
             elif movetype == 'symlink':
                 command = metadata.commands[self.osname]['makelink'] % (source, destination)
-            subprocess.Popen(command, shell = True) # Need to explore permissions issue
+
+            process = subprocess.Popen(command,
+                                       shell = True,
+                                       stdout = subprocess.PIPE,
+                                       stderr = subprocess.PIPE)
+            stdout, stderr = process.communicate()
+           
+            if process.returncode != 0:
+                error_message = messages.crit_error_move_command % command
+                error_message = error_message + format_traceback(stderr)
+                raise CritError(error_message)
+
 
     def move_nt(self, movetype):   
         """ Create symlinks/copies using NT shell command specified in metadata. 
@@ -256,7 +267,17 @@ class MoveDirective(object):
                 command = metadata.commands[self.osname]['makecopy'] % (source, destination)
             elif movetype == 'symlink':
                 command = metadata.commands[self.osname]['makelink'] % (directory, destination, source)
-            subprocess.Popen(command, shell = True) # Need to explore permissions issue
+
+            process = subprocess.Popen(command,
+                                       shell = True,
+                                       stdout = subprocess.PIPE,
+                                       stderr = subprocess.PIPE)
+            stdout, stderr = process.communicate()
+           
+            if process.returncode != 0:
+                error_message = messages.crit_error_move_command % command
+                error_message = error_message + format_traceback(stderr)
+                raise CritError(error_message)
 
 
 class MoveList(object):

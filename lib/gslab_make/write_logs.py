@@ -6,12 +6,16 @@ from builtins import (bytes, str, open, super, range,
 import os
 import datetime
 import string
+import traceback
+
 from termcolor import colored
+import colorama
+colorama.init()
 
 import gslab_make.private.messages as messages
 import gslab_make.private.metadata as metadata
 from gslab_make.private.exceptionclasses import CritError, ColoredError
-from gslab_make.private.utility import norm_path, glob_recursive
+from gslab_make.private.utility import norm_path, glob_recursive, format_error
 
 
 def start_makelog(paths):
@@ -183,7 +187,7 @@ def log_files_in_output(paths,
         error_message = 'Error with `log_files_in_output`. Traceback can be found below.' 
         error_message = format_error(error_message)
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
-        raise ColoredError(error_message, traecback.format_exc())
+        raise ColoredError(error_message, traceback.format_exc())
 
     
 def write_stats_log(statslog_file, output_files):
@@ -252,7 +256,7 @@ def write_heads_log(headslog_file, output_files, num_lines = 10):
                 with open(file_name, 'r', encoding = 'utf8') as f:
                     for i in range(num_lines):
                         line = f.readline.strip() # Is there any way to make this faster?
-                        cleaned_line = filter(lambda x: x in string.printable, line)
+                        cleaned_line = filter(lambda x: x in string.printable, line) # Maybe overly conservative
                         print(cleaned_line, file = HEADSLOG)
             except:
                 print("Head not readable or less than %s lines" % num_lines, file = HEADSLOG)

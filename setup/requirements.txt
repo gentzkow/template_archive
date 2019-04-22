@@ -2,3 +2,5 @@ pyyaml
 numpy
 matplotlib
 gitpython
+termcolor
+colorama

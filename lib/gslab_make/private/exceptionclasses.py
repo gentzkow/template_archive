@@ -4,6 +4,8 @@ from builtins import (bytes, str, open, super, range,
                       zip, round, input, int, pow, object)
 
 from termcolor import colored
+import colorama
+colorama.init()
 
 class CritError(Exception):
     pass

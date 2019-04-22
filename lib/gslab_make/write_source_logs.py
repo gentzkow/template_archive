@@ -5,8 +5,12 @@ from builtins import (bytes, str, open, super, range,
 
 import os
 import traceback
-from termcolor import colored
 
+from termcolor import colored
+import colorama
+colorama.init()
+
+from gslab_make.private.exceptionclasses import ColoredError
 from gslab_make.private.utility import norm_path, glob_recursive, format_error
 from gslab_make.write_logs import write_to_makelog, write_stats_log, write_heads_log
 

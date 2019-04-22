@@ -5,9 +5,12 @@ from builtins import (bytes, str, open, super, range,
 
 import os
 import traceback
-from termcolor import colored
 
-from gslab_make.private.exceptionclasses import CritError, ColoredError
+from termcolor import colored
+import colorama
+colorama.init()
+
+from gslab_make.private.exceptionclasses import ColoredError
 from gslab_make.private.movedirective import MoveList
 from gslab_make.private.utility import format_error
 from gslab_make.write_logs import write_to_makelog
