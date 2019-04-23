@@ -84,7 +84,7 @@ def run_stata(paths, program, **kwargs):
 def check_stata_output(output):
     regex = "end of do-file[\s]*r\([0-9]*\);"
     if re.search(regex, output):
-        raise ProgramError('Stata program executed with errors.', 'Check logs for more detail.')
+        raise ProgramError('Stata program executed with errors.', 'See logs for more detail.')
 
 
 def run_matlab(paths, program, **kwargs):

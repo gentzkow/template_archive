@@ -9,6 +9,7 @@ f, path, desc = imp.find_module('gslab_make', [os.path.join(ROOT, 'lib')])
 gs = imp.load_module('gslab_make', f, path, desc)
 
 PATHS = { # Set default paths; used by `gslab_make` functions
+    'config'          : '../config.yaml',
     'config_user'     : '../config_user.yaml',
     'input_dir'       : 'input', 
     'external_dir'    : 'external',
@@ -59,6 +60,9 @@ gs.run_lyx(PATHS, program = 'code/text.lyx')
 
 ### LOG OUTPUTS
 gs.log_files_in_output(PATHS)
+
+### CHECK FILE SIZES
+gs.check_repo_size(PATHS)
 
 ### END
 gs.end_makelog(PATHS)

@@ -1,13 +1,19 @@
 --------------------------------------------------------------------------------
-Makelog started: 2019-04-18 12:14:02
+Makelog started: 2019-04-22 18:28:53
 Working directory: /Users/zong/template/analysis
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
 Executing command: `python  "/Users/zong/template/analysis/code/descriptive.py" `
-Traceback (most recent call last):
-  File "/Users/zong/template/analysis/code/descriptive.py", line 18, in <module>
-    ascas
-NameError: name 'ascas' is not defined
-
+Output logs successfully written!
+WARNING! Certain files tracked by git that exceed config limit (0.5 MB). See below for list of files.
+/Users/zong/template/data/output/data_graph.txt
+/Users/zong/template/analysis/input/data_table.txt
+/Users/zong/template/analysis/input/data_graph.txt
+/Users/zong/template/lib/gslab_make/tests/input/rinstall_test_package/Ecdat_0.1-6.1.tar.gz
+/Users/zong/template/data/output/data_table.txt
+--------------------------------------------------------------------------------
+Makelog ended: 2019-04-22 18:28:56
+Working directory: /Users/zong/template/analysis
+--------------------------------------------------------------------------------

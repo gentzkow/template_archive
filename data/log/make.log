@@ -1,11 +1,11 @@
 --------------------------------------------------------------------------------
-Makelog started: 2019-04-10 14:37:38
+Makelog started: 2019-04-22 18:28:01
 Working directory: /Users/zong/template/data
 --------------------------------------------------------------------------------
-Links successfully created!
-Links successfully created!
+Input links successfully created!
+External links successfully created!
 Source logs successfully written!
-Executing: "Rscript --no-save "/Users/zong/template/data/code/create_table_data.r""
+Executing command: `Rscript --no-save "/Users/zong/template/data/code/create_table_data.r"`
 
   ___  ____  ____  ____  ____ (R)
  /__    /   ____/   /   ____/
@@ -52,12 +52,13 @@ file output/data_graph.txt saved
 end of do-file
 
 Output logs successfully written!
-********************************************************************************
-WARNING! There exists files tracked by git larger than the config suggested limit (0.5 MB).
-WARNING! There exists files tracked by git lfs larger than the config suggested limit (2 MB).
-WARNING! Total size of files tracked by git lfs larger than the config suggested limitt (500 MB).
-********************************************************************************
+WARNING! Certain files tracked by git that exceed config limit (0.5 MB). See below for list of files.
+/Users/zong/template/data/output/data_graph.txt
+/Users/zong/template/analysis/input/data_table.txt
+/Users/zong/template/analysis/input/data_graph.txt
+/Users/zong/template/lib/gslab_make/tests/input/rinstall_test_package/Ecdat_0.1-6.1.tar.gz
+/Users/zong/template/data/output/data_table.txt
 --------------------------------------------------------------------------------
-Makelog ended: 2019-04-10 14:37:40
+Makelog ended: 2019-04-22 18:28:02
 Working directory: /Users/zong/template/data
 --------------------------------------------------------------------------------
