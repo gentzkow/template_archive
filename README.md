@@ -159,11 +159,27 @@ All required applications must be installed and setup for command line usage. If
 
     * Specify external dependencies in `config_user.yaml`.
 
-    * Create symbolic links to external dependencies using `gslab_make.create_external_links`.
+    * Create symbolic links to external dependencies using `gslab_make.link_externals`.
 
     * Reference external dependencies via symbolic links as opposed to actual path.
 
 2. **Executable names**: Required applications may be setup for command line usage on your computer with a different executable name from the default. If so, specify the correct executable name in `config_user.yaml`
+
+## Python environment
+
+### Shell vs. IDE
+Instructions in this **README** assume you are running Python via shell as opposed to an integrated development environment (IDE) such as [Spyder](https://www.spyder-ide.org/). Thus, the instructions are tailored for setting up your system environment.
+
+If you are using an IDE, it is *critical* to note that environment variables such as **PATH** may be different from those in your system environment. Therefore, following the instructions in this **README** does not necesarily guarantee that `gslab_make` will work with your IDE.
+
+### Administrator mode
+If you are using Windows, you must run `gslab_make` on administrator mode. To do so, open your terminal/IDE by right clicking and selecting `Run as administrator`.
+
+To permanently set up your terminal/IDE to run as administrator mode:
+
+1. Right click on the shortcut for your terminal/IDE and select `Properties`. 
+2. Click `Advanced` and check `Run as administrator`.
+3. Click `OK`.
 
 ## FAQ
 1. Help! I'm running into permission errors when trying to install Python dependencies!
