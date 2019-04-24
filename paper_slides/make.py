@@ -46,7 +46,7 @@ externals = gs.link_externals(PATHS, ['externals.txt'], PATH_MAPPINGS)
 gs.write_source_logs(PATHS, inputs + externals)
 gs.get_modified_sources(PATHS, inputs + externals)
 
-# FILL TABLES
+### FILL TABLES
 gs.tablefill(template = 'code/tables.lyx', 
              input    = 'input/tables.txt', 
              output   = 'output/tables_filled.lyx')
