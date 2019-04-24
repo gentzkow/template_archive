@@ -164,7 +164,7 @@ def log_files_in_output(paths,
         output_local_dir = paths['output_local_dir'] # Make required?
         if type(output_local_dir) is not list:
             raise TypeError(messages.type_error_dir_list % output_local_dir)
-    except:
+    except KeyError:
         output_local_dir = []
   
     try:

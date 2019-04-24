@@ -65,11 +65,11 @@ def run_stata(paths, program, **kwargs):
 
         # Execute
         command = metadata.commands[direct.osname]['stata'] % (direct.executable, direct.option, direct.program)
-        exit_code, traceback = direct.execute_command(command)
+        exit_code, stderr = direct.execute_command(command)
         if exit_code != 0:
             error_message = 'Stata program executed with errors. Traceback can be found below.'
             error_message = format_error(error_message)
-            raise ProgramError(error_message, traceback)
+            raise ProgramError(error_message, stderr)
         output = direct.move_program_output(program_log, direct.log)
         check_stata_output(output)
     except ProgramError:
@@ -84,7 +84,9 @@ def run_stata(paths, program, **kwargs):
 def check_stata_output(output):
     regex = "end of do-file[\s]*r\([0-9]*\);"
     if re.search(regex, output):
-        raise ProgramError('Stata program executed with errors.', 'See logs for more detail.')
+        error_message = 'Stata program executed with errors.'
+        error_message = format_error(error_message)
+        raise ProgramError(error_message, 'See logs for more detail.')
 
 
 def run_matlab(paths, program, **kwargs):
@@ -129,11 +131,11 @@ def run_matlab(paths, program, **kwargs):
 
         # Execute
         command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.option, direct.program, direct.program_name + '.log')
-        exit_code, traceback = direct.execute_command(command)   
+        exit_code, stderr = direct.execute_command(command)   
         if exit_code != 0:
             error_message = 'Matlab program executed with errors. Traceback can be found below.'
             error_message = format_error(error_message)
-            raise ProgramError(error_message, traceback)
+            raise ProgramError(error_message, stderr)
         direct.move_program_output(program_log, direct.log)   
     except ProgramError:
         raise
@@ -183,12 +185,12 @@ def run_perl(paths, program, **kwargs):
         
         # Execute
         command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.option, direct.program, direct.args)
-        exit_code, error_message = direct.execute_command(command)
+        exit_code, stderr = direct.execute_command(command)
         direct.write_log()
         if exit_code != 0:
             error_message = 'Perl program executed with errors. Traceback can be found below.'
             error_message = format_error(error_message)
-            raise ProgramError(error_message, traceback)
+            raise ProgramError(error_message, stderr)
     except ProgramError:
         raise
     except:
@@ -237,12 +239,12 @@ def run_python(paths, program, **kwargs):
 
         # Execute
         command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.option, direct.program, direct.args)
-        exit_code, traceback = direct.execute_command(command)
+        exit_code, stderr = direct.execute_command(command)
         direct.write_log() 
         if exit_code != 0:
             error_message = 'Python program executed with errors. Traceback can be found below.'
             error_message = format_error(error_message)
-            raise ProgramError(error_message, traceback)
+            raise ProgramError(error_message, stderr)
     except ProgramError:
         raise
     except:
@@ -291,12 +293,12 @@ def run_mathematica(paths, program, **kwargs):
 
         # Execute
         command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.program, direct.option)
-        exit_code, error_message = direct.execute_command(command)
+        exit_code, stderr = direct.execute_command(command)
         direct.write_log()
         if exit_code != 0:
             error_message = 'Mathematica program executed with errors. Traceback can be found below.'
             error_message = format_error(error_message)
-            raise ProgramError(error_message, traceback)
+            raise ProgramError(error_message, stderr)
     except ProgramError:
         raise
     except:
@@ -345,12 +347,12 @@ def run_stat_transfer(paths, program, **kwargs):
 
         # Execute
         command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.program)
-        exit_code, error_message = direct.execute_command(command)
+        exit_code, stderr = direct.execute_command(command)
         direct.write_log()
         if exit_code != 0:
             error_message = 'StatTransfer program executed with errors. Traceback can be found below.'
             error_message = format_error(error_message)
-            raise ProgramError(error_message, traceback)
+            raise ProgramError(error_message, stderr)
     except ProgramError:
         raise
     except:
@@ -425,12 +427,12 @@ def run_lyx(paths, program, **kwargs):
 
         # Execute
         command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.option, temp_program)
-        exit_code, error_message = direct.execute_command(command)
+        exit_code, stderr = direct.execute_command(command)
         direct.write_log()
         if exit_code != 0:
             error_message = 'LyX program executed with errors. Traceback can be found below.'
             error_message = format_error(error_message)
-            raise ProgramError(error_message, traceback)
+            raise ProgramError(error_message, stderr)
 
         # Move PDF output
         temp_pdf = os.path.join(direct.program_dir, temp_name + '.pdf')
@@ -491,12 +493,12 @@ def run_r(paths, program, **kwargs):
 
         # Execute
         command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.option, direct.program)
-        exit_code, error_message = direct.execute_command(command)
+        exit_code, stderr = direct.execute_command(command)
         direct.write_log()      
         if exit_code != 0:
             error_message = 'R program executed with errors. Traceback can be found below.'
             error_message = format_error(error_message)
-            raise ProgramError(error_message, traceback)
+            raise ProgramError(error_message, stderr)
     except ProgramError:
         raise
     except:
@@ -551,11 +553,11 @@ def run_sas(paths, program, **kwargs):
         
         # Execute
         command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.option, direct.program)       
-        exit_code, error_message = direct.execute_command(command)
+        exit_code, stderr = direct.execute_command(command)
         if exit_code != 0:
             error_message = 'SAS program executed with errors. Traceback can be found below.'
             error_message = format_error(error_message)
-            raise ProgramError(error_message, traceback)
+            raise ProgramError(error_message, stderr)
         direct.move_program_output(program_log)
         direct.move_program_output(program_lst)        
     except ProgramError:
@@ -598,12 +600,12 @@ def execute_command(paths, command, **kwargs):
         direct = Directive(makelog = makelog, **kwargs)
 
         # Execute
-        exit_code, error_message = direct.execute_command(command)
+        exit_code, stderr = direct.execute_command(command)
         direct.write_log()   
         if exit_code != 0:
             error_message = 'Command executed with errors. Traceback can be found below.'
             error_message = format_error(error_message)
-            raise ProgramError(error_message, traceback)
+            raise ProgramError(error_message, stderr)
     except ProgramError:
         raise
     except:

@@ -15,7 +15,7 @@ import colorama
 colorama.init()
 
 import gslab_make.private.messages as messages
-from gslab_make.private.exceptionclasses import CritError
+from gslab_make.private.exceptionclasses import CritError, ColoredError
 from gslab_make.private.utility import norm_path, format_error, glob_recursive
 from gslab_make.write_logs import write_to_makelog
 
@@ -43,7 +43,7 @@ def get_file_sizes(dir_path, exclude):
         
         files = [os.path.join(root, f) for f in files]
         files = [norm_path(f) for f in files]
-        sizes = [os.path.getsize(f) for f in files]
+        sizes = [os.lstat(f).st_size for f in files]
         file_sizes.extend(zip(files, sizes))
         
     file_sizes = dict(file_sizes)
@@ -174,9 +174,12 @@ def check_repo_size(paths):
     """
     
     try:
-        repo = git.Repo('.', search_parent_directories = True) 
+        try:
+            repo = git.Repo('.', search_parent_directories = True)    
+        except:
+            raise CritError(messages.crit_error_no_repo)
+        
         git_files, git_lfs_files = get_repo_size(repo)
-
         file_MB = max(git_files.values()) / (1024 ** 2)
         total_MB = sum(git_files.values()) / (1024 ** 2)
         file_MB_lfs = max(git_lfs_files.values()) / (1024 ** 2)
@@ -219,10 +222,9 @@ def check_repo_size(paths):
             write_to_makelog(paths, log_message)
     except:
         error_message = 'Error with `check_repo_size`. Traceback can be found below.' 
-        error_message = format_error(error_message) + '\n' + traceback.format_exc()
-        write_to_makelog(paths, error_message)
-        
-        raise
+        error_message = format_error(error_message) 
+        write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
+        raise ColoredError(error_message, traceback.format_exc())
 
 
 def get_git_status(repo): 
@@ -296,8 +298,6 @@ def get_modified_sources(paths,
             print(colored(message, 'red'))
     except:
         error_message = 'Error with `get_modified_sources`. Traceback can be found below.' 
-        error_message = format_error(error_message) + '\n' + traceback.format_exc()
-        write_to_makelog(paths, error_message)
-        
-        raise
-                                
+        error_message = format_error(error_message) 
+        write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
+        raise ColoredError(error_message, traceback.format_exc())               

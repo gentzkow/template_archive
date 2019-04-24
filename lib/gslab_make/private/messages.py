@@ -8,7 +8,7 @@ from builtins import (bytes, str, open, super, range,
 ######################################################      
     
 # 1) Critical Errors
-crit_error_unknown_system = '\nERROR! Only the following operating systems are supported: `POSIX`, `NT`.' 
+crit_error_unknown_system = '\nERROR! `gslab_make` only supports the following operating systems: `POSIX`, `NT`.' 
 crit_error_no_makelog = '\nERROR! Makelog `%s` not found. Makelog either not started (via `start_makelog`) or deleted after started.' 
 crit_error_no_program_output = '\nERROR! Certain applications (`matlab`, `sas`, `stata`) automatically create program outputs when ran using system command. Program output `%s` is expected from `%s` but cannot be not found or opened. Traceback can be found below.'
 crit_error_no_file = '\nERROR! File `%s` not found.' 

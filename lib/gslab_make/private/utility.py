@@ -86,13 +86,16 @@ def file_to_array(file_name):
     return array
 
 
-def format_traceback(traceback = traceback.format_exc()):
+def format_traceback(trace = ''):
     """ Format error message. """
     
-    traceback = '\n' + traceback
-    traceback =  re.sub('\n', '\n  : ', traceback)
+    if not trace:
+        trace = traceback.format_exc()
 
-    return(traceback)
+    trace = '\n' + trace.strip()
+    formatted = re.sub('\n', '\n  : ', trace)
+
+    return(formatted)
 
 
 def format_error(error):

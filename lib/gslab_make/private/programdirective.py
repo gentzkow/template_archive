@@ -349,5 +349,5 @@ class LyXDirective(ProgramDirective):
         """
     
         if self.doctype not in ['handout', 'comments', '']:
-            print(messages.warning_lyx_type % self.doctype)
+            print(colored(messages.warning_lyx_type % self.doctype, 'red'))
             self.doctype = ''

@@ -6,7 +6,7 @@ import yaml
 
 ROOT = git.Repo('.', search_parent_directories = True).working_tree_dir 
 f, path, desc = imp.find_module('gslab_make', [os.path.join(ROOT, 'lib')]) 
-gs = imp.load_module('gslab_make', f, path, desc)
+gs = imp.load_module('gslab_make', f, path, desc) # Load `gslab_make`
 
 PATHS = { # Set default paths; used by `gslab_make` functions
     'config'          : '../config.yaml',
@@ -24,7 +24,7 @@ PATHS = { # Set default paths; used by `gslab_make` functions
     'source_headslog' : 'log/source_heads.log'  # Set to '' to avoid writing log
 }
 
-PATH_MAPPINGS = { # Set path mappings; used by `create_links` functions
+PATH_MAPPINGS = { # Set path mappings; used by `move_sources` functions
     'root': ROOT
 }
 
@@ -32,7 +32,7 @@ PATH_MAPPINGS = { # Set path mappings; used by `create_links` functions
 config_user = yaml.load(open(PATHS['config_user'], 'rb'))
 if config_user['local']['executables']: # Update executables; used by `run_program` functions
     gs.private.metadata.default_executables[os.name].update(config_user['local']['executables'])
-if config_user['external']: # Update path mappings; used by `create_links` functions
+if config_user['external']: # Update path mappings; used by `move_sources` functions
     PATH_MAPPINGS.update(config_user['external'])
 
 ### START 

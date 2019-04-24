@@ -80,7 +80,7 @@ class MoveDirective(object):
             self.line = [l.strip('"\'') for l in self.line]
             self.destination, self.source = self.line
         except:
-            error_message = messages.crit_error_bad_move % self.line_raw
+            error_message = messages.crit_error_bad_move % self.raw
             error_message = error_message + format_traceback()
             raise CritError(error_message)
 
@@ -236,7 +236,8 @@ class MoveDirective(object):
             process = subprocess.Popen(command,
                                        shell = True,
                                        stdout = subprocess.PIPE,
-                                       stderr = subprocess.PIPE)
+                                       stderr = subprocess.PIPE, 
+                                       universal_newlines = True)
             stdout, stderr = process.communicate()
            
             if process.returncode != 0:
@@ -271,7 +272,8 @@ class MoveDirective(object):
             process = subprocess.Popen(command,
                                        shell = True,
                                        stdout = subprocess.PIPE,
-                                       stderr = subprocess.PIPE)
+                                       stderr = subprocess.PIPE, 
+                                       universal_newlines = True)
             stdout, stderr = process.communicate()
            
             if process.returncode != 0:
@@ -358,7 +360,7 @@ class MoveList(object):
         try:
             lines = [(raw, str(line).format(**self.mapping_dict)) for (raw, line) in lines]
         except KeyError as e:
-            error_message = messages.crit_error_bad_move % messages.crit_error_path_mapping % str(e).strip("'")
+            error_message = messages.crit_error_path_mapping % str(e).lstrip("u'").rstrip("'")
             error_message = error_message + format_traceback()
             raise CritError(error_message)
 			
