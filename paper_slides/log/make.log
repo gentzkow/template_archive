@@ -1,9 +1,76 @@
 --------------------------------------------------------------------------------
-Makelog started: 2019-04-24 14:54:26
-Working directory: C:\Users\Zong\template\paper_slides
+Makelog started: 2019-04-29 15:48:17
+Working directory: /Users/zong/template/paper_slides
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
 WARNING! The following target files have been modified according to git status:
-C:\Users\Zong\template\analysis\output\plot.eps
+/Users/zong/template/analysis/output/plot.eps
+Executing command: `lyx -e pdf2 "/Users/zong/template/paper_slides/code/paper.lyx"`
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./paper.tex
+LaTeX2e <2018-04-01> patch level 5
+
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./paper.tex
+LaTeX2e <2018-04-01> patch level 5
+
+
+Executing command: `lyx -e pdf2 "/Users/zong/template/paper_slides/code/online_appendix.lyx"`
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./online_appendix.tex
+LaTeX2e <2018-04-01> patch level 5
+
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./online_appendix.tex
+LaTeX2e <2018-04-01> patch level 5
+
+
+Executing command: `lyx -e pdf2 "/Users/zong/template/paper_slides/code/slides.lyx"`
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./slides.tex
+LaTeX2e <2018-04-01> patch level 5
+
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./slides.tex
+LaTeX2e <2018-04-01> patch level 5
+
+
+Executing command: `lyx -e pdf2 "/Users/zong/template/paper_slides/code/ondeck.lyx"`
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./ondeck.tex
+LaTeX2e <2018-04-01> patch level 5
+
+
+Executing command: `lyx -e pdf2 "/Users/zong/template/paper_slides/code/text.lyx"`
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./text.tex
+LaTeX2e <2018-04-01> patch level 5
+
+
+Output logs successfully written!
+WARNING! Certain files tracked by git that exceed config limit (0.5 MB). See below for list of files.
+/Users/zong/template/data/output/data_graph.txt
+/Users/zong/template/data/output/data_table.txt
+/Users/zong/template/lib/gslab_make/tests/input/rinstall_test_package/Ecdat_0.1-6.1.tar.gz
+--------------------------------------------------------------------------------
+Makelog ended: 2019-04-29 15:48:23
+Working directory: /Users/zong/template/paper_slides
+--------------------------------------------------------------------------------
