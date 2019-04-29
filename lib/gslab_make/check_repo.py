@@ -16,7 +16,7 @@ colorama.init()
 
 import gslab_make.private.messages as messages
 from gslab_make.private.exceptionclasses import CritError, ColoredError
-from gslab_make.private.utility import norm_path, format_error, glob_recursive
+from gslab_make.private.utility import norm_path, get_path, format_error, glob_recursive
 from gslab_make.write_logs import write_to_makelog
 
 
@@ -138,7 +138,6 @@ def get_repo_size(repo):
             Dictionary of {file : size} for each file tracked by git lfs. 
     """
     
-    repo = git.Repo('.', search_parent_directories = True) 
     git_files = get_file_sizes(repo.working_tree_dir, exclude = ['.git'])
     git_ignore_files = get_git_ignore(repo)
     
@@ -185,7 +184,8 @@ def check_repo_size(paths):
         file_MB_lfs = max(git_lfs_files.values()) / (1024 ** 2)
         total_MB_lfs = sum(git_lfs_files.values()) / (1024 ** 2)
     
-        config = yaml.load(open(paths['config'], 'rb'))
+        config = get_path(paths, 'config')
+        config = yaml.load(open(config, 'rb'))
         max_file_sizes = config['max_file_sizes']
         
         print_message = ''

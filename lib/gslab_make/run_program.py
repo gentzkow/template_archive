@@ -12,7 +12,7 @@ import fileinput
 import gslab_make.private.metadata as metadata
 from gslab_make.private.exceptionclasses import ColoredError, ProgramError
 from gslab_make.private.programdirective import Directive, ProgramDirective, SASDirective, LyXDirective
-from gslab_make.private.utility import format_error
+from gslab_make.private.utility import get_path, format_error
 from gslab_make.write_logs import write_to_makelog
 
 
@@ -48,7 +48,7 @@ def run_stata(paths, program, **kwargs):
     None
     """
 
-    makelog = paths['makelog']
+    makelog = get_path(paths, 'makelog')
 
     try:
         direct = ProgramDirective(application = 'stata', program = program, makelog = makelog, **kwargs)
@@ -121,7 +121,7 @@ def run_matlab(paths, program, **kwargs):
     None
     """
   
-    makelog = paths['makelog']
+    makelog = get_path(paths, 'makelog')
 
     try:
         direct = ProgramDirective(application = 'matlab', program = program, makelog = makelog, **kwargs)
@@ -178,7 +178,7 @@ def run_perl(paths, program, **kwargs):
     None
     """
     
-    makelog = paths['makelog']
+    makelog = get_path(paths, 'makelog')
 
     try:
         direct = ProgramDirective(application = 'perl', program = program, makelog = makelog, **kwargs)
@@ -232,7 +232,7 @@ def run_python(paths, program, **kwargs):
     None
     """
     
-    makelog = paths['makelog']
+    makelog = get_path(paths, 'makelog')
 
     try:
         direct = ProgramDirective(application = 'python', program = program, makelog = makelog, **kwargs)
@@ -286,7 +286,7 @@ def run_mathematica(paths, program, **kwargs):
     None
     """
     
-    makelog = paths['makelog']
+    makelog = get_path(paths, 'makelog')
 
     try:
         direct = ProgramDirective(application = 'math', program = program, makelog = makelog, **kwargs)
@@ -340,7 +340,7 @@ def run_stat_transfer(paths, program, **kwargs):
     None
     """
     
-    makelog = paths['makelog']
+    makelog = get_path(paths, 'makelog')
 
     try:
         direct = ProgramDirective(application = 'st', program = program, makelog = makelog, **kwargs)
@@ -399,8 +399,8 @@ def run_lyx(paths, program, **kwargs):
     None
     """
     
-    makelog = paths['makelog']
-    pdf_dir = paths['pdf_dir']
+    makelog = get_path(paths, 'makelog')
+    pdf_dir = get_path(paths, 'pdf_dir')
 
     try:
         direct = LyXDirective(pdf_dir = pdf_dir, application = 'lyx', program = program, makelog = makelog, **kwargs)
@@ -486,7 +486,7 @@ def run_r(paths, program, **kwargs):
     None
     """
     
-    makelog = paths['makelog']
+    makelog = get_path(paths, 'makelog')
 
     try:
         direct = ProgramDirective(application = 'r', program = program, makelog = makelog, **kwargs)
@@ -542,7 +542,7 @@ def run_sas(paths, program, **kwargs):
     None
     """
 
-    makelog = paths['makelog']
+    makelog = get_path(paths, 'makelog')
 
     try:
         direct = SASDirective(application = 'sas', program = program, makelog = makelog, **kwargs)
@@ -594,7 +594,7 @@ def execute_command(paths, command, **kwargs):
     None
     """
     
-    makelog = paths['makelog']
+    makelog = get_path(paths, 'makelog')
 
     try:
         direct = Directive(makelog = makelog, **kwargs)

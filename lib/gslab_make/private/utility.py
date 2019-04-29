@@ -24,6 +24,17 @@ def norm_path(path):
     return path
 
 
+def get_path(paths_dict, key):
+    """ Get path for key. """
+
+    try:
+        path = paths_dict[key]
+    except KeyError:
+        raise CritError(messages.crit_error_no_key % key)
+
+    return(path)
+
+
 def glob_recursive(path, depth):
     """ Walks through path. 
     

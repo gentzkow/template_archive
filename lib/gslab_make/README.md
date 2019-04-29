@@ -4,10 +4,6 @@
 The majority of the functions in </b><code>gslab_make</code><b> contain a </b><code>paths</code><b> argument that requires passing in a dictionary specifying default paths used for writing and logging purposes. The dictionary <i>must</i> contain values for the following keys (i.e., default paths):
 </b>
 
-> * `config`
->
->     * Default path for config file. 
->
 > * `input_dir` 
 > 
 >     * Default path for writing symbolic links to sources internal to the repository. 
@@ -51,27 +47,25 @@ The majority of the functions in </b><code>gslab_make</code><b> contain a </b><c
 <ul>
 <b>Note:</b>
 <br> 
-To suppress writing any specific log (<code>makelog</code>, <code>output_statslog</code>, <code>output_headslog</code>, <code>source_maplog</code>, <code>source_statslog</code>, <code>source_headslog</code>), set the key for that log to <code>''</code>.
-
+To suppress writing to make log for any function, set <code>makelog</code> to <code>''</code>.
 <br>
 <br>
 <b>Example:</b>
 <br>
 The following default paths are recommended:
 <pre>
-    paths = {
-        'config'          : '../config.yaml', # Adjust relative path accordingly
-        'input_dir'       : 'input/',
-        'external_dir'    : 'external/',
-        'output_dir'      : 'output/',
-        'pdf_dir'         : 'output/',
-        'makelog'         : 'log/make.log',
-        'output_statslog' : 'log/output_stats.log',
-        'output_headslog' : 'log/output_heads.log', 
-        'source_maplog'   : 'log/source_map.log',
-        'source_statslog' : 'log/source_stats.log',
-        'source_headslog' : 'log/source_heads.log'
-    }
+paths = {
+    'input_dir'       : '../input/',
+    'external_dir'    : '../external/',
+    'output_dir'      : '../output/',
+    'pdf_dir'         : '../output/',
+    'makelog'         : '../log/make.log',
+    'output_statslog' : '../log/output_stats.log',
+    'output_headslog' : '../log/output_heads.log', 
+    'source_maplog'   : '../log/source_map.log',
+    'source_statslog' : '../log/source_stats.log',
+    'source_headslog' : '../log/source_heads.log'
+}
 </pre>
 </ul>
 
@@ -99,13 +93,13 @@ check_repo.<b>check_repo_size(</b><i>
 </pre>
 > Produces warning if any of the following size statistics are larger than limits set in config file `config`:
 >
-> * Individual size of a file tracked by git lfs (`file_MB_limit_lfs`)
+> * Individual size of a file tracked by git lfs (file_MB_limit_lfs)
 >
-> * Total size of all files tracked by git lfs (`total_MB_limit_lfs`)
+> * Total size of all files tracked by git lfs (total_MB_limit_lfs)
 >
-> * Individual size of a file tracked by git (`file_MB_limit`)
+> * Individual size of a file tracked by git (file_MB_limit)
 >
-> * Total size of all files tracked by git (`total_MB_limit`)
+> * Total size of all files tracked by git (total_MB_limit)
 >
 > Warning messages are appended to make log `makelog`.
 
@@ -120,20 +114,20 @@ check_repo.<b>get_modified_sources(</b><i>
     recursive = float('inf'),</i><b>
 )</b>
 </pre>
-> Checks the modification status for sources contained in all mappings of list `move_map` (returned by `move_sources.link_inputs`, `move_sources.copy_inputs`, `move_sources.link_externals`). Produces warning if sources have been modified according to git.
+> Checks the modification status for sources contained in all mappings of list `move_map` (returned by `move_sources.link_inputs`, `move_sources.copy_inputs` and `move_sources.link_externals`). Produces warning if sources have been modified according to git.
 >
 > When walking through sources, float `recursive` determines level of depth to walk. Warnings are appended to make log `makelog`.
 
 <ul>
 <b>Example:</b>
 <br>
-<code>get_modified_sources(paths, move_map, recursive = 1)</code> will check modification status for all source files listed in <code>move_map</code>.
+<code>get_modified_sources(paths, recursive = 1)</code> will check modification status for all link/copy mappings and source files linked in <code>paths['input']</code> and <code>paths['external']</code>.
 <br>
 <br>
-<code>get_modified_sources(paths, move_map, recursive = 2)</code> will check modification status for all source files listed in <code>move_map</code>; and all files contained in any source directories listed in <code>move_map`</code>.
+<code>get_modified_sources(paths, recursive = 2)</code> will check modification status for all link/copy mappings, source files linked in <code>paths['input']</code> and <code>paths['external']</code>, and files contained in source directories linked in <code>paths['input']</code> and <code>paths['external']</code>.
 <br>
 <br>
-<code>get_modified_sources(paths, move_map, recursive = inf(float))</code> will check modification status for all source files listed in <code>move_map</code>; and all files contained in any level of source directories listed in <code>move_map</code>.
+<code>get_modified_sourcespaths, recursive = inf(float))</code> will check modification status for all link/copy mappings, source files linked in <code>paths['input']</code> and <code>paths['external']</code>, and files contained in any level of source directories linked in <code>paths['input']</code> and <code>paths['external']</code>.
 </ul>
 
 <br> 
@@ -187,7 +181,7 @@ write_logs.<b>log_files_in_output(</b><i>
 <code>write_output_logs(paths, recursive = 1)</code> will log information for all files contained in <code>paths['output_dir']</code>.
 <br>
 <br>
-<code>write_output_logs(paths, recursive = 2)</code> will log information for all files contained in <code>paths['output_dir']</code>; and all files contained in any directories in <code>paths['output_dir']</code>.
+<code>write_output_logs(paths, recursive = 2)</code> will log information for all files contained in <code>paths['output_dir']</code> and all files contained in any directories in <code>paths['output_dir']</code>.
 <br>
 <br>
 <code>write_output_logs(paths, recursive = inf(float))</code> will log information for all files contained in any level of <code>paths['output_dir']</code>.
@@ -325,7 +319,7 @@ Suppose you have the following targets:
 <code>source3</code>
 <br>
 <br>
-Specifying <code>destination* | source*</code> in one of your instruction files would create the following symbolic links in <code>paths['external_dir']</code>:
+Specifying <code>destination* | source*</code> in one of your instruction files would create the following symbolic links in <code>paths['input_dir']</code>:
 <br>
 <code>destination1</code>
 <br>
@@ -424,7 +418,7 @@ write_source_logs.<b>write_source_logs(</b><i>
 )</b>
 </pre>
 
-> Logs the following information for files contained in all mappings of list `move_map` (returned by `move_sources.link_inputs`, `move_sources.copy_inputs`, `move_sources.link_externals`):
+> Logs the following information for files contained in all mappings of list `move_map` (returned by `move_sources.link_inputs`, `move_sources.copy_inputs` and `move_sources.link_externals`):
 > 
 > * Mapping of symbolic links/copies to sources (in file `source_maplog`)
 >
@@ -443,13 +437,13 @@ write_source_logs.<b>write_source_logs(</b><i>
 <ul>
 <b>Example:</b>
 <br>
-<code>write_source_logs(paths, move_map, recursive = 1)</code> will log information for all source files listed in <code>move_map</code>.
+<code>write_source_logs(paths, recursive = 1)</code> will log information for all link/copy mappings and source files linked in <code>paths['input']</code> and <code>paths['external']</code>.
 <br>
 <br>
-<code>write_source_logs(paths, move_map, recursive = 2)</code> will log information for all source files listed in <code>move_map</code>; and all files contained in any source directories listed in <code>move_map`</code>.
+<code>write_source_logs(paths, recursive = 2)</code> will log information for all link/copy mappings, source files linked in <code>paths['input']</code> and <code>paths['external']</code>, and files contained in source directories linked in <code>paths['input']</code> and <code>paths['external']</code>.
 <br>
 <br>
-<code>write_source_logs(paths, move_map, recursive = inf(float))</code> will log information for all source files listed in <code>move_map</code>; and all files contained in any level of source directories listed in <code>move_map</code>.
+<code>write_source_logs(paths, recursive = inf(float))</code> will log information for all link/copy mappings, source files linked in <code>paths['input']</code> and <code>paths['external']</code>, and files contained in any level of source directories linked in <code>paths['input']</code> and <code>paths['external']</code>.
 </ul>
 
 <br> 

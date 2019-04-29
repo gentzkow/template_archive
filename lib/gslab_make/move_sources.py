@@ -12,7 +12,7 @@ colorama.init()
 
 from gslab_make.private.exceptionclasses import ColoredError
 from gslab_make.private.movedirective import MoveList
-from gslab_make.private.utility import format_error
+from gslab_make.private.utility import get_path, format_error
 from gslab_make.write_logs import write_to_makelog
 
 
@@ -42,7 +42,7 @@ def create_links(paths,
         List of (source, destination) for each symlink created.
     """
 
-    move_dir = paths['move_dir']
+    move_dir = get_path(paths, 'move_dir')
 
     try:              
         move_list = MoveList(file_list, move_dir, mapping_dict)
@@ -83,7 +83,7 @@ def copy_inputs(paths,
         List of (source, destination) for each copy created.
     """
         
-    move_dir = paths['input_dir']
+    move_dir = get_path(paths, 'input_dir')
 
     try:              
         move_list = MoveList(file_list, move_dir, mapping_dict)
@@ -132,7 +132,7 @@ def link_inputs(paths,
         List of (source, destination) for each symlink created.
     """
     try:
-        paths['move_dir'] = paths['input_dir']
+        paths['move_dir'] = get_path(paths, 'input_dir')
         move_map = create_links(paths, file_list, mapping_dict)
 
         message = 'Input links successfully created!'
@@ -174,7 +174,7 @@ def link_externals(paths,
     """
     
     try:
-        paths['move_dir'] = paths['external_dir']
+        paths['move_dir'] = get_path(paths, 'external_dir')
         move_map = create_links(paths, file_list, mapping_dict)
 
         message = 'External links successfully created!'

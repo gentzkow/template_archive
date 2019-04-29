@@ -11,7 +11,7 @@ import colorama
 colorama.init()
 
 from gslab_make.private.exceptionclasses import ColoredError
-from gslab_make.private.utility import norm_path, glob_recursive, format_error
+from gslab_make.private.utility import norm_path, get_path, glob_recursive, format_error
 from gslab_make.write_logs import write_to_makelog, write_stats_log, write_heads_log
 
 
@@ -54,9 +54,9 @@ def write_source_logs(paths,
     None
     """
 
-    source_statslog = paths['source_statslog']
-    source_headslog = paths['source_headslog']
-    source_maplog   = paths['source_maplog']
+    source_statslog = get_path(paths, 'source_statslog')
+    source_headslog = get_path(paths, 'source_headslog')
+    source_maplog   = get_path(paths, 'source_maplog')
 
     try:
         source_list = [source for source, destination in source_map]

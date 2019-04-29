@@ -15,7 +15,7 @@ colorama.init()
 import gslab_make.private.messages as messages
 import gslab_make.private.metadata as metadata
 from gslab_make.private.exceptionclasses import CritError, ColoredError
-from gslab_make.private.utility import norm_path, glob_recursive, format_error
+from gslab_make.private.utility import norm_path, get_path, glob_recursive, format_error
 
 
 def start_makelog(paths):
@@ -39,7 +39,7 @@ def start_makelog(paths):
     None
     """
 
-    makelog = paths['makelog']
+    makelog = get_path(paths, 'makelog')
 
     metadata.makelog_started = True
     if makelog:
@@ -72,7 +72,7 @@ def end_makelog(paths):
     None
     """
  
-    makelog = paths['makelog']
+    makelog = get_path(paths, 'makelog')
 
     if makelog:
         makelog = norm_path(makelog)
@@ -109,7 +109,7 @@ def write_to_makelog(paths, message):
     None
     """
 
-    makelog = paths['makelog']
+    makelog = get_path(paths, 'makelog')
 
     if makelog:
         makelog = norm_path(makelog)
@@ -157,11 +157,11 @@ def log_files_in_output(paths,
     None
     """
 
-    output_dir      = paths['output_dir']
-    output_statslog = paths['output_statslog']
-    output_headslog = paths['output_headslog']
+    output_dir      = get_path(paths, 'output_dir')
+    output_statslog = get_path(paths, 'output_statslog')
+    output_headslog = get_path(paths, 'output_headslog')
     try:
-        output_local_dir = paths['output_local_dir'] # Make required?
+        output_local_dir = get_path(paths, 'output_local_dir') # Make required?
         if type(output_local_dir) is not list:
             raise TypeError(messages.type_error_dir_list % output_local_dir)
     except KeyError:
@@ -255,10 +255,8 @@ def write_heads_log(headslog_file, output_files, num_lines = 10):
             try:
                 with open(file_name, 'r', encoding = 'utf8') as f:
                     for i in range(num_lines):
-                        line = f.readline.strip() # Is there any way to make this faster?
-                        cleaned_line = filter(lambda x: x in string.printable, line) # Maybe overly conservative
-                        print(cleaned_line, file = HEADSLOG)
+                        line = f.readline().rstrip('\n')
+                        print(line, file = HEADSLOG)
             except:
                 print("Head not readable or less than %s lines" % num_lines, file = HEADSLOG)
-
             print(messages.note_dash_line, file = HEADSLOG)
