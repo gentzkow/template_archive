@@ -1,29 +1,101 @@
 # README
 
 ## Requirements
-All requirements must be installed and setup for command line usage. 
+All requirements must be installed and setup for command line usage. For more details, see the **Command line usage** section. 
 
-* Python 2.7/3.7
+* Python (2.7/3.7)
 * pip (>=10.0)
 
-To build the repository as-is, the following software are additionally required:
+To build the repository as-is, the following applications are additionally required:
 
 * git-lfs
 * LyX
 * R
 * Stata
 
-These software are used by the example scripts contained in the repository. By default, the **Setup** instructions below will assume their usage.
+These applications are used by the example scripts contained in the repository. By default, the **Setup** instructions below will assume their usage.
+
+## Command line usage
+
+### Mac
+To setup an application for command line usage, its executable must be added to **PATH** so that the OS can locate it. By default, the template assumes the following executable names for the following applications. 
+   ```
+   application : executable
+   Python      : python
+   pip         : pip
+   git-lfs     : git-lfs
+   LyX         : lyx
+   R           : Rscript
+   Stata       : statamp (will need to be updated if using a version of Stata that is not Stata-MP)
+   ```
+
+While these are the typical executable names for Mac, it is possible that they may differ on your computer. Default executable names can be updated in `config_user.yaml`. See the **Config** section below for further detail.
+
+To check if an application is setup for command line usage, type `which executable` into a terminal. If no path appears, then the application is not setup for command line usage. To add the executable of an application to **PATH**:
+
+1. Locate the executable for an application. For example, the executable for Stata is typically found at `/Applications/Stata/StataMP.app/Contents/MacOS/statamp`.
+2. In a terminal, from your user directory (`/Users/name`) run the following bash commands:
+
+   ```
+   touch .bash_profile
+   nano .bash_profile
+   ```
+
+3. The [Nano editor](https://wiki.gentoo.org/wiki/Nano/Basics_Guide) should appear in your terminal. Type in the path to the executable into the Nano editor in the following format `PATH="$PATH:path_to_executable` where `path_to_executable` refers to the full path of the *directory* containing the executable. 
+
+   For example, if your Stata executable was located in `/Applications/Stata/StataMP.app/Contents/MacOS/statamp`, you would want to type in the following text into the Nano editor: `PATH="$PATH:/Applications/Stata/StataMP.app/Contents/MacOS/`.
+
+4. Save and exit the Nano editor by pressing CTRL + X, Y, and enter.
+
+### Windows
+To setup an application for command line usage, its executable must be added to **PATH** so that the OS can locate it. By default, the template assumes the following executable names for the following applications. 
+```
+application : executable
+Python      : python
+pip         : pip
+git-lfs     : git-lfs
+LyX         : lyx
+R           : Rscript
+Stata       : statamp
+```
+
+However, these are the default executable names for Mac and therefore likely to differ on your computer. Default executable names can be updated in `config_user.yaml`. See the **Config** section below for further detail. Executable names for Windows will typically look like the following:
+
+```
+application : executable
+Python      : python
+pip         : pip
+git-lfs     : git-lfs
+LyX         : LyX#.# (where #.# refers to the version number)
+R           : Rscript
+Stata       : stata_executable
+```
+
+`stata_executable` refers to name of your Stata executable. For example, if your Stata executable was located in `C:\Program Files\Stata15\StataMP-64.exe`, you would want to type in the following into your `config_user.yaml`: `stata: StataMP-64`. You would then want to add your Stata executable to **PATH**.
+
+To check if an application is setup for command line usage, type `where executable` into a terminal. If no path appears, then the application is not setup for command line usage. To add the executable of an application to **PATH**:
+
+1. Locate the executable for an application. For example, the executable for R might be found at `C:\Program Files\R\R-3.5.0\bin\x64\RScript.exe`.
+2. In your start menu, search "environment". Click on `Edit the system environment variables`. 
+3. Click on `Environment Variables`. You should see a panel that is labeled `User Variables`. In the panel, click on the variable called `Path`.
+4. Click on `Edit`. Click on `New`.
+5. Type in the full path of the *directory* containing the executable.
+
+   For example, if your R executable was located in `C:\Program Files\R\R-3.5.0\bin\x64\RScript.exe`, you would want to type in the following text: `C:\Program Files\R\R-3.5.0\bin\x64\`
+
+6. Click `OK`.
 
 ## Setup
+**If you are using Windows, you will need to run all bash commands in administrator mode. To do so, open your terminal by right clicking and selecting `Run as administrator`.**
+
 1. Create a `config_local.yaml` file in the root directory. A template can be found in the `setup` subdirectory. See the **Config** section below for further detail.
 
-2. Install Python dependencies listed in the `requirements.txt` file using pip. One way to do this is to use the following bash command from the `setup` subdirectory:
+2. Install Python dependencies listed in the `requirements.txt` file using pip. One way to do this is to run the following bash command in a terminal from the `setup` subdirectory:
    ```
    pip install --user -r requirements.txt
    ```
 
-3. Run the `setup_repository.py` file. One way to do this is to use the following bash command from the `setup` subdirectory:
+3. Run the `setup_repository.py` file. One way to do this is to run the following bash command in a terminal from the `setup` subdirectory:
    ```
    python setup_repository.py
    ```
@@ -33,38 +105,51 @@ These software are used by the example scripts contained in the repository. By d
    stata-mp -e setup_stata.do
    ```
 
-5. Install R dependencies using the `setup_r.r` file. One way to do this is to use the following bash command from the `setup` subdirectory:
+   If you are using a Windows, you will likely have to adjust this bash command:
+   ```
+   stata_executable -e setup_stata.do
+   ```
+
+   `stata_executable` refers to the name of your Stata executable. For example, if your Stata executable was located in `C:\Program Files\Stata15\StataMP-64.exe`, you would want to use the following bash command:
+
+   ```
+   StataMP-64 -e setup_stata.do
+   ```
+
+5. Install R dependencies using the `setup_r.r` file. One way to do this is to run the following bash command in a terminal from the `setup` subdirectory:
    ```
    Rscript setup_r.r
    ```
  
 ## Build
+**If you are using Windows, you will need to run all bash commands in administrator mode. To do so, open your terminal by right clicking and selecting `Run as administrator`.**
+
 To build the repository as-is from start to finish, the following procedure should be implemented:
 
-1. From the `data` subdirectory, use the following bash command:
+1. From the `data` subdirectory, run the following bash command in a terminal:
    ```
    python make.py
    ```
 
-2. From the `analysis` subdirectory, use the following bash command:
+2. From the `analysis` subdirectory, run the following bash command in a terminal:
    ```
    python make.py
    ```
 
-3. From the `paper_slides` subdirectory, use the following bash command:
+3. From the `paper_slides` subdirectory, run the following bash command in a terminal:
    ```
    python make.py
    ```
 
 ## Config
-`config.yaml` specifies the minimum required software to initialize the repository. By default, this includes the following software:
+`config.yaml` specifies the minimum required applications to initialize the repository. By default, this includes the following applications:
 
    - git-lfs
    - LyX
    - R
    - Stata
 
-All required software must be installed and setup for command line usage. If not, an error message will be raised when attempting to run `setup_repository.py`.
+All required applications must be installed and setup for command line usage. If not, an error message will be raised when attempting to run `setup_repository.py`.
 
 `config_user.yaml` specifies local settings for the user. This includes the following.
 
@@ -74,11 +159,27 @@ All required software must be installed and setup for command line usage. If not
 
     * Specify external dependencies in `config_user.yaml`.
 
-    * Create symbolic links to external dependencies using `gslab_make.create_external_links`.
+    * Create symbolic links to external dependencies using `gslab_make.link_externals`.
 
     * Reference external dependencies via symbolic links as opposed to actual path.
 
-2. **Executable names**: Required software may be setup for command line usage on your computer with a different executable name from the default. If so, specify the correct executable name in `config_user.yaml`
+2. **Executable names**: Required applications may be setup for command line usage on your computer with a different executable name from the default. If so, specify the correct executable name in `config_user.yaml`
+
+## Python environment
+
+### Shell vs. IDE
+Instructions in this **README** assume you are running Python via shell as opposed to an integrated development environment (IDE) such as [Spyder](https://www.spyder-ide.org/). Thus, the instructions are tailored for setting up your system environment.
+
+If you are using an IDE, it is *critical* to note that environment variables such as **PATH** may be different from those in your system environment. Therefore, following the instructions in this **README** does not necesarily guarantee that `gslab_make` will work with your IDE.
+
+### Administrator mode
+If you are using Windows, you must run `gslab_make` on administrator mode. To do so, open your terminal/IDE by right clicking and selecting `Run as administrator`.
+
+To permanently set up your terminal/IDE to run as administrator mode:
+
+1. Right click on the shortcut for your terminal/IDE and select `Properties`. 
+2. Click `Advanced` and check `Run as administrator`.
+3. Click `OK`.
 
 ## FAQ
 1. Help! I'm running into permission errors when trying to install Python dependencies!

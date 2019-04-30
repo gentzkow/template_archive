@@ -6,11 +6,16 @@ from builtins import (bytes, str, open, super, range,
 import os
 import datetime
 import string
+import traceback
+
+from termcolor import colored
+import colorama
+colorama.init()
 
 import gslab_make.private.messages as messages
 import gslab_make.private.metadata as metadata
-from gslab_make.private.exceptionclasses import CritError
-from gslab_make.private.utility import norm_path, glob_recursive
+from gslab_make.private.exceptionclasses import CritError, ColoredError
+from gslab_make.private.utility import norm_path, get_path, glob_recursive, format_error
 
 
 def start_makelog(paths):
@@ -34,12 +39,13 @@ def start_makelog(paths):
     None
     """
 
-    makelog = paths['makelog']
+    makelog = get_path(paths, 'makelog')
 
     metadata.makelog_started = True
     if makelog:
         makelog = norm_path(makelog)
-        print('Starting makelog file at: "%s"' % makelog)
+        message = 'Starting makelog file at: `%s`' % makelog
+        print(colored(message, 'green'))
         
         with open(makelog, 'w', encoding = 'utf8') as MAKELOG:
             time_start = str(datetime.datetime.now().replace(microsecond = 0))
@@ -66,11 +72,12 @@ def end_makelog(paths):
     None
     """
  
-    makelog = paths['makelog']
+    makelog = get_path(paths, 'makelog')
 
     if makelog:
         makelog = norm_path(makelog)
-        print('Ending makelog file at: "%s"' % makelog)
+        message = 'Ending makelog file at: `%s`' % makelog
+        print(colored(message, 'green'))
 
         if not (metadata.makelog_started and os.path.isfile(makelog)):
             raise CritError(messages.crit_error_no_makelog % makelog)
@@ -102,7 +109,7 @@ def write_to_makelog(paths, message):
     None
     """
 
-    makelog = paths['makelog']
+    makelog = get_path(paths, 'makelog')
 
     if makelog:
         makelog = norm_path(makelog)
@@ -115,7 +122,7 @@ def write_to_makelog(paths, message):
     
     
 def log_files_in_output(paths,
-                        recursive = float('inf')):
+                        depth = float('inf')):
     """ Log files in output directory.
 
     Notes
@@ -125,7 +132,7 @@ def log_files_in_output(paths,
         * Last modified (output statistics log)
         * File size (output statistics log)
         * File head (output headers log)
-    * When walking through output directory, recursive determines depth.
+    * When walking through output directory, depth determines depth.
 
     Parameters
     ----------
@@ -142,7 +149,7 @@ def log_files_in_output(paths,
             'makelog' : 
                 Path of makelog.
         }
-    recursive : int, optional
+    depth : int, optional
         Level of depth when walking through output directory.
 
     Returns
@@ -150,19 +157,19 @@ def log_files_in_output(paths,
     None
     """
 
-    output_dir      = paths['output_dir']
-    output_statslog = paths['output_statslog']
-    output_headslog = paths['output_headslog']
+    output_dir      = get_path(paths, 'output_dir')
+    output_statslog = get_path(paths, 'output_statslog')
+    output_headslog = get_path(paths, 'output_headslog')
     try:
-        output_local_dir = paths['output_local_dir'] # Make required?
+        output_local_dir = get_path(paths, 'output_local_dir') # Make required?
         if type(output_local_dir) is not list:
             raise TypeError(messages.type_error_dir_list % output_local_dir)
-    except:
+    except KeyError:
         output_local_dir = []
   
     try:
-        output_files = glob_recursive(output_dir, recursive)
-        output_local_files = [f for dir_path in output_local_dir for f in glob_recursive(dir_path, recursive)]   
+        output_files = glob_recursive(output_dir, depth)
+        output_local_files = [f for dir_path in output_local_dir for f in glob_recursive(dir_path, depth)]   
         output_files = set(output_files + output_local_files)
 
         if output_statslog:
@@ -173,15 +180,15 @@ def log_files_in_output(paths,
             output_headslog = norm_path(output_headslog)
             write_heads_log(output_headslog, output_files)
         
-        write_to_makelog(paths, 'Output logs successfully written!')  
+        message = 'Output logs successfully written!'
+        write_to_makelog(paths, message)
+        print(colored(message, 'green'))  
     except:
-        error_message = 'Error with `log_files_in_output`' 
-        error_message = format_error(error_message) + '\n' + traceback.format_exc()
-        write_to_makelog(paths, error_message)
-        
-        raise
+        error_message = 'Error with `log_files_in_output`. Traceback can be found below.' 
+        error_message = format_error(error_message)
+        write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
+        raise ColoredError(error_message, traceback.format_exc())
 
-       
     
 def write_stats_log(statslog_file, output_files):
     """ Write statistics log.
@@ -248,10 +255,8 @@ def write_heads_log(headslog_file, output_files, num_lines = 10):
             try:
                 with open(file_name, 'r', encoding = 'utf8') as f:
                     for i in range(num_lines):
-                        line = f.readline.strip() # Is there any way to make this faster?
-                        cleaned_line = filter(lambda x: x in string.printable, line)
-                        print(cleaned_line, file = HEADSLOG)
+                        line = f.readline().rstrip('\n')
+                        print(line, file = HEADSLOG)
             except:
                 print("Head not readable or less than %s lines" % num_lines, file = HEADSLOG)
-
             print(messages.note_dash_line, file = HEADSLOG)

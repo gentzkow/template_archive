@@ -6,13 +6,18 @@ from builtins import (bytes, str, open, super, range,
 import os
 import traceback
 
-from gslab_make.private.utility import norm_path, glob_recursive, format_error
+from termcolor import colored
+import colorama
+colorama.init()
+
+from gslab_make.private.exceptionclasses import ColoredError
+from gslab_make.private.utility import norm_path, get_path, glob_recursive, format_error
 from gslab_make.write_logs import write_to_makelog, write_stats_log, write_heads_log
 
 
 def write_source_logs(paths, 
                       source_map,
-                      recursive = float('inf')):        
+                      depth = float('inf')):        
     """ Write source logs.
 
     Notes
@@ -24,7 +29,7 @@ def write_source_logs(paths,
             * Last modified (source statistics log)
             * File size (source statistics log)
             * File head (source headers log)
-        * When walking through source directories, recursive determines depth.
+        * When walking through source directories, depth determines depth.
 
     Parameters
     ----------
@@ -41,7 +46,7 @@ def write_source_logs(paths,
         }
     source_map : list 
         Mapping of symlinks/copies (destination) to sources (returned from `MoveList.create_symlinks` or `MoveList.create_copies`).
-    recursive : int, optional
+    depth : int, optional
         Level of depth when walking through source directories. Defaults to infinite.
 
     Returns
@@ -49,13 +54,13 @@ def write_source_logs(paths,
     None
     """
 
-    source_statslog = paths['source_statslog']
-    source_headslog = paths['source_headslog']
-    source_maplog   = paths['source_maplog']
+    source_statslog = get_path(paths, 'source_statslog')
+    source_headslog = get_path(paths, 'source_headslog')
+    source_maplog   = get_path(paths, 'source_maplog')
 
     try:
         source_list = [source for source, destination in source_map]
-        source_list = [glob_recursive(source, recursive) for source in source_list]
+        source_list = [glob_recursive(source, depth) for source in source_list]
         source_files = [f for source in source_list for f in source]
         source_files = set(source_files)
 
@@ -71,13 +76,14 @@ def write_source_logs(paths,
             source_maplog = norm_path(source_maplog)
             write_source_maplog(source_maplog, source_map)
 
-        write_to_makelog(paths, 'Source logs successfully written!')  
+        message = 'Source logs successfully written!'
+        write_to_makelog(paths, message)  
+        print(colored(message, 'green'))
     except:
-        error_message = 'Error with `write_source_logs`' 
-        error_message = format_error(error_message) + '\n' + traceback.format_exc()
-        write_to_makelog(paths, error_message)
-        
-        raise
+        error_message = 'Error with `write_source_logs`. Traceback can be found below.' 
+        error_message = format_error(error_message) 
+        write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
+        raise ColoredError(error_message, traceback.format_exc())
 
 
 def write_source_maplog(source_maplog, source_map):
@@ -95,11 +101,11 @@ def write_source_maplog(source_maplog, source_map):
     None
     """
     
-    header = 'destination\tsource'
+    header = 'destination | source'
 
     with open(source_maplog, 'w') as MAPLOG:
         print(header, file = MAPLOG)
 
         for source, destination in source_map:
             destination = os.path.relpath(destination)
-            print("%s\t%s" % (destination, source), file = MAPLOG)
+            print("%s | %s" % (destination, source), file = MAPLOG)

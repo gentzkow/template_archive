@@ -6,8 +6,13 @@ from builtins import (bytes, str, open, super, range,
 import os
 import traceback
 
+from termcolor import colored
+import colorama
+colorama.init()
+
+from gslab_make.private.exceptionclasses import ColoredError
 from gslab_make.private.movedirective import MoveList
-from gslab_make.private.utility import format_error
+from gslab_make.private.utility import get_path, format_error
 from gslab_make.write_logs import write_to_makelog
 
 
@@ -37,7 +42,7 @@ def create_links(paths,
         List of (source, destination) for each symlink created.
     """
 
-    move_dir = paths['move_dir']
+    move_dir = get_path(paths, 'move_dir')
 
     try:              
         move_list = MoveList(file_list, move_dir, mapping_dict)
@@ -47,10 +52,9 @@ def create_links(paths,
         else:
             move_map = []
 
-        write_to_makelog(paths, 'Links successfully created!')    
         return(move_map)
     except:
-        raise Exception(traceback.format_exc())
+        raise
         
 
 def copy_inputs(paths,
@@ -79,7 +83,7 @@ def copy_inputs(paths,
         List of (source, destination) for each copy created.
     """
         
-    move_dir = paths['input_dir']
+    move_dir = get_path(paths, 'input_dir')
 
     try:              
         move_list = MoveList(file_list, move_dir, mapping_dict)
@@ -89,15 +93,16 @@ def copy_inputs(paths,
         else:
             move_map = []
 
-        write_to_makelog(paths, 'Copies successfully created!')    
+        message = 'Input copies successfully created!'
+        write_to_makelog(paths, message)    
+        print(colored(message, 'green'))
         return(move_map)
         
     except:
         error_message = 'An error was encountered with `copy_inputs`. Traceback can be found below.' 
-        error_message = format_error(error_message) + '\n' + traceback.format_exc()
-        write_to_makelog(paths, error_message)
-        
-        raise    
+        error_message = format_error(error_message) 
+        write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
+        raise ColoredError(error_message, traceback.format_exc())
 
 
 def link_inputs(paths,
@@ -127,15 +132,18 @@ def link_inputs(paths,
         List of (source, destination) for each symlink created.
     """
     try:
-        paths['move_dir'] = paths['input_dir']
+        paths['move_dir'] = get_path(paths, 'input_dir')
         move_map = create_links(paths, file_list, mapping_dict)
+
+        message = 'Input links successfully created!'
+        write_to_makelog(paths, message)    
+        print(colored(message, 'green'))
         return(move_map)
     except:
         error_message = 'An error was encountered with `link_inputs`. Traceback can be found below.' 
-        error_message = format_error(error_message) + '\n' + traceback.format_exc()
-        write_to_makelog(paths, error_message)
-        
-        raise 
+        error_message = format_error(error_message) 
+        write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
+        raise ColoredError(error_message, traceback.format_exc())
         
 
 def link_externals(paths,
@@ -166,12 +174,15 @@ def link_externals(paths,
     """
     
     try:
-        paths['move_dir'] = paths['external_dir']
+        paths['move_dir'] = get_path(paths, 'external_dir')
         move_map = create_links(paths, file_list, mapping_dict)
+
+        message = 'External links successfully created!'
+        write_to_makelog(paths, message)    
+        print(colored(message, 'green'))
         return(move_map)
     except:
         error_message = 'An error was encountered with `link_externals`. Traceback can be found below.' 
-        error_message = format_error(error_message) + '\n' + traceback.format_exc()
-        write_to_makelog(paths, error_message)
-        
-        raise 
+        error_message = format_error(error_message) 
+        write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
+        raise ColoredError(error_message, traceback.format_exc())

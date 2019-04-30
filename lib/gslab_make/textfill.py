@@ -7,7 +7,11 @@ import os
 import argparse
 import types
 import traceback
-from HTMLParser import HTMLParser, HTMLParseError
+try:
+	from html.parser import HTMLParser
+except:
+	from HTMLParser import HTMLParser
+from gslab_make.private.exceptionclasses import CritError
 
 import gslab_make.textfill_info as textfill_info
 
@@ -106,7 +110,7 @@ class text_parser(HTMLParser):
     def close(self):
         for tag in self.results.keys():
             if tag not in self.closed:
-                raise HTMLParseError('Tag %s is not closed' % tag)
+                raise CritError('Tag %s is not closed' % tag)
 
 
 def clean_text(text, remove_echoes):

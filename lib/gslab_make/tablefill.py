@@ -52,7 +52,7 @@ def parse_tables(args):
 
 def read_data(input):
     data = []
-    if isinstance(input, types.StringTypes):
+    if isinstance(input, str):
         input = [input]
     for file in input:
         data += open(file, 'rU').readlines()
@@ -75,7 +75,7 @@ def parse_data(data):
         for n in range( len(tables[table_tag]) ):
             clean_entry = tables[table_tag][n].strip()
             tables[table_tag][n] = clean_entry
-        tables[table_tag] = filter(lambda a: a != '.' and a != '', tables[table_tag])
+        tables[table_tag] = list(filter(lambda a: a != '.' and a != '', tables[table_tag]))
         
     return tables    
     
@@ -180,7 +180,7 @@ def insert_commas(entry):
   
 
 def write_to_lyx(args, lyx_text):    
-    outfile = open(args['output'], 'wb')
+    outfile = open(args['output'], 'w')
     outfile.write( ''.join(lyx_text) )
     outfile.close()
     

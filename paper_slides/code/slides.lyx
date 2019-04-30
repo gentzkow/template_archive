@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -7,7 +7,18 @@
 \textclass beamer
 \begin_preamble
 \PassOptionsToPackage{no-math}{fontspec}
-\usetheme{metropolis} 
+
+\usepackage{beamer_themes/beamerthememetropolis_gslab}
+\usepackage{beamer_themes/beamerinnerthememetropolis_gslab}
+\usepackage{beamer_themes/beamerouterthememetropolis_gslab}
+\usepackage{beamer_themes/beamercolorthememetropolis_gslab}
+\usepackage{beamer_themes/beamerfontthememetropolis_gslab}
+\AtEndPreamble{%
+   \@ifpackageloaded{pgfplots}{%
+     \RequirePackage{beamer_themes/pgfplotsthemetol_gslab}
+   }{}
+ }
+ 
 \usepackage{graphicx} 
 \usepackage{hyperref} 
 \usepackage{multirow} 
@@ -41,6 +52,8 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -70,6 +83,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -82,7 +96,10 @@
 \tocdepth 2
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default

@@ -1,0 +1,3 @@
+destination | source
+input/tables.txt | /Users/zong/template/analysis/output/tables.txt
+input/plot.eps | /Users/zong/template/analysis/output/plot.eps

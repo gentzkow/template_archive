@@ -6,9 +6,10 @@ import yaml
 
 ROOT = git.Repo('.', search_parent_directories = True).working_tree_dir 
 f, path, desc = imp.find_module('gslab_make', [os.path.join(ROOT, 'lib')]) 
-gs = imp.load_module('gslab_make', f, path, desc)
+gs = imp.load_module('gslab_make', f, path, desc) # Load `gslab_make`
 
 PATHS = { # Set default paths; used by `gslab_make` functions
+    'config'          : '../config.yaml',
     'config_user'     : '../config_user.yaml',
     'input_dir'       : 'input', 
     'external_dir'    : 'external',
@@ -23,7 +24,7 @@ PATHS = { # Set default paths; used by `gslab_make` functions
     'source_headslog' : 'log/source_heads.log'  # Set to '' to avoid writing log
 }
 
-PATH_MAPPINGS = { # Set path mappings; used by `create_links` functions
+PATH_MAPPINGS = { # Set path mappings; used by `move_sources` functions
     'root': ROOT
 }
 
@@ -50,6 +51,9 @@ gs.run_python(PATHS, program = 'code/descriptive.py')
 
 ### LOG OUTPUTS
 gs.log_files_in_output(PATHS)
+
+### CHECK FILE SIZES
+gs.check_repo_size(PATHS)
 
 ### END
 gs.end_makelog(PATHS)

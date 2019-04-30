@@ -76,7 +76,7 @@ default_executables = {
          'r'         : 'Rscript',
          'sas'       : 'sas'},
     'nt': 
-        {'stata'     : '%STATAEXE%',
+        {'stata'     : 'StataMP-64',
          'matlab'    : 'matlab',
          'perl'      : 'perl',
          'python'    : 'python',

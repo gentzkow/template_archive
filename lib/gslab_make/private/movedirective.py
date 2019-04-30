@@ -4,16 +4,15 @@ from builtins import (bytes, str, open, super, range,
                       zip, round, input, int, pow, object)
 
 import os
-import traceback
 import re
 import glob
-from itertools import chain
 import subprocess
+from itertools import chain
 
-from gslab_make.private.exceptionclasses import CritError
 import gslab_make.private.messages as messages
 import gslab_make.private.metadata as metadata
-from gslab_make.private.utility import norm_path, file_to_array, check_duplicate
+from gslab_make.private.exceptionclasses import CritError
+from gslab_make.private.utility import norm_path, file_to_array, format_traceback
 
 
 class MoveDirective(object):
@@ -76,13 +75,13 @@ class MoveDirective(object):
         """
         
         try:
-            self.line = self.line.strip().split('|')
+            self.line = self.line.split('|')
             self.line = [l.strip() for l in self.line]
             self.line = [l.strip('"\'') for l in self.line]
             self.destination, self.source = self.line
         except:
-            error_message = messages.crit_error_bad_move % self.line_raw
-            error_message = error_message + '\n' + traceback.format_exc().splitlines()[-1]
+            error_message = messages.crit_error_bad_move % self.raw
+            error_message = error_message + format_traceback()
             raise CritError(error_message)
 
         self.source = norm_path(self.source)
@@ -104,7 +103,7 @@ class MoveDirective(object):
                 raise CritError(messages.crit_error_no_path_wildcard % self.source)
         else:
             if not os.path.exists(self.source):
-                raise CritError(messages.crit_error_no_path % self.source)   
+                raise CritError(messages.crit_error_no_path % self.source)
 
     def get_move_list(self):
         """ Interpret wildcards to get list of paths that meet criteria. 
@@ -146,7 +145,7 @@ class MoveDirective(object):
         regex = self.source.split('*')
         regex = '(.*)'.join(regex) 
 
-        wildcards = re.findall(regex, f)
+        wildcards = re.findall(regex, f) # Returns list if single match, list of set if multiple matches
         wildcards = [(w, ) if isinstance(w, str) else w for w in wildcards]
         wildcards = chain(*wildcards)
 
@@ -172,8 +171,8 @@ class MoveDirective(object):
         """
         
         f = self.destination
-        for wild in wildcards:
-            f = re.sub('\*', wild, f, 1)
+        for w in wildcards:
+            f = re.sub('\*', w, f, 1)
 
         return f
 
@@ -233,7 +232,19 @@ class MoveDirective(object):
                 command = metadata.commands[self.osname]['makecopy'] % (source, destination)
             elif movetype == 'symlink':
                 command = metadata.commands[self.osname]['makelink'] % (source, destination)
-            subprocess.Popen(command, shell = True)
+
+            process = subprocess.Popen(command,
+                                       shell = True,
+                                       stdout = subprocess.PIPE,
+                                       stderr = subprocess.PIPE, 
+                                       universal_newlines = True)
+            stdout, stderr = process.communicate()
+           
+            if process.returncode != 0:
+                error_message = messages.crit_error_move_command % command
+                error_message = error_message + format_traceback(stderr)
+                raise CritError(error_message)
+
 
     def move_nt(self, movetype):   
         """ Create symlinks/copies using NT shell command specified in metadata. 
@@ -257,7 +268,18 @@ class MoveDirective(object):
                 command = metadata.commands[self.osname]['makecopy'] % (source, destination)
             elif movetype == 'symlink':
                 command = metadata.commands[self.osname]['makelink'] % (directory, destination, source)
-            subprocess.Popen(command, shell = True)
+
+            process = subprocess.Popen(command,
+                                       shell = True,
+                                       stdout = subprocess.PIPE,
+                                       stderr = subprocess.PIPE, 
+                                       universal_newlines = True)
+            stdout, stderr = process.communicate()
+           
+            if process.returncode != 0:
+                error_message = messages.crit_error_move_command % command
+                error_message = error_message + format_traceback(stderr)
+                raise CritError(error_message)
 
 
 class MoveList(object):
@@ -338,8 +360,8 @@ class MoveList(object):
         try:
             lines = [(raw, str(line).format(**self.mapping_dict)) for (raw, line) in lines]
         except KeyError as e:
-            error_message = messages.crit_error_bad_move % messages.crit_error_path_mapping % str(e).strip("'")
-            error_message = error_message + '\n' + traceback.format_exc().splitlines()[-1]
+            error_message = messages.crit_error_path_mapping % str(e).lstrip("u'").rstrip("'")
+            error_message = error_message + format_traceback()
             raise CritError(error_message)
 			
         self.move_directive_list = [MoveDirective(raw, line, self.move_dir) for (raw, line) in lines]

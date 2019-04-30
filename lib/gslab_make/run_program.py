@@ -4,15 +4,15 @@ from builtins import (bytes, str, open, super, range,
                       zip, round, input, int, pow, object)
 
 import os
+import re
+import traceback
 import shutil
 import fileinput
-import traceback
-import re
 
 import gslab_make.private.metadata as metadata
-from gslab_make.private.exceptionclasses import CritError
+from gslab_make.private.exceptionclasses import ColoredError, ProgramError
 from gslab_make.private.programdirective import Directive, ProgramDirective, SASDirective, LyXDirective
-from gslab_make.private.utility import format_error
+from gslab_make.private.utility import get_path, format_error
 from gslab_make.write_logs import write_to_makelog
 
 
@@ -48,7 +48,7 @@ def run_stata(paths, program, **kwargs):
     None
     """
 
-    makelog = paths['makelog']
+    makelog = get_path(paths, 'makelog')
 
     try:
         direct = ProgramDirective(application = 'stata', program = program, makelog = makelog, **kwargs)
@@ -65,22 +65,28 @@ def run_stata(paths, program, **kwargs):
 
         # Execute
         command = metadata.commands[direct.osname]['stata'] % (direct.executable, direct.option, direct.program)
-        exit_code, error_message = direct.execute_command(command)
+        exit_code, stderr = direct.execute_command(command)
         if exit_code != 0:
-            raise CritError('* Stata program executed with errors: *\n%s' % error_message)
+            error_message = 'Stata program executed with errors. Traceback can be found below.'
+            error_message = format_error(error_message)
+            raise ProgramError(error_message, stderr)
         output = direct.move_program_output(program_log, direct.log)
         check_stata_output(output)
+    except ProgramError:
+        raise
     except:
         error_message = 'Error with `run_stata`. Traceback can be found below.' 
-        error_message = format_error(error_message) + '\n' + traceback.format_exc()
-        write_to_makelog(paths, error_message)
-        raise
+        error_message = format_error(error_message) 
+        write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
+        raise ColoredError(error_message, traceback.format_exc())
     
     
 def check_stata_output(output):
     regex = "end of do-file[\s]*r\([0-9]*\);"
     if re.search(regex, output):
-        raise CritError('* Stata program executed with errors (check logs for further detail) *')
+        error_message = 'Stata program executed with errors.'
+        error_message = format_error(error_message)
+        raise ProgramError(error_message, 'See logs for more detail.')
 
 
 def run_matlab(paths, program, **kwargs):
@@ -115,7 +121,7 @@ def run_matlab(paths, program, **kwargs):
     None
     """
   
-    makelog = paths['makelog']
+    makelog = get_path(paths, 'makelog')
 
     try:
         direct = ProgramDirective(application = 'matlab', program = program, makelog = makelog, **kwargs)
@@ -125,15 +131,19 @@ def run_matlab(paths, program, **kwargs):
 
         # Execute
         command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.option, direct.program, direct.program_name + '.log')
-        exit_code, error_message = direct.execute_command(command)    
+        exit_code, stderr = direct.execute_command(command)   
         if exit_code != 0:
-            raise CritError('* Matlab program executed with errors: *\n%s' % error_message)
+            error_message = 'Matlab program executed with errors. Traceback can be found below.'
+            error_message = format_error(error_message)
+            raise ProgramError(error_message, stderr)
         direct.move_program_output(program_log, direct.log)   
+    except ProgramError:
+        raise
     except:
         error_message = 'Error with `run_matlab`. Traceback can be found below.' 
-        error_message = format_error(error_message) + '\n' + traceback.format_exc()
-        write_to_makelog(paths, error_message)
-        raise
+        error_message = format_error(error_message) 
+        write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
+        raise ColoredError(error_message, traceback.format_exc())
         
 
 def run_perl(paths, program, **kwargs):
@@ -168,22 +178,26 @@ def run_perl(paths, program, **kwargs):
     None
     """
     
-    makelog = paths['makelog']
+    makelog = get_path(paths, 'makelog')
 
     try:
         direct = ProgramDirective(application = 'perl', program = program, makelog = makelog, **kwargs)
         
         # Execute
         command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.option, direct.program, direct.args)
-        exit_code, error_message = direct.execute_command(command)
+        exit_code, stderr = direct.execute_command(command)
         direct.write_log()
         if exit_code != 0:
-            raise CritError('* Perl program executed with errors: *\n%s' % error_message)
+            error_message = 'Perl program executed with errors. Traceback can be found below.'
+            error_message = format_error(error_message)
+            raise ProgramError(error_message, stderr)
+    except ProgramError:
+        raise
     except:
         error_message = 'Error with `run_perl`. Traceback can be found below.' 
-        error_message = format_error(error_message) + '\n' + traceback.format_exc()
-        write_to_makelog(paths, error_message)
-        raise
+        error_message = format_error(error_message) 
+        write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
+        raise ColoredError(error_message, traceback.format_exc())
 
 
 def run_python(paths, program, **kwargs):
@@ -218,22 +232,26 @@ def run_python(paths, program, **kwargs):
     None
     """
     
-    makelog = paths['makelog']
+    makelog = get_path(paths, 'makelog')
 
     try:
         direct = ProgramDirective(application = 'python', program = program, makelog = makelog, **kwargs)
 
         # Execute
         command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.option, direct.program, direct.args)
-        exit_code, error_message = direct.execute_command(command)
-        direct.write_log()
+        exit_code, stderr = direct.execute_command(command)
+        direct.write_log() 
         if exit_code != 0:
-            raise CritError('* Python program executed with errors: *\n%s' % error_message)
+            error_message = 'Python program executed with errors. Traceback can be found below.'
+            error_message = format_error(error_message)
+            raise ProgramError(error_message, stderr)
+    except ProgramError:
+        raise
     except:
         error_message = 'Error with `run_python`. Traceback can be found below.' 
-        error_message = format_error(error_message) + '\n' + traceback.format_exc()
-        write_to_makelog(paths, error_message)
-        raise
+        error_message = format_error(error_message) 
+        write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
+        raise ColoredError(error_message, traceback.format_exc())
         
 
 def run_mathematica(paths, program, **kwargs):
@@ -268,22 +286,26 @@ def run_mathematica(paths, program, **kwargs):
     None
     """
     
-    makelog = paths['makelog']
+    makelog = get_path(paths, 'makelog')
 
     try:
         direct = ProgramDirective(application = 'math', program = program, makelog = makelog, **kwargs)
 
         # Execute
         command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.program, direct.option)
-        exit_code, error_message = direct.execute_command(command)
+        exit_code, stderr = direct.execute_command(command)
         direct.write_log()
         if exit_code != 0:
-            raise CritError('* Mathematica program executed with errors: *\n%s' % error_message)
+            error_message = 'Mathematica program executed with errors. Traceback can be found below.'
+            error_message = format_error(error_message)
+            raise ProgramError(error_message, stderr)
+    except ProgramError:
+        raise
     except:
         error_message = 'Error with `run_mathematica`. Traceback can be found below.' 
-        error_message = format_error(error_message) + '\n' + traceback.format_exc()
-        write_to_makelog(paths, error_message)
-        raise
+        error_message = format_error(error_message) 
+        write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
+        raise ColoredError(error_message, traceback.format_exc())
         
 
 def run_stat_transfer(paths, program, **kwargs):
@@ -318,22 +340,26 @@ def run_stat_transfer(paths, program, **kwargs):
     None
     """
     
-    makelog = paths['makelog']
+    makelog = get_path(paths, 'makelog')
 
     try:
         direct = ProgramDirective(application = 'st', program = program, makelog = makelog, **kwargs)
 
         # Execute
         command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.program)
-        exit_code, error_message = direct.execute_command(command)
+        exit_code, stderr = direct.execute_command(command)
         direct.write_log()
         if exit_code != 0:
-            raise CritError('* StatTransfer program executed with errors: *\n%s' % error_message)
+            error_message = 'StatTransfer program executed with errors. Traceback can be found below.'
+            error_message = format_error(error_message)
+            raise ProgramError(error_message, stderr)
+    except ProgramError:
+        raise
     except:
         error_message = 'Error with `run_stat_transfer`. Traceback can be found below.' 
-        error_message = format_error(error_message) + '\n' + traceback.format_exc()
-        write_to_makelog(paths, error_message)
-        raise
+        error_message = format_error(error_message) 
+        write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
+        raise ColoredError(error_message, traceback.format_exc())
         
 
 def run_lyx(paths, program, **kwargs): 
@@ -373,8 +399,8 @@ def run_lyx(paths, program, **kwargs):
     None
     """
     
-    makelog = paths['makelog']
-    pdf_dir = paths['pdf_dir']
+    makelog = get_path(paths, 'makelog')
+    pdf_dir = get_path(paths, 'pdf_dir')
 
     try:
         direct = LyXDirective(pdf_dir = pdf_dir, application = 'lyx', program = program, makelog = makelog, **kwargs)
@@ -401,10 +427,12 @@ def run_lyx(paths, program, **kwargs):
 
         # Execute
         command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.option, temp_program)
-        exit_code, error_message = direct.execute_command(command)
+        exit_code, stderr = direct.execute_command(command)
         direct.write_log()
         if exit_code != 0:
-            raise CritError('* LyX program executed with errors: *\n%s' % error_message)
+            error_message = 'LyX program executed with errors. Traceback can be found below.'
+            error_message = format_error(error_message)
+            raise ProgramError(error_message, stderr)
 
         # Move PDF output
         temp_pdf = os.path.join(direct.program_dir, temp_name + '.pdf')
@@ -417,11 +445,13 @@ def run_lyx(paths, program, **kwargs):
         # Remove handout/commented LyX file
         if direct.doctype:
             os.remove(temp_program)
+    except ProgramError:
+        raise
     except:
         error_message = 'Error with `run_lyx`. Traceback can be found below.' 
-        error_message = format_error(error_message) + '\n' + traceback.format_exc()
-        write_to_makelog(paths, error_message)
-        raise
+        error_message = format_error(error_message) 
+        write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
+        raise ColoredError(error_message, traceback.format_exc())
         
 
 def run_r(paths, program, **kwargs):
@@ -456,22 +486,26 @@ def run_r(paths, program, **kwargs):
     None
     """
     
-    makelog = paths['makelog']
+    makelog = get_path(paths, 'makelog')
 
     try:
         direct = ProgramDirective(application = 'r', program = program, makelog = makelog, **kwargs)
 
         # Execute
         command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.option, direct.program)
-        exit_code, error_message = direct.execute_command(command)
+        exit_code, stderr = direct.execute_command(command)
         direct.write_log()      
         if exit_code != 0:
-            raise CritError('* R program executed with errors: *\n%s' % error_message)
+            error_message = 'R program executed with errors. Traceback can be found below.'
+            error_message = format_error(error_message)
+            raise ProgramError(error_message, stderr)
+    except ProgramError:
+        raise
     except:
         error_message = 'Error with `run_r`. Traceback can be found below.' 
-        error_message = format_error(error_message) + '\n' + traceback.format_exc()
-        write_to_makelog(paths, error_message)
-        raise
+        error_message = format_error(error_message) 
+        write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
+        raise ColoredError(error_message, traceback.format_exc())
         
 
 def run_sas(paths, program, **kwargs):
@@ -508,7 +542,7 @@ def run_sas(paths, program, **kwargs):
     None
     """
 
-    makelog = paths['makelog']
+    makelog = get_path(paths, 'makelog')
 
     try:
         direct = SASDirective(application = 'sas', program = program, makelog = makelog, **kwargs)
@@ -519,16 +553,20 @@ def run_sas(paths, program, **kwargs):
         
         # Execute
         command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.option, direct.program)       
-        exit_code, error_message = direct.execute_command(command)
+        exit_code, stderr = direct.execute_command(command)
         if exit_code != 0:
-            raise CritError('* SAS program executed with errors: *\n%s' % error_message)
+            error_message = 'SAS program executed with errors. Traceback can be found below.'
+            error_message = format_error(error_message)
+            raise ProgramError(error_message, stderr)
         direct.move_program_output(program_log)
         direct.move_program_output(program_lst)        
+    except ProgramError:
+        raise
     except:
         error_message = 'Error with `run_sas`. Traceback can be found below.' 
-        error_message = format_error(error_message) + '\n' + traceback.format_exc()
-        write_to_makelog(paths, error_message)
-        raise
+        error_message = format_error(error_message) 
+        write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
+        raise ColoredError(error_message, traceback.format_exc())
         
 
 def execute_command(paths, command, **kwargs):
@@ -556,18 +594,22 @@ def execute_command(paths, command, **kwargs):
     None
     """
     
-    makelog = paths['makelog']
+    makelog = get_path(paths, 'makelog')
 
     try:
         direct = Directive(makelog = makelog, **kwargs)
 
         # Execute
-        exit_code, error_message = direct.execute_command(command)
+        exit_code, stderr = direct.execute_command(command)
         direct.write_log()   
         if exit_code != 0:
-            raise CritError('* Command executed with errors: *\n%s' % error_message)
+            error_message = 'Command executed with errors. Traceback can be found below.'
+            error_message = format_error(error_message)
+            raise ProgramError(error_message, stderr)
+    except ProgramError:
+        raise
     except:
         error_message = 'Error with `execute_command`. Traceback can be found below.' 
-        error_message = format_error(error_message) + '\n' + traceback.format_exc()
-        write_to_makelog(paths, error_message)
-        raise
+        error_message = format_error(error_message) 
+        write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
+        raise ColoredError(error_message, traceback.format_exc())
