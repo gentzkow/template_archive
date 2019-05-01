@@ -94,7 +94,7 @@ class MoveDirective(object):
         -------
         None
         """
-    
+
         if re.findall('\*', self.source) != re.findall('\*', self.destination):
             raise SyntaxError(messages.syn_error_wildcard)
         
@@ -112,11 +112,10 @@ class MoveDirective(object):
         -------
         None
         """
-    
-        if re.match('\*', self.source):
+        if re.search('\*', self.source):
             self.source_list  = glob.glob(self.source)
-            self.destination_list = [extract_wildcards(t) for t in self.source_list]
-            self.destination_list = [fill_in_wildcards(s) for s in self.destination_list]
+            self.destination_list = [self.extract_wildcards(t) for t in self.source_list]
+            self.destination_list = [self.fill_in_wildcards(s) for s in self.destination_list]
         else:
             self.source_list  = [self.source]
             self.destination_list = [self.destination]

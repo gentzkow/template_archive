@@ -11,7 +11,7 @@ from builtins import (bytes, str, open, super, range,
 crit_error_unknown_system = '\nERROR! `gslab_make` only supports the following operating systems: `POSIX`, `NT`.' 
 crit_error_no_makelog = '\nERROR! Makelog `%s` not found. Makelog either not started (via `start_makelog`) or deleted after started.' 
 crit_error_no_program_output = '\nERROR! Certain applications (`matlab`, `sas`, `stata`) automatically create program outputs when ran using system command. Program output `%s` is expected from `%s` but cannot be not found or opened. Traceback can be found below.'
-crit_error_no_key = '\nERROR! Dictionary of paths passed into `paths` is missing a value for the following key: `%s`.'
+crit_error_no_key = '\nERROR! Dictionary for argument `paths` is missing a value for the following key: `%s`.'
 crit_error_no_file = '\nERROR! File `%s` not found.' 
 crit_error_no_files = '\nERROR! Files matching `%s` not found.'
 crit_error_no_path = '\nERROR! Path `%s` not found.' 
