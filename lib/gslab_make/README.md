@@ -197,7 +197,7 @@ write_logs.<b>log_files_in_output(</b><i>
 
 # Linking functions
 
-<b>The following functions are used to create symbolic links to source files. Doing so avoids potential duplication of source files and any associated confusion. In the case of modules dedicated to LyX documents, there is a optional function to copy source files instead of creating symbolic links so that users without </b><code>gslab_make</code><b> can still manually compile.
+<b>The following functions are used to create symbolic links to source files. Doing so avoids potential duplication of source files and any associated confusion. In the case of modules dedicated to LyX documents, there is a optional function to copy source files instead of creating symbolic links so that users without </b><code>gslab_make</code><b> can still manually compile.</b>
 
 <br>
 

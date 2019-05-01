@@ -161,7 +161,9 @@ All required applications must be installed and setup for command line usage. If
 
     * Create symbolic links to external dependencies using `gslab_make.link_externals`.
 
-    * Reference external dependencies via symbolic links as opposed to actual path.
+    * Reference external dependencies via symbolic links in `/external/` as opposed to actual path.
+
+When specifying external dependencies in `config_user.yaml`, refer to the top level directory containing the external dependencies. Additional pathing to individual files/subdirectories should instead be specified when creating symbolic links.
 
 2. **Executable names**: Required applications may be setup for command line usage on your computer with a different executable name from the default. If so, specify the correct executable name in `config_user.yaml`
 
