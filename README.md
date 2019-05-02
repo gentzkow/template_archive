@@ -22,7 +22,6 @@ To setup an application for command line usage, its executable must be added to 
    ```
    application : executable
    Python      : python
-   pip         : pip
    git-lfs     : git-lfs
    LyX         : lyx
    R           : Rscript
@@ -52,7 +51,6 @@ To setup an application for command line usage, its executable must be added to 
 ```
 application : executable
 Python      : python
-pip         : pip
 git-lfs     : git-lfs
 LyX         : lyx
 R           : Rscript
@@ -64,7 +62,6 @@ However, these are the default executable names for Mac and therefore likely to 
 ```
 application : executable
 Python      : python
-pip         : pip
 git-lfs     : git-lfs
 LyX         : LyX#.# (where #.# refers to the version number)
 R           : Rscript
@@ -92,7 +89,7 @@ To check if an application is setup for command line usage, type `where executab
 
 2. Install Python dependencies listed in the `requirements.txt` file using pip. One way to do this is to run the following bash command in a terminal from the `setup` subdirectory:
    ```
-   pip install --user -r requirements.txt
+   python -m pip install --user -r requirements.txt
    ```
 
 3. Run the `setup_repository.py` file. One way to do this is to run the following bash command in a terminal from the `setup` subdirectory:
@@ -192,17 +189,17 @@ To permanently set up your terminal/IDE to run as administrator mode:
 
 The standard bash command for pip installing `requirements.txt` often runs into issues as depending on your Python environment, pip will attempt to install to a root directory (i.e., a directory that by default you should not have write permission)
 ```
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
 One way to get around this is to include `sudo` (or the Windows equivalent of running in administrative mode) in your bash command.
 ```
-sudo pip install -r requirements.txt
+sudo python -m pip install -r requirements.txt
 ```
 
 However, we caution against this given the potential security risks. Instead, we recommend including the `--user` flag to your bash command.
 ```
-pip install --user -r requirements.txt
+python -m pip install --user -r requirements.txt
 ```
 
 The `--user` flag instructs pip to install to a local directory (i.e., a directory that by default you should have write permission). If you are still running into permission errors, we recommend the following diagnostic steps:

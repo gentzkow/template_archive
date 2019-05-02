@@ -4,3 +4,4 @@ matplotlib
 gitpython
 termcolor
 colorama
+jupyter

@@ -38,7 +38,8 @@ Notes:
 
 # Import make tools
 from gslab_make.check_repo import check_repo_size, get_modified_sources
-from gslab_make.move_sources import create_links, copy_inputs, link_inputs, link_externals
+from gslab_make.move_sources import (create_links, link_inputs, link_externals, 
+                                     create_copies, copy_inputs, copy_externals)
 from gslab_make.dir_mod import check_os, remove_path, remove_dir, clear_dir, unzip, zip_dir
 from gslab_make.run_program import (run_stata, run_matlab, run_perl, run_python, 
                                     run_jupyter, run_mathematica, run_stat_transfer, 

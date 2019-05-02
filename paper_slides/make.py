@@ -41,8 +41,8 @@ gs.clear_dir(['output', 'log'])
 gs.start_makelog(PATHS)
 
 ### GET INPUT FILES 
-inputs = gs.link_inputs(PATHS, ['inputs.txt'], PATH_MAPPINGS)
-externals = gs.link_externals(PATHS, ['externals.txt'], PATH_MAPPINGS)
+inputs = gs.copy_inputs(PATHS, ['inputs.txt'], PATH_MAPPINGS)
+externals = gs.copy_externals(PATHS, ['externals.txt'], PATH_MAPPINGS)
 gs.write_source_logs(PATHS, inputs + externals)
 gs.get_modified_sources(PATHS, inputs + externals)
 

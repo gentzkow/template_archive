@@ -5,6 +5,9 @@
 *external/
 *input/
 
+# `/temp/` subdirectories are ignored as they are temporary by design
+*temp/
+
 # `/output_local/` subdirectories are ignored as they contain large outputs that will be stored outside of Github
 *output_local/
 
