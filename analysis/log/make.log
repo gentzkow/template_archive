@@ -1,22 +1,18 @@
 --------------------------------------------------------------------------------
-Makelog started: 2019-05-01 17:12:28
+Makelog started: 2019-05-02 10:15:29
 Working directory: /Users/zong/template/analysis
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
 Executing command: `python  "/Users/zong/template/analysis/code/descriptive.py" `
-Executing command: `python -m jupyter nbconvert --ExecutePreprocessor.timeout=-1 --to notebook --inplace --execute "/Users/zong/template/analysis/code/descriptive.ipynb"`
-[NbConvertApp] Converting notebook /Users/zong/template/analysis/code/descriptive.ipynb to notebook
-[NbConvertApp] Executing notebook with kernel: python2
-[NbConvertApp] Writing 1044 bytes to /Users/zong/template/analysis/code/descriptive.ipynb
-
+Processing notebook: `code/descriptive.ipynb`
 Output logs successfully written!
 WARNING! Certain files tracked by git that exceed config limit (0.5 MB). See below for list of files.
 /Users/zong/template/data/output/data_graph.txt
 /Users/zong/template/lib/gslab_make/tests/input/rinstall_test_package/Ecdat_0.1-6.1.tar.gz
 /Users/zong/template/data/output/data_table.txt
 --------------------------------------------------------------------------------
-Makelog ended: 2019-05-01 17:12:33
+Makelog ended: 2019-05-02 10:15:35
 Working directory: /Users/zong/template/analysis
 --------------------------------------------------------------------------------

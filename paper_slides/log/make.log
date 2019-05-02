@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
-Makelog started: 2019-05-01 17:12:52
+Makelog started: 2019-05-02 10:15:53
 Working directory: /Users/zong/template/paper_slides
 --------------------------------------------------------------------------------
 Input copies successfully created!
@@ -71,6 +71,6 @@ WARNING! Certain files tracked by git that exceed config limit (0.5 MB). See bel
 /Users/zong/template/lib/gslab_make/tests/input/rinstall_test_package/Ecdat_0.1-6.1.tar.gz
 /Users/zong/template/data/output/data_table.txt
 --------------------------------------------------------------------------------
-Makelog ended: 2019-05-01 17:12:57
+Makelog ended: 2019-05-02 10:15:59
 Working directory: /Users/zong/template/paper_slides
 --------------------------------------------------------------------------------
