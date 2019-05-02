@@ -1,7 +1,7 @@
 # README
 
 ## Requirements
-All requirements must be installed and setup for command line usage. For details on how to setup command line usage for an application, refer to the [RA manual]().
+All requirements must be installed and setup for command line usage. For details on how to setup command line usage for an application, refer to the [RA manual](https://github.com/gentzkow/template/wiki/Command-Line-Usage).
 
 * Python (2.7/3.7)
 * pip (>=10.0)
