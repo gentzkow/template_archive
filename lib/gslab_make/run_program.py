@@ -8,6 +8,13 @@ import re
 import traceback
 import shutil
 import fileinput
+import nbformat
+import nbconvert
+from nbconvert.preprocessors import ExecutePreprocessor
+
+from termcolor import colored
+import colorama
+colorama.init()
 
 import gslab_make.private.metadata as metadata
 from gslab_make.private.exceptionclasses import ColoredError, ProgramError
@@ -266,20 +273,6 @@ def run_jupyter(paths, program, **kwargs):
         }
     program : str
         Path of script to run.
-    osname : str, optional
-        Name of OS. Defaults to `os.name`.
-    shell : bool, optional
-        See: https://docs.python.org/2/library/subprocess.html#frequently-used-arguments.
-        Defaults to `True`.
-    log : str, optional
-        Path of program log. Program log is only written if specified. 
-    executable : str, optional
-        Executable to use for system command. 
-        Defaults to executable specified in metadata.
-    option : str, optional
-        Options for system command. Defaults to options specified in metadata.
-    args : str, optional
-        Arguments for system command. Defaults to no arguments.
 
     Returns
     -------
@@ -289,18 +282,16 @@ def run_jupyter(paths, program, **kwargs):
     makelog = get_path(paths, 'makelog')
 
     try:
-        direct = ProgramDirective(application = 'jupyter', program = program, makelog = makelog, **kwargs)
-
-        # Execute
-        command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.option, direct.program)
-        exit_code, stderr = direct.execute_command(command)
-        direct.write_log() 
-        if exit_code != 0:
-            error_message = 'Jupyter program executed with errors. Traceback can be found below.'
-            error_message = format_error(error_message)
-            raise ProgramError(error_message, stderr)
-    except ProgramError:
-        raise
+        with open(program) as f:
+            message = 'Processing notebook: `%s`' % program
+            write_to_makelog(paths, message)    
+            print(colored(message, 'cyan'))
+            
+            ep = ExecutePreprocessor()
+            nb = nbformat.read(f, as_version = 4)       
+            ep.preprocess(nb, {'metadata': {'path': '.'}})
+        with open(program, 'wt') as f:
+            nbformat.write(nb, f)
     except:
         error_message = 'Error with `run_jupyter`. Traceback can be found below.' 
         error_message = format_error(error_message) 

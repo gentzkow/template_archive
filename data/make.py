@@ -49,7 +49,6 @@ gs.get_modified_sources(PATHS, inputs + externals)
 ### RUN SCRIPTS
 gs.run_r(PATHS, program = 'code/create_table_data.r')
 gs.run_stata(PATHS, program = 'code/create_graph_data.do')
-gs.run_jupyter(PATHS, program = 'code/test.ipynb')
 
 ### LOG OUTPUTS
 gs.log_files_in_output(PATHS)
