@@ -1,18 +1,18 @@
 --------------------------------------------------------------------------------
-Makelog started: 2019-05-02 10:15:29
-Working directory: /Users/zong/template/analysis
+Makelog started: 2019-05-02 10:24:39
+Working directory: C:\Users\Zong\template\analysis
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
-Executing command: `python  "/Users/zong/template/analysis/code/descriptive.py" `
+Executing command: `python  "C:\Users\Zong\template\analysis\code\descriptive.py" `
 Processing notebook: `code/descriptive.ipynb`
 Output logs successfully written!
 WARNING! Certain files tracked by git that exceed config limit (0.5 MB). See below for list of files.
-/Users/zong/template/data/output/data_graph.txt
-/Users/zong/template/lib/gslab_make/tests/input/rinstall_test_package/Ecdat_0.1-6.1.tar.gz
-/Users/zong/template/data/output/data_table.txt
+C:\Users\Zong\template\data\output\data_graph.txt
+C:\Users\Zong\template\data\output\data_table.txt
+C:\Users\Zong\template\lib\gslab_make\tests\input\rinstall_test_package\Ecdat_0.1-6.1.tar.gz
 --------------------------------------------------------------------------------
-Makelog ended: 2019-05-02 10:15:35
-Working directory: /Users/zong/template/analysis
+Makelog ended: 2019-05-02 10:24:50
+Working directory: C:\Users\Zong\template\analysis
 --------------------------------------------------------------------------------
