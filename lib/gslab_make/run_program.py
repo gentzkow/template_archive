@@ -8,6 +8,7 @@ import re
 import traceback
 import shutil
 import fileinput
+import sys
 import nbformat
 import nbconvert
 from nbconvert.preprocessors import ExecutePreprocessor
@@ -292,6 +293,9 @@ def run_jupyter(paths, program, timeout = None, kernel_name = ''):
             write_to_makelog(paths, message)    
             print(colored(message, 'cyan'))
             
+            if not kernel_name:
+                kernel_name = 'python%s' % sys.version_info[0]
+
             ep = ExecutePreprocessor(timeout = timeout, kernel_name = kernel_name)
             nb = nbformat.read(f, as_version = 4)       
             ep.preprocess(nb, {'metadata': {'path': '.'}})
