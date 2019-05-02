@@ -11,10 +11,13 @@ class CritError(Exception):
     pass
 
 class ColoredError(Exception):
-    def __init__(self, message, trace):
+    def __init__(self, message, trace = ''):
         message = '\n\n' + colored(message, color = 'red')
-        trace = '\n\n' + colored(trace, color = 'red')
-        super(ColoredError, self).__init__(message + trace)
-
+        if trace:
+            trace = '\n\n' + colored(trace, color = 'red')
+            super(ColoredError, self).__init__(message + trace)
+        else:
+            super(ColoredError, self).__init__(message)
+            
 class ProgramError(ColoredError):
     pass

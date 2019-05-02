@@ -64,6 +64,12 @@ def write_source_logs(paths,
         source_files = [f for source in source_list for f in source]
         source_files = set(source_files)
 
+        """
+        raw_dir = get_path(paths, 'raw_dir')
+        raw_files = glob_recursive(raw_dir)
+        source_files = set(source_files + raw_files)
+        """
+
         if source_statslog:
             source_statslog = norm_path(source_statslog)
             write_stats_log(source_statslog, source_files)
