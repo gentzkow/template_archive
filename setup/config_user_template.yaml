@@ -45,6 +45,8 @@ local:
 
   # Executable names
   executables:
+  
+    git-lfs: git-lfs
     python: python
     r: Rscript
     stata: stata-mp

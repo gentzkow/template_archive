@@ -1,7 +1,7 @@
 # README
 
 ## Requirements
-All requirements must be installed and setup for command line usage. For details on how to setup command line usage for an application, refer to the [RA manual](https://github.com/gentzkow/template/wiki/Command-Line-Usage).
+All requirements must be installed and set up for command line usage. For further detail, see the **Command Line Usage** section below.
 
 * Python (2.7/3.7)
 * pip (>=10.0)
@@ -13,12 +13,12 @@ To build the repository as-is, the following applications are additionally requi
 * R
 * Stata
 
-These applications are used by the example scripts contained in the repository. By default, the **Setup** instructions below will assume their usage.
+These software are used by the example scripts contained in the repository. By default, the **Setup** instructions below will assume their usage.
 
 ## Setup
 **If you are using Windows, you will need to run all bash commands in administrator mode. To do so, open your terminal by right clicking and selecting `Run as administrator`.**
 
-1. Create a `config_local.yaml` file in the root directory. A template can be found in the `setup` subdirectory. See the **Config** section below for further detail.
+1. Create a `config_user.yaml` file in the root directory. A template can be found in the `setup` subdirectory. See the **User Configuration** section below for further detail.
 
 2. Install Python dependencies listed in the `requirements.txt` file using pip. One way to do this is to run the following bash command in a terminal from the `setup` subdirectory:
    ```
@@ -50,6 +50,39 @@ These applications are used by the example scripts contained in the repository. 
    ```
    Rscript setup_r.r
    ```
+
+## Command Line Usage
+
+For specific instructions on how to set up command line usage for an application, refer to the [RA manual](https://github.com/gentzkow/template/wiki/Command-Line-Usage).
+
+By default, our template repository assumes the following executable names for the following applications:
+
+```
+application : executable
+python      : python
+git-lfs     : git-lfs
+lyx         : lyx
+r           : Rscript
+stata       : statamp (will need to be updated if using a version of Stata that is not Stata-MP)
+```
+
+These are the standard executable names for Mac and are likely to differ on your computer if you are using Windows. Executable names for Windows will typically look like the following:
+
+```
+application : executable
+python      : python
+git-lfs     : git-lfs
+lyx         : LyX#.# (where #.# refers to the version number)
+r           : Rscript
+stata       : StataMP-64 (will need to be updated if using a version of Stata that is not Stata-MP or 64-bit)
+```
+
+Default executable names can be updated in `config_user.yaml`. For further detail, see the **User Configuration** section below.
+
+## User Configuration
+`config_user.yaml` contains settings and metadata such as local paths that are specific to an individual user and thus should not be committed to Git. In our template repository, this includes local paths to [external dependencies](https://github.com/gentzkow/template/wiki/External-Dependencies) as well as executable names for locally installed software.
+
+Required applications may be set up for command line usage on your computer with a different executable name from the default. If so, specify the correct executable name in `config_user.yaml`. This configuration step is explained further in the [RA manual](https://github.com/gentzkow/template/wiki/Repository-Structure#Configuration-Files).
 
 ## FAQ
 1. Help! I'm running into permission errors when trying to install Python dependencies!

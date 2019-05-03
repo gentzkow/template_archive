@@ -53,10 +53,11 @@ def check_executable(executable):
                 raise gs.private.exceptionclasses.ColoredError(error_message, '')
                        
 def check_software(config, config_user):
-    if config['git_lfs_required']:
-        check_executable('git-lfs')
-
     default_executables[os.name].update(config_user['local']['executables'])
+    
+    if config['git_lfs_required']:
+        check_executable(default_executabless[os.name]['git-lfs'])
+
     software_list = config['software_required']
     software_list = {key:value for (key, value) in software_list.items() if value == True}
     software_list = {key:default_executables[os.name][key] for (key, value) in software_list.items()}

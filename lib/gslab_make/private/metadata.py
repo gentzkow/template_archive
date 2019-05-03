@@ -70,7 +70,8 @@ default_options = {
 
 default_executables = {
     'posix': 
-        {'stata'     : 'stata-mp',
+        {'git-lfs'   : 'git-lfs', 
+         'stata'     : 'stata-mp',
          'matlab'    : 'matlab',
          'perl'      : 'perl',
          'python'    : 'python',
@@ -81,7 +82,8 @@ default_executables = {
          'r'         : 'Rscript',
          'sas'       : 'sas'},
     'nt': 
-        {'stata'     : 'StataMP-64',
+        {'git-lfs'   : 'git-lfs',
+         'stata'     : 'StataMP-64',
          'matlab'    : 'matlab',
          'perl'      : 'perl',
          'python'    : 'python',
