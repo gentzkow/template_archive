@@ -2,9 +2,10 @@
 
 # ENVIRONMENT
 import os
+import imp
 import shutil
 import subprocess
-import imp
+
 try:
     import git 
     import yaml
@@ -35,25 +36,20 @@ def parse_yaml_files(config = '../config.yaml', config_user = '../config_user.ya
 def check_executable(executable):
     if os.name == 'posix':
         try:
-            subprocess.check_output(['which', executable])
+            subprocess.check_output('which %s' % executable, shell = True)
         except:
             error_message = "Please set up '%s' for command-line use on your system" % executable
-            error_message = gs.private.utility.format_error(error_message)
+            error_message = format_message(error_message)
             raise gs.private.exceptionclasses.ColoredError(error_message)
     if os.name == 'nt':
         try:
-            process = subprocess.Popen(['where', executable], 
-                                       stdout = subprocess.PIPE, 
-                                       stderr = subprocess.PIPE)
-            process.communicate()
-            if process.returncode != 0:
-                raise
+            subprocess.check_output('where %s' % executable, shell = True)
         except:
             try:
                 subprocess.check_output('dir %s' % executable, shell = True)
             except:
                 error_message = "Please set up `%s` for command-line use on your system" % executable
-                error_message = gs.private.utility.format_error(error_message)
+                error_message = format_message(error_message)
                 raise gs.private.exceptionclasses.ColoredError(error_message, '')
                        
 def check_software(config, config_user):
