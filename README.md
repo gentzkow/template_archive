@@ -123,6 +123,6 @@ The `--user` flag instructs pip to install to a local directory (i.e., a directo
 
 If you are using Anaconda, we recommend using the following bash command:
 ```
-conda install --file requirements.txt"
+conda install --file requirements.txt
 ```
 Note that you may run into issues if any of the Python dependencies are not available on the conda channels. If this is the case, revert back to using `pip`.
