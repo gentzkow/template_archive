@@ -1,15 +1,15 @@
 --------------------------------------------------------------------------------
-Makelog started: 2019-05-02 10:14:05
-Working directory: /Users/zong/template/data
+Makelog started: 2019-05-06 08:33:56
+Working directory: C:\Users\Zong\template\data
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
-Executing command: `Rscript --no-save "/Users/zong/template/data/code/create_table_data.r"`
+Executing command: `Rscript --no-save "C:\Users\Zong\template\data\code\create_table_data.r"`
 
   ___  ____  ____  ____  ____ (R)
  /__    /   ____/   /   ____/
-___/   /   /___/   /   /___/   15.1   Copyright 1985-2017 StataCorp LLC
+___/   /   /___/   /   /___/   13.1   Copyright 1985-2013 StataCorp LP
   Statistics/Data Analysis            StataCorp
                                       4905 Lakeway Drive
      MP - Parallel Edition            College Station, Texas 77845 USA
@@ -17,18 +17,16 @@ ___/   /   /___/   /   /___/   15.1   Copyright 1985-2017 StataCorp LLC
                                       979-696-4600        stata@stata.com
                                       979-696-4601 (fax)
 
-Unlimited-user 4-core Stata network license expires 21 Jul 2019:
-       Serial number:  501509201134
-         Licensed to:  Zong Huang
-                       Stanford University
+3-user 8-core Stata network perpetual license:
+       Serial number:  501306208483
+         Licensed to:  IDRE-UCLA
+                       IDRE-UCLA
 
 Notes:
-      1.  Stata is running in batch mode.
-      2.  Unicode is supported; see help unicode_advice.
-      3.  More than 2 billion observations are allowed; see help obs_advice.
-      4.  Maximum number of variables is set to 5000; see help set_maxvar.
+      1.  (/v# option or -set maxvar-) 5000 maximum variables
+      2.  Stata running in batch mode
 
-. do "/Users/zong/template/data/code/create_graph_data.do" 
+. do "C:\Users\Zong\template\data\code\create_graph_data.do" 
 
 . clear all
 
@@ -44,7 +42,7 @@ Notes:
 . 
 . * EXECUTE
 . main
-number of observations (_N) was 0, now 300,000
+obs was 0, now 300000
 (note: file output/data_graph.txt not found)
 file output/data_graph.txt saved
 
@@ -53,10 +51,10 @@ end of do-file
 
 Output logs successfully written!
 WARNING! Certain files tracked by git that exceed config limit (0.5 MB). See below for list of files.
-/Users/zong/template/data/output/data_graph.txt
-/Users/zong/template/lib/gslab_make/tests/input/rinstall_test_package/Ecdat_0.1-6.1.tar.gz
-/Users/zong/template/data/output/data_table.txt
+C:\Users\Zong\template\data\output\data_graph.txt
+C:\Users\Zong\template\data\output\data_table.txt
+C:\Users\Zong\template\lib\gslab_make\tests\input\rinstall_test_package\Ecdat_0.1-6.1.tar.gz
 --------------------------------------------------------------------------------
-Makelog ended: 2019-05-02 10:14:06
-Working directory: /Users/zong/template/data
+Makelog ended: 2019-05-06 08:33:58
+Working directory: C:\Users\Zong\template\data
 --------------------------------------------------------------------------------

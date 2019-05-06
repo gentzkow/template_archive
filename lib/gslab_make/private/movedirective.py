@@ -265,6 +265,8 @@ class MoveDirective(object):
 
             if movetype == 'copy':
                 command = metadata.commands[self.osname]['makecopy'] % (source, destination)
+                if os.path.isfile(source):
+                    command = 'cmd /c echo F | ' + command   
             elif movetype == 'symlink':
                 command = metadata.commands[self.osname]['makelink'] % (directory, destination, source)
 

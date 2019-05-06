@@ -27,7 +27,7 @@ commands = {
          'sas'       : '%s %s -log -print %s'},
     'nt': 
         {'makelink'  : 'mklink %s \"%s\" \"%s\"', 
-         'makecopy'  : 'xcopy /E /I /Q \"%s\" \"%s\"',
+         'makecopy'  : 'xcopy /E /Y /Q /I /K \"%s\" \"%s\"',
          'rmdir'     : 'rmdir %s \"%s\"', 
          'stata'     : '%s %s do \\\"%s\\\"',
          'matlab'    : '%s %s -r \"try run(\'%s\'); catch e, fprintf(getReport(e)), exit(1); end; exit(0)\" -logfile \"%s\"',
