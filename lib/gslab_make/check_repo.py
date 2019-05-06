@@ -65,10 +65,12 @@ def get_git_ignore(repo):
     """
 
     g = git.Git(repo)
-        
+    root = repo.working_tree_dir
+
     ignore = g.execute('git status --porcelain --ignored', shell = True).split('\n')
     ignore = [i for i in ignore if re.match('!!', i)]
     ignore = [i.lstrip('!!').strip() for i in ignore]
+    ignore = [os.path.join(root, i) for i in ignore]
 
     ignore_dirs = []
     ignore_files = []
@@ -85,6 +87,7 @@ def get_git_ignore(repo):
             ignore_files.extend(files)
 
     ignore_files = [norm_path(i) for i in ignore_files]
+
     return(ignore_files)
 
 
@@ -122,13 +125,14 @@ def check_path_lfs(path, lfs_list):
     return False
 
 
-def get_repo_size(repo):
-    """ Get file sizes for repository.
+def get_dir_sizes(dir_path):
+    """ Get file sizes for directory.
     
     Parameters
     ----------
-    repo : git.Repo 
-        Git repository to get file sizes.
+    dir_path : str 
+        Path of directory to get file sizes.
+
     Returns
     -------
     (git_files, git_lfs_files) : list
@@ -137,25 +141,69 @@ def get_repo_size(repo):
         git_lfs_files : dict
             Dictionary of {file : size} for each file tracked by git lfs. 
     """
-    
-    git_files = get_file_sizes(repo.working_tree_dir, exclude = ['.git'])
+
+    try:
+        repo = git.Repo(dir_path, search_parent_directories = True)   
+        root = repo.working_tree_dir
+    except:
+        raise CritError(messages.crit_error_no_repo)
+
+    git_files = get_file_sizes(dir_path, exclude = ['.git'])
     git_ignore_files = get_git_ignore(repo)
-    
-    lfs_list = parse_git_attributes(repo.working_tree_dir + os.path.sep + '.gitattributes')
 
     for ignore in git_ignore_files: 
-        git_files.pop(ignore)
+        try:
+            git_files.pop(ignore)
+        except KeyError:
+            pass
     
+    lfs_list = parse_git_attributes(os.path.join(root, '.gitattributes'))
     git_lfs_files = dict()
+    
     for key in list(git_files.keys()):
         if check_path_lfs(key, lfs_list):         
             git_lfs_files[key] = git_files.pop(key)
-
+        
     return(git_files, git_lfs_files)
 
 
-def check_repo_size(paths):
-    """ Check file sizes for repository.
+def get_size_values(git_files, git_lfs_files):
+
+    """ Get file sizes for repository.
+    
+    Parameters
+    ----------
+        git_files : dict
+            Dictionary of {file : size} for each file tracked by git. 
+        git_lfs_files : dict
+            Dictionary of {file : size} for each file tracked by git lfs. 
+
+    Returns
+    -------
+    (file_MB, total_MB, file_MB_lfs, total_MB_lfs) : list
+        file_MB : float
+            Size of largest file tracked by git in megabytes.
+        total_MB : float
+            Total size of files tracked by git.
+        file_MB : float
+            Size of largest file tracked by git lfs.
+        total_MB : float
+            Total size of files tracked by git lfs.
+    """
+
+    file_MB = max(git_files.values() or [0])
+    total_MB = sum(git_files.values() or [0]) 
+    file_MB_lfs = max(git_lfs_files.values() or [0]) 
+    total_MB_lfs = sum(git_lfs_files.values() or [0]) 
+
+    size_list = [file_MB, total_MB, file_MB_lfs, total_MB_lfs]
+    size_list = [size / (1024 ** 2) for size in size_list]
+
+    return(size_list)
+
+
+def check_module_size(paths):
+    """ Check file sizes for module.
 
     Parameters
     ----------
@@ -173,16 +221,8 @@ def check_repo_size(paths):
     """
     
     try:
-        try:
-            repo = git.Repo('.', search_parent_directories = True)    
-        except:
-            raise CritError(messages.crit_error_no_repo)
-        
-        git_files, git_lfs_files = get_repo_size(repo)
-        file_MB = max(git_files.values()) / (1024 ** 2)
-        total_MB = sum(git_files.values()) / (1024 ** 2)
-        file_MB_lfs = max(git_lfs_files.values()) / (1024 ** 2)
-        total_MB_lfs = sum(git_lfs_files.values()) / (1024 ** 2)
+        git_files, git_lfs_files = get_dir_sizes('.')
+        file_MB, total_MB, file_MB_lfs, total_MB_lfs = get_size_values(git_files, git_lfs_files)
     
         config = get_path(paths, 'config')
         config = yaml.load(open(config, 'rb'))
@@ -246,7 +286,7 @@ def get_git_status(repo):
     file_list = repo.git.status(porcelain = True)
     file_list = file_list.split('\n')
     file_list = [f.lstrip().lstrip('MADRCU?!').lstrip() for f in file_list]
-    file_list = [root + "/" + f for f in file_list]
+    file_list = [os.path.join(root, f) for f in file_list]
     file_list = [norm_path(f) for f in file_list]
 
     return(file_list)

@@ -54,7 +54,7 @@ gs.run_jupyter(PATHS, program = 'code/descriptive.ipynb')
 gs.log_files_in_output(PATHS)
 
 ### CHECK FILE SIZES
-gs.check_repo_size(PATHS)
+gs.check_module_size(PATHS)
 
 ### END
 gs.end_makelog(PATHS)

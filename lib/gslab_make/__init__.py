@@ -37,7 +37,7 @@ Notes:
 """
 
 # Import make tools
-from gslab_make.check_repo import check_repo_size, get_modified_sources
+from gslab_make.check_repo import check_module_size, get_modified_sources
 from gslab_make.move_sources import (create_links, link_inputs, link_externals, 
                                      create_copies, copy_inputs, copy_externals)
 from gslab_make.dir_mod import check_os, remove_path, remove_dir, clear_dir, unzip, zip_dir

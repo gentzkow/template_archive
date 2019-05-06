@@ -23,7 +23,8 @@ gs = imp.load_module('gslab_make', f, path, desc)
 default_executables = gs.private.metadata.default_executables
 format_message = gs.private.utility.format_error
 
-# GENERAL
+
+# GENERAL FUNCTIONS
 def parse_yaml_files(config = '../config.yaml', config_user = '../config_user.yaml'):
     if not os.path.isfile(config_user):
         shutil.copy('config_user_template.yaml', config_user)
@@ -32,6 +33,7 @@ def parse_yaml_files(config = '../config.yaml', config_user = '../config_user.ya
     config_user = yaml.load(open(config_user, 'rb'))
 
     return(config, config_user)
+
 
 def check_executable(executable):
     if os.name == 'posix':
@@ -51,7 +53,8 @@ def check_executable(executable):
                 error_message = "Please set up `%s` for command-line use on your system" % executable
                 error_message = format_message(error_message)
                 raise gs.private.exceptionclasses.ColoredError(error_message, '')
-                       
+       
+
 def check_software(config, config_user):
     default_executables[os.name].update(config_user['local']['executables'])
     
@@ -65,6 +68,7 @@ def check_software(config, config_user):
     for software in software_list.values():
         check_executable(software)
 
+
 def check_external_paths(config_user):
     if config_user['external']:
         for path in config_user['external'].values():
@@ -73,6 +77,7 @@ def check_external_paths(config_user):
                 error_message = format_message(error_message)
                 raise gs.private.exceptionclasses.ColoredError(error_message)
 
+
 def configuration():
     (config, config_user) = parse_yaml_files()
     check_software(config, config_user)
@@ -80,4 +85,6 @@ def configuration():
     message = format_message('SUCCESS! Setup complete.')
     print(colored(message, 'green'))
 
+
+# EXECUTE
 configuration()
