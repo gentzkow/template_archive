@@ -20,7 +20,7 @@ colorama.init()
 import gslab_make.private.metadata as metadata
 from gslab_make.private.exceptionclasses import ColoredError, ProgramError
 from gslab_make.private.programdirective import Directive, ProgramDirective, SASDirective, LyXDirective
-from gslab_make.private.utility import get_path, format_error
+from gslab_make.private.utility import get_path, format_error, norm_path
 from gslab_make.write_logs import write_to_makelog
 
 
@@ -94,7 +94,7 @@ def check_stata_output(output):
     if re.search(regex, output):
         error_message = 'Stata program executed with errors.'
         error_message = format_error(error_message)
-        raise ProgramError(error_message, 'See logs for more detail.')
+        raise ProgramError(error_message, 'See makelog for more detail.')
 
 
 def run_matlab(paths, program, **kwargs):
@@ -286,6 +286,7 @@ def run_jupyter(paths, program, timeout = None, kernel_name = ''):
     """
     
     makelog = get_path(paths, 'makelog')
+    program = norm_path(program)
 
     try:
         with open(program) as f:

@@ -294,7 +294,7 @@ def get_git_status(repo):
 
 def get_modified_sources(paths, 
                          move_map, 
-                         recursive = float('inf')):
+                         depth = float('inf')):
     """ Get source files considered changed by git status.
 
     Parameters
@@ -306,7 +306,7 @@ def get_modified_sources(paths,
         }
     move_map : list 
         Mapping of symlinks/copies (destination) to sources (returned from `MoveList.create_symlinks` or `MoveList.create_copies`).
-    recursive : int, optional
+    depth : float, optional
         Level of depth when walking through source directories. Defaults to infinite.
 
     Returns
@@ -317,7 +317,7 @@ def get_modified_sources(paths,
     
     try:
         source_list = [source for source, destination in move_map]
-        source_list = [glob_recursive(source, recursive) for source in source_list]
+        source_list = [glob_recursive(source, depth) for source in source_list]
         source_files = [f for source in source_list for f in source]
         source_files = set(source_files)
    

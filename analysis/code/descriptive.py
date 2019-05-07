@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def main():
-    data = np.genfromtxt('input/data_graph.txt', skip_header = 1)
+    data = np.genfromtxt('input/data_graph.csv', skip_header = 1)
 
     plt.hist(data)
     plt.savefig('output/plot.eps')

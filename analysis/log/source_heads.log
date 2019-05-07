@@ -1,6 +1,6 @@
 File headers
 --------------------------------------------------------------------------------
-/Users/zong/template/data/output/data_graph.txt
+/Users/zong/template/data/output/data_graph.csv
 --------------------------------------------------------------------------------
 x
 1
@@ -13,7 +13,7 @@ x
 8
 9
 --------------------------------------------------------------------------------
-/Users/zong/template/data/output/data_table.txt
+/Users/zong/template/data/output/data_table.csv
 --------------------------------------------------------------------------------
 x
 1

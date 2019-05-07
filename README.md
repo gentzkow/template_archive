@@ -27,7 +27,7 @@ These software are used by the example scripts contained in the repository. By d
 
 3. Run the `setup_repository.py` file. One way to do this is to run the following bash command in a terminal from the `setup` subdirectory:
    ```
-   python setup_repository.py
+   python check_setup.py
    ```
 
 4. Install Stata dependencies using the `setup_stata.do` file. One way to do this is to use the following bash command from the `setup` subdirectory:

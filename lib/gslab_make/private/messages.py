@@ -35,10 +35,10 @@ type_error_not_dir = '\nERROR! Path `%s` is not a directory.'
 warning_glob = 'WARNING! No files were returned by `glob_recursive` for path `%s` when walking to a depth of `%s`.'
 warning_lyx_type = 'WARNING! Document type `%s` unrecognized. Reverting to default of no special document type.'
 warning_modified_files = "WARNING! The following target files have been modified according to git status:\n%s"
-warning_git_file_print = "\nWARNING! Certain files tracked by git exceed config limit (%s MB). See logs for more detail." 
+warning_git_file_print = "\nWARNING! Certain files tracked by git exceed config limit (%s MB). See makelog for list of files." 
 warning_git_file_log = "\nWARNING! Certain files tracked by git that exceed config limit (%s MB). See below for list of files." 
 warning_git_repo = "\nWARNING! Total size of files tracked by git exceed config limit (%s MB)."
-warning_git_lfs_file_print = "\nWARNING! Certain files tracked by git lfs exceed config limit (%s MB). See logs for more detail."
+warning_git_lfs_file_print = "\nWARNING! Certain files tracked by git lfs exceed config limit (%s MB). See makelog for list of files."
 warning_git_lfs_file_log = "\nWARNING! Certain files tracked by git lfs exceed config limit (%s MB). See below for list of files."
 warning_git_lfs_repo = "\nWARNING! Total size of files tracked by git lfs exceed config limitt (%s MB)."
 

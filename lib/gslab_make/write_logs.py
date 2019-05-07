@@ -149,7 +149,7 @@ def log_files_in_output(paths,
             'makelog' : str
                 Path of makelog.
         }
-    depth : int, optional
+    depth : float, optional
         Level of depth when walking through output directory.
 
     Returns

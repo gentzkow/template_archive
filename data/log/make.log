@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
-Makelog started: 2019-05-06 13:52:06
+Makelog started: 2019-05-07 12:45:55
 Working directory: /Users/zong/template/data
 --------------------------------------------------------------------------------
 Input links successfully created!
@@ -38,24 +38,21 @@ Notes:
 . program main
   1.     set obs 300000
   2.     gen x = _n
-  3.     export delimited "output/data_graph.txt", delimiter("|") replace
+  3.     export delimited "output/data_graph.csv", delimiter("|") replace
   4. end
 
 . 
 . * EXECUTE
 . main
 number of observations (_N) was 0, now 300,000
-(note: file output/data_graph.txt not found)
-file output/data_graph.txt saved
+(note: file output/data_graph.csv not found)
+file output/data_graph.csv saved
 
 . 
 end of do-file
 
 Output logs successfully written!
-WARNING! Certain files tracked by git that exceed config limit (0.5 MB). See below for list of files.
-/Users/zong/template/data/output/data_graph.txt
-/Users/zong/template/data/output/data_table.txt
 --------------------------------------------------------------------------------
-Makelog ended: 2019-05-06 13:52:08
+Makelog ended: 2019-05-07 12:45:56
 Working directory: /Users/zong/template/data
 --------------------------------------------------------------------------------

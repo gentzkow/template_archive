@@ -46,7 +46,7 @@ def write_source_logs(paths,
         }
     source_map : list 
         Mapping of symlinks/copies (destination) to sources (returned from `MoveList.create_symlinks` or `MoveList.create_copies`).
-    depth : int, optional
+    depth : float, optional
         Level of depth when walking through source directories. Defaults to infinite.
 
     Returns
