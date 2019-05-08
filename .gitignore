@@ -32,3 +32,4 @@
 *.out
 *.svn
 *.ipynb_checkpoints/
+*setup_stata.log
