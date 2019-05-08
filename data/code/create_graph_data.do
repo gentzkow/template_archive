@@ -2,9 +2,8 @@ clear all
 set more off
 
 program main
-    set obs 300000
-    gen x = _n
-    export delimited "output/data_graph.csv", delimiter("|") replace
+    import delimited "input/data.csv", clear
+	export delimited "output/data_graph.csv", replace
 end
 
 * EXECUTE

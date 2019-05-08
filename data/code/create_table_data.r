@@ -1,8 +1,8 @@
 library(yaml)
 
 main <- function() {
-  x <- 1:300000
-  write.table(x, "output/data_table.csv", row.names = FALSE, col.names = TRUE, quote = FALSE)
+  x <- read.csv("input/data.csv")
+  write.csv(x, "output/data_table.csv", row.names = FALSE)
 }
 
 # EXECUTE
