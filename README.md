@@ -16,7 +16,7 @@ To build the repository as-is, the following applications are additionally requi
 These software are used by the scripts contained in the repository. By default, the **Setup** instructions below will assume their usage.
 
 ## Setup
-**If you are using Windows, you will need to run all bash commands in administrator mode. To do so, open your terminal by right clicking and selecting `Run as administrator`. To set administrator mode on permanently, refer to the [RA manual](https://github.com/gentzkow/template/wiki/Repository-Usage#Administrator-Mode).**
+**If you are using Windows, you may need to run certain bash commands in administrator mode due to permission errors. To do so, open your terminal by right clicking and selecting `Run as administrator`. To set administrator mode on permanently, refer to the [RA manual](https://github.com/gentzkow/template/wiki/Repository-Usage#Administrator-Mode).**
 
 1. Create a `config_user.yaml` file in the root directory. A template can be found in the `setup` subdirectory. See the **User Configuration** section below for further detail.
 
@@ -103,7 +103,7 @@ One way to get around this is to include `sudo` (or the Windows equivalent of ru
 sudo python -m pip install -r requirements.txt
 ```
 
-However, we caution against this given the potential security risks. Instead, we recommend including the `--user` flag to your bash command.
+However, we caution against this (in particular for Macs) given the potential security risks. Instead, we recommend including the `--user` flag to your bash command.
 ```
 python -m pip install --user -r requirements.txt
 ```
