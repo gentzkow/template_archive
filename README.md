@@ -13,10 +13,10 @@ To build the repository as-is, the following applications are additionally requi
 * R
 * Stata
 
-These software are used by the example scripts contained in the repository. By default, the **Setup** instructions below will assume their usage.
+These software are used by the scripts contained in the repository. By default, the **Setup** instructions below will assume their usage.
 
 ## Setup
-**If you are using Windows, you will need to run all bash commands in administrator mode. To do so, open your terminal by right clicking and selecting `Run as administrator`.**
+**If you are using Windows, you will need to run all bash commands in administrator mode. To do so, open your terminal by right clicking and selecting `Run as administrator`. To set administrator mode on permanently, refer to the [RA manual](https://github.com/gentzkow/template/wiki/Repository-Usage#Administrator-Mode).**
 
 1. Create a `config_user.yaml` file in the root directory. A template can be found in the `setup` subdirectory. See the **User Configuration** section below for further detail.
 
@@ -55,7 +55,7 @@ These software are used by the example scripts contained in the repository. By d
 
 For specific instructions on how to set up command line usage for an application, refer to the [RA manual](https://github.com/gentzkow/template/wiki/Command-Line-Usage).
 
-By default, our template repository assumes the following executable names for the following applications:
+By default, the repository assumes the following executable names for the following applications:
 
 ```
 application : executable
@@ -80,7 +80,7 @@ stata       : StataMP-64 (will need to be updated if using a version of Stata th
 Default executable names can be updated in `config_user.yaml`. For further detail, see the **User Configuration** section below.
 
 ## User Configuration
-`config_user.yaml` contains settings and metadata such as local paths that are specific to an individual user and thus should not be committed to Git. In our template repository, this includes local paths to [external dependencies](https://github.com/gentzkow/template/wiki/External-Dependencies) as well as executable names for locally installed software.
+`config_user.yaml` contains settings and metadata such as local paths that are specific to an individual user and thus should not be committed to Git. For this repository, this includes local paths to [external dependencies](https://github.com/gentzkow/template/wiki/External-Dependencies) as well as executable names for locally installed software.
 
 Required applications may be set up for command line usage on your computer with a different executable name from the default. If so, specify the correct executable name in `config_user.yaml`. This configuration step is explained further in the [RA manual](https://github.com/gentzkow/template/wiki/Repository-Structure#Configuration-Files).
 
