@@ -1,12 +1,10 @@
 --------------------------------------------------------------------------------
-Makelog started: 2019-05-08 11:40:21
+Makelog started: 2019-05-08 12:17:53
 Working directory: /Users/zong/template/data
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
-WARNING! The following target files have been modified according to git status:
-/Users/zong/template/raw/data.csv
 Executing command: `Rscript --no-save "/Users/zong/template/data/code/create_table_data.r"`
 
   ___  ____  ____  ____  ____ (R)
@@ -39,13 +37,15 @@ Notes:
 . 
 . program main
   1.     import delimited "input/data.csv", clear
-  2.         export delimited "output/data_graph.csv", replace
-  3. end
+  2.     replace x = x * 2
+  3.         export delimited "output/data_graph.csv", replace
+  4. end
 
 . 
 . * EXECUTE
 . main
 (1 var, 300,000 obs)
+(300,000 real changes made)
 (note: file output/data_graph.csv not found)
 file output/data_graph.csv saved
 
@@ -54,6 +54,6 @@ end of do-file
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2019-05-08 11:40:23
+Makelog ended: 2019-05-08 12:17:55
 Working directory: /Users/zong/template/data
 --------------------------------------------------------------------------------

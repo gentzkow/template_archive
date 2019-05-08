@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
-Makelog started: 2019-05-08 11:42:03
+Makelog started: 2019-05-08 12:19:35
 Working directory: /Users/zong/template/paper_slides
 --------------------------------------------------------------------------------
 Input copies successfully created!
@@ -7,6 +7,7 @@ External copies successfully created!
 Source logs successfully written!
 WARNING! The following target files have been modified according to git status:
 /Users/zong/template/analysis/output/plot.eps
+/Users/zong/template/analysis/output/tables.txt
 Executing command: `lyx -e pdf2 "/Users/zong/template/paper_slides/code/paper.lyx"`
 This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex)
  restricted \write18 enabled.
@@ -67,6 +68,6 @@ LaTeX2e <2018-04-01> patch level 5
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2019-05-08 11:42:09
+Makelog ended: 2019-05-08 12:19:41
 Working directory: /Users/zong/template/paper_slides
 --------------------------------------------------------------------------------

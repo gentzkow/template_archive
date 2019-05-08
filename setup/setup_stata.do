@@ -1,5 +1,5 @@
 clear all
-set more off
+set more off, perm
 
 program main
 	* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

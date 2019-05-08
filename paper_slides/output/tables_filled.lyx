@@ -148,7 +148,7 @@ Mean
 \begin_inset Text
 
 \begin_layout Plain Layout
-150000.50
+300001.00
 \end_layout
 
 \end_inset
@@ -168,7 +168,7 @@ SD
 \begin_inset Text
 
 \begin_layout Plain Layout
-86602.69
+173205.37
 \end_layout
 
 \end_inset
@@ -188,7 +188,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-300000
+600000
 \end_layout
 
 \end_inset
@@ -208,7 +208,7 @@ Min
 \begin_inset Text
 
 \begin_layout Plain Layout
-1
+2
 \end_layout
 
 \end_inset
