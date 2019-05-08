@@ -25,7 +25,7 @@ These software are used by the example scripts contained in the repository. By d
    python -m pip install --user -r requirements.txt
    ```
 
-3. Run the `setup_repository.py` file. One way to do this is to run the following bash command in a terminal from the `setup` subdirectory:
+3. Run the `check_setup.py` file. One way to do this is to run the following bash command in a terminal from the `setup` subdirectory:
    ```
    python check_setup.py
    ```
