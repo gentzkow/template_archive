@@ -1,17 +1,16 @@
 --------------------------------------------------------------------------------
-Makelog started: 2019-04-29 15:38:30
+Makelog started: 2019-05-08 12:19:30
 Working directory: /Users/zong/template/analysis
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
+WARNING! The following target files have been modified according to git status:
+/Users/zong/template/data/output/data_graph.csv
+/Users/zong/template/data/output/data_table.csv
 Executing command: `python  "/Users/zong/template/analysis/code/descriptive.py" `
 Output logs successfully written!
-WARNING! Certain files tracked by git that exceed config limit (0.5 MB). See below for list of files.
-/Users/zong/template/data/output/data_graph.txt
-/Users/zong/template/lib/gslab_make/tests/input/rinstall_test_package/Ecdat_0.1-6.1.tar.gz
-/Users/zong/template/data/output/data_table.txt
 --------------------------------------------------------------------------------
-Makelog ended: 2019-04-29 15:38:34
+Makelog ended: 2019-05-08 12:19:33
 Working directory: /Users/zong/template/analysis
 --------------------------------------------------------------------------------

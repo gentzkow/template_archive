@@ -10,6 +10,7 @@ import traceback
 import filecmp
 
 import gslab_make.private.messages as messages
+from gslab_make.private.exceptionclasses import CritError
 
 
 def norm_path(path):

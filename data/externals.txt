@@ -8,5 +8,10 @@
 # > link_externals(paths, ['externals.txt'])
 # 
 # This will create a link in `paths['external_dir']` named `destination` that links to `source`.
+# 
+# Alternative, suppose you run the following line of code:
+# > copy_externals(paths, ['externals.txt'])
+# 
+# This will create a file in `paths['eternal_dir']` named `destination` that is a copy of `source`.
 
 # Destination | Source

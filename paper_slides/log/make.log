@@ -1,12 +1,13 @@
 --------------------------------------------------------------------------------
-Makelog started: 2019-04-29 15:48:17
+Makelog started: 2019-05-08 12:19:35
 Working directory: /Users/zong/template/paper_slides
 --------------------------------------------------------------------------------
-Input links successfully created!
-External links successfully created!
+Input copies successfully created!
+External copies successfully created!
 Source logs successfully written!
 WARNING! The following target files have been modified according to git status:
 /Users/zong/template/analysis/output/plot.eps
+/Users/zong/template/analysis/output/tables.txt
 Executing command: `lyx -e pdf2 "/Users/zong/template/paper_slides/code/paper.lyx"`
 This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex)
  restricted \write18 enabled.
@@ -66,11 +67,7 @@ LaTeX2e <2018-04-01> patch level 5
 
 
 Output logs successfully written!
-WARNING! Certain files tracked by git that exceed config limit (0.5 MB). See below for list of files.
-/Users/zong/template/data/output/data_graph.txt
-/Users/zong/template/data/output/data_table.txt
-/Users/zong/template/lib/gslab_make/tests/input/rinstall_test_package/Ecdat_0.1-6.1.tar.gz
 --------------------------------------------------------------------------------
-Makelog ended: 2019-04-29 15:48:23
+Makelog ended: 2019-05-08 12:19:41
 Working directory: /Users/zong/template/paper_slides
 --------------------------------------------------------------------------------

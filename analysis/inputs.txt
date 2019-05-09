@@ -15,5 +15,5 @@
 # This will create a file in `paths['input_dir']` named `destination` that is a copy of `source`.
 
 # Destination  | Source
-data_table.txt | {root}/data/output/data_table.txt
-data_graph.txt | {root}/data/output/data_graph.txt
+data_table.csv | {root}/data/output/data_table.csv
+data_graph.csv | {root}/data/output/data_graph.csv

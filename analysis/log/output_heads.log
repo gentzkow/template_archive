@@ -5,7 +5,7 @@ File headers
 %!PS-Adobe-3.0 EPSF-3.0
 %%Title: output/plot.eps
 %%Creator: matplotlib version 2.2.3, http://matplotlib.org/
-%%CreationDate: Mon Apr 29 15:38:34 2019
+%%CreationDate: Wed May  8 12:19:32 2019
 %%Orientation: portrait
 %%BoundingBox: 75 223 536 568
 %%EndComments
@@ -16,10 +16,10 @@ mpldict begin
 /Users/zong/template/analysis/output/tables.txt
 --------------------------------------------------------------------------------
 <tab:table>
-150000.5
-86602.685
-300000
-1
+300001.0
+173205.369
+600000
+2
 
 
 

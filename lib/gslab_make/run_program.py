@@ -8,11 +8,19 @@ import re
 import traceback
 import shutil
 import fileinput
+import sys
+import nbformat
+import nbconvert
+from nbconvert.preprocessors import ExecutePreprocessor
+
+from termcolor import colored
+import colorama
+colorama.init()
 
 import gslab_make.private.metadata as metadata
 from gslab_make.private.exceptionclasses import ColoredError, ProgramError
 from gslab_make.private.programdirective import Directive, ProgramDirective, SASDirective, LyXDirective
-from gslab_make.private.utility import get_path, format_error
+from gslab_make.private.utility import get_path, format_error, norm_path
 from gslab_make.write_logs import write_to_makelog
 
 
@@ -86,7 +94,7 @@ def check_stata_output(output):
     if re.search(regex, output):
         error_message = 'Stata program executed with errors.'
         error_message = format_error(error_message)
-        raise ProgramError(error_message, 'See logs for more detail.')
+        raise ProgramError(error_message, 'See makelog for more detail.')
 
 
 def run_matlab(paths, program, **kwargs):
@@ -253,6 +261,53 @@ def run_python(paths, program, **kwargs):
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
         raise ColoredError(error_message, traceback.format_exc())
         
+
+def run_jupyter(paths, program, timeout = None, kernel_name = ''):
+    """ Run Jupyter notebook using system command.
+
+    Parameters
+    ----------
+    paths : dict 
+        Dictionary of paths. Dictionary should contain {
+            'makelog' : str
+                Path of makelog.
+        }
+    program : str
+        Path of script to run.
+    timeout : int
+        Time to wait (in seconds) for execution outputs before raising exception.
+        Defaults to no timeout.
+    kernel_name : str
+        Name of kernel to use for execution.
+        Defaults to kernel specified in notebook.
+    Returns
+    -------
+    None
+    """
+    
+    makelog = get_path(paths, 'makelog')
+    program = norm_path(program)
+
+    try:
+        with open(program) as f:
+            message = 'Processing notebook: `%s`' % program
+            write_to_makelog(paths, message)    
+            print(colored(message, 'cyan'))
+            
+            if not kernel_name:
+                kernel_name = 'python%s' % sys.version_info[0]
+
+            ep = ExecutePreprocessor(timeout = timeout, kernel_name = kernel_name)
+            nb = nbformat.read(f, as_version = 4)       
+            ep.preprocess(nb, {'metadata': {'path': '.'}})
+        with open(program, 'wt') as f:
+            nbformat.write(nb, f)
+    except:
+        error_message = 'Error with `run_jupyter`. Traceback can be found below.' 
+        error_message = format_error(error_message) 
+        write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
+        raise ColoredError(error_message, traceback.format_exc())
+
 
 def run_mathematica(paths, program, **kwargs):
     """ Run Mathematica script using system command.

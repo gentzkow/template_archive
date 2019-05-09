@@ -146,10 +146,10 @@ def log_files_in_output(paths,
                 Path to write output statistics log.
             'output_headslog' : str
                 Path to write output headers log.
-            'makelog' : 
+            'makelog' : str
                 Path of makelog.
         }
-    depth : int, optional
+    depth : float, optional
         Level of depth when walking through output directory.
 
     Returns

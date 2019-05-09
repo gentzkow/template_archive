@@ -26,7 +26,7 @@ The majority of the functions in </b><code>gslab_make</code><b> contain a </b><c
 >
 > * `makelog`
 > 
->     * Default path for writing make log. 
+>     * Default path for writing make log.
 >
 > * `output_statslog`
 > 
@@ -90,14 +90,14 @@ The following functions will specify which default paths in </b><code>paths</cod
 <br>
 
 <pre>
-check_repo.<b>check_repo_size(</b><i> 
+check_repo.<b>check_module_size(</b><i> 
     paths = {
         config, 
         makelog
     },</i><b>
 )</b>
 </pre>
-> Produces warning if any of the following size statistics are larger than limits set in config file `config`:
+> Compares sizes for files in the current directory `.`. Produces warning if any of the following size statistics are larger than limits set in config file `config`:
 >
 > * Individual size of a file tracked by git lfs (`file_MB_limit_lfs`)
 >
@@ -117,23 +117,21 @@ check_repo.<b>get_modified_sources(</b><i>
         makelog
     },
     move_map, 
-    recursive = float('inf'),</i><b>
+    depth = float('inf'),</i><b>
 )</b>
 </pre>
-> Checks the modification status for sources contained in all mappings of list `move_map` (returned by `move_sources.link_inputs`, `move_sources.copy_inputs`, `move_sources.link_externals`). Produces warning if sources have been modified according to git.
->
-> When walking through sources, float `recursive` determines level of depth to walk. Warnings are appended to make log `makelog`.
+> Checks the modification status for sources contained in all mappings of list `move_map` (returned by `move_sources.link_inputs`, `move_sources.copy_inputs`, `move_sources.link_externals`). Produces warning if sources have been modified according to git. When walking through sources, float `depth` determines level of depth to walk. Warnings are appended to make log `makelog`.
 
 <ul>
 <b>Example:</b>
 <br>
-<code>get_modified_sources(paths, move_map, recursive = 1)</code> will check modification status for all source files listed in <code>move_map</code>.
+<code>get_modified_sources(paths, move_map, depth = 1)</code> will check modification status for all source files listed in <code>move_map</code>.
 <br>
 <br>
-<code>get_modified_sources(paths, move_map, recursive = 2)</code> will check modification status for all source files listed in <code>move_map</code>, and all files contained in any source directories listed in <code>move_map</code>.
+<code>get_modified_sources(paths, move_map, depth = 2)</code> will check modification status for all source files listed in <code>move_map</code>, and all files contained in any source directories listed in <code>move_map</code>.
 <br>
 <br>
-<code>get_modified_sources(paths, move_map, recursive = float('inf'))</code> will check modification status for all source files listed in <code>move_map</code>, and all files contained in any level of source directories listed in <code>move_map</code>.
+<code>get_modified_sources(paths, move_map, depth = float('inf'))</code> will check modification status for all source files listed in <code>move_map</code>, and all files contained in any level of source directories listed in <code>move_map</code>.
 </ul>
 
 <br> 
@@ -166,7 +164,7 @@ write_logs.<b>log_files_in_output(</b><i>
         output_headslog, 
         makelog
     }, 
-    recursive = float('inf'),</i><b>
+    depth = float('inf'),</i><b>
 )</b>
 </pre>
 > Logs the following information for all files contained in directory `output_dir`:
@@ -179,18 +177,18 @@ write_logs.<b>log_files_in_output(</b><i>
 >
 > * File head (in file `output_headslog`)
 >
-> When walking through directory `output_dir`, float `recursive` determines level of depth to walk. Status messages are appended to make log `makelog`.
+> When walking through directory `output_dir`, float `depth` determines level of depth to walk. Status messages are appended to make log `makelog`.
 
 <ul>
 <b>Example:</b>
 <br>
-<code>write_output_logs(paths, recursive = 1)</code> will log information for all files contained in <code>paths['output_dir']</code>.
+<code>write_output_logs(paths, depth = 1)</code> will log information for all files contained in <code>paths['output_dir']</code>.
 <br>
 <br>
-<code>write_output_logs(paths, recursive = 2)</code> will log information for all files contained in <code>paths['output_dir']</code>, and all files contained in any directories in <code>paths['output_dir']</code>.
+<code>write_output_logs(paths, depth = 2)</code> will log information for all files contained in <code>paths['output_dir']</code>, and all files contained in any directories in <code>paths['output_dir']</code>.
 <br>
 <br>
-<code>write_output_logs(paths, recursive = float('inf'))</code> will log information for all files contained in any level of <code>paths['output_dir']</code>.
+<code>write_output_logs(paths, depth = float('inf'))</code> will log information for all files contained in any level of <code>paths['output_dir']</code>.
 </ul>
 
 <br>
@@ -405,6 +403,74 @@ Specifying <code>destination* | source*</code> in one of your instruction files 
 
 <br>
 
+<pre>
+move_sources.<b>copy_externals(</b><i>
+    paths = {
+        external_dir,
+        makelog,
+    }, 
+    file_list, 
+    path_mappings = {}</i><b>
+)</b> 
+</pre>
+> Create copies using instructions contained in files of list `file_list`. Instructions are string formatted using dictionary `path_mappings`. Defaults to no string formatting. Copies are written in directory `external_dir`. Status messages are appended to make log `makelog`.
+
+<ul>
+<b>Notes:</b>
+<br>
+Instruction files on how to create copies (destinations) from orginals (sources) should be formatted in the following way:
+<br>
+<code># Each line of instruction should contain a destination and source delimited by a `|`</code>
+<br>
+<code># Lines beginning with # are ignored</code>
+<br>
+<code>destination | source</code>
+<br>
+<br>
+Instruction files can be specified with the * shell pattern (see <a href = 'https://www.gnu.org/software/findutils/manual/html_node/find_html/Shell-Pattern-Matching.html'>here</a>).
+<br>
+<br>
+Destinations and their sources can also be specified with the * shell pattern. The number of wildcards must be the same for both destinations and sources.
+<br>
+<br>
+<b>Example 1:</b>
+<br>
+<code>copy_externals(paths, ['file1', 'file2'])</code> uses instruction files <code>'file1'</code> and <code>'file2'</code> to create copies.
+<br>
+<br>
+Suppose instruction file <code>'file1'</code> contained the following text:
+<br>
+<code>destination1 | source1</code>
+<br>
+<code>destination2 | source2</code>
+<br>
+<br>
+Copies <code>destination1</code> and <code>destination1</code> would be created in directory <code>paths['external_dir']</code>. Their originals would be <code>source1</code> and <code>source2</code>, respectively. 
+<br>
+<br>
+<b>Example 2:</b>
+<br>
+Suppose you have the following targets:
+<br>
+<code>source1</code>
+<br>
+<code>source2</code>
+<br>
+<code>source3</code>
+<br>
+<br>
+Specifying <code>destination* | source*</code> in one of your instruction files would create the following copies in <code>paths['external_dir']</code>:
+<br>
+<code>destination1</code>
+<br>
+<code>destination2</code>
+<br>
+<code>destination3</code>
+</pre>
+</ul>
+
+<br>
+
 # Source logging functions
 
 <b>The following function is used to log linking/copying activity and information about source files. The logs are intended to facilitate the reproducibility of research.</b>
@@ -420,7 +486,7 @@ write_source_logs.<b>write_source_logs(</b><i>
         makelog,
     }, 
     move_map, 
-    recursive = float('inf')</i><b>
+    depth = float('inf')</i><b>
 )</b>
 </pre>
 
@@ -432,24 +498,24 @@ write_source_logs.<b>write_source_logs(</b><i>
 >
 >     * File name (in file `source_statslog`)
 >
->     * Last modified (infile `source_statslog`)
+>     * Last modified (in file `source_statslog`)
 >
 >     * File size (in file `source_statslog`)
 >
 >     * File head (in file `source_headslog`)
 >
-> When walking through sources, float `recursive` determines level of depth to walk. Status messages are appended to make log `makelog`.
+> When walking through sources, float `depth` determines level of depth to walk. Status messages are appended to make log `makelog`.
 
 <ul>
 <b>Example:</b>
 <br>
-<code>write_source_logs(paths, move_map, recursive = 1)</code> will log information for all source files listed in <code>move_map</code>.
+<code>write_source_logs(paths, move_map, depth = 1)</code> will log information for all source files listed in <code>move_map</code>.
 <br>
 <br>
-<code>write_source_logs(paths, move_map, recursive = 2)</code> will log information for all source files listed in <code>move_map</code>, and all files contained in any source directories listed in <code>move_map</code>.
+<code>write_source_logs(paths, move_map, depth = 2)</code> will log information for all source files listed in <code>move_map</code>, and all files contained in any source directories listed in <code>move_map</code>.
 <br>
 <br>
-<code>write_source_logs(paths, move_map, recursive = float('inf'))</code> will log information for all source files listed in <code>move_map</code>, and all files contained in any level of source directories listed in <code>move_map</code>.
+<code>write_source_logs(paths, move_map, depth = float('inf'))</code> will log information for all source files listed in <code>move_map</code>, and all files contained in any level of source directories listed in <code>move_map</code>.
 </ul>
 
 <br> 
@@ -457,6 +523,34 @@ write_source_logs.<b>write_source_logs(</b><i>
 # Program functions
 
 <b>The following functions are used to run programs for certain applications. Unless specified otherwise, the program functions will use default settings to run your program. See the setting section below for more information.</b>
+
+<br>
+
+<pre>
+run_program.<b>run_jupyter(</b><i>
+    paths = {makelog}, 
+    program, 
+    timeout = None, 
+    kernel_name = ''</i><b>
+)</b>
+</pre>
+> Runs notebook `program` using Python API, with notebook specified in the form of `'notebook.ipynb'`. Status messages are appended to make log `makelog`.
+>
+> Jupyter-specific settings:
+>
+> * `timeout` : int
+>
+>     * Maximum time in seconds to execute a cell before throwing exception. Defaults to no timeout.
+>
+> * `kernel_name` : str
+>
+>     * Name of kernel to use for execution (e.g., `'python2'` for standard Python 2 kernel, `'python3'` for standard Python 3 kernel). Defaults to kernel specified in notebook.
+
+<ul>
+<b>Example:</b>
+<br>
+<code>run_jupyter(paths, program = 'notebook.ipynb')</code>
+</ul>
 
 <br>
 

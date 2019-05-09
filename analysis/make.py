@@ -53,7 +53,7 @@ gs.run_python(PATHS, program = 'code/descriptive.py')
 gs.log_files_in_output(PATHS)
 
 ### CHECK FILE SIZES
-gs.check_repo_size(PATHS)
+gs.check_module_size(PATHS)
 
 ### END
 gs.end_makelog(PATHS)
