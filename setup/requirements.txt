@@ -5,3 +5,4 @@ gitpython
 termcolor
 colorama
 jupyter
+future
