@@ -1,0 +1,17 @@
+# Each line of instruction in this `external.txt` file should contain a destination and source delimited by a `|`.
+# Lines beginning with # are ignored.
+# 
+# For example, suppose your `external.txt` file contains the following lines of text:
+# > destination | source
+#
+# Now suppose you run the following line of code:
+# > link_externals(paths, ['external.txt'])
+# 
+# This will create a link in `paths['external_dir']` named `destination` that links to `source`.
+# 
+# Alternative, suppose you run the following line of code:
+# > copy_externals(paths, ['external.txt'])
+# 
+# This will create a file in `paths['external_dir']` named `destination` that is a copy of `source`.
+
+# Destination | Source
