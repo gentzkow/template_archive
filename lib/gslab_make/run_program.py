@@ -10,7 +10,6 @@ import shutil
 import fileinput
 import sys
 import nbformat
-import nbconvert
 from nbconvert.preprocessors import ExecutePreprocessor
 
 from termcolor import colored

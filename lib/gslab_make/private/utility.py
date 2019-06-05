@@ -36,7 +36,7 @@ def get_path(paths_dict, key):
     return(path)
 
 
-def glob_recursive(path, depth):
+def glob_recursive(path, depth, quiet = True):
     """ Walks through path. 
     
     Notes
@@ -49,6 +49,8 @@ def glob_recursive(path, depth):
         Path to walk through.
     depth : int
         Level of depth when walking through path.
+    quiet : bool, optional
+        Suppress warning if no files globbed. Defaults to True. 
 
     Returns
     -------
@@ -70,7 +72,8 @@ def glob_recursive(path, depth):
             break
 
     path_files = [p for p in path_files if os.path.isfile(p)]
-    if not path_files:
+    
+    if not path_files and not quiet:
         print(messages.warning_glob % (path, depth))
 
     return path_files

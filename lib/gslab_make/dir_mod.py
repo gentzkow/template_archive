@@ -48,6 +48,7 @@ def remove_path(path, option = '', quiet = False):
     """
 
     path = norm_path(path)
+    
     if not option:
         option = metadata.default_options[os.name]['rmdir']
 
@@ -100,7 +101,7 @@ def clear_dir(dir_list):
     """
 
     remove_dir(dir_list, quiet = True)
-    time.sleep(0.2) # Allow file manager to recognize files no longer exist
+    time.sleep(0.25) # Allow file manager to recognize files no longer exist
     
     for dir_path in dir_list:
         os.makedirs(dir_path)

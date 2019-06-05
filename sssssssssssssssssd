@@ -1,0 +1,112 @@
+[1mdiff --git a/lib/gslab_make/dir_mod.py b/lib/gslab_make/dir_mod.py[m
+[1mindex eafe6a6..e907607 100644[m
+[1m--- a/lib/gslab_make/dir_mod.py[m
+[1m+++ b/lib/gslab_make/dir_mod.py[m
+[36m@@ -48,6 +48,7 @@[m [mdef remove_path(path, option = '', quiet = False):[m
+     """[m
+ [m
+     path = norm_path(path)[m
+[32m+[m[41m    [m
+     if not option:[m
+         option = metadata.default_options[os.name]['rmdir'][m
+ [m
+[36m@@ -100,7 +101,7 @@[m [mdef clear_dir(dir_list):[m
+     """[m
+ [m
+     remove_dir(dir_list, quiet = True)[m
+[31m-    time.sleep(0.2) # Allow file manager to recognize files no longer exist[m
+[32m+[m[32m    time.sleep(0.25) # Allow file manager to recognize files no longer exist[m[41m[m
+     [m
+     for dir_path in dir_list:[m
+         os.makedirs(dir_path)[m
+[1mdiff --git a/lib/gslab_make/private/utility.py b/lib/gslab_make/private/utility.py[m
+[1mindex 6898488..7db1e73 100644[m
+[1m--- a/lib/gslab_make/private/utility.py[m
+[1m+++ b/lib/gslab_make/private/utility.py[m
+[36m@@ -36,7 +36,7 @@[m [mdef get_path(paths_dict, key):[m
+     return(path)[m
+ [m
+ [m
+[31m-def glob_recursive(path, depth):[m
+[32m+[m[32mdef glob_recursive(path, depth, quiet = True):[m[41m[m
+     """ Walks through path. [m
+     [m
+     Notes[m
+[36m@@ -49,6 +49,8 @@[m [mdef glob_recursive(path, depth):[m
+         Path to walk through.[m
+     depth : int[m
+         Level of depth when walking through path.[m
+[32m+[m[32m    quiet : bool, optional[m[41m[m
+[32m+[m[32m        Suppress warning if no files globbed. Defaults to True.[m[41m [m
+ [m
+     Returns[m
+     -------[m
+[36m@@ -70,7 +72,8 @@[m [mdef glob_recursive(path, depth):[m
+             break[m
+ [m
+     path_files = [p for p in path_files if os.path.isfile(p)][m
+[31m-    if not path_files:[m
+[32m+[m[41m    [m
+[32m+[m[32m    if not path_files and not quiet:[m[41m[m
+         print(messages.warning_glob % (path, depth))[m
+ [m
+     return path_files[m
+[1mdiff --git a/lib/gslab_make/run_program.py b/lib/gslab_make/run_program.py[m
+[1mindex 896746d..926ee9e 100644[m
+[1m--- a/lib/gslab_make/run_program.py[m
+[1m+++ b/lib/gslab_make/run_program.py[m
+[36m@@ -10,7 +10,6 @@[m [mimport shutil[m
+ import fileinput[m
+ import sys[m
+ import nbformat[m
+[31m-import nbconvert[m
+ from nbconvert.preprocessors import ExecutePreprocessor[m
+ [m
+ from termcolor import colored[m
+[1mdiff --git a/lib/gslab_make/write_logs.py b/lib/gslab_make/write_logs.py[m
+[1mindex 3d7cf6a..a7cf491 100644[m
+[1m--- a/lib/gslab_make/write_logs.py[m
+[1m+++ b/lib/gslab_make/write_logs.py[m
+[36m@@ -5,7 +5,6 @@[m [mfrom builtins import (bytes, str, open, super, range,[m
+ [m
+ import os[m
+ import datetime[m
+[31m-import string[m
+ import traceback[m
+ [m
+ from termcolor import colored[m
+[36m@@ -42,6 +41,7 @@[m [mdef start_makelog(paths):[m
+     makelog = get_path(paths, 'makelog')[m
+ [m
+     metadata.makelog_started = True[m
+[32m+[m[41m    [m
+     if makelog:[m
+         makelog = norm_path(makelog)[m
+         message = 'Starting makelog file at: `%s`' % makelog[m
+[36m@@ -90,6 +90,8 @@[m [mdef end_makelog(paths):[m
+             print(messages.note_working_directory + working_dir, file = MAKELOG)[m
+             print(messages.note_dash_line, file = MAKELOG)[m
+ [m
+[32m+[m[32m    metadata.makelog_started = False[m[41m[m
+[32m+[m[41m    [m
+     [m
+ def write_to_makelog(paths, message):[m
+     """ Append message to make log.[m
+[36m@@ -212,7 +214,7 @@[m [mdef write_stats_log(statslog_file, output_files):[m
+     None[m
+     """[m
+ [m
+[31m-    header = "file name\tlast modified\tfile size"[m
+[32m+[m[32m    header = "file name | last modified | file size"[m[41m[m
+     [m
+     with open(statslog_file, 'w', encoding = 'utf8') as STATSLOG:[m
+         print(header, file = STATSLOG)      [m
+[36m@@ -222,7 +224,7 @@[m [mdef write_stats_log(statslog_file, output_files):[m
+             last_mod = datetime.datetime.utcfromtimestamp(round(stats.st_mtime))[m
+             file_size = stats.st_size[m
+ [m
+[31m-            print("%s\t%s\t%s" % (file_name, last_mod, file_size), file = STATSLOG)[m
+[32m+[m[32m            print("%s | %s | %s" % (file_name, last_mod, file_size), file = STATSLOG)[m[41m[m
+ [m
+ [m
+ def write_heads_log(headslog_file, output_files, num_lines = 10):[m

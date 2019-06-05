@@ -5,7 +5,6 @@ from builtins import (bytes, str, open, super, range,
 
 import os
 import datetime
-import string
 import traceback
 
 from termcolor import colored
@@ -42,6 +41,7 @@ def start_makelog(paths):
     makelog = get_path(paths, 'makelog')
 
     metadata.makelog_started = True
+    
     if makelog:
         makelog = norm_path(makelog)
         message = 'Starting makelog file at: `%s`' % makelog
@@ -90,6 +90,8 @@ def end_makelog(paths):
             print(messages.note_working_directory + working_dir, file = MAKELOG)
             print(messages.note_dash_line, file = MAKELOG)
 
+    metadata.makelog_started = False
+    
     
 def write_to_makelog(paths, message):
     """ Append message to make log.
@@ -212,7 +214,7 @@ def write_stats_log(statslog_file, output_files):
     None
     """
 
-    header = "file name\tlast modified\tfile size"
+    header = "file name | last modified | file size"
     
     with open(statslog_file, 'w', encoding = 'utf8') as STATSLOG:
         print(header, file = STATSLOG)      
@@ -222,7 +224,7 @@ def write_stats_log(statslog_file, output_files):
             last_mod = datetime.datetime.utcfromtimestamp(round(stats.st_mtime))
             file_size = stats.st_size
 
-            print("%s\t%s\t%s" % (file_name, last_mod, file_size), file = STATSLOG)
+            print("%s | %s | %s" % (file_name, last_mod, file_size), file = STATSLOG)
 
 
 def write_heads_log(headslog_file, output_files, num_lines = 10):
