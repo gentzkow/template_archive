@@ -123,7 +123,7 @@ def format_traceback(trace = ''):
         trace = traceback.format_exc()
 
     trace = '\n' + trace.strip()
-    formatted = re.sub('\n', '\n  : ', trace)
+    formatted = re.sub('\n', '\n  > ', trace)
 
     return(formatted)
 
