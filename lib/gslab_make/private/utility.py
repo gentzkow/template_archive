@@ -102,7 +102,22 @@ def file_to_array(file_name):
 
 
 def format_traceback(trace = ''):
-    """ Format error message. """
+    """ Format traceback message.
+
+    Parameters
+    ----------
+    trace : str
+        Traceback to format. Defaults to `traceback.format_exc()`.
+
+    Notes
+    -----
+    Format trackback for readability to pass into user messages. 
+
+    Returns
+    -------
+    formatted : str
+        Formatted traceback.
+    """
     
     if not trace:
         trace = traceback.format_exc()
@@ -134,7 +149,7 @@ def format_list(list):
 
     Notes
     -----
-    Format list for readability to pass into user messages 
+    Format list for readability to pass into user messages.
 
     Returns
     -------
@@ -147,9 +162,10 @@ def format_list(list):
     
     return(formatted)
 
-
-# Following functions are not currently actively used in code base
-
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+# Following functions are not currently actively used in code base #
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 def check_duplicate(original, copy): 
     """ Check duplicate.
 

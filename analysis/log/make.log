@@ -1,16 +1,16 @@
 --------------------------------------------------------------------------------
-Makelog started: 2019-05-08 12:19:30
-Working directory: /Users/zong/template/analysis
+Makelog started: 2019-06-06 15:09:33
+Working directory: C:\Users\Zong\template\analysis
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
 WARNING! The following target files have been modified according to git status:
-/Users/zong/template/data/output/data_graph.csv
-/Users/zong/template/data/output/data_table.csv
-Executing command: `python  "/Users/zong/template/analysis/code/descriptive.py" `
+C:\Users\Zong\template\data\output\data_graph.csv
+C:\Users\Zong\template\data\output\data_table.csv
+Executing command: `python  "C:\Users\Zong\template\analysis\code\descriptive.py" `
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2019-05-08 12:19:33
-Working directory: /Users/zong/template/analysis
+Makelog ended: 2019-06-06 15:09:36
+Working directory: C:\Users\Zong\template\analysis
 --------------------------------------------------------------------------------

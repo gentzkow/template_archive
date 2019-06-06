@@ -3,11 +3,11 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 from builtins import (bytes, str, open, super, range,
                       zip, round, input, int, pow, object)
         
-######################################################
-# Define Messages
-######################################################      
+# ~~~~~~~~~~~~~~~ #
+# Define messages #
+# ~~~~~~~~~~~~~~~ #  
     
-# 1) Critical Errors
+# Critical errors
 crit_error_unknown_system = '\nERROR! `gslab_make` only supports the following operating systems: `POSIX`, `NT`.' 
 crit_error_no_makelog = '\nERROR! Makelog `%s` not found. Makelog either not started (via `start_makelog`) or deleted after started.' 
 crit_error_no_program_output = '\nERROR! Certain applications (`matlab`, `sas`, `stata`) automatically create program outputs when ran using system command. Program output `%s` is expected from `%s` but cannot be not found or opened. Traceback can be found below.'
@@ -23,15 +23,15 @@ crit_error_extension = '\nERROR! Program `%s` does not have correct extension. P
 crit_error_path_mapping = '\nERROR! `{%s}` found in linking/copying instructions but not in path mapping. Traceback can be found below.'
 crit_error_no_repo = '\nERROR! Current working directory is not part of a git repository.'
 
-# 2) Syntax Errors
+# Syntax errors
 syn_error_wildcard = '\nERROR! Destination and source must have same number of wildcards (`*`).' 
 
-# 3) Type errors
+# Type errors
 type_error_file_list = '\nERROR! Files `%s` must be specified in a list.' 
 type_error_dir_list = '\nERROR! Directories `%s` must be specified in a list.' 
 type_error_not_dir = '\nERROR! Path `%s` is not a directory.' 
 
-# 4) Warnings
+# Warnings
 warning_glob = 'WARNING! No files were returned by `glob_recursive` for path `%s` when walking to a depth of `%s`.'
 warning_lyx_type = 'WARNING! Document type `%s` unrecognized. Reverting to default of no special document type.'
 warning_modified_files = "WARNING! The following target files have been modified according to git status:\n%s"
@@ -42,7 +42,7 @@ warning_git_lfs_file_print = "\nWARNING! Certain files tracked by git lfs exceed
 warning_git_lfs_file_log = "\nWARNING! Certain files tracked by git lfs exceed config limit (%s MB). See below for list of files."
 warning_git_lfs_repo = "\nWARNING! Total size of files tracked by git lfs exceed config limitt (%s MB)."
 
-# 5) Notes
+# Notes
 note_makelog_start = 'Makelog started: '
 note_makelog_end = 'Makelog ended: '
 note_working_directory = 'Working directory: '

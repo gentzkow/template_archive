@@ -3,13 +3,12 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 from builtins import (bytes, str, open, super, range,
                       zip, round, input, int, pow, object)
 
-######################################################
-# Define metadata
-######################################################  
+# ~~~~~~~~~~~~~~~ #
+# Define metadata #
+# ~~~~~~~~~~~~~~~ #
 
 makelog_started = False
 
-# Commands
 commands = {
     'posix': 
         {'makelink'  : 'ln -s \"%s\" \"%s\"', 

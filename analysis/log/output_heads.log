@@ -1,11 +1,11 @@
 File headers
 --------------------------------------------------------------------------------
-/Users/zong/template/analysis/output/plot.eps
+C:\Users\Zong\template\analysis\output\plot.eps
 --------------------------------------------------------------------------------
 %!PS-Adobe-3.0 EPSF-3.0
 %%Title: output/plot.eps
-%%Creator: matplotlib version 2.2.3, http://matplotlib.org/
-%%CreationDate: Wed May  8 12:19:32 2019
+%%Creator: matplotlib version 2.0.2, http://matplotlib.org/
+%%CreationDate: Thu Jun  6 15:09:35 2019
 %%Orientation: portrait
 %%BoundingBox: 75 223 536 568
 %%EndComments
@@ -13,7 +13,7 @@ File headers
 /mpldict 8 dict def
 mpldict begin
 --------------------------------------------------------------------------------
-/Users/zong/template/analysis/output/tables.txt
+C:\Users\Zong\template\analysis\output\tables.txt
 --------------------------------------------------------------------------------
 <tab:table>
 300001.0
