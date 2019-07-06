@@ -15,6 +15,7 @@ import colorama
 colorama.init()
 
 import gslab_make.private.messages as messages
+import gslab_make.private.metadata as metadata
 from gslab_make.private.exceptionclasses import CritError, ColoredError
 from gslab_make.private.utility import norm_path, get_path, format_error, glob_recursive
 from gslab_make.write_logs import write_to_makelog
@@ -340,4 +341,4 @@ def get_modified_sources(paths,
         error_message = 'Error with `get_modified_sources`. Traceback can be found below.' 
         error_message = format_error(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
-        raise ColoredError(error_message, traceback.format_exc())               
+        raise ColoredError(error_message, traceback.format_exc())

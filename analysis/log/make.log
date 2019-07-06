@@ -1,16 +1,31 @@
 --------------------------------------------------------------------------------
-Makelog started: 2019-06-06 15:09:33
+Makelog started: 2019-07-05 21:07:44
 Working directory: C:\Users\Zong\template\analysis
 --------------------------------------------------------------------------------
 Input links successfully created!
-External links successfully created!
-Source logs successfully written!
-WARNING! The following target files have been modified according to git status:
-C:\Users\Zong\template\data\output\data_graph.csv
-C:\Users\Zong\template\data\output\data_table.csv
-Executing command: `python  "C:\Users\Zong\template\analysis\code\descriptive.py" `
-Output logs successfully written!
---------------------------------------------------------------------------------
-Makelog ended: 2019-06-06 15:09:36
-Working directory: C:\Users\Zong\template\analysis
---------------------------------------------------------------------------------
+*********************************************************************************
+* An error was encountered with `link_externals`. Traceback can be found below. *
+*********************************************************************************
+
+Traceback (most recent call last):
+  File "C:\Users\Zong\template\lib\gslab_make\move_sources.py", line 172, in link_externals
+    move_map = create_links(paths, file_list, mapping_dict)
+  File "C:\Users\Zong\template\lib\gslab_make\move_sources.py", line 49, in create_links
+    move_list = MoveList(file_list, move_dir, mapping_dict)
+  File "C:\Users\Zong\template\lib\gslab_make\private\movedirective.py", line 321, in __init__
+    self.get_move_directive_list()
+  File "C:\Users\Zong\template\lib\gslab_make\private\movedirective.py", line 369, in get_move_directive_list
+    self.move_directive_list = [MoveDirective(raw, line, self.move_dir) for (raw, line) in lines]
+  File "C:\Users\Zong\template\lib\gslab_make\private\movedirective.py", line 55, in __init__
+    self.get_paths()
+  File "C:\Users\Zong\template\lib\gslab_make\private\movedirective.py", line 86, in get_paths
+    raise_from(CritError(error_message), None)
+  File "C:\Users\Zong\Anaconda3\envs\mypython2\lib\site-packages\future\utils\__init__.py", line 456, in raise_from
+    raise e
+CritError: 
+ERROR! Link/copy `wksmcldsk` incorrectly specified. Link/copy should be specified in the following format: `destination | source`. Traceback can be found below.
+  > Traceback (most recent call last):
+  >   File "C:\Users\Zong\template\lib\gslab_make\private\movedirective.py", line 82, in get_paths
+  >     self.destination, self.source = self.line
+  > ValueError: need more than 1 value to unpack
+

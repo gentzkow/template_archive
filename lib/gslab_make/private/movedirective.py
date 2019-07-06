@@ -1,5 +1,6 @@
 #! /usr/bin/env python
 from __future__ import absolute_import, division, print_function, unicode_literals
+from future.utils import raise_from
 from builtins import (bytes, str, open, super, range,
                       zip, round, input, int, pow, object)
 
@@ -79,10 +80,10 @@ class MoveDirective(object):
             self.line = [l.strip() for l in self.line]
             self.line = [l.strip('"\'') for l in self.line]
             self.destination, self.source = self.line
-        except:
+        except Exception as e:
             error_message = messages.crit_error_bad_move % self.raw
             error_message = error_message + format_traceback()
-            raise CritError(error_message)
+            raise_from(CritError(error_message), None)
 
         self.source = norm_path(self.source)
         self.destination = norm_path(os.path.join(self.move_dir, self.destination))

@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
-Makelog started: 2019-06-06 15:09:14
+Makelog started: 2019-07-05 20:29:40
 Working directory: C:\Users\Zong\template\data
 --------------------------------------------------------------------------------
 Input links successfully created!
@@ -12,7 +12,7 @@ package 'yaml' was built under R version 3.5.2
 
   ___  ____  ____  ____  ____ (R)
  /__    /   ____/   /   ____/
-___/   /   /___/   /   /___/   13.1   Copyright 1985-2013 StataCorp LP
+___/   /   /___/   /   /___/   15.0   Copyright 1985-2017 StataCorp LLC
   Statistics/Data Analysis            StataCorp
                                       4905 Lakeway Drive
      MP - Parallel Edition            College Station, Texas 77845 USA
@@ -20,14 +20,16 @@ ___/   /   /___/   /   /___/   13.1   Copyright 1985-2013 StataCorp LP
                                       979-696-4600        stata@stata.com
                                       979-696-4601 (fax)
 
-3-user 8-core Stata network perpetual license:
-       Serial number:  501306208483
-         Licensed to:  IDRE-UCLA
-                       IDRE-UCLA
+Unlimited-user 4-core Stata network license expires 21 Jul 2019:
+       Serial number:  501509201134
+         Licensed to:  Stanford
+                       Stanford
 
 Notes:
-      1.  (/v# option or -set maxvar-) 5000 maximum variables
-      2.  Stata running in batch mode
+      1.  Stata is running in batch mode.
+      2.  Unicode is supported; see help unicode_advice.
+      3.  More than 2 billion observations are allowed; see help obs_advice.
+      4.  Maximum number of variables is set to 5000; see help set_maxvar.
 
 . do "C:\Users\Zong\template\data\code\create_graph_data.do" 
 
@@ -45,8 +47,8 @@ Notes:
 . 
 . * EXECUTE
 . main
-(1 var, 300000 obs)
-(300000 real changes made)
+(1 var, 300,000 obs)
+(300,000 real changes made)
 (note: file output/data_graph.csv not found)
 file output/data_graph.csv saved
 
@@ -55,6 +57,6 @@ end of do-file
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2019-06-06 15:09:18
+Makelog ended: 2019-07-05 20:29:46
 Working directory: C:\Users\Zong\template\data
 --------------------------------------------------------------------------------
