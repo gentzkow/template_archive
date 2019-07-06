@@ -1,8 +1,8 @@
 File headers
 --------------------------------------------------------------------------------
-C:\Users\Zong\template\data\output\data_graph.csv
+C:\Users\Zong\template\data\output\data_table.csv
 --------------------------------------------------------------------------------
-x
+"x"
 2
 4
 6
@@ -13,9 +13,9 @@ x
 16
 18
 --------------------------------------------------------------------------------
-C:\Users\Zong\template\data\output\data_table.csv
+C:\Users\Zong\template\data\output\data_graph.csv
 --------------------------------------------------------------------------------
-"x"
+x
 2
 4
 6

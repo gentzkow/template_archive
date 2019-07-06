@@ -8,6 +8,10 @@ The majority of the functions in </b><code>gslab_make</code><b> contain a </b><c
 >
 >     * Default path for config file. 
 >
+> * `config_user`
+>
+>     * Default path for user config file. 
+> 
 > * `input_dir` 
 > 
 >     * Default path for writing symbolic links/copies to sources internal to the repository. 
@@ -61,6 +65,7 @@ The following default paths are recommended:
 <pre>
     paths = {
         'config'          : '../config.yaml', # Adjust relative path accordingly
+        'config_user'     : '../config_user.yaml', # Adjust relative path accordingly
         'input_dir'       : 'input/',
         'external_dir'    : 'external/',
         'output_dir'      : 'output/',
@@ -825,6 +830,43 @@ By default, program log is not written as <code>log = ''</code>.
 
 <br> 
 
+# Environment functions
+
+<b>The following functions are used to make modifications to the environment. Functions to update executable names and path mappings are included.</b>
+
+<br>
+
+<pre>
+update_env.<b>update_executables(</b><i>paths = {config_user}</i>)</b> 
+</pre>
+> Update executable names with executables listed in user config `config_user`
+> 
+<ul>
+<b>Note:</b> 
+<br>
+Executable names are used by program functions.
+</ul>
+
+<br>
+
+<pre>
+update_env.<b>update_mappings(</b><i>
+    paths = {
+        config_user
+    }, 
+    path_mappings = {}</i><b>
+)</b> 
+</pre>
+> Update dictionary `path_mappings` with externals listed in user config file `config_user`.
+> 
+<ul>
+<b>Note:</b> 
+<br>
+Path mappings are used by linking functions.
+</ul>
+
+<br>
+
 # Directory functions
 
 <b>The following functions are used to make modifications to a directory. Functions to check operating system, clear directories, and zip/unzip files are included.</b>
@@ -832,20 +874,7 @@ By default, program log is not written as <code>log = ''</code>.
 <br>
 
 <pre>
-dir_mod.<b>check_os()</b>
-</pre>
-> Confirms that operating system is Unix or Windows. If operating system is neither, raises exception. 
-
-<ul>
-<b>Note:</b> 
-<br>
-<code>gslab_make</code> only supports Unix or Windows. 
-</ul>
-
-<br>
-
-<pre>
-dir_mod.<b>remove_dir(</b><i>dir_list</i><b>)</b>
+modify_dir.<b>remove_dir(</b><i>dir_list</i><b>)</b>
 </pre>
 > Removes all directories in list <code>dir_list</code> using system command. Safely removes symbolic links.
 
@@ -863,7 +892,7 @@ Directories can be specified with the * shell pattern (see <a href = 'https://ww
 <br>
 
 <pre>
-dir_mod.<b>clear_dir(</b><i>dir_list</i><b>)</b>
+modify_dir.<b>clear_dir(</b><i>dir_list</i><b>)</b>
 </pre>
 > Clears all directories in list <code>dir_list</code> using system command. Safely clears symbolic links.
 
@@ -884,14 +913,14 @@ Directories can be specified with the * shell pattern (see <a href = 'https://ww
 <br>
 
 <pre>
-dir_mod.<b>unzip(</b><i>zip_path, output_dir</i><b>)</b>
+modify_dir.<b>unzip(</b><i>zip_path, output_dir</i><b>)</b>
 </pre>
 > Unzips file `zip_path` into directory `output_dir`.
 
 <br>
 
 <pre>
-dir_mod.<b>zip_dir(</b><i>source_dir, zip_dest</i><b>)</b>
+modify_dir.<b>zip_dir(</b><i>source_dir, zip_dest</i><b>)</b>
 </pre>
 > Zips directory `source_dir` into file `zip_dest`. 
 

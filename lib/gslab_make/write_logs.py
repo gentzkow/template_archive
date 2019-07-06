@@ -1,5 +1,6 @@
 #! /usr/bin/env python
 from __future__ import absolute_import, division, print_function, unicode_literals
+from future.utils import raise_from
 from builtins import (bytes, str, open, super, range,
                       zip, round, input, int, pow, object)
 
@@ -80,7 +81,7 @@ def end_makelog(paths):
         print(colored(message, 'green'))
 
         if not (metadata.makelog_started and os.path.isfile(makelog)):
-            raise CritError(messages.crit_error_no_makelog % makelog)
+            raise_from(CritError(messages.crit_error_no_makelog % makelog), None)
 
         with open(makelog, 'a', encoding = 'utf8') as MAKELOG:
             time_end = str(datetime.datetime.now().replace(microsecond = 0))
@@ -117,7 +118,7 @@ def write_to_makelog(paths, message):
         makelog = norm_path(makelog)
 
         if not (metadata.makelog_started and os.path.isfile(makelog)):
-            raise CritError(messages.crit_error_no_makelog % makelog)
+            raise_from(CritError(messages.crit_error_no_makelog % makelog), None)
 
         with open(makelog, 'a', encoding = 'utf8') as MAKELOG:
             print(message, file = MAKELOG)
@@ -165,7 +166,7 @@ def log_files_in_output(paths,
     try:
         output_local_dir = get_path(paths, 'output_local_dir') # Make required?
         if type(output_local_dir) is not list:
-            raise TypeError(messages.type_error_dir_list % output_local_dir)
+            raise_from(TypeError(messages.type_error_dir_list % output_local_dir), None)
     except KeyError:
         output_local_dir = []
   
@@ -189,7 +190,7 @@ def log_files_in_output(paths,
         error_message = 'Error with `log_files_in_output`. Traceback can be found below.' 
         error_message = format_error(error_message)
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
-        raise ColoredError(error_message, traceback.format_exc())
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
     
 def write_stats_log(statslog_file, output_files):

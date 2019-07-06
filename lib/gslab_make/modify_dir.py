@@ -1,5 +1,6 @@
 #! /usr/bin/env python
 from __future__ import absolute_import, division, print_function, unicode_literals
+from future.utils import raise_from
 from builtins import (bytes, str, open, super, range,
                       zip, round, input, int, pow, object)
 
@@ -66,13 +67,13 @@ def remove_dir(dir_list, quiet = False):
     if type(dir_list) is list:
         dir_list = [norm_path(dir_path) for dir_path in dir_list]
     else:
-        raise TypeError(messages.type_error_dir_list % dir_list)
+        raise_from(TypeError(messages.type_error_dir_list % dir_list), None)
     
     for dir_path in dir_list:
         if os.path.isdir(dir_path):
             remove_path(dir_path, quiet = quiet)
         elif os.path.isfile(dir_path): 
-            raise TypeError(messages.type_error_not_dir % dir_path)
+            raise_from(TypeError(messages.type_error_not_dir % dir_path), None)
 
 
 def clear_dir(dir_list):

@@ -1,5 +1,6 @@
 #! /usr/bin/env python
 from __future__ import absolute_import, division, print_function, unicode_literals
+from future.utils import raise_from
 from builtins import (bytes, str, open, super, range,
                       zip, round, input, int, pow, object)
 
@@ -89,7 +90,7 @@ def write_source_logs(paths,
         error_message = 'Error with `write_source_logs`. Traceback can be found below.' 
         error_message = format_error(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
-        raise ColoredError(error_message, traceback.format_exc())
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
 
 def write_source_maplog(source_maplog, source_map):

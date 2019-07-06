@@ -1,5 +1,6 @@
 #! /usr/bin/env python
 from __future__ import absolute_import, division, print_function, unicode_literals
+from future.utils import raise_from
 from builtins import (bytes, str, open, super, range,
                       zip, round, input, int, pow, object)
 
@@ -147,7 +148,7 @@ def get_dir_sizes(dir_path):
         repo = git.Repo(dir_path, search_parent_directories = True)   
         root = repo.working_tree_dir
     except:
-        raise CritError(messages.crit_error_no_repo)
+        raise_from(CritError(messages.crit_error_no_repo), None)
 
     git_files = get_file_sizes(dir_path, exclude = ['.git'])
     git_ignore_files = get_git_ignore(repo)
@@ -265,7 +266,7 @@ def check_module_size(paths):
         error_message = 'Error with `check_repo_size`. Traceback can be found below.' 
         error_message = format_error(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
-        raise ColoredError(error_message, traceback.format_exc())
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
 
 def get_git_status(repo): 
@@ -325,7 +326,7 @@ def get_modified_sources(paths,
         try:
             repo = git.Repo('.', search_parent_directories = True)    
         except:
-            raise CritError(messages.crit_error_no_repo)
+            raise_from(CritError(messages.crit_error_no_repo), None)
         modified = get_git_status(repo)
 
         overlap = [l for l in source_files if l in modified] 
@@ -341,4 +342,4 @@ def get_modified_sources(paths,
         error_message = 'Error with `get_modified_sources`. Traceback can be found below.' 
         error_message = format_error(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
-        raise ColoredError(error_message, traceback.format_exc())
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)

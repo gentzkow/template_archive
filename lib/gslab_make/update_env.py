@@ -39,14 +39,14 @@ def check_os(osname = os.name):
 
 
 def update_executables(paths, osname = os.name):
-    """ Update executable names using user configuration file. 
+    """ Update executable names using user config file. 
     
     Parameters
     ----------
     paths : dict 
         Dictionary of paths. Dictionary should contain {
             'config_user' : str
-                Path of user configuration file.
+                Path of user config file.
         }
     osname : str, optional
         Name of OS. Defaults to `os.name`.
@@ -66,14 +66,14 @@ def update_executables(paths, osname = os.name):
 
 
 def update_mappings(paths, mapping_dict = {}):
-    """ Update path mappings using user configuration file. 
+    """ Update path mappings using user config file. 
     
     Parameters
     ----------
     paths : dict 
         Dictionary of paths. Dictionary should contain {
             'config_user' : str
-                Path of user configuration file.
+                Path of user config file.
         }
     mapping_dict : dict, optional
         Dictionary of path mappings used to parse paths. 

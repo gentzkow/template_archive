@@ -137,7 +137,7 @@ def link_inputs(paths,
         error_message = 'An error was encountered with `link_inputs`. Traceback can be found below.' 
         error_message = format_error(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
-        raise ColoredError(error_message, traceback.format_exc())
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)
         
 
 def link_externals(paths,
@@ -220,7 +220,7 @@ def copy_inputs(paths,
         error_message = 'An error was encountered with `copy_inputs`. Traceback can be found below.' 
         error_message = format_error(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
-        raise ColoredError(error_message, traceback.format_exc())
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
 
 def copy_externals(paths,
@@ -261,4 +261,4 @@ def copy_externals(paths,
         error_message = 'An error was encountered with `copy_externals`. Traceback can be found below.' 
         error_message = format_error(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
-        raise ColoredError(error_message, traceback.format_exc())
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)

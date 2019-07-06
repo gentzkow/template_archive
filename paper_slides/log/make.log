@@ -1,12 +1,10 @@
 --------------------------------------------------------------------------------
-Makelog started: 2019-07-05 20:29:54
+Makelog started: 2019-07-05 21:27:41
 Working directory: C:\Users\Zong\template\paper_slides
 --------------------------------------------------------------------------------
 Input copies successfully created!
 External copies successfully created!
 Source logs successfully written!
-WARNING! The following target files have been modified according to git status:
-C:\Users\Zong\template\analysis\output\plot.eps
 Executing command: `lyx2.3 -e pdf2 "C:\Users\Zong\template\paper_slides\code\paper.lyx"`
 This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit)
 
@@ -146,6 +144,6 @@ pdflatex: warning: running with administrator privileges
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2019-07-05 20:30:18
+Makelog ended: 2019-07-05 21:28:08
 Working directory: C:\Users\Zong\template\paper_slides
 --------------------------------------------------------------------------------

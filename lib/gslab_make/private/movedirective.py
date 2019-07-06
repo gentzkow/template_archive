@@ -364,7 +364,7 @@ class MoveList(object):
         except KeyError as e:
             error_message = messages.crit_error_path_mapping % str(e).lstrip("u'").rstrip("'")
             error_message = error_message + format_traceback()
-            raise CritError(error_message)
+            raise_from(CritError(error_message), None)
 			
         self.move_directive_list = [MoveDirective(raw, line, self.move_dir) for (raw, line) in lines]
 

@@ -1,5 +1,6 @@
 #! /usr/bin/env python
 from __future__ import absolute_import, division, print_function, unicode_literals
+from future.utils import raise_from
 from builtins import (bytes, str, open, super, range,
                       zip, round, input, int, pow, object)
 
@@ -76,7 +77,7 @@ def run_stata(paths, program, **kwargs):
         if exit_code != 0:
             error_message = 'Stata program executed with errors. Traceback can be found below.'
             error_message = format_error(error_message)
-            raise ProgramError(error_message, stderr)
+            raise_from(ProgramError(error_message, stderr), None)
         output = direct.move_program_output(program_log, direct.log)
         check_stata_output(output)
     except ProgramError:
@@ -85,7 +86,7 @@ def run_stata(paths, program, **kwargs):
         error_message = 'Error with `run_stata`. Traceback can be found below.' 
         error_message = format_error(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
-        raise ColoredError(error_message, traceback.format_exc())
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)
     
     
 def check_stata_output(output):
@@ -93,7 +94,7 @@ def check_stata_output(output):
     if re.search(regex, output):
         error_message = 'Stata program executed with errors.'
         error_message = format_error(error_message)
-        raise ProgramError(error_message, 'See makelog for more detail.')
+        raise_from(ProgramError(error_message, 'See makelog for more detail.'), None)
 
 
 def run_matlab(paths, program, **kwargs):
@@ -142,7 +143,7 @@ def run_matlab(paths, program, **kwargs):
         if exit_code != 0:
             error_message = 'Matlab program executed with errors. Traceback can be found below.'
             error_message = format_error(error_message)
-            raise ProgramError(error_message, stderr)
+            raise_from(ProgramError(error_message, stderr), None)
         direct.move_program_output(program_log, direct.log)   
     except ProgramError:
         raise
@@ -150,7 +151,7 @@ def run_matlab(paths, program, **kwargs):
         error_message = 'Error with `run_matlab`. Traceback can be found below.' 
         error_message = format_error(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
-        raise ColoredError(error_message, traceback.format_exc())
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)
         
 
 def run_perl(paths, program, **kwargs):
@@ -197,14 +198,14 @@ def run_perl(paths, program, **kwargs):
         if exit_code != 0:
             error_message = 'Perl program executed with errors. Traceback can be found below.'
             error_message = format_error(error_message)
-            raise ProgramError(error_message, stderr)
+            raise_from(ProgramError(error_message, stderr), None)
     except ProgramError:
         raise
     except:
         error_message = 'Error with `run_perl`. Traceback can be found below.' 
         error_message = format_error(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
-        raise ColoredError(error_message, traceback.format_exc())
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
 
 def run_python(paths, program, **kwargs):
@@ -251,14 +252,14 @@ def run_python(paths, program, **kwargs):
         if exit_code != 0:
             error_message = 'Python program executed with errors. Traceback can be found below.'
             error_message = format_error(error_message)
-            raise ProgramError(error_message, stderr)
+            raise_from(ProgramError(error_message, stderr), None)
     except ProgramError:
         raise
     except:
         error_message = 'Error with `run_python`. Traceback can be found below.' 
         error_message = format_error(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
-        raise ColoredError(error_message, traceback.format_exc())
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)
         
 
 def run_jupyter(paths, program, timeout = None, kernel_name = ''):
@@ -305,7 +306,7 @@ def run_jupyter(paths, program, timeout = None, kernel_name = ''):
         error_message = 'Error with `run_jupyter`. Traceback can be found below.' 
         error_message = format_error(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
-        raise ColoredError(error_message, traceback.format_exc())
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
 
 def run_mathematica(paths, program, **kwargs):
@@ -352,14 +353,14 @@ def run_mathematica(paths, program, **kwargs):
         if exit_code != 0:
             error_message = 'Mathematica program executed with errors. Traceback can be found below.'
             error_message = format_error(error_message)
-            raise ProgramError(error_message, stderr)
+            raise_from(ProgramError(error_message, stderr), None)
     except ProgramError:
         raise
     except:
         error_message = 'Error with `run_mathematica`. Traceback can be found below.' 
         error_message = format_error(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
-        raise ColoredError(error_message, traceback.format_exc())
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)
         
 
 def run_stat_transfer(paths, program, **kwargs):
@@ -406,14 +407,14 @@ def run_stat_transfer(paths, program, **kwargs):
         if exit_code != 0:
             error_message = 'StatTransfer program executed with errors. Traceback can be found below.'
             error_message = format_error(error_message)
-            raise ProgramError(error_message, stderr)
+            raise_from(ProgramError(error_message, stderr), None)
     except ProgramError:
         raise
     except:
         error_message = 'Error with `run_stat_transfer`. Traceback can be found below.' 
         error_message = format_error(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
-        raise ColoredError(error_message, traceback.format_exc())
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)
         
 
 def run_lyx(paths, program, **kwargs): 
@@ -486,7 +487,7 @@ def run_lyx(paths, program, **kwargs):
         if exit_code != 0:
             error_message = 'LyX program executed with errors. Traceback can be found below.'
             error_message = format_error(error_message)
-            raise ProgramError(error_message, stderr)
+            raise_from(ProgramError(error_message, stderr), None)
 
         # Move PDF output
         temp_pdf = os.path.join(direct.program_dir, temp_name + '.pdf')
@@ -505,7 +506,7 @@ def run_lyx(paths, program, **kwargs):
         error_message = 'Error with `run_lyx`. Traceback can be found below.' 
         error_message = format_error(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
-        raise ColoredError(error_message, traceback.format_exc())
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)
         
 
 def run_r(paths, program, **kwargs):
@@ -552,14 +553,14 @@ def run_r(paths, program, **kwargs):
         if exit_code != 0:
             error_message = 'R program executed with errors. Traceback can be found below.'
             error_message = format_error(error_message)
-            raise ProgramError(error_message, stderr)
+            raise_from(ProgramError(error_message, stderr), None)
     except ProgramError:
         raise
     except:
         error_message = 'Error with `run_r`. Traceback can be found below.' 
         error_message = format_error(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
-        raise ColoredError(error_message, traceback.format_exc())
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)
         
 
 def run_sas(paths, program, **kwargs):
@@ -611,7 +612,7 @@ def run_sas(paths, program, **kwargs):
         if exit_code != 0:
             error_message = 'SAS program executed with errors. Traceback can be found below.'
             error_message = format_error(error_message)
-            raise ProgramError(error_message, stderr)
+            raise_from(ProgramError(error_message, stderr), None)
         direct.move_program_output(program_log)
         direct.move_program_output(program_lst)        
     except ProgramError:
@@ -620,7 +621,7 @@ def run_sas(paths, program, **kwargs):
         error_message = 'Error with `run_sas`. Traceback can be found below.' 
         error_message = format_error(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
-        raise ColoredError(error_message, traceback.format_exc())
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)
         
 
 def execute_command(paths, command, **kwargs):
@@ -659,11 +660,11 @@ def execute_command(paths, command, **kwargs):
         if exit_code != 0:
             error_message = 'Command executed with errors. Traceback can be found below.'
             error_message = format_error(error_message)
-            raise ProgramError(error_message, stderr)
+            raise_from(ProgramError(error_message, stderr), None)
     except ProgramError:
         raise
     except:
         error_message = 'Error with `execute_command`. Traceback can be found below.' 
         error_message = format_error(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
-        raise ColoredError(error_message, traceback.format_exc())
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)
