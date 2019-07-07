@@ -4,21 +4,12 @@ from builtins import (bytes, str, open, super, range,
                       zip, round, input, int, pow, object)
 
 import os
-import re
-import git
-import fnmatch
 import yaml
-import traceback
-
-from termcolor import colored
-import colorama
-colorama.init()
 
 import gslab_make.private.messages as messages
 import gslab_make.private.metadata as metadata
-from gslab_make.private.exceptionclasses import CritError, ColoredError
-from gslab_make.private.utility import norm_path, get_path, format_error, glob_recursive
-from gslab_make.write_logs import write_to_makelog
+from gslab_make.private.exceptionclasses import CritError
+from gslab_make.private.utility import get_path
 
 
 def check_os(osname = os.name):

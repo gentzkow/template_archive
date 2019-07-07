@@ -15,7 +15,6 @@ colorama.init()
 
 import gslab_make.private.metadata as metadata
 import gslab_make.private.messages as messages
-from gslab_make.private.exceptionclasses import CritError
 from gslab_make.private.utility import norm_path
 
 
