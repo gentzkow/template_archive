@@ -27,10 +27,10 @@ class MoveDirective(object):
     
     Parameters
     ----------
-    raw : str
-        Raw text of linking/copying instructions (used for error messaging).
     file: str
         File containing linking/copying instructions (used for error messaging).
+    raw_line : str
+        Raw text of line containing linking/copying instructions (used for error messaging).
     line : str
         Line of text containing linking/copying instructions.
     move_dir : str
@@ -48,8 +48,8 @@ class MoveDirective(object):
         List of (source, destination) mappings parsed from line.
     """
     
-    def __init__(self, raw, file, line, move_dir, osname = os.name):
-        self.raw      = raw
+    def __init__(self, raw_line, file, line, move_dir, osname = os.name):
+        self.raw_line = raw_line
         self.file     = file
         self.line     = line
         self.move_dir = move_dir
@@ -84,7 +84,7 @@ class MoveDirective(object):
             self.line = [l.strip('"\'') for l in self.line]
             self.destination, self.source = self.line
         except Exception as e:
-            error_message = messages.crit_error_bad_move % (self.file, self.raw)
+            error_message = messages.crit_error_bad_move % (self.file, self.raw_line)
             error_message = error_message + format_traceback()
             raise_from(CritError(error_message), None)
 
@@ -100,7 +100,7 @@ class MoveDirective(object):
         """
 
         if re.findall('\*', self.source) != re.findall('\*', self.destination):
-            raise SyntaxError(messages.syn_error_wildcard % (self.file, self.raw))
+            raise SyntaxError(messages.syn_error_wildcard % (self.file, self.raw_line))
         
         if re.search('\*', self.source):
             if not glob.glob(self.source):
@@ -361,31 +361,17 @@ class MoveList(object):
         """
         lines = []
         for file in self.file_list:
-            for raw in file_to_array(file):
+            for raw_line in file_to_array(file):
                 try:
-                    mapped = str(raw).format(**self.mapping_dict)
-                    lines.append((raw, file, mapped))
+                    line = str(raw_line).format(**self.mapping_dict)
+                    lines.append((file, raw_line, line))
                 except KeyError as e:
                     key = str(e).lstrip("u'").rstrip("'")
-                    error_message = messages.crit_error_path_mapping % (key, key, file, raw, key)
+                    error_message = messages.crit_error_path_mapping % (key, key, file, raw_line, key)
                     error_message = error_message + format_traceback()
                     raise_from(CritError(error_message), None)
 
-        self.move_directive_list = [MoveDirective(raw, file, mapped, self.move_dir) for (raw, file, mapped) in lines]
-
-        lines = [(line, file) for file in self.file_list for line in file_to_array(file)]
-        lines_mapped = []
-        for (raw, file) in lines:
-            try:
-                line = str(raw).format(**self.mapping_dict)
-                lines_mapped.append((raw, file, line))
-            except KeyError as e:
-                key = str(e).lstrip("u'").rstrip("'")
-                error_message = messages.crit_error_path_mapping % (key, key, file, raw, key)
-                error_message = error_message + format_traceback()
-                raise_from(CritError(error_message), None)
-			
-        self.move_directive_list = [MoveDirective(raw, file, line, self.move_dir) for (raw, file, line) in lines_mapped]
+        self.move_directive_list = [MoveDirective(file, raw_line, line, self.move_dir) for (file, raw_line, line) in lines]
 
     def create_symlinks(self):       
         """ Create symlinks according to directives. 
