@@ -9,7 +9,7 @@ from builtins import (bytes, str, open, super, range,
     
 # Critical errors
 crit_error_unknown_system =
-	'\nERROR! `gslab_make` only supports the following operating systems: `POSIX`, `NT`.' 
+	'\nERROR! Your operating system `%s` is unknown. `gslab_make` only supports the following operating systems: `posix`, `nt`.' 
 crit_error_no_makelog =
 	'\nERROR! Makelog `%s` cannot be found. ` ' + 
 	'This could be for the following reasons:\n' + 
@@ -55,7 +55,7 @@ crit_error_path_mapping =
 	'\nERROR! Argument `path_mappings` is missing a value for key `%s`. ' +
 	'`{%s}` found in the following instruction in file `%s`.\n' +
 	'  > %s\n' + 
-	'Confirm that your user config file contains an external dependency for {%s} and that it has been properly loaded (via `update_mappings`). ' + 
+	'Confirm that your config user file contains an external dependency for {%s} and that it has been properly loaded (via `update_mappings`). ' + 
 	'For further detail, refer to the traceback below.'
 crit_error_no_repo =
 	'\nERROR! Current working directory is not part of a git repository.'

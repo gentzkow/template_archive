@@ -10,7 +10,7 @@ The majority of the functions in </b><code>gslab_make</code><b> contain a </b><c
 >
 > * `config_user`
 >
->     * Default path for user config file. 
+>     * Default path for config user file. 
 > 
 > * `input_dir` 
 > 
@@ -839,7 +839,7 @@ By default, program log is not written as <code>log = ''</code>.
 <pre>
 update_env.<b>update_executables(</b><i>paths = {config_user}</i>)</b> 
 </pre>
-> Update executable names with executables listed in user config `config_user`
+> Update executable names with executables listed in config user `config_user`
 > 
 <ul>
 <b>Note:</b> 
@@ -857,7 +857,7 @@ update_env.<b>update_mappings(</b><i>
     path_mappings = {}</i><b>
 )</b> 
 </pre>
-> Update dictionary `path_mappings` with externals listed in user config file `config_user`.
+> Update dictionary `path_mappings` with externals listed in config user file `config_user`.
 > 
 <ul>
 <b>Note:</b> 
