@@ -32,7 +32,7 @@ def get_path(paths_dict, key):
     try:
         path = paths_dict[key]
     except KeyError:
-        raise_from(CritError(messages.crit_error_no_key % key), None)
+        raise_from(CritError(messages.crit_error_no_key % (key, key)), None)
 
     return(path)
 

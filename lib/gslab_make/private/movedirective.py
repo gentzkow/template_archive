@@ -84,7 +84,7 @@ class MoveDirective(object):
             self.line = [l.strip('"\'') for l in self.line]
             self.destination, self.source = self.line
         except Exception as e:
-            error_message = messages.crit_error_bad_move % (self.file, self.raw_line)
+            error_message = messages.crit_error_bad_move % (self.raw_line, self.file)
             error_message = error_message + format_traceback()
             raise_from(CritError(error_message), None)
 
@@ -100,7 +100,7 @@ class MoveDirective(object):
         """
 
         if re.findall('\*', self.source) != re.findall('\*', self.destination):
-            raise SyntaxError(messages.syn_error_wildcard % (self.file, self.raw_line))
+            raise SyntaxError(messages.syn_error_wildcard % (self.raw_line, self.file))
         
         if re.search('\*', self.source):
             if not glob.glob(self.source):
