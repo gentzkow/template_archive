@@ -92,7 +92,7 @@ def get_git_ignore(repo):
     return(ignore_files)
 
 
-def parse_git_attributes(attributes):
+def parse_git_attributes(attributes): ### WHAT TO DO IF MISSING ATTRIBUTES FILE?
     """ Get git lfs patterns from .gitattributes.
     
     Parameters

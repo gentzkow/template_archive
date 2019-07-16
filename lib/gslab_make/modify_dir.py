@@ -41,12 +41,12 @@ def remove_path(path, option = '', quiet = False):
         option = metadata.default_options[os.name]['rmdir']
 
     command = metadata.commands[os.name]['rmdir'] % (option, path)
-    subprocess.Popen(command, shell = True) # Add debugging here?
+    subprocess.Popen(command, shell = True) ### ADD DEBUGGING HERE?
 
     if not quiet:
         message = 'Removed: `%s`' % path
         print(colored(message, 'green'))
-    
+
 
 def remove_dir(dir_list, quiet = False):
     """ Remove everything in directory.
@@ -62,17 +62,21 @@ def remove_dir(dir_list, quiet = False):
     -------
     None
     """
-
-    if type(dir_list) is list:
-        dir_list = [norm_path(dir_path) for dir_path in dir_list]
-    else:
-        raise_from(TypeError(messages.type_error_dir_list % dir_list), None)
-    
-    for dir_path in dir_list:
-        if os.path.isdir(dir_path):
-            remove_path(dir_path, quiet = quiet)
-        elif os.path.isfile(dir_path): 
-            raise_from(TypeError(messages.type_error_not_dir % dir_path), None)
+    try:
+        if type(dir_list) is list:
+            dir_list = [norm_path(dir_path) for dir_path in dir_list]
+        else:
+            raise_from(TypeError(messages.type_error_dir_list % dir_list), None)
+        
+        for dir_path in dir_list:
+            if os.path.isdir(dir_path):
+                remove_path(dir_path, quiet = quiet)
+            elif os.path.isfile(dir_path): 
+                raise_from(TypeError(messages.type_error_not_dir % dir_path), None)
+    except:
+        error_message = 'Error with `remove_dir`. Traceback can be found below.' 
+        error_message = format_error(error_message) 
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
 
 def clear_dir(dir_list):
@@ -88,13 +92,18 @@ def clear_dir(dir_list):
     None
     """
 
-    remove_dir(dir_list, quiet = True)
-    time.sleep(0.25) # Allow file manager to recognize files no longer exist
-    
-    for dir_path in dir_list:
-        os.makedirs(dir_path)
-        message = 'Cleared: `%s`' % dir_path
-        print(colored(message, 'green'))
+    try:
+        remove_dir(dir_list, quiet = True)
+        time.sleep(0.25) # Allow file manager to recognize files no longer exist
+  
+        for dir_path in dir_list:
+            os.makedirs(dir_path)
+            message = 'Cleared: `%s`' % dir_path
+            print(colored(message, 'green'))
+    except:
+        error_message = 'Error with `clear_dir`. Traceback can be found below.' 
+        error_message = format_error(error_message) 
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
 
 def unzip(zip_path, output_dir):
@@ -112,8 +121,13 @@ def unzip(zip_path, output_dir):
     None
     """
 
-    with zipfile.ZipFile(zip_path, allowZip64 = True) as z:
-        z.extractall(output_dir)
+    try:
+        with zipfile.ZipFile(zip_path, allowZip64 = True) as z:
+            z.extractall(output_dir)
+    except:
+        error_message = 'Error with `zip_path`. Traceback can be found below.' 
+        error_message = format_error(error_message) 
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
 
 def zip_dir(source_dir, zip_dest):
@@ -131,14 +145,19 @@ def zip_dir(source_dir, zip_dest):
     None
     """
 
-    with zipfile.ZipFile('%s' % (zip_dest), 'w', zipfile.ZIP_DEFLATED, allowZip64 = True) as z:
-        source_dir = norm_path(source_dir)
+    try:
+        with zipfile.ZipFile('%s' % (zip_dest), 'w', zipfile.ZIP_DEFLATED, allowZip64 = True) as z:
+            source_dir = norm_path(source_dir)
 
-        for root, dirs, files in os.walk(source_dir):
-            for f in files:
-                file_path = os.path.join(root, f)
-                file_name = os.path.basename(file_path)
-                
-                message = 'Zipped: `%s` as `%s`' % (file_path, file_name)
-                print(colored(message, 'green'))
-                z.write(file_path, file_name)
+            for root, dirs, files in os.walk(source_dir):
+                for f in files:
+                    file_path = os.path.join(root, f)
+                    file_name = os.path.basename(file_path)
+                    
+                    message = 'Zipped: `%s` as `%s`' % (file_path, file_name)
+                    print(colored(message, 'green'))
+                    z.write(file_path, file_name)
+    except:
+        error_message = 'Error with `zip_dir`. Traceback can be found below.' 
+        error_message = format_error(error_message) 
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)

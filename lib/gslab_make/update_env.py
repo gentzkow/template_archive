@@ -47,13 +47,18 @@ def update_executables(paths, osname = os.name):
     None
     """
 
-    config_user = get_path(paths, 'config_user')
-    config_user = yaml.load(open(config_user, 'rb'))
+    try:
+        config_user = get_path(paths, 'config_user')
+        config_user = yaml.load(open(config_user, 'rb'))
     
-    check_os(osname)
+        check_os(osname)
     
-    if config_user['local']['executables']:
-        metadata.default_executables[osname].update(config_user['local']['executables'])
+        if config_user['local']['executables']:
+            metadata.default_executables[osname].update(config_user['local']['executables'])
+    except:
+        error_message = 'Error with `update_executables`. Traceback can be found below.' 
+        error_message = format_error(error_message) 
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
 
 def update_mappings(paths, mapping_dict = {}):
@@ -76,11 +81,15 @@ def update_mappings(paths, mapping_dict = {}):
         Dictionary of path mappings used to parse paths. 
     """
 
-    config_user = get_path(paths, 'config_user')
-    config_user = yaml.load(open(config_user, 'rb'))
+    try:
+        config_user = get_path(paths, 'config_user')
+        config_user = yaml.load(open(config_user, 'rb'))
 
-    if config_user['external']:
-        mapping_dict.update(config_user['external'])
+        if config_user['external']:
+            mapping_dict.update(config_user['external'])
 
-    return(mapping_dict)
-
+        return(mapping_dict)
+    except:
+        error_message = 'Error with `update_mappings`. Traceback can be found below.' 
+        error_message = format_error(error_message) 
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)

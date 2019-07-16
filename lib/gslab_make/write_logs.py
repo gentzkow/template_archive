@@ -39,22 +39,27 @@ def start_makelog(paths):
     None
     """
 
-    makelog = get_path(paths, 'makelog')
+    try:
+        makelog = get_path(paths, 'makelog')
 
-    metadata.makelog_started = True
-    
-    if makelog:
-        makelog = norm_path(makelog)
-        message = 'Starting makelog file at: `%s`' % makelog
-        print(colored(message, 'green'))
+        metadata.makelog_started = True
         
-        with open(makelog, 'w', encoding = 'utf8') as MAKELOG:
-            time_start = str(datetime.datetime.now().replace(microsecond = 0))
-            working_dir = os.getcwd()
-            print(messages.note_dash_line, file = MAKELOG)
-            print(messages.note_makelog_start + time_start, file = MAKELOG)
-            print(messages.note_working_directory + working_dir, file = MAKELOG)
-            print(messages.note_dash_line, file = MAKELOG)
+        if makelog:
+            makelog = norm_path(makelog)
+            message = 'Starting makelog file at: `%s`' % makelog
+            print(colored(message, 'green'))
+            
+            with open(makelog, 'w', encoding = 'utf8') as MAKELOG:
+                time_start = str(datetime.datetime.now().replace(microsecond = 0))
+                working_dir = os.getcwd()
+                print(messages.note_dash_line, file = MAKELOG)
+                print(messages.note_makelog_start + time_start, file = MAKELOG)
+                print(messages.note_working_directory + working_dir, file = MAKELOG)
+                print(messages.note_dash_line, file = MAKELOG)
+    except:
+        error_message = 'Error with `start_makelog`. Traceback can be found below.' 
+        error_message = format_error(error_message) 
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
 
 def end_makelog(paths):
@@ -73,27 +78,30 @@ def end_makelog(paths):
     None
     """
  
-    makelog = get_path(paths, 'makelog')
+    try:
+        makelog = get_path(paths, 'makelog')
 
-    if makelog:
-        makelog = norm_path(makelog)
-        message = 'Ending makelog file at: `%s`' % makelog
-        print(colored(message, 'green'))
+        if makelog:
+            makelog = norm_path(makelog)
+            message = 'Ending makelog file at: `%s`' % makelog
+            print(colored(message, 'green'))
 
-        if not (metadata.makelog_started and os.path.isfile(makelog)):
-            raise_from(CritError(messages.crit_error_no_makelog % makelog), None)
+            if not (metadata.makelog_started and os.path.isfile(makelog)):
+                raise_from(CritError(messages.crit_error_no_makelog % makelog), None)
 
-        with open(makelog, 'a', encoding = 'utf8') as MAKELOG:
-            time_end = str(datetime.datetime.now().replace(microsecond = 0))
-            working_dir = os.getcwd()
-            print(messages.note_dash_line, file = MAKELOG)
-            print(messages.note_makelog_end + time_end, file = MAKELOG)
-            print(messages.note_working_directory + working_dir, file = MAKELOG)
-            print(messages.note_dash_line, file = MAKELOG)
-
-    metadata.makelog_started = False
+            with open(makelog, 'a', encoding = 'utf8') as MAKELOG:
+                time_end = str(datetime.datetime.now().replace(microsecond = 0))
+                working_dir = os.getcwd()
+                print(messages.note_dash_line, file = MAKELOG)
+                print(messages.note_makelog_end + time_end, file = MAKELOG)
+                print(messages.note_working_directory + working_dir, file = MAKELOG)
+                print(messages.note_dash_line, file = MAKELOG)
+    except:
+        error_message = 'Error with `end_makelog`. Traceback can be found below.' 
+        error_message = format_error(error_message) 
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)
     
-    
+
 def write_to_makelog(paths, message):
     """ Append message to make log.
 
@@ -159,18 +167,17 @@ def log_files_in_output(paths,
     -------
     None
     """
+    try:
+        output_dir      = get_path(paths, 'output_dir')
+        output_statslog = get_path(paths, 'output_statslog')
+        output_headslog = get_path(paths, 'output_headslog')
+        try:
+            output_local_dir = get_path(paths, 'output_local_dir') # Make required?
+            if type(output_local_dir) is not list:
+                raise_from(TypeError(messages.type_error_dir_list % output_local_dir), None)
+        except KeyError:
+            output_local_dir = []
 
-    output_dir      = get_path(paths, 'output_dir')
-    output_statslog = get_path(paths, 'output_statslog')
-    output_headslog = get_path(paths, 'output_headslog')
-    try:
-        output_local_dir = get_path(paths, 'output_local_dir') # Make required?
-        if type(output_local_dir) is not list:
-            raise_from(TypeError(messages.type_error_dir_list % output_local_dir), None)
-    except KeyError:
-        output_local_dir = []
-  
-    try:
         output_files = glob_recursive(output_dir, depth)
         output_local_files = [f for dir_path in output_local_dir for f in glob_recursive(dir_path, depth)]   
         output_files = set(output_files + output_local_files)
