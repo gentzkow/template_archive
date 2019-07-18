@@ -8,6 +8,9 @@ from builtins import (bytes, str, open, super, range,
 # ~~~~~~~~~~~~~~~ #
 
 makelog_started = False
+color_success = None
+color_failure = 'magenta'
+color_in_process = 'cyan'
 
 commands = {
     'posix': 

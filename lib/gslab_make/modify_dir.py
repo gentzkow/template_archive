@@ -8,6 +8,7 @@ import os
 import subprocess
 import time
 import zipfile
+import traceback
 
 from termcolor import colored
 import colorama
@@ -15,7 +16,8 @@ colorama.init()
 
 import gslab_make.private.metadata as metadata
 import gslab_make.private.messages as messages
-from gslab_make.private.utility import norm_path
+from gslab_make.private.exceptionclasses import ColoredError
+from gslab_make.private.utility import norm_path, format_message
 
 
 def remove_path(path, option = '', quiet = False):
@@ -45,7 +47,7 @@ def remove_path(path, option = '', quiet = False):
 
     if not quiet:
         message = 'Removed: `%s`' % path
-        print(colored(message, 'green'))
+        print(colored(message, metadata.color_success))
 
 
 def remove_dir(dir_list, quiet = False):
@@ -75,7 +77,7 @@ def remove_dir(dir_list, quiet = False):
                 raise_from(TypeError(messages.type_error_not_dir % dir_path), None)
     except:
         error_message = 'Error with `remove_dir`. Traceback can be found below.' 
-        error_message = format_error(error_message) 
+        error_message = format_message(error_message) 
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
 
@@ -99,10 +101,10 @@ def clear_dir(dir_list):
         for dir_path in dir_list:
             os.makedirs(dir_path)
             message = 'Cleared: `%s`' % dir_path
-            print(colored(message, 'green'))
+            print(colored(message, metadata.color_success))
     except:
         error_message = 'Error with `clear_dir`. Traceback can be found below.' 
-        error_message = format_error(error_message) 
+        error_message = format_message(error_message) 
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
 
@@ -126,7 +128,7 @@ def unzip(zip_path, output_dir):
             z.extractall(output_dir)
     except:
         error_message = 'Error with `zip_path`. Traceback can be found below.' 
-        error_message = format_error(error_message) 
+        error_message = format_message(error_message) 
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
 
@@ -155,9 +157,9 @@ def zip_dir(source_dir, zip_dest):
                     file_name = os.path.basename(file_path)
                     
                     message = 'Zipped: `%s` as `%s`' % (file_path, file_name)
-                    print(colored(message, 'green'))
+                    print(colored(message, metadata.color_success))
                     z.write(file_path, file_name)
     except:
         error_message = 'Error with `zip_dir`. Traceback can be found below.' 
-        error_message = format_error(error_message) 
+        error_message = format_message(error_message) 
         raise_from(ColoredError(error_message, traceback.format_exc()), None)

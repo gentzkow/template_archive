@@ -1,149 +1,72 @@
 --------------------------------------------------------------------------------
-Makelog started: 2019-07-05 21:27:41
-Working directory: C:\Users\Zong\template\paper_slides
+Makelog started: 2019-07-17 17:30:34
+Working directory: /Users/zong/template/paper_slides
 --------------------------------------------------------------------------------
 Input copies successfully created!
 External copies successfully created!
 Source logs successfully written!
-Executing command: `lyx2.3 -e pdf2 "C:\Users\Zong\template\paper_slides\code\paper.lyx"`
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit)
-
+WARNING! The following target files have been modified according to git status:
+/Users/zong/template/analysis/output/plot.eps
+Executing command: `lyx -e pdf2 "/Users/zong/template/paper_slides/code/paper.lyx"`
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex)
+ restricted \write18 enabled.
 entering extended mode
+(./paper.tex
+LaTeX2e <2018-04-01> patch level 5
 
-(paper.tex
-
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./paper.tex
 LaTeX2e <2018-04-01> patch level 5
 
 
-
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit)
-
+Executing command: `lyx -e pdf2 "/Users/zong/template/paper_slides/code/online_appendix.lyx"`
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex)
+ restricted \write18 enabled.
 entering extended mode
+(./online_appendix.tex
+LaTeX2e <2018-04-01> patch level 5
 
-(paper.tex
-
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./online_appendix.tex
 LaTeX2e <2018-04-01> patch level 5
 
 
-
-
-epstopdf: warning: running with administrator privileges
-
-pdflatex: warning: running with administrator privileges
-
-pdflatex: warning: running with administrator privileges
-
-
-Executing command: `lyx2.3 -e pdf2 "C:\Users\Zong\template\paper_slides\code\online_appendix.lyx"`
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit)
-
+Executing command: `lyx -e pdf2 "/Users/zong/template/paper_slides/code/slides.lyx"`
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex)
+ restricted \write18 enabled.
 entering extended mode
+(./slides.tex
+LaTeX2e <2018-04-01> patch level 5
 
-(online_appendix.tex
-
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./slides.tex
 LaTeX2e <2018-04-01> patch level 5
 
 
-
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit)
-
+Executing command: `lyx -e pdf2 "/Users/zong/template/paper_slides/code/ondeck.lyx"`
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex)
+ restricted \write18 enabled.
 entering extended mode
-
-(online_appendix.tex
-
+(./ondeck.tex
 LaTeX2e <2018-04-01> patch level 5
 
 
-
-
-pdflatex: warning: running with administrator privileges
-
-pdflatex: warning: running with administrator privileges
-
-
-Executing command: `lyx2.3 -e pdf2 "C:\Users\Zong\template\paper_slides\code\slides.lyx"`
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit)
-
+Executing command: `lyx -e pdf2 "/Users/zong/template/paper_slides/code/text.lyx"`
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex)
+ restricted \write18 enabled.
 entering extended mode
-
-(slides.tex
-
+(./text.tex
 LaTeX2e <2018-04-01> patch level 5
-
-
-
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit)
-
-entering extended mode
-
-(slides.tex
-
-LaTeX2e <2018-04-01> patch level 5
-
-
-
-
-pdflatex: warning: running with administrator privileges
-
-pdflatex: warning: running with administrator privileges
-
-
-Executing command: `lyx2.3 -e pdf2 "C:\Users\Zong\template\paper_slides\code\ondeck.lyx"`
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit)
-
-entering extended mode
-
-(ondeck.tex
-
-LaTeX2e <2018-04-01> patch level 5
-
-
-
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit)
-
-entering extended mode
-
-(ondeck.tex
-
-LaTeX2e <2018-04-01> patch level 5
-
-
-
-
-pdflatex: warning: running with administrator privileges
-
-pdflatex: warning: running with administrator privileges
-
-
-Executing command: `lyx2.3 -e pdf2 "C:\Users\Zong\template\paper_slides\code\text.lyx"`
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit)
-
-entering extended mode
-
-(text.tex
-
-LaTeX2e <2018-04-01> patch level 5
-
-
-
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit)
-
-entering extended mode
-
-(text.tex
-
-LaTeX2e <2018-04-01> patch level 5
-
-
-
-
-pdflatex: warning: running with administrator privileges
-
-pdflatex: warning: running with administrator privileges
 
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2019-07-05 21:28:08
-Working directory: C:\Users\Zong\template\paper_slides
+Makelog ended: 2019-07-17 17:30:39
+Working directory: /Users/zong/template/paper_slides
 --------------------------------------------------------------------------------

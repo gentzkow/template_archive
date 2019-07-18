@@ -1,18 +1,15 @@
 --------------------------------------------------------------------------------
-Makelog started: 2019-07-05 21:27:27
-Working directory: C:\Users\Zong\template\data
+Makelog started: 2019-07-17 17:30:27
+Working directory: /Users/zong/template/data
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
-Executing command: `Rscript --no-save "C:\Users\Zong\template\data\code\create_table_data.r"`
-Warning message:
-package 'yaml' was built under R version 3.5.2 
-
+Executing command: `Rscript --no-save "/Users/zong/template/data/code/create_table_data.r"`
 
   ___  ____  ____  ____  ____ (R)
  /__    /   ____/   /   ____/
-___/   /   /___/   /   /___/   15.0   Copyright 1985-2017 StataCorp LLC
+___/   /   /___/   /   /___/   15.1   Copyright 1985-2017 StataCorp LLC
   Statistics/Data Analysis            StataCorp
                                       4905 Lakeway Drive
      MP - Parallel Edition            College Station, Texas 77845 USA
@@ -22,8 +19,8 @@ ___/   /   /___/   /   /___/   15.0   Copyright 1985-2017 StataCorp LLC
 
 Unlimited-user 4-core Stata network license expires 21 Jul 2019:
        Serial number:  501509201134
-         Licensed to:  Stanford
-                       Stanford
+         Licensed to:  Zong Huang
+                       Stanford University
 
 Notes:
       1.  Stata is running in batch mode.
@@ -31,7 +28,7 @@ Notes:
       3.  More than 2 billion observations are allowed; see help obs_advice.
       4.  Maximum number of variables is set to 5000; see help set_maxvar.
 
-. do "C:\Users\Zong\template\data\code\create_graph_data.do" 
+. do "/Users/zong/template/data/code/create_graph_data.do" 
 
 . clear all
 
@@ -57,6 +54,6 @@ end of do-file
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2019-07-05 21:27:32
-Working directory: C:\Users\Zong\template\data
+Makelog ended: 2019-07-17 17:30:29
+Working directory: /Users/zong/template/data
 --------------------------------------------------------------------------------

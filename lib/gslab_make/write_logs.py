@@ -15,7 +15,7 @@ colorama.init()
 import gslab_make.private.messages as messages
 import gslab_make.private.metadata as metadata
 from gslab_make.private.exceptionclasses import CritError, ColoredError
-from gslab_make.private.utility import norm_path, get_path, glob_recursive, format_error
+from gslab_make.private.utility import norm_path, get_path, glob_recursive, format_message
 
 
 def start_makelog(paths):
@@ -47,7 +47,7 @@ def start_makelog(paths):
         if makelog:
             makelog = norm_path(makelog)
             message = 'Starting makelog file at: `%s`' % makelog
-            print(colored(message, 'green'))
+            print(colored(message, metadata.color_success))
             
             with open(makelog, 'w', encoding = 'utf8') as MAKELOG:
                 time_start = str(datetime.datetime.now().replace(microsecond = 0))
@@ -58,7 +58,7 @@ def start_makelog(paths):
                 print(messages.note_dash_line, file = MAKELOG)
     except:
         error_message = 'Error with `start_makelog`. Traceback can be found below.' 
-        error_message = format_error(error_message) 
+        error_message = format_message(error_message) 
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
 
@@ -84,7 +84,7 @@ def end_makelog(paths):
         if makelog:
             makelog = norm_path(makelog)
             message = 'Ending makelog file at: `%s`' % makelog
-            print(colored(message, 'green'))
+            print(colored(message, metadata.color_success))
 
             if not (metadata.makelog_started and os.path.isfile(makelog)):
                 raise_from(CritError(messages.crit_error_no_makelog % makelog), None)
@@ -98,7 +98,7 @@ def end_makelog(paths):
                 print(messages.note_dash_line, file = MAKELOG)
     except:
         error_message = 'Error with `end_makelog`. Traceback can be found below.' 
-        error_message = format_error(error_message) 
+        error_message = format_message(error_message) 
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
     
 
@@ -192,10 +192,10 @@ def log_files_in_output(paths,
         
         message = 'Output logs successfully written!'
         write_to_makelog(paths, message)
-        print(colored(message, 'green'))  
+        print(colored(message, metadata.color_success))  
     except:
         error_message = 'Error with `log_files_in_output`. Traceback can be found below.' 
-        error_message = format_error(error_message)
+        error_message = format_message(error_message)
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
 

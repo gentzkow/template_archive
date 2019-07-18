@@ -129,13 +129,13 @@ def format_traceback(trace = ''):
     return(formatted)
 
 
-def format_error(error):
-    """ Format error message. """
+def format_message(message):
+    """ Format message. """
 
-    error = error.strip()
-    star_line = '*' * (len(error) + 4)
+    message = message.strip()
+    star_line = '*' * (len(message) + 4)
     formatted = star_line + '\n* %s *\n' + star_line
-    formatted = formatted % error
+    formatted = formatted % message
 
     return(formatted)
 

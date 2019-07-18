@@ -11,8 +11,9 @@ from termcolor import colored
 import colorama
 colorama.init()
 
+import gslab_make.private.metadata as metadata
 from gslab_make.private.exceptionclasses import ColoredError
-from gslab_make.private.utility import norm_path, get_path, glob_recursive, format_error
+from gslab_make.private.utility import norm_path, get_path, glob_recursive, format_message
 from gslab_make.write_logs import write_to_makelog, write_stats_log, write_heads_log
 
 
@@ -85,10 +86,10 @@ def write_source_logs(paths,
 
         message = 'Source logs successfully written!'
         write_to_makelog(paths, message)  
-        print(colored(message, 'green'))
+        print(colored(message, metadata.color_success))
     except:
         error_message = 'Error with `write_source_logs`. Traceback can be found below.' 
-        error_message = format_error(error_message) 
+        error_message = format_message(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
 

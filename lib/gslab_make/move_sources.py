@@ -11,9 +11,10 @@ from termcolor import colored
 import colorama
 colorama.init()
 
+import gslab_make.private.metadata as metadata
 from gslab_make.private.exceptionclasses import ColoredError
 from gslab_make.private.movedirective import MoveList
-from gslab_make.private.utility import get_path, format_error
+from gslab_make.private.utility import get_path, format_message
 from gslab_make.write_logs import write_to_makelog
 
 
@@ -131,11 +132,11 @@ def link_inputs(paths,
 
         message = 'Input links successfully created!'
         write_to_makelog(paths, message)    
-        print(colored(message, 'green'))
+        print(colored(message, metadata.color_success))
         return(move_map)
     except:
         error_message = 'An error was encountered with `link_inputs`. Traceback can be found below.' 
-        error_message = format_error(error_message) 
+        error_message = format_message(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
         
@@ -173,11 +174,11 @@ def link_externals(paths,
 
         message = 'External links successfully created!'
         write_to_makelog(paths, message)    
-        print(colored(message, 'green'))
+        print(colored(message, metadata.color_success))
         return(move_map)
     except:
         error_message = 'An error was encountered with `link_externals`. Traceback can be found below.' 
-        error_message = format_error(error_message) 
+        error_message = format_message(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
@@ -214,11 +215,11 @@ def copy_inputs(paths,
 
         message = 'Input copies successfully created!'
         write_to_makelog(paths, message)    
-        print(colored(message, 'green'))
+        print(colored(message, metadata.color_success))
         return(move_map)
     except:
         error_message = 'An error was encountered with `copy_inputs`. Traceback can be found below.' 
-        error_message = format_error(error_message) 
+        error_message = format_message(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
@@ -255,10 +256,10 @@ def copy_externals(paths,
 
         message = 'External copies successfully created!'
         write_to_makelog(paths, message)    
-        print(colored(message, 'green'))
+        print(colored(message, metadata.color_success))
         return(move_map)
     except:
         error_message = 'An error was encountered with `copy_externals`. Traceback can be found below.' 
-        error_message = format_error(error_message) 
+        error_message = format_message(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
         raise_from(ColoredError(error_message, traceback.format_exc()), None)

@@ -15,9 +15,10 @@ from termcolor import colored
 import colorama
 colorama.init()
 
+import gslab_make.private.metadata as metadata
 import gslab_make.private.messages as messages
 from gslab_make.private.exceptionclasses import CritError, ColoredError
-from gslab_make.private.utility import norm_path, get_path, format_error, glob_recursive
+from gslab_make.private.utility import norm_path, get_path, format_message, glob_recursive
 from gslab_make.write_logs import write_to_makelog
 
 
@@ -258,12 +259,12 @@ def check_module_size(paths):
         log_message = log_message.strip()
 
         if print_message:
-            print(colored(print_message, 'red'))
+            print(colored(print_message, metadata.color_failure))
         if log_message:
             write_to_makelog(paths, log_message)
     except:
         error_message = 'Error with `check_repo_size`. Traceback can be found below.' 
-        error_message = format_error(error_message) 
+        error_message = format_message(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
@@ -336,9 +337,9 @@ def get_modified_sources(paths,
                 overlap = overlap + ["and more (file list truncated due to length)"]
             message = messages.warning_modified_files % '\n'.join(overlap)
             write_to_makelog(paths, message)
-            print(colored(message, 'red'))
+            print(colored(message, metadata.color_failure))
     except:
         error_message = 'Error with `get_modified_sources`. Traceback can be found below.' 
-        error_message = format_error(error_message) 
+        error_message = format_message(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
         raise_from(ColoredError(error_message, traceback.format_exc()), None)

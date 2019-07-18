@@ -100,7 +100,7 @@ def update_mappings(paths, mapping_dict = {}):
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
 
-def run_module(root, module, check = True):
+def run_module(root, module, check = False):
     """ Run module 
     
     Parameters
@@ -137,8 +137,8 @@ def run_module(root, module, check = True):
 
     if run:
         os.system('python make.py')
-        file = open('.make', 'wb') 
-        file.write(md5_hash) 
+        if check:
+            file = open('.make', 'wb')
+            file.write(md5_hash) 
     else:
         print('Module skipped!')
-

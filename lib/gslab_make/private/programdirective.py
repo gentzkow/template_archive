@@ -93,7 +93,7 @@ class Directive(object):
         """
         
         self.output = 'Executing command: `%s`' % command
-        print(colored(self.output, 'cyan'))
+        print(colored(self.output, metadata.color_in_process))
 
         try:
             if not self.shell:
