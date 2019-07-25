@@ -830,16 +830,16 @@ By default, program log is not written as <code>log = ''</code>.
 
 <br> 
 
-# Environment functions
+# Utility functions
 
-<b>The following functions are used to make modifications to the environment. Functions to update executable names and path mappings are included.</b>
+<b>The following functions are general utility functions for build scripts. Functions to update executable names/path_mappings, run modules, and copy outputs are included.</b>
 
 <br>
 
 <pre>
-update_env.<b>update_executables(</b><i>paths = {config_user}</i>)</b> 
+make.utility.<b>update_executables(</b><i>paths = {config_user}</i>)</b> 
 </pre>
-> Update executable names with executables listed in config user `config_user`
+> Updates executable names with executables listed in config user `config_user`
 > 
 <ul>
 <b>Note:</b> 
@@ -850,20 +850,34 @@ Executable names are used by program functions.
 <br>
 
 <pre>
-update_env.<b>update_mappings(</b><i>
+make_utility.<b>update_mappings(</b><i>
     paths = {
         config_user
     }, 
     path_mappings = {}</i><b>
 )</b> 
 </pre>
-> Update dictionary `path_mappings` with externals listed in config user file `config_user`.
+> Updates dictionary `path_mappings` with externals listed in config user file `config_user`.
 > 
 <ul>
 <b>Note:</b> 
 <br>
 Path mappings are used by linking functions.
 </ul>
+
+<br>
+
+<pre>
+make_utility.<b>run_module(</b><i>root, module</i><b>)</b> 
+</pre>
+> Runs `make.py` script in module `module` relative to root of repository `root`.
+
+<br>
+
+<pre>
+make_utility.<b>copy_output(</b><i>file, copy_dir</i><b>)</b> 
+</pre>
+> Copies output `file` to directory `copy_dir` with user prompt to confirm copy.
 
 <br>
 

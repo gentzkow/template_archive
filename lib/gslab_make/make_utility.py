@@ -6,6 +6,8 @@ from builtins import (bytes, str, open, super, range,
 import os
 import yaml
 import hashlib
+import sys
+import shutil
 
 from termcolor import colored
 import colorama
@@ -14,7 +16,7 @@ colorama.init()
 import gslab_make.private.messages as messages
 import gslab_make.private.metadata as metadata
 from gslab_make.private.exceptionclasses import CritError
-from gslab_make.private.utility import get_path, format_message
+from gslab_make.private.utility import get_path, format_message, norm_path
 
 
 def check_os(osname = os.name):
@@ -100,8 +102,8 @@ def update_mappings(paths, mapping_dict = {}):
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
 
-def run_module(root, module, check = False):
-    """ Run module 
+def run_module(root, module):
+    """ Run module. 
     
     Parameters
     ----------
@@ -118,27 +120,48 @@ def run_module(root, module, check = False):
     module_dir = os.path.join(root, module)
     os.chdir(module_dir)
 
-    md5_hash = open('make.py','rb').read()
-    md5_hash = hashlib.md5(md5_hash).hexdigest()
-
-    run = True
-    if check:
-        try:
-            saved_hash = open('.make','rb').read()
-            if saved_hash == md5_hash:
-                run = False
-        except:
-            pass
-
     message = 'Running module `%s`' % module
     message = format_message(message)
     message = colored(message, attrs = ['bold'])
     print('\n' + message)
 
-    if run:
-        os.system('python make.py')
-        if check:
-            file = open('.make', 'wb')
-            file.write(md5_hash) 
-    else:
-        print('Module skipped!')
+    status = os.system('python make.py')
+    if status != 0:
+        sys.exit()
+
+
+def copy_output(file, copy_dir):
+    """ Copy output file.
+    
+    Parameters
+    ----------
+    file : str 
+        Path of file to copy.
+    copy_dir : str
+        Directory to copy file.
+
+    Returns
+    -------
+    None
+    """
+
+    message = \
+        'To copy the following file, enter "yes". Otherwise, enter "no". ' + \
+        'Update any archives and documentation accordingly.' + \
+        '\n' + \
+        '> %s' + \
+        '\n' + \
+        'will be uploaded to' + \
+        '\n' + \
+        '> %s' + \
+        '\n' + \
+        'Input: '
+    message = colored(message, color = 'cyan')
+    
+    try:
+        upload = raw_input(message % (message % (file, copy_dir)))
+    except:
+        upload = input(message % (file, copy_dir))
+
+    if upload.lower().strip() == "yes":
+        shutil.copy(norm_path(file), norm_path(copy_dir))
