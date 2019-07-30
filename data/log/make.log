@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
-Makelog started: 2019-07-17 17:30:27
+Makelog started: 2019-07-29 17:05:58
 Working directory: /Users/zong/template/data
 --------------------------------------------------------------------------------
 Input links successfully created!
@@ -17,8 +17,8 @@ ___/   /   /___/   /   /___/   15.1   Copyright 1985-2017 StataCorp LLC
                                       979-696-4600        stata@stata.com
                                       979-696-4601 (fax)
 
-Unlimited-user 4-core Stata network license expires 21 Jul 2019:
-       Serial number:  501509201134
+Unlimited-user 4-core Stata network license expires 21 Jul 2020:
+       Serial number:  501609000313
          Licensed to:  Zong Huang
                        Stanford University
 
@@ -54,6 +54,6 @@ end of do-file
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2019-07-17 17:30:29
+Makelog ended: 2019-07-29 17:06:00
 Working directory: /Users/zong/template/data
 --------------------------------------------------------------------------------

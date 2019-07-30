@@ -64,7 +64,7 @@ To suppress writing any specific log (<code>makelog</code>, <code>output_statslo
 The following default paths are recommended:
 <pre>
     paths = {
-        'config'          : '../config.yaml', # Adjust relative path accordingly
+        'config'          : '../config.yaml',      # Adjust relative path accordingly
         'config_user'     : '../config_user.yaml', # Adjust relative path accordingly
         'input_dir'       : 'input/',
         'external_dir'    : 'external/',
@@ -758,6 +758,17 @@ By default, program log is not written as <code>log = ''</code>.
 
 <br>
 
+<b>The following function is used to run a module.</b>
+
+<br>
+
+<pre>
+run_program<b>.run_module(</b><i>root, module, build_script = 'make.py'</i><b>)</b> 
+</pre>
+> Runs script `build_script` in module `module` relative to root of repository `root`. `build_script` defaults to `make.py`.
+
+<br>
+
 #### Settings
 
 * `osname` : str
@@ -832,12 +843,12 @@ By default, program log is not written as <code>log = ''</code>.
 
 # Utility functions
 
-<b>The following functions are general utility functions for build scripts. Functions to update executable names/path_mappings, run modules, and copy outputs are included.</b>
+<b>The following functions are general utility functions for build scripts. Functions to update executable names/path_mappings and copy outputs are included.</b>
 
 <br>
 
 <pre>
-make.utility.<b>update_executables(</b><i>paths = {config_user}</i>)</b> 
+make_utility.<b>update_executables(</b><i>paths = {config_user}</i>)</b> 
 </pre>
 > Updates executable names with executables listed in config user `config_user`
 > 
@@ -864,13 +875,6 @@ make_utility.<b>update_mappings(</b><i>
 <br>
 Path mappings are used by linking functions.
 </ul>
-
-<br>
-
-<pre>
-make_utility.<b>run_module(</b><i>root, module</i><b>)</b> 
-</pre>
-> Runs `make.py` script in module `module` relative to root of repository `root`.
 
 <br>
 

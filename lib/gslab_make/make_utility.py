@@ -102,34 +102,6 @@ def update_mappings(paths, mapping_dict = {}):
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
 
-def run_module(root, module):
-    """ Run module. 
-    
-    Parameters
-    ----------
-    root : str 
-        Directory of root.
-    module : str
-        Name of module.
-
-    Returns
-    -------
-    None
-    """
-
-    module_dir = os.path.join(root, module)
-    os.chdir(module_dir)
-
-    message = 'Running module `%s`' % module
-    message = format_message(message)
-    message = colored(message, attrs = ['bold'])
-    print('\n' + message)
-
-    status = os.system('python make.py')
-    if status != 0:
-        sys.exit()
-
-
 def copy_output(file, copy_dir):
     """ Copy output file.
     
@@ -145,23 +117,14 @@ def copy_output(file, copy_dir):
     None
     """
 
-    message = \
-        'To copy the following file, enter "yes". Otherwise, enter "no". ' + \
-        'Update any archives and documentation accordingly.' + \
-        '\n' + \
-        '> %s' + \
-        '\n' + \
-        'will be uploaded to' + \
-        '\n' + \
-        '> %s' + \
-        '\n' + \
-        'Input: '
-    message = colored(message, color = 'cyan')
+    file = norm_path(file)
+    copy_dir = norm_path(copy_dir)
+    message = colored(messages.warning_copy, color = 'cyan')
     
     try:
-        upload = raw_input(message % (message % (file, copy_dir)))
+        upload = raw_input(message % (file, copy_dir))
     except:
         upload = input(message % (file, copy_dir))
 
     if upload.lower().strip() == "yes":
-        shutil.copy(norm_path(file), norm_path(copy_dir))
+        shutil.copy(file, copy_dir)

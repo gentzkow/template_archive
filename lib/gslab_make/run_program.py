@@ -668,3 +668,33 @@ def execute_command(paths, command, **kwargs):
         error_message = format_message(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
+
+
+def run_module(root, module, build_script = 'make.py'):
+    """ Run module. 
+    
+    Parameters
+    ----------
+    root : str 
+        Directory of root.
+    module: str
+        Name of module.
+    build_script : str
+        Name of build script.
+
+    Returns
+    -------
+    None
+    """
+
+    module_dir = os.path.join(root, module)
+    os.chdir(module_dir)
+
+    message = 'Running module `%s`' % module
+    message = format_message(message)
+    message = colored(message, attrs = ['bold'])
+    print('\n' + message)
+
+    status = os.system('python %s' % build_script)
+    if status != 0:
+        sys.exit()

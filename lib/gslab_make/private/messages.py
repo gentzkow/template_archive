@@ -84,21 +84,28 @@ warning_modified_files = \
     'WARNING! The following target files have been modified according to git status:\n' + \
     '%s'
 warning_git_file_print = \
-    'WARNING! Certain files tracked by git exceed the config size limit (%s MB). ' + \
+    '\nWARNING! Certain files tracked by git exceed the config size limit (%s MB). ' + \
     'See makelog for list of files.' 
 warning_git_file_log = \
-    'WARNING! Certain files tracked by git exceed the config size limit (%s MB). ' + \
+    '\nWARNING! Certain files tracked by git exceed the config size limit (%s MB). ' + \
     'See below for list of files.' 
 warning_git_repo = \
-    'WARNING! Total size of files tracked by git exceed the repository config limit (%s MB).'
+    '\nWARNING! Total size of files tracked by git exceed the repository config limit (%s MB).'
 warning_git_lfs_file_print = \
-    'WARNING! Certain files tracked by git-lfs exceed the config size limit (%s MB). ' + \
+    '\nWARNING! Certain files tracked by git-lfs exceed the config size limit (%s MB). ' + \
     'See makelog for list of files.'
 warning_git_lfs_file_log = \
-    'WARNING! Certain files tracked by git-lfs exceed the config size limit (%s MB). ' + \
+    '\nWARNING! Certain files tracked by git-lfs exceed the config size limit (%s MB). ' + \
     'See below for list of files.'
 warning_git_lfs_repo = \
-    'WARNING! Total size of files tracked by git-lfs exceed the repository config limit  (%s MB).'
+    '\nWARNING! Total size of files tracked by git-lfs exceed the repository config limit  (%s MB).'
+warning_copy = \
+    'To copy the following file, enter "yes". Otherwise, enter "no". ' + \
+    'Update any archives and documentation accordingly.\n' + \
+    '> %s\n' + \
+    'will be uploaded to\n' + \
+    '> %s\n' + \
+    'Input: '
 
 # Notes
 note_makelog_start = 'Makelog started: '

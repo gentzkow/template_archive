@@ -23,9 +23,9 @@ software_required:
 # Maximum allowed file sizes
 #####################################################################
 max_file_sizes:
-  file_MB_limit_lfs: 100             # Soft limit on file size (w/ LFS)
-  total_MB_limit_lfs: 500            # Soft limit on total size (w/ LFS)  
-  file_MB_limit: 0.5                 # Soft limit on file size (w/o LFS)
-  total_MB_limit: 100                # Soft limit on total size (w/o LFS)
+  file_MB_limit_lfs: 100         # Soft limit on file size (w/ LFS)
+  total_MB_limit_lfs: 500        # Soft limit on total size (w/ LFS)  
+  file_MB_limit: 0.5             # Soft limit on file size (w/o LFS)
+  total_MB_limit: 100            # Soft limit on total size (w/o LFS)
 
   
