@@ -56,17 +56,17 @@ def write_source_logs(paths,
     None
     """
 
-    source_statslog = get_path(paths, 'source_statslog')
-    source_headslog = get_path(paths, 'source_headslog')
-    source_maplog   = get_path(paths, 'source_maplog')
-
     try:
+        source_statslog = get_path(paths, 'source_statslog')
+        source_headslog = get_path(paths, 'source_headslog')
+        source_maplog   = get_path(paths, 'source_maplog')
+
         source_list = [source for source, destination in source_map]
         source_list = [glob_recursive(source, depth) for source in source_list]
         source_files = [f for source in source_list for f in source]
         source_files = set(source_files)
 
-        """
+        """ IF WE DECIDE TO ALLOW FOR RAW SUBDIRECTORIES WITHOUT LINKING
         raw_dir = get_path(paths, 'raw_dir')
         raw_files = glob_recursive(raw_dir)
         source_files = set(source_files + raw_files)

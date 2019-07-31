@@ -145,10 +145,15 @@ class MoveDirective(object):
            Iterator of extracted wildcard characters.
         """
         
-        regex = self.source.split('*')
+        regex = re.escape(self.source)
+        regex = regex.split('\*')
         regex = '(.*)'.join(regex) 
 
         wildcards = re.findall(regex, f) # Returns list if single match, list of set if multiple matches
+        for w in wildcards:
+            print(w)
+            print(1)
+
         wildcards = [(w, ) if isinstance(w, str) else w for w in wildcards]
         wildcards = chain(*wildcards)
 

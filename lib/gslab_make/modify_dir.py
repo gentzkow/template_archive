@@ -96,7 +96,7 @@ def clear_dir(dir_list):
 
     try:
         remove_dir(dir_list, quiet = True)
-        time.sleep(0.25) # Allow file manager to recognize files no longer exist
+        time.sleep(0.5) # Allow file manager to recognize files no longer exist
   
         for dir_path in dir_list:
             os.makedirs(dir_path)

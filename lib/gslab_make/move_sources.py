@@ -43,20 +43,17 @@ def create_links(paths,
     move_map : list
         List of (source, destination) for each symlink created.
     """
-
+             
     move_dir = get_path(paths, 'move_dir')
 
-    try:              
-        move_list = MoveList(file_list, move_dir, mapping_dict)
-        if move_list.move_directive_list:
-            os.makedirs(move_dir)
-            move_map = move_list.create_symlinks()       
-        else:
-            move_map = []
+    move_list = MoveList(file_list, move_dir, mapping_dict)
+    if move_list.move_directive_list:
+        os.makedirs(move_dir)
+        move_map = move_list.create_symlinks()       
+    else:
+        move_map = []
 
-        return(move_map)
-    except:
-        raise
+    return(move_map)
         
 
 def create_copies(paths,
@@ -84,20 +81,17 @@ def create_copies(paths,
     move_map : list
         List of (source, destination) for each copy created.
     """
-
+             
     move_dir = get_path(paths, 'move_dir')
 
-    try:              
-        move_list = MoveList(file_list, move_dir, mapping_dict)
-        if move_list.move_directive_list:
-            os.makedirs(move_dir)
-            move_map = move_list.create_copies()       
-        else:
-            move_map = []
+    move_list = MoveList(file_list, move_dir, mapping_dict)
+    if move_list.move_directive_list:
+        os.makedirs(move_dir)
+        move_map = move_list.create_copies()       
+    else:
+        move_map = []
 
-        return(move_map)
-    except:
-        raise
+    return(move_map)
 
 
 def link_inputs(paths,
@@ -126,6 +120,7 @@ def link_inputs(paths,
     move_map : list
         List of (source, destination) for each symlink created.
     """
+    
     try:
         paths['move_dir'] = get_path(paths, 'input_dir')
         move_map = create_links(paths, file_list, mapping_dict)

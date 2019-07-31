@@ -41,7 +41,6 @@ def start_makelog(paths):
 
     try:
         makelog = get_path(paths, 'makelog')
-
         metadata.makelog_started = True
         
         if makelog:
@@ -167,12 +166,13 @@ def log_files_in_output(paths,
     -------
     None
     """
+    
     try:
         output_dir      = get_path(paths, 'output_dir')
         output_statslog = get_path(paths, 'output_statslog')
         output_headslog = get_path(paths, 'output_headslog')
         try:
-            output_local_dir = get_path(paths, 'output_local_dir') # Make required?
+            output_local_dir = get_path(paths, 'output_local_dir') # MAKE REQUIRED?
             if type(output_local_dir) is not list:
                 raise_from(TypeError(messages.type_error_dir_list % output_local_dir), None)
         except KeyError:

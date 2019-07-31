@@ -17,8 +17,9 @@ from termcolor import colored
 import colorama
 colorama.init()
 
+import gslab_make.private.messages as messages
 import gslab_make.private.metadata as metadata
-from gslab_make.private.exceptionclasses import ColoredError, ProgramError
+from gslab_make.private.exceptionclasses import CritError, ColoredError, ProgramError
 from gslab_make.private.programdirective import Directive, ProgramDirective, SASDirective, LyXDirective
 from gslab_make.private.utility import get_path, format_message, norm_path
 from gslab_make.write_logs import write_to_makelog
@@ -56,9 +57,8 @@ def run_stata(paths, program, **kwargs):
     None
     """
 
-    makelog = get_path(paths, 'makelog')
-
     try:
+        makelog = get_path(paths, 'makelog')
         direct = ProgramDirective(application = 'stata', program = program, makelog = makelog, **kwargs)
 
         # Get program output
@@ -128,10 +128,9 @@ def run_matlab(paths, program, **kwargs):
     -------
     None
     """
-  
-    makelog = get_path(paths, 'makelog')
 
     try:
+        makelog = get_path(paths, 'makelog')
         direct = ProgramDirective(application = 'matlab', program = program, makelog = makelog, **kwargs)
         
         # Get program output
@@ -185,10 +184,9 @@ def run_perl(paths, program, **kwargs):
     -------
     None
     """
-    
-    makelog = get_path(paths, 'makelog')
 
     try:
+        makelog = get_path(paths, 'makelog')
         direct = ProgramDirective(application = 'perl', program = program, makelog = makelog, **kwargs)
         
         # Execute
@@ -239,10 +237,9 @@ def run_python(paths, program, **kwargs):
     -------
     None
     """
-    
-    makelog = get_path(paths, 'makelog')
 
     try:
+        makelog = get_path(paths, 'makelog')
         direct = ProgramDirective(application = 'python', program = program, makelog = makelog, **kwargs)
 
         # Execute
@@ -284,11 +281,11 @@ def run_jupyter(paths, program, timeout = None, kernel_name = ''):
     -------
     None
     """
-    
-    makelog = get_path(paths, 'makelog')
-    program = norm_path(program)
 
     try:
+        makelog = get_path(paths, 'makelog')
+        program = norm_path(program)
+
         with open(program) as f:
             message = 'Processing notebook: `%s`' % program
             write_to_makelog(paths, message)    
@@ -341,9 +338,8 @@ def run_mathematica(paths, program, **kwargs):
     None
     """
     
-    makelog = get_path(paths, 'makelog')
-
     try:
+        makelog = get_path(paths, 'makelog')
         direct = ProgramDirective(application = 'math', program = program, makelog = makelog, **kwargs)
 
         # Execute
@@ -394,10 +390,9 @@ def run_stat_transfer(paths, program, **kwargs):
     -------
     None
     """
-    
-    makelog = get_path(paths, 'makelog')
 
     try:
+        makelog = get_path(paths, 'makelog')
         direct = ProgramDirective(application = 'st', program = program, makelog = makelog, **kwargs)
 
         # Execute
@@ -453,11 +448,10 @@ def run_lyx(paths, program, **kwargs):
     -------
     None
     """
-    
-    makelog = get_path(paths, 'makelog')
-    pdf_dir = get_path(paths, 'pdf_dir')
 
     try:
+        makelog = get_path(paths, 'makelog')
+        pdf_dir = get_path(paths, 'pdf_dir')
         direct = LyXDirective(pdf_dir = pdf_dir, application = 'lyx', program = program, makelog = makelog, **kwargs)
             
         # Make handout/commented LyX file        
@@ -541,9 +535,8 @@ def run_r(paths, program, **kwargs):
     None
     """
     
-    makelog = get_path(paths, 'makelog')
-
     try:
+        makelog = get_path(paths, 'makelog')
         direct = ProgramDirective(application = 'r', program = program, makelog = makelog, **kwargs)
 
         # Execute
@@ -597,9 +590,8 @@ def run_sas(paths, program, **kwargs):
     None
     """
 
-    makelog = get_path(paths, 'makelog')
-
     try:
+        makelog = get_path(paths, 'makelog')
         direct = SASDirective(application = 'sas', program = program, makelog = makelog, **kwargs)
 
         # Get program outputs
@@ -649,9 +641,8 @@ def execute_command(paths, command, **kwargs):
     None
     """
     
-    makelog = get_path(paths, 'makelog')
-
     try:
+        makelog = get_path(paths, 'makelog')
         direct = Directive(makelog = makelog, **kwargs)
 
         # Execute
@@ -687,14 +678,25 @@ def run_module(root, module, build_script = 'make.py'):
     None
     """
 
-    module_dir = os.path.join(root, module)
-    os.chdir(module_dir)
+    try:
+        module_dir = os.path.join(root, module)
+        os.chdir(module_dir)
 
-    message = 'Running module `%s`' % module
-    message = format_message(message)
-    message = colored(message, attrs = ['bold'])
-    print('\n' + message)
+        build_script = norm_path(build_script)
+        if not os.path.isfile(build_script):
+            raise CritError(messages.crit_error_no_file % build_script)  
 
-    status = os.system('python %s' % build_script)
-    if status != 0:
+        message = 'Running module `%s`' % module
+        message = format_message(message)
+        message = colored(message, attrs = ['bold'])
+        print('\n' + message)  
+
+        status = os.system('python %s' % build_script)
+        if status != 0:
+            raise ProgramError()
+    except ProgramError:
         sys.exit()
+    except:
+        error_message = 'Error with `run_module`. Traceback can be found below.' 
+        error_message = format_message(error_message) 
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)

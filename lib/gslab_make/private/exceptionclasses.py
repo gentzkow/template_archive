@@ -15,7 +15,7 @@ class CritError(Exception):
 class ColoredError(Exception):
     """ Colorized error messages. """
     
-    def __init__(self, message, trace = ''):
+    def __init__(self, message = '', trace = ''):
         message = '\n\n' + colored(message, color = metadata.color_failure)
         if trace:
             trace = '\n\n' + colored(trace, color = metadata.color_failure)
