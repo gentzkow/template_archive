@@ -7,17 +7,22 @@ from termcolor import colored
 import colorama
 colorama.init()
 
+import gslab_make.private.metadata as metadata
+
 class CritError(Exception):
     pass
 
 class ColoredError(Exception):
-    def __init__(self, message, trace = ''):
-        message = '\n\n' + colored(message, color = 'red')
+    """ Colorized error messages. """
+    
+    def __init__(self, message = '', trace = ''):
+        message = '\n\n' + colored(message, color = metadata.color_failure)
         if trace:
-            trace = '\n\n' + colored(trace, color = 'red')
+            trace = '\n\n' + colored(trace, color = metadata.color_failure)
             super(ColoredError, self).__init__(message + trace)
         else:
             super(ColoredError, self).__init__(message)
             
 class ProgramError(ColoredError):
+    """ Program execution exception. """
     pass

@@ -1,5 +1,6 @@
 #! /usr/bin/env python
 from __future__ import absolute_import, division, print_function, unicode_literals
+from future.utils import raise_from
 from builtins import (bytes, str, open, super, range,
                       zip, round, input, int, pow, object)
 
@@ -92,7 +93,7 @@ class Directive(object):
         """
         
         self.output = 'Executing command: `%s`' % command
-        print(colored(self.output, 'cyan'))
+        print(colored(self.output, metadata.color_in_process))
 
         try:
             if not self.shell:
@@ -115,7 +116,7 @@ class Directive(object):
         except:
             error_message = messages.crit_error_bad_command % command
             error_message = error_message + format_traceback()
-            raise CritError(error_message)
+            raise_from(CritError(error_message), None)
              
 
     def write_log(self):
@@ -270,7 +271,7 @@ class ProgramDirective(Directive):
         except:
             error_message = messages.crit_error_no_program_output % (program_output, self.program)
             error_message = error_message + format_traceback()
-            raise CritError(error_message)
+            raise_from(CritError(error_message), None)
 
         if self.makelog: 
             if not (metadata.makelog_started and os.path.isfile(self.makelog)):

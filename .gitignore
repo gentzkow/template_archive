@@ -24,6 +24,7 @@
 *.lyx.emergency
 *.Rhistory
 *.Rapp.history
+*Rplots.pdf
 *.DS_Store
 *.aux
 *.fls

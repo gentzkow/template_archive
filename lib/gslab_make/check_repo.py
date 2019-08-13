@@ -1,5 +1,6 @@
 #! /usr/bin/env python
 from __future__ import absolute_import, division, print_function, unicode_literals
+from future.utils import raise_from
 from builtins import (bytes, str, open, super, range,
                       zip, round, input, int, pow, object)
 
@@ -14,9 +15,10 @@ from termcolor import colored
 import colorama
 colorama.init()
 
+import gslab_make.private.metadata as metadata
 import gslab_make.private.messages as messages
 from gslab_make.private.exceptionclasses import CritError, ColoredError
-from gslab_make.private.utility import norm_path, get_path, format_error, glob_recursive
+from gslab_make.private.utility import norm_path, get_path, format_message, glob_recursive
 from gslab_make.write_logs import write_to_makelog
 
 
@@ -91,7 +93,7 @@ def get_git_ignore(repo):
     return(ignore_files)
 
 
-def parse_git_attributes(attributes):
+def parse_git_attributes(attributes): ### WHAT TO DO IF MISSING ATTRIBUTES FILE?
     """ Get git lfs patterns from .gitattributes.
     
     Parameters
@@ -146,7 +148,7 @@ def get_dir_sizes(dir_path):
         repo = git.Repo(dir_path, search_parent_directories = True)   
         root = repo.working_tree_dir
     except:
-        raise CritError(messages.crit_error_no_repo)
+        raise_from(CritError(messages.crit_error_no_repo), None)
 
     git_files = get_file_sizes(dir_path, exclude = ['.git'])
     git_ignore_files = get_git_ignore(repo)
@@ -257,14 +259,14 @@ def check_module_size(paths):
         log_message = log_message.strip()
 
         if print_message:
-            print(colored(print_message, 'red'))
+            print(colored(print_message, metadata.color_failure))
         if log_message:
             write_to_makelog(paths, log_message)
     except:
         error_message = 'Error with `check_repo_size`. Traceback can be found below.' 
-        error_message = format_error(error_message) 
+        error_message = format_message(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
-        raise ColoredError(error_message, traceback.format_exc())
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
 
 def get_git_status(repo): 
@@ -324,7 +326,7 @@ def get_modified_sources(paths,
         try:
             repo = git.Repo('.', search_parent_directories = True)    
         except:
-            raise CritError(messages.crit_error_no_repo)
+            raise_from(CritError(messages.crit_error_no_repo), None)
         modified = get_git_status(repo)
 
         overlap = [l for l in source_files if l in modified] 
@@ -335,9 +337,9 @@ def get_modified_sources(paths,
                 overlap = overlap + ["and more (file list truncated due to length)"]
             message = messages.warning_modified_files % '\n'.join(overlap)
             write_to_makelog(paths, message)
-            print(colored(message, 'red'))
+            print(colored(message, metadata.color_failure))
     except:
         error_message = 'Error with `get_modified_sources`. Traceback can be found below.' 
-        error_message = format_error(error_message) 
+        error_message = format_message(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
-        raise ColoredError(error_message, traceback.format_exc())               
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)

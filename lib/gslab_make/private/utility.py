@@ -1,5 +1,6 @@
 #! /usr/bin/env python
 from __future__ import absolute_import, division, print_function, unicode_literals
+from future.utils import raise_from
 from builtins import (bytes, str, open, super, range,
                       zip, round, input, int, pow, object)
 
@@ -31,12 +32,12 @@ def get_path(paths_dict, key):
     try:
         path = paths_dict[key]
     except KeyError:
-        raise CritError(messages.crit_error_no_key % key)
+        raise_from(CritError(messages.crit_error_no_key % (key, key)), None)
 
     return(path)
 
 
-def glob_recursive(path, depth):
+def glob_recursive(path, depth, quiet = True):
     """ Walks through path. 
     
     Notes
@@ -49,6 +50,8 @@ def glob_recursive(path, depth):
         Path to walk through.
     depth : int
         Level of depth when walking through path.
+    quiet : bool, optional
+        Suppress warning if no files globbed. Defaults to True. 
 
     Returns
     -------
@@ -70,7 +73,8 @@ def glob_recursive(path, depth):
             break
 
     path_files = [p for p in path_files if os.path.isfile(p)]
-    if not path_files:
+    
+    if not path_files and not quiet:
         print(messages.warning_glob % (path, depth))
 
     return path_files
@@ -99,24 +103,39 @@ def file_to_array(file_name):
 
 
 def format_traceback(trace = ''):
-    """ Format error message. """
+    """ Format traceback message.
+
+    Parameters
+    ----------
+    trace : str
+        Traceback to format. Defaults to `traceback.format_exc()`.
+
+    Notes
+    -----
+    Format trackback for readability to pass into user messages. 
+
+    Returns
+    -------
+    formatted : str
+        Formatted traceback.
+    """
     
     if not trace:
         trace = traceback.format_exc()
 
     trace = '\n' + trace.strip()
-    formatted = re.sub('\n', '\n  : ', trace)
+    formatted = re.sub('\n', '\n  > ', trace)
 
     return(formatted)
 
 
-def format_error(error):
-    """ Format error message. """
+def format_message(message):
+    """ Format message. """
 
-    error = error.strip()
-    star_line = '*' * (len(error) + 4)
+    message = message.strip()
+    star_line = '*' * (len(message) + 4)
     formatted = star_line + '\n* %s *\n' + star_line
-    formatted = formatted % error
+    formatted = formatted % message
 
     return(formatted)
 
@@ -131,7 +150,7 @@ def format_list(list):
 
     Notes
     -----
-    Format list for readability to pass into user messages 
+    Format list for readability to pass into user messages.
 
     Returns
     -------
@@ -144,9 +163,10 @@ def format_list(list):
     
     return(formatted)
 
-
-# Following functions are not currently actively used in code base
-
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+# Following functions are not currently actively used in code base #
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 def check_duplicate(original, copy): 
     """ Check duplicate.
 

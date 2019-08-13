@@ -13,7 +13,7 @@ To build the repository as-is, the following applications are additionally requi
 * R
 * Stata
 
-These software are used by the scripts contained in the repository. By default, the **Setup** instructions below will assume their usage.
+These software are used by the scripts contained in the repository. By default, the **Setup** and **Build** instructions below will assume their usage.
 
 ## Setup
 **If you are using Windows, you may need to run certain bash commands in administrator mode due to permission errors. To do so, open your terminal by right clicking and selecting `Run as administrator`. To set administrator mode on permanently, refer to the [RA manual](https://github.com/gentzkow/template/wiki/Repository-Usage#Administrator-Mode).**
@@ -49,6 +49,16 @@ These software are used by the scripts contained in the repository. By default, 
 5. Install R dependencies using the `setup_r.r` file. One way to do this is to run the following bash command in a terminal from the `setup` subdirectory:
    ```
    Rscript setup_r.r
+   ```
+
+## Build
+**If you are using Windows, you may need to run certain bash commands in administrator mode due to permission errors. To do so, open your terminal by right clicking and selecting `Run as administrator`. To set administrator mode on permanently, refer to the [RA manual](https://github.com/gentzkow/template/wiki/Repository-Usage#Administrator-Mode).**
+
+1. Follow the *Setup* instructions above.
+
+2. From the root of repository, run the following bash command:
+   ```
+   python run_all.py
    ```
 
 ## Command Line Usage
