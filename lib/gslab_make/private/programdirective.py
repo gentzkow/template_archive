@@ -224,7 +224,6 @@ class ProgramDirective(Directive):
             extensions = format_list(metadata.extensions[self.application])
             raise CritError(messages.crit_error_extension % (self.program, extensions))
 
-
     def get_executable(self):
         """ Set executable to default from metadata if unspecified.
         

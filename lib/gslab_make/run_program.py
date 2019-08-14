@@ -462,6 +462,7 @@ def run_lyx(paths, program, **kwargs):
             beamer = False
             shutil.copy2(direct.program, temp_program) 
 
+            # TODO: DOUBLE-CHECK
             for line in fileinput.input(temp_program, inplace = True):
                 if r'\textclass beamer' in line:
                     beamer = True          

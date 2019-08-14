@@ -67,7 +67,7 @@ class MoveDirective(object):
         None
         """      
         
-        if self.osname not in {'posix', 'nt'}:
+        if self.osname not in ['posix', 'nt']:
             raise CritError(messages.crit_error_unknown_system % self.osname)
 
     def get_paths(self):
@@ -268,16 +268,16 @@ class MoveDirective(object):
         """
         for source, destination in self.move_list:
             if os.path.isdir(source):
-                directory = '/d'
-            else:
-                directory = ''
+                link_option = '/d'
+                copy_option = ''
+            elif os.path.isfile(source):
+                link_option = ''
+                copy_option = 'cmd /c echo F | '
 
             if movetype == 'copy':
-                command = metadata.commands[self.osname]['makecopy'] % (source, destination)
-                if os.path.isfile(source):
-                    command = 'cmd /c echo F | ' + command   
+                command = metadata.commands[self.osname]['makecopy'] % (copy_option, source, destination)
             elif movetype == 'symlink':
-                command = metadata.commands[self.osname]['makelink'] % (directory, destination, source)
+                command = metadata.commands[self.osname]['makelink'] % (link_option, destination, source)
 
             process = subprocess.Popen(command,
                                        shell = True,

@@ -28,7 +28,7 @@ commands = {
          'st'        : '%s \"%s\"',
          'stata'     : '%s %s do \\\"%s\\\"'},
     'nt': 
-        {'makecopy'  : 'xcopy /E /Y /Q /I /K \"%s\" \"%s\"',
+        {'makecopy'  : '%s xcopy /E /Y /Q /I /K \"%s\" \"%s\"',
          'makelink'  : 'mklink %s \"%s\" \"%s\"',        
          'rmdir'     : 'rmdir %s \"%s\"', 
          'jupyter'   : '%s nbconvert --ExecutePreprocessor.timeout=-1 %s \"%s\"',

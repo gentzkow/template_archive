@@ -112,7 +112,7 @@ def format_traceback(trace = ''):
 
     Notes
     -----
-    Format trackback for readability to pass into user messages. 
+    Format traceback for readability to pass into user messages. 
 
     Returns
     -------

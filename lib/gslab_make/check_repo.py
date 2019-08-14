@@ -49,6 +49,7 @@ def get_file_sizes(dir_path, exclude):
         file_sizes.extend(zip(files, sizes))
         
     file_sizes = dict(file_sizes)
+
     return(file_sizes)
 
      
@@ -74,26 +75,22 @@ def get_git_ignore(repo):
     ignore = [i.lstrip('!!').strip() for i in ignore]
     ignore = [os.path.join(root, i) for i in ignore]
 
-    ignore_dirs = []
     ignore_files = []
 
     for i in ignore:
-        if os.path.isdir(i):
-            ignore_dirs.append(i)
-        elif os.path.isfile(i):
+        if os.path.isfile(i):
             ignore_files.append(i)
-
-    for i in ignore_dirs:
-        for root, dirs, files in os.walk(i):
-            files = [os.path.join(root, f) for f in files]
-            ignore_files.extend(files)
+        elif os.path.isdir(i):
+            for root, dirs, files in os.walk(i):
+                files = [os.path.join(root, f) for f in files]
+                ignore_files.extend(files)
 
     ignore_files = [norm_path(i) for i in ignore_files]
-
+    
     return(ignore_files)
 
 
-def parse_git_attributes(attributes): ### WHAT TO DO IF MISSING ATTRIBUTES FILE?
+def parse_git_attributes(attributes): # TODO: WHAT IF MISSING ATTRIBUTES FILE?
     """ Get git lfs patterns from .gitattributes.
     
     Parameters

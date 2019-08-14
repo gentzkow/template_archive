@@ -43,7 +43,7 @@ def remove_path(path, option = '', quiet = False):
         option = metadata.default_options[os.name]['rmdir']
 
     command = metadata.commands[os.name]['rmdir'] % (option, path)
-    subprocess.Popen(command, shell = True) ### ADD DEBUGGING HERE?
+    subprocess.Popen(command, shell = True) # TODO: ADD DEBUGGING HERE
 
     if not quiet:
         message = 'Removed: `%s`' % path
@@ -96,6 +96,7 @@ def clear_dir(dir_list):
 
     try:
         remove_dir(dir_list, quiet = True)
+        # TODO: RESEARCH BETTER SOLUTION
         time.sleep(0.5) # Allow file manager to recognize files no longer exist
   
         for dir_path in dir_list:

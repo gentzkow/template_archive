@@ -1,60 +1,81 @@
-================================================================================
+--------------------------------------------------------------------------------
 OVERVIEW
-================================================================================
-Raw data and source files
+--------------------------------------------------------------------------------
+Generated data for TV & potato chips example scripts in template repository
 
-================================================================================
+--------------------------------------------------------------------------------
 SOURCE
-================================================================================
+--------------------------------------------------------------------------------
 N/A
 
-================================================================================
+--------------------------------------------------------------------------------
 WHEN/WHERE OBTAINED & ORIGINAL FORM OF FILES
-================================================================================
-`data.csv` self-generated on 2019-05-08
+--------------------------------------------------------------------------------
+`tv.csv` 
+  - Self-generated on 2019-09-13
 
-================================================================================
+`chips.csv`
+  - Self-generated on 2019-09-13
+
+--------------------------------------------------------------------------------
 DESCRIPTION
-================================================================================
-Generated data for example scripts in template repository
+--------------------------------------------------------------------------------
+`tv.csv`
+  - Year that TV was first introduced for each county in the US
 
-================================================================================
+`chips.csv`
+  - Total sales of potato chips by county by year from 1940 to 1970
+
+--------------------------------------------------------------------------------
 NOTES
-================================================================================
-`data.csv` generated using the following R code:
+--------------------------------------------------------------------------------
+`tv.csv` and `chips.csv` were generated using the following R code:
 
 ```
-x <- 1:300000
-write.table(x, "data.csv", row.names = FALSE, col.names = TRUE, quote = FALSE)
-```
-
-# ~~~~~~~~~~~~
 # Environment
-# ~~~~~~~~~~~~
-library(pacman)
-p_load(tidyverse, magrittr)
+library(tidyverse)
+library(magrittr)
 set.seed(1)
 
-# ~~~~~~~~~~
-# Randomize
-# ~~~~~~~~~~
+n_counties <- 1e4
+error_rate <- 0.01
+error_prob <- c(1 - error_rate, error_rate)
 
+# Generate TV data
 tv <- 
   data.frame(
-    county = 1:10000, 
-    size = runif(10000),
-    year_tv_introduced = 1950 + sample.int(10, size = 10000, replace = T)
-  )
-  
-chips <-
-  data.frame(
-    expand.grid(county = 1:10000, year = 1940:1970)
+    county_id = 1:n_counties, 
+    county_size = runif(n_counties),
+    year_tv_introduced = 1950 + sample.int(10, size = n_counties, replace = T)
   )
 
+# Generate chips data
+chips <-
+  expand.grid(
+    county_id = 1:n_counties, 
+    year = 1940:1970 
+  ) %>% 
+  as.data.frame 
+
 chips %<>%
-  left_join(tv, by = c('county'))
+  left_join(tv, by = c('county_id'))
 
 chips %<>% 
   mutate(post_tv = (year > year_tv_introduced)) %>%
-  mutate(chips_sold = 10000*size + rnorm(10000, mean = 0, sd = 100)) %>%
-  mutate(chips_sold = chips_sold + 1000*post_tv + (year - 1940) * 100)
+  mutate(chips_sold = county_size + 0.1*post_tv + (year - 1940) * 0.01) %>%
+  mutate(chips_sold = chips_sold * 1e6)
+
+# Introduce error to chips data
+chips %<>%
+  mutate(error = sample(c(0, 1), size = nrow(.), prob = error_prob, replace = T)) %>%
+  mutate(chips_sold = ifelse(error == 1, -999999, chips_sold))
+
+# Export data
+tv %>%
+  select(county_id, year_tv_introduced) %>%
+  write_csv('tv.csv')
+
+chips %>%
+  select(county_id, year, chips_sold) %>%
+  write_csv('chips.csv')
+```
