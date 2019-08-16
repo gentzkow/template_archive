@@ -1,14 +1,14 @@
 --------------------------------------------------------------------------------
-Makelog started: 2019-08-14 14:32:31
-Working directory: /Users/zong/template/data
+Makelog started: 2019-08-15 18:31:57
+Working directory: C:\Users\Zong\template\data
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
-Executing command: `python  "/Users/zong/template/data/code/merge_data.py" `
-Executing command: `python  "/Users/zong/template/data/code/clean_data.py" `
+Executing command: `python  "C:\Users\Zong\template\data\code\merge_data.py" `
+Executing command: `python  "C:\Users\Zong\template\data\code\clean_data.py" `
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2019-08-14 14:32:35
-Working directory: /Users/zong/template/data
+Makelog ended: 2019-08-15 18:32:03
+Working directory: C:\Users\Zong\template\data
 --------------------------------------------------------------------------------
