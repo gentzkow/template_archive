@@ -1,7 +1,7 @@
 library(tidyverse)
 library(magrittr)
 
-follow_link <- R.utils::Sys.readlink2
+follow_link <- R.utils::Sys.readlink2 # tidyverse packages have difficulty reading Windows symlinks
 
 ### DEFINE
 main <- function() {

@@ -6,7 +6,7 @@ def main():
     tv = pd.read_csv('input/tv.csv')
     chips = pd.read_csv('input/chips.csv')
     df = merge_data(tv, chips)
-    df.to_csv('output/data_merged.csv')
+    df.to_csv('output/data_merged.csv', index = False)
 
 def merge_data(tv, chips):
     df = chips.merge(tv, on = 'county_id')
