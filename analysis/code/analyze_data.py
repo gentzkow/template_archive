@@ -20,7 +20,7 @@ def import_data():
 
 def run_regression(df):
     df = df.set_index(['county_id', 'year'])
-    model = PanelOLS.from_formula('chips_sold ~ 1 + post_tv + EntityEffects + TimeEffects', data = df)
+    model = PanelOLS.from_formula('chips_sold ~ post_tv + EntityEffects + TimeEffects', data = df)
     fit = model.fit()
     
     return(fit)

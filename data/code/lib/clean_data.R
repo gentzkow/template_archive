@@ -1,6 +1,5 @@
 library(tidyverse)
 library(magrittr)
-library(rio)
 
 ### DEFINE
 main <- function() {
