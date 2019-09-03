@@ -8,8 +8,8 @@ def main():
     fit = run_regression(df)
     formatted = format_model(fit)
     
-    with open('output/output.csv', 'w') as f:
-        f.write('<tab:sum_stat>' + '\n')
+    with open('output/regression.csv', 'w') as f:
+        f.write('<tab:regression>' + '\n')
         formatted.to_csv(f, sep = '\t', index = False, header = False)
     
 def import_data():
@@ -20,18 +20,16 @@ def import_data():
 
 def run_regression(df):
     df = df.set_index(['county_id', 'year'])
-    model = PanelOLS.from_formula('chips_sold ~ post_tv + EntityEffects + TimeEffects', data = df)
+    model = PanelOLS.from_formula('chips_sold ~ 1 + post_tv + EntityEffects + TimeEffects', data = df)
     fit = model.fit()
     
     return(fit)
     
-def format_model(fit, round = 5):
+def format_model(fit):
     formatted = pd.DataFrame({'coef'     : fit.params, 
                               'std_error': fit.std_errors, 
                               'p_value'  : fit.pvalues})
-    
-    formatted.reset_index()
-    formatted = formatted.round(round)
+    formatted = formatted.loc[['post_tv[T.True]']]
     
     return(formatted)
     

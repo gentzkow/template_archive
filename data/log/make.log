@@ -1,14 +1,22 @@
 --------------------------------------------------------------------------------
-Makelog started: 2019-08-20 14:47:10
+Makelog started: 2019-09-03 10:54:35
 Working directory: /Users/zong/template/data
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
+WARNING! The following target files have been modified according to git status:
+/Users/zong/template/raw/chips.csv
 Executing command: `python  "/Users/zong/template/data/code/merge_data.py" `
 Executing command: `python  "/Users/zong/template/data/code/clean_data.py" `
+/Users/zong/template/data/code/clean_data.py:17: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+  df['chips_sold'][df['chips_sold'] == -999999] = np.NaN
+
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2019-08-20 14:47:13
+Makelog ended: 2019-09-03 10:54:39
 Working directory: /Users/zong/template/data
 --------------------------------------------------------------------------------

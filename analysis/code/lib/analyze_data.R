@@ -12,8 +12,8 @@ main <- function() {
   df <- import_data()
   fit <- run_regression(df)
   formatted <- format_model(fit)
-  write_lines('<tab:sum_stat>', 'output/output.csv')
-  formatted %>% write_delim('output/output.csv', delim = '\t', col_names = F, append = T)
+  write_lines('<tab:regression>', 'output/regression.csv')
+  formatted %>% write_delim('output/regression.csv', delim = '\t', col_names = F, append = T)
 }
 
 import_data <- function() {
@@ -31,7 +31,7 @@ run_regression <- function(df) {
   return(fit)
 }
 
-format_model <- function(fit, round = 5) {
+format_model <- function(fit) {
   fit %<>% summary
   
   formatted <- 
@@ -40,8 +40,7 @@ format_model <- function(fit, round = 5) {
   
   formatted %<>%
     clean_names %>%
-    select(estimate, std_error, pr_t) %>%
-    round(round)
+    select(estimate, std_error, pr_t)
   
   return(formatted)
 }

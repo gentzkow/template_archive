@@ -63,6 +63,7 @@ chips %<>%
 chips %<>% 
   mutate(post_tv = (year > year_tv_introduced)) %>%
   mutate(chips_sold = county_size + 0.1*post_tv + (year - 1940) * 0.01) %>%
+  mutate(chips_sold = county_size + runif()) %>%
   mutate(chips_sold = chips_sold * 1e6)
 
 # Introduce error to chips data
