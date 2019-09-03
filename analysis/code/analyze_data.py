@@ -8,8 +8,8 @@ def main():
     fit = run_regression(df)
     formatted = format_model(fit)
     
-    with open('output/output.csv', 'w') as f:
-        f.write('<tab:sum_stat>' + '\n')
+    with open('output/output.txt', 'w') as f:
+        f.write('<tab:regression>' + '\n')
         formatted.to_csv(f, sep = '\t', index = False, header = False)
     
 def import_data():

@@ -1,22 +1,17 @@
-library(tidyverse)
-library(magrittr)
+a <- matrix(
+  c(1, 0, 0, 0)
+  )
 
-follow_link <- R.utils::Sys.readlink2 # tidyverse packages have difficulty reading Windows symlinks
+sigma_inv <- matrix(
+    c(0.1, 1, 1, 1,
+      1  , 2, 1, 1,
+      1  , 1, 3, 1, 
+      1  , 1, 1, 4), 
+    nrow = 4, 
+    byrow = T
+  )
 
-### DEFINE
-main <- function() {
-  tv <- follow_link('input/tv.csv') %>% read_csv
-  chips <- follow_link('input/chips.csv') %>% read_csv
-  df <- merge_data(tv, chips)
-  df %>% write_csv('output/data_merged.csv')
-}
+t(a) %*% sigma_inv %*% a
 
-merge_data <- function(tv, chips) {
-  df <-
-    left_join(tv, chips, by = c('county_id'))
 
-  return(df)
-}
-
-### EXECUTE
-main()
+print(solve(sigma_inv))

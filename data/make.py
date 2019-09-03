@@ -44,6 +44,7 @@ PATH_MAPPINGS = gs.update_mappings(PATHS, PATH_MAPPINGS)
 ### START MAKE
 gs.remove_dir(['input', 'external'])
 gs.clear_dir(['output', 'log'])
+# gs.clear_dir(['temp']) # Uncomment for Stata scripts
 gs.start_makelog(PATHS)
 
 ### GET INPUT FILES 

@@ -12,8 +12,8 @@ main <- function() {
   df <- import_data()
   fit <- run_regression(df)
   formatted <- format_model(fit)
-  write_lines('<tab:sum_stat>', 'output/output.csv')
-  formatted %>% write_delim('output/output.csv', delim = '\t', col_names = F, append = T)
+  write_lines('<tab:regression>', 'output/output.csv')
+  formatted %>% write_delim('output/output.txt', delim = '\t', col_names = F, append = T)
 }
 
 import_data <- function() {

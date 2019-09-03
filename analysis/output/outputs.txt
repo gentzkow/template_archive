@@ -1,0 +1,2 @@
+<tab:regression>
+ 254967.62	         0	         .
