@@ -1,12 +1,10 @@
 --------------------------------------------------------------------------------
-Makelog started: 2019-09-03 10:54:35
+Makelog started: 2019-09-03 17:02:13
 Working directory: /Users/zong/template/data
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
-WARNING! The following target files have been modified according to git status:
-/Users/zong/template/raw/chips.csv
 Executing command: `python  "/Users/zong/template/data/code/merge_data.py" `
 Executing command: `python  "/Users/zong/template/data/code/clean_data.py" `
 /Users/zong/template/data/code/clean_data.py:17: SettingWithCopyWarning: 
@@ -17,6 +15,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2019-09-03 10:54:39
+Makelog ended: 2019-09-03 17:02:18
 Working directory: /Users/zong/template/data
 --------------------------------------------------------------------------------

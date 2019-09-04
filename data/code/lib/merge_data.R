@@ -14,7 +14,7 @@ main <- function() {
 merge_data <- function(tv, chips) {
   df <-
     left_join(tv, chips, by = c('county_id'))
-
+  
   return(df)
 }
 

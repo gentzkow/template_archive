@@ -1,29 +1,17 @@
-library(tidyverse)
-library(magrittr)
-library(rio)
+program main
+  import delim using "output/data_merged.csv", clear
+  plot_data
+  clean_data
+  export delim "output/data_cleaned.csv", replace
+end
 
-### DEFINE
-main <- function() {
-  df <- read_csv('output/data_merged.csv')
-  plot_data(df)
-  df %<>% clean_data()
-  df %>% write_csv('output/data_cleaned.csv')
-}
+program plot_data
+  histogram chips_sold
+  graph export "output/chips_sold.pdf", replace
+end
 
-plot_data <- function(df) {
-  plt <- 
-    ggplot(df, aes(x = chips_sold)) + 
-    geom_histogram()
-  
-  ggsave('output/chips_sold.pdf')
-}
+program clean_data
+  replace chips = . if chips_sold == -999999
+end
 
-clean_data <- function(df) {
-  df %<>% 
-    mutate(chips_sold = ifelse(chips_sold == -999999, NA, chips_sold))
-             
-  return(df)
-}
-
-### EXECUTE
 main()
