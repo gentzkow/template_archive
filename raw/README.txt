@@ -32,7 +32,6 @@ NOTES
 `tv.csv` and `chips.csv` were generated using the following R code:
 
 ```
-# Environment
 library(tidyverse)
 library(magrittr)
 set.seed(1)
@@ -62,8 +61,9 @@ chips %<>%
 
 chips %<>% 
   mutate(post_tv = (year > year_tv_introduced)) %>%
-  mutate(chips_sold = county_size + 0.1*post_tv + (year - 1940) * 0.01) %>%
-  mutate(chips_sold = county_size + runif()) %>%
+  mutate(chips_sold = county_size + runif(n_counties, 0, 0.01)*post_tv) %>%
+  mutate(chips_sold = chips_sold + (year - 1940) * 0.01) %>%
+  mutate(chips_sold = chips_sold + runif(n_counties)) %>%
   mutate(chips_sold = chips_sold * 1e6)
 
 # Introduce error to chips data
