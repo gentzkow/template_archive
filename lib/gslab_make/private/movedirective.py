@@ -83,7 +83,7 @@ class MoveDirective(object):
             self.line = [l.strip() for l in self.line]
             self.line = [l.strip('"\'') for l in self.line]
             self.destination, self.source = self.line
-        except Exception as e:
+        except Exception:
             error_message = messages.crit_error_bad_move % (self.raw_line, self.file)
             error_message = error_message + format_traceback()
             raise_from(CritError(error_message), None)
@@ -150,10 +150,6 @@ class MoveDirective(object):
         regex = '(.*)'.join(regex) 
 
         wildcards = re.findall(regex, f) # Returns list if single match, list of set if multiple matches
-        for w in wildcards:
-            print(w)
-            print(1)
-
         wildcards = [(w, ) if isinstance(w, str) else w for w in wildcards]
         wildcards = chain(*wildcards)
 
