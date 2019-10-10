@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 from __future__ import absolute_import, division, print_function, unicode_literals
-from future.utils import raise_from
+from future.utils import raise_from, string_types
 from builtins import (bytes, str, open, super, range,
                       zip, round, input, int, pow, object)
 
@@ -170,9 +170,12 @@ def log_files_in_output(paths,
     try:
         output_dir      = get_path(paths, 'output_dir')
         output_statslog = get_path(paths, 'output_statslog')
-        output_headslog = get_path(paths, 'output_headslog')
+        output_headslog = get_path(paths, 'output_headslog', throw_error = False)
+
         try:
             output_local_dir = get_path(paths, 'output_local_dir') # MAKE REQUIRED?
+            if isinstance(output_local_dir, string_types):
+                output_local_dir = [output_local_dir]
             if type(output_local_dir) is not list:
                 raise_from(TypeError(messages.type_error_dir_list % output_local_dir), None)
         except KeyError:

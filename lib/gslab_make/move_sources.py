@@ -19,8 +19,7 @@ from gslab_make.write_logs import write_to_makelog
 
 
 def create_links(paths,
-                 file_list,
-                 mapping_dict = {}):
+                 file_list):
     """ Create symlinks from list of files containing linking instructions.
 
     Parameters
@@ -46,7 +45,7 @@ def create_links(paths,
              
     move_dir = get_path(paths, 'move_dir')
 
-    move_list = MoveList(file_list, move_dir, mapping_dict)
+    move_list = MoveList(file_list, move_dir, paths)
     if move_list.move_directive_list:
         os.makedirs(move_dir)
         move_map = move_list.create_symlinks()       
@@ -57,8 +56,7 @@ def create_links(paths,
         
 
 def create_copies(paths,
-                  file_list,
-                  mapping_dict = {}):
+                  file_list):
     """ Create copies from list of files containing copying instructions.
 
     Parameters
@@ -84,7 +82,7 @@ def create_copies(paths,
              
     move_dir = get_path(paths, 'move_dir')
 
-    move_list = MoveList(file_list, move_dir, mapping_dict)
+    move_list = MoveList(file_list, move_dir, paths)
     if move_list.move_directive_list:
         os.makedirs(move_dir)
         move_map = move_list.create_copies()       
@@ -95,8 +93,7 @@ def create_copies(paths,
 
 
 def link_inputs(paths,
-                file_list,
-                mapping_dict = {}):
+                file_list):
     """ 
     Create symlinks to inputs from list of files containing linking instructions. 
 
@@ -123,7 +120,7 @@ def link_inputs(paths,
     
     try:
         paths['move_dir'] = get_path(paths, 'input_dir')
-        move_map = create_links(paths, file_list, mapping_dict)
+        move_map = create_links(paths, file_list)
 
         message = 'Input links successfully created!'
         write_to_makelog(paths, message)    
@@ -137,8 +134,7 @@ def link_inputs(paths,
         
 
 def link_externals(paths,
-                   file_list,
-                   mapping_dict = {}):
+                   file_list):
     """ 
     Create symlinks to externals from list of files containing linking instructions. 
 
@@ -165,7 +161,7 @@ def link_externals(paths,
     
     try:
         paths['move_dir'] = get_path(paths, 'external_dir')
-        move_map = create_links(paths, file_list, mapping_dict)
+        move_map = create_links(paths, file_list)
 
         message = 'External links successfully created!'
         write_to_makelog(paths, message)    
@@ -179,8 +175,7 @@ def link_externals(paths,
 
 
 def copy_inputs(paths,
-                file_list,
-                mapping_dict = {}):
+                file_list):
     """ Create copies to inputs from list of files containing copying instructions.
 
     Parameters
@@ -206,7 +201,7 @@ def copy_inputs(paths,
         
     try:
         paths['move_dir'] = get_path(paths, 'input_dir')
-        move_map = create_copies(paths, file_list, mapping_dict)
+        move_map = create_copies(paths, file_list)
 
         message = 'Input copies successfully created!'
         write_to_makelog(paths, message)    
@@ -220,8 +215,7 @@ def copy_inputs(paths,
 
 
 def copy_externals(paths,
-                file_list,
-                mapping_dict = {}):
+                file_list):
     """ Create copies to externals from list of files containing copying instructions.
 
     Parameters
@@ -247,7 +241,7 @@ def copy_externals(paths,
         
     try:
         paths['move_dir'] = get_path(paths, 'external_dir')
-        move_map = create_copies(paths, file_list, mapping_dict)
+        move_map = create_copies(paths, file_list)
 
         message = 'External copies successfully created!'
         write_to_makelog(paths, message)    

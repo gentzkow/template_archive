@@ -26,13 +26,30 @@ def norm_path(path):
     return path
 
 
-def get_path(paths_dict, key):
-    """ Get path for key. """
+def get_path(paths_dict, key, throw_error = True):
+    """ Get path for key.
 
+    Parameters
+    ----------
+    path_dict : dict
+        Dictionary of paths.
+    key : str
+        Path to get from dictionary.
+    throw_error : bool
+        Return error instead of `None`. Defaults to `True`. 
+
+    Returns
+    -------
+    path : str
+        Path requested.
+    """
     try:
         path = paths_dict[key]
     except KeyError:
-        raise_from(CritError(messages.crit_error_no_key % (key, key)), None)
+        if throw_error:
+            raise_from(CritError(messages.crit_error_no_key % (key, key)), None)
+        else:
+            path = None
 
     return(path)
 

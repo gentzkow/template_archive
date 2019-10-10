@@ -44,7 +44,7 @@ from gslab_make.move_sources import (link_inputs, link_externals,
 from gslab_make.run_program import (run_stata, run_matlab, run_perl, run_python, 
                                     run_jupyter, run_mathematica, run_stat_transfer, 
                                     run_lyx, run_r, run_sas, execute_command, run_module)
-from gslab_make.make_utility import (update_executables, update_mappings, copy_output)
+from gslab_make.make_utility import (update_executables, update_paths, copy_output)
 from gslab_make.write_logs import (start_makelog, end_makelog, write_to_makelog,
                                    log_files_in_output, write_stats_log, write_heads_log)
 from gslab_make.write_source_logs import write_source_logs

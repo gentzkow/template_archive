@@ -58,7 +58,7 @@ def write_source_logs(paths,
 
     try:
         source_statslog = get_path(paths, 'source_statslog')
-        source_headslog = get_path(paths, 'source_headslog')
+        source_headslog = get_path(paths, 'source_headslog', throw_error = False)
         source_maplog   = get_path(paths, 'source_maplog')
 
         source_list = [source for source, destination in source_map]

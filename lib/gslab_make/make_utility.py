@@ -68,7 +68,7 @@ def update_executables(paths, osname = os.name):
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
 
-def update_mappings(paths, mapping_dict = {}):
+def update_paths(paths):
     """ Update path mappings using user config file. 
     
     Parameters
@@ -93,9 +93,9 @@ def update_mappings(paths, mapping_dict = {}):
         config_user = yaml.load(open(config_user, 'rb'))
 
         if config_user['external']:
-            mapping_dict.update(config_user['external'])
+            paths.update(config_user['external'])
 
-        return(mapping_dict)
+        return(paths)
     except:
         error_message = 'Error with `update_mappings`. Traceback can be found below.' 
         error_message = format_message(error_message) 
