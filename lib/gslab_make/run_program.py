@@ -451,7 +451,7 @@ def run_lyx(paths, program, **kwargs):
 
     try:
         makelog = get_path(paths, 'makelog')
-        pdf_dir = get_path(paths, 'pdf_dir')
+        pdf_dir = get_path(paths, 'output_dir')
         direct = LyXDirective(pdf_dir = pdf_dir, application = 'lyx', program = program, makelog = makelog, **kwargs)
             
         # Make handout/commented LyX file        
@@ -464,7 +464,7 @@ def run_lyx(paths, program, **kwargs):
 
             for line in fileinput.input(temp_program, inplace = True):
                 if r'\textclass beamer' in line:
-                    beamer = True          
+                    beamer = True
                 if direct.doctype == 'handout' and r'\options' in line and beamer:
                     line = line.rstrip('\n') + ', handout\n'
                 elif direct.doctype == 'comments' and r'\begin_inset Note Note' in line:

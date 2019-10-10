@@ -227,7 +227,7 @@ def check_module_size(paths):
         file_MB, total_MB, file_MB_lfs, total_MB_lfs = get_size_values(git_files, git_lfs_files)
     
         config = get_path(paths, 'config')
-        config = yaml.load(open(config, 'rb'))
+        config = yaml.load(open(config, 'rb'), Loader = yaml.Loader)
         max_file_sizes = config['max_file_sizes']
         
         print_message = ''

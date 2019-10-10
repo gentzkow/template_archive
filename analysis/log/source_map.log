@@ -1,3 +1,3 @@
 destination | source
-input/data_table.csv | /Users/zong/template/data/output/data_table.csv
-input/data_graph.csv | /Users/zong/template/data/output/data_graph.csv
+input\data_table.csv | C:\Users\Zong\template\data\output\data_table.csv
+input\data_graph.csv | C:\Users\Zong\template\data\output\data_graph.csv

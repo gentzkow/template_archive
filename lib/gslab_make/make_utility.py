@@ -56,7 +56,7 @@ def update_executables(paths, osname = os.name):
 
     try:
         config_user = get_path(paths, 'config_user')
-        config_user = yaml.load(open(config_user, 'rb'))
+        config_user = yaml.load(open(config_user, 'rb'), Loader = yaml.Loader)
     
         check_os(osname)
     
@@ -90,7 +90,7 @@ def update_paths(paths):
 
     try:
         config_user = get_path(paths, 'config_user')
-        config_user = yaml.load(open(config_user, 'rb'))
+        config_user = yaml.load(open(config_user, 'rb'), Loader = yaml.Loader)
 
         if config_user['external']:
             paths.update(config_user['external'])
