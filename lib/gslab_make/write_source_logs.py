@@ -14,46 +14,63 @@ colorama.init()
 import gslab_make.private.metadata as metadata
 from gslab_make.private.exceptionclasses import ColoredError
 from gslab_make.private.utility import norm_path, get_path, glob_recursive, format_message
-from gslab_make.write_logs import write_to_makelog, write_stats_log, write_heads_log
+from gslab_make.write_logs import write_to_makelog, _write_stats_log, _write_heads_log
 
 
 def write_source_logs(paths, 
                       source_map,
                       depth = float('inf')):        
-    """ Write source logs.
+    """.. Write source logs.
 
-    Notes
-    -----
-    The following information is logged:
-        * Mapping of symlinks/copies to sources (source map log)
-        * Details on files contained in sources: 
-            * File name (source statistics log)
-            * Last modified (source statistics log)
-            * File size (source statistics log)
-            * File head (source headers log)
-        * When walking through source directories, depth determines depth.
+    Logs the following information for sources contained in list ``source_map`` (returned by `sourcing functions`_).
+    
+    - Mapping of symlinks/copies to sources (in file ``source_maplog``)
+    - Details on files contained in sources: 
+
+        - File name (in file ``source_statslog``)
+        - Last modified (in file ``source_statslog``)
+        - File size (in file ``source_statslog``)
+        - File head (in file ``source_headlog``, optional)
+
+    When walking through sources, float ``depth`` determines level of depth to walk. Status messages are appended to file ``makelog``. 
 
     Parameters
     ----------
     paths : dict 
-        Dictionary of paths. Dictionary should contain {
-            'source_statslog' : str
-                Path to write source statistics log.
-            'source_headslog' : str
-                Path to write source headers log.
-            'source_maplog' : str
-                Path to write source map log.
-            'makelog' : str
-                Path of makelog.
-        }
-    source_map : list 
-        Mapping of symlinks/copies (destination) to sources (returned from `MoveList.create_symlinks` or `MoveList.create_copies`).
+        Dictionary of paths. Dictionary should contain values for all keys listed below.
+    source_map : list
+        Mapping of symlinks/copies (destination) to sources (returned by `sourcing functions`_).
     depth : float, optional
         Level of depth when walking through source directories. Defaults to infinite.
+
+    Path Keys
+    ---------
+    source_statslog : str
+       Path to write source statistics log.
+    source_headslog : str, optional
+       Path to write source headers log.
+    source_maplog : str
+       Path to write source map log.
+    makelog : str
+       Path of makelog.
 
     Returns
     -------
     None
+
+    Example
+    -------
+    The following code will log information for all files listed in ``source_map``. Therefore, files contained in directories listed in ``source_map`` will be ignored.
+    
+    .. code-block:: python
+
+        write_source_logs(paths, depth = 1)
+
+    The following code will log information for all files listed in ``source_map`` and any file in all directories listed in ``source_map``, regardless of level of subdirectory.
+    
+    .. code-block :: python
+
+        write_source_logs(paths, depth = float('inf'))
     """
 
     try:
@@ -66,23 +83,23 @@ def write_source_logs(paths,
         source_files = [f for source in source_list for f in source]
         source_files = set(source_files)
 
-        """ IF WE DECIDE TO ALLOW FOR RAW SUBDIRECTORIES WITHOUT LINKING
-        raw_dir = get_path(paths, 'raw_dir')
-        raw_files = glob_recursive(raw_dir)
-        source_files = set(source_files + raw_files)
-        """
+        # TODO: DECIDE WHETHER TO KEEP
+        raw_dir = get_path(paths, 'raw_dir', throw_error = False)
+        if raw_dir:
+            raw_files = glob_recursive(raw_dir)
+            source_files = set(source_files + raw_files)
 
         if source_statslog:
             source_statslog = norm_path(source_statslog)
-            write_stats_log(source_statslog, source_files)
+            _write_stats_log(source_statslog, source_files)
 
         if source_headslog:
             source_headslog = norm_path(source_headslog)
-            write_heads_log(source_headslog, source_files)   
+            _write_heads_log(source_headslog, source_files)   
 
         if source_maplog:
             source_maplog = norm_path(source_maplog)
-            write_source_maplog(source_maplog, source_map)
+            _write_source_maplog(source_maplog, source_map)
 
         message = 'Source logs successfully written!'
         write_to_makelog(paths, message)  
@@ -94,15 +111,15 @@ def write_source_logs(paths,
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
 
-def write_source_maplog(source_maplog, source_map):
-    """ Write link map log.
+def _write_source_maplog(source_maplog, source_map):
+    """.. Write link map log.
 
     Parameters
     ----------
     source_maplog : str
         Path to write link map log.
     source_map : list 
-        Mapping of symlinks to sources (returned by LinksList).
+        Mapping of symlinks to sources (returned by `sourcing functions`_).
 
     Returns
     -------

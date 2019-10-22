@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 from __future__ import absolute_import, division, print_function, unicode_literals
-from future.utils import raise_from, string_types
+from future.utils import raise_from
 from builtins import (bytes, str, open, super, range,
                       zip, round, input, int, pow, object)
 
@@ -15,24 +15,27 @@ colorama.init()
 import gslab_make.private.messages as messages
 import gslab_make.private.metadata as metadata
 from gslab_make.private.exceptionclasses import CritError, ColoredError
-from gslab_make.private.utility import norm_path, get_path, glob_recursive, format_message
+from gslab_make.private.utility import convert_to_list, norm_path, get_path, glob_recursive, format_message
 
 
 def start_makelog(paths):
-    """ Start make log. Record start time.
+    """.. Start make log.
 
-    Notes
-    -----
-    The make log start condition is needed by other functions to confirm a 
-    make log exists.
+    Writes file ``makelog``, recording start time. Sets make log status to boolean ``True``, which is used by other functions to confirm make log exists.
+
+    Note
+    ----
+    The make log start condition is used by other functions to confirm a make log exists.
 
     Parameters
     ----------
     paths : dict 
-        Dictionary of paths. Dictionary should contain {
-            'makelog' : str
-                Path of makelog.
-        }
+        Dictionary of paths. Dictionary should contain values for all keys listed below.
+
+    Path Keys
+    ---------
+    makelog : str
+        Path of makelog.
 
     Returns
     -------
@@ -62,15 +65,23 @@ def start_makelog(paths):
 
 
 def end_makelog(paths):
-    """ End make log. Record end time.
+    """.. End make log.
+
+    Appends to file ``makelog``, recording end time.
+
+    Note
+    ----
+    We allow for writing to a make log even after the make log has ended. We do not recommend this for best practice.
 
     Parameters
     ----------
     paths : dict 
-        Dictionary of paths. Dictionary should contain {
-            'makelog' : str
-                Path of makelog.
-        }
+        Dictionary of paths. Dictionary should contain values for all keys listed below.
+
+    Path Keys
+    ---------
+    makelog : str
+        Path of makelog.
 
     Returns
     -------
@@ -102,17 +113,21 @@ def end_makelog(paths):
     
 
 def write_to_makelog(paths, message):
-    """ Append message to make log.
+    """.. Write to make log.
+
+    Appends string ``message`` to file ``makelog``.
 
     Parameters
     ----------
     paths : dict 
-        Dictionary of paths. Dictionary should contain {
-            'makelog' : str
-                Path of makelog.
-        }
+        Dictionary of paths. Dictionary should contain values for all keys listed below.
     message : str
         Message to append.
+
+    Path Keys
+    ---------
+    makelog : str
+        Path of makelog.
 
     Returns
     -------
@@ -133,52 +148,67 @@ def write_to_makelog(paths, message):
     
 def log_files_in_output(paths,
                         depth = float('inf')):
-    """ Log files in output directory.
+    """.. Log files in output directory.
 
-    Notes
-    -----
-    The following information is logged of all files contained in output directory:
-        * File name (output statistics log)
-        * Last modified (output statistics log)
-        * File size (output statistics log)
-        * File head (output headers log)
-    * When walking through output directory, depth determines depth.
+    Logs the following information for all files contained in directory ``output_dir``.
+
+    - File name (in file ``output_statslog``)
+    - Last modified (in file ``output_statslog``)
+    - File size (in file ``output_statslog``)
+    - File head (in file ``output_headslog``, optional)
+
+    When walking through directory ``output_dir``, float ``depth`` determines level of depth to walk. Status messages are appended to file ``makelog``. 
+
+    Include additional output directories to walk through (typically directories that you wish to keep local) in directory list ``output_local_dir``. 
 
     Parameters
     ----------
     paths : dict 
-        Dictionary of paths. Dictionary should contain {
-            'output_dir' : str
-                Path of output directory.
-            'output_local_dir' : list, optional
-                List of paths of local output directories. Defaults to `[]`.
-            'output_statslog' : str
-                Path to write output statistics log.
-            'output_headslog' : str
-                Path to write output headers log.
-            'makelog' : str
-                Path of makelog.
-        }
+        Dictionary of paths. Dictionary should contain values for all keys listed below.
     depth : float, optional
-        Level of depth when walking through output directory.
+        Level of depth when walking through output directory. Defaults to infinite.
+
+    Path Keys
+    ---------
+    output_dir : str
+       Path of output directory.
+    output_local_dir : str, list, optional
+       Path or list of paths of local output directories. Defaults to ``[]`` (i.e., none).
+    output_statslog : str
+       Path to write output statistics log.
+    output_headslog : str, optional
+       Path to write output headers log.
+    makelog : str
+       Path of makelog.
 
     Returns
     -------
     None
+
+    Example
+    -------
+    The following code will log information for all files contained in only the first level of ``paths['output_dir']``. Therefore, files contained in subdirectories will be ignored.
+    
+    .. code-block:: python
+
+        log_files_in_outputs(paths, depth = 1)
+
+    The following code will log information for any file in ``paths['output_dir']``, regardless of level of subdirectory.
+    
+    .. code-block :: python
+
+        log_files_in_outputs(paths, depth = float('inf'))
     """
     
     try:
-        output_dir      = get_path(paths, 'output_dir')
-        output_statslog = get_path(paths, 'output_statslog')
-        output_headslog = get_path(paths, 'output_headslog', throw_error = False)
-
-        try:
-            output_local_dir = get_path(paths, 'output_local_dir') # MAKE REQUIRED?
-            if isinstance(output_local_dir, string_types):
-                output_local_dir = [output_local_dir]
-            if type(output_local_dir) is not list:
-                raise_from(TypeError(messages.type_error_dir_list % output_local_dir), None)
-        except KeyError:
+        output_dir      =  get_path(paths, 'output_dir')
+        output_local_dir = get_path(paths, 'output_local_dir', throw_error = False) 
+        output_statslog  = get_path(paths, 'output_statslog')
+        output_headslog  = get_path(paths, 'output_headslog', throw_error = False)
+        
+        if output_local_dir:
+            output_local_dir = convert_to_list(output_local_dir, 'dir') 
+        else:
             output_local_dir = []
 
         output_files = glob_recursive(output_dir, depth)
@@ -187,11 +217,11 @@ def log_files_in_output(paths,
 
         if output_statslog:
             output_statslog = norm_path(output_statslog)
-            write_stats_log(output_statslog, output_files)
+            _write_stats_log(output_statslog, output_files)
         
         if output_headslog:
             output_headslog = norm_path(output_headslog)
-            write_heads_log(output_headslog, output_files)
+            _write_heads_log(output_headslog, output_files)
         
         message = 'Output logs successfully written!'
         write_to_makelog(paths, message)
@@ -203,15 +233,14 @@ def log_files_in_output(paths,
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
     
-def write_stats_log(statslog_file, output_files):
-    """ Write statistics log.
-   
-    Notes
-    -----
-    The following information is logged of all output files:
-        * File name 
-        * Last modified 
-        * File size
+def _write_stats_log(statslog_file, output_files):
+    """.. Write statistics log.
+
+    Logs the following information to ``statslog_file`` for all files contained in list ``output_files``.
+    
+    - File name 
+    - Last modified 
+    - File size
 
     Parameters
     ----------
@@ -238,17 +267,23 @@ def write_stats_log(statslog_file, output_files):
             print("%s | %s | %s" % (file_name, last_mod, file_size), file = STATSLOG)
 
 
-def write_heads_log(headslog_file, output_files, num_lines = 10):
-    """ Write headers log.
+# ~~~~~~~~~~ #
+# DEPRECATED #
+# ~~~~~~~~~~ #
 
+def _write_heads_log(headslog_file, output_files, num_lines = 10):
+    """.. Write headers log.
+
+    Logs the following information to ``headslog_file`` for all files contained in file list ``output_files``:
+    
     Parameters
     ----------
     headslog_file : str
         Path to write headers log. 
-    output_files : list
+    output_files list
         List of output files to log headers.
-    num_lines: int, optional
-        Number of lines for headers. Default is 10.
+    num_lines: ``int``, optional
+        Number of lines for headers. Default is ``10``.
 
     Returns
     -------

@@ -25,261 +25,43 @@ from gslab_make.private.utility import get_path, format_message, norm_path
 from gslab_make.write_logs import write_to_makelog
 
 
-def run_stata(paths, program, **kwargs):
-    """ Run Stata script using system command.
-
-    Parameters
-    ----------
-    paths : dict 
-        Dictionary of paths. Dictionary should contain {
-            'makelog' : str
-                Path of makelog.
-        }
-    program : str
-        Path of script to run.
-    osname : str, optional
-        Name of OS. Defaults to `os.name`.
-    shell : bool, optional
-        See: https://docs.python.org/2/library/subprocess.html#frequently-used-arguments.
-        Defaults to `True`.
-    log : str, optional
-        Path of program log. Program log is only written if specified. 
-    executable : str, optional
-        Executable to use for system command. 
-        Defaults to executable specified in metadata.
-    option : str, optional
-        Options for system command. Defaults to options specified in metadata.
-    args : str, optional
-        Not applicable.
-
-    Returns
-    -------
-    None
-    """
-
-    try:
-        makelog = get_path(paths, 'makelog')
-        direct = ProgramDirective(application = 'stata', program = program, makelog = makelog, **kwargs)
-
-        # Get program output
-        program_name = direct.program.split(" ")[0]
-        program_name = os.path.split(program_name)[-1]
-        program_name = os.path.splitext(program_name)[0]
-        program_log = os.path.join(os.getcwd(), program_name + '.log')
-        
-        # Sanitize program 
-        if direct.osname == "posix":
-            direct.program = re.escape(direct.program)
-
-        # Execute
-        command = metadata.commands[direct.osname]['stata'] % (direct.executable, direct.option, direct.program)
-        exit_code, stderr = direct.execute_command(command)
-        if exit_code != 0:
-            error_message = 'Stata program executed with errors. Traceback can be found below.'
-            error_message = format_message(error_message)
-            raise_from(ProgramError(error_message, stderr), None)
-        output = direct.move_program_output(program_log, direct.log)
-        check_stata_output(output)
-    except ProgramError:
-        raise
-    except:
-        error_message = 'Error with `run_stata`. Traceback can be found below.' 
-        error_message = format_message(error_message) 
-        write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
-        raise_from(ColoredError(error_message, traceback.format_exc()), None)
-    
-    
-def check_stata_output(output):
-    regex = "end of do-file[\s]*r\([0-9]*\);"
-    if re.search(regex, output):
-        error_message = 'Stata program executed with errors.'
-        error_message = format_message(error_message)
-        raise_from(ProgramError(error_message, 'See makelog for more detail.'), None)
-
-
-def run_matlab(paths, program, **kwargs):
-    """ Run Matlab script using system command.
-
-    Parameters
-    ----------
-    paths : dict 
-        Dictionary of paths. Dictionary should contain {
-            'makelog' : str
-                Path of makelog.
-        }
-    program : str
-        Path of script to run.
-    osname : str, optional
-        Name of OS. Defaults to `os.name`.
-    shell : bool, optional
-        See: https://docs.python.org/2/library/subprocess.html#frequently-used-arguments.
-        Defaults to `True`.
-    log : str, optional
-        Path of program log. Program log is only written if specified. 
-    executable : str, optional
-        Executable to use for system command. 
-        Defaults to executable specified in metadata.
-    option : str, optional
-        Options for system command. Defaults to options specified in metadata.
-    args : str, optional
-        Not applicable.
-
-    Returns
-    -------
-    None
-    """
-
-    try:
-        makelog = get_path(paths, 'makelog')
-        direct = ProgramDirective(application = 'matlab', program = program, makelog = makelog, **kwargs)
-        
-        # Get program output
-        program_log = os.path.join(os.getcwd(), direct.program_name + '.log')
-
-        # Execute
-        command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.option, direct.program, direct.program_name + '.log')
-        exit_code, stderr = direct.execute_command(command)   
-        if exit_code != 0:
-            error_message = 'Matlab program executed with errors. Traceback can be found below.'
-            error_message = format_message(error_message)
-            raise_from(ProgramError(error_message, stderr), None)
-        direct.move_program_output(program_log, direct.log)   
-    except ProgramError:
-        raise
-    except:
-        error_message = 'Error with `run_matlab`. Traceback can be found below.' 
-        error_message = format_message(error_message) 
-        write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
-        raise_from(ColoredError(error_message, traceback.format_exc()), None)
-        
-
-def run_perl(paths, program, **kwargs):
-    """ Run Perl script using system command.
-
-    Parameters
-    ----------
-    paths : dict 
-        Dictionary of paths. Dictionary should contain {
-            'makelog' : str
-                Path of makelog.
-        }
-    program : str
-        Path of script to run.
-    osname : str, optional
-        Name of OS. Defaults to `os.name`.
-    shell : bool, optional
-        See: https://docs.python.org/2/library/subprocess.html#frequently-used-arguments.
-        Defaults to `True`.
-    log : str, optional
-        Path of program log. Program log is only written if specified. 
-    executable : str, optional
-        Executable to use for system command. 
-        Defaults to executable specified in metadata.
-    option : str, optional
-        Options for system command. Defaults to options specified in metadata.
-    args : str, optional
-        Arguments for system command. Defaults to no arguments.
-
-    Returns
-    -------
-    None
-    """
-
-    try:
-        makelog = get_path(paths, 'makelog')
-        direct = ProgramDirective(application = 'perl', program = program, makelog = makelog, **kwargs)
-        
-        # Execute
-        command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.option, direct.program, direct.args)
-        exit_code, stderr = direct.execute_command(command)
-        direct.write_log()
-        if exit_code != 0:
-            error_message = 'Perl program executed with errors. Traceback can be found below.'
-            error_message = format_message(error_message)
-            raise_from(ProgramError(error_message, stderr), None)
-    except ProgramError:
-        raise
-    except:
-        error_message = 'Error with `run_perl`. Traceback can be found below.' 
-        error_message = format_message(error_message) 
-        write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
-        raise_from(ColoredError(error_message, traceback.format_exc()), None)
-
-
-def run_python(paths, program, **kwargs):
-    """ Run Python script using system command.
-
-    Parameters
-    ----------
-    paths : dict 
-        Dictionary of paths. Dictionary should contain {
-            'makelog' : str
-                Path of makelog.
-        }
-    program : str
-        Path of script to run.
-    osname : str, optional
-        Name of OS. Defaults to `os.name`.
-    shell : bool, optional
-        See: https://docs.python.org/2/library/subprocess.html#frequently-used-arguments.
-        Defaults to `True`.
-    log : str, optional
-        Path of program log. Program log is only written if specified. 
-    executable : str, optional
-        Executable to use for system command. 
-        Defaults to executable specified in metadata.
-    option : str, optional
-        Options for system command. Defaults to options specified in metadata.
-    args : str, optional
-        Arguments for system command. Defaults to no arguments.
-
-    Returns
-    -------
-    None
-    """
-
-    try:
-        makelog = get_path(paths, 'makelog')
-        direct = ProgramDirective(application = 'python', program = program, makelog = makelog, **kwargs)
-
-        # Execute
-        command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.option, direct.program, direct.args)
-        exit_code, stderr = direct.execute_command(command)
-        direct.write_log() 
-        if exit_code != 0:
-            error_message = 'Python program executed with errors. Traceback can be found below.'
-            error_message = format_message(error_message)
-            raise_from(ProgramError(error_message, stderr), None)
-    except ProgramError:
-        raise
-    except:
-        error_message = 'Error with `run_python`. Traceback can be found below.' 
-        error_message = format_message(error_message) 
-        write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
-        raise_from(ColoredError(error_message, traceback.format_exc()), None)
-        
-
 def run_jupyter(paths, program, timeout = None, kernel_name = ''):
-    """ Run Jupyter notebook using system command.
+    """Run Jupyter notebook using system command.
+
+    Runs notebook ``program`` using Python API, with notebook specified in the form of ``notebook.ipynb``. Status messages are appended to file ``makelog``.
 
     Parameters
     ----------
-    paths : dict 
-        Dictionary of paths. Dictionary should contain {
-            'makelog' : str
-                Path of makelog.
-        }
+    paths : dict
+        Dictionary of paths. Dictionary should contain values for all keys listed below.
     program : str
         Path of script to run.
-    timeout : int
-        Time to wait (in seconds) for execution outputs before raising exception.
-        Defaults to no timeout.
-    kernel_name : str
-        Name of kernel to use for execution.
-        Defaults to kernel specified in notebook.
+
+    Path Keys
+    ---------
+    makelog : str
+        Path of makelog.
+
+    Note
+    ----
+    We recommend leaving all other parameters to their defaults.
+
+    Other Parameters
+    ----------------
+    timeout : int, optional
+        Time to wait (in seconds) to finish executing a cell before raising exception. Defaults to no timeout.
+    kernel_name : str, optional
+        Name of kernel to use for execution (e.g., ``python2`` for standard Python 2 kernel, ``python3`` for standard Python 3 kernel). Defaults to ``''`` (i.e., kernel specified in notebook).
+
     Returns
     -------
     None
+
+    Example
+    -------
+    .. code-block:: python
+
+        run_jupyter(paths, program = 'notebook.ipynb')
     """
 
     try:
@@ -306,36 +88,158 @@ def run_jupyter(paths, program, timeout = None, kernel_name = ''):
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
 
-def run_mathematica(paths, program, **kwargs):
-    """ Run Mathematica script using system command.
+
+def run_lyx(paths, program, doctype = '', **kwargs): 
+    """.. Run LyX script using system command.
+
+    Compiles document ``program`` using system command, with document specified in the form of ``script.lyx``. Status messages are appended to file ``makelog``. PDF outputs are written in directory ``output_dir``.
 
     Parameters
     ----------
-    paths : dict 
-        Dictionary of paths. Dictionary should contain {
-            'makelog' : str
-                Path of makelog.
-        }
+    paths : dict
+        Dictionary of paths. Dictionary should contain values for all keys listed below.
     program : str
         Path of script to run.
+    doctype : str, optional
+        Type of LyX document. Takes either ``'handout'`` and ``'comments'``. All other strings will default to standard document type. Defaults to ``''`` (i.e., standard document type).
+
+    Path Keys
+    ---------
+    makelog : str
+        Path of makelog.
+    output_dir : str
+        Directory to write PDFs.
+
+    Note
+    ----
+    We recommend leaving all other parameters to their defaults.
+
+    Other Parameters
+    ----------------
     osname : str, optional
-        Name of OS. Defaults to `os.name`.
-    shell : bool, optional
-        See: https://docs.python.org/2/library/subprocess.html#frequently-used-arguments.
-        Defaults to `True`.
+        Name of OS. Used to determine syntax of system command. Defaults to ``os.name``.
+    shell : `bool`, optional
+        See `here <https://docs.python.org/3/library/subprocess.html#frequently-used-arguments>`_. Defaults to ``True``.
     log : str, optional
-        Path of program log. Program log is only written if specified. 
+        Path of program log. Program log is only written if specified. Defaults to ``''`` (i.e., not written). 
     executable : str, optional
-        Executable to use for system command. 
-        Defaults to executable specified in metadata.
+        Executable to use for system command. Defaults to executable specified in `default settings`_.
     option : str, optional
-        Options for system command. Defaults to options specified in metadata.
+        Options for system command. Defaults to options specified in `default settings`_.
     args : str, optional
         Not applicable.
-        
+
     Returns
     -------
     None
+
+    Example
+    -------
+    .. code-block:: python
+
+        run_lyx(paths, program = 'script.lyx')
+    """
+
+    try:
+        makelog = get_path(paths, 'makelog')
+        output_dir = get_path(paths, 'output_dir')
+        direct = LyXDirective(output_dir = output_dir, application = 'lyx', program = program, makelog = makelog, **kwargs)
+            
+        # Make handout/commented LyX file        
+        if direct.doctype:
+            temp_name = os.path.join(direct.program_name + '_' + direct.doctype)
+            temp_program = os.path.join(direct.program_dir, temp_name + '.lyx') 
+            
+            beamer = False
+            shutil.copy2(direct.program, temp_program) 
+
+            # TODO: DOUBLE-CHECK
+            for line in fileinput.input(temp_program, inplace = True):
+                if r'\textclass beamer' in line:
+                    beamer = True          
+                if direct.doctype == 'handout' and r'\options' in line and beamer:
+                    line = line.rstrip('\n') + ', handout\n'
+                elif direct.doctype == 'comments' and r'\begin_inset Note Note' in line:
+                    line = line.replace('Note Note', 'Note Greyedout')
+                print(line)
+        else:
+            temp_name = direct.program_name
+            temp_program = direct.program
+
+        # Execute
+        command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.option, temp_program)
+        exit_code, stderr = direct.execute_command(command)
+        direct.write_log()
+        if exit_code != 0:
+            error_message = 'LyX program executed with errors. Traceback can be found below.'
+            error_message = format_message(error_message)
+            raise_from(ProgramError(error_message, stderr), None)
+
+        # Move PDF output
+        temp_pdf = os.path.join(direct.program_dir, temp_name + '.pdf')
+        output_pdf = os.path.join(direct.output_dir, direct.program_name + '.pdf')
+
+        if temp_pdf != output_pdf:
+            shutil.copy2(temp_pdf, output_pdf)
+            os.remove(temp_pdf)
+            
+        # Remove handout/commented LyX file
+        if direct.doctype:
+            os.remove(temp_program)
+    except ProgramError:
+        raise
+    except:
+        error_message = 'Error with `run_lyx`. Traceback can be found below.' 
+        error_message = format_message(error_message) 
+        write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)
+
+
+def run_mathematica(paths, program, **kwargs):
+    """.. Run Mathematica script using system command.
+
+    Runs script ``program`` using system command, with script specified in the form of ``script.m``. Status messages are appended to file ``makelog``.
+
+    Parameters
+    ----------
+    paths : dict
+        Dictionary of paths. Dictionary should contain values for all keys listed below.
+    program : str
+        Path of script to run.
+
+    Path Keys
+    ---------
+    makelog : str
+        Path of makelog.
+
+    Note
+    ----
+    We recommend leaving all other parameters to their defaults.
+
+    Other Parameters
+    ----------------
+    osname : str, optional
+        Name of OS. Used to determine syntax of system command. Defaults to ``os.name``.
+    shell : `bool`, optional
+        See `here <https://docs.python.org/3/library/subprocess.html#frequently-used-arguments>`_. Defaults to ``True``.
+    log : str, optional
+        Path of program log. Program log is only written if specified. Defaults to ``''`` (i.e., not written). 
+    executable : str, optional
+        Executable to use for system command. Defaults to executable specified in `default settings`_.
+    option : str, optional
+        Options for system command. Defaults to options specified in `default settings`_.
+    args : str, optional
+        Not applicable.
+
+    Returns
+    -------
+    None
+
+    Example
+    -------
+    .. code-block:: python
+
+        run_mathematica(paths, program = 'script.m')
     """
     
     try:
@@ -357,182 +261,260 @@ def run_mathematica(paths, program, **kwargs):
         error_message = format_message(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
-        
 
-def run_stat_transfer(paths, program, **kwargs):
-    """ Run StatTransfer script using system command.
+
+def run_matlab(paths, program, **kwargs):
+    """.. Run Matlab script using system command.
+
+    Runs script ``program`` using system command, with script specified in the form of ``script.m``. Status messages are appended to file ``makelog``.
 
     Parameters
     ----------
-    paths : dict 
-        Dictionary of paths. Dictionary should contain {
-            'makelog' : str
-                Path of makelog.
-        }
+    paths : dict
+        Dictionary of paths. Dictionary should contain values for all keys listed below.
     program : str
         Path of script to run.
+
+    Path Keys
+    ---------
+    makelog : str
+        Path of makelog.
+
+    Note
+    ----
+    We recommend leaving all other parameters to their defaults.
+
+    Other Parameters
+    ----------------
     osname : str, optional
-        Name of OS. Defaults to `os.name`.
-    shell : bool, optional
-        See: https://docs.python.org/2/library/subprocess.html#frequently-used-arguments.
-        Defaults to `True`.
+        Name of OS. Used to determine syntax of system command. Defaults to ``os.name``.
+    shell : `bool`, optional
+        See `here <https://docs.python.org/3/library/subprocess.html#frequently-used-arguments>`_. Defaults to ``True``.
     log : str, optional
-        Path of program log. Program log is only written if specified. 
+        Path of program log. Program log is only written if specified. Defaults to ``''`` (i.e., not written). 
     executable : str, optional
-        Executable to use for system command. 
-        Defaults to executable specified in metadata.
+        Executable to use for system command. Defaults to executable specified in `default settings`_.
     option : str, optional
-        Options for system command. Defaults to options specified in metadata.
+        Options for system command. Defaults to options specified in `default settings`_.
     args : str, optional
         Not applicable.
 
     Returns
     -------
     None
+
+    Example
+    -------
+    .. code-block:: python
+
+        run_matlab(paths, program = 'script.m')
     """
 
     try:
         makelog = get_path(paths, 'makelog')
-        direct = ProgramDirective(application = 'st', program = program, makelog = makelog, **kwargs)
+        direct = ProgramDirective(application = 'matlab', program = program, makelog = makelog, **kwargs)
+        
+        # Get program output
+        program_log = os.path.join(os.getcwd(), direct.program_name + '.log')
 
         # Execute
-        command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.program)
-        exit_code, stderr = direct.execute_command(command)
-        direct.write_log()
+        command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.option, direct.program, direct.program_name + '.log')
+        exit_code, stderr = direct.execute_command(command)   
         if exit_code != 0:
-            error_message = 'StatTransfer program executed with errors. Traceback can be found below.'
+            error_message = 'Matlab program executed with errors. Traceback can be found below.'
             error_message = format_message(error_message)
             raise_from(ProgramError(error_message, stderr), None)
+        direct.move_program_output(program_log, direct.log)   
     except ProgramError:
         raise
     except:
-        error_message = 'Error with `run_stat_transfer`. Traceback can be found below.' 
+        error_message = 'Error with `run_matlab`. Traceback can be found below.' 
         error_message = format_message(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
-        
 
-def run_lyx(paths, program, **kwargs): 
-    """ Run LyX script using system command.
+
+def run_perl(paths, program, **kwargs):
+    """.. Run Perl script using system command.
+
+    Runs script ``program`` using system command, with script specified in the form of ``script.pl``. Status messages are appended to file ``makelog``.
 
     Parameters
     ----------
-    paths : dict 
-        Dictionary of paths. Dictionary should contain {
-            'makelog' : str
-                Path of makelog.
-            'pdf_dir' : str
-                Directory to write PDFs.
-        }
+    paths : dict
+        Dictionary of paths. Dictionary should contain values for all keys listed below.
     program : str
         Path of script to run.
+
+    Path Keys
+    ---------
+    makelog : str
+        Path of makelog.
+
+    Note
+    ----
+    We recommend leaving all other parameters to their defaults.
+
+    Other Parameters
+    ----------------
     osname : str, optional
-        Name of OS. Defaults to `os.name`.
-    shell : bool, optional
-        See: https://docs.python.org/2/library/subprocess.html#frequently-used-arguments.
-        Defaults to `True`.
+        Name of OS. Used to determine syntax of system command. Defaults to ``os.name``.
+    shell : `bool`, optional
+        See `here <https://docs.python.org/3/library/subprocess.html#frequently-used-arguments>`_. Defaults to ``True``.
     log : str, optional
-        Path of program log. Program log is only written if specified. 
+        Path of program log. Program log is only written if specified. Defaults to ``''`` (i.e., not written). 
     executable : str, optional
-        Executable to use for system command. 
-        Defaults to executable specified in metadata.
+        Executable to use for system command. Defaults to executable specified in `default settings`_.
     option : str, optional
-        Options for system command. Defaults to options specified in metadata.
+        Options for system command. Defaults to options specified in `default settings`_.
     args : str, optional
-        Not applicable.
-    doctype : str, optional
-       Type of Lyx document. Takes either `handout` and `comments`. 
-       Defaults to no special document type.
-        
+        Arguments for system command. Defaults to no arguments.
+
     Returns
     -------
     None
+
+    Example
+    -------
+    .. code-block:: python
+
+        run_perl(paths, program = 'script.pl')
     """
 
     try:
         makelog = get_path(paths, 'makelog')
-        pdf_dir = get_path(paths, 'output_dir')
-        direct = LyXDirective(pdf_dir = pdf_dir, application = 'lyx', program = program, makelog = makelog, **kwargs)
-            
-        # Make handout/commented LyX file        
-        if direct.doctype:
-            temp_name = os.path.join(direct.program_name + '_' + direct.doctype)
-            temp_program = os.path.join(direct.program_dir, temp_name + '.lyx') 
-            
-            beamer = False
-            shutil.copy2(direct.program, temp_program) 
-
-            for line in fileinput.input(temp_program, inplace = True):
-                if r'\textclass beamer' in line:
-                    beamer = True
-                if direct.doctype == 'handout' and r'\options' in line and beamer:
-                    line = line.rstrip('\n') + ', handout\n'
-                elif direct.doctype == 'comments' and r'\begin_inset Note Note' in line:
-                    line = line.replace('Note Note', 'Note Greyedout')
-                print(line)
-        else:
-            temp_name = direct.program_name
-            temp_program = direct.program
-
+        direct = ProgramDirective(application = 'perl', program = program, makelog = makelog, **kwargs)
+        
         # Execute
-        command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.option, temp_program)
+        command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.option, direct.program, direct.args)
         exit_code, stderr = direct.execute_command(command)
         direct.write_log()
         if exit_code != 0:
-            error_message = 'LyX program executed with errors. Traceback can be found below.'
+            error_message = 'Perl program executed with errors. Traceback can be found below.'
             error_message = format_message(error_message)
             raise_from(ProgramError(error_message, stderr), None)
-
-        # Move PDF output
-        temp_pdf = os.path.join(direct.program_dir, temp_name + '.pdf')
-        output_pdf = os.path.join(direct.pdf_dir, direct.program_name + '.pdf')
-
-        if temp_pdf != output_pdf:
-            shutil.copy2(temp_pdf, output_pdf)
-            os.remove(temp_pdf)
-            
-        # Remove handout/commented LyX file
-        if direct.doctype:
-            os.remove(temp_program)
     except ProgramError:
         raise
     except:
-        error_message = 'Error with `run_lyx`. Traceback can be found below.' 
+        error_message = 'Error with `run_perl`. Traceback can be found below.' 
         error_message = format_message(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
-        
+
+
+def run_python(paths, program, **kwargs):
+    """.. Run Python script using system command.
+
+    Runs script ``program`` using system command, with script specified in the form of ``script.py``. Status messages are appended to file ``makelog``.
+
+    Parameters
+    ----------
+    paths : dict
+        Dictionary of paths. Dictionary should contain values for all keys listed below.
+    program : str
+        Path of script to run.
+
+    Path Keys
+    ---------
+    makelog : str
+        Path of makelog.
+
+    Note
+    ----
+    We recommend leaving all other parameters to their defaults.
+
+    Other Parameters
+    ----------------
+    osname : str, optional
+        Name of OS. Used to determine syntax of system command. Defaults to ``os.name``.
+    shell : `bool`, optional
+        See `here <https://docs.python.org/3/library/subprocess.html#frequently-used-arguments>`_. Defaults to ``True``.
+    log : str, optional
+        Path of program log. Program log is only written if specified. Defaults to ``''`` (i.e., not written). 
+    executable : str, optional
+        Executable to use for system command. Defaults to executable specified in `default settings`_.
+    option : str, optional
+        Options for system command. Defaults to options specified in `default settings`_.
+    args : str, optional
+        Arguments for system command. Defaults to no arguments.
+
+    Returns
+    -------
+    None
+
+    Example
+    -------
+    .. code-block:: python
+
+        run_python(paths, program = 'script.py')
+    """
+
+    try:
+        makelog = get_path(paths, 'makelog')
+        direct = ProgramDirective(application = 'python', program = program, makelog = makelog, **kwargs)
+
+        # Execute
+        command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.option, direct.program, direct.args)
+        exit_code, stderr = direct.execute_command(command)
+        direct.write_log() 
+        if exit_code != 0:
+            error_message = 'Python program executed with errors. Traceback can be found below.'
+            error_message = format_message(error_message)
+            raise_from(ProgramError(error_message, stderr), None)
+    except ProgramError:
+        raise
+    except:
+        error_message = 'Error with `run_python`. Traceback can be found below.' 
+        error_message = format_message(error_message) 
+        write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)
+
 
 def run_r(paths, program, **kwargs):
-    """ Run R script using system command.
+    """.. Run R script using system command.
+
+    Runs script ``program`` using system command, with script specified in the form of ``script.R``. Status messages are appended to file ``makelog``.
 
     Parameters
     ----------
-    paths : dict 
-        Dictionary of paths. Dictionary should contain {
-            'makelog' : str
-                Path of makelog.
-        }
+    paths : dict
+        Dictionary of paths. Dictionary should contain values for all keys listed below.
     program : str
         Path of script to run.
+
+    Path Keys
+    ---------
+    makelog : str
+        Path of makelog.
+
+    Note
+    ----
+    We recommend leaving all other parameters to their defaults.
+
+    Other Parameters
+    ----------------
     osname : str, optional
-        Name of OS. Defaults to `os.name`.
-    shell : bool, optional
-        See: https://docs.python.org/2/library/subprocess.html#frequently-used-arguments.
-        Defaults to `True`.
+        Name of OS. Used to determine syntax of system command. Defaults to ``os.name``.
+    shell : `bool`, optional
+        See `here <https://docs.python.org/3/library/subprocess.html#frequently-used-arguments>`_. Defaults to ``True``.
     log : str, optional
-        Path of program log. Program log is only written if specified. 
+        Path of program log. Program log is only written if specified. Defaults to ``''`` (i.e., not written). 
     executable : str, optional
-        Executable to use for system command. 
-        Defaults to executable specified in metadata.
+        Executable to use for system command. Defaults to executable specified in `default settings`_.
     option : str, optional
-        Options for system command. Defaults to options specified in metadata.
+        Options for system command. Defaults to options specified in `default settings`_.
     args : str, optional
         Not applicable.
 
     Returns
     -------
     None
+
+    Example
+    -------
+    .. code-block:: python
+
+        run_r(paths, program = 'script.R')
     """
     
     try:
@@ -556,38 +538,53 @@ def run_r(paths, program, **kwargs):
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
         
 
-def run_sas(paths, program, **kwargs):
-    """ Run SAS script using system command.
+def run_sas(paths, program, lst = '', **kwargs):
+    """.. Run SAS script using system command.
+
+    Runs script ``program`` using system command, with script specified in the form of ``script.sas``. Status messages are appended to file ``makelog``.
 
     Parameters
     ----------
-    paths : dict 
-        Dictionary of paths. Dictionary should contain {
-            'makelog' : str
-                Path of makelog.
-        }
+    paths : dict
+        Dictionary of paths. Dictionary should contain values for all keys listed below.
     program : str
         Path of script to run.
+    lst : str, optional
+        Path of program lst. Program lst is only written if specified. Defaults to ``''`` (i.e., not written).
+
+    Path Keys
+    ---------
+    makelog : str
+        Path of makelog.
+
+    Note
+    ----
+    We recommend leaving all other parameters to their defaults.
+
+    Other Parameters
+    ----------------
     osname : str, optional
-        Name of OS. Defaults to `os.name`.
-    shell : bool, optional
-        See: https://docs.python.org/2/library/subprocess.html#frequently-used-arguments.
-        Defaults to `True`.
+        Name of OS. Used to determine syntax of system command. Defaults to ``os.name``.
+    shell : `bool`, optional
+        See `here <https://docs.python.org/3/library/subprocess.html#frequently-used-arguments>`_. Defaults to ``True``.
     log : str, optional
-        Path of program log. Program log is only written if specified. 
+        Path of program log. Program log is only written if specified. Defaults to ``''`` (i.e., not written). 
     executable : str, optional
-        Executable to use for system command. 
-        Defaults to executable specified in metadata.
+        Executable to use for system command. Defaults to executable specified in `default settings`_.
     option : str, optional
-        Options for system command. Defaults to options specified in metadata.
+        Options for system command. Defaults to options specified in `default settings`_.
     args : str, optional
         Not applicable.
-    lst : str, optional
-        Path of program lst. Program lst is only written if specified. 
-        
+
     Returns
     -------
     None
+
+    Example
+    -------
+    .. code-block:: python
+
+        run_sas(paths, program = 'script.sas')
     """
 
     try:
@@ -614,31 +611,207 @@ def run_sas(paths, program, **kwargs):
         error_message = format_message(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
-        
 
-def execute_command(paths, command, **kwargs):
-    """ Run system command.
+
+def run_stat_transfer(paths, program, **kwargs):
+    """.. Run StatTransfer script using system command.
+
+    Runs script ``program`` using system command, with script specified in the form of ``script.stc`` or ``script.stcmd``. Status messages are appended to file ``makelog``.
 
     Parameters
     ----------
-    paths : dict 
-        Dictionary of paths. Dictionary should contain {
-            'makelog' : str
-                Path of makelog.
-        }
-    command : str
-        system command to run.
+    paths : dict
+        Dictionary of paths. Dictionary should contain values for all keys listed below.
+    program : str
+        Path of script to run.
+
+    Path Keys
+    ---------
+    makelog : str
+        Path of makelog.
+
+    Note
+    ----
+    We recommend leaving all other parameters to their defaults.
+
+    Other Parameters
+    ----------------
     osname : str, optional
-        Name of OS. Defaults to `os.name`.
-    shell : bool, optional
-        See: https://docs.python.org/2/library/subprocess.html#frequently-used-arguments.
-        Defaults to `True`.
+        Name of OS. Used to determine syntax of system command. Defaults to ``os.name``.
+    shell : `bool`, optional
+        See `here <https://docs.python.org/3/library/subprocess.html#frequently-used-arguments>`_. Defaults to ``True``.
     log : str, optional
-        Path of system command log. system command log is only written if specified. 
-        
+        Path of program log. Program log is only written if specified. Defaults to ``''`` (i.e., not written). 
+    executable : str, optional
+        Executable to use for system command. Defaults to executable specified in `default settings`_.
+    option : str, optional
+        Options for system command. Defaults to options specified in `default settings`_.
+    args : str, optional
+        Not applicable.
+
     Returns
     -------
     None
+
+    Example
+    -------
+    .. code-block:: python
+
+        run_stat_transfer(paths, program = 'script.stc')
+    """
+
+    try:
+        makelog = get_path(paths, 'makelog')
+        direct = ProgramDirective(application = 'st', program = program, makelog = makelog, **kwargs)
+
+        # Execute
+        command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.program)
+        exit_code, stderr = direct.execute_command(command)
+        direct.write_log()
+        if exit_code != 0:
+            error_message = 'StatTransfer program executed with errors. Traceback can be found below.'
+            error_message = format_message(error_message)
+            raise_from(ProgramError(error_message, stderr), None)
+    except ProgramError:
+        raise
+    except:
+        error_message = 'Error with `run_stat_transfer`. Traceback can be found below.' 
+        error_message = format_message(error_message) 
+        write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)
+
+
+def run_stata(paths, program, **kwargs):
+    """.. Run Stata script using system command.
+
+    Runs script ``program`` using system command, with script specified in the form of ``script.do``. Status messages are appended to file ``makelog``.
+
+    Parameters
+    ----------
+    paths : dict
+        Dictionary of paths. Dictionary should contain values for all keys listed below.
+    program : str
+        Path of script to run.
+
+    Path Keys
+    ---------
+    makelog : str
+        Path of makelog.
+
+    Note
+    ----
+    We recommend leaving all other parameters to their defaults.
+
+    Other Parameters
+    ----------------
+    osname : str, optional
+        Name of OS. Used to determine syntax of system command. Defaults to ``os.name``.
+    shell : `bool`, optional
+        See `here <https://docs.python.org/3/library/subprocess.html#frequently-used-arguments>`_. Defaults to ``True``.
+    log : str, optional
+        Path of program log. Program log is only written if specified. Defaults to ``''`` (i.e., not written). 
+    executable : str, optional
+        Executable to use for system command. Defaults to executable specified in `default settings`_.
+    option : str, optional
+        Options for system command. Defaults to options specified in `default settings`_.
+    args : str, optional
+        Not applicable.
+
+    Returns
+    -------
+    None
+
+    Example
+    -------
+    .. code-block:: python
+
+        run_stata(paths, program = 'script.do')
+    """
+
+    try:
+        makelog = get_path(paths, 'makelog')
+        direct = ProgramDirective(application = 'stata', program = program, makelog = makelog, **kwargs)
+
+        # Get program output
+        program_name = direct.program.split(" ")[0]
+        program_name = os.path.split(program_name)[-1]
+        program_name = os.path.splitext(program_name)[0]
+        program_log = os.path.join(os.getcwd(), program_name + '.log')
+        
+        # Sanitize program 
+        if direct.osname == "posix":
+            direct.program = re.escape(direct.program)
+
+        # Execute
+        command = metadata.commands[direct.osname]['stata'] % (direct.executable, direct.option, direct.program)
+        exit_code, stderr = direct.execute_command(command)
+        if exit_code != 0:
+            error_message = 'Stata program executed with errors. Traceback can be found below.'
+            error_message = format_message(error_message)
+            raise_from(ProgramError(error_message, stderr), None)
+        output = direct.move_program_output(program_log, direct.log)
+        _check_stata_output(output)
+    except ProgramError:
+        raise
+    except:
+        error_message = 'Error with `run_stata`. Traceback can be found below.' 
+        error_message = format_message(error_message) 
+        write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)
+    
+    
+def _check_stata_output(output):
+    """.. Check Stata output"""
+    
+    regex = "end of do-file[\s]*r\([0-9]*\);"
+    if re.search(regex, output):
+        error_message = 'Stata program executed with errors.'
+        error_message = format_message(error_message)
+        raise_from(ProgramError(error_message, 'See makelog for more detail.'), None)
+        
+
+def execute_command(paths, command, **kwargs):
+    """.. Run system command.
+
+    Runs system command `command` with shell execution boolean ``shell``. Outputs are appended to file ``makelog`` and written to system command log file ``log``. Status messages are appended to file ``makelog``.
+
+    Parameters
+    ----------
+    paths : dict
+        Dictionary of paths. Dictionary should contain values for all keys listed below.
+    command : str
+        System command to run.
+    shell : `bool`, optional
+        See `here <https://docs.python.org/3/library/subprocess.html#frequently-used-arguments>`_. Defaults to ``True``.
+    log : str, optional
+        Path of system command log. System command log is only written if specified. Defaults to ``''`` (i.e., not written).
+
+    Path Keys
+    ---------
+    makelog : str
+        Path of makelog.
+
+    Note
+    ----
+    We recommend leaving all other parameters to their defaults.
+
+    Other Parameters
+    ----------------
+    osname : str, optional
+        Name of OS. Used to check if OS is supported. Defaults to ``os.name``.
+
+
+    Returns
+    -------
+    None
+
+    Example
+    -------
+    The following code executes the ``ls`` command, writes outputs to system command log file ``'file'``, and appends outputs and/or status messages to ``paths['makelog']``.
+
+    .. code-block:: python
+
+        execute_command(paths, 'ls', log = 'file')
     """
     
     try:
@@ -662,8 +835,10 @@ def execute_command(paths, command, **kwargs):
 
 
 def run_module(root, module, build_script = 'make.py'):
-    """ Run module. 
+    """.. Run module. 
     
+    Runs script `build_script` in module directory `module` relative to root of repository `root`.
+
     Parameters
     ----------
     root : str 
@@ -671,11 +846,19 @@ def run_module(root, module, build_script = 'make.py'):
     module: str
         Name of module.
     build_script : str
-        Name of build script.
+        Name of build script. Defaults to ``make.py``.
 
     Returns
     -------
     None
+    
+    Example
+    -------
+    The following code runs the script ``root/module/make.py``.
+
+    .. code-block:: python
+
+        run_module(root = 'root', module = 'module')
     """
 
     try:
@@ -691,7 +874,7 @@ def run_module(root, module, build_script = 'make.py'):
         message = colored(message, attrs = ['bold'])
         print('\n' + message)  
 
-        status = os.system('python %s' % build_script)
+        status = os.system('%s %s' % (metadata.executable['python'], build_script))
         if status != 0:
             raise ProgramError()
     except ProgramError:

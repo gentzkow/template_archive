@@ -17,58 +17,93 @@ colorama.init()
 import gslab_make.private.metadata as metadata
 import gslab_make.private.messages as messages
 from gslab_make.private.exceptionclasses import ColoredError
-from gslab_make.private.utility import norm_path, format_message
+from gslab_make.private.utility import convert_to_list, norm_path, format_message
 
 
 def remove_path(path, option = '', quiet = False):
-    """ Remove path using shell command specified in metadata.
+    """.. Remove path using system command.
     
+    Remove path ``path`` using system command. Safely removes symbolic links. Path can be specified with the * shell pattern (see `here <https://www.gnu.org/software/findutils/manual/html_node/find_html/Shell-Pattern-Matching.html>`__).
+
     Parameters
     ----------
     path : str
         Path to remove.
     option : str, optional
-        Options for shell command. Defaults to options specified in metadata.
+        Options for system command. Defaults to ``-rf`` for POSIX and ``/s /q`` for NT.
     quiet : bool, optional
-        Suppress printing of paths removed. Defaults to False. 
+        Suppress printing of path removed. Defaults to ``False``. 
 
     Returns
     -------
     None
+
+    Example
+    -------
+    The following code removes path ``path``.
+
+    .. code-block:: python
+
+        remove_path('path')
+
+    The following code removes all paths beginning with ``path``.
+
+    .. code-block:: python
+    
+        remove_path('path*')
     """
 
-    path = norm_path(path)
-    
-    if not option:
-        option = metadata.default_options[os.name]['rmdir']
+    try:
+        path = norm_path(path)
+        
+        if not option:
+            option = metadata.default_options[os.name]['rmdir']
 
-    command = metadata.commands[os.name]['rmdir'] % (option, path)
-    subprocess.Popen(command, shell = True) ### ADD DEBUGGING HERE?
+        command = metadata.commands[os.name]['rmdir'] % (option, path)
+        subprocess.Popen(command, shell = True) # TODO: ADD DEBUGGING HERE
 
-    if not quiet:
-        message = 'Removed: `%s`' % path
-        print(colored(message, metadata.color_success))
+        if not quiet:
+            message = 'Removed: `%s`' % path
+            print(colored(message, metadata.color_success))
+    except:
+        error_message = 'Error with `remove_path`. Traceback can be found below.' 
+        error_message = format_message(error_message) 
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
 
 def remove_dir(dir_list, quiet = False):
-    """ Remove everything in directory.
+    """.. Remove directory using system command.
     
+    Remove directories in list ``dir_list`` using system command. Safely removes symbolic links. Directories can be specified with the * shell pattern (see `here <https://www.gnu.org/software/findutils/manual/html_node/find_html/Shell-Pattern-Matching.html>`__).
+
     Parameters
     ----------
-    dir_list : list
-        List of directories to remove.
+    dir_list : str, list
+        Directory or list of directories to remove.
     quiet : bool, optional
-        Suppress printing of directories removed. Defaults to False. 
-        
+        Suppress printing of directories removed. Defaults to ``False``. 
+
     Returns
     -------
     None
+
+    Example
+    -------
+    The following code removes directories ``dir1`` and ``dir2``.
+
+    .. code-block:: python
+
+        remove_dir(['dir1', 'dir2'])
+
+    The following code removes directories beginning with ``dir``.
+
+    .. code-block:: python
+
+        remove_dir(['dir1*'])
     """
     try:
-        if type(dir_list) is list:
-            dir_list = [norm_path(dir_path) for dir_path in dir_list]
-        else:
-            raise_from(TypeError(messages.type_error_dir_list % dir_list), None)
+        dir_list = convert_to_list(dir_list, 'dir')
+        dir_list = [norm_path(dir_path) for dir_path in dir_list]
         
         for dir_path in dir_list:
             if os.path.isdir(dir_path):
@@ -82,16 +117,36 @@ def remove_dir(dir_list, quiet = False):
 
 
 def clear_dir(dir_list):
-    """ Remove everything in directory. Create directory if nonexistent.
+    """.. Clear directory. Create directory if nonexistent.
     
+    Clears all directories in list ``dir_list`` using system command. Safely clears symbolic links. Directories can be specified with the * shell pattern (see `here <https://www.gnu.org/software/findutils/manual/html_node/find_html/Shell-Pattern-Matching.html>`__).
+
+    Note
+    ----
+    To clear a directory means to remove all contents of a directory. If the directory is nonexistent, the directory is created.
+
     Parameters
     ----------
-    dir_list : list
-        List of directories to clear.
+    dir_list : str, list
+        Directory or list of directories to clear.
 
     Returns
     -------
     None
+
+    Example
+    -------
+    The following code clears directories ``dir1`` and ``dir2``.
+
+    .. code-block:: python
+
+        clear_dir(['dir1', 'dir2'])
+
+    The following code clears directories beginning with ``dir``.
+
+    .. code-block:: python
+
+        clear_dir(['dir1*'])
     """
 
     try:
@@ -109,8 +164,10 @@ def clear_dir(dir_list):
 
 
 def unzip(zip_path, output_dir):
-    """ Unzip file to directory.
-    
+    """.. Unzip file to directory.
+
+    Unzips file ``zip_path`` to directory ``output_dir``.
+
     Parameters
     ----------
     zip_path : str
@@ -133,8 +190,10 @@ def unzip(zip_path, output_dir):
 
 
 def zip_dir(source_dir, zip_dest):
-    """ Zip directory to file.
-    
+    """.. Zip directory to file.
+
+    Zips directory ``source_dir`` to file ``zip_dest``.
+
     Parameters
     ----------
     source_dir : str
