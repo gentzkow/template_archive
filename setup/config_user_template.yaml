@@ -1,5 +1,5 @@
 #####################################################################
-# Make a copy of this file called config_local.yaml and place
+# Make a copy of this file called config_user.yaml and place
 # it at the root level of the repository
 #
 # This file holds local settings specific to your computing

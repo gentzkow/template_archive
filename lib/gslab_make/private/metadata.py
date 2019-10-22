@@ -3,107 +3,109 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 from builtins import (bytes, str, open, super, range,
                       zip, round, input, int, pow, object)
 
-######################################################
-# Define metadata
-######################################################  
+# ~~~~~~~~~~~~~~~ #
+# Define metadata #
+# ~~~~~~~~~~~~~~~ #
 
 makelog_started = False
+color_success = None
+color_failure = 'red'
+color_in_process = 'cyan'
 
-# Commands
 commands = {
     'posix': 
-        {'makelink'  : 'ln -s \"%s\" \"%s\"', 
-         'makecopy'  : 'cp -a \"%s\" \"%s\"', 
+        {'makecopy'  : 'cp -a \"%s\" \"%s\"', 
+         'makelink'  : 'ln -s \"%s\" \"%s\"',          
          'rmdir'     : 'rm %s \"%s\"', 
-         'stata'     : '%s %s do \\\"%s\\\"',
+         'jupyter'   : '%s nbconvert --ExecutePreprocessor.timeout=-1 %s \"%s\"',
+         'lyx'       : '%s %s \"%s\"',
+         'math'      : '%s < \"%s\" %s',
          'matlab'    : '%s %s -r \"try run(\'%s\'); catch e, fprintf(getReport(e)), exit(1); end; exit(0)\" -logfile \"%s\"',
          'perl'      : '%s %s \"%s\" %s',
          'python'    : '%s %s \"%s\" %s',
-         'jupyter'   : '%s nbconvert --ExecutePreprocessor.timeout=-1 %s \"%s\"',
-         'math'      : '%s < \"%s\" %s',
-         'st'        : '%s \"%s\"',
-         'lyx'       : '%s %s \"%s\"',
          'r'         : '%s %s \"%s\"',
-         'sas'       : '%s %s -log -print %s'},
+         'sas'       : '%s %s -log -print %s',
+         'st'        : '%s \"%s\"',
+         'stata'     : '%s %s do \\\"%s\\\"'},
     'nt': 
-        {'makelink'  : 'mklink %s \"%s\" \"%s\"', 
-         'makecopy'  : 'xcopy /E /Y /Q /I /K \"%s\" \"%s\"',
+        {'makecopy'  : 'xcopy /E /Y /Q /I /K \"%s\" \"%s\"',
+         'makelink'  : 'mklink %s \"%s\" \"%s\"',        
          'rmdir'     : 'rmdir %s \"%s\"', 
-         'stata'     : '%s %s do \\\"%s\\\"',
+         'jupyter'   : '%s nbconvert --ExecutePreprocessor.timeout=-1 %s \"%s\"',
+         'lyx'       : '%s %s \"%s\"',
+         'math'      : '%s < \"%s\" %s',
          'matlab'    : '%s %s -r \"try run(\'%s\'); catch e, fprintf(getReport(e)), exit(1); end; exit(0)\" -logfile \"%s\"',
          'perl'      : '%s %s \"%s\" %s',
          'python'    : '%s %s \"%s\" %s',
-         'jupyter'   : '%s nbconvert --ExecutePreprocessor.timeout=-1 %s \"%s\"',
-         'math'      : '%s < \"%s\" %s',
-         'st'        : '%s \"%s\"',
-         'lyx'       : '%s %s \"%s\"',
          'r'         : '%s %s \"%s\"',
-         'sas'       : '%s %s -log -print %s'}
+         'sas'       : '%s %s -log -print %s',
+         'st'        : '%s \"%s\"',
+         'stata'     : '%s %s do \\\"%s\\\"'},
 }
 
 default_options = {
     'posix': 
         {'rmdir'     : '-rf', 
-         'stata'     : '-e',
+         'jupyter'   : '--to notebook --inplace --execute',
+         'lyx'       : '-e pdf2',
+         'math'      : '-noprompt',
          'matlab'    : '-nosplash -nodesktop',
          'perl'      : '',
          'python'    : '',
-         'jupyter'   : '--to notebook --inplace --execute',
-         'math'      : '-noprompt',
-         'st'        : '',
-         'lyx'       : '-e pdf2',
          'r'         : '--no-save',
-         'sas'       : ''},
+         'sas'       : '',
+         'st'        : '',
+         'stata'     : '-e'},
     'nt': 
         {'rmdir'     : '/s /q', 
-         'stata'     : '/e',
+         'jupyter'   : '--to notebook --inplace --execute',
+         'lyx'       : '-e pdf2',
+         'math'      : '-noprompt',
          'matlab'    : '-nosplash -minimize -wait',
          'perl'      : '',
          'python'    : '',
-         'jupyter'   : '--to notebook --inplace --execute', 
-         'math'      : '-noprompt',
-         'st'        : '',
-         'lyx'       : '-e pdf2',
          'r'         : '--no-save',
-         'sas'       : '-nosplash'}
+         'sas'       : '-nosplash',
+         'st'        : '',
+         'stata'     : '/e'}
 }
 
 default_executables = {
     'posix': 
         {'git-lfs'   : 'git-lfs', 
-         'stata'     : 'stata-mp',
+         'jupyter'   : 'python -m jupyter',
+         'lyx'       : 'lyx',
+         'math'      : 'math',
          'matlab'    : 'matlab',
          'perl'      : 'perl',
          'python'    : 'python',
-         'jupyter'   : 'python -m jupyter',
-         'math'      : 'math',
-         'st'        : 'st',
-         'lyx'       : 'lyx',
          'r'         : 'Rscript',
-         'sas'       : 'sas'},
+         'sas'       : 'sas',
+         'st'        : 'st',
+         'stata'     : 'stata-mp'},
     'nt': 
         {'git-lfs'   : 'git-lfs',
-         'stata'     : 'StataMP-64',
+         'jupyter'   : 'python -m jupyter',
+         'lyx'       : 'lyx',
+         'math'      : 'math',
          'matlab'    : 'matlab',
          'perl'      : 'perl',
          'python'    : 'python',
-         'jupyter'   : 'python -m jupyter',
-         'math'      : 'math',
-         'st'        : 'st',
-         'lyx'       : 'lyx',
          'r'         : 'Rscript',
-         'sas'       : 'sas'}
+         'sas'       : 'sas',
+         'st'        : 'st',
+         'stata'     : 'StataMP-64'},
 }
 
 extensions = {
-    'stata'     : ['.do'],
+    'jupyter'   : ['.ipynb'],
+    'lyx'       : ['.lyx'],
+    'math'      : ['.m'],
     'matlab'    : ['.m'],
     'perl'      : ['.pl'],
     'python'    : ['.py'],
-    'jupyter'   : ['.ipynb'],
-    'math'      : ['.m'],
-    'st'        : ['.stc', '.stcmd'],
-    'lyx'       : ['.lyx'],
     'r'         : ['.r', '.R'],
-    'sas'       : ['.sas']
+    'sas'       : ['.sas'],
+    'st'        : ['.stc', '.stcmd'],
+    'stata'     : ['.do']
 }

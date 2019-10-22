@@ -1,5 +1,6 @@
 #! /usr/bin/env python
 from __future__ import absolute_import, division, print_function, unicode_literals
+from future.utils import raise_from
 from builtins import (bytes, str, open, super, range,
                       zip, round, input, int, pow, object)
 
@@ -10,8 +11,9 @@ from termcolor import colored
 import colorama
 colorama.init()
 
+import gslab_make.private.metadata as metadata
 from gslab_make.private.exceptionclasses import ColoredError
-from gslab_make.private.utility import norm_path, get_path, glob_recursive, format_error
+from gslab_make.private.utility import norm_path, get_path, glob_recursive, format_message
 from gslab_make.write_logs import write_to_makelog, write_stats_log, write_heads_log
 
 
@@ -54,17 +56,17 @@ def write_source_logs(paths,
     None
     """
 
-    source_statslog = get_path(paths, 'source_statslog')
-    source_headslog = get_path(paths, 'source_headslog')
-    source_maplog   = get_path(paths, 'source_maplog')
-
     try:
+        source_statslog = get_path(paths, 'source_statslog')
+        source_headslog = get_path(paths, 'source_headslog')
+        source_maplog   = get_path(paths, 'source_maplog')
+
         source_list = [source for source, destination in source_map]
         source_list = [glob_recursive(source, depth) for source in source_list]
         source_files = [f for source in source_list for f in source]
         source_files = set(source_files)
 
-        """
+        """ IF WE DECIDE TO ALLOW FOR RAW SUBDIRECTORIES WITHOUT LINKING
         raw_dir = get_path(paths, 'raw_dir')
         raw_files = glob_recursive(raw_dir)
         source_files = set(source_files + raw_files)
@@ -84,12 +86,12 @@ def write_source_logs(paths,
 
         message = 'Source logs successfully written!'
         write_to_makelog(paths, message)  
-        print(colored(message, 'green'))
+        print(colored(message, metadata.color_success))
     except:
         error_message = 'Error with `write_source_logs`. Traceback can be found below.' 
-        error_message = format_error(error_message) 
+        error_message = format_message(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
-        raise ColoredError(error_message, traceback.format_exc())
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
 
 def write_source_maplog(source_maplog, source_map):

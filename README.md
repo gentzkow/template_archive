@@ -13,7 +13,7 @@ To build the repository as-is, the following applications are additionally requi
 * R
 * Stata
 
-These software are used by the scripts contained in the repository. By default, the **Setup** instructions below will assume their usage.
+These software are used by the scripts contained in the repository. By default, the **Setup** and **Build** instructions below will assume their usage.
 
 ## Setup
 **If you are using Windows, you may need to run certain bash commands in administrator mode due to permission errors. To do so, open your terminal by right clicking and selecting `Run as administrator`. To set administrator mode on permanently, refer to the [RA manual](https://github.com/gentzkow/template/wiki/Repository-Usage#Administrator-Mode).**
@@ -49,6 +49,16 @@ These software are used by the scripts contained in the repository. By default, 
 5. Install R dependencies using the `setup_r.r` file. One way to do this is to run the following bash command in a terminal from the `setup` subdirectory:
    ```
    Rscript setup_r.r
+   ```
+
+## Build
+**If you are using Windows, you may need to run certain bash commands in administrator mode due to permission errors. To do so, open your terminal by right clicking and selecting `Run as administrator`. To set administrator mode on permanently, refer to the [RA manual](https://github.com/gentzkow/template/wiki/Repository-Usage#Administrator-Mode).**
+
+1. Follow the *Setup* instructions above.
+
+2. From the root of repository, run the following bash command:
+   ```
+   python run_all.py
    ```
 
 ## Command Line Usage
@@ -126,3 +136,14 @@ If you are using Anaconda, we recommend using the following bash command:
 conda install --file requirements.txt
 ```
 Note that you may run into issues if any of the Python dependencies are not available on the conda channels. If this is the case, revert back to using `pip`.
+
+## License
+MIT License
+
+Copyright (c) 2019 Matthew Gentzkow
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

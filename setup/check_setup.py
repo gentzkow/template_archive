@@ -21,7 +21,7 @@ f, path, desc = imp.find_module('gslab_make', [os.path.join(ROOT, 'lib')])
 gs = imp.load_module('gslab_make', f, path, desc)
 
 default_executables = gs.private.metadata.default_executables
-format_message = gs.private.utility.format_error
+format_message = gs.private.utility.format_message
 
 
 # GENERAL FUNCTIONS
