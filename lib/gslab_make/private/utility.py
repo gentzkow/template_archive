@@ -25,6 +25,7 @@ def convert_to_list(obj, warning_type):
         elif (warning_type == 'file'):
             raise_from(TypeError(messages.type_error_file_list % obj), None)
 
+    return(obj)
 
 def norm_path(path):
     """Normalize path to be OS-compatible."""

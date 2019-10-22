@@ -95,7 +95,7 @@ def _create_copies(paths,
     move_list = MoveList(file_list, move_dir, paths)
     if move_list.move_directive_list:
         os.makedirs(move_dir)
-        source_map = move_list._create_copies()       
+        source_map = move_list.create_copies()       
     else:
         source_map = []
 
