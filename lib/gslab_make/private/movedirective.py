@@ -20,9 +20,12 @@ class MoveDirective(object):
     """
     Directive for creating symbolic link or copy of data.
     
-    Notes
-    -----
+    Note
+    ----
     Parse line of text containing linking/copying instructions and represent as directive.
+
+    Note
+    ----
     Takes glob-style wildcards.
     
     Parameters
@@ -36,7 +39,7 @@ class MoveDirective(object):
     move_dir : str
         Directory to write symlink/copy.
     osname : str, optional
-        Name of OS. Defaults to `os.name`.
+        Name of OS. Defaults to ``os.name``.
 
     Attributes
     ----------
@@ -131,8 +134,8 @@ class MoveDirective(object):
     
         Notes
         -----
-        Suppose path `foo.py` and glob pattern `*.py`. 
-        The wildcard characters would therefore be `foo`.
+        Suppose path ``foo.py`` and glob pattern ``*.py``. 
+        The wildcard characters would therefore be ``foo``.
         
         Parameters
         ----------
@@ -166,7 +169,7 @@ class MoveDirective(object):
         Parameters
         ----------
         wildcards: iterator
-           Extracted wildcard characters (returned from `extract_wildcards`).
+           Extracted wildcard characters (returned from :func:`.extract_wildcards`).
         
         Returns
         -------
@@ -182,10 +185,6 @@ class MoveDirective(object):
 
     def create_symlinks(self):
         """Create symlinks. 
-                
-        Parameters
-        ----------
-        None
 
         Returns
         -------
@@ -201,10 +200,6 @@ class MoveDirective(object):
 
     def create_copies(self):
         """Create copies. 
-                
-        Parameters
-        ----------
-        None
 
         Returns
         -------
@@ -224,7 +219,7 @@ class MoveDirective(object):
         Parameters
         ----------
     	movetype : str
-        	Type of file movement. Takes either `copy` or `symlink`. 
+        	Type of file movement. Takes either ``'copy'`` or ``'symlink'``. 
 
         Returns
         -------
@@ -256,7 +251,7 @@ class MoveDirective(object):
         Parameters
         ----------
     	movetype : str
-        	Type of file movement. Takes either `copy` or `symlink`. 
+        	Type of file movement. Takes either ``'copy'`` or ``'symlink'``. 
 
         Returns
         -------
@@ -332,7 +327,7 @@ class MoveList(object):
         None
         """
 
-        self.file_list = convert_to_list(file_list, 'file')
+        self.file_list = convert_to_list(self.file_list, 'file')
 
         file_list_parsed = [f for file in self.file_list for f in glob.glob(file)]   
         if file_list_parsed:

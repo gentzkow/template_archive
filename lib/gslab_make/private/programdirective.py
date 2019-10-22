@@ -22,8 +22,8 @@ class Directive(object):
     """
     Directive.
     
-    Notes
-    -----
+    Note
+    ----
     Contains instructions on how to run shell commands.
 
     Parameters
@@ -31,12 +31,13 @@ class Directive(object):
     makelog : str
         Path of make log.
     log : str, optional
-        Path of directive log. Directive log is only written if specified.  
+        Path of directive log. Directive log is only written if specified. 
+        Defaults to ``''`` (i.e., not written).
     osname : str, optional
-        Name of OS. Defaults to `os.name`.
+        Name of OS. Defaults to ``os.name``.
     shell : bool, optional
-        See: https://docs.python.org/2/library/subprocess.html#frequently-used-arguments.
-        Defaults to True.
+        See `here <https://docs.python.org/3/library/subprocess.html#frequently-used-arguments>`_. 
+        Defaults to ``True``.
 
     Returns
     -------
@@ -148,7 +149,7 @@ class ProgramDirective(Directive):
 
     Parameters
     ----------
-    See `private.programdirective.Directive`.
+    See :class:`.Directive`.
     
     application : str
         Name of application to run program.
@@ -166,7 +167,7 @@ class ProgramDirective(Directive):
     program_dir : str
         Directory of program parsed from program.
     program_base : str
-        `program_name.program_ext` of program parsed from program.
+        ``program_name.program_ext`` of program parsed from program.
     program_name : str
         Name of program parsed from program.
     program_ext : str
@@ -260,7 +261,8 @@ class ProgramDirective(Directive):
         program_output : str
              Path of program output.
         log_file : str, optional
-             Path of log file. Log file is only written if specified.  
+             Path of log file. Log file is only written if specified.
+             Defaults to ``''`` (i.e., not written).
         """
     
         program_output = norm_path(program_output)
@@ -299,10 +301,11 @@ class SASDirective(ProgramDirective):
 
     Parameters
     ----------
-    See `ProgramDirective`.
+    See :class:`.ProgramDirective`.
     
     lst : str, optional
-        Path of directive lst. Directive lst is only written if specified.  
+        Path of directive lst. Directive lst is only written if specified. 
+        Defaults to ``''`` (i.e., not written).
     """
     def __init__(self, 
                  lst = '', 
@@ -322,13 +325,14 @@ class LyXDirective(ProgramDirective):
 
     Parameters
     ----------
-    See `ProgramDirective`.
+    See :class:`.ProgramDirective`.
     
     output_dir : str
         Directory to write PDFs.
     doctype : str, optional
-        Type of LyX document. Takes either `handout` or `comments`. 
-        Defaults to no special document type.
+        Type of LyX document. Takes either ``'handout'`` and ``'comments'``. 
+        All other strings will default to standard document type. 
+        Defaults to ``''`` (i.e., standard document type).
     """
     
     def __init__(self, 

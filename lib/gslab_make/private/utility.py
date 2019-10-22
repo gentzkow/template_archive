@@ -14,14 +14,15 @@ import gslab_make.private.messages as messages
 from gslab_make.private.exceptionclasses import CritError
 
 
-def convert_to_list(obj, type):
+def convert_to_list(obj, warning_type):
     """Convert object to list."""
-    if isinstance(obj, string_types):
-        obj = [obj]
+    
+    obj = [obj] if isinstance(obj, string_types) else obj
+    
     if type(obj) is not list:
-        if (type == 'dir'):
+        if (warning_type == 'dir'):
             raise_from(TypeError(messages.type_error_dir_list % obj), None)
-        if (type == 'file'):
+        elif (warning_type == 'file'):
             raise_from(TypeError(messages.type_error_file_list % obj), None)
 
 
@@ -34,7 +35,7 @@ def norm_path(path):
         path = os.path.expanduser(path)
         path = os.path.abspath(path)
 
-    return path
+    return(path)
 
 
 def get_path(paths_dict, key, throw_error = True):
@@ -47,13 +48,14 @@ def get_path(paths_dict, key, throw_error = True):
     key : str
         Path to get from dictionary.
     throw_error : bool
-        Return error instead of `None`. Defaults to `True`. 
+        Return error instead of ``None``. Defaults to ``True``. 
 
     Returns
     -------
     path : str
         Path requested.
     """
+    
     try:
         path = paths_dict[key]
     except KeyError:
@@ -79,7 +81,7 @@ def glob_recursive(path, depth, quiet = True):
     depth : int
         Level of depth when walking through path.
     quiet : bool, optional
-        Suppress warning if no files globbed. Defaults to True. 
+        Suppress warning if no files globbed. Defaults to ``True``. 
 
     Returns
     -------
@@ -90,7 +92,7 @@ def glob_recursive(path, depth, quiet = True):
     path_walk = norm_path(path)
     path_files = glob.glob(path_walk)
 
-    i = 0 
+    i = 0     
     while i <= depth:          
         path_walk = os.path.join(path_walk, "*")
         glob_files = glob.glob(path_walk)
@@ -101,11 +103,10 @@ def glob_recursive(path, depth, quiet = True):
             break
 
     path_files = [p for p in path_files if os.path.isfile(p)]
-    
     if not path_files and not quiet:
         print(messages.warning_glob % (path, depth))
 
-    return path_files
+    return(path_files)
 
  
 def file_to_array(file_name):
@@ -127,7 +128,7 @@ def file_to_array(file_name):
         array = [line for line in array if line]
         array = [line for line in array if not re.match('\#',line)]
 
-    return array
+    return(array)
 
 
 def format_traceback(trace = ''):
@@ -136,7 +137,7 @@ def format_traceback(trace = ''):
     Parameters
     ----------
     trace : str
-        Traceback to format. Defaults to `traceback.format_exc()`.
+        Traceback to format. Defaults to ``traceback.format_exc``.
 
     Notes
     -----
@@ -222,7 +223,7 @@ def check_duplicate(original, copy):
         else:
             duplicate = False
             
-    return duplicate
+    return(duplicate)
     
 
 def parse_dircmp(dircmp):
@@ -230,7 +231,7 @@ def parse_dircmp(dircmp):
 
     Parameters
     ----------
-    dircmp : filecmp.dircmp
+    dircmp : ``filecmp.dircmp``
         dircmp to parse if directories duplicate.
 
     Returns
@@ -260,4 +261,4 @@ def parse_dircmp(dircmp):
         else:
             break
         
-    return duplicate
+    return(duplicate)

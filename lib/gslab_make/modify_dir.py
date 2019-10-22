@@ -23,7 +23,9 @@ from gslab_make.private.utility import convert_to_list, norm_path, format_messag
 def remove_path(path, option = '', quiet = False):
     """.. Remove path using system command.
     
-    Remove path ``path`` using system command. Safely removes symbolic links. Path can be specified with the * shell pattern (see `here <https://www.gnu.org/software/findutils/manual/html_node/find_html/Shell-Pattern-Matching.html>`__).
+    Remove path ``path`` using system command. Safely removes symbolic links. 
+    Path can be specified with the * shell pattern 
+    (see `here <https://www.gnu.org/software/findutils/manual/html_node/find_html/Shell-Pattern-Matching.html>`__).
 
     Parameters
     ----------
@@ -55,12 +57,12 @@ def remove_path(path, option = '', quiet = False):
 
     try:
         path = norm_path(path)
-        
         if not option:
             option = metadata.default_options[os.name]['rmdir']
-
+            
         command = metadata.commands[os.name]['rmdir'] % (option, path)
-        subprocess.Popen(command, shell = True) # TODO: ADD DEBUGGING HERE
+        subprocess.Popen(command, shell = True)
+        # ACTION ITEM: ADD DEBUGGING TO SUBPROCESS CALL
 
         if not quiet:
             message = 'Removed: `%s`' % path
@@ -74,7 +76,9 @@ def remove_path(path, option = '', quiet = False):
 def remove_dir(dir_list, quiet = False):
     """.. Remove directory using system command.
     
-    Remove directories in list ``dir_list`` using system command. Safely removes symbolic links. Directories can be specified with the * shell pattern (see `here <https://www.gnu.org/software/findutils/manual/html_node/find_html/Shell-Pattern-Matching.html>`__).
+    Remove directories in list ``dir_list`` using system command. 
+    Safely removes symbolic links. Directories can be specified with the * shell pattern 
+    (see `here <https://www.gnu.org/software/findutils/manual/html_node/find_html/Shell-Pattern-Matching.html>`__).
 
     Parameters
     ----------
@@ -101,6 +105,7 @@ def remove_dir(dir_list, quiet = False):
 
         remove_dir(['dir1*'])
     """
+    
     try:
         dir_list = convert_to_list(dir_list, 'dir')
         dir_list = [norm_path(dir_path) for dir_path in dir_list]
@@ -119,11 +124,14 @@ def remove_dir(dir_list, quiet = False):
 def clear_dir(dir_list):
     """.. Clear directory. Create directory if nonexistent.
     
-    Clears all directories in list ``dir_list`` using system command. Safely clears symbolic links. Directories can be specified with the * shell pattern (see `here <https://www.gnu.org/software/findutils/manual/html_node/find_html/Shell-Pattern-Matching.html>`__).
+    Clears all directories in list ``dir_list`` using system command. 
+    Safely clears symbolic links. Directories can be specified with the * shell pattern 
+    (see `here <https://www.gnu.org/software/findutils/manual/html_node/find_html/Shell-Pattern-Matching.html>`__).
 
     Note
     ----
-    To clear a directory means to remove all contents of a directory. If the directory is nonexistent, the directory is created.
+    To clear a directory means to remove all contents of a directory. 
+    If the directory is nonexistent, the directory is created.
 
     Parameters
     ----------
@@ -152,7 +160,8 @@ def clear_dir(dir_list):
     try:
         remove_dir(dir_list, quiet = True)
         time.sleep(0.5) # Allow file manager to recognize files no longer exist
-  
+        # ACTION ITEM: FIGURE OUT BETTER WORKAROUND THAN DELAY
+        
         for dir_path in dir_list:
             os.makedirs(dir_path)
             message = 'Cleared: `%s`' % dir_path
@@ -214,10 +223,10 @@ def zip_dir(source_dir, zip_dest):
                 for f in files:
                     file_path = os.path.join(root, f)
                     file_name = os.path.basename(file_path)
+                    z.write(file_path, file_name)
                     
                     message = 'Zipped: `%s` as `%s`' % (file_path, file_name)
                     print(colored(message, metadata.color_success))
-                    z.write(file_path, file_name)
     except:
         error_message = 'Error with `zip_dir`. Traceback can be found below.' 
         error_message = format_message(error_message) 

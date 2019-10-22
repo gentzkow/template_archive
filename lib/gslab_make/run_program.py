@@ -28,7 +28,9 @@ from gslab_make.write_logs import write_to_makelog
 def run_jupyter(paths, program, timeout = None, kernel_name = ''):
     """Run Jupyter notebook using system command.
 
-    Runs notebook ``program`` using Python API, with notebook specified in the form of ``notebook.ipynb``. Status messages are appended to file ``makelog``.
+    Runs notebook ``program`` using Python API, with notebook specified 
+    in the form of ``notebook.ipynb``. 
+    Status messages are appended to file ``makelog``.
 
     Parameters
     ----------
@@ -49,9 +51,12 @@ def run_jupyter(paths, program, timeout = None, kernel_name = ''):
     Other Parameters
     ----------------
     timeout : int, optional
-        Time to wait (in seconds) to finish executing a cell before raising exception. Defaults to no timeout.
+        Time to wait (in seconds) to finish executing a cell before raising exception. 
+        Defaults to no timeout.
     kernel_name : str, optional
-        Name of kernel to use for execution (e.g., ``python2`` for standard Python 2 kernel, ``python3`` for standard Python 3 kernel). Defaults to ``''`` (i.e., kernel specified in notebook).
+        Name of kernel to use for execution 
+        (e.g., ``python2`` for standard Python 2 kernel, ``python3`` for standard Python 3 kernel). 
+        Defaults to ``''`` (i.e., kernel specified in notebook).
 
     Returns
     -------
@@ -65,7 +70,6 @@ def run_jupyter(paths, program, timeout = None, kernel_name = ''):
     """
 
     try:
-        makelog = get_path(paths, 'makelog')
         program = norm_path(program)
 
         with open(program) as f:
@@ -75,10 +79,10 @@ def run_jupyter(paths, program, timeout = None, kernel_name = ''):
             
             if not kernel_name:
                 kernel_name = 'python%s' % sys.version_info[0]
-
             ep = ExecutePreprocessor(timeout = timeout, kernel_name = kernel_name)
             nb = nbformat.read(f, as_version = 4)       
             ep.preprocess(nb, {'metadata': {'path': '.'}})
+            
         with open(program, 'wt') as f:
             nbformat.write(nb, f)
     except:
@@ -92,7 +96,9 @@ def run_jupyter(paths, program, timeout = None, kernel_name = ''):
 def run_lyx(paths, program, doctype = '', **kwargs): 
     """.. Run LyX script using system command.
 
-    Compiles document ``program`` using system command, with document specified in the form of ``script.lyx``. Status messages are appended to file ``makelog``. PDF outputs are written in directory ``output_dir``.
+    Compiles document ``program`` using system command, with document specified 
+    in the form of ``script.lyx``. Status messages are appended to file ``makelog``. 
+    PDF outputs are written in directory ``output_dir``.
 
     Parameters
     ----------
@@ -101,7 +107,9 @@ def run_lyx(paths, program, doctype = '', **kwargs):
     program : str
         Path of script to run.
     doctype : str, optional
-        Type of LyX document. Takes either ``'handout'`` and ``'comments'``. All other strings will default to standard document type. Defaults to ``''`` (i.e., standard document type).
+        Type of LyX document. Takes either ``'handout'`` and ``'comments'``. 
+        All other strings will default to standard document type. 
+        Defaults to ``''`` (i.e., standard document type).
 
     Path Keys
     ---------
@@ -119,11 +127,14 @@ def run_lyx(paths, program, doctype = '', **kwargs):
     osname : str, optional
         Name of OS. Used to determine syntax of system command. Defaults to ``os.name``.
     shell : `bool`, optional
-        See `here <https://docs.python.org/3/library/subprocess.html#frequently-used-arguments>`_. Defaults to ``True``.
+        See `here <https://docs.python.org/3/library/subprocess.html#frequently-used-arguments>`_. 
+        Defaults to ``True``.
     log : str, optional
-        Path of program log. Program log is only written if specified. Defaults to ``''`` (i.e., not written). 
+        Path of program log. Program log is only written if specified. 
+        Defaults to ``''`` (i.e., not written). 
     executable : str, optional
-        Executable to use for system command. Defaults to executable specified in `default settings`_.
+        Executable to use for system command. 
+        Defaults to executable specified in `default settings`_.
     option : str, optional
         Options for system command. Defaults to options specified in `default settings`_.
     args : str, optional
@@ -153,15 +164,14 @@ def run_lyx(paths, program, doctype = '', **kwargs):
             beamer = False
             shutil.copy2(direct.program, temp_program) 
 
-            # TODO: DOUBLE-CHECK
+            # ACTION ITEM: DEBUG ANDREFACTOR
             for line in fileinput.input(temp_program, inplace = True):
                 if r'\textclass beamer' in line:
                     beamer = True          
-                if direct.doctype == 'handout' and r'\options' in line and beamer:
+                if direct.doctype == 'handout' and beamer and (r'\options' in line):
                     line = line.rstrip('\n') + ', handout\n'
-                elif direct.doctype == 'comments' and r'\begin_inset Note Note' in line:
+                elif direct.doctype == 'comments' and (r'\begin_inset Note Note' in line):
                     line = line.replace('Note Note', 'Note Greyedout')
-                print(line)
         else:
             temp_name = direct.program_name
             temp_program = direct.program
@@ -198,7 +208,8 @@ def run_lyx(paths, program, doctype = '', **kwargs):
 def run_mathematica(paths, program, **kwargs):
     """.. Run Mathematica script using system command.
 
-    Runs script ``program`` using system command, with script specified in the form of ``script.m``. Status messages are appended to file ``makelog``.
+    Runs script ``program`` using system command, with script specified 
+    in the form of ``script.m``. Status messages are appended to file ``makelog``.
 
     Parameters
     ----------
@@ -221,11 +232,14 @@ def run_mathematica(paths, program, **kwargs):
     osname : str, optional
         Name of OS. Used to determine syntax of system command. Defaults to ``os.name``.
     shell : `bool`, optional
-        See `here <https://docs.python.org/3/library/subprocess.html#frequently-used-arguments>`_. Defaults to ``True``.
+        See `here <https://docs.python.org/3/library/subprocess.html#frequently-used-arguments>`_. 
+        Defaults to ``True``.
     log : str, optional
-        Path of program log. Program log is only written if specified. Defaults to ``''`` (i.e., not written). 
+        Path of program log. Program log is only written if specified. 
+        Defaults to ``''`` (i.e., not written). 
     executable : str, optional
-        Executable to use for system command. Defaults to executable specified in `default settings`_.
+        Executable to use for system command. 
+        Defaults to executable specified in `default settings`_.
     option : str, optional
         Options for system command. Defaults to options specified in `default settings`_.
     args : str, optional
@@ -266,7 +280,8 @@ def run_mathematica(paths, program, **kwargs):
 def run_matlab(paths, program, **kwargs):
     """.. Run Matlab script using system command.
 
-    Runs script ``program`` using system command, with script specified in the form of ``script.m``. Status messages are appended to file ``makelog``.
+    Runs script ``program`` using system command, with script specified 
+    in the form of ``script.m``. Status messages are appended to file ``makelog``.
 
     Parameters
     ----------
@@ -289,11 +304,14 @@ def run_matlab(paths, program, **kwargs):
     osname : str, optional
         Name of OS. Used to determine syntax of system command. Defaults to ``os.name``.
     shell : `bool`, optional
-        See `here <https://docs.python.org/3/library/subprocess.html#frequently-used-arguments>`_. Defaults to ``True``.
+        See `here <https://docs.python.org/3/library/subprocess.html#frequently-used-arguments>`_. 
+        Defaults to ``True``.
     log : str, optional
-        Path of program log. Program log is only written if specified. Defaults to ``''`` (i.e., not written). 
+        Path of program log. Program log is only written if specified. 
+        Defaults to ``''`` (i.e., not written). 
     executable : str, optional
-        Executable to use for system command. Defaults to executable specified in `default settings`_.
+        Executable to use for system command. 
+        Defaults to executable specified in `default settings`_.
     option : str, optional
         Options for system command. Defaults to options specified in `default settings`_.
     args : str, optional
@@ -337,7 +355,8 @@ def run_matlab(paths, program, **kwargs):
 def run_perl(paths, program, **kwargs):
     """.. Run Perl script using system command.
 
-    Runs script ``program`` using system command, with script specified in the form of ``script.pl``. Status messages are appended to file ``makelog``.
+    Runs script ``program`` using system command, with script specified 
+    in the form of ``script.pl``. Status messages are appended to file ``makelog``.
 
     Parameters
     ----------
@@ -360,11 +379,14 @@ def run_perl(paths, program, **kwargs):
     osname : str, optional
         Name of OS. Used to determine syntax of system command. Defaults to ``os.name``.
     shell : `bool`, optional
-        See `here <https://docs.python.org/3/library/subprocess.html#frequently-used-arguments>`_. Defaults to ``True``.
+        See `here <https://docs.python.org/3/library/subprocess.html#frequently-used-arguments>`_. 
+        Defaults to ``True``.
     log : str, optional
-        Path of program log. Program log is only written if specified. Defaults to ``''`` (i.e., not written). 
+        Path of program log. Program log is only written if specified. 
+        Defaults to ``''`` (i.e., not written). 
     executable : str, optional
-        Executable to use for system command. Defaults to executable specified in `default settings`_.
+        Executable to use for system command. 
+        Defaults to executable specified in `default settings`_.
     option : str, optional
         Options for system command. Defaults to options specified in `default settings`_.
     args : str, optional
@@ -405,7 +427,8 @@ def run_perl(paths, program, **kwargs):
 def run_python(paths, program, **kwargs):
     """.. Run Python script using system command.
 
-    Runs script ``program`` using system command, with script specified in the form of ``script.py``. Status messages are appended to file ``makelog``.
+    Runs script ``program`` using system command, with script specified 
+    in the form of ``script.py``. Status messages are appended to file ``makelog``.
 
     Parameters
     ----------
@@ -428,11 +451,14 @@ def run_python(paths, program, **kwargs):
     osname : str, optional
         Name of OS. Used to determine syntax of system command. Defaults to ``os.name``.
     shell : `bool`, optional
-        See `here <https://docs.python.org/3/library/subprocess.html#frequently-used-arguments>`_. Defaults to ``True``.
+        See `here <https://docs.python.org/3/library/subprocess.html#frequently-used-arguments>`_. 
+        Defaults to ``True``.
     log : str, optional
-        Path of program log. Program log is only written if specified. Defaults to ``''`` (i.e., not written). 
+        Path of program log. Program log is only written if specified. 
+        Defaults to ``''`` (i.e., not written). 
     executable : str, optional
-        Executable to use for system command. Defaults to executable specified in `default settings`_.
+        Executable to use for system command. 
+        Defaults to executable specified in `default settings`_.
     option : str, optional
         Options for system command. Defaults to options specified in `default settings`_.
     args : str, optional
@@ -473,7 +499,8 @@ def run_python(paths, program, **kwargs):
 def run_r(paths, program, **kwargs):
     """.. Run R script using system command.
 
-    Runs script ``program`` using system command, with script specified in the form of ``script.R``. Status messages are appended to file ``makelog``.
+    Runs script ``program`` using system command, with script specified 
+    in the form of ``script.R``. Status messages are appended to file ``makelog``.
 
     Parameters
     ----------
@@ -496,11 +523,14 @@ def run_r(paths, program, **kwargs):
     osname : str, optional
         Name of OS. Used to determine syntax of system command. Defaults to ``os.name``.
     shell : `bool`, optional
-        See `here <https://docs.python.org/3/library/subprocess.html#frequently-used-arguments>`_. Defaults to ``True``.
+        See `here <https://docs.python.org/3/library/subprocess.html#frequently-used-arguments>`_. 
+        Defaults to ``True``.
     log : str, optional
-        Path of program log. Program log is only written if specified. Defaults to ``''`` (i.e., not written). 
+        Path of program log. Program log is only written if specified. 
+        Defaults to ``''`` (i.e., not written). 
     executable : str, optional
-        Executable to use for system command. Defaults to executable specified in `default settings`_.
+        Executable to use for system command. 
+        Defaults to executable specified in `default settings`_.
     option : str, optional
         Options for system command. Defaults to options specified in `default settings`_.
     args : str, optional
@@ -541,7 +571,8 @@ def run_r(paths, program, **kwargs):
 def run_sas(paths, program, lst = '', **kwargs):
     """.. Run SAS script using system command.
 
-    Runs script ``program`` using system command, with script specified in the form of ``script.sas``. Status messages are appended to file ``makelog``.
+    Runs script ``program`` using system command, with script specified 
+    in the form of ``script.sas``. Status messages are appended to file ``makelog``.
 
     Parameters
     ----------
@@ -550,7 +581,8 @@ def run_sas(paths, program, lst = '', **kwargs):
     program : str
         Path of script to run.
     lst : str, optional
-        Path of program lst. Program lst is only written if specified. Defaults to ``''`` (i.e., not written).
+        Path of program lst. Program lst is only written if specified. 
+        Defaults to ``''`` (i.e., not written).
 
     Path Keys
     ---------
@@ -566,11 +598,14 @@ def run_sas(paths, program, lst = '', **kwargs):
     osname : str, optional
         Name of OS. Used to determine syntax of system command. Defaults to ``os.name``.
     shell : `bool`, optional
-        See `here <https://docs.python.org/3/library/subprocess.html#frequently-used-arguments>`_. Defaults to ``True``.
+        See `here <https://docs.python.org/3/library/subprocess.html#frequently-used-arguments>`_. 
+        Defaults to ``True``.
     log : str, optional
-        Path of program log. Program log is only written if specified. Defaults to ``''`` (i.e., not written). 
+        Path of program log. Program log is only written if specified. 
+        Defaults to ``''`` (i.e., not written). 
     executable : str, optional
-        Executable to use for system command. Defaults to executable specified in `default settings`_.
+        Executable to use for system command. 
+        Defaults to executable specified in `default settings`_.
     option : str, optional
         Options for system command. Defaults to options specified in `default settings`_.
     args : str, optional
@@ -616,7 +651,9 @@ def run_sas(paths, program, lst = '', **kwargs):
 def run_stat_transfer(paths, program, **kwargs):
     """.. Run StatTransfer script using system command.
 
-    Runs script ``program`` using system command, with script specified in the form of ``script.stc`` or ``script.stcmd``. Status messages are appended to file ``makelog``.
+    Runs script ``program`` using system command, with script specified 
+    in the form of ``script.stc`` or ``script.stcmd``. 
+    Status messages are appended to file ``makelog``.
 
     Parameters
     ----------
@@ -639,11 +676,14 @@ def run_stat_transfer(paths, program, **kwargs):
     osname : str, optional
         Name of OS. Used to determine syntax of system command. Defaults to ``os.name``.
     shell : `bool`, optional
-        See `here <https://docs.python.org/3/library/subprocess.html#frequently-used-arguments>`_. Defaults to ``True``.
+        See `here <https://docs.python.org/3/library/subprocess.html#frequently-used-arguments>`_. 
+        Defaults to ``True``.
     log : str, optional
-        Path of program log. Program log is only written if specified. Defaults to ``''`` (i.e., not written). 
+        Path of program log. Program log is only written if specified. 
+        Defaults to ``''`` (i.e., not written). 
     executable : str, optional
-        Executable to use for system command. Defaults to executable specified in `default settings`_.
+        Executable to use for system command. 
+        Defaults to executable specified in `default settings`_.
     option : str, optional
         Options for system command. Defaults to options specified in `default settings`_.
     args : str, optional
@@ -684,7 +724,8 @@ def run_stat_transfer(paths, program, **kwargs):
 def run_stata(paths, program, **kwargs):
     """.. Run Stata script using system command.
 
-    Runs script ``program`` using system command, with script specified in the form of ``script.do``. Status messages are appended to file ``makelog``.
+    Runs script ``program`` using system command, with script specified 
+    in the form of ``script.do``. Status messages are appended to file ``makelog``.
 
     Parameters
     ----------
@@ -707,11 +748,14 @@ def run_stata(paths, program, **kwargs):
     osname : str, optional
         Name of OS. Used to determine syntax of system command. Defaults to ``os.name``.
     shell : `bool`, optional
-        See `here <https://docs.python.org/3/library/subprocess.html#frequently-used-arguments>`_. Defaults to ``True``.
+        See `here <https://docs.python.org/3/library/subprocess.html#frequently-used-arguments>`_. 
+        Defaults to ``True``.
     log : str, optional
-        Path of program log. Program log is only written if specified. Defaults to ``''`` (i.e., not written). 
+        Path of program log. Program log is only written if specified. 
+        Defaults to ``''`` (i.e., not written). 
     executable : str, optional
-        Executable to use for system command. Defaults to executable specified in `default settings`_.
+        Executable to use for system command. 
+        Defaults to executable specified in `default settings`_.
     option : str, optional
         Options for system command. Defaults to options specified in `default settings`_.
     args : str, optional
@@ -773,7 +817,9 @@ def _check_stata_output(output):
 def execute_command(paths, command, **kwargs):
     """.. Run system command.
 
-    Runs system command `command` with shell execution boolean ``shell``. Outputs are appended to file ``makelog`` and written to system command log file ``log``. Status messages are appended to file ``makelog``.
+    Runs system command `command` with shell execution boolean ``shell``. 
+    Outputs are appended to file ``makelog`` and written to system command log file ``log``. 
+    Status messages are appended to file ``makelog``.
 
     Parameters
     ----------
@@ -782,9 +828,11 @@ def execute_command(paths, command, **kwargs):
     command : str
         System command to run.
     shell : `bool`, optional
-        See `here <https://docs.python.org/3/library/subprocess.html#frequently-used-arguments>`_. Defaults to ``True``.
+        See `here <https://docs.python.org/3/library/subprocess.html#frequently-used-arguments>`_. 
+        Defaults to ``True``.
     log : str, optional
-        Path of system command log. System command log is only written if specified. Defaults to ``''`` (i.e., not written).
+        Path of system command log. System command log is only written if specified. 
+        Defaults to ``''`` (i.e., not written).
 
     Path Keys
     ---------
@@ -807,7 +855,9 @@ def execute_command(paths, command, **kwargs):
 
     Example
     -------
-    The following code executes the ``ls`` command, writes outputs to system command log file ``'file'``, and appends outputs and/or status messages to ``paths['makelog']``.
+    The following code executes the ``ls`` command, 
+    writes outputs to system command log file ``'file'``, 
+    and appends outputs and/or status messages to ``paths['makelog']``.
 
     .. code-block:: python
 
@@ -834,7 +884,7 @@ def execute_command(paths, command, **kwargs):
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
 
-def run_module(root, module, build_script = 'make.py'):
+def run_module(root, module, build_script = 'make.py', osname = None):
     """.. Run module. 
     
     Runs script `build_script` in module directory `module` relative to root of repository `root`.
@@ -847,6 +897,8 @@ def run_module(root, module, build_script = 'make.py'):
         Name of module.
     build_script : str
         Name of build script. Defaults to ``make.py``.
+    osname : str, optional
+        Name of OS. Used to determine syntax of system command. Defaults to ``os.name``.
 
     Returns
     -------
@@ -861,6 +913,8 @@ def run_module(root, module, build_script = 'make.py'):
         run_module(root = 'root', module = 'module')
     """
 
+    osname = osname if osname else os.name # https://github.com/sphinx-doc/sphinx/issues/759
+
     try:
         module_dir = os.path.join(root, module)
         os.chdir(module_dir)
@@ -874,7 +928,7 @@ def run_module(root, module, build_script = 'make.py'):
         message = colored(message, attrs = ['bold'])
         print('\n' + message)  
 
-        status = os.system('%s %s' % (metadata.executable['python'], build_script))
+        status = os.system('%s %s' % (metadata.default_executables[osname]['python'], build_script))
         if status != 0:
             raise ProgramError()
     except ProgramError:

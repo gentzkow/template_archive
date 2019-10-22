@@ -22,7 +22,8 @@ def write_source_logs(paths,
                       depth = float('inf')):        
     """.. Write source logs.
 
-    Logs the following information for sources contained in list ``source_map`` (returned by `sourcing functions`_).
+    Logs the following information for sources contained in list ``source_map`` 
+    (returned by `sourcing functions`_).
     
     - Mapping of symlinks/copies to sources (in file ``source_maplog``)
     - Details on files contained in sources: 
@@ -32,7 +33,8 @@ def write_source_logs(paths,
         - File size (in file ``source_statslog``)
         - File head (in file ``source_headlog``, optional)
 
-    When walking through sources, float ``depth`` determines level of depth to walk. Status messages are appended to file ``makelog``. 
+    When walking through sources, float ``depth`` determines level of depth to walk. 
+    Status messages are appended to file ``makelog``. 
 
     Parameters
     ----------
@@ -60,13 +62,15 @@ def write_source_logs(paths,
 
     Example
     -------
-    The following code will log information for all files listed in ``source_map``. Therefore, files contained in directories listed in ``source_map`` will be ignored.
+    The following code will log information for all files listed in ``source_map``. 
+    Therefore, files contained in directories listed in ``source_map`` will be ignored.
     
     .. code-block:: python
 
         write_source_logs(paths, depth = 1)
 
-    The following code will log information for all files listed in ``source_map`` and any file in all directories listed in ``source_map``, regardless of level of subdirectory.
+    The following code will log information for all files listed in ``source_map`` 
+    and any file in all directories listed in ``source_map``, regardless of level of subdirectory.
     
     .. code-block :: python
 
@@ -83,7 +87,7 @@ def write_source_logs(paths,
         source_files = [f for source in source_list for f in source]
         source_files = set(source_files)
 
-        # TODO: DECIDE WHETHER TO KEEP
+        # ACTION: DECIDE WHETHER TO ALLOW FOR RAW DIRECTORY
         raw_dir = get_path(paths, 'raw_dir', throw_error = False)
         if raw_dir:
             raw_files = glob_recursive(raw_dir)

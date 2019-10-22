@@ -132,9 +132,9 @@ def _check_path_lfs(path, lfs_list):
 
     for l in lfs_list:
         if fnmatch.fnmatch(path, l):
-            return True
+            return(True)
             
-    return False
+    return(False)
 
 
 def _get_dir_sizes(dir_path):
@@ -218,7 +218,9 @@ def _get_size_values(git_files, git_lfs_files):
 def check_module_size(paths):
     """.. Check file sizes for module.
 
-    Checks file sizes for files to be committed in the current working directory. Compares file sizes to size limits in file ``config`` and produces warnings if any of the following limits are exceeded.
+    Checks file sizes for files to be committed in the current working directory. 
+    Compares file sizes to size limits in file ``config`` and 
+    produces warnings if any of the following limits are exceeded.
 
     - Individual size of a file tracked by git lfs (``file_MB_limit_lfs``)
     - Total size of all files tracked by git lfs (``total_MB_limit_lfs``)
@@ -323,7 +325,11 @@ def get_modified_sources(paths,
                          depth = float('inf')):
     """.. Get source files considered changed by git.
 
-    Checks the modification status for all sources contained in list ``source_map`` (returned by `sourcing functions`_). Produces warning if sources have been modified according to git. When walking through sources, float ``depth`` determines level of depth to walk. Warning messages are appended to file ``makelog``.
+    Checks the modification status for all sources contained in list 
+    ``source_map`` (returned by `sourcing functions`_). 
+    Produces warning if sources have been modified according to git. 
+    When walking through sources, float ``depth`` determines level of depth to walk. 
+    Warning messages are appended to file ``makelog``.
 
     Parameters
     ----------

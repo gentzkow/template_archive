@@ -36,7 +36,7 @@ def _check_os(osname = os.name):
         raise CritError(messages.crit_error_unknown_system % osname)
 
 
-def update_executables(paths, osname = os.name):
+def update_executables(paths, osname = None):
     """.. Update executable names using user configuration file. 
     
     Updates executable names with executables listed in file ``config_user``.
@@ -62,6 +62,8 @@ def update_executables(paths, osname = os.name):
     None
     """
 
+    osname = osname if osname else os.name # https://github.com/sphinx-doc/sphinx/issues/759
+
     try:
         config_user = get_path(paths, 'config_user')
         config_user = yaml.load(open(config_user, 'rb'), Loader = yaml.Loader)
@@ -83,12 +85,16 @@ def update_paths(paths):
     
     Note
     ----
-    The ``paths`` argument for `sourcing functions`_ is used not only to get default paths for writing/logging, but also to `string format <https://docs.python.org/3.4/library/string.html#format-string-syntax>`__ sourcing instructions.
+    The ``paths`` argument for `sourcing functions`_ is used not only to get 
+    default paths for writing/logging, but also to 
+    `string format <https://docs.python.org/3.4/library/string.html#format-string-syntax>`__ 
+    sourcing instructions.
     
     Parameters
     ----------
     paths : dict 
-        Dictionary of paths to update. Dictionary should ex-ante contain values for all keys listed below.
+        Dictionary of paths to update. 
+        Dictionary should ex-ante contain values for all keys listed below.
 
     Path Keys
     ---------
@@ -137,5 +143,5 @@ def copy_output(file, copy_dir):
     message = colored(messages.warning_copy, color = 'cyan')
     upload = input(message % (file, copy_dir))
 
-    if upload.lower().strip() == "yes":
+    if upload.lower().strip() == "Yes":
         shutil.copy(file, copy_dir)
