@@ -16,9 +16,9 @@ class ColoredError(Exception):
     """ Colorized error messages. """
     
     def __init__(self, message = '', trace = ''):
-        message = '\n\n' + colored(message, color = metadata.color_failure)
+        message = '\n\n' + colored(message, color = metadata.color_failure).encode('utf8')
         if trace:
-            trace = '\n\n' + colored(trace, color = metadata.color_failure)
+            trace = '\n\n' + colored(trace, color = metadata.color_failure).encode('utf8')
             super(ColoredError, self).__init__(message + trace)
         else:
             super(ColoredError, self).__init__(message)

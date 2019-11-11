@@ -106,7 +106,9 @@ class Directive(object):
                                        universal_newlines = True)
             stdout, stderr = process.communicate()
             exit = (process.returncode, stderr)             
-             
+            stdout = stdout.decode('utf-8')
+            stderr = stderr.decode('utf-8')
+                         
             if stdout:
                self.output += '\n' + stdout
             if stderr:
