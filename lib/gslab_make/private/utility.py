@@ -6,6 +6,7 @@ from builtins import (bytes, str, open, super, range,
 
 import os
 import re
+import sys
 import glob
 import traceback
 import filecmp
@@ -162,6 +163,21 @@ def format_list(list):
     formatted = ", ".join(formatted)
     
     return(formatted)
+
+
+def string_encode(string, encoding = ''):
+    if (sys.version_info < (3, 0)):
+        string = string.encode('utf-8')  
+
+    return(string)
+
+
+def string_decode(string, encoding = ''):
+    if (sys.version_info < (3, 0)):
+        string = string.decode('utf-8')  
+
+    return(string)
+
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 # Following functions are not currently actively used in code base #
