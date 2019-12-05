@@ -49,7 +49,7 @@ def _parse_data(data, null):
     data = [row for row in data if row]
     data = [row.split('\t') for row in data]
     data = chain(*data)
-    data = [*data]
+    data = list(data)
     if (null != None):
         data = [null if value in null_strings else value for value in data]
     
