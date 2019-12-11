@@ -15,7 +15,7 @@ colorama.init()
 import gslab_make.private.messages as messages
 import gslab_make.private.metadata as metadata
 from gslab_make.private.exceptionclasses import CritError
-from gslab_make.private.utility import norm_path, format_list, format_traceback
+from gslab_make.private.utility import norm_path, format_list, format_traceback, string_decode
 
 
 class Directive(object):
@@ -105,8 +105,10 @@ class Directive(object):
                                        shell = self.shell, 
                                        universal_newlines = True)
             stdout, stderr = process.communicate()
+            stdout = string_decode(stdout)    
+            stderr = string_decode(stderr)
             exit = (process.returncode, stderr)             
-             
+                         
             if stdout:
                self.output += '\n' + stdout
             if stderr:

@@ -47,3 +47,4 @@ program main
 	}
 end
 
+main

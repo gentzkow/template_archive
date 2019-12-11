@@ -1,2 +1,2 @@
 destination | source
-input/data_cleaned.csv | /Users/zong/template/data/output/data_cleaned.csv
+input\data_cleaned.csv | C:\Users\Zong\template\data\output\data_cleaned.csv
