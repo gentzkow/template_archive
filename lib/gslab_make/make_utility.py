@@ -6,8 +6,8 @@ from builtins import (bytes, str, open, super, range,
 
 import os
 import yaml
-import traceback
 import shutil
+import traceback
 
 from termcolor import colored
 import colorama
@@ -32,7 +32,7 @@ def check_os(osname = os.name):
     None
     """
 
-    if (osname != 'posix') & (osname != 'nt'):
+    if osname not in ['posix', 'nt']:
         raise CritError(messages.crit_error_unknown_system % osname)
 
 

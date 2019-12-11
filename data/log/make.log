@@ -1,59 +1,20 @@
 --------------------------------------------------------------------------------
-Makelog started: 2019-11-13 09:06:31
-Working directory: /Users/zong/template/data
+Makelog started: 2019-12-10 17:49:43
+Working directory: C:\Users\Zong\template\data
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
-Executing command: `Rscript --no-save "/Users/zong/template/data/code/create_table_data.r"`
+Executing command: `python  "C:\Users\Zong\template\data\code\merge_data.py" `
+Executing command: `python  "C:\Users\Zong\template\data\code\clean_data.py" `
+C:\Users\Zong\template\data\code\clean_data.py:17: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
 
-  ___  ____  ____  ____  ____ (R)
- /__    /   ____/   /   ____/
-___/   /   /___/   /   /___/   15.1   Copyright 1985-2017 StataCorp LLC
-  Statistics/Data Analysis            StataCorp
-                                      4905 Lakeway Drive
-     MP - Parallel Edition            College Station, Texas 77845 USA
-                                      800-STATA-PC        http://www.stata.com
-                                      979-696-4600        stata@stata.com
-                                      979-696-4601 (fax)
-
-Unlimited-user 4-core Stata network license expires 21 Jul 2020:
-       Serial number:  501609000313
-         Licensed to:  Zong Huang
-                       Stanford University
-
-Notes:
-      1.  Stata is running in batch mode.
-      2.  Unicode is supported; see help unicode_advice.
-      3.  More than 2 billion observations are allowed; see help obs_advice.
-      4.  Maximum number of variables is set to 5000; see help set_maxvar.
-
-. do "/Users/zong/template/data/code/create_graph_data.do" 
-
-. clear all
-
-. set more off
-
-. 
-. program main
-  1.     import delimited "input/data.csv", clear
-  2.     replace x = x * 2
-  3.         export delimited "output/data_graph.csv", replace
-  4. end
-
-. 
-. * EXECUTE
-. main
-(1 var, 300,000 obs)
-(300,000 real changes made)
-(note: file output/data_graph.csv not found)
-file output/data_graph.csv saved
-
-. 
-end of do-file
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df['chips_sold'][df['chips_sold'] == -999999] = np.NaN
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2019-11-13 09:06:33
-Working directory: /Users/zong/template/data
+Makelog ended: 2019-12-10 17:49:55
+Working directory: C:\Users\Zong\template\data
 --------------------------------------------------------------------------------

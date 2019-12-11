@@ -15,4 +15,5 @@
 # This will create a file in `paths['input_dir']` named `destination` that is a copy of `source`.
 
 # Destination | Source
-data.csv      | {root}/raw/data.csv
+tv.csv        | {root}/raw/tv.csv
+chips.csv     | {root}/raw/chips.csv
