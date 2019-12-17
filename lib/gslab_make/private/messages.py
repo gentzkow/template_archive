@@ -17,7 +17,7 @@ crit_error_no_makelog = \
     '- Makelog ended (via `end_makelog`) prematurely\n' + \
     '- Makelog deleted or moved after started'
     
-# ACTION ITEM: `end_makelog` CURRENTLY DOESN'T  ACTUALLY TURN MAKE LOG STATUS OFF
+# ACTION ITEM: `end_makelog` CURRENTLY DOESN'T ACTUALLY TURN MAKE LOG STATUS OFF
     
 crit_error_no_program_output = \
     '\nERROR! Program output `%s` is expected from `%s` but cannot be found. ' + \

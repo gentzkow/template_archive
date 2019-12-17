@@ -26,7 +26,7 @@ from gslab_make.write_logs import write_to_makelog
 
 
 def run_jupyter(paths, program, timeout = None, kernel_name = ''):
-    """Run Jupyter notebook using system command.
+    """.. Run Jupyter notebook using system command.
 
     Runs notebook ``program`` using Python API, with notebook specified 
     in the form of ``notebook.ipynb``. 
@@ -134,9 +134,9 @@ def run_lyx(paths, program, doctype = '', **kwargs):
         Defaults to ``''`` (i.e., not written). 
     executable : str, optional
         Executable to use for system command. 
-        Defaults to executable specified in `default settings`_.
+        Defaults to executable specified in :ref:`default settings<default settings>`.
     option : str, optional
-        Options for system command. Defaults to options specified in `default settings`_.
+        Options for system command. Defaults to options specified in :ref:`default settings<default settings>`.
     args : str, optional
         Not applicable.
 
@@ -239,9 +239,9 @@ def run_mathematica(paths, program, **kwargs):
         Defaults to ``''`` (i.e., not written). 
     executable : str, optional
         Executable to use for system command. 
-        Defaults to executable specified in `default settings`_.
+        Defaults to executable specified in :ref:`default settings<default settings>`.
     option : str, optional
-        Options for system command. Defaults to options specified in `default settings`_.
+        Options for system command. Defaults to options specified in :ref:`default settings<default settings>`.
     args : str, optional
         Not applicable.
 
@@ -311,9 +311,9 @@ def run_matlab(paths, program, **kwargs):
         Defaults to ``''`` (i.e., not written). 
     executable : str, optional
         Executable to use for system command. 
-        Defaults to executable specified in `default settings`_.
+        Defaults to executable specified in :ref:`default settings<default settings>`.
     option : str, optional
-        Options for system command. Defaults to options specified in `default settings`_.
+        Options for system command. Defaults to options specified in :ref:`default settings<default settings>`.
     args : str, optional
         Not applicable.
 
@@ -386,9 +386,9 @@ def run_perl(paths, program, **kwargs):
         Defaults to ``''`` (i.e., not written). 
     executable : str, optional
         Executable to use for system command. 
-        Defaults to executable specified in `default settings`_.
+        Defaults to executable specified in :ref:`default settings<default settings>`.
     option : str, optional
-        Options for system command. Defaults to options specified in `default settings`_.
+        Options for system command. Defaults to options specified in :ref:`default settings<default settings>`.
     args : str, optional
         Arguments for system command. Defaults to no arguments.
 
@@ -458,9 +458,9 @@ def run_python(paths, program, **kwargs):
         Defaults to ``''`` (i.e., not written). 
     executable : str, optional
         Executable to use for system command. 
-        Defaults to executable specified in `default settings`_.
+        Defaults to executable specified in :ref:`default settings<default settings>`.
     option : str, optional
-        Options for system command. Defaults to options specified in `default settings`_.
+        Options for system command. Defaults to options specified in :ref:`default settings<default settings>`.
     args : str, optional
         Arguments for system command. Defaults to no arguments.
 
@@ -530,9 +530,9 @@ def run_r(paths, program, **kwargs):
         Defaults to ``''`` (i.e., not written). 
     executable : str, optional
         Executable to use for system command. 
-        Defaults to executable specified in `default settings`_.
+        Defaults to executable specified in :ref:`default settings<default settings>`.
     option : str, optional
-        Options for system command. Defaults to options specified in `default settings`_.
+        Options for system command. Defaults to options specified in :ref:`default settings<default settings>`.
     args : str, optional
         Not applicable.
 
@@ -605,9 +605,9 @@ def run_sas(paths, program, lst = '', **kwargs):
         Defaults to ``''`` (i.e., not written). 
     executable : str, optional
         Executable to use for system command. 
-        Defaults to executable specified in `default settings`_.
+        Defaults to executable specified in :ref:`default settings<default settings>`.
     option : str, optional
-        Options for system command. Defaults to options specified in `default settings`_.
+        Options for system command. Defaults to options specified in :ref:`default settings<default settings>`.
     args : str, optional
         Not applicable.
 
@@ -683,9 +683,9 @@ def run_stat_transfer(paths, program, **kwargs):
         Defaults to ``''`` (i.e., not written). 
     executable : str, optional
         Executable to use for system command. 
-        Defaults to executable specified in `default settings`_.
+        Defaults to executable specified in :ref:`default settings<default settings>`.
     option : str, optional
-        Options for system command. Defaults to options specified in `default settings`_.
+        Options for system command. Defaults to options specified in :ref:`default settings<default settings>`.
     args : str, optional
         Not applicable.
 
@@ -755,9 +755,9 @@ def run_stata(paths, program, **kwargs):
         Defaults to ``''`` (i.e., not written). 
     executable : str, optional
         Executable to use for system command. 
-        Defaults to executable specified in `default settings`_.
+        Defaults to executable specified in :ref:`default settings<default settings>`.
     option : str, optional
-        Options for system command. Defaults to options specified in `default settings`_.
+        Options for system command. Defaults to options specified in :ref:`default settings<default settings>`.
     args : str, optional
         Not applicable.
 
@@ -937,3 +937,8 @@ def run_module(root, module, build_script = 'make.py', osname = None):
         error_message = 'Error with `run_module`. Traceback can be found below.' 
         error_message = format_message(error_message) 
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
+
+
+__all__ = ['run_stata', 'run_matlab', 'run_perl', 'run_python', 
+           'run_jupyter', 'run_mathematica', 'run_stat_transfer', 
+           'run_lyx', 'run_r', 'run_sas', 'execute_command', 'run_module']

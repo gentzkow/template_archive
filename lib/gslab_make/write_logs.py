@@ -315,3 +315,6 @@ def _write_heads_log(headslog_file, output_files, num_lines = 10):
             except:
                 print("Head not readable or less than %s lines" % num_lines, file = HEADSLOG)
             print(messages.note_dash_line, file = HEADSLOG)
+
+
+__all__ = ['start_makelog', 'end_makelog', 'write_to_makelog', 'log_files_in_output']

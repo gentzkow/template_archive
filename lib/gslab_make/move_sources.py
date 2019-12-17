@@ -614,3 +614,5 @@ def copy_externals(paths,
         error_message = format_message(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
+
+__all__ = ['link_inputs', 'link_externals', 'copy_inputs', 'copy_externals']

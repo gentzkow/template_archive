@@ -23,7 +23,7 @@ def write_source_logs(paths,
     """.. Write source logs.
 
     Logs the following information for sources contained in list ``source_map`` 
-    (returned by `sourcing functions`_).
+    (returned by :ref:`sourcing functions<sourcing functions>`).
     
     - Mapping of symlinks/copies to sources (in file ``source_maplog``)
     - Details on files contained in sources: 
@@ -41,7 +41,7 @@ def write_source_logs(paths,
     paths : dict 
         Dictionary of paths. Dictionary should contain values for all keys listed below.
     source_map : list
-        Mapping of symlinks/copies (destination) to sources (returned by `sourcing functions`_).
+        Mapping of symlinks/copies (destination) to sources (returned by :ref:`sourcing functions<sourcing functions>`).
     depth : float, optional
         Level of depth when walking through source directories. Defaults to infinite.
 
@@ -138,3 +138,6 @@ def _write_source_maplog(source_maplog, source_map):
         for source, destination in source_map:
             destination = os.path.relpath(destination)
             print("%s | %s" % (destination, source), file = MAPLOG)
+
+
+__all__ = ['write_source_logs']

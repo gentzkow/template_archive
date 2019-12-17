@@ -326,7 +326,7 @@ def get_modified_sources(paths,
     """.. Get source files considered changed by git.
 
     Checks the modification status for all sources contained in list 
-    ``source_map`` (returned by `sourcing functions`_). 
+    ``source_map`` (returned by :ref:`sourcing functions<sourcing functions>`). 
     Produces warning if sources have been modified according to git. 
     When walking through sources, float ``depth`` determines level of depth to walk. 
     Warning messages are appended to file ``makelog``.
@@ -336,7 +336,7 @@ def get_modified_sources(paths,
     paths : dict
         Dictionary of paths. Dictionary should contain values for all keys listed below.
     source_map : list
-        Mapping of sources (returned from `sourcing functions`_).
+        Mapping of sources (returned from :ref:`sourcing functions<sourcing functions>`).
     depth : float, optional
         Level of depth when walking through source directories. Defaults to infinite.
 
@@ -381,3 +381,5 @@ def get_modified_sources(paths,
         error_message = format_message(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
+
+__all__ = ['check_module_size', 'get_modified_sources']

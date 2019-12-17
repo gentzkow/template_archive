@@ -43,7 +43,7 @@ def update_executables(paths, osname = None):
     
     Note
     ----
-    Executable names are used by `program functions`_.
+    Executable names are used by :ref:`program functions <program functions>`.
     
     Parameters
     ----------
@@ -85,7 +85,7 @@ def update_paths(paths):
     
     Note
     ----
-    The ``paths`` argument for `sourcing functions`_ is used not only to get 
+    The ``paths`` argument for :ref:`sourcing functions<sourcing functions>` is used not only to get 
     default paths for writing/logging, but also to 
     `string format <https://docs.python.org/3.4/library/string.html#format-string-syntax>`__ 
     sourcing instructions.
@@ -145,3 +145,6 @@ def copy_output(file, copy_dir):
 
     if upload.lower().strip() == "Yes":
         shutil.copy(file, copy_dir)
+
+
+__all__ = ['update_executables', 'update_paths', 'copy_output']

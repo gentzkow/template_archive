@@ -231,3 +231,6 @@ def zip_dir(source_dir, zip_dest):
         error_message = 'Error with `zip_dir`. Traceback can be found below.' 
         error_message = format_message(error_message) 
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
+
+
+__all__ = ['remove_dir', 'clear_dir', 'unzip', 'zip_dir']
