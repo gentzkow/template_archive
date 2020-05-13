@@ -1,16 +1,13 @@
 --------------------------------------------------------------------------------
-Makelog started: 2019-10-21 18:14:16
+Makelog started: 2020-05-12 19:56:24
 Working directory: C:\Users\Zong\template\analysis
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
-WARNING! The following target files have been modified according to git status:
-C:\Users\Zong\template\data\output\data_graph.csv
-C:\Users\Zong\template\data\output\data_table.csv
 Executing command: `python  "C:\Users\Zong\template\analysis\code\descriptive.py" `
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2019-10-21 18:14:23
+Makelog ended: 2020-05-12 19:56:30
 Working directory: C:\Users\Zong\template\analysis
 --------------------------------------------------------------------------------

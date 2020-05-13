@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+# -*- coding: utf-8 -*-
 from __future__ import absolute_import, division, print_function, unicode_literals
 from future.utils import raise_from, string_types
 from builtins import (bytes, str, open, super, range,
@@ -6,14 +6,20 @@ from builtins import (bytes, str, open, super, range,
 
 import os
 import re
+import sys
 import glob
 import subprocess
 from itertools import chain
 
+if (sys.version_info < (3, 0)) and (os.name == 'nt'):
+    import gslab_make.private.subprocess_fix as subprocess_fix
+else:
+    import subprocess as subprocess_fix
+    
 import gslab_make.private.messages as messages
 import gslab_make.private.metadata as metadata
 from gslab_make.private.exceptionclasses import CritError
-from gslab_make.private.utility import convert_to_list, norm_path, file_to_array, format_traceback
+from gslab_make.private.utility import convert_to_list, norm_path, file_to_array, format_traceback, encode, decode
 
 
 class MoveDirective(object):
@@ -232,11 +238,12 @@ class MoveDirective(object):
             elif movetype == 'symlink':
                 command = metadata.commands[self.osname]['makelink'] % (source, destination)
 
-            process = subprocess.Popen(command,
+            process = subprocess_fix.Popen(command,
                                        shell = True,
                                        stdout = subprocess.PIPE,
                                        stderr = subprocess.PIPE, 
                                        universal_newlines = True)
+            process.wait()
             stdout, stderr = process.communicate()
            
             if process.returncode != 0:
@@ -270,11 +277,12 @@ class MoveDirective(object):
             elif movetype == 'symlink':
                 command = metadata.commands[self.osname]['makelink'] % (directory, destination, source)
 
-            process = subprocess.Popen(command,
+            process = subprocess_fix.Popen(command,
                                        shell = True,
                                        stdout = subprocess.PIPE,
                                        stderr = subprocess.PIPE, 
                                        universal_newlines = True)
+            process.wait()
             stdout, stderr = process.communicate()
            
             if process.returncode != 0:
@@ -327,14 +335,16 @@ class MoveList(object):
         None
         """
 
-        self.file_list = convert_to_list(self.file_list, 'file')
-
-        file_list_parsed = [f for file in self.file_list for f in glob.glob(file)]   
-        if file_list_parsed:
-            self.file_list = file_list_parsed
-        else:
-            error_list = [str(f) for f in self.file_list]
-            raise CritError(messages.crit_error_no_files % error_list) 
+        if self.file_list:
+            self.file_list = convert_to_list(self.file_list, 'file')
+            self.file_list = [norm_path(file) for file in self.file_list]
+            
+            file_list_parsed = [f for file in self.file_list for f in glob.glob(file)]   
+            if file_list_parsed:
+                self.file_list = file_list_parsed
+            else:
+                error_list = [decode(f) for f in self.file_list]
+                raise CritError(messages.crit_error_no_files % error_list) 
 
     def get_paths(self):    
         """Normalize paths. 
@@ -358,10 +368,10 @@ class MoveList(object):
         for file in self.file_list:
             for raw_line in file_to_array(file):
                 try:
-                    line = str(raw_line).format(**self.mapping_dict)
+                    line = raw_line.format(**self.mapping_dict)
                     lines.append((file, raw_line, line))
                 except KeyError as e:
-                    key = str(e).lstrip("u'").rstrip("'")
+                    key = decode(e).lstrip("u'").rstrip("'")
                     error_message = messages.crit_error_path_mapping % (key, key, file, raw_line, key)
                     error_message = error_message + format_traceback()
                     raise_from(CritError(error_message), None)

@@ -1,10 +1,11 @@
-#! /usr/bin/env python
+# -*- coding: utf-8 -*-
 from __future__ import absolute_import, division, print_function, unicode_literals
-from future.utils import raise_from
+from future.utils import raise_from, string_types
 from builtins import (bytes, str, open, super, range,
                       zip, round, input, int, pow, object)
 
 import os
+import io
 import datetime
 import traceback
 
@@ -52,7 +53,7 @@ def start_makelog(paths):
             message = 'Starting makelog file at: `%s`' % makelog
             print(colored(message, metadata.color_success))
             
-            with open(makelog, 'w', encoding = 'utf8') as MAKELOG:
+            with io.open(makelog, 'w', encoding = 'utf8', errors = 'ignore') as MAKELOG:
                 time_start = str(datetime.datetime.now().replace(microsecond = 0))
                 working_dir = os.getcwd()
                 print(messages.note_dash_line, file = MAKELOG)
@@ -101,7 +102,7 @@ def end_makelog(paths):
             if not (metadata.makelog_started and os.path.isfile(makelog)):
                 raise_from(CritError(messages.crit_error_no_makelog % makelog), None)
 
-            with open(makelog, 'a', encoding = 'utf8') as MAKELOG:
+            with io.open(makelog, 'a', encoding = 'utf8', errors = 'ignore') as MAKELOG:
                 time_end = str(datetime.datetime.now().replace(microsecond = 0))
                 working_dir = os.getcwd()
                 print(messages.note_dash_line, file = MAKELOG)
@@ -144,7 +145,7 @@ def write_to_makelog(paths, message):
         if not (metadata.makelog_started and os.path.isfile(makelog)):
             raise_from(CritError(messages.crit_error_no_makelog % makelog), None)
 
-        with open(makelog, 'a', encoding = 'utf8') as MAKELOG:
+        with io.open(makelog, 'a', encoding = 'utf8', errors = 'ignore') as MAKELOG:
             print(message, file = MAKELOG)
     
     
@@ -263,7 +264,7 @@ def _write_stats_log(statslog_file, output_files):
 
     header = "file name | last modified | file size"
     
-    with open(statslog_file, 'w', encoding = 'utf8') as STATSLOG:
+    with io.open(statslog_file, 'w', encoding = 'utf8', errors = 'ignore') as STATSLOG:
         print(header, file = STATSLOG)      
 
         for file_name in output_files:
@@ -299,7 +300,7 @@ def _write_heads_log(headslog_file, output_files, num_lines = 10):
 
     header = "File headers"
 
-    with open(headslog_file, 'w', encoding = 'utf8') as HEADSLOG:      
+    with io.open(headslog_file, 'w', encoding = 'utf8', errors = 'ignore') as HEADSLOG:      
         print(header, file = HEADSLOG)
         print(messages.note_dash_line, file = HEADSLOG)
         
@@ -308,7 +309,7 @@ def _write_heads_log(headslog_file, output_files, num_lines = 10):
             print(messages.note_dash_line, file = HEADSLOG)
             
             try:
-                with open(file_name, 'r', encoding = 'utf8') as f:
+                with io.open(file_name, 'r', encoding = 'utf8', errors = 'ignore') as f:
                     for i in range(num_lines):
                         line = f.readline().rstrip('\n')
                         print(line, file = HEADSLOG)

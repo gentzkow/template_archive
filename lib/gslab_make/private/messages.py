@@ -1,7 +1,9 @@
-#! /usr/bin/env python
+# -*- coding: utf-8 -*-
 from __future__ import absolute_import, division, print_function, unicode_literals
+from future.utils import raise_from, string_types
 from builtins import (bytes, str, open, super, range,
                       zip, round, input, int, pow, object)
+
         
 # ~~~~~~~~~~~~~~~ #
 # Define messages #
@@ -64,6 +66,16 @@ crit_error_path_mapping = \
     'For further detail, refer to the traceback below.'
 crit_error_no_repo = \
     '\nERROR! Current working directory is not part of a git repository.'
+crit_error_not_float = \
+    '\nERROR! You are attempting to round or format a value (`%s`) that is not a number.'
+crit_error_no_input_table = \
+    '\nERROR! None of the inputs match the tab name for table `%s`.'
+crit_error_not_enough_values = \
+    '\nERROR! Not enough values in input for table `%s`.'
+crit_error_too_many_values = \
+    '\nERROR! Too many values in input for table `%s`.'
+crit_error_no_tag = \
+    '\nERROR! Input `%s` is missing a tab name.'
 
 # Syntax errors
 syn_error_wildcard = \

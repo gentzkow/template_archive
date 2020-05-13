@@ -1,15 +1,16 @@
-#! /usr/bin/env python
+# -*- coding: utf-8 -*-
 from __future__ import absolute_import, division, print_function, unicode_literals
-from future.utils import raise_from
+from future.utils import raise_from, string_types
 from builtins import (bytes, str, open, super, range,
                       zip, round, input, int, pow, object)
 
 import os
 import re
-import traceback
-import shutil
-import fileinput
 import sys
+import shutil
+import traceback
+import fileinput
+
 import nbformat
 from nbconvert.preprocessors import ExecutePreprocessor
 
@@ -743,6 +744,12 @@ def run_stata(paths, program, **kwargs):
     ----
     We recommend leaving all other parameters to their defaults.
 
+    Note
+    ----
+    When a do-file contains a space in its name, different version of Stata save the
+    corresponding log file with different names. Some versions of Stata truncate the 
+    name to everything before the first space of the do-file name.
+
     Other Parameters
     ----------------
     osname : str, optional
@@ -776,12 +783,15 @@ def run_stata(paths, program, **kwargs):
         makelog = get_path(paths, 'makelog')
         direct = ProgramDirective(application = 'stata', program = program, makelog = makelog, **kwargs)
 
-        # Get program output
+        # Get program output (partial)
         program_name = direct.program.split(" ")[0]
         program_name = os.path.split(program_name)[-1]
         program_name = os.path.splitext(program_name)[0]
-        program_log = os.path.join(os.getcwd(), program_name + '.log')
+        program_log_partial = os.path.join(os.getcwd(), program_name + '.log')
         
+        # Get program output (full)
+        program_log_full = os.path.join(os.getcwd(), direct.program_name + '.log')
+
         # Sanitize program 
         if direct.osname == "posix":
             direct.program = re.escape(direct.program)
@@ -793,7 +803,10 @@ def run_stata(paths, program, **kwargs):
             error_message = 'Stata program executed with errors. Traceback can be found below.'
             error_message = format_message(error_message)
             raise_from(ProgramError(error_message, stderr), None)
-        output = direct.move_program_output(program_log, direct.log)
+        try:
+            output = direct.move_program_output(program_log_partial, direct.log)
+        except:
+            output = direct.move_program_output(program_log_full, direct.log)
         _check_stata_output(output)
     except ProgramError:
         raise

@@ -1,6 +1,6 @@
-#! /usr/bin/env python
+# -*- coding: utf-8 -*-
 from __future__ import absolute_import, division, print_function, unicode_literals
-from future.utils import raise_from
+from future.utils import raise_from, string_types
 from builtins import (bytes, str, open, super, range,
                       zip, round, input, int, pow, object)
 
@@ -8,7 +8,6 @@ import os
 import re
 import git
 import fnmatch
-import yaml
 import traceback
 
 from termcolor import colored
@@ -18,7 +17,7 @@ colorama.init()
 import gslab_make.private.metadata as metadata
 import gslab_make.private.messages as messages
 from gslab_make.private.exceptionclasses import CritError, ColoredError
-from gslab_make.private.utility import norm_path, get_path, format_message, glob_recursive
+from gslab_make.private.utility import norm_path, get_path, format_message, glob_recursive, open_yaml
 from gslab_make.write_logs import write_to_makelog
 
 
@@ -251,7 +250,7 @@ def check_module_size(paths):
         file_MB, total_MB, file_MB_lfs, total_MB_lfs = _get_size_values(git_files, git_lfs_files)
     
         config = get_path(paths, 'config')
-        config = yaml.load(open(config, 'rb'), Loader = yaml.Loader)
+        config = open_yaml(config)
         max_file_sizes = config['max_file_sizes']
         
         print_message = ''

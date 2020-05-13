@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+# -*- coding: utf-8 -*-
 from __future__ import absolute_import, division, print_function, unicode_literals
 from future.utils import raise_from, string_types
 from builtins import (bytes, str, open, super, range,
@@ -6,12 +6,34 @@ from builtins import (bytes, str, open, super, range,
 
 import os
 import re
+import io
+import sys
 import glob
-import traceback
+import yaml
+import codecs
 import filecmp
+import traceback
 
 import gslab_make.private.messages as messages
 from gslab_make.private.exceptionclasses import CritError
+
+
+def decode(string):
+    """Decode string."""
+
+    if (sys.version_info < (3, 0)) and isinstance(string, string_types):
+        string = codecs.decode(string, 'latin1')
+
+    return(string)
+
+
+def encode(string):
+    """Clean string for encoding."""
+
+    if (sys.version_info < (3, 0)) and isinstance(string, unicode):
+        string = codecs.encode(string, 'utf-8') 
+
+    return(string)
 
 
 def convert_to_list(obj, warning_type):
@@ -26,6 +48,7 @@ def convert_to_list(obj, warning_type):
             raise_from(TypeError(messages.type_error_file_list % obj), None)
 
     return(obj)
+
 
 def norm_path(path):
     """Normalize path to be OS-compatible."""
@@ -59,6 +82,10 @@ def get_path(paths_dict, key, throw_error = True):
     
     try:
         path = paths_dict[key]
+        if isinstance(path, string_types): 
+            path = norm_path(path) 
+        elif isinstance(path, list): 
+            path = [norm_path(p) for p in path]
     except KeyError:
         if throw_error:
             raise_from(CritError(messages.crit_error_no_key % (key, key)), None)
@@ -68,7 +95,7 @@ def get_path(paths_dict, key, throw_error = True):
     return(path)
 
 
-def glob_recursive(path, depth, quiet = True):
+def glob_recursive(path, depth, max_depth = 20, quiet = True):
     """Walks through path. 
     
     Notes
@@ -81,6 +108,8 @@ def glob_recursive(path, depth, quiet = True):
         Path to walk through.
     depth : int
         Level of depth when walking through path.
+    max_depth : int
+        Maximum level of depth allowed. Defaults to 20.
     quiet : bool, optional
         Suppress warning if no files globbed. Defaults to ``True``. 
 
@@ -90,6 +119,7 @@ def glob_recursive(path, depth, quiet = True):
         List of files contained in path.
     """
 
+    depth = max_depth if depth > max_depth else depth
     path_walk = norm_path(path)
     path_files = glob.glob(path_walk)
 
@@ -124,7 +154,7 @@ def file_to_array(file_name):
         List of lines contained in file.
     """
        
-    with open(file_name, 'r') as f:
+    with io.open(file_name, encoding = 'utf-8') as f:
         array = [line.strip() for line in f]
         array = [line for line in array if line]
         array = [line for line in array if not re.match('\#',line)]
@@ -153,7 +183,8 @@ def format_traceback(trace = ''):
     if not trace:
         trace = traceback.format_exc()
 
-    trace = '\n' + trace.strip()
+    trace = trace.strip()
+    trace = '\n' + decode(trace)
     formatted = re.sub('\n', '\n  > ', trace)
 
     return(formatted)
@@ -192,6 +223,18 @@ def format_list(list):
     formatted = ", ".join(formatted)
     
     return(formatted)
+
+
+def open_yaml(path):
+    """Safely loads YAML file."""
+
+    path = norm_path(path)
+
+    with io.open(path, 'r') as f:
+        stream = yaml.safe_load(f)
+
+    return(stream)
+
 
 # ~~~~~~~~~~ #
 # DEPRECATED #

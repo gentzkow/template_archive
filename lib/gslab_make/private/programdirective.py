@@ -1,12 +1,19 @@
-#! /usr/bin/env python
+# -*- coding: utf-8 -*-
 from __future__ import absolute_import, division, print_function, unicode_literals
-from future.utils import raise_from
+from future.utils import raise_from, string_types
 from builtins import (bytes, str, open, super, range,
                       zip, round, input, int, pow, object)
 
 import os
-import subprocess
+import io
+import sys
 import shutil
+import subprocess
+
+if (sys.version_info < (3, 0)) and (os.name == 'nt'):
+    import gslab_make.private.subprocess_fix as subprocess_fix
+else:
+    import subprocess as subprocess_fix
 
 from termcolor import colored
 import colorama
@@ -15,7 +22,7 @@ colorama.init()
 import gslab_make.private.messages as messages
 import gslab_make.private.metadata as metadata
 from gslab_make.private.exceptionclasses import CritError
-from gslab_make.private.utility import norm_path, format_list, format_traceback
+from gslab_make.private.utility import norm_path, format_list, format_traceback, encode, decode
 
 
 class Directive(object):
@@ -94,25 +101,27 @@ class Directive(object):
         """
         
         self.output = 'Executing command: `%s`' % command
-        print(colored(self.output, metadata.color_in_process))
 
         try:
             if not self.shell:
                 command = command.split()
-
-            process = subprocess.Popen(command, 
+            
+            process = subprocess_fix.Popen(command, 
                                        stdout = subprocess.PIPE, 
                                        stderr = subprocess.PIPE, 
                                        shell = self.shell, 
                                        universal_newlines = True)
+            process.wait()
             stdout, stderr = process.communicate()
             exit = (process.returncode, stderr)             
-             
+
             if stdout:
-               self.output += '\n' + stdout
+            	self.output += '\n' + decode(stdout)
             if stderr:
-               self.output += '\n' + stderr
-                            
+            	print(stderr)
+            	self.output += '\n' + decode(stderr)
+            	pass
+
             return(exit)
         except:
             error_message = messages.crit_error_bad_command % command
@@ -131,11 +140,11 @@ class Directive(object):
         if self.makelog: 
             if not (metadata.makelog_started and os.path.isfile(self.makelog)):
                 raise CritError(messages.crit_error_no_makelog % self.makelog)           
-            with open(self.makelog, 'a') as f:
+            with io.open(self.makelog, 'a', encoding = 'utf-8', errors = 'ignore') as f:
                 print(self.output, file = f)
 
         if self.log:
-            with open(self.log, 'w') as f:
+            with io.open(self.log, 'w', encoding = 'utf-8', errors = 'ignore') as f:
                 f.write(self.output)
 
 
@@ -268,7 +277,7 @@ class ProgramDirective(Directive):
         program_output = norm_path(program_output)
 
         try:
-            with open(program_output, 'r', encoding = 'utf8') as f:
+            with io.open(program_output, 'r', encoding = 'utf-8', errors = 'ignore') as f:
                 out = f.read()
         except:
             error_message = messages.crit_error_no_program_output % (program_output, self.program)
@@ -278,7 +287,7 @@ class ProgramDirective(Directive):
         if self.makelog: 
             if not (metadata.makelog_started and os.path.isfile(self.makelog)):
                 raise CritError(messages.crit_error_no_makelog % self.makelog)           
-            with open(self.makelog, 'a', encoding = 'utf8') as f:
+            with io.open(self.makelog, 'a', encoding = 'utf-8', errors = 'ignore') as f:
                 print(out, file = f)
 
         if log_file: 

@@ -1,10 +1,11 @@
-#! /usr/bin/env python
+# -*- coding: utf-8 -*-
 from __future__ import absolute_import, division, print_function, unicode_literals
-from future.utils import raise_from
+from future.utils import raise_from, string_types
 from builtins import (bytes, str, open, super, range,
                       zip, round, input, int, pow, object)
 
 import os
+import io
 import traceback
 
 from termcolor import colored
@@ -132,7 +133,7 @@ def _write_source_maplog(source_maplog, source_map):
     
     header = 'destination | source'
 
-    with open(source_maplog, 'w') as MAPLOG:
+    with io.open(source_maplog, 'w', encoding = 'utf-8', errors = 'ignore') as MAPLOG:
         print(header, file = MAPLOG)
 
         for source, destination in source_map:
