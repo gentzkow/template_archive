@@ -19,7 +19,7 @@ else:
 import gslab_make.private.messages as messages
 import gslab_make.private.metadata as metadata
 from gslab_make.private.exceptionclasses import CritError
-from gslab_make.private.utility import convert_to_list, norm_path, file_to_array, format_traceback, encode, decode
+from gslab_make.private.utility import convert_to_list, norm_path, file_to_array, format_traceback, decode
 
 
 class MoveDirective(object):

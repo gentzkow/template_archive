@@ -1,3 +1,5 @@
+## From https://gist.github.com/vaab/2ad7051fc193167f15f85ef573e54eb9
+
 ## issue: https://bugs.python.org/issue19264
 
 import os

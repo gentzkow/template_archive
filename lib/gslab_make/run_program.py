@@ -93,7 +93,6 @@ def run_jupyter(paths, program, timeout = None, kernel_name = ''):
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
 
-
 def run_lyx(paths, program, doctype = '', **kwargs): 
     """.. Run LyX script using system command.
 
@@ -155,9 +154,14 @@ def run_lyx(paths, program, doctype = '', **kwargs):
     try:
         makelog = get_path(paths, 'makelog')
         output_dir = get_path(paths, 'output_dir')
-        direct = LyXDirective(output_dir = output_dir, application = 'lyx', program = program, makelog = makelog, **kwargs)
+        direct = LyXDirective(output_dir = output_dir, 
+                              doctype = doctype,
+                              application = 'lyx', 
+                              program = program, 
+                              makelog = makelog, 
+                              **kwargs)
             
-        # Make handout/commented LyX file        
+        # Make handout/comments LyX file        
         if direct.doctype:
             temp_name = os.path.join(direct.program_name + '_' + direct.doctype)
             temp_program = os.path.join(direct.program_dir, temp_name + '.lyx') 
@@ -165,14 +169,15 @@ def run_lyx(paths, program, doctype = '', **kwargs):
             beamer = False
             shutil.copy2(direct.program, temp_program) 
 
-            # ACTION ITEM: DEBUG ANDREFACTOR
-            for line in fileinput.input(temp_program, inplace = True):
+            for line in fileinput.input(temp_program, inplace = True, backup = '.bak'):
                 if r'\textclass beamer' in line:
                     beamer = True          
                 if direct.doctype == 'handout' and beamer and (r'\options' in line):
                     line = line.rstrip('\n') + ', handout\n'
                 elif direct.doctype == 'comments' and (r'\begin_inset Note Note' in line):
                     line = line.replace('Note Note', 'Note Greyedout')
+                
+                print(line)
         else:
             temp_name = direct.program_name
             temp_program = direct.program
@@ -194,13 +199,113 @@ def run_lyx(paths, program, doctype = '', **kwargs):
             shutil.copy2(temp_pdf, output_pdf)
             os.remove(temp_pdf)
             
-        # Remove handout/commented LyX file
+        # Remove handout/comments LyX file
         if direct.doctype:
             os.remove(temp_program)
     except ProgramError:
         raise
     except:
         error_message = 'Error with `run_lyx`. Traceback can be found below.' 
+        error_message = format_message(error_message) 
+        write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
+        raise_from(ColoredError(error_message, traceback.format_exc()), None)
+
+
+def run_latex(paths, program, **kwargs): 
+    """.. Run LaTeX script using system command.
+
+    Compiles document ``program`` using system command, with document specified 
+    in the form of ``script.tex``. Status messages are appended to file ``makelog``. 
+    PDF outputs are written in directory ``output_dir``.
+
+    Parameters
+    ----------
+    paths : dict
+        Dictionary of paths. Dictionary should contain values for all keys listed below.
+    program : str
+        Path of script to run.
+
+    Path Keys
+    ---------
+    makelog : str
+        Path of makelog.
+    output_dir : str
+        Directory to write PDFs.
+
+    Note
+    ----
+    We recommend leaving all other parameters to their defaults.
+    
+    Note
+    ----
+    This function creates and removes a directory named ``latex_auxiliary_dir``.
+
+    Other Parameters
+    ----------------
+    osname : str, optional
+        Name of OS. Used to determine syntax of system command. Defaults to ``os.name``.
+    shell : `bool`, optional
+        See `here <https://docs.python.org/3/library/subprocess.html#frequently-used-arguments>`_. 
+        Defaults to ``True``.
+    log : str, optional
+        Path of program log. Program log is only written if specified. 
+        Defaults to ``''`` (i.e., not written). 
+    executable : str, optional
+        Executable to use for system command. 
+        Defaults to executable specified in :ref:`default settings<default settings>`.
+    option : str, optional
+        Options for system command. Defaults to options specified in :ref:`default settings<default settings>`.
+    args : str, optional
+        Not applicable.
+
+    Returns
+    -------
+    None
+
+    Example
+    -------
+    .. code-block:: python
+
+        run_latex(paths, program = 'script.tex')
+    """
+
+    try:
+        makelog = get_path(paths, 'makelog')
+        output_dir = get_path(paths, 'output_dir')
+        direct = LyXDirective(output_dir = output_dir, 
+                              application = 'latex', 
+                              program = program, 
+                              makelog = makelog, 
+                              **kwargs)
+            
+        temp_name = direct.program_name
+        temp_program = direct.program
+
+        # Generate folder for auxiliary files
+        os.mkdir('latex_auxiliary_dir')
+        
+        # Execute
+        command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.option, temp_program)
+        exit_code, stderr = direct.execute_command(command)
+        direct.write_log()
+        if exit_code != 0:
+            error_message = 'LaTeX program executed with errors. Traceback can be found below.'
+            error_message = format_message(error_message)
+            raise_from(ProgramError(error_message, stderr), None)
+
+        # Move PDF output
+        temp_pdf = os.path.join('latex_auxiliary_dir', temp_name + '.pdf')
+        output_pdf = os.path.join(direct.output_dir, direct.program_name + '.pdf')
+
+        if temp_pdf != output_pdf:
+            shutil.copy2(temp_pdf, output_pdf)
+            shutil.rmtree('latex_auxiliary_dir')
+        
+        # Remove auxiliary files
+    except ProgramError:
+        raise
+    except:
+        error_message = 'Error with `run_latex`. Traceback can be found below.' 
         error_message = format_message(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
@@ -259,7 +364,10 @@ def run_mathematica(paths, program, **kwargs):
     
     try:
         makelog = get_path(paths, 'makelog')
-        direct = ProgramDirective(application = 'math', program = program, makelog = makelog, **kwargs)
+        direct = ProgramDirective(application = 'math', 
+                                  program = program, 
+                                  makelog = makelog, 
+                                  **kwargs)
 
         # Execute
         command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.program, direct.option)
@@ -331,7 +439,10 @@ def run_matlab(paths, program, **kwargs):
 
     try:
         makelog = get_path(paths, 'makelog')
-        direct = ProgramDirective(application = 'matlab', program = program, makelog = makelog, **kwargs)
+        direct = ProgramDirective(application = 'matlab', 
+                                  program = program, 
+                                  makelog = makelog, 
+                                  **kwargs)
         
         # Get program output
         program_log = os.path.join(os.getcwd(), direct.program_name + '.log')
@@ -406,7 +517,10 @@ def run_perl(paths, program, **kwargs):
 
     try:
         makelog = get_path(paths, 'makelog')
-        direct = ProgramDirective(application = 'perl', program = program, makelog = makelog, **kwargs)
+        direct = ProgramDirective(application = 'perl', 
+                                  program = program, 
+                                  makelog = makelog, 
+                                  **kwargs)
         
         # Execute
         command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.option, direct.program, direct.args)
@@ -478,7 +592,10 @@ def run_python(paths, program, **kwargs):
 
     try:
         makelog = get_path(paths, 'makelog')
-        direct = ProgramDirective(application = 'python', program = program, makelog = makelog, **kwargs)
+        direct = ProgramDirective(application = 'python', 
+                                  program = program, 
+                                  makelog = makelog, 
+                                  **kwargs)
 
         # Execute
         command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.option, direct.program, direct.args)
@@ -550,7 +667,10 @@ def run_r(paths, program, **kwargs):
     
     try:
         makelog = get_path(paths, 'makelog')
-        direct = ProgramDirective(application = 'r', program = program, makelog = makelog, **kwargs)
+        direct = ProgramDirective(application = 'r', 
+                                  program = program, 
+                                  makelog = makelog, 
+                                  **kwargs)
 
         # Execute
         command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.option, direct.program)
@@ -625,7 +745,10 @@ def run_sas(paths, program, lst = '', **kwargs):
 
     try:
         makelog = get_path(paths, 'makelog')
-        direct = SASDirective(application = 'sas', program = program, makelog = makelog, **kwargs)
+        direct = SASDirective(application = 'sas', 
+                              program = program, 
+                              makelog = makelog, 
+                              **kwargs)
 
         # Get program outputs
         program_log = os.path.join(os.getcwd(), direct.program_name + '.log')
@@ -703,7 +826,10 @@ def run_stat_transfer(paths, program, **kwargs):
 
     try:
         makelog = get_path(paths, 'makelog')
-        direct = ProgramDirective(application = 'st', program = program, makelog = makelog, **kwargs)
+        direct = ProgramDirective(application = 'st', 
+                                  program = program, 
+                                  makelog = makelog, 
+                                  **kwargs)
 
         # Execute
         command = metadata.commands[direct.osname][direct.application] % (direct.executable, direct.program)
@@ -781,7 +907,10 @@ def run_stata(paths, program, **kwargs):
 
     try:
         makelog = get_path(paths, 'makelog')
-        direct = ProgramDirective(application = 'stata', program = program, makelog = makelog, **kwargs)
+        direct = ProgramDirective(application = 'stata', 
+                                  program = program, 
+                                  makelog = makelog, 
+                                  **kwargs)
 
         # Get program output (partial)
         program_name = direct.program.split(" ")[0]
@@ -954,4 +1083,5 @@ def run_module(root, module, build_script = 'make.py', osname = None):
 
 __all__ = ['run_stata', 'run_matlab', 'run_perl', 'run_python', 
            'run_jupyter', 'run_mathematica', 'run_stat_transfer', 
-           'run_lyx', 'run_r', 'run_sas', 'execute_command', 'run_module']
+           'run_lyx', 'run_latex', 'run_r', 'run_sas', 
+           'execute_command', 'run_module']

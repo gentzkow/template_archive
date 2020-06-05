@@ -22,7 +22,7 @@ colorama.init()
 import gslab_make.private.messages as messages
 import gslab_make.private.metadata as metadata
 from gslab_make.private.exceptionclasses import CritError
-from gslab_make.private.utility import norm_path, format_list, format_traceback, encode, decode
+from gslab_make.private.utility import norm_path, format_list, format_traceback, decode
 
 
 class Directive(object):
@@ -101,6 +101,7 @@ class Directive(object):
         """
         
         self.output = 'Executing command: `%s`' % command
+        print(colored(self.output, metadata.color_in_process))
 
         try:
             if not self.shell:
@@ -118,7 +119,6 @@ class Directive(object):
             if stdout:
             	self.output += '\n' + decode(stdout)
             if stderr:
-            	print(stderr)
             	self.output += '\n' + decode(stderr)
             	pass
 

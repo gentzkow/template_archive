@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
-Makelog started: 2020-05-12 19:56:24
+Makelog started: 2020-06-04 19:03:43
 Working directory: C:\Users\Zong\template\analysis
 --------------------------------------------------------------------------------
 Input links successfully created!
@@ -8,6 +8,6 @@ Source logs successfully written!
 Executing command: `python  "C:\Users\Zong\template\analysis\code\descriptive.py" `
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2020-05-12 19:56:30
+Makelog ended: 2020-06-04 19:03:46
 Working directory: C:\Users\Zong\template\analysis
 --------------------------------------------------------------------------------

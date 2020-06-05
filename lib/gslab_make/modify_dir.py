@@ -186,6 +186,7 @@ def clear_dir(dir_list):
         error_message = format_message(error_message) 
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
+
 def unzip(zip_path, output_dir):
     """.. Unzip file to directory.
 
