@@ -1,7 +1,9 @@
-#! /usr/bin/env python
+# -*- coding: utf-8 -*-
 from __future__ import absolute_import, division, print_function, unicode_literals
+from future.utils import raise_from, string_types
 from builtins import (bytes, str, open, super, range,
                       zip, round, input, int, pow, object)
+
         
 # ~~~~~~~~~~~~~~~ #
 # Define messages #
@@ -16,6 +18,9 @@ crit_error_no_makelog = \
     '- Makelog was not started (via `start_makelog`)\n' + \
     '- Makelog ended (via `end_makelog`) prematurely\n' + \
     '- Makelog deleted or moved after started'
+    
+# ACTION ITEM: `end_makelog` CURRENTLY DOESN'T ACTUALLY TURN MAKE LOG STATUS OFF
+    
 crit_error_no_program_output = \
     '\nERROR! Program output `%s` is expected from `%s` but cannot be found. ' + \
     'Certain applications (`matlab`, `sas`, `stata`) automatically create program outputs when run using system command. ' + \
@@ -32,6 +37,8 @@ crit_error_no_path = \
     '\nERROR! Path `%s` cannot be found.' 
 crit_error_no_path_wildcard = \
     '\nERROR! Paths matching pattern `%s` cannot be found.' 
+crit_error_no_attributes = \
+    '\nERROR! Cannot open git attributes file for repository. Confirm that repository has git attributes file.'
 crit_error_bad_command = \
     '\nERROR! The following command cannot be executed by operating system.\n' + \
     '  > %s\n' + \
@@ -52,13 +59,23 @@ crit_error_extension = \
     '\nERROR! Program `%s` does not have correct extension. ' + \
     'Program should have one of the following extensions: %s.' 
 crit_error_path_mapping = \
-    '\nERROR! Argument `path_mappings` is missing a value for key `%s`. ' + \
+    '\nERROR! Argument `paths` is missing a value for key `%s`. ' + \
     '`{%s}` found in the following instruction in file `%s`.\n' + \
     '  > %s\n' + \
-    'Confirm that your config user file contains an external dependency for {%s} and that it has been properly loaded (via `update_mappings`). ' + \
+    'Confirm that your config user file contains an external dependency for {%s} and that it has been properly loaded (via `update_paths`). ' + \
     'For further detail, refer to the traceback below.'
 crit_error_no_repo = \
     '\nERROR! Current working directory is not part of a git repository.'
+crit_error_not_float = \
+    '\nERROR! You are attempting to round or format a value (`%s`) that is not a number.'
+crit_error_no_input_table = \
+    '\nERROR! None of the inputs match the tab name for table `%s`.'
+crit_error_not_enough_values = \
+    '\nERROR! Not enough values in input for table `%s`.'
+crit_error_too_many_values = \
+    '\nERROR! Too many values in input for table `%s`.'
+crit_error_no_tag = \
+    '\nERROR! Input `%s` is missing a tab name.'
 
 # Syntax errors
 syn_error_wildcard = \
@@ -100,7 +117,7 @@ warning_git_lfs_file_log = \
 warning_git_lfs_repo = \
     '\nWARNING! Total size of files tracked by git-lfs exceed the repository config limit  (%s MB).'
 warning_copy = \
-    'To copy the following file, enter "yes". Otherwise, enter "no". ' + \
+    'To copy the following file, enter "Yes". Otherwise, enter "No". ' + \
     'Update any archives and documentation accordingly.\n' + \
     '> %s\n' + \
     'will be uploaded to\n' + \

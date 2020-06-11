@@ -1,17 +1,19 @@
-#! /usr/bin/env python
+# -*- coding: utf-8 -*-
 from __future__ import absolute_import, division, print_function, unicode_literals
+from future.utils import raise_from, string_types
 from builtins import (bytes, str, open, super, range,
                       zip, round, input, int, pow, object)
 
 import os
-import argparse
 import types
+import argparse
 import traceback
-try:
-	from html.parser import HTMLParser
-except:
-	from HTMLParser import HTMLParser
 from gslab_make.private.exceptionclasses import CritError
+
+try:
+    from html.parser import HTMLParser
+except:
+    from HTMLParser import HTMLParser
 
 import gslab_make.textfill_info as textfill_info
 

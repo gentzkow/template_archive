@@ -1,6 +1,6 @@
-#! /usr/bin/env python
+# -*- coding: utf-8 -*-
 from __future__ import absolute_import, division, print_function, unicode_literals
-from future.utils import raise_from
+from future.utils import raise_from, string_types
 from builtins import (bytes, str, open, super, range,
                       zip, round, input, int, pow, object)
 
@@ -8,7 +8,6 @@ import os
 import re
 import git
 import fnmatch
-import yaml
 import traceback
 
 from termcolor import colored
@@ -18,13 +17,15 @@ colorama.init()
 import gslab_make.private.metadata as metadata
 import gslab_make.private.messages as messages
 from gslab_make.private.exceptionclasses import CritError, ColoredError
-from gslab_make.private.utility import norm_path, get_path, format_message, glob_recursive
+from gslab_make.private.utility import norm_path, get_path, format_message, glob_recursive, open_yaml
 from gslab_make.write_logs import write_to_makelog
 
 
-def get_file_sizes(dir_path, exclude):
-    """ Walk through directory and get file sizes.
+def _get_file_sizes(dir_path, exclude):
+    """.. Walk through directory and get file sizes.
     
+    Get file sizes for files in directory ``dir_path``, ignoring subdirectories in list ``exclude``.
+
     Parameters
     ----------
     dir_path : str
@@ -35,7 +36,7 @@ def get_file_sizes(dir_path, exclude):
     Returns
     -------
     file_size : dict
-        Dictionary of {file : size} for each file in dir_path. 
+        Dictionary of ``{file : size}`` for each file in ``dir_path``. 
     """
 
     file_sizes = []
@@ -49,16 +50,18 @@ def get_file_sizes(dir_path, exclude):
         file_sizes.extend(zip(files, sizes))
         
     file_sizes = dict(file_sizes)
-
+    
     return(file_sizes)
 
      
-def get_git_ignore(repo):
-    """ Get files ignored by git.
+def _get_git_ignore(repo):
+    """.. Get files ignored by git.
     
+    Get files ignored by git for repository ``repo``.
+
     Parameters
     ----------
-    repo : git.Repo 
+    repo : :class:`git.Repo`
         Git repository to get ignored files.
 
     Returns
@@ -90,13 +93,15 @@ def get_git_ignore(repo):
     return(ignore_files)
 
 
-def parse_git_attributes(attributes): # TODO: WHAT IF MISSING ATTRIBUTES FILE?
-    """ Get git lfs patterns from .gitattributes.
-    
+def _parse_git_attributes(attributes):
+    """.. Get git lfs patterns from git attributes.
+
+    Get git lfs patterns from file ``attributes``.
+
     Parameters
     ----------
-    attributes : str 
-        Path to .gitattributes file.
+    attributes : str
+        Path of git attributes file.
 
     Returns
     -------
@@ -104,41 +109,45 @@ def parse_git_attributes(attributes): # TODO: WHAT IF MISSING ATTRIBUTES FILE?
         List of patterns to determine files tracked by git lfs. 
     """
 
-    with open(attributes) as f:
-        attributes_list = f.readlines()
+    try:
+        with open(attributes) as f:
+            attributes_list = f.readlines()
         
-        lfs_regex = 'filter=lfs( )+diff=lfs( )+merge=lfs( )+-text'      
-        lfs_list = [l for l in attributes_list if re.search(lfs_regex, l)]
-        lfs_list = [l.split()[0] for l in lfs_list] 
+            lfs_regex = 'filter=lfs( )+diff=lfs( )+merge=lfs( )+-text'      
+            lfs_list = [l for l in attributes_list if re.search(lfs_regex, l)]
+            lfs_list = [l.split()[0] for l in lfs_list] 
 
-    return(lfs_list)
+            return(lfs_list)
+    except IOError:
+        raise_from(CritError(messages.crit_error_no_attributes), None)
+    
 
-
-def check_path_lfs(path, lfs_list):
-    """ Check if file matches git lfs patterns."""
+def _check_path_lfs(path, lfs_list):
+    """.. Check if file matches git lfs patterns."""
 
     for l in lfs_list:
         if fnmatch.fnmatch(path, l):
-            return True
+            return(True)
             
-    return False
+    return(False)
 
 
-def get_dir_sizes(dir_path):
-    """ Get file sizes for directory.
+def _get_dir_sizes(dir_path):
+    """.. Get file sizes for directory.
     
+    Get file sizes for files in directory ``dir_path``.
+
     Parameters
     ----------
-    dir_path : str 
+    dir_path : str
         Path of directory to get file sizes.
 
     Returns
     -------
-    (git_files, git_lfs_files) : list
-        git_files : dict
-            Dictionary of {file : size} for each file tracked by git. 
-        git_lfs_files : dict
-            Dictionary of {file : size} for each file tracked by git lfs. 
+    git_files : dict
+        Dictionary of ``{file : size}`` for each file tracked by git. 
+    git_lfs_files : dict
+        Dictionary of ``{file : size}`` for each file tracked by git lfs. 
     """
 
     try:
@@ -147,8 +156,8 @@ def get_dir_sizes(dir_path):
     except:
         raise_from(CritError(messages.crit_error_no_repo), None)
 
-    git_files = get_file_sizes(dir_path, exclude = ['.git'])
-    git_ignore_files = get_git_ignore(repo)
+    git_files = _get_file_sizes(dir_path, exclude = ['.git'])
+    git_ignore_files = _get_git_ignore(repo)
 
     for ignore in git_ignore_files: 
         try:
@@ -156,38 +165,38 @@ def get_dir_sizes(dir_path):
         except KeyError:
             pass
     
-    lfs_list = parse_git_attributes(os.path.join(root, '.gitattributes'))
+    lfs_list = _parse_git_attributes(os.path.join(root, '.gitattributes'))
     git_lfs_files = dict()
     
     for key in list(git_files.keys()):
-        if check_path_lfs(key, lfs_list):         
+        if _check_path_lfs(key, lfs_list):         
             git_lfs_files[key] = git_files.pop(key)
         
     return(git_files, git_lfs_files)
 
 
-def get_size_values(git_files, git_lfs_files):
+def _get_size_values(git_files, git_lfs_files):
+    """.. Get file sizes for repository.
 
-    """ Get file sizes for repository.
-    
+    Get file sizes for files in dictionary ``git_files`` and dictionary ``git_lfs_files``.
+
     Parameters
     ----------
-        git_files : dict
-            Dictionary of {file : size} for each file tracked by git. 
-        git_lfs_files : dict
-            Dictionary of {file : size} for each file tracked by git lfs. 
+    git_files : dict
+        Dictionary of ``{file : size}`` for each file tracked by git. 
+    git_lfs_files : dict
+        Dictionary of ``{file : size}`` for each file tracked by git lfs. 
 
     Returns
     -------
-    (file_MB, total_MB, file_MB_lfs, total_MB_lfs) : list
-        file_MB : float
-            Size of largest file tracked by git in megabytes.
-        total_MB : float
-            Total size of files tracked by git.
-        file_MB : float
-            Size of largest file tracked by git lfs.
-        total_MB : float
-            Total size of files tracked by git lfs.
+    file_MB : float
+        Size of largest file tracked by git in megabytes.
+    total_MB : float
+        Total size of files tracked by git in megabytes.
+    file_MB : float
+        Size of largest file tracked by git lfs in megabytes.
+    total_MB : float
+        Total size of files tracked by git lfs in megabytes.
     """
 
     file_MB = max(git_files.values() or [0])
@@ -202,17 +211,30 @@ def get_size_values(git_files, git_lfs_files):
 
 
 def check_module_size(paths):
-    """ Check file sizes for module.
+    """.. Check file sizes for module.
+
+    Checks file sizes for files to be committed in the current working directory. 
+    Compares file sizes to size limits in file ``config`` and 
+    produces warnings if any of the following limits are exceeded.
+
+    - Individual size of a file tracked by git lfs (``file_MB_limit_lfs``)
+    - Total size of all files tracked by git lfs (``total_MB_limit_lfs``)
+    - Individual size of a file tracked by git (``file_MB_limit``)
+    - Total size of all files tracked by git (``total_MB_limit``)
+   
+    Warning messages are appended to file ``makelog``.
 
     Parameters
     ----------
     paths : dict 
-        Dictionary of paths. Dictionary should contain {
-            'config' : str
-                Path of config file.
-            'makelog' : str
-                Path of makelog.
-        }
+        Dictionary of paths. Dictionary should contain values for all keys listed below.
+
+    Path Keys
+    ---------
+    config : str
+        Path of project configuration file.   
+    makelog : str
+        Path of makelog.
 
     Returns
     -------
@@ -220,11 +242,11 @@ def check_module_size(paths):
     """
     
     try:
-        git_files, git_lfs_files = get_dir_sizes('.')
-        file_MB, total_MB, file_MB_lfs, total_MB_lfs = get_size_values(git_files, git_lfs_files)
+        git_files, git_lfs_files = _get_dir_sizes('.')
+        file_MB, total_MB, file_MB_lfs, total_MB_lfs = _get_size_values(git_files, git_lfs_files)
     
         config = get_path(paths, 'config')
-        config = yaml.load(open(config, 'rb'))
+        config = open_yaml(config)
         max_file_sizes = config['max_file_sizes']
         
         print_message = ''
@@ -266,12 +288,14 @@ def check_module_size(paths):
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
 
-def get_git_status(repo): 
-    """ Get git status.
+def _get_git_status(repo): 
+    """.. Get git status.
     
+    Get git status for repository ``repo``.
+
     Parameters
     ----------
-    repo : git.Repo 
+    repo : :class:`git.Repo `
         Git repository to show working tree status.
 
     Returns
@@ -292,30 +316,42 @@ def get_git_status(repo):
 
 
 def get_modified_sources(paths, 
-                         move_map, 
+                         source_map, 
                          depth = float('inf')):
-    """ Get source files considered changed by git status.
+    """.. Get source files considered changed by git.
+
+    Checks the modification status for all sources contained in list 
+    ``source_map`` (returned by :ref:`sourcing functions<sourcing functions>`). 
+    Produces warning if sources have been modified according to git. 
+    When walking through sources, float ``depth`` determines level of depth to walk. 
+    Warning messages are appended to file ``makelog``.
 
     Parameters
     ----------
-    paths : dict 
-        Dictionary of paths. Dictionary should contain {
-            'makelog' : str
-                Path of makelog.
-        }
-    move_map : list 
-        Mapping of symlinks/copies (destination) to sources (returned from `MoveList.create_symlinks` or `MoveList.create_copies`).
+    paths : dict
+        Dictionary of paths. Dictionary should contain values for all keys listed below.
+    source_map : list
+        Mapping of sources (returned from :ref:`sourcing functions<sourcing functions>`).
     depth : float, optional
         Level of depth when walking through source directories. Defaults to infinite.
+
+    Path Keys
+    ---------
+    makelog : str
+        Path of makelog.
 
     Returns
     -------
     overlap : list
-        List of source files considered changed by git status.
+        List of source files considered changed by git.
+
+    Notes
+    -----
+
     """
     
     try:
-        source_list = [source for source, destination in move_map]
+        source_list = [source for source, destination in source_map]
         source_list = [glob_recursive(source, depth) for source in source_list]
         source_files = [f for source in source_list for f in source]
         source_files = set(source_files)
@@ -324,7 +360,7 @@ def get_modified_sources(paths,
             repo = git.Repo('.', search_parent_directories = True)    
         except:
             raise_from(CritError(messages.crit_error_no_repo), None)
-        modified = get_git_status(repo)
+        modified = _get_git_status(repo)
 
         overlap = [l for l in source_files if l in modified] 
             
@@ -340,3 +376,5 @@ def get_modified_sources(paths,
         error_message = format_message(error_message) 
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
+
+__all__ = ['check_module_size', 'get_modified_sources']

@@ -1,10 +1,13 @@
 --------------------------------------------------------------------------------
-Makelog started: 2019-12-10 17:49:43
+Makelog started: 2020-06-10 20:24:33
 Working directory: C:\Users\Zong\template\data
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
+WARNING! The following target files have been modified according to git status:
+C:\Users\Zong\template\raw\tv.csv
+C:\Users\Zong\template\raw\chips.csv
 Executing command: `python  "C:\Users\Zong\template\data\code\merge_data.py" `
 Executing command: `python  "C:\Users\Zong\template\data\code\clean_data.py" `
 C:\Users\Zong\template\data\code\clean_data.py:17: SettingWithCopyWarning: 
@@ -15,6 +18,6 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2019-12-10 17:49:55
+Makelog ended: 2020-06-10 20:24:48
 Working directory: C:\Users\Zong\template\data
 --------------------------------------------------------------------------------

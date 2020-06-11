@@ -1,28 +1,37 @@
-#! /usr/bin/env python
+# -*- coding: utf-8 -*-
 from __future__ import absolute_import, division, print_function, unicode_literals
-from future.utils import raise_from
+from future.utils import raise_from, string_types
 from builtins import (bytes, str, open, super, range,
                       zip, round, input, int, pow, object)
 
 import os
 import re
+import sys
 import glob
 import subprocess
 from itertools import chain
 
+if (sys.version_info < (3, 0)) and (os.name == 'nt'):
+    import gslab_make.private.subprocess_fix as subprocess_fix
+else:
+    import subprocess as subprocess_fix
+    
 import gslab_make.private.messages as messages
 import gslab_make.private.metadata as metadata
 from gslab_make.private.exceptionclasses import CritError
-from gslab_make.private.utility import norm_path, file_to_array, format_traceback
+from gslab_make.private.utility import convert_to_list, norm_path, file_to_array, format_traceback, decode
 
 
 class MoveDirective(object):
-    """ 
+    """
     Directive for creating symbolic link or copy of data.
     
-    Notes
-    -----
+    Note
+    ----
     Parse line of text containing linking/copying instructions and represent as directive.
+
+    Note
+    ----
     Takes glob-style wildcards.
     
     Parameters
@@ -36,7 +45,7 @@ class MoveDirective(object):
     move_dir : str
         Directory to write symlink/copy.
     osname : str, optional
-        Name of OS. Defaults to `os.name`.
+        Name of OS. Defaults to ``os.name``.
 
     Attributes
     ----------
@@ -60,18 +69,18 @@ class MoveDirective(object):
         self.get_move_list()
 
     def check_os(self):
-        """ Check OS is either POSIX or NT.  
+        """Check OS is either POSIX or NT.  
                 
         Returns
         -------
         None
-        """      
+        """     
         
         if self.osname not in ['posix', 'nt']:
             raise CritError(messages.crit_error_unknown_system % self.osname)
 
     def get_paths(self):
-        """ Parse sources and destinations from line. 
+        """Parse sources and destinations from line. 
                 
         Returns
         -------
@@ -92,7 +101,7 @@ class MoveDirective(object):
         self.destination = norm_path(os.path.join(self.move_dir, self.destination))
 
     def check_paths(self):
-        """ Check sources and destination exist and have same number of wildcards. 
+        """Check sources and destination exist and have same number of wildcards. 
                 
         Returns
         -------
@@ -110,7 +119,7 @@ class MoveDirective(object):
                 raise CritError(messages.crit_error_no_path % self.source)
 
     def get_move_list(self):
-        """ Interpret wildcards to get list of paths that meet criteria. 
+        """Interpret wildcards to get list of paths that meet criteria. 
                 
         Returns
         -------
@@ -127,12 +136,12 @@ class MoveDirective(object):
         self.move_list = list(zip(self.source_list, self.destination_list))
 
     def extract_wildcards(self, f):
-        """ Extract wildcard characters from source path.
+        """Extract wildcard characters from source path.
     
         Notes
         -----
-        Suppose path `foo.py` and glob pattern `*.py`. 
-        The wildcard characters would therefore be `foo`.
+        Suppose path ``foo.py`` and glob pattern ``*.py``. 
+        The wildcard characters would therefore be ``foo``.
         
         Parameters
         ----------
@@ -150,13 +159,13 @@ class MoveDirective(object):
         regex = '(.*)'.join(regex) 
 
         wildcards = re.findall(regex, f) # Returns list if single match, list of set if multiple matches
-        wildcards = [(w, ) if isinstance(w, str) else w for w in wildcards]
+        wildcards = [(w, ) if isinstance(w, string_types) else w for w in wildcards]
         wildcards = chain(*wildcards)
 
-        return wildcards
+        return(wildcards)
 
     def fill_in_wildcards(self, wildcards):
-        """ Fill in wildcards for destination path.
+        """Fill in wildcards for destination path.
         
         Notes
         -----
@@ -166,7 +175,7 @@ class MoveDirective(object):
         Parameters
         ----------
         wildcards: iterator
-           Extracted wildcard characters (returned from `extract_wildcards`).
+           Extracted wildcard characters (returned from :func:`.extract_wildcards`).
         
         Returns
         -------
@@ -178,14 +187,10 @@ class MoveDirective(object):
         for w in wildcards:
             f = re.sub('\*', w, f, 1)
 
-        return f
+        return(f)
 
     def create_symlinks(self):
-        """ Create symlinks. 
-                
-        Parameters
-        ----------
-        None
+        """Create symlinks. 
 
         Returns
         -------
@@ -200,11 +205,7 @@ class MoveDirective(object):
         return(self.move_list)
 
     def create_copies(self):
-        """ Create copies. 
-                
-        Parameters
-        ----------
-        None
+        """Create copies. 
 
         Returns
         -------
@@ -219,12 +220,12 @@ class MoveDirective(object):
         return(self.move_list)
 
     def move_posix(self, movetype):   
-        """ Create symlinks/copies using POSIX shell command specified in metadata.  
+        """Create symlinks/copies using POSIX shell command specified in metadata.  
         
         Parameters
         ----------
     	movetype : str
-        	Type of file movement. Takes either `copy` or `symlink`. 
+        	Type of file movement. Takes either ``'copy'`` or ``'symlink'``. 
 
         Returns
         -------
@@ -237,11 +238,12 @@ class MoveDirective(object):
             elif movetype == 'symlink':
                 command = metadata.commands[self.osname]['makelink'] % (source, destination)
 
-            process = subprocess.Popen(command,
+            process = subprocess_fix.Popen(command,
                                        shell = True,
                                        stdout = subprocess.PIPE,
                                        stderr = subprocess.PIPE, 
                                        universal_newlines = True)
+            process.wait()
             stdout, stderr = process.communicate()
            
             if process.returncode != 0:
@@ -251,12 +253,12 @@ class MoveDirective(object):
 
 
     def move_nt(self, movetype):   
-        """ Create symlinks/copies using NT shell command specified in metadata. 
+        """Create symlinks/copies using NT shell command specified in metadata. 
         
         Parameters
         ----------
     	movetype : str
-        	Type of file movement. Takes either `copy` or `symlink`. 
+        	Type of file movement. Takes either ``'copy'`` or ``'symlink'``. 
 
         Returns
         -------
@@ -275,11 +277,12 @@ class MoveDirective(object):
             elif movetype == 'symlink':
                 command = metadata.commands[self.osname]['makelink'] % (link_option, destination, source)
 
-            process = subprocess.Popen(command,
+            process = subprocess_fix.Popen(command,
                                        shell = True,
                                        stdout = subprocess.PIPE,
                                        stderr = subprocess.PIPE, 
                                        universal_newlines = True)
+            process.wait()
             stdout, stderr = process.communicate()
            
             if process.returncode != 0:
@@ -289,7 +292,7 @@ class MoveDirective(object):
 
 
 class MoveList(object):
-    """ 
+    """
     List of move directives.
     
     Notes
@@ -325,25 +328,26 @@ class MoveList(object):
         self.get_move_directive_list()
 
     def parse_file_list(self): 
-        """ Parse wildcards in list of files. 
+        """Parse wildcards in list of files. 
                 
         Returns
         -------
         None
         """
-        
-        if type(self.file_list) is not list:
-            raise TypeError(messages.type_error_file_list % self.file_list)
 
-        file_list_parsed = [f for file in self.file_list for f in glob.glob(file)]   
-        if file_list_parsed:
-            self.file_list = file_list_parsed
-        else:
-            error_list = [str(f) for f in self.file_list]
-            raise CritError(messages.crit_error_no_files % error_list) 
+        if self.file_list:
+            self.file_list = convert_to_list(self.file_list, 'file')
+            self.file_list = [norm_path(file) for file in self.file_list]
+            
+            file_list_parsed = [f for file in self.file_list for f in glob.glob(file)]   
+            if file_list_parsed:
+                self.file_list = file_list_parsed
+            else:
+                error_list = [decode(f) for f in self.file_list]
+                raise CritError(messages.crit_error_no_files % error_list) 
 
     def get_paths(self):    
-        """ Normalize paths. 
+        """Normalize paths. 
                 
         Returns
         -------
@@ -354,7 +358,7 @@ class MoveList(object):
         self.file_list = [norm_path(f) for f in self.file_list]
 
     def get_move_directive_list(self):
-        """ Parse list of files to create symlink directives. 
+        """Parse list of files to create symlink directives. 
                 
         Returns
         -------
@@ -364,10 +368,10 @@ class MoveList(object):
         for file in self.file_list:
             for raw_line in file_to_array(file):
                 try:
-                    line = str(raw_line).format(**self.mapping_dict)
+                    line = raw_line.format(**self.mapping_dict)
                     lines.append((file, raw_line, line))
                 except KeyError as e:
-                    key = str(e).lstrip("u'").rstrip("'")
+                    key = decode(e).lstrip("u'").rstrip("'")
                     error_message = messages.crit_error_path_mapping % (key, key, file, raw_line, key)
                     error_message = error_message + format_traceback()
                     raise_from(CritError(error_message), None)
@@ -375,7 +379,7 @@ class MoveList(object):
         self.move_directive_list = [MoveDirective(file, raw_line, line, self.move_dir) for (file, raw_line, line) in lines]
 
     def create_symlinks(self):       
-        """ Create symlinks according to directives. 
+        """Create symlinks according to directives. 
         
         Returns
         -------
@@ -387,10 +391,10 @@ class MoveList(object):
         for move in self.move_directive_list:
             move_map.extend(move.create_symlinks())
             
-        return move_map
+        return(move_map)
 
     def create_copies(self):       
-        """ Create copies according to directives. 
+        """Create copies according to directives. 
         
         Returns
         -------
@@ -402,4 +406,4 @@ class MoveList(object):
         for move in self.move_directive_list:
             move_map.extend(move.create_copies())
             
-        return move_map
+        return(move_map)

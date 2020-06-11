@@ -29,8 +29,8 @@ def parse_yaml_files(config = '../config.yaml', config_user = '../config_user.ya
     if not os.path.isfile(config_user):
         shutil.copy('config_user_template.yaml', config_user)
 
-    config = yaml.load(open(config, 'rb'))
-    config_user = yaml.load(open(config_user, 'rb'))
+    config = yaml.load(open(config, 'rb'), Loader = yaml.Loader)
+    config_user = yaml.load(open(config_user, 'rb'), Loader = yaml.Loader)
 
     return(config, config_user)
 

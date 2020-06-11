@@ -4,38 +4,32 @@
 import git
 import imp
 import os
-import yaml
 
-# LOAD GSLAB MAKE
+### SET DEFAULT PATHS
 ROOT = git.Repo('.', search_parent_directories = True).working_tree_dir 
-f, path, desc = imp.find_module('gslab_make', [os.path.join(ROOT, 'lib')]) 
+
+PATHS = {
+    'root'             : ROOT,
+    'lib'              : os.path.join(ROOT, 'lib'),
+    'config'           : os.path.join(ROOT, 'config.yaml'),
+    'config_user'      : os.path.join(ROOT, 'config_user.yaml'),
+    'input_dir'        : 'input', 
+    'external_dir'     : 'external',
+    'output_dir'       : 'output',
+    'output_local_dir' : 'output_local',
+    'makelog'          : 'log/make.log',         
+    'output_statslog'  : 'log/output_stats.log', 
+    'source_maplog'    : 'log/source_map.log',  
+    'source_statslog'  : 'log/source_stats.log',
+}
+
+### LOAD GSLAB MAKE
+f, path, desc = imp.find_module('gslab_make', [PATHS['lib']]) 
 gs = imp.load_module('gslab_make', f, path, desc)
 
-# SET DEFAULT PATHS
-PATHS = {
-    'config'          : '../config.yaml',
-    'config_user'     : '../config_user.yaml',
-    'input_dir'       : 'input', 
-    'external_dir'    : 'external',
-    'output_dir'      : 'output/',
-    'output_local_dir': ['output_local'],       # Optional; include any local directories with outputs
-    'pdf_dir'         : 'output/',
-    'makelog'         : 'log/make.log',         # Set to '' to avoid writing log
-    'output_statslog' : 'log/output_stats.log', # Set to '' to avoid writing log
-    'output_headslog' : 'log/output_heads.log', # Set to '' to avoid writing log
-    'source_maplog'   : 'log/source_map.log',   # Set to '' to avoid writing log
-    'source_statslog' : 'log/source_stats.log', # Set to '' to avoid writing log
-    'source_headslog' : 'log/source_heads.log'  # Set to '' to avoid writing log
-}
-
-### SET PATH MAPPINGS
-PATH_MAPPINGS = { 
-    'root': ROOT
-}
-
 ### LOAD CONFIG USER 
+PATHS = gs.update_paths(PATHS)
 gs.update_executables(PATHS)
-PATH_MAPPINGS = gs.update_mappings(PATHS, PATH_MAPPINGS)
 
 ############
 ### MAKE ###
@@ -48,8 +42,8 @@ gs.clear_dir(['output', 'log'])
 gs.start_makelog(PATHS)
 
 ### GET INPUT FILES 
-inputs = gs.link_inputs(PATHS, ['input.txt'], PATH_MAPPINGS)
-externals = gs.link_externals(PATHS, ['external.txt'], PATH_MAPPINGS)
+inputs = gs.link_inputs(PATHS, ['input.txt'])
+externals = gs.link_externals(PATHS, ['external.txt'])
 gs.write_source_logs(PATHS, inputs + externals)
 gs.get_modified_sources(PATHS, inputs + externals)
 

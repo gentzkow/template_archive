@@ -1,22 +1,57 @@
-#! /usr/bin/env python
+# -*- coding: utf-8 -*-
 from __future__ import absolute_import, division, print_function, unicode_literals
-from future.utils import raise_from
+from future.utils import raise_from, string_types
 from builtins import (bytes, str, open, super, range,
                       zip, round, input, int, pow, object)
 
 import os
 import re
+import io
 import sys
 import glob
-import traceback
+import yaml
+import codecs
 import filecmp
+import traceback
 
 import gslab_make.private.messages as messages
 from gslab_make.private.exceptionclasses import CritError
 
 
+def decode(string):
+    """Decode string."""
+
+    if (sys.version_info < (3, 0)) and isinstance(string, string_types):
+        string = codecs.decode(string, 'latin1')
+
+    return(string)
+
+
+def encode(string):
+    """Clean string for encoding."""
+
+    if (sys.version_info < (3, 0)) and isinstance(string, unicode):
+        string = codecs.encode(string, 'utf-8') 
+
+    return(string)
+
+
+def convert_to_list(obj, warning_type):
+    """Convert object to list."""
+    
+    obj = [obj] if isinstance(obj, string_types) else obj
+    
+    if type(obj) is not list:
+        if (warning_type == 'dir'):
+            raise_from(TypeError(messages.type_error_dir_list % obj), None)
+        elif (warning_type == 'file'):
+            raise_from(TypeError(messages.type_error_file_list % obj), None)
+
+    return(obj)
+
+
 def norm_path(path):
-    """ Normalizes path to be OS-compatible. """
+    """Normalize path to be OS-compatible."""
 
     if path:
         path = re.split('[/\\\\]+', path)
@@ -24,22 +59,44 @@ def norm_path(path):
         path = os.path.expanduser(path)
         path = os.path.abspath(path)
 
-    return path
+    return(path)
 
 
-def get_path(paths_dict, key):
-    """ Get path for key. """
+def get_path(paths_dict, key, throw_error = True):
+    """Get path for key.
 
+    Parameters
+    ----------
+    path_dict : dict
+        Dictionary of paths.
+    key : str
+        Path to get from dictionary.
+    throw_error : bool
+        Return error instead of ``None``. Defaults to ``True``. 
+
+    Returns
+    -------
+    path : str
+        Path requested.
+    """
+    
     try:
         path = paths_dict[key]
+        if isinstance(path, string_types): 
+            path = norm_path(path) 
+        elif isinstance(path, list): 
+            path = [norm_path(p) for p in path]
     except KeyError:
-        raise_from(CritError(messages.crit_error_no_key % (key, key)), None)
+        if throw_error:
+            raise_from(CritError(messages.crit_error_no_key % (key, key)), None)
+        else:
+            path = None
 
     return(path)
 
 
-def glob_recursive(path, depth, quiet = True):
-    """ Walks through path. 
+def glob_recursive(path, depth, max_depth = 20, quiet = True):
+    """Walks through path. 
     
     Notes
     -----
@@ -51,8 +108,10 @@ def glob_recursive(path, depth, quiet = True):
         Path to walk through.
     depth : int
         Level of depth when walking through path.
+    max_depth : int
+        Maximum level of depth allowed. Defaults to 20.
     quiet : bool, optional
-        Suppress warning if no files globbed. Defaults to True. 
+        Suppress warning if no files globbed. Defaults to ``True``. 
 
     Returns
     -------
@@ -60,10 +119,11 @@ def glob_recursive(path, depth, quiet = True):
         List of files contained in path.
     """
 
+    depth = max_depth if depth > max_depth else depth
     path_walk = norm_path(path)
     path_files = glob.glob(path_walk)
 
-    i = 0 
+    i = 0     
     while i <= depth:          
         path_walk = os.path.join(path_walk, "*")
         glob_files = glob.glob(path_walk)
@@ -74,15 +134,14 @@ def glob_recursive(path, depth, quiet = True):
             break
 
     path_files = [p for p in path_files if os.path.isfile(p)]
-    
     if not path_files and not quiet:
         print(messages.warning_glob % (path, depth))
 
-    return path_files
+    return(path_files)
 
  
 def file_to_array(file_name):
-    """ Read file and extract lines to list. 
+    """Read file and extract lines to list. 
 
     Parameters
     ----------
@@ -95,25 +154,25 @@ def file_to_array(file_name):
         List of lines contained in file.
     """
        
-    with open(file_name, 'r') as f:
+    with io.open(file_name, encoding = 'utf-8') as f:
         array = [line.strip() for line in f]
         array = [line for line in array if line]
         array = [line for line in array if not re.match('\#',line)]
 
-    return array
+    return(array)
 
 
 def format_traceback(trace = ''):
-    """ Format traceback message.
+    """Format traceback message.
 
     Parameters
     ----------
     trace : str
-        Traceback to format. Defaults to `traceback.format_exc()`.
+        Traceback to format. Defaults to ``traceback.format_exc``.
 
     Notes
     -----
-    Format traceback for readability to pass into user messages. 
+    Format trackback for readability to pass into user messages. 
 
     Returns
     -------
@@ -124,14 +183,15 @@ def format_traceback(trace = ''):
     if not trace:
         trace = traceback.format_exc()
 
-    trace = '\n' + trace.strip()
+    trace = trace.strip()
+    trace = '\n' + decode(trace)
     formatted = re.sub('\n', '\n  > ', trace)
 
     return(formatted)
 
 
 def format_message(message):
-    """ Format message. """
+    """Format message."""
 
     message = message.strip()
     star_line = '*' * (len(message) + 4)
@@ -142,7 +202,7 @@ def format_message(message):
 
 
 def format_list(list):
-    """ Format list. 
+    """Format list. 
 
     Parameters
     ----------
@@ -165,26 +225,23 @@ def format_list(list):
     return(formatted)
 
 
-def string_encode(string, encoding = ''):
-    if (sys.version_info < (3, 0)):
-        string = string.encode('utf-8')  
+def open_yaml(path):
+    """Safely loads YAML file."""
 
-    return(string)
+    path = norm_path(path)
 
+    with io.open(path, 'r') as f:
+        stream = yaml.safe_load(f)
 
-def string_decode(string, encoding = ''):
-    if (sys.version_info < (3, 0)):
-        string = string.decode('utf-8')  
-
-    return(string)
+    return(stream)
 
 
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
-# Following functions are not currently actively used in code base #
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
+# ~~~~~~~~~~ #
+# DEPRECATED #
+# ~~~~~~~~~~ #
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 def check_duplicate(original, copy): 
-    """ Check duplicate.
+    """Check duplicate.
 
     Parameters
     ----------
@@ -210,15 +267,15 @@ def check_duplicate(original, copy):
         else:
             duplicate = False
             
-    return duplicate
+    return(duplicate)
     
 
 def parse_dircmp(dircmp):
-    """ Parse dircmp to see if directories duplicate. 
+    """Parse dircmp to see if directories duplicate. 
 
     Parameters
     ----------
-    dircmp : filecmp.dircmp
+    dircmp : ``filecmp.dircmp``
         dircmp to parse if directories duplicate.
 
     Returns
@@ -248,4 +305,4 @@ def parse_dircmp(dircmp):
         else:
             break
         
-    return duplicate
+    return(duplicate)
