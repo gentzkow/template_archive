@@ -78,22 +78,18 @@ def _get_git_ignore(repo):
     ignore = [i.lstrip('!!').strip() for i in ignore]
     ignore = [os.path.join(root, i) for i in ignore]
 
-    ignore_dirs = []
     ignore_files = []
 
     for i in ignore:
-        if os.path.isdir(i):
-            ignore_dirs.append(i)
-        elif os.path.isfile(i):
+        if os.path.isfile(i):
             ignore_files.append(i)
-
-    for i in ignore_dirs:
-        for root, dirs, files in os.walk(i):
-            files = [os.path.join(root, f) for f in files]
-            ignore_files.extend(files)
+        elif os.path.isdir(i):
+            for root, dirs, files in os.walk(i):
+                files = [os.path.join(root, f) for f in files]
+                ignore_files.extend(files)
 
     ignore_files = [norm_path(i) for i in ignore_files]
-
+    
     return(ignore_files)
 
 

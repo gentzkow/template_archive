@@ -1,12 +1,13 @@
 --------------------------------------------------------------------------------
-Makelog started: 2020-06-04 19:03:47
+Makelog started: 2020-06-10 20:25:06
 Working directory: C:\Users\Zong\template\paper_slides
 --------------------------------------------------------------------------------
 Input copies successfully created!
 External copies successfully created!
 Source logs successfully written!
 WARNING! The following target files have been modified according to git status:
-C:\Users\Zong\template\analysis\output\plot.eps
+C:\Users\Zong\template\analysis\output\regression.csv
+C:\Users\Zong\template\data\output\chips_sold.pdf
 Executing command: `lyx2.3 -e pdf2 "C:\Users\Zong\template\paper_slides\code\paper.lyx"`
 This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit)
 
@@ -28,8 +29,6 @@ LaTeX2e <2018-04-01> patch level 5
 
 
 
-
-epstopdf: warning: running with administrator privileges
 
 pdflatex: warning: running with administrator privileges
 
@@ -146,6 +145,6 @@ pdflatex: warning: running with administrator privileges
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2020-06-04 19:04:07
+Makelog ended: 2020-06-10 20:25:51
 Working directory: C:\Users\Zong\template\paper_slides
 --------------------------------------------------------------------------------

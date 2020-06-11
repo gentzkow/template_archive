@@ -127,7 +127,6 @@ class Directive(object):
             error_message = messages.crit_error_bad_command % command
             error_message = error_message + format_traceback()
             raise_from(CritError(error_message), None)
-             
 
     def write_log(self):
         """Write logs for shell command.
@@ -233,7 +232,6 @@ class ProgramDirective(Directive):
         if self.program_ext not in metadata.extensions[self.application]:
             extensions = format_list(metadata.extensions[self.application])
             raise CritError(messages.crit_error_extension % (self.program, extensions))
-
 
     def get_executable(self):
         """Set executable to default from metadata if unspecified.

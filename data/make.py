@@ -38,6 +38,7 @@ gs.update_executables(PATHS)
 ### START MAKE
 gs.remove_dir(['input', 'external'])
 gs.clear_dir(['output', 'log'])
+# gs.clear_dir(['temp']) # Uncomment for Stata scripts
 gs.start_makelog(PATHS)
 
 ### GET INPUT FILES 
@@ -47,8 +48,8 @@ gs.write_source_logs(PATHS, inputs + externals)
 gs.get_modified_sources(PATHS, inputs + externals)
 
 ### RUN SCRIPTS
-gs.run_r(PATHS, program = 'code/create_table_data.r')
-gs.run_stata(PATHS, program = 'code/create_graph_data.do')
+gs.run_python(PATHS, 'code/merge_data.py')
+gs.run_python(PATHS, 'code/clean_data.py')
 
 ### LOG OUTPUTS
 gs.log_files_in_output(PATHS)

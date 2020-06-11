@@ -1,13 +1,19 @@
 --------------------------------------------------------------------------------
-Makelog started: 2020-06-04 19:03:43
+Makelog started: 2020-06-10 20:24:51
 Working directory: C:\Users\Zong\template\analysis
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
-Executing command: `python  "C:\Users\Zong\template\analysis\code\descriptive.py" `
+WARNING! The following target files have been modified according to git status:
+C:\Users\Zong\template\data\output\data_cleaned.csv
+Executing command: `python  "C:\Users\Zong\template\analysis\code\analyze_data.py" `
+C:\Users\Zong\Anaconda3\lib\site-packages\linearmodels\utility.py:478: MissingValueWarning: 
+Inputs contain missing values. Dropping rows with missing observations.
+  warnings.warn(missing_value_warning_msg, MissingValueWarning)
+
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2020-06-04 19:03:46
+Makelog ended: 2020-06-10 20:25:03
 Working directory: C:\Users\Zong\template\analysis
 --------------------------------------------------------------------------------

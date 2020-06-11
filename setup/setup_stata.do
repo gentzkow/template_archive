@@ -35,8 +35,8 @@ program main
 	capture which preliminaries
 	if _rc == 111 {
         quietly net from "https://raw.githubusercontent.com/gslab-econ/gslab_stata/master/gslab_misc/ado"
-        quietly cap net uninstall matrix_to_txt
-        quietly net install matrix_to_txt
+        quietly cap net uninstall preliminaries
+        quietly net install preliminaries
 	}	
 	
 	capture which grc1leg
@@ -47,3 +47,4 @@ program main
 	}
 end
 
+main

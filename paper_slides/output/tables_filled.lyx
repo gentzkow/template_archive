@@ -1,6 +1,6 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
 
-\lyxformat 508
+\lyxformat 544
 
 \begin_document
 
@@ -43,6 +43,10 @@
 \font_sf_scale 100 100
 
 \font_tt_scale 100 100
+
+\use_microtype false
+
+\use_dash_ligatures true
 
 \graphics default
 
@@ -104,6 +108,8 @@
 
 \use_refstyle 0
 
+\use_minted 0
+
 \index Index
 
 \shortcut idx
@@ -128,7 +134,13 @@
 
 \paragraph_indentation default
 
-\quotes_language english
+\is_math_indent 0
+
+\math_numbering_side default
+
+\quotes_style english
+
+\dynamic_quotes 0
 
 \papercolumns 1
 
@@ -184,7 +196,7 @@ Table Title
 
 LatexCommand label
 
-name "tab:table"
+name "tab:regression"
 
 
 
@@ -222,7 +234,7 @@ name "tab:table"
 
 \begin_inset Tabular
 
-<lyxtabular version="3" rows="5" columns="2">
+<lyxtabular version="3" rows="2" columns="4">
 
 <features tabularvalignment="middle">
 
@@ -230,6 +242,10 @@ name "tab:table"
 
 <column alignment="center" valignment="top">
 
+<column alignment="center" valignment="top">
+
+<column alignment="center" valignment="top">
+
 <row>
 
 <cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
@@ -258,7 +274,13 @@ name "tab:table"
 
 \begin_layout Plain Layout
 
-Count
+\begin_inset Formula $\beta$
+
+\end_inset
+
+
+
+
 
 \end_layout
 
@@ -268,11 +290,7 @@ Count
 
 </cell>
 
-</row>
-
-<row>
-
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 
 \begin_inset Text
 
@@ -280,7 +298,9 @@ Count
 
 \begin_layout Plain Layout
 
-Mean
+Std.
+
+ Err.
 
 \end_layout
 
@@ -290,7 +310,7 @@ Mean
 
 </cell>
 
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 
 \begin_inset Text
 
@@ -298,87 +318,7 @@ Mean
 
 \begin_layout Plain Layout
 
-300001.00
-
-\end_layout
-
-
-
-\end_inset
-
-</cell>
-
-</row>
-
-<row>
-
-<cell alignment="center" valignment="top" usebox="none">
-
-\begin_inset Text
-
-
-
-\begin_layout Plain Layout
-
-SD
-
-\end_layout
-
-
-
-\end_inset
-
-</cell>
-
-<cell alignment="center" valignment="top" usebox="none">
-
-\begin_inset Text
-
-
-
-\begin_layout Plain Layout
-
-173205.37
-
-\end_layout
-
-
-
-\end_inset
-
-</cell>
-
-</row>
-
-<row>
-
-<cell alignment="center" valignment="top" usebox="none">
-
-\begin_inset Text
-
-
-
-\begin_layout Plain Layout
-
-Max
-
-\end_layout
-
-
-
-\end_inset
-
-</cell>
-
-<cell alignment="center" valignment="top" usebox="none">
-
-\begin_inset Text
-
-
-
-\begin_layout Plain Layout
-
-600000
+p-value
 
 \end_layout
 
@@ -400,7 +340,7 @@ Max
 
 \begin_layout Plain Layout
 
-Min
+Post-TV
 
 \end_layout
 
@@ -418,7 +358,43 @@ Min
 
 \begin_layout Plain Layout
 
-2
+4,960.73
+
+\end_layout
+
+
+
+\end_inset
+
+</cell>
+
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+
+\begin_inset Text
+
+
+
+\begin_layout Plain Layout
+
+12.24
+
+\end_layout
+
+
+
+\end_inset
+
+</cell>
+
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+
+\begin_inset Text
+
+
+
+\begin_layout Plain Layout
+
+0.00
 
 \end_layout
 

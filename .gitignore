@@ -4,6 +4,7 @@
 # `/external/` and `/input/` subdirectories are ignored as they should contain symbolic links, which are user-specific and can be automatically created via `gslab_make`
 *external/
 *input/
+
 # One exception is for `paper_slides`, where copies instead of symbolic links are created
 !*paper_slides/external/
 !*paper_slides/input/
