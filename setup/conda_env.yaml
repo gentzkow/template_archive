@@ -1,0 +1,19 @@
+name: template #CHANGE for your project
+channels:
+  - conda-forge
+dependencies:
+  - python=3.7
+  - pyyaml # import python packages by naming them as dependencies and potentially specifying version numbers
+  - numpy
+  - matplotlib
+  - gitpython
+  - termcolor
+  - colorama
+  - jupyter
+  - future
+  - linearmodels
+  - pip=19
+  - r=3.6
+  - r-yaml # import r packages by prepending with "r-""
+  # - pip: # if there is a package available via pip but not with conda, can import like this:
+  #     - EXAMPLE_PACKAGE

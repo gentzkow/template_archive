@@ -20,6 +20,24 @@ These software are used by the scripts contained in the repository. By default, 
 
 1. Create a `config_user.yaml` file in the root directory. A template can be found in the `setup` subdirectory. See the **User Configuration** section below for further detail.
 
+2. If you already have conda setup on your local machine, feel free to skip this step. If not, this will install a lightweight version of conda that will not interfere with your current python and R installations.
+Install miniconda and jdk to be used to manage the R/Python virtual environment, if you have not already done this. One easy way to do this is with homebrew, which if you do not have can be download [here](https://brew.sh/), or with your local package manager:
+   ```
+   brew cask install miniconda
+   brew cask install oracle-jdk
+   ```
+Once you have done this you need to initialize conda by running the following lines and restarting your terminal:
+   ```
+   conda config --set auto_activate_base false
+   conda init $(echo $0 | cut -d'-' -f 2)
+   ```
+
+3. Create conda environment with the command:
+   ```
+   conda env create -f setup/conda_env.yaml
+   ```
+
+
 2. Install Python dependencies listed in the `requirements.txt` file using pip. One way to do this is to run the following bash command in a terminal from the `setup` subdirectory:
    ```
    python -m pip install --user -r requirements.txt
