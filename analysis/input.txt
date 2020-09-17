@@ -15,4 +15,5 @@
 # This will create a file in `paths['input_dir']` named `destination` that is a copy of `source`.
 
 # Destination    | Source
+lib              | {root}/lib
 data_cleaned.csv | {root}/data/output/data_cleaned.csv

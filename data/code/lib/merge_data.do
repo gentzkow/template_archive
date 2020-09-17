@@ -1,3 +1,11 @@
+***************
+* Environment *
+***************
+
+clear all
+adopath + "input/lib/stata"
+standardize_env
+
 program main
 	import_chips
 	import_tv
