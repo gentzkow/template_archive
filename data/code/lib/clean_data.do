@@ -1,3 +1,11 @@
+***************
+* Environment *
+***************
+
+clear all
+adopath + "input/lib/stata"
+standardize_env
+
 program main
   import delim using "output/data_merged.csv", clear
   plot_data

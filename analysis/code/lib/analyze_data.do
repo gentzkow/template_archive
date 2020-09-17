@@ -1,3 +1,15 @@
+***************
+* Environment *
+***************
+
+clear all
+adopath + "input/lib/stata"
+standardize_env
+
+***********
+* Program *
+***********
+
 program main
 	import_data
 	run_regression
