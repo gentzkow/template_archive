@@ -51,7 +51,7 @@ Once you have done this you need to initialize conda by running the following li
    python check_setup.py
    ```
 
-5. Install Stata dependencies using the `setup_stata.do` file. One way to do this is to use the following bash command from the `setup` subdirectory:
+5. Install Stata dependencies using the `setup_stata.do` file. We keep all non-base Stata ado files in the `lib` subdirectory, so even if you normally have a program installed, it will be re-installed. One way to download these stata dependencies is to use the following bash command from the `setup` subdirectory:
    ```
    stata-mp -e setup_stata.do
    ```

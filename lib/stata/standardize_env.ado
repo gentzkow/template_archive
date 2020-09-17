@@ -1,4 +1,6 @@
-program standardize_ado
+program standardize_env
+	version 15
+
 	*  Remove all non-base paths from the ado path
 	adopath - PERSONAL
 	adopath - PLUS

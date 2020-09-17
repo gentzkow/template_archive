@@ -1,6 +1,8 @@
 clear all
 set more off, perm
 
+version 15
+
 adopath - PERSONAL
 adopath - OLDPLACE
 adopath - SITE
