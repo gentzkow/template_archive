@@ -1,6 +1,12 @@
 clear all
 set more off, perm
 
+adopath - PERSONAL
+adopath - OLDPLACE
+adopath - SITE
+
+sysdir set PLUS "../lib/ado"
+
 program main
 	* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	* Add required packages from SSC to this list

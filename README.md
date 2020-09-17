@@ -1,11 +1,20 @@
 # README
 
+## Usage
+
+Once you have succesfully completed the **Setup** section below before running any analysis make sure the virtual environment associated with this project is activated, using the command below (replacing with the name of this project).
+```
+   conda activate PROJECT_NAME
+``` 
+If you wish to return to your base installation of python and R you can easily deactivate this virtual environment using the command below:
+```
+   conda deactivate
+``` 
+
 ## Requirements
 All requirements must be installed and set up for command line usage. For further detail, see the **Command Line Usage** section below.
 
-* Python (2.7/3.7)
-* pip (>=10.0)
-
+We manage Python and R installations using miniconda. 
 To build the repository as-is, the following applications are additionally required:
 
 * git-lfs
@@ -21,7 +30,7 @@ These software are used by the scripts contained in the repository. By default, 
 1. Create a `config_user.yaml` file in the root directory. A template can be found in the `setup` subdirectory. See the **User Configuration** section below for further detail.
 
 2. If you already have conda setup on your local machine, feel free to skip this step. If not, this will install a lightweight version of conda that will not interfere with your current python and R installations.
-Install miniconda and jdk to be used to manage the R/Python virtual environment, if you have not already done this. One easy way to do this is with homebrew, which if you do not have can be download [here](https://brew.sh/), or with your local package manager:
+Install miniconda and jdk to be used to manage the R/Python virtual environment, if you have not already done this. One easy way to do this is with homebrew, which if you do not have can be download [here](https://brew.sh/), from their websites [here](https://docs.conda.io/en/latest/miniconda.html) and [here](https://www.oracle.com/java/technologies/javase-downloads.html) or with your local package manager as follows:
    ```
    brew cask install miniconda
    brew cask install oracle-jdk
@@ -37,18 +46,12 @@ Once you have done this you need to initialize conda by running the following li
    conda env create -f setup/conda_env.yaml
    ```
 
-
-2. Install Python dependencies listed in the `requirements.txt` file using pip. One way to do this is to run the following bash command in a terminal from the `setup` subdirectory:
-   ```
-   python -m pip install --user -r requirements.txt
-   ```
-
-3. Run the `check_setup.py` file. One way to do this is to run the following bash command in a terminal from the `setup` subdirectory:
+4. Run the `check_setup.py` file. One way to do this is to run the following bash command in a terminal from the `setup` subdirectory:
    ```
    python check_setup.py
    ```
 
-4. Install Stata dependencies using the `setup_stata.do` file. One way to do this is to use the following bash command from the `setup` subdirectory:
+5. Install Stata dependencies using the `setup_stata.do` file. One way to do this is to use the following bash command from the `setup` subdirectory:
    ```
    stata-mp -e setup_stata.do
    ```
@@ -64,7 +67,7 @@ Once you have done this you need to initialize conda by running the following li
    StataMP-64 -e setup_stata.do
    ```
 
-5. Install R dependencies using the `setup_r.r` file. One way to do this is to run the following bash command in a terminal from the `setup` subdirectory:
+6. Install R dependencies that cannot be managed using conda with the `setup_r.r` file. One way to do this is to run the following bash command in a terminal from the `setup` subdirectory:
    ```
    Rscript setup_r.r
    ```
@@ -120,6 +123,8 @@ Required applications may be set up for command line usage on your computer with
 <img src="https://imgs.xkcd.com/comics/python_environment_2x.png" width="400" height="400">
 
 <br>
+
+In order to solve this problem, we try to isolate the python environment by creating a virtual environment in conda, so the python packages are written directly to locations managed by conda. If you run into any issues downloading packages with conda, you can use python's pip as follows:
 
 The standard bash command for pip installing `requirements.txt` often runs into issues as depending on your Python environment, pip will attempt to install to a root directory (i.e., a directory that by default you should not have write permission)
 ```
