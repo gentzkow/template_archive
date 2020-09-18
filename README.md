@@ -1,16 +1,5 @@
 # README
 
-## Usage
-
-Once you have succesfully completed the **Setup** section below before running any analysis make sure the virtual environment associated with this project is activated, using the command below (replacing with the name of this project).
-```
-   conda activate PROJECT_NAME
-``` 
-If you wish to return to your base installation of python and R you can easily deactivate this virtual environment using the command below:
-```
-   conda deactivate
-``` 
-
 ## Requirements
 All requirements must be installed and set up for command line usage. For further detail, see the **Command Line Usage** section below.
 
@@ -71,6 +60,17 @@ Once you have done this you need to initialize conda by running the following li
    ```
    Rscript setup_r.r
    ```
+   
+## Usage
+
+Once you have succesfully completed the **Setup** section above, each time that you run any analysis make sure the virtual environment associated with this project is activated, using the command below (replacing with the name of this project).
+```
+   conda activate PROJECT_NAME
+``` 
+If you wish to return to your base installation of python and R you can easily deactivate this virtual environment using the command below:
+```
+   conda deactivate
+``` 
 
 ## Build
 **If you are using Windows, you may need to run certain bash commands in administrator mode due to permission errors. To do so, open your terminal by right clicking and selecting `Run as administrator`. To set administrator mode on permanently, refer to the [RA manual](https://github.com/gentzkow/template/wiki/Repository-Usage#Administrator-Mode).**
