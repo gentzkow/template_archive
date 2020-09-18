@@ -131,12 +131,7 @@ The standard bash command for pip installing `requirements.txt` often runs into 
 python -m pip install -r requirements.txt
 ```
 
-One way to get around this is to include `sudo` (or the Windows equivalent of running in administrative mode) in your bash command.
-```
-sudo python -m pip install -r requirements.txt
-```
-
-However, we caution against this (in particular for Macs) given the potential security risks. Instead, we recommend including the `--user` flag to your bash command.
+We recommend including the `--user` flag to your bash command.
 ```
 python -m pip install --user -r requirements.txt
 ```
