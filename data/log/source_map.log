@@ -1,3 +1,4 @@
 destination | source
-input\tv.csv | C:\Users\Zong\template\raw\tv.csv
-input\chips.csv | C:\Users\Zong\template\raw\chips.csv
+input/lib | /Users/zanekashner/Desktop/gentzkow_template/lib
+input/tv.csv | /Users/zanekashner/Desktop/gentzkow_template/raw/tv.csv
+input/chips.csv | /Users/zanekashner/Desktop/gentzkow_template/raw/chips.csv
