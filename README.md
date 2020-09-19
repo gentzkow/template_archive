@@ -124,19 +124,20 @@ Required applications may be set up for command line usage on your computer with
 
 <br>
 
-In order to solve this problem, we try to isolate the python environment by creating a virtual environment in conda, so the python packages are written directly to locations managed by conda. If you run into any issues downloading packages with conda, you can use python's pip as follows:
+In order to solve this problem, we try to isolate the python environment by creating a virtual environment in conda, so the python packages are written directly to locations managed by conda. If you run into any issues downloading packages with conda, you can try to download the packages individually from conda using the command
 
-The standard bash command for pip installing `requirements.txt` often runs into issues as depending on your Python environment, pip will attempt to install to a root directory (i.e., a directory that by default you should not have write permission)
+```
+   conda install -c conda-forge <PACKAGE>
+```
+
+Note that you may run into issues if any of the Python dependencies are not available on the conda channels. If this is the case, revert back to using `pip`.
+
+The standard bash command for pip installing files often runs into issues as depending on your Python environment, pip will attempt to install to a root directory (i.e., a directory that by default you should not have write permission)
 ```
 python -m pip install -r requirements.txt
 ```
 
-One way to get around this is to include `sudo` (or the Windows equivalent of running in administrative mode) in your bash command.
-```
-sudo python -m pip install -r requirements.txt
-```
-
-However, we caution against this (in particular for Macs) given the potential security risks. Instead, we recommend including the `--user` flag to your bash command.
+We recommend including the `--user` flag to your bash command if you have issues.
 ```
 python -m pip install --user -r requirements.txt
 ```
@@ -153,12 +154,6 @@ The `--user` flag instructs pip to install to a local directory (i.e., a directo
    * If this is a directory that you should have write permission to but do not, use the `sudo chown` bash command (or the Windows equivalent of changing ownership through properties) to get ownership.
 
    * If this is a directory that you should not have write permission to, change your `PYTHONUSERBASE` environment variable to a directory that you should and do have write permission to.
-
-If you are using Anaconda, we recommend using the following bash command:
-```
-conda install --file requirements.txt
-```
-Note that you may run into issues if any of the Python dependencies are not available on the conda channels. If this is the case, revert back to using `pip`.
 
 ## License
 MIT License
