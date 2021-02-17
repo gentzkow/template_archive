@@ -380,7 +380,7 @@ def get_modified_sources(paths,
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
-def check_conda_status(paths):
+def check_conda_status(root):
     """.. Makes sure that the repository is being run with conda and is up to date.
 
     Checks that conda is activated. 

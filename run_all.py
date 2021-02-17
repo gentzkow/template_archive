@@ -20,7 +20,7 @@ gs = imp.load_module('gslab_make', f, path, desc)
 
 ### LOAD CONFIG USER 
 gs.update_executables(PATHS)
-gs.check_conda_status(ROOT)
+gs.check_conda_status(root = ROOT)
 
 ###########
 ### RUN ###
