@@ -36,7 +36,7 @@ PATHS = gs.update_paths(PATHS)
 gs.update_executables(PATHS)
 
 # Check if running from root to check conda status
-if sys.argv[1] != 'run_all':
+if len(sys.argv) < 2 or sys.argv[1] != 'run_all':
     gs.check_conda_status(root = ROOT)
 
 ############
