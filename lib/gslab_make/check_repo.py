@@ -389,22 +389,12 @@ def check_conda_status(paths):
 
     Parameters
     ----------
-    paths : dict
-        Dictionary of paths. Dictionary should contain values for all keys listed below.
-    source_map : list
-        Mapping of sources (returned from :ref:`sourcing functions<sourcing functions>`).
-    depth : float, optional
-        Level of depth when walking through source directories. Defaults to infinite.
-
-    Path Keys
-    ---------
-    makelog : str
-        Path of makelog.
+    root : str 
+        Directory of root.
 
     Returns
     -------
-    overlap : list
-        List of source files considered changed by git.
+    None 
 
     Notes
     -----
@@ -418,8 +408,7 @@ def check_conda_status(paths):
 
     # Check if currently in a conda env
     if 'conda' in str(conda_out):
-
-       try:
+        try:
             conda_info     = os.path.join(root, '.conda_info')
             conda_info_new = os.path.join(root, '.conda_info')
 
@@ -443,6 +432,7 @@ def check_conda_status(paths):
                     print(colored(messages.warning_old_conda, 'red'))
             else:
                 os.system('conda list --export > .conda_info')
+
         except:
             error_message = 'Error with `check_conda_status`. Traceback can be found below.' 
             error_message = format_message(error_message) 
