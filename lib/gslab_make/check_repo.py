@@ -424,11 +424,10 @@ def check_conda_status(root):
                 info_time = datetime.fromtimestamp(info_time)
 
                 conda_yaml = os.path.join(root, 'setup', 'conda_env.yaml')
-
-                yaml_time = os.path.getmtime(conda_info)
+                yaml_time = os.path.getmtime(conda_yaml)
                 yaml_time = datetime.fromtimestamp(yaml_time)
 
-                if info_time > yaml_time:
+                if yaml_time > info_time:
                     print(colored(messages.warning_old_conda, 'red'))
             else:
                 os.system('conda list --export > %s' % conda_info)
