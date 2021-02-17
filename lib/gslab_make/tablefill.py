@@ -48,8 +48,8 @@ def _parse_data(data, null):
     data = [row.split('\t') for row in data]
     data = chain(*data)
     data = list(data)
-    data = [null if value in null_strings else value for value in data]
-        
+    data = [null if value.strip() in null_strings else value for value in data]
+
     return(data)
         
     
