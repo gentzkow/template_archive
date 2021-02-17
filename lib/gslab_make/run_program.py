@@ -1026,7 +1026,7 @@ def execute_command(paths, command, **kwargs):
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
 
-def run_module(root, module, build_script = 'make.py', osname = None):
+def run_module(root, module, build_script = 'make.py', osname = None, run_all=True):
     """.. Run module. 
     
     Runs script `build_script` in module directory `module` relative to root of repository `root`.
@@ -1041,6 +1041,8 @@ def run_module(root, module, build_script = 'make.py', osname = None):
         Name of build script. Defaults to ``make.py``.
     osname : str, optional
         Name of OS. Used to determine syntax of system command. Defaults to ``os.name``.
+    run_all : bool
+        If being run from the root. Will make it so doesn't recheck conda status.
 
     Returns
     -------
@@ -1070,7 +1072,11 @@ def run_module(root, module, build_script = 'make.py', osname = None):
         message = colored(message, attrs = ['bold'])
         print('\n' + message)  
 
-        status = os.system('%s %s' % (metadata.default_executables[osname]['python'], build_script))
+        if run_all:
+            status = os.system('%s %s run_all' % (metadata.default_executables[osname]['python'], build_script))
+        else: 
+            status = os.system('%s %s' % (metadata.default_executables[osname]['python'], build_script))
+
         if status != 0:
             raise ProgramError()
     except ProgramError:

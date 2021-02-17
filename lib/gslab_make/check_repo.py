@@ -410,7 +410,7 @@ def check_conda_status(root):
     if 'conda' in str(conda_out):
         try:
             conda_info     = os.path.join(root, '.conda_info')
-            conda_info_new = os.path.join(root, '.conda_info')
+            conda_info_new = os.path.join(root, '.conda_info_new')
 
             if os.path.exists(conda_info):
                 os.system('conda list --export > %s' % conda_info_new)
@@ -423,7 +423,7 @@ def check_conda_status(root):
                 info_time = os.path.getmtime(conda_info)
                 info_time = datetime.fromtimestamp(info_time)
 
-                conda_yaml = ps.path.join(root, 'setup', 'conda_env.yaml')
+                conda_yaml = os.path.join(root, 'setup', 'conda_env.yaml')
 
                 yaml_time = os.path.getmtime(conda_info)
                 yaml_time = datetime.fromtimestamp(yaml_time)
@@ -431,8 +431,7 @@ def check_conda_status(root):
                 if info_time > yaml_time:
                     print(colored(messages.warning_old_conda, 'red'))
             else:
-                os.system('conda list --export > .conda_info')
-
+                os.system('conda list --export > %s' % conda_info)
         except:
             error_message = 'Error with `check_conda_status`. Traceback can be found below.' 
             error_message = format_message(error_message) 

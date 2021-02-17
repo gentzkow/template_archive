@@ -4,6 +4,7 @@
 import git
 import imp
 import os
+import sys
 
 ### SET DEFAULT PATHS
 ROOT = git.Repo('.', search_parent_directories = True).working_tree_dir 
@@ -30,6 +31,10 @@ gs = imp.load_module('gslab_make', f, path, desc)
 ### LOAD CONFIG USER 
 PATHS = gs.update_paths(PATHS)
 gs.update_executables(PATHS)
+
+# Check if running from root to check conda status
+if sys.argv[1] != 'run_all':
+    gs.check_conda_status(root = ROOT)
 
 ############
 ### MAKE ###
