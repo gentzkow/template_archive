@@ -9,6 +9,9 @@ import re
 import git
 import fnmatch
 import traceback
+from datetime import datetime
+import filecmp
+import subprocess
 
 from termcolor import colored
 import colorama
@@ -377,4 +380,74 @@ def get_modified_sources(paths,
         write_to_makelog(paths, error_message + '\n\n' + traceback.format_exc())
         raise_from(ColoredError(error_message, traceback.format_exc()), None)
 
-__all__ = ['check_module_size', 'get_modified_sources']
+def check_conda_status(paths):
+    """.. Makes sure that the repository is being run with conda and is up to date.
+
+    Checks that conda is activated. 
+    Produces warning if it is not. 
+    Produces warning if setup/conda_env.yaml has been altered more recently than the .
+
+    Parameters
+    ----------
+    paths : dict
+        Dictionary of paths. Dictionary should contain values for all keys listed below.
+    source_map : list
+        Mapping of sources (returned from :ref:`sourcing functions<sourcing functions>`).
+    depth : float, optional
+        Level of depth when walking through source directories. Defaults to infinite.
+
+    Path Keys
+    ---------
+    makelog : str
+        Path of makelog.
+
+    Returns
+    -------
+    overlap : list
+        List of source files considered changed by git.
+
+    Notes
+    -----
+    """
+
+    check_conda = subprocess.Popen(['which', 'python'], 
+                                   stdout=subprocess.PIPE, 
+                                   stderr=subprocess.PIPE)
+
+    conda_out, conda_err = check_conda.communicate()
+
+    # Check if currently in a conda env
+    if 'conda' in str(conda_out):
+
+       try:
+            conda_info     = os.path.join(root, '.conda_info')
+            conda_info_new = os.path.join(root, '.conda_info')
+
+            if os.path.exists(conda_info):
+                os.system('conda list --export > %s' % conda_info_new)
+                if filecmp.cmp(conda_info, conda_info_new):
+                    os.system('rm %s' % conda_info_new)
+                else:
+                    os.system('rm %s' % conda_info)
+                    os.system('mv %s %s' % (conda_info_new, conda_info))
+
+                info_time = os.path.getmtime(conda_info)
+                info_time = datetime.fromtimestamp(info_time)
+
+                conda_yaml = ps.path.join(root, 'setup', 'conda_env.yaml')
+
+                yaml_time = os.path.getmtime(conda_info)
+                yaml_time = datetime.fromtimestamp(yaml_time)
+
+                if info_time > yaml_time:
+                    print(colored(messages.warning_old_conda, 'red'))
+            else:
+                os.system('conda list --export > .conda_info')
+        except:
+            error_message = 'Error with `check_conda_status`. Traceback can be found below.' 
+            error_message = format_message(error_message) 
+            raise_from(ColoredError(error_message, traceback.format_exc()), None)
+    else:
+        print(colored(messages.warning_not_conda, 'red'))
+
+__all__ = ['check_module_size', 'get_modified_sources', 'check_conda_status']
