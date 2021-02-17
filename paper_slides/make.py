@@ -2,8 +2,9 @@
 ### ENVIRONMENT ###
 ###################
 import git
-import imp
+import importlib
 import os
+import sys
 
 ### SET DEFAULT PATHS
 ROOT = git.Repo('.', search_parent_directories = True).working_tree_dir 
@@ -24,8 +25,11 @@ PATHS = {
 }
 
 ### LOAD GSLAB MAKE
-f, path, desc = imp.find_module('gslab_make', [PATHS['lib']]) 
-gs = imp.load_module('gslab_make', f, path, desc)
+spec = importlib.util.spec_from_file_location('gslab_make', 
+                                              os.path.join(PATHS['lib'], 'gslab_make', '__init__.py'))
+gs = importlib.util.module_from_spec(spec)
+sys.modules['gslab_make'] = gs
+spec.loader.exec_module(gs)
 
 ### LOAD CONFIG USER 
 PATHS = gs.update_paths(PATHS)
