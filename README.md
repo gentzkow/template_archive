@@ -57,10 +57,14 @@ If you wish to return to your base installation of python and R you can easily d
 
 ## Adding Packages
 ### Python
-Add any required packages to `setup/conda_env.yaml`. If possible add the package version number. If there is a package that is not available from `conda` add this to the `pip` section of the `yaml` file.
+Add any required packages to `setup/conda_env.yaml`. If possible add the package version number. If there is a package that is not available from `conda` add this to the `pip` section of the `yaml` file. In order to not re-run the entire environment setup you can download these individual files from `conda` with the command
+
+```
+   conda install -c conda-forge <PACKAGE>
+```
 
 ### R
-Add any required packages that are available via CRAN to `setup/conda_env.yaml`. These must be prepended with `r-`. If there is a package that is only available from GitHub and not from CRAN, add this package to `setup/setup_r.r`.
+Add any required packages that are available via CRAN to `setup/conda_env.yaml`. These must be prepended with `r-`. If there is a package that is only available from GitHub and not from CRAN, add this package to `setup/setup_r.r`. These individual packages can be added in the same way as Python packages above (with the `r-` prepend).
 
 ### Stata
 
@@ -123,45 +127,6 @@ Default executable names can be updated in `config_user.yaml`. For further detai
 
 Required applications may be set up for command line usage on your computer with a different executable name from the default. If so, specify the correct executable name in `config_user.yaml`. This configuration step is explained further in the [RA manual](https://github.com/gentzkow/template/wiki/Repository-Structure#Configuration-Files).
 
-## FAQ
-1. Help! I'm running into permission errors when trying to install Python dependencies!
-
-<br>
-
-<img src="https://imgs.xkcd.com/comics/python_environment_2x.png" width="400" height="400">
-
-<br>
-
-In order to solve this problem, we try to isolate the python environment by creating a virtual environment in conda, so the python packages are written directly to locations managed by conda. If you run into any issues downloading packages with conda, you can try to download the packages individually from conda using the command
-
-```
-   conda install -c conda-forge <PACKAGE>
-```
-
-Note that you may run into issues if any of the Python dependencies are not available on the conda channels. If this is the case, revert back to using `pip`.
-
-The standard bash command for pip installing files often runs into issues as depending on your Python environment, pip will attempt to install to a root directory (i.e., a directory that by default you should not have write permission)
-```
-python -m pip install -r requirements.txt
-```
-
-We recommend including the `--user` flag to your bash command if you have issues.
-```
-python -m pip install --user -r requirements.txt
-```
-
-The `--user` flag instructs pip to install to a local directory (i.e., a directory that by default you should have write permission). If you are still running into permission errors, we recommend the following diagnostic steps:
-
-   * Find the local directory that pip is attempting to install to. You can do this by either looking at the permission error message or using the following bash commands:
-   ```
-   python
-   import site
-   site.USER_SITE
-   ```
-   
-   * If this is a directory that you should have write permission to but do not, use the `sudo chown` bash command (or the Windows equivalent of changing ownership through properties) to get ownership.
-
-   * If this is a directory that you should not have write permission to, change your `PYTHONUSERBASE` environment variable to a directory that you should and do have write permission to.
 
 ## License
 MIT License
