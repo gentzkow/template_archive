@@ -1,34 +1,24 @@
---------------------------------------------------------------------------------
-OVERVIEW
---------------------------------------------------------------------------------
+# Overview
 Generated data for TV & potato chips example scripts in template repository
 
---------------------------------------------------------------------------------
-SOURCE
---------------------------------------------------------------------------------
+# Source
 N/A
 
---------------------------------------------------------------------------------
-WHEN/WHERE OBTAINED & ORIGINAL FORM OF FILES
---------------------------------------------------------------------------------
+# When/where obtained & original form of files
 `tv.csv` 
   - Self-generated on 2019-09-13
 
 `chips.csv`
   - Self-generated on 2019-09-13
 
---------------------------------------------------------------------------------
-DESCRIPTION
---------------------------------------------------------------------------------
+# Description
 `tv.csv`
   - Year that TV was first introduced for each county in the US
 
 `chips.csv`
   - Total sales of potato chips by county by year from 1940 to 1970
 
---------------------------------------------------------------------------------
-NOTES
---------------------------------------------------------------------------------
+# Notes
 `tv.csv` and `chips.csv` were generated using the following R code:
 
 ```

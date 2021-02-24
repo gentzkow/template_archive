@@ -18,7 +18,7 @@ except:
     print("yaml, termcolor, and colorama are in conda_env.yaml")
     raise Exception
 
-ROOT = git.Repo('.', search_parent_directories = True).working_tree_dir
+ROOT = '..'
 ### LOAD GSLAB MAKE
 spec = importlib.util.spec_from_file_location('gslab_make', 
                                               os.path.join(ROOT, 'lib', 'gslab_make', '__init__.py'))
