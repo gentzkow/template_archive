@@ -3,7 +3,7 @@
 ## Requirements
 All requirements must be installed and set up for command line usage. For further detail, see the **Command Line Usage** section below.
 
-We manage Python and R installations using miniconda. 
+We manage Python and R installations using conda or miniconda. 
 To build the repository as-is, the following applications are additionally required:
 
 * git-lfs
@@ -13,13 +13,12 @@ To build the repository as-is, the following applications are additionally requi
 
 These software are used by the scripts contained in the repository. By default, the **Setup** and **Build** instructions below will assume their usage.
 
-## Setup
+## Setup 
 **If you are using Windows, you may need to run certain bash commands in administrator mode due to permission errors. To do so, open your terminal by right clicking and selecting `Run as administrator`. To set administrator mode on permanently, refer to the [RA manual](https://github.com/gentzkow/template/wiki/Repository-Usage#Administrator-Mode).**
-
 1. Create a `config_user.yaml` file in the root directory. A template can be found in the `setup` subdirectory. See the **User Configuration** section below for further detail.
 
 2. If you already have conda setup on your local machine, feel free to skip this step. If not, this will install a lightweight version of conda that will not interfere with your current python and R installations.
-Install miniconda and jdk to be used to manage the R/Python virtual environment, if you have not already done this. One easy way to do this is with homebrew, which if you do not have can be download [here](https://brew.sh/), from their websites [here](https://docs.conda.io/en/latest/miniconda.html) and [here](https://www.oracle.com/java/technologies/javase-downloads.html) or with your local package manager as follows:
+Install miniconda and jdk to be used to manage the R/Python virtual environment, if you have not already done this. You can install these programs from their websites [here for miniconda](https://docs.conda.io/en/latest/miniconda.html) and [here for jdk](https://www.oracle.com/java/technologies/javase-downloads.html). If you use homebrew (which can be download [here](https://brew.sh/)) these two programs can be downloaded as follows:
    ```
    brew cask install miniconda
    brew cask install oracle-jdk
@@ -40,23 +39,7 @@ Once you have done this you need to initialize conda by running the following li
    python check_setup.py
    ```
 
-5. Install Stata dependencies using the `setup_stata.do` file. We keep all non-base Stata ado files in the `lib` subdirectory, so even if you normally have a program installed, it will be re-installed. One way to download these stata dependencies is to use the following bash command from the `setup` subdirectory:
-   ```
-   stata-mp -e setup_stata.do
-   ```
-
-   If you are using a Windows, you will likely have to adjust this bash command:
-   ```
-   stata_executable -e setup_stata.do
-   ```
-
-   `stata_executable` refers to the name of your Stata executable. For example, if your Stata executable was located in `C:\Program Files\Stata15\StataMP-64.exe`, you would want to use the following bash command:
-
-   ```
-   StataMP-64 -e setup_stata.do
-   ```
-
-6. Install R dependencies that cannot be managed using conda with the `setup_r.r` file. One way to do this is to run the following bash command in a terminal from the `setup` subdirectory:
+5. Install R dependencies that cannot be managed using conda with the `setup_r.r` file. One way to do this is to run the following bash command in a terminal from the `setup` subdirectory:
    ```
    Rscript setup_r.r
    ```
@@ -71,6 +54,31 @@ If you wish to return to your base installation of python and R you can easily d
 ```
    conda deactivate
 ``` 
+
+## Adding Packages
+### Python
+Add any required packages to `setup/conda_env.yaml`. If possible add the package version number. If there is a package that is not available from `conda` add this to the `pip` section of the `yaml` file.
+
+### R
+Add any required packages that are available via CRAN to `setup/conda_env.yaml`. These must be prepended with `r-`. If there is a package that is only available from GitHub and not from CRAN, add this package to `setup/setup_r.r`.
+
+### Stata
+
+Install Stata dependencies using `setup/setup_stata.do`. We keep all non-base Stata ado files in the `lib` subdirectory, so most non-base Stata ado files will be versioned. To add additional stata dependencies, use the following bash command from the `setup` subdirectory:
+```
+stata-mp -e setup_stata.do
+```
+
+If you are using a Windows, you will likely have to adjust this bash command:
+```
+stata_executable -e setup_stata.do
+```
+
+`stata_executable` refers to the name of your Stata executable. For example, if your Stata executable was located in `C:\Program Files\Stata15\StataMP-64.exe`, you would want to use the following bash command:
+
+```
+StataMP-64 -e setup_stata.do
+```
 
 ## Build
 **If you are using Windows, you may need to run certain bash commands in administrator mode due to permission errors. To do so, open your terminal by right clicking and selecting `Run as administrator`. To set administrator mode on permanently, refer to the [RA manual](https://github.com/gentzkow/template/wiki/Repository-Usage#Administrator-Mode).**
