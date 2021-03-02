@@ -15,7 +15,8 @@ These software are used by the scripts contained in the repository. By default, 
 
 ## Setup 
 **If you are using Windows, you may need to run certain bash commands in administrator mode due to permission errors. To do so, open your terminal by right clicking and selecting `Run as administrator`. To set administrator mode on permanently, refer to the [RA manual](https://github.com/gentzkow/template/wiki/Repository-Usage#Administrator-Mode).**
-1. Create a `config_user.yaml` file in the root directory. A template can be found in the `setup` subdirectory. See the **User Configuration** section below for further detail.
+
+1. Create a `config_user.yaml` file in the root directory. A template can be found in the `setup` subdirectory. See the **User Configuration** section below for further detail. If you do not have any external paths you wish to specify, and wish to use the default executable names you can skip this step and the default `config_user.yaml` will be copied over in step 4.
 
 2. If you already have conda setup on your local machine, feel free to skip this step. If not, this will install a lightweight version of conda that will not interfere with your current python and R installations.
 Install miniconda and jdk to be used to manage the R/Python virtual environment, if you have not already done this. You can install these programs from their websites [here for miniconda](https://docs.conda.io/en/latest/miniconda.html) and [here for jdk](https://www.oracle.com/java/technologies/javase-downloads.html). If you use homebrew (which can be download [here](https://brew.sh/)) these two programs can be downloaded as follows:
@@ -36,7 +37,7 @@ Once you have done this you need to initialize conda by running the following li
 
 4. Run the `check_setup.py` file. One way to do this is to run the following bash command in a terminal from the `setup` subdirectory:
    ```
-   python check_setup.py
+   python3 check_setup.py
    ```
 
 5. Install R dependencies that cannot be managed using conda with the `setup_r.r` file. One way to do this is to run the following bash command in a terminal from the `setup` subdirectory:
