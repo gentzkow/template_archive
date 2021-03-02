@@ -68,9 +68,9 @@ Add any required packages that are available via CRAN to `setup/conda_env.yaml`.
 
 ### Stata
 
-Install Stata dependencies using `setup/setup_stata.do`. We keep all non-base Stata ado files in the `lib` subdirectory, so most non-base Stata ado files will be versioned. To add additional stata dependencies, use the following bash command from the `setup` subdirectory:
+Install Stata dependencies using `setup/download_stata_ado.do`. We keep all non-base Stata ado files in the `lib` subdirectory, so most non-base Stata ado files will be versioned. To add additional stata dependencies, use the following bash command from the `setup` subdirectory:
 ```
-stata-mp -e setup_stata.do
+stata-mp -e download_stata_ado.do
 ```
 
 ## Build
@@ -122,13 +122,13 @@ stata       : StataMP-64 (will need to be updated if using a version of Stata th
 
 To download additional `ado` files on Windows, you will likely have to adjust this bash command:
 ```
-stata_executable -e setup_stata.do
+stata_executable -e download_stata_ado.do
 ```
 
 `stata_executable` refers to the name of your Stata executable. For example, if your Stata executable was located in `C:\Program Files\Stata15\StataMP-64.exe`, you would want to use the following bash command:
 
 ```
-StataMP-64 -e setup_stata.do
+StataMP-64 -e download_stata_ado.do
 ```
 ## License
 MIT License
