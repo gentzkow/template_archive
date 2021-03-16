@@ -123,7 +123,10 @@ warning_copy = \
     'will be uploaded to\n' + \
     '> %s\n' + \
     'Input: '
-
+warning_not_conda = \
+    'WARNING! You are not in an active conda environment'
+warning_old_conda = \
+    'WARNING! setup/conda_env.yaml has been updated since you last updated your environment.'
 # Notes
 note_makelog_start = 'Makelog started: '
 note_makelog_end = 'Makelog ended: '

@@ -38,3 +38,6 @@
 *.svn
 *.ipynb_checkpoints/
 *setup_stata.log
+
+# Personal conda info
+.conda_info

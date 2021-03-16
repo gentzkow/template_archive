@@ -2,9 +2,10 @@
 
 # ENVIRONMENT
 import os
-import imp
+import importlib
 import shutil
 import subprocess
+import sys
 
 try:
     import git 
@@ -13,12 +14,17 @@ try:
     import colorama
     colorama.init()
 except:
-    print("Please pip install 'requirements.txt'")
+    print("Please ensure that conda env is activated and that git,")
+    print("yaml, termcolor, and colorama are in conda_env.yaml")
     raise Exception
 
-ROOT = git.Repo('.', search_parent_directories = True).working_tree_dir
-f, path, desc = imp.find_module('gslab_make', [os.path.join(ROOT, 'lib')])
-gs = imp.load_module('gslab_make', f, path, desc)
+ROOT = '..'
+### LOAD GSLAB MAKE
+spec = importlib.util.spec_from_file_location('gslab_make', 
+                                              os.path.join(ROOT, 'lib', 'gslab_make', '__init__.py'))
+gs = importlib.util.module_from_spec(spec)
+sys.modules['gslab_make'] = gs
+spec.loader.exec_module(gs)
 
 default_executables = gs.private.metadata.default_executables
 format_message = gs.private.utility.format_message

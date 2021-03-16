@@ -1,3 +1,10 @@
+***************
+* Environment *
+***************
+
+clear all
+include input/lib/stata/standardize_env
+
 program main
 	import_chips
 	import_tv
