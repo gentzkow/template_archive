@@ -11,7 +11,7 @@ import fnmatch
 import traceback
 from datetime import datetime
 import filecmp
-import subprocess
+import sys
 
 from termcolor import colored
 import colorama
@@ -400,14 +400,10 @@ def check_conda_status(root):
     -----
     """
 
-    check_conda = subprocess.Popen(['which', 'python'], 
-                                   stdout=subprocess.PIPE, 
-                                   stderr=subprocess.PIPE)
-
-    conda_out, conda_err = check_conda.communicate()
+    python_executable = sys.executable
 
     # Check if currently in a conda env
-    if 'conda' in str(conda_out):
+    if 'conda' in python_executable:
         try:
             conda_info     = os.path.join(root, '.conda_info')
             conda_info_new = os.path.join(root, '.conda_info_new')
