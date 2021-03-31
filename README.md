@@ -20,8 +20,8 @@ These software are used by the scripts contained in the repository. By default, 
 2. If you already have conda setup on your local machine, feel free to skip this step. If not, this will install a lightweight version of conda that will not interfere with your current python and R installations.
 Install miniconda and jdk to be used to manage the R/Python virtual environment, if you have not already done this. You can install these programs from their websites [here for miniconda](https://docs.conda.io/en/latest/miniconda.html) and [here for jdk](https://www.oracle.com/java/technologies/javase-downloads.html). If you use homebrew (which can be download [here](https://brew.sh/)) these two programs can be downloaded as follows:
    ```
-   brew cask install miniconda
-   brew cask install oracle-jdk
+   brew install --cask miniconda
+   brew install --cask oracle-jdk
    ```
 Once you have done this you need to initialize conda by running the following lines and restarting your terminal:
    ```
