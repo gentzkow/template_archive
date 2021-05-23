@@ -43,7 +43,13 @@ Once you have done this you need to initialize conda by running the following li
    ```
    Rscript setup_r.r
    ```
-   
+
+6. Fetch `gslab_make` submodule files. We use a [Git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to track our `gslab_make` dependency in the `lib/gslab_make` folder. After cloning the repository, you will need to initialize and fetch files for the `gslab_make` submodule. One way to do this is to run the following bash commands from the root of the repository:
+   ```
+   git submodule init
+   git submodule update
+   ``` 
+   Once these commands have run to completion, the `lib/gslab_make` folder should be populated with `gslab_make` files.   
 ## Usage
 
 Once you have succesfully completed the **Setup** section above, each time that you run any analysis make sure the virtual environment associated with this project is activated, using the command below (replacing with the name of this project).
