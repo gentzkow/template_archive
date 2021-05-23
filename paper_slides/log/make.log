@@ -1,150 +1,73 @@
 --------------------------------------------------------------------------------
-Makelog started: 2020-06-10 20:25:06
-Working directory: C:\Users\Zong\template\paper_slides
+Makelog started: 2021-05-23 15:08:06
+Working directory: /Users/etang/dev/gslab/gentzkow-template/paper_slides
 --------------------------------------------------------------------------------
 Input copies successfully created!
 External copies successfully created!
 Source logs successfully written!
 WARNING! The following target files have been modified according to git status:
-C:\Users\Zong\template\analysis\output\regression.csv
-C:\Users\Zong\template\data\output\chips_sold.pdf
-Executing command: `lyx2.3 -e pdf2 "C:\Users\Zong\template\paper_slides\code\paper.lyx"`
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit)
-
+/Users/etang/dev/gslab/gentzkow-template/data/output/chips_sold.pdf
+/Users/etang/dev/gslab/gentzkow-template/analysis/output/regression.csv
+Executing command: `lyx -e pdf2 "/Users/etang/dev/gslab/gentzkow-template/paper_slides/code/paper.lyx"`
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex)
+ restricted \write18 enabled.
 entering extended mode
+(./paper.tex
+LaTeX2e <2018-12-01>
 
-(paper.tex
-
-LaTeX2e <2018-04-01> patch level 5
-
-
-
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit)
-
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex)
+ restricted \write18 enabled.
 entering extended mode
-
-(paper.tex
-
-LaTeX2e <2018-04-01> patch level 5
+(./paper.tex
+LaTeX2e <2018-12-01>
 
 
-
-
-pdflatex: warning: running with administrator privileges
-
-pdflatex: warning: running with administrator privileges
-
-
-Executing command: `lyx2.3 -e pdf2 "C:\Users\Zong\template\paper_slides\code\online_appendix.lyx"`
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit)
-
+Executing command: `lyx -e pdf2 "/Users/etang/dev/gslab/gentzkow-template/paper_slides/code/online_appendix.lyx"`
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex)
+ restricted \write18 enabled.
 entering extended mode
+(./online_appendix.tex
+LaTeX2e <2018-12-01>
 
-(online_appendix.tex
-
-LaTeX2e <2018-04-01> patch level 5
-
-
-
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit)
-
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex)
+ restricted \write18 enabled.
 entering extended mode
-
-(online_appendix.tex
-
-LaTeX2e <2018-04-01> patch level 5
+(./online_appendix.tex
+LaTeX2e <2018-12-01>
 
 
-
-
-pdflatex: warning: running with administrator privileges
-
-pdflatex: warning: running with administrator privileges
-
-
-Executing command: `lyx2.3 -e pdf2 "C:\Users\Zong\template\paper_slides\code\slides.lyx"`
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit)
-
+Executing command: `lyx -e pdf2 "/Users/etang/dev/gslab/gentzkow-template/paper_slides/code/slides.lyx"`
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex)
+ restricted \write18 enabled.
 entering extended mode
+(./slides.tex
+LaTeX2e <2018-12-01>
 
-(slides.tex
-
-LaTeX2e <2018-04-01> patch level 5
-
-
-
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit)
-
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex)
+ restricted \write18 enabled.
 entering extended mode
-
-(slides.tex
-
-LaTeX2e <2018-04-01> patch level 5
+(./slides.tex
+LaTeX2e <2018-12-01>
 
 
-
-
-pdflatex: warning: running with administrator privileges
-
-pdflatex: warning: running with administrator privileges
-
-
-Executing command: `lyx2.3 -e pdf2 "C:\Users\Zong\template\paper_slides\code\ondeck.lyx"`
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit)
-
+Executing command: `lyx -e pdf2 "/Users/etang/dev/gslab/gentzkow-template/paper_slides/code/ondeck.lyx"`
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex)
+ restricted \write18 enabled.
 entering extended mode
-
-(ondeck.tex
-
-LaTeX2e <2018-04-01> patch level 5
+(./ondeck.tex
+LaTeX2e <2018-12-01>
 
 
-
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit)
-
+Executing command: `lyx -e pdf2 "/Users/etang/dev/gslab/gentzkow-template/paper_slides/code/text.lyx"`
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex)
+ restricted \write18 enabled.
 entering extended mode
-
-(ondeck.tex
-
-LaTeX2e <2018-04-01> patch level 5
-
-
-
-
-pdflatex: warning: running with administrator privileges
-
-pdflatex: warning: running with administrator privileges
-
-
-Executing command: `lyx2.3 -e pdf2 "C:\Users\Zong\template\paper_slides\code\text.lyx"`
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit)
-
-entering extended mode
-
-(text.tex
-
-LaTeX2e <2018-04-01> patch level 5
-
-
-
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit)
-
-entering extended mode
-
-(text.tex
-
-LaTeX2e <2018-04-01> patch level 5
-
-
-
-
-pdflatex: warning: running with administrator privileges
-
-pdflatex: warning: running with administrator privileges
+(./text.tex
+LaTeX2e <2018-12-01>
 
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2020-06-10 20:25:51
-Working directory: C:\Users\Zong\template\paper_slides
+Makelog ended: 2021-05-23 15:08:15
+Working directory: /Users/etang/dev/gslab/gentzkow-template/paper_slides
 --------------------------------------------------------------------------------
