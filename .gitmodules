@@ -1,0 +1,3 @@
+[submodule "lib/gslab_make"]
+	path = lib/gslab_make
+	url = https://github.com/gslab-econ/gslab_make.git

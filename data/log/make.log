@@ -1,22 +1,20 @@
 --------------------------------------------------------------------------------
-Makelog started: 2020-09-18 18:36:56
-Working directory: /Users/zanekashner/Desktop/gentzkow_template/data
+Makelog started: 2021-05-23 15:07:54
+Working directory: /Users/etang/dev/gslab/gentzkow-template/data
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
-WARNING! The following target files have been modified according to git status:
-/Users/zanekashner/Desktop/gentzkow_template/lib/stata/standardize_env.do
-Executing command: `python  "/Users/zanekashner/Desktop/gentzkow_template/data/code/merge_data.py" `
-Executing command: `python  "/Users/zanekashner/Desktop/gentzkow_template/data/code/clean_data.py" `
-/Users/zanekashner/Desktop/gentzkow_template/data/code/clean_data.py:17: SettingWithCopyWarning: 
+Executing command: `python  "/Users/etang/dev/gslab/gentzkow-template/data/code/merge_data.py" `
+Executing command: `python  "/Users/etang/dev/gslab/gentzkow-template/data/code/clean_data.py" `
+/Users/etang/dev/gslab/gentzkow-template/data/code/clean_data.py:17: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   df['chips_sold'][df['chips_sold'] == -999999] = np.NaN
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2020-09-18 18:37:00
-Working directory: /Users/zanekashner/Desktop/gentzkow_template/data
+Makelog ended: 2021-05-23 15:08:01
+Working directory: /Users/etang/dev/gslab/gentzkow-template/data
 --------------------------------------------------------------------------------

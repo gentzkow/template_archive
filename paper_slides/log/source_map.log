@@ -1,3 +1,3 @@
 destination | source
-input\regression.csv | C:\Users\Zong\template\analysis\output\regression.csv
-input\chips_sold.pdf | C:\Users\Zong\template\data\output\chips_sold.pdf
+input/regression.csv | /Users/etang/dev/gslab/gentzkow-template/analysis/output/regression.csv
+input/chips_sold.pdf | /Users/etang/dev/gslab/gentzkow-template/data/output/chips_sold.pdf

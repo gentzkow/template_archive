@@ -1,2 +1,3 @@
 destination | source
-input\data_cleaned.csv | C:\Users\Zong\template\data\output\data_cleaned.csv
+input/lib | /Users/etang/dev/gslab/gentzkow-template/lib
+input/data_cleaned.csv | /Users/etang/dev/gslab/gentzkow-template/data/output/data_cleaned.csv
