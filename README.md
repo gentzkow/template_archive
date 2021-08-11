@@ -6,12 +6,12 @@ All requirements must be installed and set up for command line usage. For furthe
 We manage Python and R installations using conda or miniconda. 
 To build the repository as-is, the following applications are additionally required:
 
-* git-lfs
-* LyX
-* R
-* Stata
+* [git-lfs](https://git-lfs.github.com/)
+* [LyX](https://www.lyx.org/Download)
+* [R](https://cran.r-project.org/mirrors.html)
+* [Stata](https://www.stata.com/install-guide/)
 
-These software are used by the scripts contained in the repository. By default, the **Setup** and **Build** instructions below will assume their usage.
+These software are used by the scripts contained in the repository. By default, the **Setup** and **Build** instructions below will assume their usage. These applications also must be invocable from the command line. See the **Command Line Usage** section below for details.
 
 ## Setup 
 
@@ -33,23 +33,20 @@ Once you have done this you need to initialize conda by running the following li
    ```
    conda env create -f setup/conda_env.yaml
    ```
+The default name for the conda environment is `template`. This can be changed by editing the first line of `setup/conda_env.yaml`.
 
-4. Run the `check_setup.py` file. One way to do this is to run the following bash command in a terminal from the `setup` subdirectory:
-   ```
-   python3 check_setup.py
-   ```
-
-5. Install R dependencies that cannot be managed using conda with the `setup_r.r` file. One way to do this is to run the following bash command in a terminal from the `setup` subdirectory:
-   ```
-   Rscript setup_r.r
-   ```
-
-6. Fetch `gslab_make` submodule files. We use a [Git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to track our `gslab_make` dependency in the `lib/gslab_make` folder. After cloning the repository, you will need to initialize and fetch files for the `gslab_make` submodule. One way to do this is to run the following bash commands from the root of the repository:
+4. Fetch `gslab_make` submodule files. We use a [Git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to track our `gslab_make` dependency in the `lib/gslab_make` folder. After cloning the repository, you will need to initialize and fetch files for the `gslab_make` submodule. One way to do this is to run the following bash commands from the root of the repository:
    ```
    git submodule init
    git submodule update
    ``` 
    Once these commands have run to completion, the `lib/gslab_make` folder should be populated with `gslab_make` files.   
+
+5. Run the `check_setup.py` file. One way to do this is to run the following bash command in a terminal from the `setup` subdirectory:
+   ```
+   python3 check_setup.py
+   ```
+
 ## Usage
 
 Once you have succesfully completed the **Setup** section above, each time that you run any analysis make sure the virtual environment associated with this project is activated, using the command below (replacing with the name of this project).
@@ -85,12 +82,12 @@ stata-mp -e download_stata_ado.do
 
 2. From the root of repository, run the following bash command:
    ```
-   python run_all.py
+   python3 run_all.py
    ```
 
 ## Command Line Usage
 
-For specific instructions on how to set up command line usage for an application, refer to the [RA manual](https://github.com/gentzkow/template/wiki/Command-Line-Usage).
+For specific instructions on how to set up command line usage for an application, refer to the [repo wiki](https://github.com/gentzkow/template/wiki/Command-Line-Usage).
 
 By default, the repository assumes the following executable names for the following applications:
 
@@ -100,7 +97,7 @@ python      : python
 git-lfs     : git-lfs
 lyx         : lyx
 r           : Rscript
-stata       : statamp (will need to be updated if using a version of Stata that is not Stata-MP)
+stata       : stata-mp (will need to be updated if using a version of Stata that is not Stata-MP)
 ```
 
 Default executable names can be updated in `config_user.yaml`. For further detail, see the **User Configuration** section below.
@@ -108,12 +105,12 @@ Default executable names can be updated in `config_user.yaml`. For further detai
 ## User Configuration
 `config_user.yaml` contains settings and metadata such as local paths that are specific to an individual user and thus should not be committed to Git. For this repository, this includes local paths to [external dependencies](https://github.com/gentzkow/template/wiki/External-Dependencies) as well as executable names for locally installed software.
 
-Required applications may be set up for command line usage on your computer with a different executable name from the default. If so, specify the correct executable name in `config_user.yaml`. This configuration step is explained further in the [RA manual](https://github.com/gentzkow/template/wiki/Repository-Structure#Configuration-Files).
+Required applications may be set up for command line usage on your computer with a different executable name from the default. If so, specify the correct executable name in `config_user.yaml`. This configuration step is explained further in the [repo wiki](https://github.com/gentzkow/template/wiki/Repository-Structure#Configuration-Files).
 
 ## Windows Differences
 The instructions above are for Linux and Mac users. However, with just a handful of small tweaks, this repo can also work on Windows. 
 
-If you are using Windows, you may need to run certain bash commands in administrator mode due to permission errors. To do so, open your terminal by right clicking and selecting `Run as administrator`. To set administrator mode on permanently, refer to the [RA manual](https://github.com/gentzkow/template/wiki/Repository-Usage#Administrator-Mode).
+If you are using Windows, you may need to run certain bash commands in administrator mode due to permission errors. To do so, open your terminal by right clicking and selecting `Run as administrator`. To set administrator mode on permanently, refer to the [repo wiki](https://github.com/gentzkow/template/wiki/Repository-Usage#Administrator-Mode).
 
 The executable names are likely to differ on your computer if you are using Windows. Executable names for Windows will typically look like the following:
 

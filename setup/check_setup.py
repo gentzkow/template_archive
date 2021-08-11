@@ -21,7 +21,7 @@ except:
 ROOT = '..'
 ### LOAD GSLAB MAKE
 spec = importlib.util.spec_from_file_location('gslab_make', 
-                                              os.path.join(ROOT, 'lib', 'gslab_make', '__init__.py'))
+                                              os.path.join(ROOT, 'lib', 'gslab_make', 'gslab_make', '__init__.py'))
 gs = importlib.util.module_from_spec(spec)
 sys.modules['gslab_make'] = gs
 spec.loader.exec_module(gs)
