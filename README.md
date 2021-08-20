@@ -18,22 +18,30 @@ These software are used by the scripts contained in the repository. By default, 
 1. Create a `config_user.yaml` file in the root directory. A template can be found in the `setup` subdirectory. See the **User Configuration** section below for further detail. If you do not have any external paths you wish to specify, and wish to use the default executable names you can skip this step and the default `config_user.yaml` will be copied over in step 4.
 
 2. If you already have conda setup on your local machine, feel free to skip this step. If not, this will install a lightweight version of conda that will not interfere with your current python and R installations.
-Install miniconda and jdk to be used to manage the R/Python virtual environment, if you have not already done this. You can install these programs from their websites [here for miniconda](https://docs.conda.io/en/latest/miniconda.html) and [here for jdk](https://www.oracle.com/java/technologies/javase-downloads.html). If you use homebrew (which can be download [here](https://brew.sh/)) these two programs can be downloaded as follows:
-   ```
-   brew install --cask miniconda
-   brew install --cask oracle-jdk
-   ```
-Once you have done this you need to initialize conda by running the following lines and restarting your terminal:
-   ```
-   conda config --set auto_activate_base false
-   conda init $(echo $0 | cut -d'-' -f 2)
-   ```
+
+   Install miniconda and jdk to be used to manage the R/Python virtual environment, if you have not already done this. You can install these programs from their websites [here for miniconda](https://docs.conda.io/en/latest/miniconda.html) and [here for jdk](https://www.oracle.com/java/technologies/javase-downloads.html). If you use homebrew (which can be download [here](https://brew.sh/)) these two programs can be downloaded as follows:
+      ```
+      brew install --cask miniconda
+      brew install --cask oracle-jdk
+      ```
+   Once you have done this you need to initialize conda by running the following lines and restarting your terminal:
+      ```
+      conda config --set auto_activate_base false
+      conda init $(echo $0 | cut -d'-' -f 2)
+      ```
 
 3. Create conda environment with the command:
-   ```
-   conda env create -f setup/conda_env.yaml
-   ```
-The default name for the conda environment is `template`. This can be changed by editing the first line of `setup/conda_env.yaml`.
+      ```
+      conda env create -f setup/conda_env.yaml
+      ```
+   The default name for the conda environment is `template`. This can be changed by editing the first line of `setup/conda_env.yaml`. To activate the conda virtual environment just created, run
+      ```
+      conda activate PROJECT_NAME
+      ```
+   The environment should be active throughout setup, and whenver executing modules within the project in the future. If you wish to return to your base environment, you can deactivate the conda environment with
+      ```
+      conda deactivate
+      ```
 
 4. Fetch `gslab_make` submodule files. We use a [Git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to track our `gslab_make` dependency in the `lib/gslab_make` folder. After cloning the repository, you will need to initialize and fetch files for the `gslab_make` submodule. One way to do this is to run the following bash commands from the root of the repository:
    ```
@@ -47,16 +55,6 @@ The default name for the conda environment is `template`. This can be changed by
    python3 check_setup.py
    ```
 
-## Usage
-
-Once you have succesfully completed the **Setup** section above, each time that you run any analysis make sure the virtual environment associated with this project is activated, using the command below (replacing with the name of this project).
-```
-   conda activate PROJECT_NAME
-``` 
-If you wish to return to your base installation of python and R you can easily deactivate this virtual environment using the command below:
-```
-   conda deactivate
-``` 
 
 ## Adding Packages
 ### Python
