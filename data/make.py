@@ -4,11 +4,10 @@
 import os
 import sys
 
-### SET DEFAULT PATHS
+### LOAD GSLAB MAKE
 ROOT = '..'
 gslm_path = os.path.join(ROOT, 'lib', 'gslab_make')
 
-### LOAD GSLAB MAKE
 sys.path.append(gslm_path)
 import gslab_make as gs
 
