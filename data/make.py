@@ -1,7 +1,6 @@
 ###################
 ### ENVIRONMENT ###
 ###################
-import git
 import os
 import sys
 
