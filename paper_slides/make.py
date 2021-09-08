@@ -33,7 +33,7 @@ gs.remove_dir(['input', 'external'])
 gs.clear_dir(['output', 'log'])
 gs.start_makelog(PATHS)
 
-### GET INPUT FILES 
+### MAKE LINKS TO INPUT AND EXTERNAL FILES
 inputs = gs.copy_inputs(PATHS, ['input.txt'])
 externals = gs.copy_externals(PATHS, ['external.txt'])
 gs.write_source_logs(PATHS, inputs + externals)
