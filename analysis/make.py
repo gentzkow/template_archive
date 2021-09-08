@@ -2,42 +2,27 @@
 ### ENVIRONMENT ###
 ###################
 import git
-import importlib
 import os
 import sys
 
 ### SET DEFAULT PATHS
 ROOT = '..'
-
-PATHS = {
-    'root'             : ROOT,
-    'lib'              : os.path.join(ROOT, 'lib'),
-    'config'           : os.path.join(ROOT, 'config.yaml'),
-    'config_user'      : os.path.join(ROOT, 'config_user.yaml'),
-    'input_dir'        : 'input', 
-    'external_dir'     : 'external',
-    'output_dir'       : 'output',
-    'output_local_dir' : 'output_local',
-    'makelog'          : 'log/make.log',         
-    'output_statslog'  : 'log/output_stats.log', 
-    'source_maplog'    : 'log/source_map.log',  
-    'source_statslog'  : 'log/source_stats.log',
-}
+gslm_path = os.path.join(ROOT, 'lib', 'gslab_make')
 
 ### LOAD GSLAB MAKE
-gs_path = os.path.join(PATHS['lib'], 'gslab_make', 'gslab_make', '__init__.py')
-spec = importlib.util.spec_from_file_location('gslab_make', gs_path)
-gs = importlib.util.module_from_spec(spec)
-sys.modules['gslab_make'] = gs
-spec.loader.exec_module(gs)
+sys.path.append(gslm_path)
+import gslab_make as gs
+
+### PULL PATHS FROM CONFIG
+PATHS = {
+    'root': ROOT,
+    'config': os.path.join(ROOT, 'config.yaml')
+}
+PATHS = gs.update_internal_paths(PATHS)
 
 ### LOAD CONFIG USER 
-PATHS = gs.update_paths(PATHS)
+PATHS = gs.update_external_paths(PATHS)
 gs.update_executables(PATHS)
-
-# Check if running from root to check conda status
-if len(sys.argv) < 2 or sys.argv[1] != 'run_all':
-    gs.check_conda_status(root = ROOT)
 
 ############
 ### MAKE ###
