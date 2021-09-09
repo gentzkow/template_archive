@@ -6,6 +6,4 @@ adopath - PLUS
 adopath - OLDPLACE
 adopath - SITE
 
-adopath + "input/lib/stata/ado"
-adopath + "input/lib/ado"
-
+adopath + "input/lib/stata"
