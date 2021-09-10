@@ -55,13 +55,17 @@ These software are used by the scripts contained in the repository. By default, 
    python3 check_setup.py
    ```
 
+## Running Package Scripts in Other Languages
+By default, this template is set up to run python scripts. The template is, however, capable of running scripts in other languages too (make-scripts are always in python, but module scripts called by make-scripts can be in other languages). 
+
+The directory `/examples` includes the code necessary to run the repo with R and Stata scripts. Only code that differs from the default implementation is included.
 
 ## Adding Packages
 ### Python
 Add any required packages to `setup/conda_env.yaml`. If possible add the package version number. If there is a package that is not available from `conda` add this to the `pip` section of the `yaml` file. In order to not re-run the entire environment setup you can download these individual files from `conda` with the command
 
 ```
-   conda install -c conda-forge <PACKAGE>
+conda install -c conda-forge <PACKAGE>
 ```
 
 ### R
