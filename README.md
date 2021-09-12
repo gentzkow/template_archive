@@ -58,7 +58,10 @@ These software are used by the scripts contained in the repository. By default, 
 ## Running Package Scripts in Other Languages
 By default, this template is set up to run python scripts. The template is, however, capable of running scripts in other languages too (make-scripts are always in python, but module scripts called by make-scripts can be in other languages). 
 
-The directory `/examples` includes the code necessary to run the repo with R and Stata scripts. Only code that differs from the default implementation is included.
+The directory `/examples` includes the code necessary to run the repo with R and Stata scripts. Only code that differs from the default implementation is included. For example, to run the repo using Stata scripts, the following steps need to be taken. 
+1. Replace `/analysis/make.py` with `/examples/stata/analysis/make.py` and `/data/make.py` with `/examples/stata/data/make.py`.
+2. Copy contents of `/examples/stata/analysis/code` to `/analysis/code` and contents of `/examples/stata/data/code` to `/data/code`.
+3. Copy `.ado` dependencies from `/examples/stata/lib/stata` to `/lib/stata`.
 
 ## Adding Packages
 ### Python

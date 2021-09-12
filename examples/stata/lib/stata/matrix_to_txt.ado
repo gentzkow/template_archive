@@ -6,7 +6,6 @@
  *
  **********************************************************/
 
-capture program drop matrix_to_txt
 program define matrix_to_txt
 
 	version 10
@@ -59,7 +58,6 @@ program define matrix_to_txt
 
 end
 
-capture program drop QuotedFullnames
 program define QuotedFullnames
 	args matrix type
 	tempname extract
