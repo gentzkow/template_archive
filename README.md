@@ -61,7 +61,8 @@ By default, this template is set up to run python scripts. The template is, howe
 The directory `/examples` includes the code necessary to run the repo with R and Stata scripts. Only code that differs from the default implementation is included. For example, to run the repo using Stata scripts, the following steps need to be taken. 
 1. Replace `/analysis/make.py` with `/examples/stata/analysis/make.py` and `/data/make.py` with `/examples/stata/data/make.py`.
 2. Copy contents of `/examples/stata/analysis/code` to `/analysis/code` and contents of `/examples/stata/data/code` to `/data/code`.
-3. Copy `.ado` dependencies from `/examples/stata/lib/stata` to `/lib/stata`.
+3. Copy `.ado` dependencies from `/examples/stata/lib/stata` to `/lib/stata`. Included are utilities from the repo [`gslab_stata`](https://github.com/gslab-econ/gslab_stata).
+4. Copy setup script from `/examples/stata/setup` to `/setup`. More on the functionality of this script in the next section.
 
 ## Adding Packages
 ### Python
