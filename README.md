@@ -34,7 +34,7 @@ These software are used by the scripts contained in the repository. By default, 
       ```
       conda env create -f setup/conda_env.yaml
       ```
-   The default name for the conda environment is `template`. This can be changed by editing the first line of `setup/conda_env.yaml`. To activate the conda virtual environment just created, run
+   The default name for the conda environment is `template`. This can be changed by editing the first line of `/setup/conda_env.yaml`. To activate the conda virtual environment just created, run
       ```
       conda activate PROJECT_NAME
       ```
@@ -43,14 +43,14 @@ These software are used by the scripts contained in the repository. By default, 
       conda deactivate
       ```
 
-4. Fetch `gslab_make` submodule files. We use a [Git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to track our `gslab_make` dependency in the `lib/gslab_make` folder. After cloning the repository, you will need to initialize and fetch files for the `gslab_make` submodule. One way to do this is to run the following bash commands from the root of the repository:
+4. Fetch `gslab_make` submodule files. We use a [Git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to track our `gslab_make` dependency in the `/lib/gslab_make` folder. After cloning the repository, you will need to initialize and fetch files for the `gslab_make` submodule. One way to do this is to run the following bash commands from the root of the repository:
    ```
    git submodule init
    git submodule update
    ``` 
-   Once these commands have run to completion, the `lib/gslab_make` folder should be populated with `gslab_make` files.   
+   Once these commands have run to completion, the `/lib/gslab_make` folder should be populated with `gslab_make` files.   
 
-5. Run the `check_setup.py` file. One way to do this is to run the following bash command in a terminal from the `setup` subdirectory:
+5. Run the `/setup/check_setup.py` file. One way to do this is to run the following bash command in a terminal from the `setup` subdirectory:
    ```
    python3 check_setup.py
    ```
@@ -58,26 +58,26 @@ These software are used by the scripts contained in the repository. By default, 
 ## Running Package Scripts in Other Languages
 By default, this template is set up to run python scripts. The template is, however, capable of running scripts in other languages too (make-scripts are always in python, but module scripts called by make-scripts can be in other languages). 
 
-The directory `/examples` includes the code necessary to run the repo with R and Stata scripts. Only code that differs from the default implementation is included. For example, to run the repo using Stata scripts, the following steps need to be taken. 
-1. Replace `/analysis/make.py` with `/examples/stata/analysis/make.py` and `/data/make.py` with `/examples/stata/data/make.py`.
-2. Copy contents of `/examples/stata/analysis/code` to `/analysis/code` and contents of `/examples/stata/data/code` to `/data/code`.
-3. Copy `.ado` dependencies from `/examples/stata/lib/stata` to `/lib/stata`. Included are utilities from the repo [`gslab_stata`](https://github.com/gslab-econ/gslab_stata).
-4. Copy setup script from `/examples/stata/setup` to `/setup`. More on the functionality of this script in the next section.
+The directory `/extensions` includes the code necessary to run the repo with R and Stata scripts. Only code that differs from the default implementation is included. For example, to run the repo using Stata scripts, the following steps need to be taken. 
+1. Replace `/analysis/make.py` with `/extensions/stata/analysis/make.py` and `/data/make.py` with `/extensions/stata/data/make.py`.
+2. Copy contents of `/extensions/stata/analysis/code` to `/analysis/code` and contents of `/extensions/stata/data/code` to `/data/code`.
+3. Copy `.ado` dependencies from `/extensions/stata/lib/stata` to `/lib/stata`. Included are utilities from the repo [`gslab_stata`](https://github.com/gslab-econ/gslab_stata).
+4. Copy setup script from `/extensions/stata/setup` to `/setup`. More on the functionality of this script in the next section.
 
 ## Adding Packages
 ### Python
-Add any required packages to `setup/conda_env.yaml`. If possible add the package version number. If there is a package that is not available from `conda` add this to the `pip` section of the `yaml` file. In order to not re-run the entire environment setup you can download these individual files from `conda` with the command
+Add any required packages to `/setup/conda_env.yaml`. If possible add the package version number. If there is a package that is not available from `conda` add this to the `pip` section of the `yaml` file. In order to not re-run the entire environment setup you can download these individual files from `conda` with the command
 
 ```
 conda install -c conda-forge <PACKAGE>
 ```
 
 ### R
-Add any required packages that are available via CRAN to `setup/conda_env.yaml`. These must be prepended with `r-`. If there is a package that is only available from GitHub and not from CRAN, add this package to `setup/setup_r.r`. These individual packages can be added in the same way as Python packages above (with the `r-` prepend).
+Add any required packages that are available via CRAN to `/setup/conda_env.yaml`. These must be prepended with `r-`. If there is a package that is only available from GitHub and not from CRAN, add this package to `/setup/setup_r.r` (after copying this script from `/extensions`). These individual packages can be added in the same way as Python packages above (with the `r-` prepend).
 
 ### Stata
 
-Install Stata dependencies using `setup/download_stata_ado.do`. We keep all non-base Stata ado files in the `lib` subdirectory, so most non-base Stata ado files will be versioned. To add additional stata dependencies, use the following bash command from the `setup` subdirectory:
+Install Stata dependencies using `/setup/download_stata_ado.do` (after copying this script from `/extensions`). We keep all non-base Stata ado files in the `lib` subdirectory, so most non-base Stata ado files will be versioned. To add additional stata dependencies, use the following bash command from the `setup` subdirectory:
 ```
 stata-mp -e download_stata_ado.do
 ```
