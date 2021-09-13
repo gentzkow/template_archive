@@ -46,8 +46,6 @@ gs.tablefill(template = 'code/tables.lyx',
 gs.run_lyx(PATHS, program = 'code/paper.lyx')
 gs.run_lyx(PATHS, program = 'code/online_appendix.lyx')
 gs.run_lyx(PATHS, program = 'code/slides.lyx')
-gs.run_lyx(PATHS, program = 'code/ondeck.lyx')
-gs.run_lyx(PATHS, program = 'code/text.lyx')
 
 ### LOG OUTPUTS
 gs.log_files_in_output(PATHS)
