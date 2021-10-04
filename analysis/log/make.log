@@ -1,17 +1,19 @@
 --------------------------------------------------------------------------------
-Makelog started: 2021-05-23 15:08:01
-Working directory: /Users/etang/dev/gslab/gentzkow-template/analysis
+Makelog started: 2021-09-13 14:22:45
+Working directory: /Users/zahedian/Documents/template/analysis
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
-Executing command: `python  "/Users/etang/dev/gslab/gentzkow-template/analysis/code/analyze_data.py" `
-/Users/etang/anaconda3/envs/PhoneAddiction/lib/python3.7/site-packages/linearmodels/shared/exceptions.py:35: MissingValueWarning: 
+WARNING! The following target files have been modified according to git status:
+/Users/zahedian/Documents/template/data/output/data_cleaned.csv
+Executing command: `python  "/Users/zahedian/Documents/template/analysis/code/analyze_data.py" `
+/usr/local/Caskroom/miniconda/base/envs/template/lib/python3.7/site-packages/linearmodels/shared/exceptions.py:35: MissingValueWarning: 
 Inputs contain missing values. Dropping rows with missing observations.
   warnings.warn(missing_value_warning_msg, MissingValueWarning)
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2021-05-23 15:08:05
-Working directory: /Users/etang/dev/gslab/gentzkow-template/analysis
+Makelog ended: 2021-09-13 14:22:50
+Working directory: /Users/zahedian/Documents/template/analysis
 --------------------------------------------------------------------------------

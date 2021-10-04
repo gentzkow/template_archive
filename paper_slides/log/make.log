@@ -1,73 +1,57 @@
 --------------------------------------------------------------------------------
-Makelog started: 2021-05-23 15:08:06
-Working directory: /Users/etang/dev/gslab/gentzkow-template/paper_slides
+Makelog started: 2021-09-13 14:22:50
+Working directory: /Users/zahedian/Documents/template/paper_slides
 --------------------------------------------------------------------------------
 Input copies successfully created!
 External copies successfully created!
 Source logs successfully written!
 WARNING! The following target files have been modified according to git status:
-/Users/etang/dev/gslab/gentzkow-template/data/output/chips_sold.pdf
-/Users/etang/dev/gslab/gentzkow-template/analysis/output/regression.csv
-Executing command: `lyx -e pdf2 "/Users/etang/dev/gslab/gentzkow-template/paper_slides/code/paper.lyx"`
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex)
+/Users/zahedian/Documents/template/analysis/output/regression.csv
+/Users/zahedian/Documents/template/data/output/chips_sold.pdf
+Executing command: `lyx -e pdf2 "/Users/zahedian/Documents/template/paper_slides/code/paper.lyx"`
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
 (./paper.tex
-LaTeX2e <2018-12-01>
-
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex)
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-02-18>
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
 (./paper.tex
-LaTeX2e <2018-12-01>
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-02-18>
 
-
-Executing command: `lyx -e pdf2 "/Users/etang/dev/gslab/gentzkow-template/paper_slides/code/online_appendix.lyx"`
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex)
+Executing command: `lyx -e pdf2 "/Users/zahedian/Documents/template/paper_slides/code/online_appendix.lyx"`
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
 (./online_appendix.tex
-LaTeX2e <2018-12-01>
-
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex)
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-02-18>
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
 (./online_appendix.tex
-LaTeX2e <2018-12-01>
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-02-18>
 
-
-Executing command: `lyx -e pdf2 "/Users/etang/dev/gslab/gentzkow-template/paper_slides/code/slides.lyx"`
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex)
+Executing command: `lyx -e pdf2 "/Users/zahedian/Documents/template/paper_slides/code/slides.lyx"`
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
 (./slides.tex
-LaTeX2e <2018-12-01>
-
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex)
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-02-18>
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
 (./slides.tex
-LaTeX2e <2018-12-01>
-
-
-Executing command: `lyx -e pdf2 "/Users/etang/dev/gslab/gentzkow-template/paper_slides/code/ondeck.lyx"`
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex)
- restricted \write18 enabled.
-entering extended mode
-(./ondeck.tex
-LaTeX2e <2018-12-01>
-
-
-Executing command: `lyx -e pdf2 "/Users/etang/dev/gslab/gentzkow-template/paper_slides/code/text.lyx"`
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex)
- restricted \write18 enabled.
-entering extended mode
-(./text.tex
-LaTeX2e <2018-12-01>
-
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-02-18>
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2021-05-23 15:08:15
-Working directory: /Users/etang/dev/gslab/gentzkow-template/paper_slides
+Makelog ended: 2021-09-13 14:22:59
+Working directory: /Users/zahedian/Documents/template/paper_slides
 --------------------------------------------------------------------------------

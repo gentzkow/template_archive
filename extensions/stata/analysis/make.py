@@ -38,7 +38,7 @@ gs.write_source_logs(PATHS, inputs + externals)
 gs.get_modified_sources(PATHS, inputs + externals)
 
 ### RUN SCRIPTS
-gs.run_python(PATHS, program = 'code/analyze_data.py')
+gs.run_stata(PATHS, 'code/analyze_data.do')
 
 ### LOG OUTPUTS
 gs.log_files_in_output(PATHS)

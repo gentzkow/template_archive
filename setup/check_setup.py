@@ -19,12 +19,10 @@ except:
     raise Exception
 
 ROOT = '..'
-### LOAD GSLAB MAKE
-spec = importlib.util.spec_from_file_location('gslab_make', 
-                                              os.path.join(ROOT, 'lib', 'gslab_make', 'gslab_make', '__init__.py'))
-gs = importlib.util.module_from_spec(spec)
-sys.modules['gslab_make'] = gs
-spec.loader.exec_module(gs)
+# IMPORT GSLAB MAKE
+gslm_path = os.path.join(ROOT, 'lib', 'gslab_make')
+sys.path.append(gslm_path)
+import gslab_make as gs
 
 default_executables = gs.private.metadata.default_executables
 format_message = gs.private.utility.format_message

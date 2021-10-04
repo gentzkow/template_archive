@@ -29,6 +29,7 @@ gs.update_executables(PATHS)
 ### START MAKE
 gs.remove_dir(['input', 'external'])
 gs.clear_dir(['output', 'log'])
+gs.clear_dir(['output/temp'])
 gs.start_makelog(PATHS)
 
 ### MAKE LINKS TO INPUT AND EXTERNAL FILES
@@ -38,7 +39,8 @@ gs.write_source_logs(PATHS, inputs + externals)
 gs.get_modified_sources(PATHS, inputs + externals)
 
 ### RUN SCRIPTS
-gs.run_python(PATHS, program = 'code/analyze_data.py')
+gs.run_stata(PATHS, 'code/merge_data.do')
+gs.run_stata(PATHS, 'code/clean_data.do')
 
 ### LOG OUTPUTS
 gs.log_files_in_output(PATHS)
