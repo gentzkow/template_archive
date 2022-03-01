@@ -19,9 +19,7 @@ These software are used by the scripts contained in the repository. By default, 
 
    If you wish to not specify any external paths and/or to use the default executable names, you can skip this step and the default `config_user.yaml` will be copied over in step 4.
 
-2. Optionally run the script `/setup/lfs_setup.sh`. This will instruct `git lfs` to handle files with extensions such as `.pdf`, `.png`, etc. This will not affect files that ship with the template. See [here](https://git-lfs.github.com/) for more information about modifying your repository's `git lfs` settings. 
-
-3. If you already have conda setup on your local machine, feel free to skip this step. If not, this will install a lightweight version of `conda` that will not interfere with your current `python` and `R` installations.
+2. If you already have conda setup on your local machine, feel free to skip this step. If not, this will install a lightweight version of `conda` that will not interfere with your current `python` and `R` installations.
 
    Install `miniconda` and `jdk` to be used to manage the R/Python virtual environment, if you have not already done this. You can install these programs from their websites [here for miniconda](https://docs.conda.io/en/latest/miniconda.html) and [here for jdk](https://www.oracle.com/java/technologies/javase-downloads.html). If you use homebrew (which can be download [here](https://brew.sh/)) these two programs can be downloaded as follows:
       ```
@@ -34,7 +32,7 @@ These software are used by the scripts contained in the repository. By default, 
       conda init $(echo $0 | cut -d'-' -f 2)
       ```
 
-4. Create conda environment with the command:
+3. Create conda environment with the command:
       ```
       conda env create -f setup/conda_env.yaml
       ```
@@ -47,14 +45,21 @@ These software are used by the scripts contained in the repository. By default, 
       conda deactivate
       ```
 
-5. Fetch `gslab_make` submodule files. We use a [Git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to track our `gslab_make` dependency in the `/lib/gslab_make` folder. After cloning the repository, you will need to initialize and fetch files for the `gslab_make` submodule. One way to do this is to run the following bash commands from the root of the repository:
+4. Fetch `gslab_make` submodule files. We use a [Git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to track our `gslab_make` dependency in the `/lib/gslab_make` folder. After cloning the repository, you will need to initialize and fetch files for the `gslab_make` submodule. One way to do this is to run the following bash commands from the root of the repository:
    ```
    git submodule init
    git submodule update
    ``` 
    Once these commands have run to completion, the `/lib/gslab_make` folder should be populated with `gslab_make` files.   
 
-6. Run the `/setup/check_setup.py` file. One way to do this is to run the following bash command in a terminal from the `/setup` subdirectory:
+5. Optionally run the script to start `git lfs`. From the root of the repository, run:
+   ```
+   ./setup/lfs_setup.sh
+   ```
+
+   This will instruct `git lfs` to handle files with extensions such as `.pdf`, `.png`, etc. This will not affect files that ship with the template. See [here](https://git-lfs.github.com/) for more information about modifying your repository's `git lfs` settings. 
+
+6. Run the script `/setup/check_setup.py`. One way to do this is to run the following bash command from the `/setup` directory:
    ```
    python3 check_setup.py
    ```
