@@ -17,7 +17,7 @@ These software are used by the scripts contained in the repository. By default, 
 
 1. Create a `config_user.yaml` file in the root directory. A template can be found in the `/setup` directory. See the **User Configuration** section below for further detail. 
 
-   If you wish to not specify any external paths and/or to use the default executable names, you can skip this step and the default `config_user.yaml` will be copied over in step 4.
+   If this step is skipped, the default `config_user.yaml` will be copied over in step 4. You might skip this step if you wish not to specify any external paths, or if you wish to use the default executable names. 
 
 2. If you already have conda setup on your local machine, feel free to skip this step. If not, this will install a lightweight version of `conda` that will not interfere with your current `python` and `R` installations.
 
@@ -40,7 +40,7 @@ These software are used by the scripts contained in the repository. By default, 
       ```
       conda activate PROJECT_NAME
       ```
-   The environment should be active throughout setup, and whenver executing modules within the project in the future. You can deactivate the `conda` environment with
+   The environment should be active throughout setup, and whenever executing modules within the project in the future. You can deactivate the `conda` environment with
       ```
       conda deactivate
       ```
