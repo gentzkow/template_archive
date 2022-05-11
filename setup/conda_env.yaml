@@ -10,14 +10,9 @@ dependencies:
   - termcolor
   - colorama
   - jupyter
-  - future
   - linearmodels
-  - pip=19
-  - r=3.6
-  - r-yaml # import r packages by prepending with "r-""
-  - r-tidyverse
-  - r-r.utils
-  - r-plm
-  - r-janitor
+  # - pip=19
   # - pip: # if there is a package available via pip but not with conda, can import like this:
   #     - EXAMPLE_PACKAGE
+  # - r=3.6
+  # - r-yaml # import r packages by prepending with "r-""
