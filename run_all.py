@@ -1,13 +1,12 @@
 ###################
 ### ENVIRONMENT ###
 ###################
-import git
 import importlib
 import os
 import sys
 
 ### SET DEFAULT PATHS
-ROOT = git.Repo('.', search_parent_directories = True).working_tree_dir 
+ROOT = '.'
 
 PATHS = {
     'root'        : ROOT,
