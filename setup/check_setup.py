@@ -8,14 +8,13 @@ import subprocess
 import sys
 
 try:
-    import git 
     import yaml
     from termcolor import colored
     import colorama
     colorama.init()
 except:
-    print("Please ensure that conda env is activated and that git,")
-    print("yaml, termcolor, and colorama are in conda_env.yaml")
+    print("Please ensure that conda env is activated and that yaml,")
+    print("termcolor, and colorama are in conda_env.yaml")
     raise Exception
 
 ROOT = '..'
