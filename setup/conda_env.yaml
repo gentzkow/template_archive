@@ -14,5 +14,5 @@ dependencies:
   # - pip=19
   # - pip: # if there is a package available via pip but not with conda, can import like this:
   #     - EXAMPLE_PACKAGE
-  # - r=3.6
-  # - r-yaml # import r packages by prepending with "r-""
+  - r-base=3.6
+  - r-tidyverse # import r packages by prepending with "r-""
