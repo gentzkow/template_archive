@@ -1,9 +1,7 @@
 #!/bin/bash
-
-VERSION=17
-TAG=$(date +%F)
-MYHUBID=dataeditors
-MYIMG=stata${VERSION}
+TAG=1.0
+MYHUBID=jccisneros
+MYIMG=template
 STATALIC="/Applications/Stata/stata.lic"
 
 DOCKER_BUILDKIT=1 docker build  . \
