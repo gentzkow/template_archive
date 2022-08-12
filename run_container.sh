@@ -12,5 +12,4 @@ docker run -it --rm \
   -v "${STATALIC}":/usr/local/stata/stata.lic \
   -v "${DROPBOX}":/usr/dropbox \
   -v "${GITHUB_KEY}":/root/.ssh \
-  -v "$(pwd)":/home/template \
   $MYHUBID/${MYIMG}:${TAG}
