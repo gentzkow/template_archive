@@ -122,7 +122,7 @@ def check_dependencies():
             import git
             
     except:
-        error_message = "Please ensure that you have the correct conda environment activated.\nIf you are not using conda, ensure you have installed all dependencies from dependencies.txt."
+        error_message = "Please ensure that you have the correct conda environment activated.\nIf you are not using conda, ensure you have installed all dependencies from ~/setup/dependencies.md."
         error_message = format_message(error_message)
         raise gs.private.exceptionclasses.ColoredError(error_message)
         raise Exception
