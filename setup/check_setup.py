@@ -107,15 +107,31 @@ def check_dependencies():
         packages = read_env_yaml()
         python_packages = get_python(packages)
         r_packages = get_r(packages)
+        failed_python_packages = []
+        failed_r_packages = []
+        # List all Python packages which need to be installed.
         for package in python_packages:
-            globals()[package] = importlib.import_module(package)
+            try:
+                globals()[package] = importlib.import_module(package)
+            except:
+                failed_python_packages.append(package)
+                pass
+        if len(failed_python_packages) > 0:
+            error_message = 'ERROR! The following Python packages were not properly installed: `%s`' % (', '.join(failed_python_packages)) + "."
+            error_message = format_message(error_message)
+            print(gs.private.exceptionclasses.ColoredError(error_message))
+            os._exit(0)    
+        # List all R packages which need to be installed.
         for package in r_packages:
             package = package.replace('r-',"")
-            output=str(subprocess.run(['Rscript', '-e', f'library("{package}")']))
+            output = str(subprocess.run(['Rscript', '-e', f'library("{package}")']))
             if "returncode=0" not in output:
-                error_message = 'ERROR! R package `%s` is not installed.' % package
-                error_message = format_message(error_message)
-                raise gs.private.exceptionclasses.ColoredError(error_message)
+                failed_r_packages.append(package)
+        if len(failed_r_packages) > 0:
+            error_message = 'ERROR! The following R packages were not properly installed: `%s`' % (', '.join(failed_r_packages)) + "."
+            error_message = format_message(error_message)
+            print(gs.private.exceptionclasses.ColoredError(error_message))
+            os._exit(0)    
         if 'pyyaml' in python_packages:
             import yaml
         if 'gitpython' in python_packages:
