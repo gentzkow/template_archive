@@ -1,4 +1,4 @@
 destination | source
-input/lib | /Users/jccp/Desktop/template/lib
-input/tv.csv | /Users/jccp/Desktop/template/raw/tv.csv
-input/chips.csv | /Users/jccp/Desktop/template/raw/chips.csv
+input/lib | /Users/michaelthomas/Documents/template/lib
+input/tv.csv | /Users/michaelthomas/Documents/template/raw/tv.csv
+input/chips.csv | /Users/michaelthomas/Documents/template/raw/chips.csv

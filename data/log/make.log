@@ -1,26 +1,20 @@
 --------------------------------------------------------------------------------
-Makelog started: 2022-08-18 10:45:24
-Working directory: /Users/jccp/Desktop/template/data
+Makelog started: 2022-09-06 09:05:48
+Working directory: /Users/michaelthomas/Documents/template/data
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
-WARNING! The following target files have been modified according to git status:
-/Users/jccp/Desktop/template/raw/chips.csv
-/Users/jccp/Desktop/template/raw/tv.csv
-Executing command: `python  "/Users/jccp/Desktop/template/data/code/merge_data.py" `
-Executing command: `python  "/Users/jccp/Desktop/template/data/code/clean_data.py" `
-/Users/jccp/Desktop/template/data/code/clean_data.py:17: SettingWithCopyWarning: 
+Executing command: `python  "/Users/michaelthomas/Documents/template/data/code/merge_data.py" `
+Executing command: `python  "/Users/michaelthomas/Documents/template/data/code/clean_data.py" `
+/Users/michaelthomas/Documents/template/data/code/clean_data.py:17: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
   df['chips_sold'][df['chips_sold'] == -999999] = np.NaN
 
 Output logs successfully written!
-WARNING! Certain files tracked by git exceed the config size limit (0.5 MB). See below for list of files.
-/Users/jccp/Desktop/template/data/output/data_merged.csv
-/Users/jccp/Desktop/template/data/output/data_cleaned.csv
 --------------------------------------------------------------------------------
-Makelog ended: 2022-08-18 10:45:28
-Working directory: /Users/jccp/Desktop/template/data
+Makelog ended: 2022-09-06 09:05:50
+Working directory: /Users/michaelthomas/Documents/template/data
 --------------------------------------------------------------------------------

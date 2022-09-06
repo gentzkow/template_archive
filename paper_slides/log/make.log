@@ -1,57 +1,57 @@
 --------------------------------------------------------------------------------
-Makelog started: 2022-08-18 10:45:43
-Working directory: /Users/jccp/Desktop/template/paper_slides
+Makelog started: 2022-09-06 09:05:53
+Working directory: /Users/michaelthomas/Documents/template/paper_slides
 --------------------------------------------------------------------------------
 Input copies successfully created!
 External copies successfully created!
 Source logs successfully written!
 WARNING! The following target files have been modified according to git status:
-/Users/jccp/Desktop/template/data/output/chips_sold.pdf
-/Users/jccp/Desktop/template/analysis/output/regression.csv
-Executing command: `lyx -e pdf2 "/Users/jccp/Desktop/template/paper_slides/code/paper.lyx"`
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex)
+/Users/michaelthomas/Documents/template/data/output/chips_sold.pdf
+/Users/michaelthomas/Documents/template/analysis/output/regression.csv
+Executing command: `lyx -e pdf2 "/Users/michaelthomas/Documents/template/paper_slides/code/paper.lyx"`
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
 (./paper.tex
-LaTeX2e <2021-11-15> patch level 1
-L3 programming layer <2022-02-24>
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex)
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-02-18>
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
 (./paper.tex
-LaTeX2e <2021-11-15> patch level 1
-L3 programming layer <2022-02-24>
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-02-18>
 
-Executing command: `lyx -e pdf2 "/Users/jccp/Desktop/template/paper_slides/code/online_appendix.lyx"`
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex)
+Executing command: `lyx -e pdf2 "/Users/michaelthomas/Documents/template/paper_slides/code/online_appendix.lyx"`
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
 (./online_appendix.tex
-LaTeX2e <2021-11-15> patch level 1
-L3 programming layer <2022-02-24>
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex)
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-02-18>
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
 (./online_appendix.tex
-LaTeX2e <2021-11-15> patch level 1
-L3 programming layer <2022-02-24>
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-02-18>
 
-Executing command: `lyx -e pdf2 "/Users/jccp/Desktop/template/paper_slides/code/slides.lyx"`
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex)
+Executing command: `lyx -e pdf2 "/Users/michaelthomas/Documents/template/paper_slides/code/slides.lyx"`
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
 (./slides.tex
-LaTeX2e <2021-11-15> patch level 1
-L3 programming layer <2022-02-24>
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex)
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-02-18>
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
 (./slides.tex
-LaTeX2e <2021-11-15> patch level 1
-L3 programming layer <2022-02-24>
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-02-18>
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2022-08-18 10:45:52
-Working directory: /Users/jccp/Desktop/template/paper_slides
+Makelog ended: 2022-09-06 09:05:59
+Working directory: /Users/michaelthomas/Documents/template/paper_slides
 --------------------------------------------------------------------------------

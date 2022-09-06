@@ -1,19 +1,19 @@
 --------------------------------------------------------------------------------
-Makelog started: 2022-08-18 10:45:29
-Working directory: /Users/jccp/Desktop/template/analysis
+Makelog started: 2022-09-06 09:05:51
+Working directory: /Users/michaelthomas/Documents/template/analysis
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
 WARNING! The following target files have been modified according to git status:
-/Users/jccp/Desktop/template/data/output/data_cleaned.csv
-Executing command: `python  "/Users/jccp/Desktop/template/analysis/code/analyze_data.py" `
-/usr/local/Caskroom/miniconda/base/envs/template/lib/python3.7/site-packages/linearmodels/shared/exceptions.py:35: MissingValueWarning: 
+/Users/michaelthomas/Documents/template/data/output/data_cleaned.csv
+Executing command: `python  "/Users/michaelthomas/Documents/template/analysis/code/analyze_data.py" `
+/opt/homebrew/Caskroom/miniconda/base/envs/template/lib/python3.8/site-packages/linearmodels/panel/model.py:1183: MissingValueWarning: 
 Inputs contain missing values. Dropping rows with missing observations.
-  warnings.warn(missing_value_warning_msg, MissingValueWarning)
+  super().__init__(dependent, exog, weights=weights, check_rank=check_rank)
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2022-08-18 10:45:42
-Working directory: /Users/jccp/Desktop/template/analysis
+Makelog ended: 2022-09-06 09:05:53
+Working directory: /Users/michaelthomas/Documents/template/analysis
 --------------------------------------------------------------------------------
