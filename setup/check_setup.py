@@ -15,7 +15,7 @@ try:
 
 except:
     print("Please ensure that conda env is activated and that yaml,")
-    print("termcolor, and colorama are in conda_env.yaml")
+    print("termcolor, and colorama are in conda_env.yaml.\nIf you are not using conda, ensure you have installed all dependencies from ~/setup/dependencies.md.")
     raise Exception
 
 ROOT = '..'
