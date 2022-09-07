@@ -3,6 +3,7 @@ channels:
   - conda-forge
 dependencies:
   - python=3.7
+<<<<<<< HEAD
   - pyyaml=6.0
   - numpy=1.21.6
   - matplotlib=3.5.3
@@ -12,7 +13,21 @@ dependencies:
   - jupyter=1.0.0
   - linearmodels=4.24
   # - pip=19
+=======
+  - pyyaml # import python packages by naming them as dependencies and potentially specifying version numbers
+  - numpy
+  - matplotlib
+  - gitpython
+  - termcolor
+  - colorama
+  - jupyter
+  - linearmodels
+ #  - pendulum
+  # - MoviePy
+  - pip=19
+>>>>>>> d221c96d47256b291c3faa1f7320c601785a6247
   # - pip: # if there is a package available via pip but not with conda, can import like this:
   #     - EXAMPLE_PACKAGE
-  # - r=3.6
-  # - r-yaml # import r packages by prepending with "r-""
+  - r=3.6
+  - r-yaml # import r packages by prepending with "r-""
+  # - r-nicheROVER
