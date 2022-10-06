@@ -1,14 +1,14 @@
 --------------------------------------------------------------------------------
-Makelog started: 2022-09-06 09:05:53
-Working directory: /Users/michaelthomas/Documents/template/paper_slides
+Makelog started: 2022-10-07 04:12:24
+Working directory: /Users/michaelthomas/Documents/gitrepo2/template/paper_slides
 --------------------------------------------------------------------------------
 Input copies successfully created!
 External copies successfully created!
 Source logs successfully written!
 WARNING! The following target files have been modified according to git status:
-/Users/michaelthomas/Documents/template/data/output/chips_sold.pdf
-/Users/michaelthomas/Documents/template/analysis/output/regression.csv
-Executing command: `lyx -e pdf2 "/Users/michaelthomas/Documents/template/paper_slides/code/paper.lyx"`
+/Users/michaelthomas/Documents/gitrepo2/template/analysis/output/regression.csv
+/Users/michaelthomas/Documents/gitrepo2/template/data/output/chips_sold.pdf
+Executing command: `lyx -e pdf2 "/Users/michaelthomas/Documents/gitrepo2/template/paper_slides/code/paper.lyx"`
 This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
@@ -22,7 +22,7 @@ entering extended mode
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18>
 
-Executing command: `lyx -e pdf2 "/Users/michaelthomas/Documents/template/paper_slides/code/online_appendix.lyx"`
+Executing command: `lyx -e pdf2 "/Users/michaelthomas/Documents/gitrepo2/template/paper_slides/code/online_appendix.lyx"`
 This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
@@ -36,7 +36,7 @@ entering extended mode
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18>
 
-Executing command: `lyx -e pdf2 "/Users/michaelthomas/Documents/template/paper_slides/code/slides.lyx"`
+Executing command: `lyx -e pdf2 "/Users/michaelthomas/Documents/gitrepo2/template/paper_slides/code/slides.lyx"`
 This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
@@ -52,6 +52,6 @@ L3 programming layer <2021-02-18>
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2022-09-06 09:05:59
-Working directory: /Users/michaelthomas/Documents/template/paper_slides
+Makelog ended: 2022-10-07 04:12:30
+Working directory: /Users/michaelthomas/Documents/gitrepo2/template/paper_slides
 --------------------------------------------------------------------------------

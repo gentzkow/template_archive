@@ -1,4 +1,4 @@
 destination | source
-input/lib | /Users/michaelthomas/Documents/template/lib
-input/tv.csv | /Users/michaelthomas/Documents/template/raw/tv.csv
-input/chips.csv | /Users/michaelthomas/Documents/template/raw/chips.csv
+input/lib | /Users/michaelthomas/Documents/gitrepo2/template/lib
+input/tv.csv | /Users/michaelthomas/Documents/gitrepo2/template/raw/tv.csv
+input/chips.csv | /Users/michaelthomas/Documents/gitrepo2/template/raw/chips.csv
