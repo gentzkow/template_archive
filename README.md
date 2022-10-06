@@ -32,10 +32,18 @@ These software are used by the scripts contained in the repository. By default, 
       conda init $(echo $0 | cut -d'-' -f 2)
       ```
 
-3. Create conda environment with the command:
+3. Create conda environment with the command (non-ARM Mac, e.g. M1 Mac):
       ```
       conda env create -f setup/conda_env.yaml
       ```
+   
+   For M1 Macs (ARM architecture) this command should be replaced with:
+   ```
+   CONDA_SUBDIR=osx-64 conda env create -f setup/conda_env.yaml 
+   ```
+
+   This forces the conda to use the standard x64 libraries. Most work fine with the ARM libraries, but some R packages fail. This may change in the future as support for ARM is expanded.
+
    The default name for the conda environment is `template`. This can be changed by editing the first line of `/setup/conda_env.yaml`. To activate the conda virtual environment just created, run
       ```
       conda activate PROJECT_NAME
@@ -44,6 +52,7 @@ These software are used by the scripts contained in the repository. By default, 
       ```
       conda deactivate
       ```
+
 
 4. Fetch `gslab_make` submodule files. We use a [Git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to track our `gslab_make` dependency in the `/lib/gslab_make` folder. After cloning the repository, you will need to initialize and fetch files for the `gslab_make` submodule. One way to do this is to run the following bash commands from the root of the repository:
    ```
@@ -59,7 +68,9 @@ These software are used by the scripts contained in the repository. By default, 
 
    This will instruct `git lfs` to handle files with extensions such as `.pdf`, `.png`, etc. This will not affect files that ship with the template. See [here](https://git-lfs.github.com/) for more information about modifying your repository's `git lfs` settings. 
 
-6. Run the script `/setup/check_setup.py`. One way to do this is to run the following bash command from the `/setup` directory:
+6. Run `/setup/setup_r.r`. This will load R packages required for the repository.
+
+7. Run the script `/setup/check_setup.py`. One way to do this is to run the following bash command from the `/setup` directory:
    ```
    python3 check_setup.py
    ```

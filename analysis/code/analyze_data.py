@@ -29,7 +29,7 @@ def format_model(fit):
     formatted = pd.DataFrame({'coef'     : fit.params, 
                               'std_error': fit.std_errors, 
                               'p_value'  : fit.pvalues})
-    formatted = formatted.loc[['post_tv']]
+    formatted = formatted.loc[['post_tv[T.True]']]
     
     return(formatted)
     
