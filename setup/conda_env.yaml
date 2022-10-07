@@ -12,7 +12,7 @@ dependencies:
   - termcolor #=1.1.0
   - colorama #=0.4.5
   - jupyter #=1.0.0
-  - linearmodels #= 4.24
+  - linearmodels #= 4.27
   # - pip=19
   # - pip: # if there is a package available via pip but not with conda, can import like this:
   #     - EXAMPLE_PACKAGE
