@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
-Makelog started: 2022-10-07 10:47:36
+Makelog started: 2022-10-07 10:50:53
 Working directory: /Users/jccp/Desktop/template/analysis
 --------------------------------------------------------------------------------
 Input links successfully created!
@@ -12,6 +12,6 @@ Inputs contain missing values. Dropping rows with missing observations.
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2022-10-07 10:48:08
+Makelog ended: 2022-10-07 10:50:57
 Working directory: /Users/jccp/Desktop/template/analysis
 --------------------------------------------------------------------------------
