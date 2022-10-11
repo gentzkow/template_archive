@@ -1,8 +1,8 @@
-name: template #CHANGE for your project
+name: template_julia #CHANGE for your project
 channels:
   - conda-forge
 dependencies:
-  - python=3.7
+  - python
   - pyyaml # import python packages by naming them as dependencies and potentially specifying version numbers
   - numpy
   - matplotlib
@@ -11,6 +11,7 @@ dependencies:
   - colorama
   - jupyter
   - linearmodels
+  - julia #=1.8.2
   # - pip=19
   # - pip: # if there is a package available via pip but not with conda, can import like this:
   #     - EXAMPLE_PACKAGE
