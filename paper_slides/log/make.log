@@ -1,12 +1,11 @@
 --------------------------------------------------------------------------------
-Makelog started: 2022-10-11 12:01:02
+Makelog started: 2022-10-11 12:55:06
 Working directory: /Users/jccp/Desktop/template/paper_slides
 --------------------------------------------------------------------------------
 Input copies successfully created!
 External copies successfully created!
 Source logs successfully written!
 WARNING! The following target files have been modified according to git status:
-/Users/jccp/Desktop/template/analysis/output/regression.csv
 /Users/jccp/Desktop/template/data/output/chips_sold.pdf
 Executing command: `lyx -e pdf2 "/Users/jccp/Desktop/template/paper_slides/code/paper.lyx"`
 This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex)
@@ -52,6 +51,6 @@ L3 programming layer <2022-02-24>
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2022-10-11 12:01:13
+Makelog ended: 2022-10-11 12:55:14
 Working directory: /Users/jccp/Desktop/template/paper_slides
 --------------------------------------------------------------------------------
