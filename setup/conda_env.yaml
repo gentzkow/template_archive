@@ -1,16 +1,18 @@
 name: template #CHANGE for your project
 channels:
   - conda-forge
-dependencies:
-  - python=3.7
-  - pyyaml # import python packages by naming them as dependencies and potentially specifying version numbers
-  - numpy
-  - matplotlib
-  - gitpython
-  - termcolor
-  - colorama
-  - jupyter
-  - linearmodels
+dependencies: 
+# The default behavior is to install the latest version of each package.
+# List the package version that resulted in a successful execution of the repository.
+  - python #=3.10
+  - pyyaml #=6.0
+  - numpy #=1.21.6
+  - matplotlib #=3.5.3
+  - gitpython #=3.1.27 
+  - termcolor #=1.1.0
+  - colorama #=0.4.5
+  - jupyter #=1.0.0
+  - linearmodels #= 4.27
   # - pip=19
   # - pip: # if there is a package available via pip but not with conda, can import like this:
   #     - EXAMPLE_PACKAGE

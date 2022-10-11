@@ -1,15 +1,14 @@
 --------------------------------------------------------------------------------
-Makelog started: 2022-08-18 10:45:24
+Makelog started: 2022-10-10 14:33:18
 Working directory: /Users/jccp/Desktop/template/data
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
-WARNING! The following target files have been modified according to git status:
-/Users/jccp/Desktop/template/raw/chips.csv
-/Users/jccp/Desktop/template/raw/tv.csv
 Executing command: `python  "/Users/jccp/Desktop/template/data/code/merge_data.py" `
 Executing command: `python  "/Users/jccp/Desktop/template/data/code/clean_data.py" `
+/Users/jccp/Desktop/template/data/code/clean_data.py:13: MatplotlibDeprecationWarning: The resize_event function was deprecated in Matplotlib 3.6 and will be removed two minor releases later. Use callbacks.process('resize_event', ResizeEvent(...)) instead.
+  plt.hist(df['chips_sold'])
 /Users/jccp/Desktop/template/data/code/clean_data.py:17: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
@@ -17,10 +16,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
   df['chips_sold'][df['chips_sold'] == -999999] = np.NaN
 
 Output logs successfully written!
-WARNING! Certain files tracked by git exceed the config size limit (0.5 MB). See below for list of files.
-/Users/jccp/Desktop/template/data/output/data_merged.csv
-/Users/jccp/Desktop/template/data/output/data_cleaned.csv
 --------------------------------------------------------------------------------
-Makelog ended: 2022-08-18 10:45:28
+Makelog ended: 2022-10-10 14:33:33
 Working directory: /Users/jccp/Desktop/template/data
 --------------------------------------------------------------------------------

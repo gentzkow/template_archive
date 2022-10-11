@@ -1,19 +1,21 @@
 --------------------------------------------------------------------------------
-Makelog started: 2022-08-18 10:45:29
+Makelog started: 2022-10-10 14:33:34
 Working directory: /Users/jccp/Desktop/template/analysis
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
-WARNING! The following target files have been modified according to git status:
-/Users/jccp/Desktop/template/data/output/data_cleaned.csv
 Executing command: `python  "/Users/jccp/Desktop/template/analysis/code/analyze_data.py" `
-/usr/local/Caskroom/miniconda/base/envs/template/lib/python3.7/site-packages/linearmodels/shared/exceptions.py:35: MissingValueWarning: 
+<bound method NDFrame.head of                    coef  std_error  p_value
+Intercept  1.151204e+06   6.280356      0.0
+post_tv    4.960731e+03  12.241512      0.0>
+
+/usr/local/Caskroom/miniconda/base/envs/template/lib/python3.10/site-packages/linearmodels/panel/model.py:1183: MissingValueWarning: 
 Inputs contain missing values. Dropping rows with missing observations.
-  warnings.warn(missing_value_warning_msg, MissingValueWarning)
+  super().__init__(dependent, exog, weights=weights, check_rank=check_rank)
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2022-08-18 10:45:42
+Makelog ended: 2022-10-10 14:33:48
 Working directory: /Users/jccp/Desktop/template/analysis
 --------------------------------------------------------------------------------
