@@ -10,6 +10,7 @@ dependencies:
   - termcolor
   - colorama
   - jupyter
+  - git
   - linearmodels
   - julia #=1.8.2
   # - pip=19

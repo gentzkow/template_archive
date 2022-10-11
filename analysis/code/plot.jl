@@ -3,7 +3,6 @@
 ##################
 
 # Load packages
-import Plots
 import DataFrames
 import CSV
 import StatsPlots
