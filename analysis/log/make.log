@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
-Makelog started: 2022-10-11 15:53:14
+Makelog started: 2022-10-12 10:23:40
 Working directory: /Users/jccp/Desktop/template/analysis
 --------------------------------------------------------------------------------
 Input links successfully created!
@@ -10,7 +10,7 @@ Executing command: `python  "/Users/jccp/Desktop/template/analysis/code/analyze_
 Inputs contain missing values. Dropping rows with missing observations.
   super().__init__(dependent, exog, weights=weights, check_rank=check_rank)
 
-Executing command: `julia  "/Users/jccp/Desktop/template/analysis/code/plot.jl"`
+Executing command: `julia  --project=.. "/Users/jccp/Desktop/template/analysis/code/plot.jl"`
 ┌ Warning: Indices Base.OneTo(1) of attribute `seriescolor` does not match data indices 1:31.
 └ @ Plots ~/.julia/packages/Plots/W75kY/src/utils.jl:128
 ┌ Warning: Indices Base.OneTo(1) of attribute `linecolor` does not match data indices 1:31.
@@ -23,6 +23,6 @@ sys:1: UserWarning: No data for colormapping provided via 'c'. Parameters 'vmin'
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2022-10-11 15:54:46
+Makelog ended: 2022-10-12 10:24:43
 Working directory: /Users/jccp/Desktop/template/analysis
 --------------------------------------------------------------------------------
