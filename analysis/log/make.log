@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
-Makelog started: 2022-10-12 17:46:08
+Makelog started: 2022-10-13 13:32:00
 Working directory: /Users/jccp/Desktop/template/analysis
 --------------------------------------------------------------------------------
 Input links successfully created!
@@ -10,19 +10,19 @@ Executing command: `python  "/Users/jccp/Desktop/template/analysis/code/analyze_
 Inputs contain missing values. Dropping rows with missing observations.
   super().__init__(dependent, exog, weights=weights, check_rank=check_rank)
 
-Executing command: `julia  --project=.. "/Users/jccp/Desktop/template/analysis/code/plot.jl"`
+Executing command: `julia  "/Users/jccp/Desktop/template/analysis/code/plot.jl"`
 ┌ Warning: Indices Base.OneTo(1) of attribute `seriescolor` does not match data indices 1:31.
-└ @ Plots ~/.julia/packages/Plots/W75kY/src/utils.jl:128
+└ @ Plots /usr/local/Caskroom/miniconda/base/envs/template_julia/share/julia/packages/Plots/AAjgN/src/utils.jl:128
 ┌ Warning: Indices Base.OneTo(1) of attribute `linecolor` does not match data indices 1:31.
-└ @ Plots ~/.julia/packages/Plots/W75kY/src/utils.jl:128
+└ @ Plots /usr/local/Caskroom/miniconda/base/envs/template_julia/share/julia/packages/Plots/AAjgN/src/utils.jl:128
 ┌ Warning: Indices Base.OneTo(1) of attribute `fillcolor` does not match data indices 1:31.
-└ @ Plots ~/.julia/packages/Plots/W75kY/src/utils.jl:128
+└ @ Plots /usr/local/Caskroom/miniconda/base/envs/template_julia/share/julia/packages/Plots/AAjgN/src/utils.jl:128
 ┌ Warning: Indices Base.OneTo(1) of attribute `markercolor` does not match data indices 1:31.
-└ @ Plots ~/.julia/packages/Plots/W75kY/src/utils.jl:128
+└ @ Plots /usr/local/Caskroom/miniconda/base/envs/template_julia/share/julia/packages/Plots/AAjgN/src/utils.jl:128
 sys:1: UserWarning: No data for colormapping provided via 'c'. Parameters 'vmin', 'vmax' will be ignored
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2022-10-12 17:47:11
+Makelog ended: 2022-10-13 13:33:03
 Working directory: /Users/jccp/Desktop/template/analysis
 --------------------------------------------------------------------------------
