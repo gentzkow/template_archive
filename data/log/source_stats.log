@@ -1,697 +1,697 @@
 file name | last modified | file size
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/source_logging 2.rst.txt | 2022-10-12 17:21:14 | 380
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/write_logs/gslab_make.write_logs.end_makelog.rst.txt | 2022-10-12 17:09:50 | 97
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/language_data 2.js | 2022-10-12 17:21:14 | 4758
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/modify_dir/gslab_make.modify_dir.unzip.html | 2022-10-12 17:21:14 | 6662
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/underscore.js | 2022-10-12 17:09:50 | 19530
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/sourcing 2.doctree | 2022-10-12 17:21:14 | 78998
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/matlab_script_error.m | 2022-10-12 17:09:50 | 5
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/run_program/gslab_make.run_program.run_stat_transfer.html | 2022-10-12 17:21:14 | 11510
-/Users/jccp/Desktop/template/lib/gslab_make/docs/objects 2.inv | 2022-10-12 17:21:14 | 1891
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/test/utility.py | 2022-10-12 17:09:50 | 1404
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/searchtools.js | 2022-10-12 17:21:14 | 18215
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/run_program/gslab_make.run_program.run_r.rst.txt | 2022-10-12 17:09:50 | 80
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/run_program/gslab_make.run_program.run_latex.rst | 2022-10-12 17:09:50 | 92
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/__pycache__/write_logs.cpython-310.pyc | 2022-10-12 17:11:29 | 8950
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/fontawesome-webfont.eot | 2022-10-12 17:09:50 | 165742
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/file.png | 2022-10-12 17:09:50 | 286
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/tablefill/tablefill space.txt | 2022-10-12 17:09:50 | 66
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/write_logs/gslab_make.write_logs.log_files_in_output.rst.txt | 2022-10-12 17:09:50 | 121
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/fontawesome-webfont.eot | 2022-10-12 17:09:50 | 165742
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/run_program/gslab_make.run_program.run_perl.rst.txt | 2022-10-12 17:09:50 | 89
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/__pycache__/write_source_logs.cpython-310.pyc | 2022-10-12 17:11:30 | 4678
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/fonts/fontawesome-webfont.eot | 2022-10-12 17:09:50 | 165742
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/log_sources/dir/file.txt | 2022-10-12 17:09:50 | 20
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/_sphinx_javascript_frameworks_compat.js | 2022-10-12 17:09:50 | 4418
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/test/EXCLUDE_test_perl.py | 2022-10-12 17:21:14 | 8121
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.woff | 2022-10-12 17:09:50 | 87624
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/basic.css | 2022-10-12 17:09:50 | 14621
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/check_repo/gslab_make.check_repo.check_module_size.html | 2022-10-12 17:21:14 | 8421
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/utility 2.rst.txt | 2022-10-12 17:21:14 | 327
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato/lato-italic.eot | 2022-10-12 17:09:50 | 268604
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/fonts/lato-normal.woff | 2022-10-12 17:09:50 | 309192
-/Users/jccp/Desktop/template/lib/gslab_make/docs/search.html | 2022-10-12 17:21:14 | 4739
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/badge_only.css | 2022-10-12 17:09:50 | 3275
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/search.html | 2022-10-12 17:21:14 | 4739
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/run_program/gslab_make.run_program.run_module.rst.txt | 2022-10-12 17:09:50 | 95
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/fonts/lato-bold.woff2 | 2022-10-12 17:09:50 | 184912
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/private/programdirective.py | 2022-10-12 17:09:50 | 10360
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/general_logging.html | 2022-10-12 17:21:14 | 14686
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato/lato-italic.woff2 | 2022-10-12 17:09:50 | 195704
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/underscore-1.12.0.js | 2022-10-12 17:09:50 | 67692
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/check_repo.py | 2022-10-12 17:09:50 | 14471
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/general_logging.rst | 2022-10-12 17:09:50 | 655
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/specifying_paths.html | 2022-10-12 17:21:14 | 11805
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/modify_dir/gslab_make.modify_dir.zip_dir.rst.txt | 2022-10-12 17:09:50 | 85
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/modify_dir/gslab_make.modify_dir.zip_dir.doctree | 2022-10-12 17:21:14 | 7138
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/test/EXCLUDE_test_stata.py | 2022-10-12 17:21:14 | 8010
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/tablefill/tablefill_template.lyx | 2022-10-12 17:09:50 | 4256
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/run_program/gslab_make.run_program.run_latex.html | 2022-10-12 17:21:14 | 11823
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/check_repo/gslab_make.check_repo.get_modified_sources.rst.txt | 2022-10-12 17:09:50 | 124
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/run_program/gslab_make.run_program.run_sas.rst | 2022-10-12 17:09:50 | 86
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/__init__.py | 2022-10-12 17:09:50 | 2696
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/wrong_extension.txt | 2022-10-12 17:09:50 | 0
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/test/test_modify_dir.py | 2022-10-12 17:09:50 | 7852
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/write_logs/gslab_make.write_logs.end_makelog.html | 2022-10-12 17:21:14 | 6871
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/write_source_logs/gslab_make.write_source_logs.write_source_logs.rst | 2022-10-12 17:09:50 | 122
-/Users/jccp/Desktop/template/lib/gslab_make/test/utility.py | 2022-10-12 17:09:50 | 1404
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato/lato-italic.woff | 2022-10-12 17:09:50 | 328412
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/make_utility/gslab_make.make_utility.copy_output.doctree | 2022-10-12 17:21:14 | 7228
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/js/modernizr.min.js | 2022-10-12 17:09:50 | 15414
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/write_logs/gslab_make.write_logs.log_files_in_output.rst.txt | 2022-10-12 17:09:50 | 121
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/basic 2.css | 2022-10-12 17:21:14 | 14621
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/jquery-3.5.1.js | 2022-10-12 17:09:50 | 287630
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Inconsolata-Bold 2.ttf | 2022-10-12 17:21:14 | 109948
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/run_program/gslab_make.run_program.run_sas.html | 2022-10-12 17:21:14 | 11782
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/write_source_logs.py | 2022-10-12 17:09:50 | 4866
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato/lato-bolditalic.eot | 2022-10-12 17:09:50 | 266158
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/jquery-3.6.0.js | 2022-10-12 17:09:50 | 288580
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/run_program/gslab_make.run_program.run_r.rst.txt | 2022-10-12 17:09:50 | 80
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/utility.rst.txt | 2022-10-12 17:09:50 | 327
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/run_program/gslab_make.run_program.run_python.rst.txt | 2022-10-12 17:09:50 | 95
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Inconsolata-Bold.ttf | 2022-10-12 17:09:50 | 109948
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/run_program/gslab_make.run_program.run_matlab.rst.txt | 2022-10-12 17:09:50 | 95
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato/lato-bolditalic.woff2 | 2022-10-12 17:09:50 | 193308
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/run_program/gslab_make.run_program.run_lyx.rst | 2022-10-12 17:09:50 | 86
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/plus.png | 2022-10-12 17:09:50 | 90
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab-Regular.ttf | 2022-10-12 17:09:50 | 169064
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/graphviz.css | 2022-10-12 17:09:50 | 299
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/utility.html | 2022-10-12 17:21:14 | 11985
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/run_program/gslab_make.run_program.run_mathematica.html | 2022-10-12 17:21:14 | 11397
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/source_logging.html | 2022-10-12 17:21:14 | 10621
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab/roboto-slab-v7-regular 2.ttf | 2022-10-12 17:21:14 | 169064
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/run_program/gslab_make.run_program.run_latex.rst.txt | 2022-10-12 17:09:50 | 92
-/Users/jccp/Desktop/template/lib/gslab_make/test/__init__.py | 2022-10-12 17:09:50 | 0
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/private/__init__.py | 2022-10-12 17:09:50 | 0
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato-Bold.ttf | 2022-10-12 17:09:50 | 656544
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/write_source_logs/gslab_make.write_source_logs.write_source_logs.html | 2022-10-12 17:21:14 | 10420
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/run_program.py | 2022-10-12 17:09:50 | 42182
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/underscore-1.13.1.js | 2022-10-12 17:09:50 | 68420
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/sourcing 2.rst.txt | 2022-10-12 17:21:14 | 548
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/source_logging 2.html | 2022-10-12 17:21:14 | 9628
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/minus 2.png | 2022-10-12 17:21:14 | 90
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/searchtools 2.js | 2022-10-12 17:21:14 | 17120
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/perl_script_error.pl | 2022-10-12 17:09:50 | 5
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/stata_script.do | 2022-10-12 17:09:50 | 108
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/fontawesome-webfont.svg | 2022-10-12 17:09:50 | 444379
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/run_program/gslab_make.run_program.run_latex.html | 2022-10-12 17:21:14 | 11823
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/filling.rst | 2022-10-12 17:09:50 | 253
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/write_logs/gslab_make.write_logs.log_files_in_output.doctree | 2022-10-12 17:21:14 | 17521
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/move_sources.py | 2022-10-12 17:09:50 | 19397
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/run_program/gslab_make.run_program.run_jupyter.html | 2022-10-12 17:21:14 | 10877
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.eot | 2022-10-12 17:09:50 | 78331
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/general_logging 2.html | 2022-10-12 17:21:14 | 13399
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/move_sources/move_bad.txt | 2022-10-12 17:09:50 | 31
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/perl_script_arg.pl | 2022-10-12 17:09:50 | 206
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/check_repo/gslab_make.check_repo.check_module_size.html | 2022-10-12 17:21:14 | 8421
-/Users/jccp/Desktop/template/lib/gslab_make/test/EXCLUDE_test_perl.py | 2022-10-12 17:21:14 | 8121
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/language_data.js | 2022-10-12 17:09:50 | 4758
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/repository.rst.txt | 2022-10-12 17:09:50 | 363
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato/lato-regular.eot | 2022-10-12 17:09:50 | 253461
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/specifying_paths.doctree | 2022-10-12 17:09:50 | 17011
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/lyx_file.lyx | 2022-10-12 17:09:50 | 1608
-/Users/jccp/Desktop/template/lib/gslab_make/test/test_python.py | 2022-10-12 17:21:14 | 7064
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/config/config_user_bad_executables.yaml | 2022-10-12 17:09:50 | 249
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/underscore-1.3.1 2.js | 2022-10-12 17:21:14 | 35168
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/general_logging.rst.txt | 2022-10-12 17:09:50 | 655
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/modify_dir/gslab_make.modify_dir.remove_dir.html | 2022-10-12 17:21:14 | 8029
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/fonts/fontawesome-webfont.woff2 | 2022-10-12 17:09:50 | 77160
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/run_program/gslab_make.run_program.run_mathematica.rst.txt | 2022-10-12 17:09:50 | 110
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/make_utility/gslab_make.make_utility.update_internal_paths.html | 2022-10-12 17:21:14 | 7136
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/make_utility/gslab_make.make_utility.update_paths.rst.txt | 2022-10-12 17:09:50 | 102
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/source_logging.rst.txt | 2022-10-12 17:09:50 | 380
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/test/WIP_test_latex.py | 2022-10-12 17:09:50 | 2298
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/config/config_user.yaml | 2022-10-12 17:09:50 | 236
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/filling 2.html | 2022-10-12 17:21:14 | 15834
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/textfill.py | 2022-10-12 17:09:50 | 5952
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/r_script_error.R | 2022-10-12 17:09:50 | 5
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/fontawesome-webfont.ttf | 2022-10-12 17:09:50 | 165548
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/check_repo/gslab_make.check_repo.check_conda_status.rst.txt | 2022-10-12 17:09:50 | 118
-/Users/jccp/Desktop/template/lib/gslab_make/LICENSE.txt | 2022-10-12 17:09:50 | 1083
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/fonts/Roboto-Slab-Bold.woff2 | 2022-10-12 17:09:50 | 67312
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/jquery.js | 2022-10-12 17:09:50 | 89501
-/Users/jccp/Desktop/template/lib/gslab_make/test/test_move_sources.py | 2022-10-12 17:21:14 | 7262
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/sourcing.doctree | 2022-10-12 17:21:14 | 78994
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/move_sources/gslab_make.move_sources.copy_inputs.html | 2022-10-12 17:21:14 | 12271
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/tablefill/gslab_make.tablefill.tablefill.html | 2022-10-12 17:21:14 | 16341
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/directory.rst | 2022-10-12 17:09:50 | 344
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/program.doctree | 2022-10-12 17:21:14 | 215270
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/move_sources/gslab_make.move_sources.link_inputs.html | 2022-10-12 17:21:14 | 12450
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.woff | 2022-10-12 17:09:50 | 86288
-/Users/jccp/Desktop/template/lib/gslab_make/test/WIP_test_latex.py | 2022-10-12 17:09:50 | 2298
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/tablefill/tablefill_template.tex | 2022-10-12 17:09:50 | 942
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato/lato-bolditalic.eot | 2022-10-12 17:09:50 | 266158
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/check_repo/gslab_make.check_repo.check_module_size.rst | 2022-10-12 17:09:50 | 115
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab/roboto-slab-v7-regular.woff2 | 2022-10-12 17:09:50 | 66444
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/genindex.html | 2022-10-12 17:21:14 | 13072
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/specifying_paths.html | 2022-10-12 17:21:14 | 11805
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/make_utility/gslab_make.make_utility.update_executables.doctree | 2022-10-12 17:21:14 | 9857
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/run_program/gslab_make.run_program.run_mathematica.doctree | 2022-10-12 17:21:14 | 18528
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/modify_dir/gslab_make.modify_dir.clear_dir.rst.txt | 2022-10-12 17:09:50 | 91
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/run_program/gslab_make.run_program.run_stata.doctree | 2022-10-12 17:21:14 | 19271
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/make_utility/gslab_make.make_utility.update_internal_paths.rst | 2022-10-12 17:09:50 | 129
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/test/test_makelog.py | 2022-10-12 17:21:14 | 2308
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/modify_dir/gslab_make.modify_dir.zip_dir.rst | 2022-10-12 17:09:50 | 85
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/modify_dir/gslab_make.modify_dir.clear_dir.rst | 2022-10-12 17:09:50 | 91
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/fonts/Roboto-Slab-Regular.woff2 | 2022-10-12 17:09:50 | 66444
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/dummy 2.html | 2022-10-12 17:21:14 | 18182
-/Users/jccp/Desktop/template/lib/gslab_make/test/EXCLUDE_test_lyx.py | 2022-10-12 17:21:14 | 9277
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/move_sources/gslab_make.move_sources.link_inputs.rst | 2022-10-12 17:09:50 | 99
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/run_program/gslab_make.run_program.run_stat_transfer.html | 2022-10-12 17:21:14 | 11510
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/program.rst.txt | 2022-10-12 17:09:50 | 2704
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/fonts/lato-bold.woff2 | 2022-10-12 17:09:50 | 184912
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/test/__init__.py | 2022-10-12 17:09:50 | 0
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato/lato-regular.woff2 | 2022-10-12 17:09:50 | 182708
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/filling.doctree | 2022-10-12 17:21:14 | 28794
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/index.doctree | 2022-10-12 17:09:50 | 6021
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/run_program/gslab_make.run_program.run_jupyter.rst.txt | 2022-10-12 17:09:50 | 98
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/directory 2.rst.txt | 2022-10-12 17:21:14 | 344
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.eot | 2022-10-12 17:09:50 | 79520
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/fonts/lato-bold-italic.woff2 | 2022-10-12 17:09:50 | 193308
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/sphinx_highlight.js | 2022-10-12 17:21:14 | 4712
-/Users/jccp/Desktop/template/lib/gslab_make/test/test_log_sources.py | 2022-10-12 17:21:14 | 4585
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/utility.rst | 2022-10-12 17:09:50 | 327
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/lyx_file_handout.lyx | 2022-10-12 17:09:50 | 2000
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/theme.css | 2022-10-12 17:09:50 | 129674
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/filling 2.rst.txt | 2022-10-12 17:21:14 | 253
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/index.html | 2022-10-12 17:21:14 | 7495
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/log_sources/dir_depth/depth_1.txt | 2022-10-12 17:09:50 | 20
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/move_sources/gslab_make.move_sources.link_externals.html | 2022-10-12 17:21:14 | 12487
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/fonts/fontawesome-webfont.svg | 2022-10-12 17:09:50 | 444379
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/move_sources/gslab_make.move_sources.link_inputs.rst.txt | 2022-10-12 17:09:50 | 99
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/tablefill/gslab_make.tablefill.tablefill.rst.txt | 2022-10-12 17:09:50 | 90
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/test/test_tablefill.py | 2022-10-12 17:21:14 | 4248
-/Users/jccp/Desktop/template/lib/gslab_make/test/test_modify_dir.py | 2022-10-12 17:09:50 | 7852
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/dummy 2.rst | 2022-10-12 17:21:14 | 741
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato/lato-bold.ttf | 2022-10-12 17:09:50 | 600856
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/doctools.js | 2022-10-12 17:21:14 | 4472
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/sourcing 2.rst | 2022-10-12 17:21:14 | 548
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/log_outputs/dir_local/file_local.txt | 2022-10-12 17:09:50 | 20
-/Users/jccp/Desktop/template/lib/gslab_make/test/WIP_test_matlab.py | 2022-10-12 17:21:14 | 8012
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/test/EXCLUDE_test_R.py | 2022-10-12 17:21:14 | 7997
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/directory 2.html | 2022-10-12 17:21:14 | 11386
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/move_sources/move_missing.txt | 2022-10-12 17:09:50 | 80
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/make_utility/gslab_make.make_utility.update_internal_paths.html | 2022-10-12 17:21:14 | 7136
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/directory.html | 2022-10-12 17:21:14 | 12705
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/private/metadata.py | 2022-10-12 17:21:14 | 4160
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/make.bat | 2022-10-12 17:09:50 | 941
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato/lato-bold.eot | 2022-10-12 17:09:50 | 256056
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/check_repo/gslab_make.check_repo.check_module_size.rst.txt | 2022-10-12 17:09:50 | 115
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/run_program/gslab_make.run_program.run_python.rst | 2022-10-12 17:09:50 | 95
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/write_logs.py | 2022-10-12 17:09:50 | 10665
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/move_sources/gslab_make.move_sources.copy_externals.html | 2022-10-12 17:21:14 | 12264
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/tablefill/gslab_make.tablefill.tablefill.rst.txt | 2022-10-12 17:09:50 | 90
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/make_utility/gslab_make.make_utility.update_external_paths.html | 2022-10-12 17:21:14 | 7583
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/modify_dir/gslab_make.modify_dir.unzip.doctree | 2022-10-12 17:21:14 | 7173
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/move_sources/gslab_make.move_sources.link_externals.doctree | 2022-10-12 17:21:14 | 21477
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/__pycache__/textfill_info.cpython-310.pyc | 2022-10-12 17:11:30 | 6495
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.ttf | 2022-10-12 17:09:50 | 169064
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/run_program/gslab_make.run_program.run_jupyter.html | 2022-10-12 17:21:14 | 10877
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/latex_file.tex | 2022-10-12 17:09:50 | 276
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/make_utility/gslab_make.make_utility.update_external_paths.rst | 2022-10-12 17:09:50 | 129
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/fontawesome-webfont.ttf | 2022-10-12 17:09:50 | 165548
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/check_repo/gslab_make.check_repo.check_conda_status.rst.txt | 2022-10-12 17:09:50 | 118
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/run_program/gslab_make.run_program.run_stata.rst | 2022-10-12 17:09:50 | 92
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/jquery-3.2.1.js | 2022-10-12 17:09:50 | 268039
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/run_program/gslab_make.run_program.run_stat_transfer.rst.txt | 2022-10-12 17:09:50 | 116
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/check_repo.py | 2022-10-12 17:09:50 | 14471
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/jquery-3.5.1.js | 2022-10-12 17:09:50 | 287630
-/Users/jccp/Desktop/template/lib/gslab_make/docs/objects.inv | 2022-10-12 17:21:14 | 1957
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/pygments 2.css | 2022-10-12 17:21:14 | 4819
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/sourcing 2.rst.txt | 2022-10-12 17:21:14 | 548
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/run_program/gslab_make.run_program.run_sas.rst.txt | 2022-10-12 17:09:50 | 86
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/jquery-3.6.0.js | 2022-10-12 17:09:50 | 288580
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/make_utility/gslab_make.make_utility.copy_output.html | 2022-10-12 17:21:14 | 6739
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/modify_dir/gslab_make.modify_dir.clear_dir.html | 2022-10-12 17:21:14 | 7830
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/check_repo/gslab_make.check_repo.get_modified_sources.rst.txt | 2022-10-12 17:09:50 | 124
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/make_utility.py | 2022-10-12 17:09:50 | 5785
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/dummy 2.doctree | 2022-10-12 17:21:14 | 51450
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/perl_script.pl | 2022-10-12 17:09:50 | 208
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/dummy.html | 2022-10-12 17:21:14 | 18180
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/write_logs/gslab_make.write_logs.write_to_makelog.doctree | 2022-10-12 17:21:14 | 8103
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/file 2.png | 2022-10-12 17:21:14 | 286
-/Users/jccp/Desktop/template/lib/gslab_make/test/test_tablefill.py | 2022-10-12 17:21:14 | 4244
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Inconsolata-Regular 2.ttf | 2022-10-12 17:21:14 | 96964
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/documentation_options.js | 2022-10-12 17:09:50 | 420
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/python_script_error.py | 2022-10-12 17:09:50 | 5
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/move_sources/gslab_make.move_sources.link_inputs.doctree | 2022-10-12 17:21:14 | 21381
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/tablefill_info.py | 2022-10-12 17:09:50 | 8432
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/modify_dir/gslab_make.modify_dir.clear_dir.html | 2022-10-12 17:21:14 | 7830
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/write_logs/gslab_make.write_logs.write_to_makelog.html | 2022-10-12 17:21:14 | 6925
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/sourcing 2.html | 2022-10-12 17:21:14 | 31647
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/doctools 2.js | 2022-10-12 17:21:14 | 8171
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/searchtools.js | 2022-10-12 17:21:14 | 18215
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/check_repo/gslab_make.check_repo.check_conda_status.html | 2022-10-12 17:21:14 | 7190
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/run_program/gslab_make.run_program.run_perl.doctree | 2022-10-12 17:21:14 | 18527
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/run_program/gslab_make.run_program.execute_command.rst.txt | 2022-10-12 17:09:50 | 110
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/run_program/gslab_make.run_program.run_latex.doctree | 2022-10-12 17:21:14 | 20056
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/js/modernizr.min.js | 2022-10-12 17:09:50 | 15414
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab-Bold 2.ttf | 2022-10-12 17:21:14 | 170616
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/filling 2.rst | 2022-10-12 17:21:14 | 253
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/modify_dir/gslab_make.modify_dir.remove_dir.doctree | 2022-10-12 17:21:14 | 10625
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/plus.png | 2022-10-12 17:09:50 | 90
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/fonts/lato-bold-italic.woff2 | 2022-10-12 17:09:50 | 193308
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/write_source_logs/gslab_make.write_source_logs.write_source_logs.rst.txt | 2022-10-12 17:09:50 | 122
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/underscore.js | 2022-10-12 17:09:50 | 19530
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/textfill.py | 2022-10-12 17:09:50 | 5952
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/jquery.js | 2022-10-12 17:09:50 | 89501
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/index.rst.txt | 2022-10-12 17:09:50 | 1039
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/run_program/gslab_make.run_program.run_python.rst.txt | 2022-10-12 17:09:50 | 95
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/filling.rst.txt | 2022-10-12 17:09:50 | 253
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/run_program/gslab_make.run_program.run_mathematica.rst | 2022-10-12 17:09:50 | 110
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.ttf | 2022-10-12 17:09:50 | 170616
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/run_program/gslab_make.run_program.run_module.html | 2022-10-12 17:21:14 | 10398
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/_sphinx_javascript_frameworks_compat 2.js | 2022-10-12 17:21:14 | 4418
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/log_outputs/recursion.txt | 2022-10-12 17:09:50 | 34
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/fontawesome-webfont.woff2 | 2022-10-12 17:09:50 | 77160
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/doctools.js | 2022-10-12 17:21:14 | 4472
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/__pycache__/textfill.cpython-310.pyc | 2022-10-12 17:11:30 | 5150
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/source_logging 2.html | 2022-10-12 17:21:14 | 9628
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/config/config_user_bad.yaml | 2022-10-12 17:09:50 | 131
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/README.md | 2022-10-12 17:09:50 | 1340
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato/lato-bold.woff2 | 2022-10-12 17:09:50 | 184912
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/pygments.css | 2022-10-12 17:09:50 | 4819
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/write_logs/gslab_make.write_logs.start_makelog.doctree | 2022-10-12 17:21:14 | 7667
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/dummy 2.rst.txt | 2022-10-12 17:21:14 | 741
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/source_logging 2.rst.txt | 2022-10-12 17:21:14 | 380
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/fonts/Roboto-Slab-Bold.woff | 2022-10-12 17:09:50 | 87624
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/test/test_make_utility.py | 2022-10-12 17:21:14 | 4552
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/source_logging.html | 2022-10-12 17:21:14 | 10621
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/run_program/gslab_make.run_program.run_matlab.html | 2022-10-12 17:21:14 | 11374
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/run_program.py | 2022-10-12 17:21:14 | 42191
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/write_source_logs/gslab_make.write_source_logs.write_source_logs.doctree | 2022-10-12 17:21:14 | 19320
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/js/html5shiv-printshiv.min.js | 2022-10-12 17:09:50 | 4370
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/write_source_logs.py | 2022-10-12 17:09:50 | 4866
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/graphviz.css | 2022-10-12 17:09:50 | 299
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/lyx_file_handout_handout.lyx.bak | 2022-10-12 17:09:50 | 2000
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/run_program/gslab_make.run_program.execute_command.doctree | 2022-10-12 17:21:14 | 15448
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/test/WIP_test_matlab.py | 2022-10-12 17:21:14 | 8012
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/write_logs/gslab_make.write_logs.start_makelog.rst.txt | 2022-10-12 17:09:50 | 103
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/fontawesome-webfont 2.eot | 2022-10-12 17:21:14 | 165742
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/write_logs/gslab_make.write_logs.log_files_in_output.rst | 2022-10-12 17:09:50 | 121
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/js/theme.js | 2022-10-12 17:09:50 | 5023
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab/roboto-slab-v7-bold 2.woff2 | 2022-10-12 17:21:14 | 67312
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/pygments.css | 2022-10-12 17:09:50 | 4819
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/move_sources/gslab_make.move_sources.copy_inputs.doctree | 2022-10-12 17:21:14 | 20928
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/documentation_options.js | 2022-10-12 17:09:50 | 420
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/move_sources/gslab_make.move_sources.copy_externals.rst | 2022-10-12 17:09:50 | 108
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/dummy.rst.txt | 2022-10-12 17:09:50 | 741
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/private/__pycache__/programdirective.cpython-310.pyc | 2022-10-12 17:11:30 | 10130
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato-Bold 2.ttf | 2022-10-12 17:21:14 | 656544
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/underscore-1.12.0.js | 2022-10-12 17:09:50 | 67692
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/run_program/gslab_make.run_program.run_lyx.rst.txt | 2022-10-12 17:09:50 | 86
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato/lato-regular.eot | 2022-10-12 17:09:50 | 253461
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/run_program/gslab_make.run_program.execute_command.html | 2022-10-12 17:21:14 | 11273
-/Users/jccp/Desktop/template/lib/gslab_make/test/test_make_utility.py | 2022-10-12 17:21:14 | 4552
-/Users/jccp/Desktop/template/lib/gslab_make/test/EXCLUDE_test_stata.py | 2022-10-12 17:21:14 | 8022
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/__init__.py | 2022-10-12 17:09:50 | 2696
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/minus.png | 2022-10-12 17:09:50 | 90
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/test/test_log_sources.py | 2022-10-12 17:21:14 | 4585
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/tablefill/gslab_make.tablefill.tablefill.html | 2022-10-12 17:21:14 | 16341
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/fonts/Roboto-Slab-Bold.woff2 | 2022-10-12 17:09:50 | 67312
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/modify_dir.py | 2022-10-12 17:09:50 | 7384
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato/lato-bold.woff | 2022-10-12 17:09:50 | 309728
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/fonts/Roboto-Slab-Regular.woff | 2022-10-12 17:09:50 | 86288
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/run_program/gslab_make.run_program.run_module.rst | 2022-10-12 17:09:50 | 95
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/modify_dir/gslab_make.modify_dir.remove_dir.rst.txt | 2022-10-12 17:09:50 | 94
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/move_sources/move_file.txt | 2022-10-12 17:09:50 | 64
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/general_logging.rst.txt | 2022-10-12 17:09:50 | 655
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/test/test_move_sources.py | 2022-10-12 17:21:14 | 7274
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/source_logging.rst | 2022-10-12 17:09:50 | 380
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/tablefill/tablefill_duplicated.txt | 2022-10-12 17:09:50 | 66
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/make_utility/gslab_make.make_utility.update_paths.rst.txt | 2022-10-12 17:09:50 | 102
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/conf.py | 2022-10-12 17:09:50 | 1537
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/make_utility/gslab_make.make_utility.update_executables.html | 2022-10-12 17:21:14 | 7442
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/fontawesome-webfont.svg | 2022-10-12 17:09:50 | 444379
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/dummy.rst | 2022-10-12 17:09:50 | 741
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/run_program/gslab_make.run_program.run_jupyter.rst.txt | 2022-10-12 17:09:50 | 98
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/make_utility/gslab_make.make_utility.update_external_paths.rst.txt | 2022-10-12 17:09:50 | 129
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/run_program/gslab_make.run_program.run_r.doctree | 2022-10-12 17:21:14 | 18348
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/move_sources/gslab_make.move_sources.copy_externals.doctree | 2022-10-12 17:21:14 | 21024
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/move_sources/gslab_make.move_sources.copy_inputs.rst.txt | 2022-10-12 17:09:50 | 99
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/matlab_script.m | 2022-10-12 17:09:50 | 84
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/write_logs/gslab_make.write_logs.start_makelog.rst.txt | 2022-10-12 17:09:50 | 103
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/specifying_paths.rst | 2022-10-12 17:09:50 | 2616
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/js/badge_only.js | 2022-10-12 17:09:50 | 934
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/lyx_file_comments_comments.lyx.bak | 2022-10-12 17:09:50 | 1694
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/check_repo/gslab_make.check_repo.check_module_size.doctree | 2022-10-12 17:21:14 | 10689
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab/roboto-slab-v7-regular.ttf | 2022-10-12 17:09:50 | 169064
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Inconsolata 2.ttf | 2022-10-12 17:21:14 | 63184
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/log_sources/move_depth.txt | 2022-10-12 17:09:50 | 65
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/log_sources/move_recursion.txt | 2022-10-12 17:09:50 | 34
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/fontawesome-webfont.woff | 2022-10-12 17:09:50 | 98024
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/Makefile | 2022-10-12 17:09:50 | 683
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/fonts/lato-normal-italic.woff | 2022-10-12 17:09:50 | 328412
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/modify_dir/gslab_make.modify_dir.clear_dir.doctree | 2022-10-12 17:21:14 | 9379
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/move_sources/move_empty.txt | 2022-10-12 17:09:50 | 22
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/sourcing 2.html | 2022-10-12 17:21:14 | 31647
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/tablefill.py | 2022-10-12 17:09:50 | 20325
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/general_logging 2.rst.txt | 2022-10-12 17:21:14 | 655
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/move_sources/gslab_make.move_sources.copy_inputs.rst | 2022-10-12 17:09:50 | 99
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/modify_dir/gslab_make.modify_dir.remove_dir.rst | 2022-10-12 17:09:50 | 94
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato/lato-bolditalic.woff | 2022-10-12 17:09:50 | 323344
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/theme.css | 2022-10-12 17:09:50 | 129674
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab/roboto-slab-v7-bold.woff | 2022-10-12 17:09:50 | 87624
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/filling.html | 2022-10-12 17:21:14 | 16714
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/utility 2.html | 2022-10-12 17:21:14 | 10451
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/general_logging.html | 2022-10-12 17:21:14 | 14686
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/python_script_arg.py | 2022-10-12 17:09:50 | 180
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/run_program/gslab_make.run_program.run_perl.html | 2022-10-12 17:21:14 | 11374
-/Users/jccp/Desktop/template/lib/gslab_make/docs/genindex.html | 2022-10-12 17:21:14 | 13072
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/move_sources/gslab_make.move_sources.copy_externals.rst.txt | 2022-10-12 17:09:50 | 108
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/js/html5shiv.min.js | 2022-10-12 17:09:50 | 2734
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/sourcing.rst | 2022-10-12 17:09:50 | 548
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/language_data.js | 2022-10-12 17:09:50 | 4758
-/Users/jccp/Desktop/template/lib/gslab_make/test/test_makelog.py | 2022-10-12 17:21:14 | 2308
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato/lato-italic.woff2 | 2022-10-12 17:09:50 | 195704
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/run_program/gslab_make.run_program.run_sas.rst.txt | 2022-10-12 17:09:50 | 86
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/write_logs/gslab_make.write_logs.write_to_makelog.html | 2022-10-12 17:21:14 | 6925
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/fontawesome-webfont.woff | 2022-10-12 17:09:50 | 98024
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/environment.pickle | 2022-10-12 17:21:14 | 101617
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/run_program/gslab_make.run_program.run_sas.doctree | 2022-10-12 17:21:14 | 20509
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/run_program/gslab_make.run_program.run_jupyter.rst | 2022-10-12 17:09:50 | 98
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/log_outputs/dir/file.txt | 2022-10-12 17:09:50 | 20
-/Users/jccp/Desktop/template/lib/gslab_make/test/test_log_outputs.py | 2022-10-12 17:21:14 | 5111
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/private/movedirective.py | 2022-10-12 17:09:50 | 12767
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/python_script.py | 2022-10-12 17:09:50 | 169
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/make_utility/gslab_make.make_utility.update_external_paths.rst.txt | 2022-10-12 17:09:50 | 129
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab/roboto-slab-v7-regular.woff | 2022-10-12 17:09:50 | 86288
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/move_sources.py | 2022-10-12 17:09:50 | 19397
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/repository.doctree | 2022-10-12 17:21:14 | 24926
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato/lato-italic.eot | 2022-10-12 17:09:50 | 268604
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/write_logs/gslab_make.write_logs.end_makelog.html | 2022-10-12 17:21:14 | 6871
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/underscore-1.3.1.js | 2022-10-12 17:09:50 | 35168
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/lyx_file_beamer.lyx | 2022-10-12 17:09:50 | 2000
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/js/html5shiv-printshiv.min.js | 2022-10-12 17:09:50 | 4370
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/r_script.R | 2022-10-12 17:09:50 | 100
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato/lato-bold.woff2 | 2022-10-12 17:09:50 | 184912
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/modify_dir/gslab_make.modify_dir.clear_dir.rst.txt | 2022-10-12 17:09:50 | 91
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/modify_dir/gslab_make.modify_dir.remove_dir.rst.txt | 2022-10-12 17:09:50 | 94
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/run_program/gslab_make.run_program.run_stata.html | 2022-10-12 17:21:14 | 11653
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/config/config_bad.yaml | 2022-10-12 17:09:50 | 987
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/repository.rst.txt | 2022-10-12 17:09:50 | 363
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/private/__pycache__/utility.cpython-310.pyc | 2022-10-12 17:11:29 | 6592
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/dummy.html | 2022-10-12 17:21:14 | 18180
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/utility 2.rst | 2022-10-12 17:21:14 | 327
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/write_logs.py | 2022-10-12 17:09:50 | 10665
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/fonts/Roboto-Slab-Regular.woff | 2022-10-12 17:09:50 | 86288
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/__pycache__/__init__.cpython-310.pyc | 2022-10-12 17:11:28 | 1668
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/write_source_logs/gslab_make.write_source_logs.write_source_logs.html | 2022-10-12 17:21:14 | 10420
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/fonts/fontawesome-webfont.eot | 2022-10-12 17:09:50 | 165742
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/repository.html | 2022-10-12 17:21:14 | 11207
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Inconsolata.ttf | 2022-10-12 17:09:50 | 63184
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/dummy 2.html | 2022-10-12 17:21:14 | 18182
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/tablefill/tablefill_template_too_many_values.lyx | 2022-10-12 17:09:50 | 4701
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/stata_script_error.do | 2022-10-12 17:09:50 | 5
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/run_program/gslab_make.run_program.run_matlab.rst.txt | 2022-10-12 17:09:50 | 95
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/textfill_info.py | 2022-10-12 17:09:50 | 6314
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/__pycache__/move_sources.cpython-310.pyc | 2022-10-12 17:11:29 | 17879
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/__pycache__/check_repo.cpython-310.pyc | 2022-10-12 17:11:28 | 13646
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/run_program/gslab_make.run_program.run_python.doctree | 2022-10-12 17:21:14 | 18563
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/move_sources/gslab_make.move_sources.copy_externals.html | 2022-10-12 17:21:14 | 12264
-/Users/jccp/Desktop/template/lib/gslab_make/README.md | 2022-10-12 17:09:50 | 2006
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/tablefill/tablefill_template_missing_input.lyx | 2022-10-12 17:09:50 | 4264
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato/lato-bolditalic.woff | 2022-10-12 17:09:50 | 323344
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/modify_dir.py | 2022-10-12 17:09:50 | 7384
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/private/__pycache__/messages.cpython-310.pyc | 2022-10-12 17:11:28 | 5624
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/index.rst.txt | 2022-10-12 17:09:50 | 1039
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/repository.html | 2022-10-12 17:21:14 | 11207
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/check_repo/gslab_make.check_repo.check_conda_status.rst | 2022-10-12 17:09:50 | 118
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/run_program/gslab_make.run_program.run_perl.html | 2022-10-12 17:21:14 | 11374
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/jquery-3.5.1 2.js | 2022-10-12 17:21:14 | 287630
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/utility 2.doctree | 2022-10-12 17:21:14 | 28244
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/private/__init__.py | 2022-10-12 17:09:50 | 0
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/run_program/gslab_make.run_program.run_lyx.doctree | 2022-10-12 17:21:14 | 22160
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/run_program/gslab_make.run_program.run_matlab.doctree | 2022-10-12 17:21:14 | 18438
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato/lato-bold.ttf | 2022-10-12 17:09:50 | 600856
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/private/__pycache__/__init__.cpython-310.pyc | 2022-10-12 17:11:28 | 176
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/source_logging 2.doctree | 2022-10-12 17:21:14 | 20417
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/run_program/gslab_make.run_program.run_stata.rst.txt | 2022-10-12 17:09:50 | 92
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/filling.rst.txt | 2022-10-12 17:09:50 | 253
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/fonts/fontawesome-webfont.woff2 | 2022-10-12 17:09:50 | 77160
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/run_program/gslab_make.run_program.run_stat_transfer.doctree | 2022-10-12 17:21:14 | 18750
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/utility.doctree | 2022-10-12 17:21:14 | 28240
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/check_repo/gslab_make.check_repo.get_modified_sources.rst | 2022-10-12 17:09:50 | 124
-/Users/jccp/Desktop/template/lib/gslab_make/test/README.md | 2022-10-12 17:09:50 | 830
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/modify_dir/gslab_make.modify_dir.zip_dir.html | 2022-10-12 17:21:14 | 6629
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/underscore-1.13.1.js | 2022-10-12 17:09:50 | 68420
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab/roboto-slab-v7-regular 2.eot | 2022-10-12 17:21:14 | 78331
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/fonts/lato-bold.woff | 2022-10-12 17:09:50 | 309728
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/run_program/gslab_make.run_program.run_sas.html | 2022-10-12 17:21:14 | 11782
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/conf 2.py | 2022-10-12 17:21:14 | 1537
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/minus.png | 2022-10-12 17:09:50 | 90
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Inconsolata.ttf | 2022-10-12 17:09:50 | 63184
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/make_utility/gslab_make.make_utility.update_executables.html | 2022-10-12 17:21:14 | 7442
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato/lato-regular.ttf | 2022-10-12 17:09:50 | 607720
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/move_sources/gslab_make.move_sources.link_externals.html | 2022-10-12 17:21:14 | 12487
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/move_sources/gslab_make.move_sources.link_externals.rst.txt | 2022-10-12 17:09:50 | 108
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.woff2 | 2022-10-12 17:09:50 | 66444
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/fontawesome-webfont 2.ttf | 2022-10-12 17:21:14 | 165548
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato/lato-regular.ttf | 2022-10-12 17:09:50 | 607720
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/fonts/lato-bold-italic.woff | 2022-10-12 17:09:50 | 323344
-/Users/jccp/Desktop/template/lib/gslab_make/setup.cfg | 2022-10-12 17:09:50 | 416
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/fontawesome-webfont 2.woff | 2022-10-12 17:21:14 | 98024
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab/roboto-slab-v7-bold.woff2 | 2022-10-12 17:09:50 | 67312
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/general_logging 2.doctree | 2022-10-12 17:21:14 | 35515
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/general_logging.doctree | 2022-10-12 17:21:14 | 35511
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/run_program/gslab_make.run_program.run_stat_transfer.rst | 2022-10-12 17:09:50 | 116
-/Users/jccp/Desktop/template/raw/chips.csv | 2022-10-12 17:03:27 | 8758851
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/directory 2.html | 2022-10-12 17:21:14 | 11386
-/Users/jccp/Desktop/template/lib/gslab_make/CODE_OF_CONDUCT.md | 2022-10-12 17:09:50 | 3353
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/utility.html | 2022-10-12 17:21:14 | 11985
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato/lato-regular.woff | 2022-10-12 17:09:50 | 309192
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/move_sources/gslab_make.move_sources.copy_externals.rst.txt | 2022-10-12 17:09:50 | 108
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/python_script space.py | 2022-10-12 17:09:50 | 169
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/tablefill.py | 2022-10-12 17:09:50 | 20325
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/RobotoSlab-Bold.ttf | 2022-10-12 17:09:50 | 170616
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato/lato-italic.ttf | 2022-10-12 17:09:50 | 639388
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/source_logging.rst.txt | 2022-10-12 17:09:50 | 380
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/general_logging 2.rst | 2022-10-12 17:21:14 | 655
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/run_program/gslab_make.run_program.run_lyx.html | 2022-10-12 17:21:14 | 12270
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/run_program/gslab_make.run_program.run_stat_transfer.rst.txt | 2022-10-12 17:09:50 | 116
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/private/__pycache__/exceptionclasses.cpython-310.pyc | 2022-10-12 17:11:28 | 1485
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/tablefill/tablefill.txt | 2022-10-12 17:09:50 | 66
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/private/exceptionclasses.py | 2022-10-12 17:09:50 | 943
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/tablefill/tablefill_no_tag.txt | 2022-10-12 17:09:50 | 56
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.woff2 | 2022-10-12 17:09:50 | 67312
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/tablefill_info.py | 2022-10-12 17:09:50 | 8432
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/modify_dir/gslab_make.modify_dir.remove_dir.html | 2022-10-12 17:21:14 | 8029
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/make_utility/gslab_make.make_utility.update_paths.doctree | 2022-10-12 17:21:14 | 7155
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/matlab_script space.m | 2022-10-12 17:09:50 | 84
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/directory.doctree | 2022-10-12 17:21:14 | 27253
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/graphviz 2.css | 2022-10-12 17:21:14 | 299
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/fonts/fontawesome-webfont.svg | 2022-10-12 17:09:50 | 444379
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/write_logs/gslab_make.write_logs.write_to_makelog.rst | 2022-10-12 17:09:50 | 112
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/program.html | 2022-10-12 17:21:14 | 61952
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/r_script space.R | 2022-10-12 17:09:50 | 100
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/run_program/gslab_make.run_program.run_python.html | 2022-10-12 17:21:14 | 11368
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/fontawesome-webfont.woff2 | 2022-10-12 17:09:50 | 77160
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/private/programdirective.py | 2022-10-12 17:09:50 | 10360
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/write_logs/gslab_make.write_logs.log_files_in_output.html | 2022-10-12 17:21:14 | 10059
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato/lato-italic.ttf | 2022-10-12 17:09:50 | 639388
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/underscore-1.12.0 2.js | 2022-10-12 17:21:14 | 67692
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/jquery-3.6.0 2.js | 2022-10-12 17:21:14 | 288580
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/run_program/gslab_make.run_program.run_matlab.rst | 2022-10-12 17:09:50 | 95
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/move_sources/gslab_make.move_sources.copy_inputs.html | 2022-10-12 17:21:14 | 12271
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/specifying_paths.rst.txt | 2022-10-12 17:09:50 | 2616
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/run_program/gslab_make.run_program.run_matlab.html | 2022-10-12 17:21:14 | 11374
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/lyx_file_error.lyx | 2022-10-12 17:09:50 | 5
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/__pycache__/tablefill.cpython-310.pyc | 2022-10-12 17:11:30 | 18424
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/run_program/gslab_make.run_program.run_perl.rst.txt | 2022-10-12 17:09:50 | 89
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/fontawesome-webfont 2.woff2 | 2022-10-12 17:21:14 | 77160
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/private/messages.py | 2022-10-12 17:09:50 | 5991
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/make_utility/gslab_make.make_utility.update_external_paths.doctree | 2022-10-12 17:21:14 | 9851
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/dummy.doctree | 2022-10-12 17:09:50 | 51378
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/sphinx_highlight.js | 2022-10-12 17:21:14 | 4712
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/filling 2.html | 2022-10-12 17:21:14 | 15834
-/Users/jccp/Desktop/template/lib/gslab_make/docs/genindex 2.html | 2022-10-12 17:21:14 | 13012
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/config/config.yaml | 2022-10-12 17:09:50 | 1004
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/tablefill/tablefill_template_extra_input.lyx | 2022-10-12 17:09:50 | 1736
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/tablefill/gslab_make.tablefill.tablefill.rst | 2022-10-12 17:09:50 | 90
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab/roboto-slab-v7-regular.eot | 2022-10-12 17:09:50 | 78331
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/general_logging 2.rst.txt | 2022-10-12 17:21:14 | 655
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/run_program/gslab_make.run_program.execute_command.rst.txt | 2022-10-12 17:09:50 | 110
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/run_program/gslab_make.run_program.run_jupyter.doctree | 2022-10-12 17:21:14 | 13990
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/private/exceptionclasses.py | 2022-10-12 17:09:50 | 943
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/private/__pycache__/metadata.cpython-310.pyc | 2022-10-12 17:22:08 | 2243
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/modify_dir/gslab_make.modify_dir.unzip.rst.txt | 2022-10-12 17:09:50 | 79
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/basic.css | 2022-10-12 17:09:50 | 14621
-/Users/jccp/Desktop/template/lib/gslab_make/test/EXCLUDE_test_R.py | 2022-10-12 17:21:14 | 8001
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/move_sources/move_wildcard.txt | 2022-10-12 17:09:50 | 66
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/js/theme.js | 2022-10-12 17:09:50 | 5023
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/tablefill/tablefill_template_not_enough_values.lyx | 2022-10-12 17:09:50 | 3823
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/modify_dir/gslab_make.modify_dir.unzip.rst.txt | 2022-10-12 17:09:50 | 79
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/fonts/Roboto-Slab-Regular.woff2 | 2022-10-12 17:09:50 | 66444
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/check_repo/gslab_make.check_repo.check_conda_status.html | 2022-10-12 17:21:14 | 7190
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/RobotoSlab-Regular.ttf | 2022-10-12 17:09:50 | 169064
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab/roboto-slab-v7-bold.ttf | 2022-10-12 17:09:50 | 170616
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/make_utility/gslab_make.make_utility.update_executables.rst.txt | 2022-10-12 17:09:50 | 120
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/run_program/gslab_make.run_program.run_lyx.html | 2022-10-12 17:21:14 | 12270
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/run_program/gslab_make.run_program.run_r.html | 2022-10-12 17:21:14 | 11287
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/write_logs/gslab_make.write_logs.write_to_makelog.rst.txt | 2022-10-12 17:09:50 | 112
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/js/html5shiv.min.js | 2022-10-12 17:09:50 | 2734
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/private/subprocess_fix.py | 2022-10-12 17:09:50 | 5428
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab-Bold.ttf | 2022-10-12 17:09:50 | 170616
-/Users/jccp/Desktop/template/raw/tv.csv | 2022-10-12 17:03:25 | 98923
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/run_program/gslab_make.run_program.run_stata.html | 2022-10-12 17:21:14 | 11653
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/directory 2.doctree | 2022-10-12 17:21:14 | 27257
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato/lato-regular.woff | 2022-10-12 17:09:50 | 309192
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato-Regular.ttf | 2022-10-12 17:09:50 | 656568
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/__pycache__/make_utility.cpython-310.pyc | 2022-10-12 17:11:30 | 5679
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/check_repo/gslab_make.check_repo.get_modified_sources.html | 2022-10-12 17:21:14 | 8766
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/test/test_python.py | 2022-10-12 17:21:14 | 7056
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/utility 2.html | 2022-10-12 17:21:14 | 10451
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/run_program/gslab_make.run_program.run_r.rst | 2022-10-12 17:09:50 | 80
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/fonts/lato-normal-italic.woff2 | 2022-10-12 17:09:50 | 195704
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/repository.rst | 2022-10-12 17:09:50 | 363
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab/roboto-slab-v7-bold 2.eot | 2022-10-12 17:21:14 | 79520
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato/lato-bold.eot | 2022-10-12 17:09:50 | 256056
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/source_logging 2.rst | 2022-10-12 17:21:14 | 380
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/make_utility/gslab_make.make_utility.update_executables.rst.txt | 2022-10-12 17:09:50 | 120
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/fonts/lato-normal-italic.woff | 2022-10-12 17:09:50 | 328412
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/sourcing.html | 2022-10-12 17:21:14 | 33033
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/filling 2.doctree | 2022-10-12 17:21:14 | 28798
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/fonts/lato-bold-italic.woff | 2022-10-12 17:09:50 | 323344
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/file.png | 2022-10-12 17:09:50 | 286
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/make_utility.py | 2022-10-12 17:09:50 | 5785
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/move_sources/file.txt | 2022-10-12 17:09:50 | 0
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/fonts/lato-normal-italic.woff2 | 2022-10-12 17:09:50 | 195704
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab/roboto-slab-v7-bold.eot | 2022-10-12 17:09:50 | 79520
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/directory.rst.txt | 2022-10-12 17:09:50 | 344
-/Users/jccp/Desktop/template/lib/gslab_make/docs/index.html | 2022-10-12 17:21:14 | 7495
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/source_logging.doctree | 2022-10-12 17:21:14 | 20413
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/run_program/gslab_make.run_program.run_module.html | 2022-10-12 17:21:14 | 10398
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/fonts/lato-bold.woff | 2022-10-12 17:09:50 | 309728
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/program.html | 2022-10-12 17:21:14 | 61952
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Inconsolata-Regular.ttf | 2022-10-12 17:09:50 | 96964
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato/lato-bolditalic.ttf | 2022-10-12 17:09:50 | 622572
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/jquery-3.2.1.js | 2022-10-12 17:09:50 | 268039
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/run_program/gslab_make.run_program.run_module.rst.txt | 2022-10-12 17:09:50 | 95
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato/lato-bolditalic.ttf | 2022-10-12 17:09:50 | 622572
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab/roboto-slab-v7-bold 2.woff | 2022-10-12 17:21:14 | 87624
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/log_sources/dir space/file space.txt | 2022-10-12 17:09:50 | 20
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/program.rst | 2022-10-12 17:09:50 | 2704
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/general_logging 2.html | 2022-10-12 17:21:14 | 13399
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/directory 2.rst | 2022-10-12 17:21:14 | 344
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/write_logs/gslab_make.write_logs.end_makelog.rst | 2022-10-12 17:09:50 | 97
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/utility.rst.txt | 2022-10-12 17:09:50 | 327
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/move_sources/move_bad_wildcard.txt | 2022-10-12 17:09:50 | 112
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/make_utility/gslab_make.make_utility.update_internal_paths.rst.txt | 2022-10-12 17:09:50 | 129
-/Users/jccp/Desktop/template/lib/gslab_make/setup.py | 2022-10-12 17:09:50 | 738
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato/lato-bold.woff | 2022-10-12 17:09:50 | 309728
-/Users/jccp/Desktop/template/lib/gslab_make/docs/search 2.html | 2022-10-12 17:21:14 | 4679
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/fonts/lato-normal.woff2 | 2022-10-12 17:09:50 | 182708
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/write_logs/gslab_make.write_logs.end_makelog.rst.txt | 2022-10-12 17:09:50 | 97
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/move_sources/file space.txt | 2022-10-12 17:09:50 | 0
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/move_sources/gslab_make.move_sources.link_inputs.rst.txt | 2022-10-12 17:09:50 | 99
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/private/messages.py | 2022-10-12 17:09:50 | 5991
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/make_utility/gslab_make.make_utility.update_external_paths.html | 2022-10-12 17:21:14 | 7583
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/dummy.rst.txt | 2022-10-12 17:09:50 | 741
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/directory 2.rst.txt | 2022-10-12 17:21:14 | 344
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/make_utility/gslab_make.make_utility.copy_output.html | 2022-10-12 17:21:14 | 6739
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/move_sources/gslab_make.move_sources.copy_inputs.rst.txt | 2022-10-12 17:09:50 | 99
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato/lato-regular.woff2 | 2022-10-12 17:09:50 | 182708
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/run_program/gslab_make.run_program.run_mathematica.rst.txt | 2022-10-12 17:09:50 | 110
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/log_sources/move.txt | 2022-10-12 17:09:50 | 53
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/textfill_info.py | 2022-10-12 17:09:50 | 6314
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/underscore-1.3.1.js | 2022-10-12 17:09:50 | 35168
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/log_sources/dir_depth/dir_depth/depth_2.txt | 2022-10-12 17:09:50 | 20
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/make_utility/gslab_make.make_utility.update_internal_paths.rst.txt | 2022-10-12 17:09:50 | 129
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato/lato-bolditalic.woff2 | 2022-10-12 17:09:50 | 193308
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/write_source_logs/gslab_make.write_source_logs.write_source_logs.rst.txt | 2022-10-12 17:09:50 | 122
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/tablefill/tablefill_template space.lyx | 2022-10-12 17:09:50 | 4256
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/write_logs/gslab_make.write_logs.write_to_makelog.rst.txt | 2022-10-12 17:09:50 | 112
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/write_logs/gslab_make.write_logs.start_makelog.rst | 2022-10-12 17:09:50 | 103
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/sourcing.rst.txt | 2022-10-12 17:09:50 | 548
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/filling 2.rst.txt | 2022-10-12 17:21:14 | 253
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/make_utility/gslab_make.make_utility.update_paths.html | 2022-10-12 17:21:14 | 6696
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/fonts/lato-normal.woff2 | 2022-10-12 17:09:50 | 182708
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/utility 2.rst.txt | 2022-10-12 17:21:14 | 327
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/program.rst.txt | 2022-10-12 17:09:50 | 2704
-/Users/jccp/Desktop/template/lib/__init__.py | 2022-10-12 17:03:23 | 0
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/tablefill/gslab_make.tablefill.tablefill.doctree | 2022-10-12 17:21:14 | 27880
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/make_utility/gslab_make.make_utility.update_paths.html | 2022-10-12 17:21:14 | 6696
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/make_utility/gslab_make.make_utility.copy_output.rst | 2022-10-12 17:09:50 | 99
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/check_repo/gslab_make.check_repo.check_conda_status.doctree | 2022-10-12 17:21:14 | 6185
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/js/badge_only.js | 2022-10-12 17:09:50 | 934
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/__pycache__/run_program.cpython-310.pyc | 2022-10-12 17:11:29 | 31859
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/run_program/gslab_make.run_program.execute_command.rst | 2022-10-12 17:09:50 | 110
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/fonts/Roboto-Slab-Bold.woff | 2022-10-12 17:09:50 | 87624
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/private/metadata.py | 2022-10-12 17:21:14 | 4159
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/fonts/fontawesome-webfont.ttf | 2022-10-12 17:09:50 | 165548
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/check_repo/gslab_make.check_repo.check_module_size.rst.txt | 2022-10-12 17:09:50 | 115
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab-Regular 2.ttf | 2022-10-12 17:21:14 | 169064
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/private/utility.py | 2022-10-12 17:09:50 | 8202
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/dummy 2.rst.txt | 2022-10-12 17:21:14 | 741
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/write_logs/gslab_make.write_logs.start_makelog.html | 2022-10-12 17:21:14 | 7037
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/log_outputs/dir space/file space.txt | 2022-10-12 17:09:50 | 20
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/sourcing.html | 2022-10-12 17:21:14 | 33033
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Inconsolata-Regular.ttf | 2022-10-12 17:09:50 | 96964
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato-Bold.ttf | 2022-10-12 17:09:50 | 656544
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/_sphinx_javascript_frameworks_compat.js | 2022-10-12 17:09:50 | 4418
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/sourcing.rst.txt | 2022-10-12 17:09:50 | 548
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/run_program/gslab_make.run_program.run_mathematica.html | 2022-10-12 17:21:14 | 11397
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/modify_dir/gslab_make.modify_dir.unzip.rst | 2022-10-12 17:09:50 | 79
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/make_utility/gslab_make.make_utility.copy_output.rst.txt | 2022-10-12 17:09:50 | 99
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/badge_only.css | 2022-10-12 17:09:50 | 3275
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/index.rst | 2022-10-12 17:09:50 | 1039
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/run_program/gslab_make.run_program.run_latex.rst.txt | 2022-10-12 17:09:50 | 92
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/private/subprocess_fix.py | 2022-10-12 17:09:50 | 5428
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/fonts/lato-normal.woff | 2022-10-12 17:09:50 | 309192
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/run_program/gslab_make.run_program.run_r.html | 2022-10-12 17:21:14 | 11287
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/run_program/gslab_make.run_program.run_stata.rst.txt | 2022-10-12 17:09:50 | 92
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/move_sources/move_bad_key.txt | 2022-10-12 17:09:50 | 48
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Inconsolata-Bold.ttf | 2022-10-12 17:09:50 | 109948
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/run_program/gslab_make.run_program.run_perl.rst | 2022-10-12 17:09:50 | 89
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/private/__pycache__/movedirective.cpython-310.pyc | 2022-10-12 17:11:29 | 12242
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/modify_dir/gslab_make.modify_dir.zip_dir.html | 2022-10-12 17:21:14 | 6629
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/searchindex.js | 2022-10-12 17:21:14 | 37621
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/write_logs/gslab_make.write_logs.start_makelog.html | 2022-10-12 17:21:14 | 7037
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato-Regular.ttf | 2022-10-12 17:09:50 | 656568
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/move_sources/move_dir.txt | 2022-10-12 17:09:50 | 54
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/fonts/fontawesome-webfont.woff | 2022-10-12 17:09:50 | 98024
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab/roboto-slab-v7-bold 2.ttf | 2022-10-12 17:21:14 | 170616
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/move_sources/gslab_make.move_sources.link_externals.rst | 2022-10-12 17:09:50 | 108
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/move_sources/gslab_make.move_sources.link_externals.rst.txt | 2022-10-12 17:09:50 | 108
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/make_utility/gslab_make.make_utility.update_paths.rst | 2022-10-12 17:09:50 | 102
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/write_logs/gslab_make.write_logs.log_files_in_output.html | 2022-10-12 17:21:14 | 10059
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/move_sources/move space.txt | 2022-10-12 17:09:50 | 76
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/directory.html | 2022-10-12 17:21:14 | 12705
-/Users/jccp/Desktop/template/lib/gslab_make/docs/searchindex.js | 2022-10-12 17:21:14 | 37621
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/modify_dir/gslab_make.modify_dir.unzip.html | 2022-10-12 17:21:14 | 6662
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/fonts/fontawesome-webfont.ttf | 2022-10-12 17:09:50 | 165548
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/jquery 2.js | 2022-10-12 17:21:14 | 89501
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/lyx_file_comments.lyx | 2022-10-12 17:09:50 | 1694
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/log_outputs/dir_depth/depth_1.txt | 2022-10-12 17:09:50 | 20
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/directory.rst.txt | 2022-10-12 17:09:50 | 344
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/run_program/gslab_make.run_program.run_python.html | 2022-10-12 17:21:14 | 11368
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/make_utility/gslab_make.make_utility.update_executables.rst | 2022-10-12 17:09:50 | 120
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato/lato-italic.woff | 2022-10-12 17:09:50 | 328412
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/make_utility/gslab_make.make_utility.copy_output.rst.txt | 2022-10-12 17:09:50 | 99
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/test/EXCLUDE_test_lyx.py | 2022-10-12 17:21:14 | 9277
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/test/test_log_outputs.py | 2022-10-12 17:21:14 | 5111
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/make_utility/gslab_make.make_utility.update_internal_paths.doctree | 2022-10-12 17:21:14 | 8736
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/run_program/gslab_make.run_program.execute_command.html | 2022-10-12 17:21:14 | 11273
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/check_repo/gslab_make.check_repo.get_modified_sources.doctree | 2022-10-12 17:21:14 | 12579
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/write_logs/gslab_make.write_logs.end_makelog.doctree | 2022-10-12 17:21:14 | 7377
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/lyx_file space.lyx | 2022-10-12 17:09:50 | 1608
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab/roboto-slab-v7-regular 2.woff2 | 2022-10-12 17:21:14 | 66444
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/private/utility.py | 2022-10-12 17:09:50 | 8202
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/filling.html | 2022-10-12 17:21:14 | 16714
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/log_outputs/dir_depth/dir_depth/depth_2.txt | 2022-10-12 17:09:50 | 20
-/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/private/movedirective.py | 2022-10-12 17:09:50 | 12767
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/fonts/fontawesome-webfont.woff | 2022-10-12 17:09:50 | 98024
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato-Regular 2.ttf | 2022-10-12 17:21:14 | 656568
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/underscore-1.13.1 2.js | 2022-10-12 17:21:14 | 68420
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/run_program/gslab_make.run_program.run_module.doctree | 2022-10-12 17:21:14 | 12830
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/config/config_user_empty.yaml | 2022-10-12 17:09:50 | 96
-/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/__pycache__/modify_dir.cpython-310.pyc | 2022-10-12 17:11:29 | 6998
-/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/move_sources/gslab_make.move_sources.link_inputs.html | 2022-10-12 17:21:14 | 12450
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/modify_dir/gslab_make.modify_dir.zip_dir.rst.txt | 2022-10-12 17:09:50 | 85
-/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/specifying_paths.rst.txt | 2022-10-12 17:09:50 | 2616
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/stata_script space.do | 2022-10-12 17:09:50 | 108
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/run_program/gslab_make.run_program.run_lyx.rst.txt | 2022-10-12 17:09:50 | 86
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/perl_script space.pl | 2022-10-12 17:09:50 | 208
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/objects.inv | 2022-10-12 17:21:14 | 1957
-/Users/jccp/Desktop/template/lib/gslab_make/test/raw/log_sources/move space.txt | 2022-10-12 17:09:50 | 65
-/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/check_repo/gslab_make.check_repo.get_modified_sources.html | 2022-10-12 17:21:14 | 8766
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/private/movedirective.py | 2022-10-12 21:42:32 | 12767
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/write_logs.py | 2022-10-12 21:42:32 | 10665
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/run_program/gslab_make.run_program.run_latex.html | 2022-10-12 21:42:32 | 11823
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/modify_dir/gslab_make.modify_dir.remove_dir.html | 2022-10-12 21:42:32 | 8029
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.ttf | 2022-10-12 21:42:32 | 169064
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/filling 2.rst | 2022-10-12 21:42:32 | 253
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/private/metadata.py | 2022-10-12 21:42:32 | 4160
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab/roboto-slab-v7-regular.eot | 2022-10-12 21:42:32 | 78331
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/utility 2.rst.txt | 2022-10-12 21:42:32 | 327
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/run_program/gslab_make.run_program.run_mathematica.html | 2022-10-12 21:42:32 | 11397
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/tablefill/gslab_make.tablefill.tablefill.doctree | 2022-10-12 21:42:32 | 27880
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/run_program/gslab_make.run_program.execute_command.rst | 2022-10-12 21:42:32 | 110
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato/lato-regular.woff | 2022-10-12 21:42:32 | 309192
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/make_utility/gslab_make.make_utility.update_executables.rst.txt | 2022-10-12 21:42:32 | 120
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/documentation_options.js | 2022-10-12 21:42:32 | 420
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/log_sources/dir_depth/depth_1.txt | 2022-10-12 21:42:32 | 20
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/textfill_info.py | 2022-10-12 21:42:32 | 6314
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/private/utility.py | 2022-10-12 21:42:32 | 8202
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/move_sources/gslab_make.move_sources.copy_inputs.html | 2022-10-12 21:42:32 | 12271
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/directory 2.doctree | 2022-10-12 21:42:32 | 27257
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/make_utility/gslab_make.make_utility.update_paths.doctree | 2022-10-12 21:42:32 | 7155
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/write_logs/gslab_make.write_logs.log_files_in_output.html | 2022-10-12 21:42:32 | 10059
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/dummy 2.doctree | 2022-10-12 21:42:32 | 51450
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/test/test_make_utility.py | 2022-10-12 21:42:32 | 4552
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/check_repo/gslab_make.check_repo.check_module_size.doctree | 2022-10-12 21:42:32 | 10689
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/make_utility/gslab_make.make_utility.copy_output.rst | 2022-10-12 21:42:32 | 99
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/__pycache__/modify_dir.cpython-310.pyc | 2022-10-13 00:40:51 | 6991
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/sourcing 2.html | 2022-10-12 21:42:32 | 31647
+/Users/jccp/Desktop/template/lib/gslab_make/docs/genindex.html | 2022-10-12 21:42:32 | 13072
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/basic.css | 2022-10-12 21:42:32 | 14621
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/check_repo/gslab_make.check_repo.check_conda_status.doctree | 2022-10-12 21:42:32 | 6185
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/move_sources/gslab_make.move_sources.link_externals.rst | 2022-10-12 21:42:32 | 108
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/make_utility/gslab_make.make_utility.update_internal_paths.rst.txt | 2022-10-12 21:42:32 | 129
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/filling 2.doctree | 2022-10-12 21:42:32 | 28798
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/general_logging 2.doctree | 2022-10-12 21:42:32 | 35515
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/tablefill/tablefill_template_missing_input.lyx | 2022-10-12 21:42:32 | 4264
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato-Regular.ttf | 2022-10-12 21:42:32 | 656568
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/source_logging 2.html | 2022-10-12 21:42:32 | 9628
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/run_program/gslab_make.run_program.execute_command.html | 2022-10-12 21:42:32 | 11273
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/run_program/gslab_make.run_program.run_module.doctree | 2022-10-12 21:42:32 | 12830
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/searchtools 2.js | 2022-10-12 21:42:32 | 17120
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/jquery-3.5.1.js | 2022-10-12 21:42:32 | 287630
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/dummy.rst.txt | 2022-10-12 21:42:32 | 741
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/run_program/gslab_make.run_program.run_jupyter.html | 2022-10-12 21:42:32 | 10877
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab/roboto-slab-v7-regular.woff2 | 2022-10-12 21:42:32 | 66444
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/source_logging.rst.txt | 2022-10-12 21:42:32 | 380
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/underscore-1.13.1 2.js | 2022-10-12 21:42:32 | 68420
+/Users/jccp/Desktop/template/lib/gslab_make/test/utility.py | 2022-10-12 21:42:32 | 1404
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/test/EXCLUDE_test_perl.py | 2022-10-12 21:42:32 | 8121
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/private/exceptionclasses.py | 2022-10-12 21:42:32 | 943
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato/lato-bolditalic.ttf | 2022-10-12 21:42:32 | 622572
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/check_repo/gslab_make.check_repo.check_module_size.html | 2022-10-12 21:42:32 | 8421
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/log_outputs/dir_depth/dir_depth/depth_2.txt | 2022-10-12 21:42:32 | 20
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/run_program/gslab_make.run_program.run_lyx.rst | 2022-10-12 21:42:32 | 86
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/directory.doctree | 2022-10-12 21:42:32 | 27253
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/fontawesome-webfont.woff | 2022-10-12 21:42:32 | 98024
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/private/__pycache__/movedirective.cpython-310.pyc | 2022-10-13 00:40:51 | 12235
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/filling.html | 2022-10-12 21:42:32 | 16714
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/make_utility.py | 2022-10-12 21:42:32 | 5785
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/write_logs/gslab_make.write_logs.start_makelog.doctree | 2022-10-12 21:42:32 | 7667
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/fonts/lato-bold-italic.woff2 | 2022-10-12 21:42:32 | 193308
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/move_sources/move_empty.txt | 2022-10-12 21:42:32 | 22
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/run_program/gslab_make.run_program.run_latex.rst.txt | 2022-10-12 21:42:32 | 92
+/Users/jccp/Desktop/template/lib/gslab_make/setup.cfg | 2022-10-12 21:42:32 | 416
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/run_program/gslab_make.run_program.run_r.html | 2022-10-12 21:42:32 | 11287
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/test/test_tablefill.py | 2022-10-12 21:42:32 | 4248
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/utility 2.rst | 2022-10-12 21:42:32 | 327
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/check_repo/gslab_make.check_repo.get_modified_sources.html | 2022-10-12 21:42:32 | 8766
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/fonts/Roboto-Slab-Bold.woff2 | 2022-10-12 21:42:32 | 67312
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/jquery-3.5.1.js | 2022-10-12 21:42:32 | 287630
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/run_program/gslab_make.run_program.run_python.rst.txt | 2022-10-12 21:42:32 | 95
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/move_sources/gslab_make.move_sources.link_inputs.doctree | 2022-10-12 21:42:32 | 21381
+/Users/jccp/Desktop/template/lib/gslab_make/test/EXCLUDE_test_lyx.py | 2022-10-12 21:42:32 | 9277
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/r_script.R | 2022-10-12 21:42:32 | 100
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/theme.css | 2022-10-12 21:42:32 | 129674
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/utility 2.html | 2022-10-12 21:42:32 | 10451
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/program.rst.txt | 2022-10-12 21:42:32 | 2704
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/fonts/fontawesome-webfont.eot | 2022-10-12 21:42:32 | 165742
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/utility.html | 2022-10-12 21:42:32 | 11985
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab/roboto-slab-v7-bold 2.woff | 2022-10-12 21:42:32 | 87624
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/check_repo/gslab_make.check_repo.get_modified_sources.rst | 2022-10-12 21:42:32 | 124
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/fonts/lato-bold.woff | 2022-10-12 21:42:32 | 309728
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/matlab_script.m | 2022-10-12 21:42:32 | 84
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/__init__.py | 2022-10-12 21:42:32 | 2696
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/graphviz.css | 2022-10-12 21:42:32 | 299
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/run_program/gslab_make.run_program.run_sas.rst.txt | 2022-10-12 21:42:32 | 86
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/fonts/fontawesome-webfont.woff2 | 2022-10-12 21:42:32 | 77160
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.eot | 2022-10-12 21:42:32 | 78331
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/check_repo/gslab_make.check_repo.get_modified_sources.html | 2022-10-12 21:42:32 | 8766
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/write_logs/gslab_make.write_logs.log_files_in_output.html | 2022-10-12 21:42:32 | 10059
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/run_program/gslab_make.run_program.run_stata.html | 2022-10-12 21:42:32 | 11653
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/stata_script_error.do | 2022-10-12 21:42:32 | 5
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato/lato-regular.eot | 2022-10-12 21:42:32 | 253461
+/Users/jccp/Desktop/template/lib/gslab_make/docs/search.html | 2022-10-12 21:42:32 | 4739
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/tablefill/tablefill_template space.lyx | 2022-10-12 21:42:32 | 4256
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/run_program/gslab_make.run_program.run_matlab.html | 2022-10-12 21:42:32 | 11374
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/write_logs/gslab_make.write_logs.log_files_in_output.rst.txt | 2022-10-12 21:42:32 | 121
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/log_outputs/dir/file.txt | 2022-10-12 21:42:32 | 20
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/private/__pycache__/programdirective.cpython-310.pyc | 2022-10-13 00:40:56 | 10123
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/move_sources/move_dir.txt | 2022-10-12 21:42:32 | 54
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/config/config_bad.yaml | 2022-10-12 21:42:32 | 987
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/index.rst.txt | 2022-10-12 21:42:32 | 1039
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/move_sources/gslab_make.move_sources.copy_externals.doctree | 2022-10-12 21:42:32 | 21024
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/lyx_file space.lyx | 2022-10-12 21:42:32 | 1608
+/Users/jccp/Desktop/template/raw/tv.csv | 2022-10-12 21:41:15 | 98923
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/jquery-3.6.0 2.js | 2022-10-12 21:42:32 | 288580
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato/lato-bold.woff2 | 2022-10-12 21:42:32 | 184912
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/run_program/gslab_make.run_program.run_r.doctree | 2022-10-12 21:42:32 | 18348
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/move_sources/gslab_make.move_sources.link_inputs.rst.txt | 2022-10-12 21:42:32 | 99
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/conf 2.py | 2022-10-12 21:42:32 | 1537
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/specifying_paths.html | 2022-10-12 21:42:32 | 11805
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/test/utility.py | 2022-10-12 21:42:32 | 1404
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/private/programdirective.py | 2022-10-12 21:42:32 | 10360
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/js/html5shiv-printshiv.min.js | 2022-10-12 21:42:32 | 4370
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/fonts/Roboto-Slab-Regular.woff2 | 2022-10-12 21:42:32 | 66444
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/write_source_logs/gslab_make.write_source_logs.write_source_logs.doctree | 2022-10-12 21:42:32 | 19320
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato-Bold.ttf | 2022-10-12 21:42:32 | 656544
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/check_repo/gslab_make.check_repo.check_module_size.rst.txt | 2022-10-12 21:42:32 | 115
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/run_program/gslab_make.run_program.run_latex.doctree | 2022-10-12 21:42:32 | 20056
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/utility.html | 2022-10-12 21:42:32 | 11985
+/Users/jccp/Desktop/template/lib/gslab_make/docs/objects.inv | 2022-10-12 21:42:32 | 1957
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/program.html | 2022-10-12 21:42:32 | 61952
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/run_program.py | 2022-10-12 21:42:32 | 42191
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/make_utility/gslab_make.make_utility.update_internal_paths.html | 2022-10-12 21:42:32 | 7136
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/run_program/gslab_make.run_program.run_jupyter.rst.txt | 2022-10-12 21:42:32 | 98
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/general_logging.html | 2022-10-12 21:42:32 | 14686
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/move_sources/file space.txt | 2022-10-12 21:42:32 | 0
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/modify_dir.py | 2022-10-12 21:42:32 | 7384
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/make_utility/gslab_make.make_utility.update_internal_paths.rst | 2022-10-12 21:42:32 | 129
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/program.html | 2022-10-12 21:42:32 | 61952
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/run_program/gslab_make.run_program.run_matlab.doctree | 2022-10-12 21:42:32 | 18438
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/make_utility/gslab_make.make_utility.copy_output.html | 2022-10-12 21:42:32 | 6739
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/run_program/gslab_make.run_program.run_python.html | 2022-10-12 21:42:32 | 11368
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/dummy.rst | 2022-10-12 21:42:32 | 741
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/underscore-1.13.1.js | 2022-10-12 21:42:32 | 68420
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/modify_dir/gslab_make.modify_dir.remove_dir.rst.txt | 2022-10-12 21:42:32 | 94
+/Users/jccp/Desktop/template/lib/gslab_make/docs/searchindex.js | 2022-10-12 21:42:32 | 37621
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/run_program/gslab_make.run_program.run_stata.rst.txt | 2022-10-12 21:42:32 | 92
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/make_utility/gslab_make.make_utility.update_external_paths.rst.txt | 2022-10-12 21:42:32 | 129
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/_sphinx_javascript_frameworks_compat 2.js | 2022-10-12 21:42:32 | 4418
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/fonts/lato-normal.woff2 | 2022-10-12 21:42:32 | 182708
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/run_program/gslab_make.run_program.run_sas.html | 2022-10-12 21:42:32 | 11782
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/run_program/gslab_make.run_program.run_perl.html | 2022-10-12 21:42:32 | 11374
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/general_logging 2.rst.txt | 2022-10-12 21:42:32 | 655
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab-Regular 2.ttf | 2022-10-12 21:42:32 | 169064
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/textfill_info.py | 2022-10-12 21:42:32 | 6314
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/filling 2.html | 2022-10-12 21:42:32 | 15834
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/fonts/lato-normal.woff | 2022-10-12 21:42:32 | 309192
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/write_logs/gslab_make.write_logs.write_to_makelog.html | 2022-10-12 21:42:32 | 6925
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/python_script space.py | 2022-10-12 21:42:32 | 169
+/Users/jccp/Desktop/template/lib/gslab_make/test/test_log_outputs.py | 2022-10-12 21:42:32 | 5111
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/textfill.py | 2022-10-12 21:42:32 | 5952
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/graphviz 2.css | 2022-10-12 21:42:32 | 299
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/sourcing.html | 2022-10-12 21:42:32 | 33033
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/fonts/fontawesome-webfont.woff | 2022-10-12 21:42:32 | 98024
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/README.md | 2022-10-12 21:42:32 | 1340
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/move_sources/gslab_make.move_sources.copy_externals.html | 2022-10-12 21:42:32 | 12264
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/directory.rst | 2022-10-12 21:42:32 | 344
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato/lato-bold.woff | 2022-10-12 21:42:32 | 309728
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/sourcing 2.html | 2022-10-12 21:42:32 | 31647
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/tablefill/tablefill_template_not_enough_values.lyx | 2022-10-12 21:42:32 | 3823
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/tablefill/tablefill.txt | 2022-10-12 21:42:32 | 66
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/perl_script_error.pl | 2022-10-12 21:42:32 | 5
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/log_outputs/dir_local/file_local.txt | 2022-10-12 21:42:32 | 20
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/repository.html | 2022-10-12 21:42:32 | 11207
+/Users/jccp/Desktop/template/lib/gslab_make/test/EXCLUDE_test_perl.py | 2022-10-12 21:42:32 | 8121
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/fontawesome-webfont.ttf | 2022-10-12 21:42:32 | 165548
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/run_program/gslab_make.run_program.run_jupyter.rst | 2022-10-12 21:42:32 | 98
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/move_sources/gslab_make.move_sources.link_inputs.rst | 2022-10-12 21:42:32 | 99
+/Users/jccp/Desktop/template/lib/gslab_make/test/test_modify_dir.py | 2022-10-12 21:42:32 | 7852
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/check_repo/gslab_make.check_repo.check_module_size.html | 2022-10-12 21:42:32 | 8421
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/dummy 2.rst | 2022-10-12 21:42:32 | 741
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/modify_dir/gslab_make.modify_dir.zip_dir.html | 2022-10-12 21:42:32 | 6629
+/Users/jccp/Desktop/template/lib/__init__.py | 2022-10-12 21:41:14 | 0
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/specifying_paths.rst | 2022-10-12 21:42:32 | 2616
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/test/test_makelog.py | 2022-10-12 21:42:32 | 2308
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/write_logs/gslab_make.write_logs.write_to_makelog.rst | 2022-10-12 21:42:32 | 112
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/write_logs/gslab_make.write_logs.start_makelog.html | 2022-10-12 21:42:32 | 7037
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/run_program/gslab_make.run_program.run_matlab.rst | 2022-10-12 21:42:32 | 95
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/directory.rst.txt | 2022-10-12 21:42:32 | 344
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/run_program/gslab_make.run_program.run_latex.rst.txt | 2022-10-12 21:42:32 | 92
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/private/__pycache__/__init__.cpython-310.pyc | 2022-10-13 00:40:51 | 169
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/tablefill/tablefill_template_extra_input.lyx | 2022-10-12 21:42:32 | 1736
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/__pycache__/make_utility.cpython-310.pyc | 2022-10-13 00:40:56 | 5672
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/write_logs/gslab_make.write_logs.write_to_makelog.rst.txt | 2022-10-12 21:42:32 | 112
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/move_sources/gslab_make.move_sources.link_inputs.html | 2022-10-12 21:42:32 | 12450
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/directory 2.rst.txt | 2022-10-12 21:42:32 | 344
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Inconsolata-Regular.ttf | 2022-10-12 21:42:32 | 96964
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/move_sources/gslab_make.move_sources.link_externals.html | 2022-10-12 21:42:32 | 12487
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato/lato-bold.ttf | 2022-10-12 21:42:32 | 600856
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/private/subprocess_fix.py | 2022-10-12 21:42:32 | 5428
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/move_sources/move_bad_key.txt | 2022-10-12 21:42:32 | 48
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/run_program/gslab_make.run_program.run_matlab.html | 2022-10-12 21:42:32 | 11374
+/Users/jccp/Desktop/template/lib/gslab_make/test/test_make_utility.py | 2022-10-12 21:42:32 | 4552
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/write_logs/gslab_make.write_logs.write_to_makelog.rst.txt | 2022-10-12 21:42:32 | 112
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/dummy.rst.txt | 2022-10-12 21:42:32 | 741
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Inconsolata 2.ttf | 2022-10-12 21:42:32 | 63184
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/log_sources/move_recursion.txt | 2022-10-12 21:42:32 | 34
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/filling 2.rst.txt | 2022-10-12 21:42:32 | 253
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.woff | 2022-10-12 21:42:32 | 86288
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/fonts/lato-bold-italic.woff2 | 2022-10-12 21:42:32 | 193308
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/run_program/gslab_make.run_program.run_lyx.doctree | 2022-10-12 21:42:32 | 22160
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/move_sources/gslab_make.move_sources.copy_inputs.rst.txt | 2022-10-12 21:42:32 | 99
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/specifying_paths.rst.txt | 2022-10-12 21:42:32 | 2616
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/move_sources/move_wildcard.txt | 2022-10-12 21:42:32 | 66
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/dummy.html | 2022-10-12 21:42:32 | 18180
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab/roboto-slab-v7-bold.ttf | 2022-10-12 21:42:32 | 170616
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/minus.png | 2022-10-12 21:42:32 | 90
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/badge_only.css | 2022-10-12 21:42:32 | 3275
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/make_utility/gslab_make.make_utility.copy_output.doctree | 2022-10-12 21:42:32 | 7228
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/dummy.html | 2022-10-12 21:42:32 | 18180
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Inconsolata.ttf | 2022-10-12 21:42:32 | 63184
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/run_program/gslab_make.run_program.run_latex.rst | 2022-10-12 21:42:32 | 92
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/lyx_file_error.lyx | 2022-10-12 21:42:32 | 5
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/move_sources/gslab_make.move_sources.copy_inputs.rst | 2022-10-12 21:42:32 | 99
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/run_program/gslab_make.run_program.run_matlab.rst.txt | 2022-10-12 21:42:32 | 95
+/Users/jccp/Desktop/template/lib/gslab_make/docs/objects 2.inv | 2022-10-12 21:42:32 | 1891
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Inconsolata-Bold.ttf | 2022-10-12 21:42:32 | 109948
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/modify_dir/gslab_make.modify_dir.zip_dir.rst | 2022-10-12 21:42:32 | 85
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/underscore-1.3.1 2.js | 2022-10-12 21:42:32 | 35168
+/Users/jccp/Desktop/template/lib/gslab_make/test/EXCLUDE_test_R.py | 2022-10-12 21:42:32 | 8001
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/utility.rst.txt | 2022-10-12 21:42:32 | 327
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/fonts/Roboto-Slab-Bold.woff | 2022-10-12 21:42:32 | 87624
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/run_program/gslab_make.run_program.run_python.html | 2022-10-12 21:42:32 | 11368
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/tablefill/tablefill space.txt | 2022-10-12 21:42:32 | 66
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/move_sources/gslab_make.move_sources.link_externals.html | 2022-10-12 21:42:32 | 12487
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/tablefill/gslab_make.tablefill.tablefill.html | 2022-10-12 21:42:32 | 16341
+/Users/jccp/Desktop/template/lib/gslab_make/test/EXCLUDE_test_stata.py | 2022-10-12 21:42:32 | 8022
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/test/EXCLUDE_test_stata.py | 2022-10-12 21:42:32 | 8010
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/modify_dir/gslab_make.modify_dir.remove_dir.doctree | 2022-10-12 21:42:32 | 10625
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.eot | 2022-10-12 21:42:32 | 79520
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/js/badge_only.js | 2022-10-12 21:42:32 | 934
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/fontawesome-webfont.eot | 2022-10-12 21:42:32 | 165742
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/move_sources.py | 2022-10-12 21:42:32 | 19397
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/modify_dir/gslab_make.modify_dir.unzip.html | 2022-10-12 21:42:32 | 6662
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab-Bold 2.ttf | 2022-10-12 21:42:32 | 170616
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/write_source_logs/gslab_make.write_source_logs.write_source_logs.rst | 2022-10-12 21:42:32 | 122
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab-Regular.ttf | 2022-10-12 21:42:32 | 169064
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/log_outputs/dir_depth/depth_1.txt | 2022-10-12 21:42:32 | 20
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato-Regular.ttf | 2022-10-12 21:42:32 | 656568
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/fonts/fontawesome-webfont.svg | 2022-10-12 21:42:32 | 444379
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/check_repo/gslab_make.check_repo.check_conda_status.html | 2022-10-12 21:42:32 | 7190
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/source_logging 2.html | 2022-10-12 21:42:32 | 9628
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Inconsolata-Bold.ttf | 2022-10-12 21:42:32 | 109948
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/conf.py | 2022-10-12 21:42:32 | 1537
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/filling.rst.txt | 2022-10-12 21:42:32 | 253
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/__pycache__/run_program.cpython-310.pyc | 2022-10-13 00:40:51 | 31852
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/check_repo/gslab_make.check_repo.get_modified_sources.rst.txt | 2022-10-12 21:42:32 | 124
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/write_logs/gslab_make.write_logs.start_makelog.html | 2022-10-12 21:42:32 | 7037
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/directory.rst.txt | 2022-10-12 21:42:32 | 344
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/source_logging.doctree | 2022-10-12 21:42:32 | 20413
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/make_utility/gslab_make.make_utility.update_executables.rst.txt | 2022-10-12 21:42:32 | 120
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/filling.doctree | 2022-10-12 21:42:32 | 28794
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/tablefill/gslab_make.tablefill.tablefill.rst.txt | 2022-10-12 21:42:32 | 90
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/tablefill.py | 2022-10-12 21:42:32 | 20325
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/log_outputs/dir space/file space.txt | 2022-10-12 21:42:32 | 20
+/Users/jccp/Desktop/template/lib/gslab_make/test/test_log_sources.py | 2022-10-12 21:42:32 | 4585
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab/roboto-slab-v7-regular.woff | 2022-10-12 21:42:32 | 86288
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/fontawesome-webfont.woff | 2022-10-12 21:42:32 | 98024
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/run_program/gslab_make.run_program.run_latex.html | 2022-10-12 21:42:32 | 11823
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/dummy 2.html | 2022-10-12 21:42:32 | 18182
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/search.html | 2022-10-12 21:42:32 | 4739
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato/lato-regular.woff | 2022-10-12 21:42:32 | 309192
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/test/test_log_sources.py | 2022-10-12 21:42:32 | 4585
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/private/exceptionclasses.py | 2022-10-12 21:42:32 | 943
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato/lato-regular.ttf | 2022-10-12 21:42:32 | 607720
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/modify_dir/gslab_make.modify_dir.unzip.html | 2022-10-12 21:42:32 | 6662
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/dummy 2.html | 2022-10-12 21:42:32 | 18182
+/Users/jccp/Desktop/template/lib/gslab_make/docs/genindex 2.html | 2022-10-12 21:42:32 | 13012
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/source_logging.rst.txt | 2022-10-12 21:42:32 | 380
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/run_program/gslab_make.run_program.run_module.rst.txt | 2022-10-12 21:42:32 | 95
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/run_program/gslab_make.run_program.run_stat_transfer.rst.txt | 2022-10-12 21:42:32 | 116
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/write_source_logs/gslab_make.write_source_logs.write_source_logs.html | 2022-10-12 21:42:32 | 10420
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/searchtools.js | 2022-10-12 21:42:32 | 18215
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/write_logs.py | 2022-10-12 21:42:32 | 10665
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato/lato-bolditalic.woff2 | 2022-10-12 21:42:32 | 193308
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/_sphinx_javascript_frameworks_compat.js | 2022-10-12 21:42:32 | 4418
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/modify_dir/gslab_make.modify_dir.clear_dir.rst.txt | 2022-10-12 21:42:32 | 91
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/write_source_logs/gslab_make.write_source_logs.write_source_logs.html | 2022-10-12 21:42:32 | 10420
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/check_repo/gslab_make.check_repo.check_conda_status.html | 2022-10-12 21:42:32 | 7190
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/objects.inv | 2022-10-12 21:42:32 | 1957
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.woff2 | 2022-10-12 21:42:32 | 67312
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/run_program/gslab_make.run_program.run_lyx.html | 2022-10-12 21:42:32 | 12270
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/fonts/lato-bold.woff | 2022-10-12 21:42:32 | 309728
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab/roboto-slab-v7-bold 2.ttf | 2022-10-12 21:42:32 | 170616
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/check_repo.py | 2022-10-12 21:42:32 | 14471
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/sourcing 2.rst.txt | 2022-10-12 21:42:32 | 548
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/run_program/gslab_make.run_program.execute_command.doctree | 2022-10-12 21:42:32 | 15448
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/program.doctree | 2022-10-12 21:42:32 | 215270
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/run_program/gslab_make.run_program.run_stat_transfer.doctree | 2022-10-12 21:42:32 | 18750
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/matlab_script space.m | 2022-10-12 21:42:32 | 84
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/fonts/Roboto-Slab-Bold.woff | 2022-10-12 21:42:32 | 87624
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/fontawesome-webfont 2.ttf | 2022-10-12 21:42:32 | 165548
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/index.rst.txt | 2022-10-12 21:42:32 | 1039
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/__pycache__/move_sources.cpython-310.pyc | 2022-10-13 00:40:51 | 17872
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/jquery-3.2.1.js | 2022-10-12 21:42:32 | 268039
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/run_program.py | 2022-10-12 21:42:32 | 42182
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/write_logs/gslab_make.write_logs.log_files_in_output.rst.txt | 2022-10-12 21:42:32 | 121
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/write_logs/gslab_make.write_logs.end_makelog.html | 2022-10-12 21:42:32 | 6871
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/run_program/gslab_make.run_program.execute_command.rst.txt | 2022-10-12 21:42:32 | 110
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/run_program/gslab_make.run_program.run_stata.doctree | 2022-10-12 21:42:32 | 19271
+/Users/jccp/Desktop/template/lib/gslab_make/README.md | 2022-10-12 21:42:32 | 2006
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/jquery.js | 2022-10-12 21:42:32 | 89501
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/general_logging.rst.txt | 2022-10-12 21:42:32 | 655
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/modify_dir/gslab_make.modify_dir.clear_dir.doctree | 2022-10-12 21:42:32 | 9379
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/tablefill/tablefill_template.lyx | 2022-10-12 21:42:32 | 4256
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/move_sources/move_missing.txt | 2022-10-12 21:42:32 | 80
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/check_repo/gslab_make.check_repo.check_conda_status.rst | 2022-10-12 21:42:32 | 118
+/Users/jccp/Desktop/template/lib/gslab_make/test/test_makelog.py | 2022-10-12 21:42:32 | 2308
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/fonts/lato-normal.woff | 2022-10-12 21:42:32 | 309192
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/source_logging 2.rst | 2022-10-12 21:42:32 | 380
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/utility.doctree | 2022-10-12 21:42:32 | 28240
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/js/html5shiv-printshiv.min.js | 2022-10-12 21:42:32 | 4370
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/private/utility.py | 2022-10-12 21:42:32 | 8202
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/directory.html | 2022-10-12 21:42:32 | 12705
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/run_program/gslab_make.run_program.run_module.html | 2022-10-12 21:42:32 | 10398
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/lyx_file_comments.lyx | 2022-10-12 21:42:32 | 1694
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/filling.rst | 2022-10-12 21:42:32 | 253
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/doctools.js | 2022-10-12 21:42:32 | 4472
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato/lato-bolditalic.woff | 2022-10-12 21:42:32 | 323344
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/filling 2.html | 2022-10-12 21:42:32 | 15834
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/sourcing.doctree | 2022-10-12 21:42:32 | 78994
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/__pycache__/textfill.cpython-310.pyc | 2022-10-13 00:40:56 | 5143
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/utility.rst.txt | 2022-10-12 21:42:32 | 327
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/run_program/gslab_make.run_program.run_python.doctree | 2022-10-12 21:42:32 | 18563
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/fonts/fontawesome-webfont.ttf | 2022-10-12 21:42:32 | 165548
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/make_utility/gslab_make.make_utility.update_paths.html | 2022-10-12 21:42:32 | 6696
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/fonts/Roboto-Slab-Regular.woff | 2022-10-12 21:42:32 | 86288
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/fonts/Roboto-Slab-Regular.woff | 2022-10-12 21:42:32 | 86288
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/jquery-3.2.1.js | 2022-10-12 21:42:32 | 268039
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/tablefill/tablefill_template_too_many_values.lyx | 2022-10-12 21:42:32 | 4701
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/fonts/fontawesome-webfont.woff2 | 2022-10-12 21:42:32 | 77160
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/test/__init__.py | 2022-10-12 21:42:32 | 0
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/lyx_file_beamer.lyx | 2022-10-12 21:42:32 | 2000
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/fonts/lato-normal-italic.woff2 | 2022-10-12 21:42:32 | 195704
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/stata_script.do | 2022-10-12 21:42:32 | 108
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato/lato-bolditalic.ttf | 2022-10-12 21:42:32 | 622572
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/test/EXCLUDE_test_lyx.py | 2022-10-12 21:42:32 | 9277
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/fonts/fontawesome-webfont.woff | 2022-10-12 21:42:32 | 98024
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/repository.doctree | 2022-10-12 21:42:32 | 24926
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/move_sources/gslab_make.move_sources.link_externals.rst.txt | 2022-10-12 21:42:32 | 108
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/write_logs/gslab_make.write_logs.end_makelog.rst | 2022-10-12 21:42:32 | 97
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/fontawesome-webfont.eot | 2022-10-12 21:42:32 | 165742
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/make_utility/gslab_make.make_utility.update_paths.rst | 2022-10-12 21:42:32 | 102
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/js/badge_only.js | 2022-10-12 21:42:32 | 934
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/make_utility/gslab_make.make_utility.update_paths.rst.txt | 2022-10-12 21:42:32 | 102
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/make_utility/gslab_make.make_utility.update_external_paths.rst.txt | 2022-10-12 21:42:32 | 129
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/pygments.css | 2022-10-12 21:42:32 | 4819
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/r_script_error.R | 2022-10-12 21:42:32 | 5
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/run_program/gslab_make.run_program.run_r.rst | 2022-10-12 21:42:32 | 80
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/dummy 2.rst.txt | 2022-10-12 21:42:32 | 741
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/run_program/gslab_make.run_program.run_sas.doctree | 2022-10-12 21:42:32 | 20509
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/environment.pickle | 2022-10-12 21:42:32 | 101617
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato/lato-italic.ttf | 2022-10-12 21:42:32 | 639388
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/dummy.doctree | 2022-10-12 21:42:32 | 51378
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/underscore-1.12.0.js | 2022-10-12 21:42:32 | 67692
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/make_utility/gslab_make.make_utility.update_internal_paths.rst.txt | 2022-10-12 21:42:32 | 129
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/make_utility/gslab_make.make_utility.update_external_paths.html | 2022-10-12 21:42:32 | 7583
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/modify_dir/gslab_make.modify_dir.zip_dir.doctree | 2022-10-12 21:42:32 | 7138
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/modify_dir/gslab_make.modify_dir.unzip.rst.txt | 2022-10-12 21:42:32 | 79
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/minus 2.png | 2022-10-12 21:42:32 | 90
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/move_sources/gslab_make.move_sources.copy_externals.html | 2022-10-12 21:42:32 | 12264
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/index.html | 2022-10-12 21:42:32 | 7495
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/modify_dir/gslab_make.modify_dir.remove_dir.rst | 2022-10-12 21:42:32 | 94
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/source_logging.html | 2022-10-12 21:42:32 | 10621
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/modify_dir/gslab_make.modify_dir.clear_dir.html | 2022-10-12 21:42:32 | 7830
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/write_logs/gslab_make.write_logs.end_makelog.rst.txt | 2022-10-12 21:42:32 | 97
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/private/subprocess_fix.py | 2022-10-12 21:42:32 | 5428
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/tablefill.py | 2022-10-12 21:42:32 | 20325
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/jquery-3.6.0.js | 2022-10-12 21:42:32 | 288580
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/run_program/gslab_make.run_program.run_jupyter.html | 2022-10-12 21:42:32 | 10877
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/tablefill_info.py | 2022-10-12 21:42:32 | 8432
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/log_sources/dir space/file space.txt | 2022-10-12 21:42:32 | 20
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/run_program/gslab_make.run_program.run_r.rst.txt | 2022-10-12 21:42:32 | 80
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/directory 2.rst | 2022-10-12 21:42:32 | 344
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/modify_dir/gslab_make.modify_dir.zip_dir.rst.txt | 2022-10-12 21:42:32 | 85
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/repository.html | 2022-10-12 21:42:32 | 11207
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/source_logging 2.rst.txt | 2022-10-12 21:42:32 | 380
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/make_utility/gslab_make.make_utility.copy_output.rst.txt | 2022-10-12 21:42:32 | 99
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/fontawesome-webfont 2.woff2 | 2022-10-12 21:42:32 | 77160
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/write_logs/gslab_make.write_logs.start_makelog.rst | 2022-10-12 21:42:32 | 103
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/config/config_user_empty.yaml | 2022-10-12 21:42:32 | 96
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/check_repo/gslab_make.check_repo.check_conda_status.rst.txt | 2022-10-12 21:42:32 | 118
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/stata_script space.do | 2022-10-12 21:42:32 | 108
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/program.rst | 2022-10-12 21:42:32 | 2704
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/lyx_file_handout_handout.lyx.bak | 2022-10-12 21:42:32 | 2000
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/run_program/gslab_make.run_program.run_stat_transfer.html | 2022-10-12 21:42:32 | 11510
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/sphinx_highlight.js | 2022-10-12 21:42:32 | 4712
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/run_program/gslab_make.run_program.run_stat_transfer.rst.txt | 2022-10-12 21:42:32 | 116
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/write_source_logs/gslab_make.write_source_logs.write_source_logs.rst.txt | 2022-10-12 21:42:32 | 122
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/write_logs/gslab_make.write_logs.start_makelog.rst.txt | 2022-10-12 21:42:32 | 103
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/run_program/gslab_make.run_program.run_module.html | 2022-10-12 21:42:32 | 10398
+/Users/jccp/Desktop/template/lib/gslab_make/docs/index.html | 2022-10-12 21:42:32 | 7495
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/pygments.css | 2022-10-12 21:42:32 | 4819
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/specifying_paths.doctree | 2022-10-12 21:42:32 | 17011
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/run_program/gslab_make.run_program.run_stata.rst | 2022-10-12 21:42:32 | 92
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/move_sources/gslab_make.move_sources.copy_externals.rst.txt | 2022-10-12 21:42:32 | 108
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/make_utility/gslab_make.make_utility.copy_output.html | 2022-10-12 21:42:32 | 6739
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/log_sources/dir_depth/dir_depth/depth_2.txt | 2022-10-12 21:42:32 | 20
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/run_program/gslab_make.run_program.run_mathematica.rst.txt | 2022-10-12 21:42:32 | 110
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/underscore-1.3.1.js | 2022-10-12 21:42:32 | 35168
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/RobotoSlab-Regular.ttf | 2022-10-12 21:42:32 | 169064
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/check_repo/gslab_make.check_repo.check_module_size.rst | 2022-10-12 21:42:32 | 115
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/utility 2.html | 2022-10-12 21:42:32 | 10451
+/Users/jccp/Desktop/template/lib/gslab_make/test/README.md | 2022-10-12 21:42:32 | 830
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/fonts/fontawesome-webfont.svg | 2022-10-12 21:42:32 | 444379
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/directory 2.rst.txt | 2022-10-12 21:42:32 | 344
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/log_sources/dir/file.txt | 2022-10-12 21:42:32 | 20
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/run_program/gslab_make.run_program.run_lyx.html | 2022-10-12 21:42:32 | 12270
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/modify_dir/gslab_make.modify_dir.zip_dir.html | 2022-10-12 21:42:32 | 6629
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/general_logging.doctree | 2022-10-12 21:42:32 | 35511
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/program.rst.txt | 2022-10-12 21:42:32 | 2704
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/lyx_file_comments_comments.lyx.bak | 2022-10-12 21:42:32 | 1694
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.woff | 2022-10-12 21:42:32 | 87624
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/move_sources/gslab_make.move_sources.copy_externals.rst | 2022-10-12 21:42:32 | 108
+/Users/jccp/Desktop/template/lib/gslab_make/test/test_python.py | 2022-10-12 21:42:32 | 7064
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/make_utility/gslab_make.make_utility.update_external_paths.rst | 2022-10-12 21:42:32 | 129
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato/lato-bold.eot | 2022-10-12 21:42:32 | 256056
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/move_sources/move space.txt | 2022-10-12 21:42:32 | 76
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/run_program/gslab_make.run_program.run_python.rst | 2022-10-12 21:42:32 | 95
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/jquery.js | 2022-10-12 21:42:32 | 89501
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/__init__.py | 2022-10-12 21:42:32 | 2696
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/sourcing.rst | 2022-10-12 21:42:32 | 548
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/js/modernizr.min.js | 2022-10-12 21:42:32 | 15414
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/run_program/gslab_make.run_program.run_mathematica.html | 2022-10-12 21:42:32 | 11397
+/Users/jccp/Desktop/template/lib/gslab_make/test/WIP_test_matlab.py | 2022-10-12 21:42:32 | 8012
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/log_outputs/recursion.txt | 2022-10-12 21:42:32 | 34
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato/lato-bolditalic.woff2 | 2022-10-12 21:42:32 | 193308
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/sourcing.rst.txt | 2022-10-12 21:42:32 | 548
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/move_sources/gslab_make.move_sources.copy_inputs.rst.txt | 2022-10-12 21:42:32 | 99
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/graphviz.css | 2022-10-12 21:42:32 | 299
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/fonts/fontawesome-webfont.eot | 2022-10-12 21:42:32 | 165742
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/make_utility/gslab_make.make_utility.update_executables.html | 2022-10-12 21:42:32 | 7442
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/private/messages.py | 2022-10-12 21:42:32 | 5991
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/minus.png | 2022-10-12 21:42:32 | 90
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/log_sources/move.txt | 2022-10-12 21:42:32 | 53
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/js/theme.js | 2022-10-12 21:42:32 | 5023
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/source_logging 2.doctree | 2022-10-12 21:42:32 | 20417
+/Users/jccp/Desktop/template/lib/gslab_make/docs/search 2.html | 2022-10-12 21:42:32 | 4679
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato/lato-regular.eot | 2022-10-12 21:42:32 | 253461
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/filling 2.rst.txt | 2022-10-12 21:42:32 | 253
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/write_logs/gslab_make.write_logs.write_to_makelog.html | 2022-10-12 21:42:32 | 6925
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/general_logging 2.html | 2022-10-12 21:42:32 | 13399
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/perl_script.pl | 2022-10-12 21:42:32 | 208
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato/lato-bold.woff2 | 2022-10-12 21:42:32 | 184912
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/run_program/gslab_make.run_program.run_python.rst.txt | 2022-10-12 21:42:32 | 95
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/tablefill/tablefill_duplicated.txt | 2022-10-12 21:42:32 | 66
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/general_logging.rst | 2022-10-12 21:42:32 | 655
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/fontawesome-webfont 2.woff | 2022-10-12 21:42:32 | 98024
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/RobotoSlab-Bold.ttf | 2022-10-12 21:42:32 | 170616
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/perl_script space.pl | 2022-10-12 21:42:32 | 208
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/wrong_extension.txt | 2022-10-12 21:42:32 | 0
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/source_logging.html | 2022-10-12 21:42:32 | 10621
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/sourcing.html | 2022-10-12 21:42:32 | 33033
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/theme.css | 2022-10-12 21:42:32 | 129674
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/write_source_logs.py | 2022-10-12 21:42:32 | 4866
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/__pycache__/tablefill.cpython-310.pyc | 2022-10-13 00:40:56 | 18417
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/perl_script_arg.pl | 2022-10-12 21:42:32 | 206
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/modify_dir/gslab_make.modify_dir.clear_dir.rst | 2022-10-12 21:42:32 | 91
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/modify_dir.py | 2022-10-12 21:42:32 | 7384
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/python_script_arg.py | 2022-10-12 21:42:32 | 180
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/write_source_logs.py | 2022-10-12 21:42:32 | 4866
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/searchtools.js | 2022-10-12 21:42:32 | 18215
+/Users/jccp/Desktop/template/raw/chips.csv | 2022-10-12 21:41:17 | 8758851
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab/roboto-slab-v7-regular 2.eot | 2022-10-12 21:42:32 | 78331
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/run_program/gslab_make.run_program.run_perl.rst.txt | 2022-10-12 21:42:32 | 89
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/make_utility/gslab_make.make_utility.update_paths.rst.txt | 2022-10-12 21:42:32 | 102
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/pygments 2.css | 2022-10-12 21:42:32 | 4819
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/lyx_file_handout.lyx | 2022-10-12 21:42:32 | 2000
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/move_sources/gslab_make.move_sources.link_inputs.rst.txt | 2022-10-12 21:42:32 | 99
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/r_script space.R | 2022-10-12 21:42:32 | 100
+/Users/jccp/Desktop/template/lib/gslab_make/setup.py | 2022-10-12 21:42:32 | 738
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/__pycache__/textfill_info.cpython-310.pyc | 2022-10-13 00:40:56 | 6488
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/specifying_paths.html | 2022-10-12 21:42:32 | 11805
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/sourcing 2.rst.txt | 2022-10-12 21:42:32 | 548
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/jquery 2.js | 2022-10-12 21:42:32 | 89501
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/private/__pycache__/metadata.cpython-310.pyc | 2022-10-13 00:40:51 | 2243
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato/lato-italic.eot | 2022-10-12 21:42:32 | 268604
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/move_sources/gslab_make.move_sources.copy_inputs.doctree | 2022-10-12 21:42:32 | 20928
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/language_data 2.js | 2022-10-12 21:42:32 | 4758
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato/lato-italic.woff | 2022-10-12 21:42:32 | 328412
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/underscore-1.12.0.js | 2022-10-12 21:42:32 | 67692
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato/lato-regular.ttf | 2022-10-12 21:42:32 | 607720
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/dummy 2.rst.txt | 2022-10-12 21:42:32 | 741
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato-Regular 2.ttf | 2022-10-12 21:42:32 | 656568
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/underscore-1.13.1.js | 2022-10-12 21:42:32 | 68420
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/js/html5shiv.min.js | 2022-10-12 21:42:32 | 2734
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/test/test_python.py | 2022-10-12 21:42:32 | 7056
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/private/__pycache__/messages.cpython-310.pyc | 2022-10-13 00:40:51 | 5617
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab/roboto-slab-v7-bold 2.woff2 | 2022-10-12 21:42:32 | 67312
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato/lato-italic.woff2 | 2022-10-12 21:42:32 | 195704
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/private/metadata.py | 2022-10-12 21:42:32 | 4159
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/private/__pycache__/exceptionclasses.cpython-310.pyc | 2022-10-13 00:40:51 | 1478
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/sphinx_highlight.js | 2022-10-12 21:42:32 | 4712
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/move_sources/move_bad_wildcard.txt | 2022-10-12 21:42:32 | 112
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/sourcing.rst.txt | 2022-10-12 21:42:32 | 548
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato/lato-italic.ttf | 2022-10-12 21:42:32 | 639388
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/tablefill_info.py | 2022-10-12 21:42:32 | 8432
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Inconsolata-Regular.ttf | 2022-10-12 21:42:32 | 96964
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/general_logging.html | 2022-10-12 21:42:32 | 14686
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/genindex.html | 2022-10-12 21:42:32 | 13072
+/Users/jccp/Desktop/template/lib/gslab_make/test/test_move_sources.py | 2022-10-12 21:42:32 | 7262
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/private/movedirective.py | 2022-10-12 21:42:32 | 12767
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/run_program/gslab_make.run_program.run_stata.html | 2022-10-12 21:42:32 | 11653
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab/roboto-slab-v7-regular 2.ttf | 2022-10-12 21:42:32 | 169064
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/move_sources/gslab_make.move_sources.link_inputs.html | 2022-10-12 21:42:32 | 12450
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/fonts/lato-bold.woff2 | 2022-10-12 21:42:32 | 184912
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/documentation_options.js | 2022-10-12 21:42:32 | 420
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/textfill.py | 2022-10-12 21:42:32 | 5952
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/fontawesome-webfont.woff2 | 2022-10-12 21:42:32 | 77160
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/fontawesome-webfont.svg | 2022-10-12 21:42:32 | 444379
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/general_logging 2.rst | 2022-10-12 21:42:32 | 655
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/run_program/gslab_make.run_program.execute_command.rst.txt | 2022-10-12 21:42:32 | 110
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/repository.rst.txt | 2022-10-12 21:42:32 | 363
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/jquery-3.6.0.js | 2022-10-12 21:42:32 | 288580
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/__pycache__/write_source_logs.cpython-310.pyc | 2022-10-13 00:40:56 | 4671
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/underscore-1.3.1.js | 2022-10-12 21:42:32 | 35168
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/directory 2.html | 2022-10-12 21:42:32 | 11386
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/general_logging.rst.txt | 2022-10-12 21:42:32 | 655
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/test/test_modify_dir.py | 2022-10-12 21:42:32 | 7852
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab/roboto-slab-v7-bold.woff | 2022-10-12 21:42:32 | 87624
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/fonts/lato-normal-italic.woff2 | 2022-10-12 21:42:32 | 195704
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/__pycache__/write_logs.cpython-310.pyc | 2022-10-13 00:40:51 | 8943
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/js/html5shiv.min.js | 2022-10-12 21:42:32 | 2734
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato/lato-italic.woff2 | 2022-10-12 21:42:32 | 195704
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/basic.css | 2022-10-12 21:42:32 | 14621
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/js/theme.js | 2022-10-12 21:42:32 | 5023
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/make_utility/gslab_make.make_utility.update_external_paths.doctree | 2022-10-12 21:42:32 | 9851
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/index.rst | 2022-10-12 21:42:32 | 1039
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/write_logs/gslab_make.write_logs.end_makelog.rst.txt | 2022-10-12 21:42:32 | 97
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/modify_dir/gslab_make.modify_dir.clear_dir.rst.txt | 2022-10-12 21:42:32 | 91
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab/roboto-slab-v7-bold.woff2 | 2022-10-12 21:42:32 | 67312
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/sourcing 2.rst | 2022-10-12 21:42:32 | 548
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab/roboto-slab-v7-regular 2.woff2 | 2022-10-12 21:42:32 | 66444
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/run_program/gslab_make.run_program.run_lyx.rst.txt | 2022-10-12 21:42:32 | 86
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/run_program/gslab_make.run_program.run_perl.rst | 2022-10-12 21:42:32 | 89
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/make.bat | 2022-10-12 21:42:32 | 941
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/move_sources/gslab_make.move_sources.copy_inputs.html | 2022-10-12 21:42:32 | 12271
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/test/EXCLUDE_test_R.py | 2022-10-12 21:42:32 | 7997
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/write_logs/gslab_make.write_logs.log_files_in_output.rst | 2022-10-12 21:42:32 | 121
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/run_program/gslab_make.run_program.run_r.html | 2022-10-12 21:42:32 | 11287
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/run_program/gslab_make.run_program.run_lyx.rst.txt | 2022-10-12 21:42:32 | 86
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/file.png | 2022-10-12 21:42:32 | 286
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/badge_only.css | 2022-10-12 21:42:32 | 3275
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/check_repo/gslab_make.check_repo.check_module_size.rst.txt | 2022-10-12 21:42:32 | 115
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/Makefile | 2022-10-12 21:42:32 | 683
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/fonts/lato-normal-italic.woff | 2022-10-12 21:42:32 | 328412
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/private/__init__.py | 2022-10-12 21:42:32 | 0
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/config/config.yaml | 2022-10-12 21:42:32 | 1004
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/basic 2.css | 2022-10-12 21:42:32 | 14621
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/private/__pycache__/utility.cpython-310.pyc | 2022-10-13 00:40:51 | 6585
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/fonts/Roboto-Slab-Bold.woff2 | 2022-10-12 21:42:32 | 67312
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/fonts/lato-bold-italic.woff | 2022-10-12 21:42:32 | 323344
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/fonts/fontawesome-webfont.ttf | 2022-10-12 21:42:32 | 165548
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/fontawesome-webfont.ttf | 2022-10-12 21:42:32 | 165548
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/move_sources/gslab_make.move_sources.link_externals.doctree | 2022-10-12 21:42:32 | 21477
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/write_source_logs/gslab_make.write_source_logs.write_source_logs.rst.txt | 2022-10-12 21:42:32 | 122
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/general_logging 2.rst.txt | 2022-10-12 21:42:32 | 655
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/make_utility/gslab_make.make_utility.copy_output.rst.txt | 2022-10-12 21:42:32 | 99
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/write_logs/gslab_make.write_logs.end_makelog.html | 2022-10-12 21:42:32 | 6871
+/Users/jccp/Desktop/template/lib/gslab_make/test/test_tablefill.py | 2022-10-12 21:42:32 | 4244
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab-Bold.ttf | 2022-10-12 21:42:32 | 170616
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/run_program/gslab_make.run_program.run_sas.rst | 2022-10-12 21:42:32 | 86
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/private/programdirective.py | 2022-10-12 21:42:32 | 10360
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/run_program/gslab_make.run_program.run_mathematica.doctree | 2022-10-12 21:42:32 | 18528
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato/lato-bold.woff | 2022-10-12 21:42:32 | 309728
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/test/WIP_test_matlab.py | 2022-10-12 21:42:32 | 8012
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab/roboto-slab-v7-regular.ttf | 2022-10-12 21:42:32 | 169064
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/fonts/lato-normal-italic.woff | 2022-10-12 21:42:32 | 328412
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/run_program/gslab_make.run_program.run_perl.rst.txt | 2022-10-12 21:42:32 | 89
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/tablefill/tablefill_no_tag.txt | 2022-10-12 21:42:32 | 56
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/modify_dir/gslab_make.modify_dir.clear_dir.html | 2022-10-12 21:42:32 | 7830
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/make_utility/gslab_make.make_utility.update_executables.doctree | 2022-10-12 21:42:32 | 9857
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/move_sources/gslab_make.move_sources.copy_externals.rst.txt | 2022-10-12 21:42:32 | 108
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/plus.png | 2022-10-12 21:42:32 | 90
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/test/test_move_sources.py | 2022-10-12 21:42:32 | 7274
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/move_sources.py | 2022-10-12 21:42:32 | 19397
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/source_logging 2.rst.txt | 2022-10-12 21:42:32 | 380
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/move_sources/file.txt | 2022-10-12 21:42:32 | 0
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/make_utility/gslab_make.make_utility.update_internal_paths.doctree | 2022-10-12 21:42:32 | 8736
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/run_program/gslab_make.run_program.run_perl.html | 2022-10-12 21:42:32 | 11374
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato/lato-bold.ttf | 2022-10-12 21:42:32 | 600856
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/fonts/lato-bold.woff2 | 2022-10-12 21:42:32 | 184912
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/run_program/gslab_make.run_program.run_perl.doctree | 2022-10-12 21:42:32 | 18527
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/file 2.png | 2022-10-12 21:42:32 | 286
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Inconsolata.ttf | 2022-10-12 21:42:32 | 63184
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/tablefill/gslab_make.tablefill.tablefill.html | 2022-10-12 21:42:32 | 16341
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/run_program/gslab_make.run_program.run_sas.rst.txt | 2022-10-12 21:42:32 | 86
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/directory 2.html | 2022-10-12 21:42:32 | 11386
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/run_program/gslab_make.run_program.run_mathematica.rst.txt | 2022-10-12 21:42:32 | 110
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/searchindex.js | 2022-10-12 21:42:32 | 37621
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/utility 2.doctree | 2022-10-12 21:42:32 | 28244
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/matlab_script_error.m | 2022-10-12 21:42:32 | 5
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/make_utility/gslab_make.make_utility.update_external_paths.html | 2022-10-12 21:42:32 | 7583
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/write_logs/gslab_make.write_logs.log_files_in_output.doctree | 2022-10-12 21:42:32 | 17521
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/check_repo/gslab_make.check_repo.check_conda_status.rst.txt | 2022-10-12 21:42:32 | 118
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/repository.rst | 2022-10-12 21:42:32 | 363
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/tablefill/tablefill_template.tex | 2022-10-12 21:42:32 | 942
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/_sphinx_javascript_frameworks_compat.js | 2022-10-12 21:42:32 | 4418
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/repository.rst.txt | 2022-10-12 21:42:32 | 363
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/tablefill/gslab_make.tablefill.tablefill.rst.txt | 2022-10-12 21:42:32 | 90
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/python_script_error.py | 2022-10-12 21:42:32 | 5
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/test/test_log_outputs.py | 2022-10-12 21:42:32 | 5111
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/underscore.js | 2022-10-12 21:42:32 | 19530
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/run_program/gslab_make.run_program.execute_command.html | 2022-10-12 21:42:32 | 11273
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/make_utility/gslab_make.make_utility.update_internal_paths.html | 2022-10-12 21:42:32 | 7136
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/run_program/gslab_make.run_program.run_jupyter.doctree | 2022-10-12 21:42:32 | 13990
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/modify_dir/gslab_make.modify_dir.unzip.rst.txt | 2022-10-12 21:42:32 | 79
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato/lato-bolditalic.eot | 2022-10-12 21:42:32 | 266158
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/run_program/gslab_make.run_program.run_stat_transfer.rst | 2022-10-12 21:42:32 | 116
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/lyx_file.lyx | 2022-10-12 21:42:32 | 1608
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/modify_dir/gslab_make.modify_dir.unzip.rst | 2022-10-12 21:42:32 | 79
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/specifying_paths.rst.txt | 2022-10-12 21:42:32 | 2616
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/language_data.js | 2022-10-12 21:42:32 | 4758
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/run_program/gslab_make.run_program.run_module.rst.txt | 2022-10-12 21:42:32 | 95
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Inconsolata-Regular 2.ttf | 2022-10-12 21:42:32 | 96964
+/Users/jccp/Desktop/template/lib/gslab_make/test/__init__.py | 2022-10-12 21:42:32 | 0
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato/lato-regular.woff2 | 2022-10-12 21:42:32 | 182708
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/filling.rst.txt | 2022-10-12 21:42:32 | 253
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Inconsolata-Bold 2.ttf | 2022-10-12 21:42:32 | 109948
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato/lato-bolditalic.woff | 2022-10-12 21:42:32 | 323344
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/modify_dir/gslab_make.modify_dir.unzip.doctree | 2022-10-12 21:42:32 | 7173
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/run_program/gslab_make.run_program.run_stat_transfer.html | 2022-10-12 21:42:32 | 11510
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/__pycache__/check_repo.cpython-310.pyc | 2022-10-13 00:40:48 | 13639
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/private/messages.py | 2022-10-12 21:42:32 | 5991
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/make_utility/gslab_make.make_utility.update_executables.html | 2022-10-12 21:42:32 | 7442
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/underscore-1.12.0 2.js | 2022-10-12 21:42:32 | 67692
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/config/config_user_bad_executables.yaml | 2022-10-12 21:42:32 | 249
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/log_sources/move_depth.txt | 2022-10-12 21:42:32 | 65
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/doctools.js | 2022-10-12 21:42:32 | 4472
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato/lato-bold.eot | 2022-10-12 21:42:32 | 256056
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab/roboto-slab-v7-bold.eot | 2022-10-12 21:42:32 | 79520
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato/lato-regular.woff2 | 2022-10-12 21:42:32 | 182708
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/fontawesome-webfont 2.eot | 2022-10-12 21:42:32 | 165742
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.ttf | 2022-10-12 21:42:32 | 170616
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/config/config_user_bad.yaml | 2022-10-12 21:42:32 | 131
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/move_sources/move_bad.txt | 2022-10-12 21:42:32 | 31
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/plus.png | 2022-10-12 21:42:32 | 90
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/tablefill/gslab_make.tablefill.tablefill.rst | 2022-10-12 21:42:32 | 90
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/utility.rst | 2022-10-12 21:42:32 | 327
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/write_logs/gslab_make.write_logs.write_to_makelog.doctree | 2022-10-12 21:42:32 | 8103
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/config/config_user.yaml | 2022-10-12 21:42:32 | 236
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato/lato-italic.eot | 2022-10-12 21:42:32 | 268604
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/index.doctree | 2022-10-12 21:42:32 | 6021
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/log_sources/move space.txt | 2022-10-12 21:42:32 | 65
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/jquery-3.5.1 2.js | 2022-10-12 21:42:32 | 287630
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato/lato-italic.woff | 2022-10-12 21:42:32 | 328412
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/check_repo/gslab_make.check_repo.get_modified_sources.doctree | 2022-10-12 21:42:32 | 12579
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/general_logging 2.html | 2022-10-12 21:42:32 | 13399
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/underscore.js | 2022-10-12 21:42:32 | 19530
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/source_logging.rst | 2022-10-12 21:42:32 | 380
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/filling.html | 2022-10-12 21:42:32 | 16714
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/fontawesome-webfont.svg | 2022-10-12 21:42:32 | 444379
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/language_data.js | 2022-10-12 21:42:32 | 4758
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/test/WIP_test_latex.py | 2022-10-12 21:42:32 | 2298
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/utility 2.rst.txt | 2022-10-12 21:42:32 | 327
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/css/fonts/Roboto-Slab-Regular.woff2 | 2022-10-12 21:42:32 | 66444
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/fonts/lato-bold-italic.woff | 2022-10-12 21:42:32 | 323344
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/move_sources/move_file.txt | 2022-10-12 21:42:32 | 64
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/check_repo/gslab_make.check_repo.get_modified_sources.rst.txt | 2022-10-12 21:42:32 | 124
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/api/write_logs/gslab_make.write_logs.end_makelog.doctree | 2022-10-12 21:42:32 | 7377
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/directory.html | 2022-10-12 21:42:32 | 12705
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato/lato-bolditalic.eot | 2022-10-12 21:42:32 | 266158
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.woff2 | 2022-10-12 21:42:32 | 66444
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/run_program/gslab_make.run_program.run_mathematica.rst | 2022-10-12 21:42:32 | 110
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/doctools 2.js | 2022-10-12 21:42:32 | 8171
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/modify_dir/gslab_make.modify_dir.remove_dir.rst.txt | 2022-10-12 21:42:32 | 94
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/__pycache__/__init__.cpython-310.pyc | 2022-10-13 00:40:48 | 1661
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/modify_dir/gslab_make.modify_dir.remove_dir.html | 2022-10-12 21:42:32 | 8029
+/Users/jccp/Desktop/template/lib/gslab_make/LICENSE.txt | 2022-10-12 21:42:32 | 1083
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/make_utility.py | 2022-10-12 21:42:32 | 5785
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/python_script.py | 2022-10-12 21:42:32 | 169
+/Users/jccp/Desktop/template/lib/gslab_make/docs/pages/api/run_program/gslab_make.run_program.run_sas.html | 2022-10-12 21:42:32 | 11782
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/Lato-Bold.ttf | 2022-10-12 21:42:32 | 656544
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/run_program/gslab_make.run_program.run_stata.rst.txt | 2022-10-12 21:42:32 | 92
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/file.png | 2022-10-12 21:42:32 | 286
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_sources/pages/api/run_program/gslab_make.run_program.run_r.rst.txt | 2022-10-12 21:42:32 | 80
+/Users/jccp/Desktop/template/lib/gslab_make/test/raw/run_program/latex_file.tex | 2022-10-12 21:42:32 | 276
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/run_program/gslab_make.run_program.run_module.rst | 2022-10-12 21:42:32 | 95
+/Users/jccp/Desktop/template/lib/gslab_make/test/WIP_test_latex.py | 2022-10-12 21:42:32 | 2298
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/pages/api/make_utility/gslab_make.make_utility.update_paths.html | 2022-10-12 21:42:32 | 6696
+/Users/jccp/Desktop/template/lib/gslab_make/CODE_OF_CONDUCT.md | 2022-10-12 21:42:32 | 3353
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/source/pages/api/make_utility/gslab_make.make_utility.update_executables.rst | 2022-10-12 21:42:32 | 120
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/css/fonts/lato-normal.woff2 | 2022-10-12 21:42:32 | 182708
+/Users/jccp/Desktop/template/lib/gslab_make/build/lib/gslab_make/private/__init__.py | 2022-10-12 21:42:32 | 0
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/run_program/gslab_make.run_program.run_matlab.rst.txt | 2022-10-12 21:42:32 | 95
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/modify_dir/gslab_make.modify_dir.zip_dir.rst.txt | 2022-10-12 21:42:32 | 85
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/RobotoSlab/roboto-slab-v7-bold 2.eot | 2022-10-12 21:42:32 | 79520
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/doctrees/pages/sourcing 2.doctree | 2022-10-12 21:42:32 | 78998
+/Users/jccp/Desktop/template/lib/gslab_make/sphinx/build/html/_static/fonts/fontawesome-webfont.woff2 | 2022-10-12 21:42:32 | 77160
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/js/modernizr.min.js | 2022-10-12 21:42:32 | 15414
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/write_logs/gslab_make.write_logs.start_makelog.rst.txt | 2022-10-12 21:42:32 | 103
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/move_sources/gslab_make.move_sources.link_externals.rst.txt | 2022-10-12 21:42:32 | 108
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_sources/pages/api/run_program/gslab_make.run_program.run_jupyter.rst.txt | 2022-10-12 21:42:32 | 98
+/Users/jccp/Desktop/template/lib/gslab_make/docs/_static/fonts/Lato-Bold 2.ttf | 2022-10-12 21:42:32 | 656544
+/Users/jccp/Desktop/template/lib/gslab_make/gslab_make/check_repo.py | 2022-10-12 21:42:32 | 14471
