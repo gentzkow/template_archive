@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
-Makelog started: 2022-10-13 13:32:00
+Makelog started: 2022-10-14 19:34:30
 Working directory: /Users/jccp/Desktop/template/analysis
 --------------------------------------------------------------------------------
 Input links successfully created!
@@ -23,6 +23,6 @@ sys:1: UserWarning: No data for colormapping provided via 'c'. Parameters 'vmin'
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2022-10-13 13:33:03
+Makelog ended: 2022-10-14 19:35:58
 Working directory: /Users/jccp/Desktop/template/analysis
 --------------------------------------------------------------------------------

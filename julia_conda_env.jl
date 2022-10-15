@@ -10,6 +10,8 @@ ENV["PYTHON"]="/usr/local/Caskroom/miniconda/base/envs/template_julia/bin/python
 ### Comment the latest version of the package that was used in a full run. 
 
 using Pkg
+Pkg.add("Conda") # v1.4.1
+Pkg.add("PyCall") # v1.4.1
 Pkg.add("DataFrames") # v1.4.1
 Pkg.add("CSV") # v0.10.4
 Pkg.add("StatsPlots") # v0.15.4
