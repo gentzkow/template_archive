@@ -1,16 +1,13 @@
 --------------------------------------------------------------------------------
-Makelog started: 2022-10-17 18:07:47
-Working directory: /Users/jccp/Desktop/template/data
+Makelog started: 2022-10-18 14:12:27
+Working directory: /Users/jccp/template/data
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
-WARNING! The following target files have been modified according to git status:
-/Users/jccp/Desktop/template/raw/chips.csv
-/Users/jccp/Desktop/template/raw/tv.csv
-Executing command: `python  "/Users/jccp/Desktop/template/data/code/merge_data.py" `
-Executing command: `python  "/Users/jccp/Desktop/template/data/code/clean_data.py" `
-/Users/jccp/Desktop/template/data/code/clean_data.py:17: SettingWithCopyWarning: 
+Executing command: `python  "/Users/jccp/template/data/code/merge_data.py" `
+Executing command: `python  "/Users/jccp/template/data/code/clean_data.py" `
+/Users/jccp/template/data/code/clean_data.py:17: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
@@ -18,6 +15,6 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2022-10-17 18:08:16
-Working directory: /Users/jccp/Desktop/template/data
+Makelog ended: 2022-10-18 14:12:40
+Working directory: /Users/jccp/template/data
 --------------------------------------------------------------------------------

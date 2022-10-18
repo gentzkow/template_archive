@@ -10,6 +10,8 @@ using Pkg
 Pkg.add("Conda")
 using Conda
 Pkg.add(["PyCall", "DataFrames", "CSV", "StatsPlots", "PyPlot"])
+ENV["PYTHON"]=""
+Pkg.add(["PyCall", "PyPlot"])
 
 # Check the version of the Julia packages
 #Use Pkg.status()
