@@ -1,28 +1,30 @@
 --------------------------------------------------------------------------------
-Makelog started: 2022-10-14 19:34:30
-Working directory: /Users/jccp/Desktop/template/analysis
+Makelog started: 2022-10-18 00:29:35
+Working directory: /home/statauser/template/analysis
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
-Executing command: `python  "/Users/jccp/Desktop/template/analysis/code/analyze_data.py" `
-/usr/local/Caskroom/miniconda/base/envs/template_julia/lib/python3.10/site-packages/linearmodels/panel/model.py:1183: MissingValueWarning: 
+WARNING! The following target files have been modified according to git status:
+/home/statauser/template/data/output/data_cleaned.csv
+Executing command: `python  "/home/statauser/template/analysis/code/analyze_data.py" `
+/home/statauser/.conda/envs/template_julia/lib/python3.10/site-packages/linearmodels/panel/model.py:1183: MissingValueWarning: 
 Inputs contain missing values. Dropping rows with missing observations.
   super().__init__(dependent, exog, weights=weights, check_rank=check_rank)
 
-Executing command: `julia  "/Users/jccp/Desktop/template/analysis/code/plot.jl"`
+Executing command: `julia  "/home/statauser/template/analysis/code/plot.jl"`
 ┌ Warning: Indices Base.OneTo(1) of attribute `seriescolor` does not match data indices 1:31.
-└ @ Plots /usr/local/Caskroom/miniconda/base/envs/template_julia/share/julia/packages/Plots/AAjgN/src/utils.jl:128
+└ @ Plots ~/.conda/envs/template_julia/share/julia/packages/Plots/AAjgN/src/utils.jl:128
 ┌ Warning: Indices Base.OneTo(1) of attribute `linecolor` does not match data indices 1:31.
-└ @ Plots /usr/local/Caskroom/miniconda/base/envs/template_julia/share/julia/packages/Plots/AAjgN/src/utils.jl:128
+└ @ Plots ~/.conda/envs/template_julia/share/julia/packages/Plots/AAjgN/src/utils.jl:128
 ┌ Warning: Indices Base.OneTo(1) of attribute `fillcolor` does not match data indices 1:31.
-└ @ Plots /usr/local/Caskroom/miniconda/base/envs/template_julia/share/julia/packages/Plots/AAjgN/src/utils.jl:128
+└ @ Plots ~/.conda/envs/template_julia/share/julia/packages/Plots/AAjgN/src/utils.jl:128
 ┌ Warning: Indices Base.OneTo(1) of attribute `markercolor` does not match data indices 1:31.
-└ @ Plots /usr/local/Caskroom/miniconda/base/envs/template_julia/share/julia/packages/Plots/AAjgN/src/utils.jl:128
+└ @ Plots ~/.conda/envs/template_julia/share/julia/packages/Plots/AAjgN/src/utils.jl:128
 sys:1: UserWarning: No data for colormapping provided via 'c'. Parameters 'vmin', 'vmax' will be ignored
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2022-10-14 19:35:58
-Working directory: /Users/jccp/Desktop/template/analysis
+Makelog ended: 2022-10-18 00:31:04
+Working directory: /home/statauser/template/analysis
 --------------------------------------------------------------------------------
