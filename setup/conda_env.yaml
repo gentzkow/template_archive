@@ -11,7 +11,10 @@ dependencies:
   - colorama=0.4.5
   - jupyter=1.0.0
   - linearmodels=4.24
+  #  - pendulum
+  # - MoviePy
   # - pip=19
   # - pip: # if there is a package available via pip but not with conda, can import like this:
   - r=3.6
   - r-yaml # import r packages by prepending with "r-""
+  # - r-nicheROVER
