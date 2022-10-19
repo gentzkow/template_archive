@@ -1,20 +1,11 @@
 --------------------------------------------------------------------------------
 Makelog started: 2022-09-07 14:30:44
 Working directory: /Users/jccp/Documents/GitHub/template/data
---------------------------------------------------------------------------------
-Input links successfully created!
-External links successfully created!
-Source logs successfully written!
+
 Executing command: `python  "/Users/jccp/Documents/GitHub/template/data/code/merge_data.py" `
 Executing command: `python  "/Users/jccp/Documents/GitHub/template/data/code/clean_data.py" `
 /Users/jccp/Documents/GitHub/template/data/code/clean_data.py:17: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame
 
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  df['chips_sold'][df['chips_sold'] == -999999] = np.NaN
-
-Output logs successfully written!
---------------------------------------------------------------------------------
 Makelog ended: 2022-09-07 14:30:57
 Working directory: /Users/jccp/Documents/GitHub/template/data
---------------------------------------------------------------------------------
+

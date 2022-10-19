@@ -1,17 +1,10 @@
 --------------------------------------------------------------------------------
 Makelog started: 2022-09-07 14:30:58
 Working directory: /Users/jccp/Documents/GitHub/template/analysis
---------------------------------------------------------------------------------
-Input links successfully created!
-External links successfully created!
-Source logs successfully written!
+
 Executing command: `python  "/Users/jccp/Documents/GitHub/template/analysis/code/analyze_data.py" `
 /usr/local/Caskroom/miniconda/base/envs/template/lib/python3.7/site-packages/linearmodels/shared/exceptions.py:35: MissingValueWarning: 
-Inputs contain missing values. Dropping rows with missing observations.
-  warnings.warn(missing_value_warning_msg, MissingValueWarning)
 
-Output logs successfully written!
---------------------------------------------------------------------------------
 Makelog ended: 2022-09-07 14:31:08
 Working directory: /Users/jccp/Documents/GitHub/template/analysis
---------------------------------------------------------------------------------
+
