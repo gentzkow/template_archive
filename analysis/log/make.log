@@ -1,10 +1,17 @@
 --------------------------------------------------------------------------------
-Makelog started: 2022-09-07 14:30:58
-Working directory: /Users/jccp/Documents/GitHub/template/analysis
+Makelog started: 2022-10-19 11:57:22
+Working directory: /Users/sameernd/Desktop/SIEPR_RA/template/analysis
+--------------------------------------------------------------------------------
+Input links successfully created!
+External links successfully created!
+Source logs successfully written!
+Executing command: `python  "/Users/sameernd/Desktop/SIEPR_RA/template/analysis/code/analyze_data.py" `
+/usr/local/Caskroom/miniconda/base/envs/template/lib/python3.10/site-packages/linearmodels/panel/model.py:1183: MissingValueWarning: 
+Inputs contain missing values. Dropping rows with missing observations.
+  super().__init__(dependent, exog, weights=weights, check_rank=check_rank)
 
-Executing command: `python  "/Users/jccp/Documents/GitHub/template/analysis/code/analyze_data.py" `
-/usr/local/Caskroom/miniconda/base/envs/template/lib/python3.7/site-packages/linearmodels/shared/exceptions.py:35: MissingValueWarning: 
-
-Makelog ended: 2022-09-07 14:31:08
-Working directory: /Users/jccp/Documents/GitHub/template/analysis
-
+Output logs successfully written!
+--------------------------------------------------------------------------------
+Makelog ended: 2022-10-19 11:57:26
+Working directory: /Users/sameernd/Desktop/SIEPR_RA/template/analysis
+--------------------------------------------------------------------------------
