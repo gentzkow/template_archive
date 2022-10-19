@@ -1,6 +1,7 @@
 name: template #CHANGE for your project
 channels:
   - conda-forge
+
 dependencies: 
 # The default behavior is to install the latest version of each package.
 # List the package version that resulted in a successful execution of the repository.
@@ -15,6 +16,6 @@ dependencies:
   - linearmodels #= 4.27
   # - pip=19
   # - pip: # if there is a package available via pip but not with conda, can import like this:
-  #     - EXAMPLE_PACKAGE
-  # - r=3.6
+  # - r=3.6 # specify proper version of R
   # - r-yaml # import r packages by prepending with "r-""
+  # - r-nicheROVER

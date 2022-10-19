@@ -12,9 +12,10 @@ try:
     from termcolor import colored
     import colorama
     colorama.init()
+
 except:
     print("Please ensure that conda env is activated and that yaml,")
-    print("termcolor, and colorama are in conda_env.yaml")
+    print("termcolor, and colorama are in conda_env.yaml.\nIf you are not using conda, ensure you have installed all dependencies from ~/setup/dependencies.md.")
     raise Exception
 
 ROOT = '..'
@@ -28,6 +29,25 @@ format_message = gs.private.utility.format_message
 
 
 # GENERAL FUNCTIONS
+def read_env_yaml():
+    with open('conda_env.yaml', 'r') as file:
+        packages = yaml.safe_load(file)
+    return packages
+
+
+def get_python(packages):
+    prefixes_python = ('python', 'python=', "pip=", "r=", "r-", "r", "pyyaml", "gitpython")
+    python_packages = [item for item in packages['dependencies'] if not 
+                       item.startswith(prefixes_python)]
+    return python_packages
+
+
+def get_r(packages):
+    prefixes_r = ("r-")
+    r_packages = [item for item in packages['dependencies'] if item.startswith(prefixes_r)] 
+    return r_packages
+
+
 def parse_yaml_files(config = '../config.yaml', config_user = '../config_user.yaml'):
     if not os.path.isfile(config_user):
         shutil.copy('config_user_template.yaml', config_user)
@@ -81,10 +101,46 @@ def check_external_paths(config_user):
                 raise gs.private.exceptionclasses.ColoredError(error_message)
 
 
+def check_dependencies():
+    import importlib
+    packages = read_env_yaml()
+    python_packages = get_python(packages)
+    r_packages = get_r(packages)
+    failed_python_packages = []
+    failed_r_packages = []
+    # List all Python packages which need to be installed.
+    for package in python_packages:
+        try:
+            globals()[package] = importlib.import_module(package)
+        except:
+            failed_python_packages.append(package)
+            pass
+    if len(failed_python_packages) > 0:
+        error_message = 'ERROR! The following Python packages were not properly installed: `%s`' % (', '.join(failed_python_packages)) + ". \nPlease ensure that you have the correct conda environment activated.\nIf you are not using conda, ensure you have installed all dependencies from ~/setup/dependencies.md."
+        error_message = format_message(error_message)
+        print(gs.private.exceptionclasses.ColoredError(error_message))
+        os._exit(0)    
+    # List all R packages which need to be installed.
+    for package in r_packages:
+        package = package.replace('r-',"")
+        output = str(subprocess.run(['Rscript', '-e', f'library("{package}")']))
+        if "returncode=0" not in output:
+            failed_r_packages.append(package)
+    if len(failed_r_packages) > 0:
+        error_message = 'ERROR! The following R packages were not properly installed: `%s`' % (', '.join(failed_r_packages)) + ". \nPlease ensure that you have the correct conda environment activated.\nIf you are not using conda, ensure you have installed all dependencies from ~/setup/dependencies.md."
+        error_message = format_message(error_message)
+        print(gs.private.exceptionclasses.ColoredError(error_message))
+        os._exit(0)    
+    if 'pyyaml' in python_packages:
+        import yaml
+    if 'gitpython' in python_packages:
+        import git
+
 def configuration():
     (config, config_user) = parse_yaml_files()
     check_software(config, config_user)
     check_external_paths(config_user)
+    check_dependencies()
     message = format_message('SUCCESS! Setup complete.')
     print(colored(message, 'green'))
 
