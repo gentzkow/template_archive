@@ -6,7 +6,6 @@
 import DataFrames
 import CSV
 import StatsPlots
-import PyPlot
 using DataFrames
 using CSV
 using StatsPlots
@@ -25,7 +24,7 @@ function yearly_plot(df)
     df[!, :chips_sold_sum] = df[!, :chips_sold_sum] ./ 1000000
 
     # Start backend
-    pyplot() 
+    gr()
 
     # Plot data
     @StatsPlots.df df scatter(:year, :chips_sold_sum, colour = [:blue], legend=false, xlabel="Year", ylabel="Chips Sold (Millions)", title="Chips Sold by Year")

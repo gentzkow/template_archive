@@ -7,11 +7,8 @@
 ### Comment the latest version of the package that was used in a full run. 
 
 using Pkg
-Pkg.add("Conda")
-using Conda
-Pkg.add(["PyCall", "DataFrames", "CSV", "StatsPlots", "PyPlot"])
-ENV["PYTHON"]=""
-Pkg.add(["PyCall", "PyPlot"])
+
+Pkg.add(["DataFrames", "CSV", "StatsPlots"])
 
 # Check the version of the Julia packages
 #Use Pkg.status()
