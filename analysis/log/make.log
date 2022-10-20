@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
-Makelog started: 2022-10-20 10:26:42
+Makelog started: 2022-10-20 13:58:40
 Working directory: /Users/jccp/Desktop/template/analysis
 --------------------------------------------------------------------------------
 Input links successfully created!
@@ -30,6 +30,6 @@ Executing command: `julia  "/Users/jccp/Desktop/template/analysis/code/plot.jl"`
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2022-10-20 10:27:31
+Makelog ended: 2022-10-20 13:59:36
 Working directory: /Users/jccp/Desktop/template/analysis
 --------------------------------------------------------------------------------
