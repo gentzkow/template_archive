@@ -8,7 +8,11 @@
 
 using Pkg
 
-Pkg.add(["DataFrames", "CSV", "StatsPlots", "Plots", "GR"])
+Pkg.add("DataFrames") #v1.4.1
+Pkg.add("CSV") #v0.10.4
+Pkg.add("StatsPlots") #v0.15.4
+Pkg.add("Plots") #v1.35.5
+Pkg.add("GR") #v0.69.5
 
 # Check the version of the Julia packages
-#Use Pkg.status()
+Pkg.status()

@@ -39,7 +39,7 @@ gs.get_modified_sources(PATHS, inputs + externals)
 
 ### RUN SCRIPTS
 gs.run_python(PATHS, program = 'code/analyze_data.py')
-gs.run_julia(PATHS, program = 'code/plot.jl')
+#gs.run_julia(PATHS, program = 'code/plot.jl')
 
 ### LOG OUTPUTS
 gs.log_files_in_output(PATHS)
