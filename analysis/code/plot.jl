@@ -24,15 +24,16 @@ function yearly_plot(df)
     # Divide chips sum by 10000000 to get in millions in DataFrame
     df[!, :chips_sold_sum] = df[!, :chips_sold_sum] ./ 1000000
 
-    # Start backend
-    gr()
-
     # Plot data
     @StatsPlots.df df StatsPlots.scatter(:year, :chips_sold_sum, colour = [:blue], legend=false, xlabel="Year", ylabel="Chips Sold (Millions)", title="Chips Sold by Year")
 
     # Save plot
     StatsPlots.savefig("output/julia_scatter.png")
+
 end
 
 # Call function
 yearly_plot(df)
+
+# Close gksqt plot backend program
+run(`killall -9 gksqt`)

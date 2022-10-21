@@ -8,7 +8,7 @@
 
 using Pkg
 
-Pkg.add(["DataFrames", "CSV", "StatsPlots", "GR"])
+Pkg.add(["DataFrames", "CSV", "StatsPlots", "Plots", "GR"])
 
 # Check the version of the Julia packages
 #Use Pkg.status()
