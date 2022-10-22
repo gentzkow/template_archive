@@ -1,15 +1,13 @@
 --------------------------------------------------------------------------------
-Makelog started: 2022-10-19 11:57:17
-Working directory: /Users/sameernd/Desktop/SIEPR_RA/template/data
+Makelog started: 2022-10-21 10:40:59
+Working directory: /Users/gentzkowlab/Desktop/template/data
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
-Executing command: `python  "/Users/sameernd/Desktop/SIEPR_RA/template/data/code/merge_data.py" `
-Executing command: `python  "/Users/sameernd/Desktop/SIEPR_RA/template/data/code/clean_data.py" `
-/Users/sameernd/Desktop/SIEPR_RA/template/data/code/clean_data.py:13: MatplotlibDeprecationWarning: The resize_event function was deprecated in Matplotlib 3.6 and will be removed two minor releases later. Use callbacks.process('resize_event', ResizeEvent(...)) instead.
-  plt.hist(df['chips_sold'])
-/Users/sameernd/Desktop/SIEPR_RA/template/data/code/clean_data.py:17: SettingWithCopyWarning: 
+Executing command: `python  "/Users/gentzkowlab/Desktop/template/data/code/merge_data.py" `
+Executing command: `python  "/Users/gentzkowlab/Desktop/template/data/code/clean_data.py" `
+/Users/gentzkowlab/Desktop/template/data/code/clean_data.py:17: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
@@ -17,6 +15,6 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2022-10-19 11:57:21
-Working directory: /Users/sameernd/Desktop/SIEPR_RA/template/data
+Makelog ended: 2022-10-21 10:41:03
+Working directory: /Users/gentzkowlab/Desktop/template/data
 --------------------------------------------------------------------------------
