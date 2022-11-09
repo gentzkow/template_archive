@@ -37,6 +37,9 @@ externals = gs.copy_externals(PATHS, ['external.txt'])
 gs.write_source_logs(PATHS, inputs + externals)
 gs.get_modified_sources(PATHS, inputs + externals)
 
+## MAKE VERSION LOGS
+gs.write_version_logs(PATHS)
+
 ### FILL TABLES
 gs.tablefill(template = 'code/tables.lyx', 
              inputs   = 'input/regression.csv', 

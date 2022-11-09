@@ -22,6 +22,8 @@ PATHS = gs.update_internal_paths(PATHS)
 PATHS = gs.update_external_paths(PATHS)
 gs.update_executables(PATHS)
 
+print(PATHS)
+
 ############
 ### MAKE ###
 ############
@@ -36,6 +38,9 @@ inputs = gs.link_inputs(PATHS, ['input.txt'])
 externals = gs.link_externals(PATHS, ['external.txt'])
 gs.write_source_logs(PATHS, inputs + externals)
 gs.get_modified_sources(PATHS, inputs + externals)
+
+## MAKE VERSION LOGS
+gs.write_version_logs(PATHS)
 
 ### RUN SCRIPTS
 gs.run_python(PATHS, 'code/merge_data.py')

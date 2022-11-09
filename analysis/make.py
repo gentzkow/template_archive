@@ -37,6 +37,9 @@ externals = gs.link_externals(PATHS, ['external.txt'])
 gs.write_source_logs(PATHS, inputs + externals)
 gs.get_modified_sources(PATHS, inputs + externals)
 
+## MAKE VERSION LOGS
+gs.write_version_logs(PATHS)
+
 ### RUN SCRIPTS
 gs.run_python(PATHS, program = 'code/analyze_data.py')
 #gs.run_julia(PATHS, program = 'code/plot.jl')

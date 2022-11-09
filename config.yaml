@@ -45,4 +45,5 @@ make_paths:
     output_statslog: log/output_stats.log
     source_maplog: log/source_map.log
     source_statslog: log/source_stats.log
+    versions_log: log/versions.log
   
