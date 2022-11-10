@@ -2,18 +2,20 @@ name: template #CHANGE for your project
 channels:
   - conda-forge
 dependencies:
-  - python #=3.10
-  - pyyaml #=6.0
-  - numpy #=1.21.6
-  - matplotlib #=3.5.3
-  - gitpython #=3.1.27 
-  - termcolor #=1.1.0
-  - colorama #=0.4.5
-  - jupyter #=1.0.0
-  - linearmodels #= 4.27
-  # - julia #=1.8.2
-  # - pip=19
+# Add explicit version numbers to freeze a dependency at a particular revision or if package updates are generating nontrivial conflicts.
+# e.g. - python=3.10.6
+  - python 
+  - pyyaml 
+  - numpy
+  - matplotlib
+  - gitpython
+  - termcolor
+  - colorama
+  - jupyter
+  - linearmodels
+  # - julia 
+  # - pip
   # - pip: # if there is a package available via pip but not with conda, can import like this:
-  # - r=3.6 # specify proper version of R
-  # - r-yaml # import r packages by prepending with "r-""
+  # - r
+  # - r-yaml # import r packages by prepending with "r-"
   # - r-nicheROVER
