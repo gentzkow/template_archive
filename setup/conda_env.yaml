@@ -2,7 +2,7 @@ name: template #CHANGE for your project
 channels:
   - conda-forge
 dependencies:
-# Add explicit version numbers to freeze a dependency at a particular revision or if package updates are generating nontrivial conflicts.
+# Add explicit version numbers to freeze a dependency.
 # e.g. - python=3.10.6
   - python 
   - pyyaml 
@@ -16,6 +16,6 @@ dependencies:
   # - julia 
   # - pip
   # - pip: # if there is a package available via pip but not with conda, can import like this:
-  - r
-  - r-yaml # import r packages by prepending with "r-"
-  - r-nicheROVER
+  # - r
+  # - r-yaml # import r packages by prepending with "r-"
+  # - r-nicheROVER
