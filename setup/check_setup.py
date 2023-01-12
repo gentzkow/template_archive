@@ -39,12 +39,14 @@ def get_python(packages):
     prefixes_python = ('python', 'python=', "pip=", "r=", "r-", "r", "pyyaml", "gitpython")
     python_packages = [item for item in packages['dependencies'] if not 
                        item.startswith(prefixes_python)]
+    python_packages = [p.split("=")[0] for p in python_packages]
     return python_packages
 
 
 def get_r(packages):
     prefixes_r = ("r-")
     r_packages = [item for item in packages['dependencies'] if item.startswith(prefixes_r)] 
+    r_packages = [p.split("=")[0] for p in r_packages]
     return r_packages
 
 
@@ -122,6 +124,7 @@ def check_dependencies():
         os._exit(0)    
     # List all R packages which need to be installed.
     for package in r_packages:
+        package = package.replace('r-r.',"")
         package = package.replace('r-',"")
         output = str(subprocess.run(['Rscript', '-e', f'library("{package}")']))
         if "returncode=0" not in output:
