@@ -9,7 +9,7 @@ dependencies:
   - numpy
   - matplotlib
   - gitpython
-  - termcolor
+  - termcolor = 2.0.9
   - colorama
   - jupyter
   - linearmodels
