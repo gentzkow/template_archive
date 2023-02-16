@@ -24,9 +24,13 @@
 * [LyX](https://www.lyx.org/Download)
 * A TeX distribution for your local OS (for example, [MacTeX](https://www.tug.org/mactex/) for MacOS).
 
-You may download the latest versions of each. By default, the **[Setup](#setup)** instructions below will assume their usage. Note that some of these applications must also be invocable from the command line. See the **[Command Line Usage](#command-line-usage)** section for details on how to set this up. You must set up a personal `GitHub` account to [clone private repositories](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-access-to-your-personal-repositories) on which you are a collaborator. For public repositories (such as `template`), `Git` will suffice. You may need to set up [Homebrew](https://brew.sh/) if `git` and `git-lfs` are not available on your local computer.
+You may download the latest versions of each. By default, the **[Setup](#setup)** instructions below will assume their usage. Note that some of these applications must also be invocable from the command line. See the **[Command Line Usage](#command-line-usage)** section for details on how to set this up. Note that if you wish to run `Julia` scripts in your repository, you will additionally need to [install `Julia`](https://julialang.org/downloads/) and set up its command line usage. Julia is currently not required to build the repository as-is.
 
-If you are using MacOS, [ensure your terminal is operating in bash](https://www.howtogeek.com/444596/how-to-change-the-default-shell-to-bash-in-macos-catalina/) rather than the default `zsh`. MacOS users who are running `template` on an **M1 chip** will instead want to use `Rosetta` as their default terminal. You can find instructions on how to shift from `zsh` to `Rosetta` [here](https://osxdaily.com/2020/12/04/how-install-rosetta-2-apple-silicon-mac/) and [here](https://www.courier.com/blog/tips-and-tricks-to-setup-your-apple-m1-for-development/). WindowsOS users (with Version 10 or higher) will need to switch to `bash` from `PowerShell`. To do this, you can run `bash` from within a `PowerShell` terminal (you must have installed `git` first).
+You must set up a personal `GitHub` account to [clone private repositories](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-access-to-your-personal-repositories) on which you are a collaborator. For public repositories (such as `template`), `Git` will suffice. You may need to set up [Homebrew](https://brew.sh/) if `git` and `git-lfs` are not available on your local computer.
+
+If you are using MacOS, [ensure your terminal is operating in bash](https://www.howtogeek.com/444596/how-to-change-the-default-shell-to-bash-in-macos-catalina/) rather than the default `zsh`. MacOS users who are running `template` on an Apple Silicon chip will instead want to use `Rosetta` as their default terminal. You can find instructions on how to shift from `zsh` to `Rosetta` [here](https://osxdaily.com/2020/12/04/how-install-rosetta-2-apple-silicon-mac/) and [here](https://www.courier.com/blog/tips-and-tricks-to-setup-your-apple-m1-for-development/). 
+
+WindowsOS users (with Version 10 or higher) will need to switch to `bash` from `PowerShell`. To do this, you can run `bash` from within a `PowerShell` terminal (you must have installed `git` first).
 
 Once you have met these OS and application requirements, [clone a team repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) from `GitHub` and proceed to **[Setup](#setup)**.
 
@@ -115,9 +119,18 @@ Install `Stata` dependencies using `/setup/download_stata_ado.do` (copy `downloa
 stata-mp -e download_stata_ado.do
 ```
 
+#### _Julia_
+
+First, add any required Julia packages to `julia_conda_env.jl`. Follow the same steps described in **[Setup](#setup)** to build and activate your `conda` environment, being sure to _uncomment the line referencing `julia` in `/setup/conda_env.yaml`_ before building the environment. Once the environment is activated, run the following in terminal:
+
+```
+julia julia_conda_env.jl
+```
+
 ----
 
 ### Command Line Usage
+
 
 For instructions on how to set up command line usage, refer to the [repo wiki](https://github.com/gentzkow/template/wiki/Command-Line-Usage).
 
@@ -125,14 +138,16 @@ By default, the repository assumes these executable names for the following appl
 
 ```
 application : executable
+
 python      : python
 git-lfs     : git-lfs
 lyx         : lyx
 r           : Rscript
-stata       : stata-mp (will need to be updated if using a version of Stata that is not Stata-MP)
+stata       : stata-mp (this will need to be updated if using a version of Stata that is not Stata-MP)
+julia       : julia
 ```
 
-Default executable names can be updated in `config_user.yaml`. For further details, see the **[User Configuration](#user-configuration)** section below.
+Default executable names can be updated in `config_user.yaml`. For further details, see the **[User Configuration](#user-configuration)** section.
 
 ----
 
@@ -170,6 +185,7 @@ git-lfs     : git-lfs
 lyx         : LyX#.# (where #.# refers to the version number)
 r           : Rscript
 stata       : StataMP-64 (will need to be updated if using a version of Stata that is not Stata-MP or 64-bit)
+julia       : julia
 ```
 
 To download additional `ado` files on Windows, you will likely have to adjust this `bash` command:
