@@ -97,7 +97,7 @@ Once you have met these OS and application requirements, [clone a team repositor
 
 6. For users who do not want to install `miniconda`,  follow the instructions in `/setup/dependencies.md` to manually download all required dependencies. Ensure you download the correct versions of these packages. Proceed to step 7.
 
-7. Run the script `/setup/check_setup.py`. One way to do this is to run the following `bash` command from the `/setup` directory (note that you _must_ be in the `/setup` directory for the script to run successfully):
+7. Run the script `/setup/check_setup.py`. One way to do this is to run the following `bash` command from the `/setup` directory (note that you _must_ be in the `/setup` directory, and you must have local installations of the softwares documented in **[Requirements](#requirements)**. for the script to run successfully):
 
 ```
    python check_setup.py
@@ -138,6 +138,8 @@ First, add any required Julia packages to `julia_conda_env.jl`. Follow the same 
 ```
 julia julia_conda_env.jl
 ```
+
+Then, ensure any Julia scripts are properly referenced in the relevant `make.py` scripts with the prefix `gs.run_julia`, and proceed to run `run_all.py`.
 
 ----
 
@@ -225,3 +227,4 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
