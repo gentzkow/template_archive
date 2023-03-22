@@ -24,9 +24,13 @@
 * [LyX](https://www.lyx.org/Download)
 * A TeX distribution for your local OS (for example, [MacTeX](https://www.tug.org/mactex/) for MacOS).
 
-You may download the latest versions of each. By default, the **[Setup](#setup)** instructions below will assume their usage. Note that some of these applications must also be invocable from the command line. See the **[Command Line Usage](#command-line-usage)** section for details on how to set this up. You must set up a personal `GitHub` account to [clone private repositories](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-access-to-your-personal-repositories) on which you are a collaborator. For public repositories (such as `template`), `Git` will suffice. You may need to set up [Homebrew](https://brew.sh/) if `git` and `git-lfs` are not available on your local computer.
+You may download the latest versions of each. By default, the **[Setup](#setup)** instructions below will assume their usage. Note that some of these applications must also be invocable from the command line. See the **[Command Line Usage](#command-line-usage)** section for details on how to set this up. Note that if you wish to run `Julia` scripts in your repository, you will additionally need to [install `Julia`](https://julialang.org/downloads/) and set up its command line usage. Julia is currently not required to build the repository as-is. If you are planning to use a `conda` environment for development (see instructions below), you are not required to have local installations or enable command line usage of Stata, R, Python, or Julia (although this is recommended).
 
-If you are using MacOS, [ensure your terminal is operating in bash](https://www.howtogeek.com/444596/how-to-change-the-default-shell-to-bash-in-macos-catalina/) rather than the default `zsh`. MacOS users who are running `template` on an **M1 chip** will instead want to use `Rosetta` as their default terminal. You can find instructions on how to shift from `zsh` to `Rosetta` [here](https://osxdaily.com/2020/12/04/how-install-rosetta-2-apple-silicon-mac/) and [here](https://www.courier.com/blog/tips-and-tricks-to-setup-your-apple-m1-for-development/). WindowsOS users (with Version 10 or higher) will need to switch to `bash` from `PowerShell`. To do this, you can run `bash` from within a `PowerShell` terminal (you must have installed `git` first).
+You must set up a personal `GitHub` account to [clone private repositories](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-access-to-your-personal-repositories) on which you are a collaborator. For public repositories (such as `template`), `Git` will suffice. You may need to set up [Homebrew](https://brew.sh/) if `git` and `git-lfs` are not available on your local computer.
+
+If you are using MacOS, [ensure your terminal is operating in bash](https://www.howtogeek.com/444596/how-to-change-the-default-shell-to-bash-in-macos-catalina/) rather than the default `zsh`. MacOS users who are running `template` on an Apple Silicon chip will instead want to use `Rosetta` as their default terminal. You can find instructions on how to shift from `zsh` to `Rosetta` [here](https://osxdaily.com/2020/12/04/how-install-rosetta-2-apple-silicon-mac/) and [here](https://www.courier.com/blog/tips-and-tricks-to-setup-your-apple-m1-for-development/). 
+
+WindowsOS users (with Version 10 or higher) will need to switch to `bash` from `PowerShell`. To do this, you can run `bash` from within a `PowerShell` terminal (you must have installed `git` first).
 
 Once you have met these OS and application requirements, [clone a team repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) from `GitHub` and proceed to **[Setup](#setup)**.
 
@@ -37,6 +41,7 @@ Once you have met these OS and application requirements, [clone a team repositor
 1. Create a `config_user.yaml` file in the root directory. An example can be found in the `/setup` directory. If this step is skipped, the default `config_user.yaml` will be copied over when running `check_setup.py` below. You might skip this step if you do not want not to specify any external paths, or want to use default executable names. See the **[User Configuration](#user-configuration)** section below for further details. 
 
 2. Initialize `git lfs`. From the root of the repository, run:
+
 ```
    git lfs install
    ./setup/lfs_setup.sh
@@ -50,23 +55,31 @@ Once you have met these OS and application requirements, [clone a team repositor
   ***NOTE:*** If you do not wish to install `conda`, proceed to steps 6 - 8 (_installing `conda` is recommended_).
 
    Install [`miniconda`](https://docs.conda.io/en/latest/miniconda.html) to be used to manage the `R`/`Python` virtual environment, if you have not already done this. If you have `homebrew` (which can be download [here](https://brew.sh/)) `miniconda` can be installed as follows:
+
 ```
     brew install --cask miniconda
 ```
+
   Once you have installed `conda`, you need to initialize `conda` by running the following commands and *restarting your terminal*:
+
 ```
     conda config --set auto_activate_base false
     conda init $(echo $0 | cut -d'-' -f 2)
 ```
+
 4. Next, create a `conda` environment with the commands:
+
 ```
     conda config --set channel_priority strict
     conda env create -f setup/conda_env.yaml
 ```
+
    The default name for the `conda` environment is `template`. This can be changed by editing the first line of `/setup/conda_env.yaml`. To activate the `conda` virtual environment, run:
+
 ```
     conda activate <project_name>
 ```
+
    The `conda` environment should be active throughout setup, and whenever executing modules within the project in the future. You can deactivate the environment with:
 
   ```
@@ -74,15 +87,18 @@ Once you have met these OS and application requirements, [clone a team repositor
   ``` 
 
 5. Fetch `gslab_make` submodule files. We use a [Git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to track our `gslab_make` dependency in the `/lib/gslab_make` folder. After cloning the repository, you will need to initialize and fetch files for the `gslab_make` submodule. One way to do this is to run the following `bash` commands from the root of the repository:
+
 ```
    git submodule init
    git submodule update
 ``` 
+
    Once these commands have run to completion, the `/lib/gslab_make` folder should be populated with `gslab_make`. For users with `miniconda`, proceed to step 7.
 
 6. For users who do not want to install `miniconda`,  follow the instructions in `/setup/dependencies.md` to manually download all required dependencies. Ensure you download the correct versions of these packages. Proceed to step 7.
 
-7. Run the script `/setup/check_setup.py`. One way to do this is to run the following `bash` command from the `/setup` directory (note that you _must_ be in the `/setup` directory for the script to run successfully):
+7. Run the script `/setup/check_setup.py`. One way to do this is to run the following `bash` command from the `/setup` directory (note that you _must_ be in the `/setup` directory, and you must have local installations of the softwares documented in **[Requirements](#requirements)**. for the script to run successfully):
+
 ```
    python check_setup.py
 ```
@@ -115,9 +131,20 @@ Install `Stata` dependencies using `/setup/download_stata_ado.do` (copy `downloa
 stata-mp -e download_stata_ado.do
 ```
 
+#### _Julia_
+
+First, add any required Julia packages to `julia_conda_env.jl`. Follow the same steps described in **[Setup](#setup)** to build and activate your `conda` environment, being sure to _uncomment the line referencing `julia` in `/setup/conda_env.yaml`_ before building the environment. Once the environment is activated, run the following in terminal:
+
+```
+julia julia_conda_env.jl
+```
+
+Then, ensure any Julia scripts are properly referenced in the relevant `make.py` scripts with the prefix `gs.run_julia`, and proceed to run `run_all.py`.
+
 ----
 
 ### Command Line Usage
+
 
 For instructions on how to set up command line usage, refer to the [repo wiki](https://github.com/gentzkow/template/wiki/Command-Line-Usage).
 
@@ -125,14 +152,16 @@ By default, the repository assumes these executable names for the following appl
 
 ```
 application : executable
+
 python      : python
 git-lfs     : git-lfs
 lyx         : lyx
 r           : Rscript
-stata       : stata-mp (will need to be updated if using a version of Stata that is not Stata-MP)
+stata       : stata-mp (this will need to be updated if using a version of Stata that is not Stata-MP)
+julia       : julia
 ```
 
-Default executable names can be updated in `config_user.yaml`. For further details, see the **[User Configuration](#user-configuration)** section below.
+Default executable names can be updated in `config_user.yaml`. For further details, see the **[User Configuration](#user-configuration)** section.
 
 ----
 
@@ -170,6 +199,7 @@ git-lfs     : git-lfs
 lyx         : LyX#.# (where #.# refers to the version number)
 r           : Rscript
 stata       : StataMP-64 (will need to be updated if using a version of Stata that is not Stata-MP or 64-bit)
+julia       : julia
 ```
 
 To download additional `ado` files on Windows, you will likely have to adjust this `bash` command:
@@ -197,3 +227,4 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
