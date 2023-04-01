@@ -51,6 +51,7 @@ local:
     r: Rscript
     stata: stata-mp
     matlab: matlab
+    julia : julia
     lyx: lyx
     latex: latex
 
