@@ -48,7 +48,9 @@ Once you have met these OS and application requirements, [clone a team repositor
    git lfs pull
 ``` 
 
-   This will not affect files that ship with the `template`. The first command will initialize `git lfs` for usage. The second command will instruct `git lfs` to handle files with extensions such as `.pdf`, `.png`, etc. The third command will download large files from the remote repository to your local computer, if any exist. See [here](https://git-lfs.github.com/) for more  on how to modify your `git lfs` settings. 
+   This will not affect files that ship with the `template` (which use the standard `git` storage). The first command will initialize `git lfs` for usage. The second command will instruct `git lfs` to handle files with extensions such as `.pdf`, `.png`, etc. The third command will download large files from the remote repository to your local computer, if any exist. See [here](https://git-lfs.github.com/) for more  on how to modify your `git lfs` settings.
+
+   Note that it is not required to initialize `git lfs` to work with the files hosted on `template`, but it is highly recommended that you initialize `git lfs` for large file storage by running the script above.
 
 3. If you already have `conda` setup on your local machine, feel free to skip this step. If not, this will install a lightweight version of `conda` that will not interfere with your local `Python` and `R` installations. 
 
