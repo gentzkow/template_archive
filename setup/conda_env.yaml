@@ -8,7 +8,7 @@ dependencies:
 # e.g. - python=3.10.6
   - python 
   - pyyaml 
-  - numpy=1.24.2
+  - numpy
   - matplotlib
   - gitpython
   - termcolor

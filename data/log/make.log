@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
-Makelog started: 2023-05-27 15:01:48
+Makelog started: 2023-05-27 15:46:36
 Working directory: /Users/jccp/Desktop/template/data
 --------------------------------------------------------------------------------
 Input links successfully created!
@@ -19,6 +19,6 @@ WARNING! Certain files tracked by git exceed the config size limit (0.5 MB). See
 /Users/jccp/Desktop/template/data/output/data_merged.csv
 /Users/jccp/Desktop/template/data/output/data_cleaned.csv
 --------------------------------------------------------------------------------
-Makelog ended: 2023-05-27 15:02:55
+Makelog ended: 2023-05-27 15:46:43
 Working directory: /Users/jccp/Desktop/template/data
 --------------------------------------------------------------------------------

@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
-Versions log started: 2023-05-27 15:04:06
+Versions log started: 2023-05-27 15:47:37
 --------------------------------------------------------------------------------
 # packages in environment at /usr/local/Caskroom/miniconda/base/envs/template:
 #
@@ -141,7 +141,7 @@ notebook                  6.5.4              pyha770c72_0    conda-forge
 notebook-shim             0.2.3              pyhd8ed1ab_0    conda-forge
 nspr                      4.35                 hea0b92c_0    conda-forge
 nss                       3.89                 h78b00b3_0    conda-forge
-numpy                     1.24.2          py311ha9d2c9f_0    conda-forge
+numpy                     1.24.3          py311hc44ba51_0    conda-forge
 openblas-ilp64            0.3.23          openmp_ha601604_0    conda-forge
 openjpeg                  2.5.0                h13ac156_2    conda-forge
 openlibm                  0.8.1                h0d85af4_0    conda-forge
