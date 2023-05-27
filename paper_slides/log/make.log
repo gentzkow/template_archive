@@ -1,15 +1,14 @@
 --------------------------------------------------------------------------------
-Makelog started: 2023-04-01 16:07:13
-Working directory: /Users/sameernd/Desktop/SIEPR_RA/template/paper_slides
+Makelog started: 2023-05-27 15:04:04
+Working directory: /Users/jccp/Desktop/template/paper_slides
 --------------------------------------------------------------------------------
 Input copies successfully created!
 External copies successfully created!
 Source logs successfully written!
 WARNING! The following target files have been modified according to git status:
-/Users/sameernd/Desktop/SIEPR_RA/template/analysis/output/regression.csv
-/Users/sameernd/Desktop/SIEPR_RA/template/data/output/chips_sold.pdf
+/Users/jccp/Desktop/template/data/output/chips_sold.pdf
 Version logs successfully written!
-Executing command: `lyx -e pdf2 "/Users/sameernd/Desktop/SIEPR_RA/template/paper_slides/code/paper.lyx"`
+Executing command: `lyx -e pdf2 "/Users/jccp/Desktop/template/paper_slides/code/paper.lyx"`
 This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
@@ -23,7 +22,7 @@ entering extended mode
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24>
 
-Executing command: `lyx -e pdf2 "/Users/sameernd/Desktop/SIEPR_RA/template/paper_slides/code/online_appendix.lyx"`
+Executing command: `lyx -e pdf2 "/Users/jccp/Desktop/template/paper_slides/code/online_appendix.lyx"`
 This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
@@ -37,7 +36,7 @@ entering extended mode
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24>
 
-Executing command: `lyx -e pdf2 "/Users/sameernd/Desktop/SIEPR_RA/template/paper_slides/code/slides.lyx"`
+Executing command: `lyx -e pdf2 "/Users/jccp/Desktop/template/paper_slides/code/slides.lyx"`
 This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
@@ -53,6 +52,6 @@ L3 programming layer <2022-02-24>
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2023-04-01 16:07:24
-Working directory: /Users/sameernd/Desktop/SIEPR_RA/template/paper_slides
+Makelog ended: 2023-05-27 15:04:16
+Working directory: /Users/jccp/Desktop/template/paper_slides
 --------------------------------------------------------------------------------
