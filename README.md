@@ -2,14 +2,20 @@
 
 ## **Table of Contents**
 
- - [Requirements](#requirements)
- - [Setup](#setup)
- - [Running Package Scripts in Other Languages](#running-package-scripts-in-other-languages)
- - [Adding Packages](#adding-packages)
- - [Command Line Usage](#command-line-usage)
- - [User Configuration](#user-configuration)
- - [Windows Differences](#windows-differences)
- - [License](#license)
+- [README](#readme)
+  - [**Table of Contents**](#table-of-contents)
+    - [Requirements](#requirements)
+    - [Setup](#setup)
+    - [Adding Packages](#adding-packages)
+      - [_Python_](#python)
+      - [_R_](#r)
+      - [_Stata_](#stata)
+      - [_Julia_](#julia)
+    - [Command Line Usage](#command-line-usage)
+    - [User Configuration](#user-configuration)
+    - [Running Package Scripts in Other Languages](#running-package-scripts-in-other-languages)
+    - [Windows Differences](#windows-differences)
+    - [License](#license)
 
 ----
 ### Requirements
@@ -135,7 +141,7 @@ stata-mp -e download_stata_ado.do
 
 #### _Julia_
 
-First, add any required Julia packages to `julia_conda_env.jl`. Follow the same steps described in **[Setup](#setup)** to build and activate your `conda` environment, being sure to _uncomment the line referencing `julia` in `/setup/conda_env.yaml`_ before building the environment. Once the environment is activated, run the following in terminal:
+First, add any required Julia packages to `julia_conda_env.jl`. Follow the same steps described in **[Setup](#setup)** to build and activate your `conda` environment, being sure to _uncomment the line referencing `julia` in `/setup/conda_env.yaml`_ before building the environment. Once the environment is activated, run the following line from the `/setup` directory:
 
 ```
 julia julia_conda_env.jl
