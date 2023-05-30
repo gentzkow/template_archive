@@ -2,20 +2,14 @@
 
 ## **Table of Contents**
 
-- [README](#readme)
-  - [**Table of Contents**](#table-of-contents)
-    - [Requirements](#requirements)
-    - [Setup](#setup)
-    - [Adding Packages](#adding-packages)
-      - [_Python_](#python)
-      - [_R_](#r)
-      - [_Stata_](#stata)
-      - [_Julia_](#julia)
-    - [Command Line Usage](#command-line-usage)
-    - [User Configuration](#user-configuration)
-    - [Running Package Scripts in Other Languages](#running-package-scripts-in-other-languages)
-    - [Windows Differences](#windows-differences)
-    - [License](#license)
+ - [Requirements](#requirements)
+ - [Setup](#setup)
+ - [Running Package Scripts in Other Languages](#running-package-scripts-in-other-languages)
+ - [Adding Packages](#adding-packages)
+ - [Command Line Usage](#command-line-usage)
+ - [User Configuration](#user-configuration)
+ - [Windows Differences](#windows-differences)
+ - [License](#license)
 
 ----
 ### Requirements
