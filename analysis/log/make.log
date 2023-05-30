@@ -1,36 +1,36 @@
 --------------------------------------------------------------------------------
-Makelog started: 2023-05-27 15:46:43
-Working directory: /Users/jccp/Desktop/template/analysis
+Makelog started: 2023-05-30 10:57:35
+Working directory: /Users/sameernd/Desktop/SIEPR_RA/template/analysis
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
 Version logs successfully written!
-Executing command: `python  "/Users/jccp/Desktop/template/analysis/code/analyze_data.py" `
+Executing command: `python  "/Users/sameernd/Desktop/SIEPR_RA/template/analysis/code/analyze_data.py" `
 /usr/local/Caskroom/miniconda/base/envs/template/lib/python3.11/site-packages/linearmodels/panel/model.py:1213: MissingValueWarning: 
 Inputs contain missing values. Dropping rows with missing observations.
   super().__init__(dependent, exog, weights=weights, check_rank=check_rank)
 
-Executing command: `julia  "/Users/jccp/Desktop/template/analysis/code/plot.jl"`
+Executing command: `julia  "/Users/sameernd/Desktop/SIEPR_RA/template/analysis/code/plot.jl"`
 ┌ Warning: Indices Base.OneTo(1) of attribute `seriescolor` does not match data indices 1:31.
-└ @ Plots /usr/local/Caskroom/miniconda/base/envs/template/share/julia/packages/Plots/99fPk/src/utils.jl:141
+└ @ Plots /usr/local/Caskroom/miniconda/base/envs/template/share/julia/packages/Plots/7VQ5h/src/utils.jl:141
 ┌ Warning: Indices Base.OneTo(1) of attribute `linecolor` does not match data indices 1:31.
-└ @ Plots /usr/local/Caskroom/miniconda/base/envs/template/share/julia/packages/Plots/99fPk/src/utils.jl:141
+└ @ Plots /usr/local/Caskroom/miniconda/base/envs/template/share/julia/packages/Plots/7VQ5h/src/utils.jl:141
 ┌ Warning: Indices Base.OneTo(1) of attribute `fillcolor` does not match data indices 1:31.
-└ @ Plots /usr/local/Caskroom/miniconda/base/envs/template/share/julia/packages/Plots/99fPk/src/utils.jl:141
+└ @ Plots /usr/local/Caskroom/miniconda/base/envs/template/share/julia/packages/Plots/7VQ5h/src/utils.jl:141
 ┌ Warning: Indices Base.OneTo(1) of attribute `markercolor` does not match data indices 1:31.
-└ @ Plots /usr/local/Caskroom/miniconda/base/envs/template/share/julia/packages/Plots/99fPk/src/utils.jl:141
+└ @ Plots /usr/local/Caskroom/miniconda/base/envs/template/share/julia/packages/Plots/7VQ5h/src/utils.jl:141
 ┌ Warning: Indices Base.OneTo(1) of attribute `seriescolor` does not match data indices 1:31.
-└ @ Plots /usr/local/Caskroom/miniconda/base/envs/template/share/julia/packages/Plots/99fPk/src/utils.jl:141
+└ @ Plots /usr/local/Caskroom/miniconda/base/envs/template/share/julia/packages/Plots/7VQ5h/src/utils.jl:141
 ┌ Warning: Indices Base.OneTo(1) of attribute `linecolor` does not match data indices 1:31.
-└ @ Plots /usr/local/Caskroom/miniconda/base/envs/template/share/julia/packages/Plots/99fPk/src/utils.jl:141
+└ @ Plots /usr/local/Caskroom/miniconda/base/envs/template/share/julia/packages/Plots/7VQ5h/src/utils.jl:141
 ┌ Warning: Indices Base.OneTo(1) of attribute `fillcolor` does not match data indices 1:31.
-└ @ Plots /usr/local/Caskroom/miniconda/base/envs/template/share/julia/packages/Plots/99fPk/src/utils.jl:141
+└ @ Plots /usr/local/Caskroom/miniconda/base/envs/template/share/julia/packages/Plots/7VQ5h/src/utils.jl:141
 ┌ Warning: Indices Base.OneTo(1) of attribute `markercolor` does not match data indices 1:31.
-└ @ Plots /usr/local/Caskroom/miniconda/base/envs/template/share/julia/packages/Plots/99fPk/src/utils.jl:141
+└ @ Plots /usr/local/Caskroom/miniconda/base/envs/template/share/julia/packages/Plots/7VQ5h/src/utils.jl:141
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2023-05-27 15:47:34
-Working directory: /Users/jccp/Desktop/template/analysis
+Makelog ended: 2023-05-30 10:58:26
+Working directory: /Users/sameernd/Desktop/SIEPR_RA/template/analysis
 --------------------------------------------------------------------------------
