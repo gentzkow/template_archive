@@ -21,3 +21,4 @@ dependencies:
   # - r
   # - r-yaml # import r packages by prepending with "r-"
   # - r-nicheROVER
+  # - r-tidyverse

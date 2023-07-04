@@ -52,7 +52,7 @@ Once you have met these OS and application requirements, [clone a team repositor
 
    Note that it is not required to initialize `git lfs` to work with the files hosted on `template`, but it is highly recommended that you initialize `git lfs` for large file storage by running the script above.
 
-3. If you already have `conda` setup on your local machine, feel free to skip this step. If not, this will install a lightweight version of `conda` that will not interfere with your local `Python` and `R` installations. 
+3. If you already have `conda` setup on your local machine, feel free to skip this step. If not, this will install a lightweight version of `conda` that will not interfere with your local `Python` and `R` installations.
 
   ***NOTE:*** If you do not wish to install `conda`, proceed to steps 6 - 8 (_installing `conda` is recommended_).
 
@@ -87,6 +87,15 @@ Once you have met these OS and application requirements, [clone a team repositor
   ```
   conda deactivate <project_name>
   ``` 
+
+_Please ensure that your `conda` installation is up to date before proceeding_. If you experience issues building your `conda` environment, check the version of your `conda` installation and update it if needed by running:
+
+```
+conda -V
+conda update -n base -c defaults conda
+```
+
+Then, proceed to rebuild the environment.
 
 5. Fetch `gslab_make` submodule files. We use a [Git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to track our `gslab_make` dependency in the `/lib/gslab_make` folder. After cloning the repository, you will need to initialize and fetch files for the `gslab_make` submodule. One way to do this is to run the following `bash` commands from the root of the repository:
 
@@ -123,7 +132,7 @@ Add any required packages to `/setup/conda_env.yaml`. If possible add the packag
 conda install -c conda-forge --name <environment name> <package_name=version_number>
 ```
 #### _R_
-Add any required packages that are available via `CRAN` to `/setup/conda_env.yaml`. These must be prepended with `r-`. If there is a package that is only available from `GitHub` and not from `CRAN`, add this package to `/setup/setup_r.r` (after copying this script from `/extensions`). These individual packages can be added in the same way as `Python` packages above (with the `r-` prepend).
+Add any required packages that are available via `CRAN` to `/setup/conda_env.yaml`. These must be prepended with `r-`. If there is a package that is only available from `GitHub` and not from `CRAN`, add this package to `/setup/setup_r.r` (after copying this script from `/extensions`). These individual packages can be added in the same way as `Python` packages above (with the `r-` prepend). _Note that you may need to install the latest version of `conda` as outlined in the setup instructions above to properly load packages_.
 
 #### _Stata_
 
