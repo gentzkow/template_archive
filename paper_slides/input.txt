@@ -16,4 +16,5 @@
 
 # Destination  |  Source
 regression.csv | {root}/analysis/output/regression.csv
+regression_ge1960.csv | {root}/analysis/output/regression_ge1960.csv
 chips_sold.pdf | {root}/data/output/chips_sold.pdf
