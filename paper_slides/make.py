@@ -42,7 +42,7 @@ gs.write_version_logs(PATHS)
 
 ### FILL TABLES
 gs.tablefill(template = 'code/tables.lyx', 
-             inputs   = 'input/regression.csv', 
+             inputs   = ['input/regression.csv','input/regression_ge1960.csv'], 
              output   = 'output/tables_filled.lyx')
 
 ### RUN SCRIPTS
