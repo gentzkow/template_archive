@@ -1,14 +1,14 @@
 --------------------------------------------------------------------------------
-Makelog started: 2023-07-20 20:38:31
-Working directory: /Users/shiqiyang/Documents/github_folders/replication_download/template/data
+Makelog started: 2023-07-21 08:08:36
+Working directory: /oak/stanford/groups/gentzkow/shiqiy/template/data
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
 Version logs successfully written!
-Executing command: `python  "/Users/shiqiyang/Documents/github_folders/replication_download/template/data/code/merge_data.py" `
-Executing command: `python  "/Users/shiqiyang/Documents/github_folders/replication_download/template/data/code/clean_data.py" `
-/Users/shiqiyang/Documents/github_folders/replication_download/template/data/code/clean_data.py:21: SettingWithCopyWarning: 
+Executing command: `python  "/oak/stanford/groups/gentzkow/shiqiy/template/data/code/merge_data.py" `
+Executing command: `python  "/oak/stanford/groups/gentzkow/shiqiy/template/data/code/clean_data.py" `
+/oak/stanford/groups/gentzkow/shiqiy/template/data/code/clean_data.py:21: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
@@ -16,9 +16,9 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 
 Output logs successfully written!
 WARNING! Certain files tracked by git exceed the config size limit (0.5 MB). See below for list of files.
-/Users/shiqiyang/Documents/github_folders/replication_download/template/data/output/data_merged.csv
-/Users/shiqiyang/Documents/github_folders/replication_download/template/data/output/data_cleaned.csv
+/oak/stanford/groups/gentzkow/shiqiy/template/data/output/data_merged.csv
+/oak/stanford/groups/gentzkow/shiqiy/template/data/output/data_cleaned.csv
 --------------------------------------------------------------------------------
-Makelog ended: 2023-07-20 20:38:38
-Working directory: /Users/shiqiyang/Documents/github_folders/replication_download/template/data
+Makelog ended: 2023-07-21 08:09:03
+Working directory: /oak/stanford/groups/gentzkow/shiqiy/template/data
 --------------------------------------------------------------------------------

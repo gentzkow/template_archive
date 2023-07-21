@@ -1,4 +1,4 @@
 destination | source
-input/lib | /Users/shiqiyang/Documents/github_folders/replication_download/template/lib
-input/tv.csv | /Users/shiqiyang/Documents/github_folders/replication_download/template/raw/tv.csv
-input/chips.csv | /Users/shiqiyang/Documents/github_folders/replication_download/template/raw/chips.csv
+input/lib | /oak/stanford/groups/gentzkow/shiqiy/template/lib
+input/tv.csv | /oak/stanford/groups/gentzkow/shiqiy/template/raw/tv.csv
+input/chips.csv | /oak/stanford/groups/gentzkow/shiqiy/template/raw/chips.csv
