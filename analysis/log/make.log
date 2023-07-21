@@ -1,21 +1,27 @@
 --------------------------------------------------------------------------------
-Makelog started: 2023-07-18 17:26:32
-Working directory: /Users/shiqiyang/Documents/github_folders/replication_download/template/analysis
+Makelog started: 2023-07-21 08:09:05
+Working directory: /oak/stanford/groups/gentzkow/shiqiy/template/analysis
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
 Version logs successfully written!
-Executing command: `python  "/Users/shiqiyang/Documents/github_folders/replication_download/template/analysis/code/analyze_data.py" `
-/usr/local/Caskroom/miniconda/base/envs/template/lib/python3.11/site-packages/linearmodels/panel/model.py:1214: MissingValueWarning: 
+Executing command: `python  "/oak/stanford/groups/gentzkow/shiqiy/template/analysis/code/analyze_data.py" `
+/home/users/shiqiy/miniconda3/envs/template/lib/python3.11/site-packages/linearmodels/panel/model.py:1214: MissingValueWarning: 
 Inputs contain missing values. Dropping rows with missing observations.
   super().__init__(dependent, exog, weights=weights, check_rank=check_rank)
-/usr/local/Caskroom/miniconda/base/envs/template/lib/python3.11/site-packages/linearmodels/panel/model.py:1214: MissingValueWarning: 
+/home/users/shiqiy/miniconda3/envs/template/lib/python3.11/site-packages/linearmodels/panel/model.py:1214: MissingValueWarning: 
+Inputs contain missing values. Dropping rows with missing observations.
+  super().__init__(dependent, exog, weights=weights, check_rank=check_rank)
+/home/users/shiqiy/miniconda3/envs/template/lib/python3.11/site-packages/linearmodels/panel/model.py:1214: MissingValueWarning: 
+Inputs contain missing values. Dropping rows with missing observations.
+  super().__init__(dependent, exog, weights=weights, check_rank=check_rank)
+/home/users/shiqiy/miniconda3/envs/template/lib/python3.11/site-packages/linearmodels/panel/model.py:1214: MissingValueWarning: 
 Inputs contain missing values. Dropping rows with missing observations.
   super().__init__(dependent, exog, weights=weights, check_rank=check_rank)
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2023-07-18 17:26:38
-Working directory: /Users/shiqiyang/Documents/github_folders/replication_download/template/analysis
+Makelog ended: 2023-07-21 08:09:55
+Working directory: /oak/stanford/groups/gentzkow/shiqiy/template/analysis
 --------------------------------------------------------------------------------
