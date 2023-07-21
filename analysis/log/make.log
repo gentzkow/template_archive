@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
-Makelog started: 2023-07-18 17:26:32
+Makelog started: 2023-07-20 20:38:39
 Working directory: /Users/shiqiyang/Documents/github_folders/replication_download/template/analysis
 --------------------------------------------------------------------------------
 Input links successfully created!
@@ -13,9 +13,15 @@ Inputs contain missing values. Dropping rows with missing observations.
 /usr/local/Caskroom/miniconda/base/envs/template/lib/python3.11/site-packages/linearmodels/panel/model.py:1214: MissingValueWarning: 
 Inputs contain missing values. Dropping rows with missing observations.
   super().__init__(dependent, exog, weights=weights, check_rank=check_rank)
+/usr/local/Caskroom/miniconda/base/envs/template/lib/python3.11/site-packages/linearmodels/panel/model.py:1214: MissingValueWarning: 
+Inputs contain missing values. Dropping rows with missing observations.
+  super().__init__(dependent, exog, weights=weights, check_rank=check_rank)
+/usr/local/Caskroom/miniconda/base/envs/template/lib/python3.11/site-packages/linearmodels/panel/model.py:1214: MissingValueWarning: 
+Inputs contain missing values. Dropping rows with missing observations.
+  super().__init__(dependent, exog, weights=weights, check_rank=check_rank)
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2023-07-18 17:26:38
+Makelog ended: 2023-07-20 20:38:49
 Working directory: /Users/shiqiyang/Documents/github_folders/replication_download/template/analysis
 --------------------------------------------------------------------------------

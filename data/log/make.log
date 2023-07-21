@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
-Makelog started: 2023-07-18 17:26:26
+Makelog started: 2023-07-20 20:38:31
 Working directory: /Users/shiqiyang/Documents/github_folders/replication_download/template/data
 --------------------------------------------------------------------------------
 Input links successfully created!
@@ -19,6 +19,6 @@ WARNING! Certain files tracked by git exceed the config size limit (0.5 MB). See
 /Users/shiqiyang/Documents/github_folders/replication_download/template/data/output/data_merged.csv
 /Users/shiqiyang/Documents/github_folders/replication_download/template/data/output/data_cleaned.csv
 --------------------------------------------------------------------------------
-Makelog ended: 2023-07-18 17:26:31
+Makelog ended: 2023-07-20 20:38:38
 Working directory: /Users/shiqiyang/Documents/github_folders/replication_download/template/data
 --------------------------------------------------------------------------------

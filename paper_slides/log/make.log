@@ -1,13 +1,14 @@
 --------------------------------------------------------------------------------
-Makelog started: 2023-07-18 17:26:38
+Makelog started: 2023-07-20 20:38:50
 Working directory: /Users/shiqiyang/Documents/github_folders/replication_download/template/paper_slides
 --------------------------------------------------------------------------------
 Input copies successfully created!
 External copies successfully created!
 Source logs successfully written!
 WARNING! The following target files have been modified according to git status:
-/Users/shiqiyang/Documents/github_folders/replication_download/template/analysis/output/regression_ge1960.csv
+/Users/shiqiyang/Documents/github_folders/replication_download/template/analysis/output/regression_cls.csv
 /Users/shiqiyang/Documents/github_folders/replication_download/template/data/output/chips_sold.pdf
+/Users/shiqiyang/Documents/github_folders/replication_download/template/analysis/output/regression_ge1960_cls.csv
 Version logs successfully written!
 Executing command: `lyx -e pdf2 "/Users/shiqiyang/Documents/github_folders/replication_download/template/paper_slides/code/paper.lyx"`
 This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex)
@@ -53,6 +54,6 @@ L3 programming layer <2022-02-24>
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2023-07-18 17:26:47
+Makelog ended: 2023-07-20 20:38:59
 Working directory: /Users/shiqiyang/Documents/github_folders/replication_download/template/paper_slides
 --------------------------------------------------------------------------------

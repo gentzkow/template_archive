@@ -1,4 +1,6 @@
 destination | source
 input/regression.csv | /Users/shiqiyang/Documents/github_folders/replication_download/template/analysis/output/regression.csv
 input/regression_ge1960.csv | /Users/shiqiyang/Documents/github_folders/replication_download/template/analysis/output/regression_ge1960.csv
+input/regression_cls.csv | /Users/shiqiyang/Documents/github_folders/replication_download/template/analysis/output/regression_cls.csv
+input/regression_ge1960_cls.csv | /Users/shiqiyang/Documents/github_folders/replication_download/template/analysis/output/regression_ge1960_cls.csv
 input/chips_sold.pdf | /Users/shiqiyang/Documents/github_folders/replication_download/template/data/output/chips_sold.pdf
