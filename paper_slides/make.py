@@ -41,14 +41,14 @@ gs.get_modified_sources(PATHS, inputs + externals)
 gs.write_version_logs(PATHS)
 
 ### FILL TABLES
-gs.tablefill(template = 'code/tables.lyx', 
+gs.tablefill(template = 'code/tables.tex', 
              inputs   = 'input/regression.csv', 
-             output   = 'output/tables_filled.lyx')
+             output   = 'output/tables_filled.tex')
 
 ### RUN SCRIPTS
-gs.run_lyx(PATHS, program = 'code/paper.lyx')
-gs.run_lyx(PATHS, program = 'code/online_appendix.lyx')
-gs.run_lyx(PATHS, program = 'code/slides.lyx')
+gs.run_latex(PATHS, program = 'paper.tex')
+gs.run_latex(PATHS, program = 'online_appendix.tex')
+gs.run_latex(PATHS, program = 'slides.tex')
 
 ### LOG OUTPUTS
 gs.log_files_in_output(PATHS)
