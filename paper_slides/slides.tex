@@ -20,14 +20,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
 \PassOptionsToPackage{no-math}{fontspec}
 
-\usepackage{beamer_themes/beamerthememetropolis_gslab}
-\usepackage{beamer_themes/beamerinnerthememetropolis_gslab}
-\usepackage{beamer_themes/beamerouterthememetropolis_gslab}
-\usepackage{beamer_themes/beamercolorthememetropolis_gslab}
-\usepackage{beamer_themes/beamerfontthememetropolis_gslab}
+\usepackage{code/beamer_themes/beamerthememetropolis_gslab}
+\usepackage{code/beamer_themes/beamerinnerthememetropolis_gslab}
+\usepackage{code/beamer_themes/beamerouterthememetropolis_gslab}
+\usepackage{code/beamer_themes/beamercolorthememetropolis_gslab}
+\usepackage{code/beamer_themes/beamerfontthememetropolis_gslab}
 \AtEndPreamble{%
    \@ifpackageloaded{pgfplots}{%
-     \RequirePackage{beamer_themes/pgfplotsthemetol_gslab}
+     \RequirePackage{code/beamer_themes/pgfplotsthemetol_gslab}
    }{}
  }
  
@@ -88,7 +88,7 @@ Author 2 (Affiliation 2)}
 \begin{frame}{Figure}
 
 \begin{center}
-\includegraphics[scale=0.5]{../input/chips_sold}
+\includegraphics[scale=0.5]{input/chips_sold}
 \par\end{center}
 
 \end{frame}
