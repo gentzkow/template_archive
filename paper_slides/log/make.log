@@ -1,18 +1,18 @@
 --------------------------------------------------------------------------------
-Makelog started: 2023-10-14 15:09:52
-Working directory: /Users/shiqiyang/Documents/github_folders/template/paper_slides
+Makelog started: 2023-10-17 15:49:42
+Working directory: /Users/shiqiyang/Documents/github_folders/template_86/paper_slides
 --------------------------------------------------------------------------------
 Input copies successfully created!
 External copies successfully created!
 Source logs successfully written!
 WARNING! The following target files have been modified according to git status:
-/Users/shiqiyang/Documents/github_folders/template/data/output/chips_sold.pdf
+/Users/shiqiyang/Documents/github_folders/template_86/data/output/chips_sold.pdf
 Version logs successfully written!
-Executing command: `pdflatex -output-directory=latex_auxiliary_dir  "/Users/shiqiyang/Documents/github_folders/template/paper_slides/paper.tex"`
+Executing command: `pdflatex -output-directory=latex_auxiliary_dir  "/Users/shiqiyang/Documents/github_folders/template_86/paper_slides/paper.tex"`
 This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
-(/Users/shiqiyang/Documents/github_folders/template/paper_slides/paper.tex
+(/Users/shiqiyang/Documents/github_folders/template_86/paper_slides/paper.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24>
 (/usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
@@ -145,13 +145,13 @@ a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
 Output written on latex_auxiliary_dir/paper.pdf (6 pages, 52264 bytes).
 Transcript written on latex_auxiliary_dir/paper.log.
 
-Executing command: `pdflatex -output-directory=latex_auxiliary_dir  "/Users/shiqiyang/Documents/github_folders/template/paper_slides/online_appendix.tex"`
+Executing command: `pdflatex -output-directory=latex_auxiliary_dir  "/Users/shiqiyang/Documents/github_folders/template_86/paper_slides/online_appendix.tex"`
 This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
 
-(/Users/shiqiyang/Documents/github_folders/template/paper_slides/online_appendi
-x.tex
+(/Users/shiqiyang/Documents/github_folders/template_86/paper_slides/online_appe
+ndix.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24>
 (/usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
@@ -266,11 +266,11 @@ Output written on latex_auxiliary_dir/online_appendix.pdf (1 page, 33905 bytes)
 .
 Transcript written on latex_auxiliary_dir/online_appendix.log.
 
-Executing command: `pdflatex -output-directory=latex_auxiliary_dir  "/Users/shiqiyang/Documents/github_folders/template/paper_slides/slides.tex"`
+Executing command: `pdflatex -output-directory=latex_auxiliary_dir  "/Users/shiqiyang/Documents/github_folders/template_86/paper_slides/slides.tex"`
 This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
-(/Users/shiqiyang/Documents/github_folders/template/paper_slides/slides.tex
+(/Users/shiqiyang/Documents/github_folders/template_86/paper_slides/slides.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24>
 (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamer.cls
@@ -576,6 +576,6 @@ Transcript written on latex_auxiliary_dir/slides.log.
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2023-10-14 15:09:57
-Working directory: /Users/shiqiyang/Documents/github_folders/template/paper_slides
+Makelog ended: 2023-10-17 15:49:48
+Working directory: /Users/shiqiyang/Documents/github_folders/template_86/paper_slides
 --------------------------------------------------------------------------------
