@@ -1,14 +1,14 @@
 --------------------------------------------------------------------------------
-Makelog started: 2023-07-03 14:41:30
-Working directory: /Users/jccp/Desktop/template/data
+Makelog started: 2023-10-20 17:14:59
+Working directory: /Users/shiqiyang/Documents/github_folders/template/data
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
 Version logs successfully written!
-Executing command: `python  "/Users/jccp/Desktop/template/data/code/merge_data.py" `
-Executing command: `python  "/Users/jccp/Desktop/template/data/code/clean_data.py" `
-/Users/jccp/Desktop/template/data/code/clean_data.py:17: SettingWithCopyWarning: 
+Executing command: `python  "/Users/shiqiyang/Documents/github_folders/template/data/code/merge_data.py" `
+Executing command: `python  "/Users/shiqiyang/Documents/github_folders/template/data/code/clean_data.py" `
+/Users/shiqiyang/Documents/github_folders/template/data/code/clean_data.py:17: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
@@ -16,9 +16,9 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 
 Output logs successfully written!
 WARNING! Certain files tracked by git exceed the config size limit (0.5 MB). See below for list of files.
-/Users/jccp/Desktop/template/data/output/data_merged.csv
-/Users/jccp/Desktop/template/data/output/data_cleaned.csv
+/Users/shiqiyang/Documents/github_folders/template/data/output/data_merged.csv
+/Users/shiqiyang/Documents/github_folders/template/data/output/data_cleaned.csv
 --------------------------------------------------------------------------------
-Makelog ended: 2023-07-03 14:42:06
-Working directory: /Users/jccp/Desktop/template/data
+Makelog ended: 2023-10-20 17:15:40
+Working directory: /Users/shiqiyang/Documents/github_folders/template/data
 --------------------------------------------------------------------------------

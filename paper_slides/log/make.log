@@ -1,14 +1,14 @@
 --------------------------------------------------------------------------------
-Makelog started: 2023-07-03 14:42:45
-Working directory: /Users/jccp/Desktop/template/paper_slides
+Makelog started: 2023-10-20 17:16:24
+Working directory: /Users/shiqiyang/Documents/github_folders/template/paper_slides
 --------------------------------------------------------------------------------
 Input copies successfully created!
 External copies successfully created!
 Source logs successfully written!
 WARNING! The following target files have been modified according to git status:
-/Users/jccp/Desktop/template/data/output/chips_sold.pdf
+/Users/shiqiyang/Documents/github_folders/template/data/output/chips_sold.pdf
 Version logs successfully written!
-Executing command: `lyx -e pdf2 "/Users/jccp/Desktop/template/paper_slides/code/paper.lyx"`
+Executing command: `lyx -e pdf2 "/Users/shiqiyang/Documents/github_folders/template/paper_slides/code/paper.lyx"`
 This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
@@ -22,7 +22,42 @@ entering extended mode
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24>
 
-Executing command: `lyx -e pdf2 "/Users/jccp/Desktop/template/paper_slides/code/online_appendix.lyx"`
+/Applications/LyX.app/Contents/Resources/lyx2lyx/parser_tools.py:21: SyntaxWarning: invalid escape sequence '\e'
+  '''
+/Applications/LyX.app/Contents/Resources/lyx2lyx/parser_tools.py:341: SyntaxWarning: invalid escape sequence '\s'
+  rx = option + '\s*=\s*"([^"]+)"'
+/Applications/LyX.app/Contents/Resources/lyx2lyx/parser_tools.py:350: SyntaxWarning: invalid escape sequence '\s'
+  rx = '(' + option + '\s*=\s*")[^"]+"'
+/Applications/LyX.app/Contents/Resources/lyx2lyx/parser_tools.py:355: SyntaxWarning: invalid escape sequence '\g'
+  return re.sub(rx, '\g<1>' + value + '"', line)
+/Applications/LyX.app/Contents/Resources/lyx2lyx/lyx_2_3.py:229: SyntaxWarning: invalid escape sequence '\m'
+  "     \\newcommand\makebeamertitle{\\frame{\\maketitle}}%",
+/Applications/LyX.app/Contents/Resources/lyx2lyx/lyx_2_3.py:378: SyntaxWarning: invalid escape sequence '\s'
+  add_to_preamble(document, ["\\AtBeginDocument{\setotherlanguage{amharic}}"])
+/Applications/LyX.app/Contents/Resources/lyx2lyx/lyx_2_3.py:399: SyntaxWarning: invalid escape sequence '\s'
+  add_to_preamble(document, ["\\AtBeginDocument{\setotherlanguage{asturian}}"])
+/Applications/LyX.app/Contents/Resources/lyx2lyx/lyx_2_3.py:420: SyntaxWarning: invalid escape sequence '\s'
+  add_to_preamble(document, ["\\AtBeginDocument{\setotherlanguage{kannada}}"])
+/Applications/LyX.app/Contents/Resources/lyx2lyx/lyx_2_3.py:441: SyntaxWarning: invalid escape sequence '\s'
+  add_to_preamble(document, ["\\AtBeginDocument{\setotherlanguage{khmer}}"])
+/Applications/LyX.app/Contents/Resources/lyx2lyx/lyx_2_3.py:462: SyntaxWarning: invalid escape sequence '\s'
+  add_to_preamble(document, ["\\AtBeginDocument{\setotherlanguage{urdu}}"])
+/Applications/LyX.app/Contents/Resources/lyx2lyx/lyx_2_3.py:483: SyntaxWarning: invalid escape sequence '\s'
+  add_to_preamble(document, ["\\AtBeginDocument{\setotherlanguage{syriac}}"])
+/Applications/LyX.app/Contents/Resources/lyx2lyx/lyx_2_3.py:1886: SyntaxWarning: invalid escape sequence '\w'
+  if re.search(u"[\u2013\u2014]([\w\u00A0]|$)", line,
+/Applications/LyX.app/Contents/Resources/lyx2lyx/lyx_2_3.py:1891: SyntaxWarning: invalid escape sequence '\w'
+  flags=re.UNICODE) and re.match(u"[\w\u00A0]",
+/Applications/LyX.app/Contents/Resources/lyx2lyx/lyx_2_3.py:2141: SyntaxWarning: invalid escape sequence '\S'
+  " Zero widths Space-inset -> \SpecialChar allowbreak. "
+/Applications/LyX.app/Contents/Resources/lyx2lyx/lyx_2_3.py:2143: SyntaxWarning: invalid escape sequence '\h'
+  body = body.replace("\\begin_inset space \hspace{}\n"
+/Applications/LyX.app/Contents/Resources/lyx2lyx/lyx_2_3.py:2151: SyntaxWarning: invalid escape sequence '\S'
+  " \SpecialChar allowbreak -> Zero widths Space-inset. "
+/Applications/LyX.app/Contents/Resources/lyx2lyx/lyx_2_3.py:2154: SyntaxWarning: invalid escape sequence '\h'
+  "\n\\begin_inset space \hspace{}\n"
+
+Executing command: `lyx -e pdf2 "/Users/shiqiyang/Documents/github_folders/template/paper_slides/code/online_appendix.lyx"`
 This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
@@ -36,7 +71,7 @@ entering extended mode
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24>
 
-Executing command: `lyx -e pdf2 "/Users/jccp/Desktop/template/paper_slides/code/slides.lyx"`
+Executing command: `lyx -e pdf2 "/Users/shiqiyang/Documents/github_folders/template/paper_slides/code/slides.lyx"`
 This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
@@ -52,6 +87,6 @@ L3 programming layer <2022-02-24>
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2023-07-03 14:42:57
-Working directory: /Users/jccp/Desktop/template/paper_slides
+Makelog ended: 2023-10-20 17:16:34
+Working directory: /Users/shiqiyang/Documents/github_folders/template/paper_slides
 --------------------------------------------------------------------------------
