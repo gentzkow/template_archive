@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
-Makelog started: 2023-10-20 17:14:59
+Makelog started: 2023-10-20 17:55:53
 Working directory: /Users/shiqiyang/Documents/github_folders/template/data
 --------------------------------------------------------------------------------
 Input links successfully created!
@@ -19,6 +19,6 @@ WARNING! Certain files tracked by git exceed the config size limit (0.5 MB). See
 /Users/shiqiyang/Documents/github_folders/template/data/output/data_merged.csv
 /Users/shiqiyang/Documents/github_folders/template/data/output/data_cleaned.csv
 --------------------------------------------------------------------------------
-Makelog ended: 2023-10-20 17:15:40
+Makelog ended: 2023-10-20 17:56:00
 Working directory: /Users/shiqiyang/Documents/github_folders/template/data
 --------------------------------------------------------------------------------
