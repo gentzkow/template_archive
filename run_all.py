@@ -2,6 +2,7 @@
 ### ENVIRONMENT ###
 ###################
 import importlib
+from importlib import util
 import os
 import sys
 
@@ -16,8 +17,8 @@ PATHS = {
 
 ### LOAD GSLAB MAKE
 gs_path = os.path.join(PATHS['lib'], 'gslab_make', 'gslab_make', '__init__.py')
-spec = importlib.util.spec_from_file_location('gslab_make', gs_path)
-gs = importlib.util.module_from_spec(spec)
+spec = util.spec_from_file_location('gslab_make', gs_path)
+gs = util.module_from_spec(spec)
 sys.modules['gslab_make'] = gs
 spec.loader.exec_module(gs)
 
