@@ -53,5 +53,5 @@ local:
     matlab: matlab
     julia : julia
     lyx: lyx
-    latex: latex
+    latex: pdflatex
 
