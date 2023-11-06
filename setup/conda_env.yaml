@@ -15,6 +15,7 @@ dependencies:
   - colorama
   - jupyter
   - linearmodels
+  - pywin32  # This will only be installed on Windows machines, for Excel to PDF conversion.
   # - julia 
   # - pip
   # - pip: # if there is a package available via pip but not with conda, can import like this:
