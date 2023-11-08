@@ -49,7 +49,9 @@ gs.tablefill(template = 'code/tables.tex',
 gs.run_latex(PATHS, program = 'code/paper.tex')
 gs.run_latex(PATHS, program = 'code/online_appendix.tex')
 gs.run_latex(PATHS, program = 'code/slides.tex')
-gs.run_excel(template = 'latex_test_widetable.xlsx')
+gs.run_excel(PATHS, template = 'latex_test_widetable.xlsx')
+gs.run_excel(PATHS, template = 'latex_test_longtable_extremecase.xlsx')
+gs.run_excel(PATHS, template = 'latex_test_widetable_extremecase.xlsx')
 
 ### LOG OUTPUTS
 gs.log_files_in_output(PATHS)

@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
-Makelog started: 2023-11-06 15:46:18
+Makelog started: 2023-11-07 16:13:47
 Working directory: /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/data
 --------------------------------------------------------------------------------
 Input links successfully created!
@@ -19,6 +19,6 @@ WARNING! Certain files tracked by git exceed the config size limit (0.5 MB). See
 /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/data/output/data_merged.csv
 /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/data/output/data_cleaned.csv
 --------------------------------------------------------------------------------
-Makelog ended: 2023-11-06 15:46:21
+Makelog ended: 2023-11-07 16:13:50
 Working directory: /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/data
 --------------------------------------------------------------------------------

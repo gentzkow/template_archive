@@ -1,12 +1,10 @@
 --------------------------------------------------------------------------------
-Makelog started: 2023-11-06 15:46:21
+Makelog started: 2023-11-07 16:13:51
 Working directory: /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/analysis
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
-WARNING! The following target files have been modified according to git status:
-/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/data/output/data_cleaned.csv
 Version logs successfully written!
 Executing command: `python  "/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/analysis/code/analyze_data.py" `
 /opt/homebrew/Caskroom/miniconda/base/envs/template/lib/python3.12/site-packages/linearmodels/panel/model.py:1214: MissingValueWarning: 
@@ -15,6 +13,6 @@ Inputs contain missing values. Dropping rows with missing observations.
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2023-11-06 15:46:24
+Makelog ended: 2023-11-07 16:13:53
 Working directory: /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/analysis
 --------------------------------------------------------------------------------

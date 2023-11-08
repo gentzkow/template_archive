@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
-Makelog started: 2023-11-06 15:46:24
+Makelog started: 2023-11-07 16:13:54
 Working directory: /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides
 --------------------------------------------------------------------------------
 Input copies successfully created!
@@ -7,7 +7,6 @@ External copies successfully created!
 Source logs successfully written!
 WARNING! The following target files have been modified according to git status:
 /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/data/output/chips_sold.pdf
-/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/analysis/output/regression.csv
 Version logs successfully written!
 Executing command: `pdflatex -output-directory=../latex_auxiliary_dir  "/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/code/paper.tex"`
 This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex)
@@ -577,6 +576,17 @@ Package rerunfilecheck Warning: File `slides.out' has changed.
 xmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2022/texmf-dist/fonts/
 type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/u
 rw/helvetic/uhvr8a.pfb>
-Output written on ../latex_auxiliary_dir/slides.pdf (10 pages, 25131 bytes).
+Output written on ../latex_auxiliary_dir/slides.pdf (10 pages, 25130 bytes).
 Transcript written on ../latex_auxiliary_dir/slides.log.
 
+/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/code/latex_test_widetable.xlsx
+/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/output/latex_test_widetable.pdf
+/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/code/latex_test_longtable_extremecase.xlsx
+/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/output/latex_test_longtable_extremecase.pdf
+/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/code/latex_test_widetable_extremecase.xlsx
+/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/output/latex_test_widetable_extremecase.pdf
+Output logs successfully written!
+--------------------------------------------------------------------------------
+Makelog ended: 2023-11-07 16:13:59
+Working directory: /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides
+--------------------------------------------------------------------------------
