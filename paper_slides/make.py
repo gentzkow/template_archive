@@ -51,7 +51,7 @@ gs.tablefill(template = 'code/tables.tex',
 # gs.run_latex(PATHS, program = 'code/slides.tex')
 # gs.run_excel(PATHS, template = 'tables/skeletons/latex_test_widetable.xlsx')
 # gs.run_excel(PATHS, template = 'tables/skeletons/latex_test_longtable_extremecase.xlsx')
-gs.run_excel(PATHS, template = 'tables/skeletons/latex_test_widetable_extremecase.xlsx', scalar = False)
+# gs.run_excel(PATHS, template = 'tables/skeletons/latex_test_widetable_extremecase.xlsx', scalar = False)
 gs.run_excel(PATHS, template = 'tables/skeletons/gps_widetable.xlsx', scalar = 'tables/scalars/gps_scalars.xlsx')
 
 ### LOG OUTPUTS

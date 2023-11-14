@@ -1,14 +1,11 @@
 --------------------------------------------------------------------------------
-Makelog started: 2023-11-14 13:25:19
+Makelog started: 2023-11-14 14:25:27
 Working directory: /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides
 --------------------------------------------------------------------------------
 Input copies successfully created!
 External copies successfully created!
 Source logs successfully written!
-WARNING! The following target files have been modified according to git status:
-/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/analysis/output/gps_scalars.xlsx
-/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/data/output/chips_sold.pdf
 Version logs successfully written!
-/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/tables/skeletons/latex_test_widetable_extremecase.xlsx
-/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/output/tables/skeletons/latex_test_widetable_extremecase.pdf
-Error in `run_excel` for tables/skeletons/latex_test_widetable_extremecase.xlsx: [Errno 2] No such file or directory: '/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/output/tables/skeletons/latex_test_widetable_extremecase_temp.pdf' -> '/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/output/tables/skeletons/latex_test_widetable_extremecase.pdf'
+/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/tables/skeletons/gps_widetable.xlsx
+/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/output/tables/skeletons/gps_widetable.pdf
+Error in `run_excel` for tables/skeletons/gps_widetable.xlsx: [Errno 2] No such file or directory: '/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/output/tables/skeletons/gps_widetable_temp.pdf' -> '/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/output/tables/skeletons/gps_widetable.pdf'
