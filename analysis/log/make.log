@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
-Makelog started: 2023-11-07 16:13:51
+Makelog started: 2023-11-09 15:32:43
 Working directory: /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/analysis
 --------------------------------------------------------------------------------
 Input links successfully created!
@@ -11,8 +11,35 @@ Executing command: `python  "/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/te
 Inputs contain missing values. Dropping rows with missing observations.
   super().__init__(dependent, exog, weights=weights, check_rank=check_rank)
 
+Executing command: `Rscript --no-save "/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/analysis/code/gen_scalars.R"`
+
+The downloaded binary packages are in
+	/var/folders/xn/d2jgqxlj145gq5jy3hbxym0c0000gn/T//RtmpJQOjbd/downloaded_packages
+
+trying URL 'http://cran.us.r-project.org/bin/macosx/big-sur-arm64/contrib/4.2/openxlsx_4.2.5.2.tgz'
+Content type 'application/x-gzip' length 3189540 bytes (3.0 MB)
+==================================================
+downloaded 3.0 MB
+
+── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.3     ✔ readr     2.1.4
+✔ forcats   1.0.0     ✔ stringr   1.5.0
+✔ ggplot2   3.4.2     ✔ tibble    3.2.1
+✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+✔ purrr     1.0.1     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+Warning message:
+In write.csv(combined_data, "output/gps_scalars.csv", row.names = FALSE,  :
+  attempt to set 'sep' ignored
+Warning messages:
+1: Please use 'rowNames' instead of 'row.names' 
+2: Please use 'colNames' instead of 'col.names' 
+
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2023-11-07 16:13:53
+Makelog ended: 2023-11-09 15:32:53
 Working directory: /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/analysis
 --------------------------------------------------------------------------------

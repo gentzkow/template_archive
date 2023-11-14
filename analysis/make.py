@@ -42,6 +42,7 @@ gs.write_version_logs(PATHS)
 
 ### RUN SCRIPTS
 gs.run_python(PATHS, program = 'code/analyze_data.py')
+gs.run_r(PATHS, program = 'code/gen_scalars.R')
 # gs.run_julia(PATHS, program = 'code/plot.jl')
 
 ### LOG OUTPUTS
