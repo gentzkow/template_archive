@@ -46,13 +46,15 @@ gs.tablefill(template = 'code/tables.tex',
              output   = 'output/tables_filled.tex')
 
 ### RUN SCRIPTS
-# gs.run_latex(PATHS, program = 'code/paper.tex')
-# gs.run_latex(PATHS, program = 'code/online_appendix.tex')
-# gs.run_latex(PATHS, program = 'code/slides.tex')
-# gs.run_excel(PATHS, template = 'tables/skeletons/latex_test_widetable.xlsx')
-# gs.run_excel(PATHS, template = 'tables/skeletons/latex_test_longtable_extremecase.xlsx')
-# gs.run_excel(PATHS, template = 'tables/skeletons/latex_test_widetable_extremecase.xlsx', scalar = False)
-gs.run_excel(PATHS, template = 'tables/skeletons/gps_widetable.xlsx', scalar = 'tables/scalars/gps_scalars.xlsx')
+gs.run_latex(PATHS, program = 'code/paper.tex')
+gs.run_latex(PATHS, program = 'code/online_appendix.tex')
+gs.run_latex(PATHS, program = 'code/slides.tex')
+gs.run_excel(PATHS, template = 'latex_test_widetable', scalar = False)
+gs.run_excel(PATHS, template = 'latex_test_longtable_extremecase', scalar = False)
+gs.run_excel(PATHS, template = 'latex_test_widetable_extremecase', scalar = False)
+gs.run_excel(PATHS, template = 'gps_widetable', scalar = 'gps_scalars.xlsx')
+#### TODO:
+# gs.quit_excel(PATHS)
 
 ### LOG OUTPUTS
 gs.log_files_in_output(PATHS)
@@ -62,3 +64,4 @@ gs.check_module_size(PATHS)
 
 ### END MAKE
 gs.end_makelog(PATHS)
+

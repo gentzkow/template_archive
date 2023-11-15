@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
-Makelog started: 2023-11-09 15:32:43
+Makelog started: 2023-11-14 19:09:28
 Working directory: /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/analysis
 --------------------------------------------------------------------------------
 Input links successfully created!
@@ -14,7 +14,7 @@ Inputs contain missing values. Dropping rows with missing observations.
 Executing command: `Rscript --no-save "/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/analysis/code/gen_scalars.R"`
 
 The downloaded binary packages are in
-	/var/folders/xn/d2jgqxlj145gq5jy3hbxym0c0000gn/T//RtmpJQOjbd/downloaded_packages
+	/var/folders/xn/d2jgqxlj145gq5jy3hbxym0c0000gn/T//RtmpeROqmR/downloaded_packages
 
 trying URL 'http://cran.us.r-project.org/bin/macosx/big-sur-arm64/contrib/4.2/openxlsx_4.2.5.2.tgz'
 Content type 'application/x-gzip' length 3189540 bytes (3.0 MB)
@@ -40,6 +40,6 @@ Warning messages:
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2023-11-09 15:32:53
+Makelog ended: 2023-11-14 19:09:41
 Working directory: /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/analysis
 --------------------------------------------------------------------------------
