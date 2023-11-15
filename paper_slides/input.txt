@@ -16,5 +16,9 @@
 
 # Destination                                            |  Source
 regression.csv                                           | {root}/analysis/output/regression.csv
-../tables/scalars/gps_scalars.xlsx                       | {root}/analysis/output/gps_scalars.xlsx
 chips_sold.pdf                                           | {root}/data/output/chips_sold.pdf
+../tables/scalars/gs_primary_scalars.xlsx                | {root}/analysis/output/gs_primary_scalars.xlsx
+../tables/scalars/gs_widetable_scalars.xlsx              | {root}/analysis/output/gs_widetable_scalars.xlsx
+../tables/scalars/gs_widetable_extreme_scalars.xlsx      | {root}/analysis/output/gs_widetable_extreme_scalars.xlsx
+# ../tables/scalars/gs_longtable_scalars.xlsx            | {root}/analysis/output/gs_longtable_scalars.xlsx
+# ../tables/scalars/gs_longtable_exteme_scalars.xlsx     | {root}/analysis/output/gs_longtable_exteme_scalars.xlsx

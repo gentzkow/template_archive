@@ -1,4 +1,6 @@
 destination | source
 input/regression.csv | /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/analysis/output/regression.csv
-tables/scalars/gps_scalars.xlsx | /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/analysis/output/gps_scalars.xlsx
 input/chips_sold.pdf | /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/data/output/chips_sold.pdf
+tables/scalars/gs_primary_scalars.xlsx | /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/analysis/output/gs_primary_scalars.xlsx
+tables/scalars/gs_widetable_scalars.xlsx | /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/analysis/output/gs_widetable_scalars.xlsx
+tables/scalars/gs_widetable_extreme_scalars.xlsx | /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/analysis/output/gs_widetable_extreme_scalars.xlsx

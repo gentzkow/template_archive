@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
-Makelog started: 2023-11-14 19:09:42
+Makelog started: 2023-11-15 14:49:36
 Working directory: /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides
 --------------------------------------------------------------------------------
 Input copies successfully created!
@@ -7,7 +7,9 @@ External copies successfully created!
 Source logs successfully written!
 WARNING! The following target files have been modified according to git status:
 /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/data/output/chips_sold.pdf
-/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/analysis/output/gps_scalars.xlsx
+/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/analysis/output/gs_primary_scalars.xlsx
+/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/analysis/output/gs_widetable_extreme_scalars.xlsx
+/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/analysis/output/gs_widetable_scalars.xlsx
 Version logs successfully written!
 Executing command: `pdflatex -output-directory=../latex_auxiliary_dir  "/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/code/paper.tex"`
 This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex)
@@ -580,21 +582,20 @@ rw/helvetic/uhvr8a.pfb>
 Output written on ../latex_auxiliary_dir/slides.pdf (10 pages, 25130 bytes).
 Transcript written on ../latex_auxiliary_dir/slides.log.
 
-/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/output/latex_test_widetable.pdf
-/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/tables/skeletons/latex_test_widetable.xlsx
-/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/tables/skeletons/latex_test_widetable_modified.xlsx
-/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/output/latex_test_longtable_extremecase.pdf
-/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/tables/skeletons/latex_test_longtable_extremecase.xlsx
-/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/tables/skeletons/latex_test_longtable_extremecase_modified.xlsx
-/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/output/latex_test_widetable_extremecase.pdf
-/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/tables/skeletons/latex_test_widetable_extremecase.xlsx
-/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/tables/skeletons/latex_test_widetable_extremecase_modified.xlsx
-/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/tables/scalars/gps_scalars.xlsx
-/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/output/gps_widetable.pdf
-/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/tables/skeletons/gps_widetable.xlsx
-/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/tables/skeletons/gps_widetable_modified.xlsx
+/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/tables/scalars/gs_primary_scalars.xlsx
+/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/output/gs_primary.pdf
+/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/tables/skeletons/gs_primary.xlsx
+/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/tables/skeletons/gs_primary_modified.xlsx
+/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/tables/scalars/gs_widetable_scalars.xlsx
+/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/output/gs_widetable.pdf
+/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/tables/skeletons/gs_widetable.xlsx
+/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/tables/skeletons/gs_widetable_modified.xlsx
+/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/tables/scalars/gs_widetable_extreme_scalars.xlsx
+/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/output/gs_widetable_extreme.pdf
+/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/tables/skeletons/gs_widetable_extreme.xlsx
+/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides/tables/skeletons/gs_widetable_extreme_modified.xlsx
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2023-11-14 19:09:54
+Makelog ended: 2023-11-15 14:49:48
 Working directory: /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/paper_slides
 --------------------------------------------------------------------------------
