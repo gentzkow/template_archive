@@ -1,14 +1,14 @@
 --------------------------------------------------------------------------------
-Makelog started: 2023-11-15 14:49:24
-Working directory: /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/data
+Makelog started: 2023-11-30 10:33:04
+Working directory: /Users/jccp/Desktop/template (Personal)/data
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
 Version logs successfully written!
-Executing command: `python  "/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/data/code/merge_data.py" `
-Executing command: `python  "/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/data/code/clean_data.py" `
-/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/data/code/clean_data.py:17: SettingWithCopyWarning: 
+Executing command: `python  "/Users/jccp/Desktop/template (Personal)/data/code/merge_data.py" `
+Executing command: `python  "/Users/jccp/Desktop/template (Personal)/data/code/clean_data.py" `
+/Users/jccp/Desktop/template (Personal)/data/code/clean_data.py:17: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
@@ -16,9 +16,9 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 
 Output logs successfully written!
 WARNING! Certain files tracked by git exceed the config size limit (0.5 MB). See below for list of files.
-/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/data/output/data_merged.csv
-/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/data/output/data_cleaned.csv
+/Users/jccp/Desktop/template (Personal)/data/output/data_merged.csv
+/Users/jccp/Desktop/template (Personal)/data/output/data_cleaned.csv
 --------------------------------------------------------------------------------
-Makelog ended: 2023-11-15 14:49:27
-Working directory: /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/data
+Makelog ended: 2023-11-30 10:33:12
+Working directory: /Users/jccp/Desktop/template (Personal)/data
 --------------------------------------------------------------------------------
