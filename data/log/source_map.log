@@ -1,4 +1,4 @@
 destination | source
-input/lib | /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/lib
-input/tv.csv | /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/raw/tv.csv
-input/chips.csv | /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template/raw/chips.csv
+input/lib | /Users/shiqiyang/Documents/github_folders/template/lib
+input/tv.csv | /Users/shiqiyang/Documents/github_folders/template/raw/tv.csv
+input/chips.csv | /Users/shiqiyang/Documents/github_folders/template/raw/chips.csv
