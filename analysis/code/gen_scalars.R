@@ -5,14 +5,15 @@ set.seed(123)
 
 #### Scalars for gps_primary.xlsx ####
 
-# This is the primary example, based on Table 1 from ad-price-drivers:
-# chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://scholar.harvard.edu/files/shapiro/files/ad-price-drivers.pdf
+# This is the primary example, based on Table 1 from the paper:
+# Pricing Power in Advertising Markets: Theory and Evidence (see link below, table on pg. 90):
+# https://scholar.harvard.edu/files/shapiro/files/ad-price-drivers.pdf
 
 #### Scalars for gs_widetable.xlsx ####
 
-# I'm just manually transcribing from the paper here, of course
-# in practice we will compute these ourselves and store in variables.
-# In the tables below, I compute random placeholders for the scalars.
+# Here, we are manually transcribing values from the paper here. Of course
+# in practice, users should compute these scalars themselves and store
+# the outputs in variables (in other ~/analysis/code scripts).
 data <- t(data.frame(
 
   c("-1.5556", "(0.2913)", "0.0973", "(0.0292)", "0.0124", "(0.0031)", "103", "809", "", "", "", ""),
@@ -24,51 +25,9 @@ data <- t(data.frame(
 
 ))
 
-# Convert the matrix into a dataframe
+# Convert the matrix into a dataframe.
 vals_df <- as.data.frame(data, stringsAsFactors = FALSE)
 
-# Write the data frame to a .csv and .xlsx file.
+# We write the data frame to a .csv and .xlsx file (this allows for git tracking).
 write.csv(vals_df, "output/tables/gs_primary_scalars.csv", row.names = FALSE, sep = ";", quote = TRUE)
 write.xlsx(vals_df, "output/tables/gs_primary_scalars.xlsx", sheetName = "Placeholders", row.names = FALSE, col.names = FALSE, quote = TRUE)
-
-# Defining placeholder matrix elements
-num_columns <- 5
-num_rows <- 4
-num_rows_ses <- 2
-
-# Generate random values as placeholders.
-vals <- as.data.frame(matrix(runif(num_columns * num_rows, min = 0, max = 10), nrow = num_rows))
-vals <- round(vals, 3)
-vals_parenth <- as.data.frame(matrix(runif(num_columns * num_rows_ses, min = 0, max = 10), nrow = num_rows_ses))
-vals_parenth <- round(vals_parenth, 3)
-observations_clusters <- as.data.frame(matrix(sample(5000:10000, num_columns * 2, replace = TRUE), nrow = 2))
-observations_clusters <- round(observations_clusters)
-vals_parenth <- vals_parenth %>% mutate(across(everything(), ~ paste0("(", ., ")")))
-
-# Construct the appended matrix.
-combined_data <- rbind(vals, observations_clusters)
-combined_data[2,] <- vals_parenth[1,]
-combined_data[4,] <- vals_parenth[2,]
-combined_data[5:6, ] <- as.character(formatC(as.numeric(as.character(unlist(combined_data[5:6, ]))), big.mark = ",", format = "d", decimal.mark = ""))
-
-# Write the data frame to a .csv and .xlsx file.
-write.csv(combined_data, "output/tables/gs_widetable_scalars.csv", row.names = FALSE, sep = ";", quote = TRUE)
-write.xlsx(combined_data, "output/tables/gs_widetable_scalars.xlsx", sheetName = "Placeholders", row.names = FALSE, col.names = FALSE, quote = TRUE)
-
-#### Scalars for gs_widetable_extreme.xlsx ####
-
-# I'm intentionally creating a very ugly matrix here, to demonstrate that with this new
-# approach where we explicitly form links between sheets; the dimensions of this matrix
-# no longer matters. We only need number of filled cells in matrix = number of required scalars in skeleton.
-num_columns <- 60
-num_rows <- 1
-
-# Generate random values as placeholders.
-vals <- sort(runif(num_columns * num_rows, min = 36275, max = 5245121), decreasing = TRUE)
-vals <- round(vals)
-formatted_vals <- formatC(vals, format = "f", big.mark = ",", digits = 0)
-vals_df <- as.data.frame(matrix(formatted_vals, nrow = num_rows))
-
-# Write the data frame to a .csv and .xlsx file.
-write.csv(vals_df, "output/tables/gs_widetable_extreme_scalars.csv", row.names = FALSE, sep = ";", quote = TRUE)
-write.xlsx(vals_df, "output/tables/gs_widetable_extreme_scalars.xlsx", sheetName = "Placeholders", row.names = FALSE, col.names = FALSE, quote = TRUE)
