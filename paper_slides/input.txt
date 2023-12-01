@@ -14,11 +14,7 @@
 # 
 # This will create a file in `paths['input_dir']` named `destination` that is a copy of `source`.
 
-# Destination                                            |  Source
-regression.csv                                           | {root}/analysis/output/regression.csv
-chips_sold.pdf                                           | {root}/data/output/chips_sold.pdf
-../tables/scalars/gs_primary_scalars.xlsx                | {root}/analysis/output/gs_primary_scalars.xlsx
-../tables/scalars/gs_widetable_scalars.xlsx              | {root}/analysis/output/gs_widetable_scalars.xlsx
-../tables/scalars/gs_widetable_extreme_scalars.xlsx      | {root}/analysis/output/gs_widetable_extreme_scalars.xlsx
-# ../tables/scalars/gs_longtable_scalars.xlsx            | {root}/analysis/output/gs_longtable_scalars.xlsx
-# ../tables/scalars/gs_longtable_exteme_scalars.xlsx     | {root}/analysis/output/gs_longtable_exteme_scalars.xlsx
+# Destination                                    |  Source
+regression.csv                                   | {root}/analysis/output/regression.csv
+chips_sold.pdf                                   | {root}/data/output/chips_sold.pdf
+tables                                           | {root}/analysis/output/tables

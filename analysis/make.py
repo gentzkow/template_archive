@@ -31,6 +31,9 @@ gs.remove_dir(['input', 'external'])
 gs.clear_dir(['output', 'log'])
 gs.start_makelog(PATHS)
 
+### PRODUCES ADDITIONAL SUBFOLDERS
+os.makedirs('output/tables', exist_ok = True)
+
 ### MAKE LINKS TO INPUT AND EXTERNAL FILES
 inputs = gs.link_inputs(PATHS, ['input.txt'])
 externals = gs.link_externals(PATHS, ['external.txt'])

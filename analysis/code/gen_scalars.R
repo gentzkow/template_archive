@@ -28,8 +28,8 @@ data <- t(data.frame(
 vals_df <- as.data.frame(data, stringsAsFactors = FALSE)
 
 # Write the data frame to a .csv and .xlsx file.
-write.csv(vals_df, "output/gs_primary_scalars.csv", row.names = FALSE, sep = ";", quote = TRUE)
-write.xlsx(vals_df, "output/gs_primary_scalars.xlsx", sheetName = "Placeholders", row.names = FALSE, col.names = FALSE, quote = TRUE)
+write.csv(vals_df, "output/tables/gs_primary_scalars.csv", row.names = FALSE, sep = ";", quote = TRUE)
+write.xlsx(vals_df, "output/tables/gs_primary_scalars.xlsx", sheetName = "Placeholders", row.names = FALSE, col.names = FALSE, quote = TRUE)
 
 # Defining placeholder matrix elements
 num_columns <- 5
@@ -52,8 +52,8 @@ combined_data[4,] <- vals_parenth[2,]
 combined_data[5:6, ] <- as.character(formatC(as.numeric(as.character(unlist(combined_data[5:6, ]))), big.mark = ",", format = "d", decimal.mark = ""))
 
 # Write the data frame to a .csv and .xlsx file.
-write.csv(combined_data, "output/gs_widetable_scalars.csv", row.names = FALSE, sep = ";", quote = TRUE)
-write.xlsx(combined_data, "output/gs_widetable_scalars.xlsx", sheetName = "Placeholders", row.names = FALSE, col.names = FALSE, quote = TRUE)
+write.csv(combined_data, "output/tables/gs_widetable_scalars.csv", row.names = FALSE, sep = ";", quote = TRUE)
+write.xlsx(combined_data, "output/tables/gs_widetable_scalars.xlsx", sheetName = "Placeholders", row.names = FALSE, col.names = FALSE, quote = TRUE)
 
 #### Scalars for gs_widetable_extreme.xlsx ####
 
@@ -70,5 +70,5 @@ formatted_vals <- formatC(vals, format = "f", big.mark = ",", digits = 0)
 vals_df <- as.data.frame(matrix(formatted_vals, nrow = num_rows))
 
 # Write the data frame to a .csv and .xlsx file.
-write.csv(vals_df, "output/gs_widetable_extreme_scalars.csv", row.names = FALSE, sep = ";", quote = TRUE)
-write.xlsx(vals_df, "output/gs_widetable_extreme_scalars.xlsx", sheetName = "Placeholders", row.names = FALSE, col.names = FALSE, quote = TRUE)
+write.csv(vals_df, "output/tables/gs_widetable_extreme_scalars.csv", row.names = FALSE, sep = ";", quote = TRUE)
+write.xlsx(vals_df, "output/tables/gs_widetable_extreme_scalars.xlsx", sheetName = "Placeholders", row.names = FALSE, col.names = FALSE, quote = TRUE)
