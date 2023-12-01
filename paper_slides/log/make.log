@@ -1,11 +1,14 @@
 --------------------------------------------------------------------------------
-Makelog started: 2023-12-01 15:19:24
+Makelog started: 2023-12-01 15:38:51
 Working directory: /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template_85/paper_slides
 --------------------------------------------------------------------------------
 Input copies successfully created!
 External copies successfully created!
 Source logs successfully written!
 WARNING! The following target files have been modified according to git status:
+/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template_85/analysis/output/tables/gs_widetable_extreme_scalars.xlsx
+/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template_85/analysis/output/tables/gs_primary_scalars.xlsx
+/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template_85/analysis/output/tables/gs_widetable_scalars.xlsx
 /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template_85/data/output/chips_sold.pdf
 Version logs successfully written!
 Executing command: `pdflatex -output-directory=../latex_auxiliary_dir  "/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template_85/paper_slides/code/paper.tex"`
@@ -576,7 +579,7 @@ Package rerunfilecheck Warning: File `slides.out' has changed.
 xmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2022/texmf-dist/fonts/
 type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/u
 rw/helvetic/uhvr8a.pfb>
-Output written on ../latex_auxiliary_dir/slides.pdf (10 pages, 25131 bytes).
+Output written on ../latex_auxiliary_dir/slides.pdf (10 pages, 25130 bytes).
 Transcript written on ../latex_auxiliary_dir/slides.log.
 
 /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template_85/paper_slides/input/tables/gs_primary_scalars.xlsx
@@ -585,6 +588,6 @@ Transcript written on ../latex_auxiliary_dir/slides.log.
 /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template_85/paper_slides/tables/skeletons/gs_primary_modified.xlsx
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2023-12-01 15:19:32
+Makelog ended: 2023-12-01 15:39:00
 Working directory: /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template_85/paper_slides
 --------------------------------------------------------------------------------

@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
-Makelog started: 2023-12-01 15:18:49
+Makelog started: 2023-12-01 15:38:16
 Working directory: /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template_85/analysis
 --------------------------------------------------------------------------------
 Input links successfully created!
@@ -49,7 +49,7 @@ installing to /opt/homebrew/Caskroom/miniconda/base/envs/template/lib/R/library/
 * DONE (openxlsx)
 
 The downloaded source packages are in
-	‘/private/var/folders/xn/d2jgqxlj145gq5jy3hbxym0c0000gn/T/RtmpYIAHCN/downloaded_packages’
+	‘/private/var/folders/xn/d2jgqxlj145gq5jy3hbxym0c0000gn/T/RtmpGoM3P8/downloaded_packages’
 Updating HTML index of packages in '.Library'
 Making 'packages.html' ... done
 ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
@@ -83,6 +83,6 @@ Warning messages:
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2023-12-01 15:19:24
+Makelog ended: 2023-12-01 15:38:51
 Working directory: /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template_85/analysis
 --------------------------------------------------------------------------------
