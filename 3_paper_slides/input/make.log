@@ -1,0 +1,2 @@
+Executing: python3 merge_data.py >> "../output/make.log"
+Executing: python3 clean_data.py >> "../output/make.log"
