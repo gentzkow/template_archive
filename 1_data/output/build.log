@@ -1,0 +1,2 @@
+Executing: python3 merge_data.py >> "../output/build.log"
+Executing: python3 clean_data.py >> "../output/build.log"
