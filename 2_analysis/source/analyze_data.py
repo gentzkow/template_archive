@@ -1,12 +1,11 @@
-# from gentzkow/template: https://github.com/gentzkow/template/blob/master/analysis/code/analyze_data.py
 import pandas as pd
 import numpy as np
 from linearmodels import PanelOLS
-import os
 
-# DEFINE PATHS
-input_raw=os.environ["INPUT_DATA"]
-output=os.environ["OUTPUT"]
+# Paths
+repo_root = '../..'
+input = f'{repo_root}/1_data/output'
+output = '../output'
 
 ### DEFINE
 def main():
@@ -19,7 +18,7 @@ def main():
         formatted.to_csv(f, sep = '\t', index = False, header = False)
     
 def import_data():
-    df = pd.read_csv(f'{input_raw}/data_cleaned.csv')
+    df = pd.read_csv(f'{input}/data_cleaned.csv')
     df['post_tv'] = df['year'] > df['year_tv_introduced']
     
     return(df)

@@ -2,21 +2,28 @@
 set -e
 
 # User-defined constants
-MODULE_NAME=analysis
-LOGFILE=output/build.log
+REPO_ROOT=..
+LIB=${REPO_ROOT}/lib/shell
+LOGFILE=output/make.log
 
-# Load paths, local environment, and utilities
-source paths.sh
-source ${ROOT}/local_env.sh
-source ${ROOT}/lib/shell/load_make_commands.sh
+# Load local environment and shell commands
+source ${REPO_ROOT}/local_env.sh
+source ${LIB}/run_python.sh
+source ${LIB}/run_stata.sh
+source ${LIB}/run_R.sh
 
-# remove previous output
+# Remove previous output
 rm -rf output
 rm -f ${LOGFILE}
 mkdir -p output
 
-# print shell being used
-echo "\n\nMaking \033[35m${MODULE_NAME}\033[0m module with shell: ${SHELL}"
+# Tell user what we're doing
+MODULE=$(basename "$PWD")
+echo "\n\nMaking \033[35m${MODULE}\033[0m module with shell: ${SHELL}"
 
-# run programs in order
-run_python analyze_data.py $LOGFILE
+# Run programs in order
+(
+	cd source 
+	run_python analyze_data.py ../$LOGFILE
+) 2>&1 | tee ${LOGFILE}
+
