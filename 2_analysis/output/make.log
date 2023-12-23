@@ -1,8 +1,7 @@
 
 % Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
-% DExecuting: StataMP analyze_data.do >> "../output/make.log"
- packages: dcolumn 
-\begin{table}[!htbp] \centering 
+% Date and time: Sat, Dec 23, 2023 - 11:55:2Executing: StataMP analyze_data.do >> "../output/make.log"
+\centering 
   \caption{Results} 
   \label{} 
 \begin{tabular}{@{\extracolsep{5pt}}lD{.}{.}{-3} D{.}{.}{-3} D{.}{.}{-3} } 
@@ -130,59 +129,8 @@ Notes:
 . 
 . * Execute
 . main
+file ../../1_data/output/mpg.dta not found
+r(601);
 
-      Source |       SS           df       MS      Number of obs   =       234
--------------+----------------------------------   F(1, 232)       =    408.25
-       Model |  247.987219         1  247.987219   Prob > F        =    0.0000
-    Residual |   140.92661       232  .607442286   R-squared       =    0.6376
--------------+----------------------------------   Adj R-squared   =    0.6361
-       Total |  388.913829       233  1.66915806   Root MSE        =    .77939
-
-------------------------------------------------------------------------------
-       displ | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
--------------+----------------------------------------------------------------
-         cty |  -.2424045   .0119972   -20.21   0.000    -.2660418   -.2187672
-       _cons |   7.558485   .2085784    36.24   0.000     7.147536    7.969435
-------------------------------------------------------------------------------
-
-      Source |       SS           df       MS      Number of obs   =       234
--------------+----------------------------------   F(1, 232)       =    329.45
-       Model |  228.209451         1  228.209451   Prob > F        =    0.0000
-    Residual |  160.704378       232  .692691283   R-squared       =    0.5868
--------------+----------------------------------   Adj R-squared   =    0.5850
-       Total |  388.913829       233  1.66915806   Root MSE        =    .83228
-
-------------------------------------------------------------------------------
-       displ | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
--------------+----------------------------------------------------------------
-         hwy |  -.1662008   .0091566   -18.15   0.000    -.1842416     -.14816
-       _cons |    7.36757   .2214218    33.27   0.000     6.931315    7.803824
-------------------------------------------------------------------------------
-
-      Source |       SS           df       MS      Number of obs   =       234
--------------+----------------------------------   F(2, 231)       =    203.32
-       Model |  248.020057         2  124.010029   Prob > F        =    0.0000
-    Residual |  140.893772       231  .609929747   R-squared       =    0.6377
--------------+----------------------------------   Adj R-squared   =    0.6346
-       Total |  388.913829       233  1.66915806   Root MSE        =    .78098
-
-------------------------------------------------------------------------------
-       displ | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
--------------+----------------------------------------------------------------
-         hwy |  -.0067896   .0292611    -0.23   0.817    -.0644423    .0508631
-         cty |  -.2333237   .0409402    -5.70   0.000    -.3139876   -.1526598
-       _cons |   7.564542   .2106286    35.91   0.000     7.149543    7.979541
-------------------------------------------------------------------------------
-(output written to ../output/table_reg.tex)
-(note:  named style year not found in class color, default attributes used)
-(note:  named style year not found in class color, default attributes used)
-file /Users/gentzkow/Dropbox (Personal)/git/template/2_analysis/source/../output/figure_city.jpg
-    saved as JPG format
-(note:  named style year not found in class color, default attributes used)
-(note:  named style year not found in class color, default attributes used)
-file /Users/gentzkow/Dropbox (Personal)/git/template/2_analysis/source/../output/figure_hwy.jpg
-    saved as JPG format
-
-. 
-. 
 end of do-file
+r(601);

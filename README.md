@@ -1,36 +1,37 @@
-# TunaTemplate
+# GentzkowLabTemplate
 
-A simplified version of [`gentzkow/template`](https://github.com/gentzkow/template).
+### Requirements
 
-In honor of Tuna 🍣 🐈
+The following are required to run the base template:
+* Python 3.x
+* LaTex
 
-### Building this repo
+The template assumes that Python 3.x is installed and your 
+Python executable is `python3`. If not, the setup script will produce
+an error and prompt you to update `local_env.sh` with the correct
+name of your Python executable.
+
+### Setup
 
 ```sh
-# clone the repo, cd into it
-git clone https://github.com/arjunsrini/TunaTemplate
-cd TunaTemplate
+# Clone the repo, cd into it
+git clone https://github.com/gentzkow/GentzkowLabTemplate
+cd GentzkowLabTemplate
 
-# load the shmake submodule
-git submodule init
-git submodule update
+# Run setup script to create local settings file local_env.sh,
+# and check that local executables are correctly installed.
+bash setup.sh
 
-# build the project
+# Run the `make.sh` script at the root of the repository to 
+# check that the template runs without error
 bash make.sh
 ```
-<!-- 2. At the root of your repo, create a file called `config.yaml` with contents like the file `setup/example_config.yaml`. -->
-
-<!-- or `make` from the root of the repo. To build an a submodule (e.g. `analysis`), type `make` while your current working directory is `your-path-to-repo/analysis`. -->
 
 ### Using this as a template
 
+To create a new repository from this t
+
 Click `Use this template` to create your own repo. For more info, see [this](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
-
-### Notes
-
-#### [`shmake`](https://github.com/arjunsrini/shmake)
-
-Included as a git submodule, this is a shell version of [`gslab_make`](https://github.com/gslab-econ/gslab_make).
 
 ### License
 
