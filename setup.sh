@@ -1,19 +1,11 @@
 #!/bin/bash   
 
-# Constants
-PATH_TO_ROOT=.
-ENV_DIR="lib/venv"
-PATH_TO_CONFIG=${PATH_TO_ROOT}/lib/shmake/commands.sh
-
-# load the shell utility library
-source ${PATH_TO_CONFIG}
-
-# create the virtual environment if it doesn't exist
-# activate the virtual environment
-if [ ! -d "$PATH_TO_ROOT/$ENV_DIR" ]; then
-    echo "No virtual environment exists here: $PATH_TO_ROOT/$ENV_DIR"
-    create_activate_venv "$PATH_TO_ROOT/$ENV_DIR"
-else 
-    echo "Virtual environment exists here: $PATH_TO_ROOT/$ENV_DIR"
-    activate_venv "$PATH_TO_ROOT/$ENV_DIR"
+# Create local_env.sh if it does not exist. This is a configuration file
+# that contains paths, executable names, and other settings specific to 
+# a user's local machine. It file is ignored by Git so changes only affect
+# the local copy of the repository.
+if [ -f "local_env.sh" ]; then
+    echo "Note: File local_env.sh already exists"
+else
+    cp lib/setup/local_env_template.sh local_env.sh
 fi

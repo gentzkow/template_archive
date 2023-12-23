@@ -24,6 +24,7 @@ echo "\n\nMaking \033[35m${MODULE}\033[0m module with shell: ${SHELL}"
 # Run programs in order
 (
 	cd source 
-	run_python merge_data.py ../$LOGFILE 
-	run_python clean_data.py ../$LOGFILE 
+	run_python wrangle_data.py ../$LOGFILE 
+	run_R wrangle_data.r ../$LOGFILE 
+	run_stata ${stataCmd} wrangle_data.do ../$LOGFILE 
 ) 2>&1 | tee ${LOGFILE}

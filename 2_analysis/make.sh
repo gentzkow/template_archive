@@ -25,5 +25,7 @@ echo "\n\nMaking \033[35m${MODULE}\033[0m module with shell: ${SHELL}"
 (
 	cd source 
 	run_python analyze_data.py ../$LOGFILE
+	run_R analyze_data.R ../$LOGFILE
+	run_stata analyze_data.do ../$LOGFILE
 ) 2>&1 | tee ${LOGFILE}
 

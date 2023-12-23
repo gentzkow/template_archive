@@ -1,44 +1,46 @@
 import pandas as pd
 import numpy as np
-from linearmodels import PanelOLS
+import statsmodels.api as sm
+import matplotlib.pyplot as plt
 
 # Paths
-repo_root = '../..'
-input = f'{repo_root}/1_data/output'
-output = '../output'
+input_dir = '../../1_data/output'
+output_dir = '../output'
 
-### DEFINE
+# =============================================================================
+
 def main():
-    df = import_data()
-    fit = run_regression(df)
-    formatted = format_model(fit)
-    
-    with open(f'{output}/regression.csv', 'w') as f:
-        f.write('<tab:regression>' + '\n')
-        formatted.to_csv(f, sep = '\t', index = False, header = False)
-    
-def import_data():
-    df = pd.read_csv(f'{input}/data_cleaned.csv')
-    df['post_tv'] = df['year'] > df['year_tv_introduced']
-    
-    return(df)
+  mpg_clean = pd.read_csv(f"{input_dir}/mpg.csv")
+  regression_table(mpg_clean)
+  city_figure(mpg_clean)
+  hwy_figure(mpg_clean)
 
-def run_regression(df):
-    # drop missing values of chips_sold or post_tv
-    df = df.dropna(subset = ['chips_sold', 'post_tv'])
-    df = df.set_index(['county_id', 'year'])
-    model = PanelOLS.from_formula('chips_sold ~ 1 + post_tv + EntityEffects + TimeEffects', data = df)
-    fit = model.fit()
-    
-    return(fit)
-    
-def format_model(fit):
-    formatted = pd.DataFrame({'coef'     : fit.params, 
-                              'std_error': fit.std_errors, 
-                              'p_value'  : fit.pvalues})
-    formatted = formatted.loc[['post_tv']]
-    
-    return(formatted)
-    
-### EXECUTE
-main()
+def regression_table(data): 
+  reg_cty = sm.OLS.from_formula('displ ~ cty', data).fit()
+  print(reg_cty.summary())
+
+  reg_hwy = sm.OLS.from_formula('displ ~ hwy', data).fit()
+  print(reg_hwy.summary())
+
+  reg_hwy_cty = sm.OLS.from_formula('displ ~ cty + hwy', data).fit()
+  print(reg_hwy_cty.summary())
+
+  latex_table = reg_hwy_cty.summary().as_latex()
+  with open(output_dir + "/table_reg.tex", "w") as f:
+    f.write(latex_table)
+
+def hwy_figure(data):
+  plt.scatter(data['displ'], data['hwy'], c=data['year'])
+  plt.xlabel("Engine displacement (L)")
+  plt.ylabel("Highway fuel economy (mpg)")
+  plt.savefig(output_dir + "/figure_hwy.jpg")
+
+def city_figure(data):
+  plt.scatter(data['displ'], data['cty'], c=data['year'])
+  plt.xlabel("Engine displacement (L)")
+  plt.ylabel("City fuel economy (mpg)")
+  plt.savefig(output_dir + "/figure_city.jpg")
+
+# Execute
+if __name__ == "__main__":
+  main()

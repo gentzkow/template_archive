@@ -1,10 +1,10 @@
 #!/bin/bash   
 set -e
 
-# Project log
-PROJECT_NAME="TunaTemplate"
+# Replace with name of your project
+PROJECT_NAME="template"
 
-# Print project name
+# Tell user what we're doing
 echo -e "Making \033[35m${PROJECT_NAME}\033[0m with shell: ${SHELL}"
 
 # Run makeiles of each module

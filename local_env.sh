@@ -3,17 +3,14 @@
 # settings local to an individual machine.
 ###############################################################################
 
-# Name of local Python 3.X executable
-export pythonCmd="python3"
-
-# Name of local R executable
-export rCmd="Rscript"
-
 # Name of local Stata executable
 export stataCmd="StataMP"
 
-# Description of myLocalSetting
-# export myLocalSetting=true
+# Name of local Python executable
+export pythonCmd="python3"
+
+# Decription of other local setting
+# export myLocalSetting="my_setting_value"
 
 ###############################################################################
 # Paths to external resources: This section is used to define paths to
@@ -21,4 +18,4 @@ export stataCmd="StataMP"
 ###############################################################################
 
 # Description of MyResource
-# export pathToMyResource=/Users/username/path_to_data_directory
+# export pathToMyResource="/Users/username/path_to_directory"

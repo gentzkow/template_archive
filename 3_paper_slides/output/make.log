@@ -114,18 +114,24 @@ ne 53.
 
 [2] [3] [4]
 No file paper.bbl.
+[5 <./input/figure_city.jpg> <./input/figure_hwy.jpg>] (./input/table_reg.tex)
 
 Package natbib Warning: There were undefined citations.
 
-(./paper.aux)
+[6] (./paper.aux)
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ){/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/202
-1/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-di
-st/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paper.pdf (4 pages, 38293 bytes).
+exlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
+xlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/tex
+live/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texli
+ve/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive
+/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2
+021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2021/texmf-
+dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts
+/type1/urw/times/utmri8a.pfb>
+Output written on paper.pdf (6 pages, 493136 bytes).
 Transcript written on paper.log.
 
 
@@ -264,20 +270,30 @@ Package natbib Warning: Citation `Becker2009' on page 2 undefined on input line
 Package natbib Warning: Citation `Friedman1970' on page 2 undefined on input li
 ne 53.
 
-[2] [3] [4] (./paper.bbl)
+[2] [3] [4] (./paper.bbl) [5] [6 <./input/figure_city.jpg> <./input/figure_hwy.
+jpg>] (./input/table_reg.tex)
 
 Package natbib Warning: There were undefined citations.
 
-[5] (./paper.aux
+[7] (./paper.aux
 
 Package natbib Warning: Citation(s) may have changed.
 (natbib)                Rerun to get citations correct.
 
-) ){/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/
-texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/20
-21/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-d
-ist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paper.pdf (5 pages, 45130 bytes).
+)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ){/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
+xlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/tex
+live/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texli
+ve/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive
+/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2
+021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2021/texmf-
+dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts
+/type1/urw/times/utmri8a.pfb>
+Output written on paper.pdf (7 pages, 498875 bytes).
 Transcript written on paper.log.
 
 
@@ -390,11 +406,17 @@ For additional information on amsmath, use the `?' option.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ts1ptm.fd) [1{/usr/local/t
 exlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4]
-(./paper.bbl) [5] (./paper.aux) ){/usr/local/texlive/2021/texmf-dist/fonts/enc/
-dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utm
-b8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></
-usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paper.pdf (5 pages, 44755 bytes).
+(./paper.bbl) [5] [6 <./input/figure_city.jpg> <./input/figure_hwy.jpg>]
+(./input/table_reg.tex) [7] (./paper.aux) ){/usr/local/texlive/2021/texmf-dist/
+fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmsy7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/u
+tmb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+</usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on paper.pdf (7 pages, 498516 bytes).
 Transcript written on paper.log.
 
 
