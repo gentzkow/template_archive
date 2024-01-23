@@ -1,3 +1,7 @@
+# This file defines settings and paths that are specific to a user's local 
+# environment and therefore should not be committed to the repository. It 
+# is ignored by Git.
+
 ###############################################################################
 # Local settings: This section is used to define variables for
 # settings local to an individual machine.
@@ -9,7 +13,10 @@ export stataCmd="StataMP"
 # Name of local Python executable
 export pythonCmd="python3"
 
-# Decription of other local setting
+# Name of local R executable
+export rCmd="Rscript"
+
+# Add other local settings required for your repository here
 # export myLocalSetting="my_setting_value"
 
 ###############################################################################
@@ -17,5 +24,5 @@ export pythonCmd="python3"
 # data and other resources external to the repository.
 ###############################################################################
 
-# Description of MyResource
+# Add paths to external resources required by your repository here
 # export pathToMyResource="/Users/username/path_to_directory"

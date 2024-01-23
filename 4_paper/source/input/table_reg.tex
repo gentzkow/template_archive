@@ -1,0 +1,22 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{3}{c}}
+\hline\hline
+            &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}\\
+            &\multicolumn{1}{c}{displ}&\multicolumn{1}{c}{displ}&\multicolumn{1}{c}{displ}\\
+\hline
+hwy         &      -0.166\sym{***}&                     &    -0.00679         \\
+            &    (-18.15)         &                     &     (-0.23)         \\
+[1em]
+cty         &                     &      -0.242\sym{***}&      -0.233\sym{***}\\
+            &                     &    (-20.21)         &     (-5.70)         \\
+[1em]
+\_cons      &       7.368\sym{***}&       7.558\sym{***}&       7.565\sym{***}\\
+            &     (33.27)         &     (36.24)         &     (35.91)         \\
+\hline
+\(N\)       &         234         &         234         &         234         \\
+\hline\hline
+\multicolumn{4}{l}{\footnotesize \textit{t} statistics in parentheses}\\
+\multicolumn{4}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+}
