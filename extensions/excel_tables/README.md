@@ -4,11 +4,11 @@
 ## Purpose and Usage
 ---
 
-This directory includes code which can be used to construct and export table objects in `gentzkow/template` from an Excel format to publication-ready PDF outputs. Note that the contents of this directory are intended to serve as a minimal working example of the functionality of the core function underlying the conversion: `export_excel_tables()` in the `run_program.py` script in the `gslab_make` submodule.
+This directory includes code which can be used to construct and export table objects in `gentzkow/template` from an Excel format to publication-ready PDF outputs. Note that the contents of this directory are intended to serve as a minimal working example of the functionality of the core function underlying the conversion: `export_excel_tables()` in the `run_program.py` script in the `gslab_make` submodule. For users on Windows machines, please ensure you construct the `conda` environment with the `pywin32` package installed (see `/setup/conda_env.yaml`).
 
 The structure of subdirectories in `/extensions/excel_tables/` parallels that of the overall repository. Files in each submodule directory (e.g. `/extensions/excel_tables/analysis/` or `/extensions/excel_tables/paper_slides/`) should be copied to the main submodule directory (e.g. `~/analysis/` or `~/paper_slides/`).
 
-Then executing make-scripts, for example with `python run_all.py`, will build outputs using the updated submodules from this `/extensions/` folder, rather than in the root directory.
+Then executing make-scripts, for example with `python run_all.py`, will build outputs using the updated submodules from this `/extensions/` folder, rather than in the root directory. **Please note: this process will call Excel using your computer's native software. Be sure to save any open Excel sheets prior to running this code, as the application will exit and restart.**
 
 ---
 ## Procedure and Instructions
