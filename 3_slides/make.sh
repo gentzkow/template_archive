@@ -28,5 +28,5 @@ echo "\n\nMaking \033[35m${MODULE}\033[0m module with shell: ${SHELL}"
 # Run programs in order
 (
     cd source 
-    run_latex paper.tex ../$LOGFILE ../output
+    run_latex my_project_slides.tex ../$LOGFILE ../output
 ) 2>&1 | tee ${LOGFILE}

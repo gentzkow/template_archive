@@ -15,7 +15,7 @@ rm -rf output
 rm -f ${LOGFILE}
 mkdir -p output
 
-# Copy inputs from data
+# Copy and/or symlink inputs
 rm -rf input
 cp -r ${REPO_ROOT}/1_data/output input
 

@@ -9,7 +9,6 @@ run_stata() {
     logfile="$2"
     
     # get path to file and file name
-    local path_to_file=$(parse_fp "${program}" 3)
     local filename=$(parse_fp "${program}" 4)
 
     # set Stata command if unset

@@ -13,7 +13,7 @@ output_dir <- "../output"
 # =============================================================================
 
 main <- function() {
-  load(file.path(input_dir, "mpg.Rdata"))
+  load("../input/mpg.Rdata")
   regression_table(mpg_clean)
   city_figure(mpg_clean)
   hwy_figure(mpg_clean)
@@ -33,7 +33,7 @@ regression_table <- function(data) {
             dep.var.labels = c("Engine displacement (L)"),
             covariate.labels = c("City fuel economy (mpg)",
                                  "Highway fuel economy (mpg)"),
-            out = file.path(output_dir, "table_reg.tex"))
+            out = "../output/table_reg.tex")
 }
 
 city_figure <- function(data) {
@@ -41,7 +41,7 @@ city_figure <- function(data) {
     geom_point() +
     xlab("Engine displacement (L)") +
     ylab("City fuel economy (mpg)")
-  ggsave(file.path(output_dir, "figure_city.jpg"), plot = p)
+  ggsave("../output/figure_city.jpg", plot = p)
 }
 
 hwy_figure <- function(data) {
@@ -49,7 +49,7 @@ hwy_figure <- function(data) {
     geom_point() +
     xlab("Engine displacement (L)") +
     ylab("Highway fuel economy (mpg)")
-  ggsave(file.path(output_dir, "figure_hwy.jpg"), plot = p)
+  ggsave("../output/figure_hwy.jpg", plot = p)
 }
 
 # Execute

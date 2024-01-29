@@ -4,16 +4,12 @@
 
 library(tidyverse)
 
-# Paths
-input_dir <- "../../0_raw"
-output_dir <- "../output"
-
 # =============================================================================
 
 main <- function() {
-  mpg <- read.csv(file.path(input_dir, "mpg.csv"))
+  mpg <- read.csv("../input/mpg.csv")
   mpg_clean <- clean_data(mpg)
-  save(mpg_clean, file = file.path(output_dir, "mpg.Rdata"))
+  save(mpg_clean, file = "../output/mpg.Rdata")
 }
 
 clean_data <- function(mpg) {

@@ -1,11 +1,10 @@
-Executing: pdflatex paper.tex >> "../output/make.log"
-Executing: bibtex paper.aux >> "../output/make.log"
-Successfully ran bibtex
+Executing: pdflatex my_project_slides.tex >> "../output/make.log"
+Executing: bibtex my_project_slides.aux >> "../output/make.log"
+Error: bibtex failed. See ../output/make.log for details.
 Sleeping 1 second...
-Executing: pdflatex paper.tex >> "../output/make.log"
-Executing: pdflatex paper.tex >> "../output/make.log"
-ng layer <2021-02-18>
-(/usr/local/texlive/2021/texmf-dist/tex/latex/base/article.cls
+Executing: pdflatex my_project_slides.tex >> "../output/make.log"
+Executing: pdflatex my_project_slides.tex >> "../output/make.log"
+tex/latex/base/article.cls
 Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/size12.clo))
 (/usr/local/texlive/2021/texmf-dist/tex/latex/float/float.sty)
@@ -50,7 +49,7 @@ For additional information on amsmath, use the `?' option.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/footmisc/footmisc.sty)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ot1ptm.fd)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
-No file paper.aux.
+No file my_project_slides.aux.
 (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
@@ -113,12 +112,12 @@ Package natbib Warning: Citation `Friedman1970' on page 2 undefined on input li
 ne 53.
 
 [2] [3] [4]
-No file paper.bbl.
+No file my_project_slides.bbl.
 [5 <./input/figure_city.jpg> <./input/figure_hwy.jpg>] (./input/table_reg.tex)
 
 Package natbib Warning: There were undefined citations.
 
-[6] (./paper.aux)
+[6] (./my_project_slides.aux)
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
@@ -131,8 +130,8 @@ ve/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive
 021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2021/texmf-
 dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts
 /type1/urw/times/utmri8a.pfb>
-Output written on paper.pdf (6 pages, 493136 bytes).
-Transcript written on paper.log.
+Output written on my_project_slides.pdf (6 pages, 493136 bytes).
+Transcript written on my_project_slides.log.
 
 
 
@@ -144,9 +143,18 @@ Transcript written on paper.log.
 
 
 This is BibTeX, Version 0.99d (TeX Live 2021)
-The top-level auxiliary file: paper.aux
+The top-level auxiliary file: my_project_slides.aux
 The style file: apalike.bst
-Database file #1: paper.bib
+I couldn't open database file paper.bib
+---line 14 of file my_project_slides.aux
+ : \bibdata{paper
+ :               }
+I'm skipping whatever remains of this command
+I found no database files---while reading file my_project_slides.aux
+Warning--I didn't find a database entry for "Arrow1974"
+Warning--I didn't find a database entry for "Becker2009"
+Warning--I didn't find a database entry for "Friedman1970"
+(There were 2 error messages)
 
 
 
@@ -160,7 +168,7 @@ Database file #1: paper.bib
 This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
-(./paper.tex
+(./my_project_slides.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18>
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/article.cls
@@ -208,7 +216,7 @@ For additional information on amsmath, use the `?' option.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/footmisc/footmisc.sty)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ot1ptm.fd)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
-(./paper.aux)
+(./my_project_slides.aux)
 (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
@@ -270,17 +278,16 @@ Package natbib Warning: Citation `Becker2009' on page 2 undefined on input line
 Package natbib Warning: Citation `Friedman1970' on page 2 undefined on input li
 ne 53.
 
-[2] [3] [4] (./paper.bbl) [5] [6 <./input/figure_city.jpg> <./input/figure_hwy.
-jpg>] (./input/table_reg.tex)
+[2] [3] [4] (./my_project_slides.bbl
+
+Package natbib Warning: Empty `thebibliography' environment on input line 3.
+
+) [5] [6 <./input/figure_city.jpg> <./input/figure_hwy.jpg>]
+(./input/table_reg.tex)
 
 Package natbib Warning: There were undefined citations.
 
-[7] (./paper.aux
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-)
+[7] (./my_project_slides.aux)
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
@@ -293,8 +300,8 @@ ve/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive
 021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2021/texmf-
 dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts
 /type1/urw/times/utmri8a.pfb>
-Output written on paper.pdf (7 pages, 498875 bytes).
-Transcript written on paper.log.
+Output written on my_project_slides.pdf (7 pages, 493517 bytes).
+Transcript written on my_project_slides.log.
 
 
 
@@ -308,7 +315,7 @@ Transcript written on paper.log.
 This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
-(./paper.tex
+(./my_project_slides.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18>
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/article.cls
@@ -356,7 +363,7 @@ For additional information on amsmath, use the `?' option.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/footmisc/footmisc.sty)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ot1ptm.fd)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
-(./paper.aux)
+(./my_project_slides.aux)
 (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
@@ -405,19 +412,39 @@ For additional information on amsmath, use the `?' option.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ts1ptm.fd) [1{/usr/local/t
-exlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4]
-(./paper.bbl) [5] [6 <./input/figure_city.jpg> <./input/figure_hwy.jpg>]
-(./input/table_reg.tex) [7] (./paper.aux) ){/usr/local/texlive/2021/texmf-dist/
-fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmsy7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmsy8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/u
-tmb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-</usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paper.pdf (7 pages, 498516 bytes).
-Transcript written on paper.log.
+exlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+
+Package natbib Warning: Citation `Arrow1974' on page 2 undefined on input line 
+53.
+
+
+Package natbib Warning: Citation `Becker2009' on page 2 undefined on input line
+ 53.
+
+
+Package natbib Warning: Citation `Friedman1970' on page 2 undefined on input li
+ne 53.
+
+[2] [3] [4] (./my_project_slides.bbl
+
+Package natbib Warning: Empty `thebibliography' environment on input line 3.
+
+) [5] [6 <./input/figure_city.jpg> <./input/figure_hwy.jpg>]
+(./input/table_reg.tex)
+
+Package natbib Warning: There were undefined citations.
+
+[7] (./my_project_slides.aux) ){/usr/local/texlive/2021/texmf-dist/fonts/enc/dv
+ips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmsy7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+sy8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></
+usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/
+texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on my_project_slides.pdf (7 pages, 493517 bytes).
+Transcript written on my_project_slides.log.
 
 
 

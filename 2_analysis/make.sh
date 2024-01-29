@@ -12,6 +12,11 @@ source ${LIB}/run_python.sh
 source ${LIB}/run_stata.sh
 source ${LIB}/run_R.sh
 
+# Copy inputs to local /input/ directory
+rm -rf input
+mkdir -p input
+cp ${REPO_ROOT}/1_data/output/* input
+
 # Remove previous output
 rm -rf output
 rm -f ${LOGFILE}
