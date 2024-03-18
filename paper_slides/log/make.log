@@ -1,23 +1,19 @@
 --------------------------------------------------------------------------------
-Makelog started: 2023-12-01 15:38:51
-Working directory: /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template_85/paper_slides
+Makelog started: 2024-03-18 10:46:43
+Working directory: /Users/jccp/Documents/template/paper_slides
 --------------------------------------------------------------------------------
 Input copies successfully created!
 External copies successfully created!
 Source logs successfully written!
 WARNING! The following target files have been modified according to git status:
-/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template_85/analysis/output/tables/gs_widetable_extreme_scalars.xlsx
-/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template_85/analysis/output/tables/gs_primary_scalars.xlsx
-/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template_85/analysis/output/tables/gs_widetable_scalars.xlsx
-/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template_85/data/output/chips_sold.pdf
-Version logs successfully written!
-Executing command: `pdflatex -output-directory=../latex_auxiliary_dir  "/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template_85/paper_slides/code/paper.tex"`
+/Users/jccp/Documents/template/analysis/output/tables/gs_primary_scalars.xlsx
+/Users/jccp/Documents/template/data/output/chips_sold.pdf
+/Users/jccp/Documents/template/analysis/output/regression.csv
+Executing command: `pdflatex -output-directory=../latex_auxiliary_dir  "/Users/jccp/Documents/template/paper_slides/code/paper.tex"`
 This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
-
-(/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template_85/paper_slides/code
-/paper.tex
+(/Users/jccp/Documents/template/paper_slides/code/paper.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24>
 (/usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
@@ -147,16 +143,14 @@ xmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2022/texmf-dist/fonts/
 type1/urw/symbol/usyr.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/t
 imes/utmb8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utmr8
 a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on ../latex_auxiliary_dir/paper.pdf (6 pages, 52314 bytes).
+Output written on ../latex_auxiliary_dir/paper.pdf (6 pages, 52245 bytes).
 Transcript written on ../latex_auxiliary_dir/paper.log.
 
-Executing command: `pdflatex -output-directory=../latex_auxiliary_dir  "/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template_85/paper_slides/code/online_appendix.tex"`
+Executing command: `pdflatex -output-directory=../latex_auxiliary_dir  "/Users/jccp/Documents/template/paper_slides/code/online_appendix.tex"`
 This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
-
-(/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template_85/paper_slides/code
-/online_appendix.tex
+(/Users/jccp/Documents/template/paper_slides/code/online_appendix.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24>
 (/usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
@@ -268,17 +262,15 @@ st/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/
 urw/times/utmb8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/
 utmr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utmri8a.pf
 b>
-Output written on ../latex_auxiliary_dir/online_appendix.pdf (1 page, 33925 byt
+Output written on ../latex_auxiliary_dir/online_appendix.pdf (1 page, 33677 byt
 es).
 Transcript written on ../latex_auxiliary_dir/online_appendix.log.
 
-Executing command: `pdflatex -output-directory=../latex_auxiliary_dir  "/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template_85/paper_slides/code/slides.tex"`
+Executing command: `pdflatex -output-directory=../latex_auxiliary_dir  "/Users/jccp/Documents/template/paper_slides/code/slides.tex"`
 This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex)
  restricted \write18 enabled.
 entering extended mode
-
-(/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template_85/paper_slides/code
-/slides.tex
+(/Users/jccp/Documents/template/paper_slides/code/slides.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24>
 (/usr/local/texlive/2022/texmf-dist/tex/latex/beamer/beamer.cls
@@ -579,15 +571,15 @@ Package rerunfilecheck Warning: File `slides.out' has changed.
 xmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2022/texmf-dist/fonts/
 type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/u
 rw/helvetic/uhvr8a.pfb>
-Output written on ../latex_auxiliary_dir/slides.pdf (10 pages, 25130 bytes).
+Output written on ../latex_auxiliary_dir/slides.pdf (10 pages, 25164 bytes).
 Transcript written on ../latex_auxiliary_dir/slides.log.
 
-/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template_85/paper_slides/input/tables/gs_primary_scalars.xlsx
-/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template_85/paper_slides/output/gs_primary.pdf
-/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template_85/paper_slides/tables/skeletons/gs_primary.xlsx
-/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template_85/paper_slides/tables/skeletons/gs_primary_modified.xlsx
+/Users/jccp/Documents/template/paper_slides/input/tables/gs_primary_scalars.xlsx
+/Users/jccp/Documents/template/paper_slides/output/gs_primary.pdf
+/Users/jccp/Documents/template/paper_slides/tables/skeletons/gs_primary.xlsx
+/Users/jccp/Documents/template/paper_slides/tables/skeletons/gs_primary_modified.xlsx
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2023-12-01 15:39:00
-Working directory: /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template_85/paper_slides
+Makelog ended: 2024-03-18 10:47:34
+Working directory: /Users/jccp/Documents/template/paper_slides
 --------------------------------------------------------------------------------

@@ -1,4 +1,4 @@
 destination | source
-input/regression.csv | /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template_85/analysis/output/regression.csv
-input/chips_sold.pdf | /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template_85/data/output/chips_sold.pdf
-input/tables | /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template_85/analysis/output/tables
+input/regression.csv | /Users/jccp/Documents/template/analysis/output/regression.csv
+input/chips_sold.pdf | /Users/jccp/Documents/template/data/output/chips_sold.pdf
+input/tables | /Users/jccp/Documents/template/analysis/output/tables

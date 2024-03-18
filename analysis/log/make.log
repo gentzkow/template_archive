@@ -1,81 +1,41 @@
 --------------------------------------------------------------------------------
-Makelog started: 2023-12-01 15:38:16
-Working directory: /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template_85/analysis
+Makelog started: 2024-03-18 10:46:25
+Working directory: /Users/jccp/Documents/template/analysis
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
-Version logs successfully written!
-Executing command: `python  "/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template_85/analysis/code/analyze_data.py" `
-/opt/homebrew/Caskroom/miniconda/base/envs/template/lib/python3.12/site-packages/linearmodels/panel/model.py:1214: MissingValueWarning: 
+WARNING! The following target files have been modified according to git status:
+/Users/jccp/Documents/template/data/output/data_cleaned.csv
+Executing command: `python  "/Users/jccp/Documents/template/analysis/code/analyze_data.py" `
+/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/linearmodels/panel/model.py:1183: MissingValueWarning: 
 Inputs contain missing values. Dropping rows with missing observations.
   super().__init__(dependent, exog, weights=weights, check_rank=check_rank)
 
-Executing command: `Rscript --no-save "/Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template_85/analysis/code/gen_scalars.R"`
-arm64-apple-darwin20.0.0-clang++ -std=gnu++17 -I"/opt/homebrew/Caskroom/miniconda/base/envs/template/lib/R/include" -DNDEBUG  -I'/opt/homebrew/Caskroom/miniconda/base/envs/template/lib/R/library/Rcpp/include' -D_FORTIFY_SOURCE=2 -isystem /opt/homebrew/Caskroom/miniconda/base/envs/template/include -mmacosx-version-min=11.0 -I/opt/homebrew/Caskroom/miniconda/base/envs/template/include    -fPIC  -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -stdlib=libc++ -fvisibility-inlines-hidden -fmessage-length=0 -isystem /opt/homebrew/Caskroom/miniconda/base/envs/template/include -fdebug-prefix-map=/Users/runner/miniforge3/conda-bld/r-base-split_1700316096840/work=/usr/local/src/conda/r-base-4.3.2 -fdebug-prefix-map=/opt/homebrew/Caskroom/miniconda/base/envs/template=/usr/local/src/conda-prefix  -c RcppExports.cpp -o RcppExports.o
-arm64-apple-darwin20.0.0-clang++ -std=gnu++17 -I"/opt/homebrew/Caskroom/miniconda/base/envs/template/lib/R/include" -DNDEBUG  -I'/opt/homebrew/Caskroom/miniconda/base/envs/template/lib/R/library/Rcpp/include' -D_FORTIFY_SOURCE=2 -isystem /opt/homebrew/Caskroom/miniconda/base/envs/template/include -mmacosx-version-min=11.0 -I/opt/homebrew/Caskroom/miniconda/base/envs/template/include    -fPIC  -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -stdlib=libc++ -fvisibility-inlines-hidden -fmessage-length=0 -isystem /opt/homebrew/Caskroom/miniconda/base/envs/template/include -fdebug-prefix-map=/Users/runner/miniforge3/conda-bld/r-base-split_1700316096840/work=/usr/local/src/conda/r-base-4.3.2 -fdebug-prefix-map=/opt/homebrew/Caskroom/miniconda/base/envs/template=/usr/local/src/conda-prefix  -c helper_functions.cpp -o helper_functions.o
-arm64-apple-darwin20.0.0-clang++ -std=gnu++17 -I"/opt/homebrew/Caskroom/miniconda/base/envs/template/lib/R/include" -DNDEBUG  -I'/opt/homebrew/Caskroom/miniconda/base/envs/template/lib/R/library/Rcpp/include' -D_FORTIFY_SOURCE=2 -isystem /opt/homebrew/Caskroom/miniconda/base/envs/template/include -mmacosx-version-min=11.0 -I/opt/homebrew/Caskroom/miniconda/base/envs/template/include    -fPIC  -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -stdlib=libc++ -fvisibility-inlines-hidden -fmessage-length=0 -isystem /opt/homebrew/Caskroom/miniconda/base/envs/template/include -fdebug-prefix-map=/Users/runner/miniforge3/conda-bld/r-base-split_1700316096840/work=/usr/local/src/conda/r-base-4.3.2 -fdebug-prefix-map=/opt/homebrew/Caskroom/miniconda/base/envs/template=/usr/local/src/conda-prefix  -c load_workbook.cpp -o load_workbook.o
-arm64-apple-darwin20.0.0-clang++ -std=gnu++17 -I"/opt/homebrew/Caskroom/miniconda/base/envs/template/lib/R/include" -DNDEBUG  -I'/opt/homebrew/Caskroom/miniconda/base/envs/template/lib/R/library/Rcpp/include' -D_FORTIFY_SOURCE=2 -isystem /opt/homebrew/Caskroom/miniconda/base/envs/template/include -mmacosx-version-min=11.0 -I/opt/homebrew/Caskroom/miniconda/base/envs/template/include    -fPIC  -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -stdlib=libc++ -fvisibility-inlines-hidden -fmessage-length=0 -isystem /opt/homebrew/Caskroom/miniconda/base/envs/template/include -fdebug-prefix-map=/Users/runner/miniforge3/conda-bld/r-base-split_1700316096840/work=/usr/local/src/conda/r-base-4.3.2 -fdebug-prefix-map=/opt/homebrew/Caskroom/miniconda/base/envs/template=/usr/local/src/conda-prefix  -c read_workbook.cpp -o read_workbook.o
-arm64-apple-darwin20.0.0-clang++ -std=gnu++17 -I"/opt/homebrew/Caskroom/miniconda/base/envs/template/lib/R/include" -DNDEBUG  -I'/opt/homebrew/Caskroom/miniconda/base/envs/template/lib/R/library/Rcpp/include' -D_FORTIFY_SOURCE=2 -isystem /opt/homebrew/Caskroom/miniconda/base/envs/template/include -mmacosx-version-min=11.0 -I/opt/homebrew/Caskroom/miniconda/base/envs/template/include    -fPIC  -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -stdlib=libc++ -fvisibility-inlines-hidden -fmessage-length=0 -isystem /opt/homebrew/Caskroom/miniconda/base/envs/template/include -fdebug-prefix-map=/Users/runner/miniforge3/conda-bld/r-base-split_1700316096840/work=/usr/local/src/conda/r-base-4.3.2 -fdebug-prefix-map=/opt/homebrew/Caskroom/miniconda/base/envs/template=/usr/local/src/conda-prefix  -c write_data.cpp -o write_data.o
-arm64-apple-darwin20.0.0-clang++ -std=gnu++17 -I"/opt/homebrew/Caskroom/miniconda/base/envs/template/lib/R/include" -DNDEBUG  -I'/opt/homebrew/Caskroom/miniconda/base/envs/template/lib/R/library/Rcpp/include' -D_FORTIFY_SOURCE=2 -isystem /opt/homebrew/Caskroom/miniconda/base/envs/template/include -mmacosx-version-min=11.0 -I/opt/homebrew/Caskroom/miniconda/base/envs/template/include    -fPIC  -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -stdlib=libc++ -fvisibility-inlines-hidden -fmessage-length=0 -isystem /opt/homebrew/Caskroom/miniconda/base/envs/template/include -fdebug-prefix-map=/Users/runner/miniforge3/conda-bld/r-base-split_1700316096840/work=/usr/local/src/conda/r-base-4.3.2 -fdebug-prefix-map=/opt/homebrew/Caskroom/miniconda/base/envs/template=/usr/local/src/conda-prefix  -c write_file.cpp -o write_file.o
-arm64-apple-darwin20.0.0-clang++ -std=gnu++17 -I"/opt/homebrew/Caskroom/miniconda/base/envs/template/lib/R/include" -DNDEBUG  -I'/opt/homebrew/Caskroom/miniconda/base/envs/template/lib/R/library/Rcpp/include' -D_FORTIFY_SOURCE=2 -isystem /opt/homebrew/Caskroom/miniconda/base/envs/template/include -mmacosx-version-min=11.0 -I/opt/homebrew/Caskroom/miniconda/base/envs/template/include    -fPIC  -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -stdlib=libc++ -fvisibility-inlines-hidden -fmessage-length=0 -isystem /opt/homebrew/Caskroom/miniconda/base/envs/template/include -fdebug-prefix-map=/Users/runner/miniforge3/conda-bld/r-base-split_1700316096840/work=/usr/local/src/conda/r-base-4.3.2 -fdebug-prefix-map=/opt/homebrew/Caskroom/miniconda/base/envs/template=/usr/local/src/conda-prefix  -c write_file_2.cpp -o write_file_2.o
-arm64-apple-darwin20.0.0-clang++ -std=gnu++17 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/opt/homebrew/Caskroom/miniconda/base/envs/template/lib/R/lib -Wl,-dead_strip_dylibs -Wl,-pie -Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs -Wl,-rpath,/opt/homebrew/Caskroom/miniconda/base/envs/template/lib -L/opt/homebrew/Caskroom/miniconda/base/envs/template/lib -o openxlsx.dylib RcppExports.o helper_functions.o load_workbook.o read_workbook.o write_data.o write_file.o write_file_2.o -L/opt/homebrew/Caskroom/miniconda/base/envs/template/lib/R/lib -lR -Wl,-framework -Wl,CoreFoundation
+Executing command: `Rscript --no-save "/Users/jccp/Documents/template/analysis/code/gen_scalars.R"`
 
-trying URL 'http://cran.us.r-project.org/src/contrib/openxlsx_4.2.5.2.tar.gz'
-Content type 'application/x-gzip' length 1339471 bytes (1.3 MB)
+The downloaded binary packages are in
+	/var/folders/w5/kyv8wmjn68b09_fwxhfd1ydw0000gq/T//Rtmpg6gZyL/downloaded_packages
+
+trying URL 'http://cran.us.r-project.org/bin/macosx/big-sur-x86_64/contrib/4.3/openxlsx_4.2.5.2.tgz'
+Content type 'application/x-gzip' length 3244439 bytes (3.1 MB)
 ==================================================
-downloaded 1.3 MB
+downloaded 3.1 MB
 
-* installing *source* package ‘openxlsx’ ...
-** package ‘openxlsx’ successfully unpacked and MD5 sums checked
-** using staged installation
-** libs
-using C++ compiler: ‘clang version 16.0.6’
-using SDK: ‘MacOSX14.0.sdk’
-ld: warning: -pie being ignored. It is only used when linking a main executable
-installing to /opt/homebrew/Caskroom/miniconda/base/envs/template/lib/R/library/00LOCK-openxlsx/00new/openxlsx/libs
-** R
-** inst
-** byte-compile and prepare package for lazy loading
-** help
-*** installing help indices
-*** copying figures
-** building package indices
-** installing vignettes
-** testing if installed package can be loaded from temporary location
-** checking absolute paths in shared objects and dynamic libraries
-** testing if installed package can be loaded from final location
-** testing if installed package keeps a record of temporary installation path
-* DONE (openxlsx)
-
-The downloaded source packages are in
-	‘/private/var/folders/xn/d2jgqxlj145gq5jy3hbxym0c0000gn/T/RtmpGoM3P8/downloaded_packages’
-Updating HTML index of packages in '.Library'
-Making 'packages.html' ... done
 ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.4
+✔ dplyr     1.1.4     ✔ readr     2.1.5
 ✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.4.4     ✔ tibble    3.2.1
-✔ lubridate 1.9.3     ✔ tidyr     1.3.0
+✔ ggplot2   3.4.2     ✔ tibble    3.2.1
+✔ lubridate 1.9.2     ✔ tidyr     1.3.1
 ✔ purrr     1.0.2     
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ✖ dplyr::filter() masks stats::filter()
 ✖ dplyr::lag()    masks stats::lag()
 ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
 Warning message:
+package ‘tidyr’ was built under R version 4.3.2 
+Warning message:
 In write.csv(vals_df, "output/tables/gs_primary_scalars.csv", row.names = FALSE,  :
-  attempt to set 'sep' ignored
-Warning messages:
-1: Please use 'rowNames' instead of 'row.names' 
-2: Please use 'colNames' instead of 'col.names' 
-Warning message:
-In write.csv(combined_data, "output/tables/gs_widetable_scalars.csv",  :
-  attempt to set 'sep' ignored
-Warning messages:
-1: Please use 'rowNames' instead of 'row.names' 
-2: Please use 'colNames' instead of 'col.names' 
-Warning message:
-In write.csv(vals_df, "output/tables/gs_widetable_extreme_scalars.csv",  :
   attempt to set 'sep' ignored
 Warning messages:
 1: Please use 'rowNames' instead of 'row.names' 
@@ -83,6 +43,6 @@ Warning messages:
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2023-12-01 15:38:51
-Working directory: /Users/sameernair-desai/Desktop/InstRes/SIEPR_RA/template_85/analysis
+Makelog ended: 2024-03-18 10:46:41
+Working directory: /Users/jccp/Documents/template/analysis
 --------------------------------------------------------------------------------
