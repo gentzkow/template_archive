@@ -13,6 +13,7 @@ The structure of subdirectories in `/extensions/excel_tables/` parallels that of
 ---
 
 _For all users_: **Please note: this process will call Excel using your computer's native software. Be sure to save any open Excel sheets prior to running this code, as the application will exit and restart.**
+
 _For users on Windows machines_: Please ensure you construct the `conda` environment with the `pywin32` package installed before proceeding (see `/setup/conda_env.yaml`).
 
 The procedure for constructing and exporting the Excel tables to PDF formats is documented below:
