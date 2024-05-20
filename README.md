@@ -76,7 +76,7 @@ Once you have met these OS and application requirements, [clone a team repositor
     conda env create -f setup/conda_env.yaml
 ```
 
-   By default, we recommend users to run `conda config --set channel_priority strict` to speed up conda building so that packages in lower priority channels are not considered if a package with the same name appears in a higher priority channel. However, if there is package version confilcts when building up, consider to remove strict `channel_priority` by running `conda config --set channel_priority flexible` becasue other channels might contain different version of packages with same name.
+   By default, we recommend users to run `conda config --set channel_priority strict` to speed up the environment build time. In a "strict" channel priority, packages in lower priority channels are not considered if a package with the same name appears in a higher priority channel. However, if there are package version conflicts when building the environment, consider removing this condition by running `conda config --set channel_priority flexible`. See the [conda User Guide](https://docs.conda.io/projects/conda/en/4.6.1/user-guide/tasks/manage-channels.html) for more information.
 
    The default name for the `conda` environment is `template`. This can be changed by editing the first line of `/setup/conda_env.yaml`. To activate the `conda` virtual environment, run:
 
