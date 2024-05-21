@@ -15,10 +15,17 @@ dependencies:
   - colorama
   - jupyter
   - linearmodels
-  # - julia 
+  - pandas
+  - openpyxl
+  # For users of Windows machines, please uncomment the line below if you plan to use `export_excel_tables()` for Excel to PDF conversion.
+  # - pywin32
+
+  # - julia
+
   # - pip
-  # - pip: # if there is a package available via pip but not with conda, can import like this:
-  # - r
+  # - pip: # if there is a package available via pip but not with conda, can import like this.
+
+  - r
   # - r-yaml # import r packages by prepending with "r-"
   # - r-nicheROVER
-  # - r-tidyverse
+  - r-tidyverse
