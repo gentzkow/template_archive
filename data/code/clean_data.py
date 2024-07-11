@@ -11,10 +11,11 @@ def main():
 
 def plot_data(df):
     plt.hist(df['chips_sold'])
+    plt.title("Title Test")
     plt.savefig('output/chips_sold.pdf')
 
 def clean_data(df):
-    df['chips_sold'][df['chips_sold'] == -999999] = np.NaN
+    df['chips_sold'][df['chips_sold'] == -999999] = np.nan
     return(df)
     
 ### EXECUTE
