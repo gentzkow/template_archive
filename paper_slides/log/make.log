@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
-Makelog started: 2024-11-03 15:12:12
+Makelog started: 2024-11-03 18:18:05
 Working directory: /Users/danielashuman/Documents/Projects/IDCP/template_archive/paper_slides
 --------------------------------------------------------------------------------
 Input copies successfully created!
@@ -7,7 +7,6 @@ External copies successfully created!
 Source logs successfully written!
 WARNING! The following target files have been modified according to git status:
 /Users/danielashuman/Documents/Projects/IDCP/template_archive/data/output/chips_sold.pdf
-/Users/danielashuman/Documents/Projects/IDCP/template_archive/analysis/output/regression.csv
 Version logs successfully written!
 Executing command: `pdflatex -output-directory=../latex_auxiliary_dir  "/Users/danielashuman/Documents/Projects/IDCP/template_archive/paper_slides/code/paper.tex"`
 This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex)
@@ -145,7 +144,7 @@ xmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2022/texmf-dist/fonts/
 type1/urw/symbol/usyr.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/t
 imes/utmb8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utmr8
 a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on ../latex_auxiliary_dir/paper.pdf (6 pages, 52329 bytes).
+Output written on ../latex_auxiliary_dir/paper.pdf (6 pages, 52812 bytes).
 Transcript written on ../latex_auxiliary_dir/paper.log.
 
 Executing command: `pdflatex -output-directory=../latex_auxiliary_dir  "/Users/danielashuman/Documents/Projects/IDCP/template_archive/paper_slides/code/online_appendix.tex"`
@@ -577,11 +576,11 @@ Package rerunfilecheck Warning: File `slides.out' has changed.
 xmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2022/texmf-dist/fonts/
 type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/u
 rw/helvetic/uhvr8a.pfb>
-Output written on ../latex_auxiliary_dir/slides.pdf (10 pages, 25346 bytes).
+Output written on ../latex_auxiliary_dir/slides.pdf (10 pages, 25818 bytes).
 Transcript written on ../latex_auxiliary_dir/slides.log.
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2024-11-03 15:12:15
+Makelog ended: 2024-11-03 18:18:09
 Working directory: /Users/danielashuman/Documents/Projects/IDCP/template_archive/paper_slides
 --------------------------------------------------------------------------------

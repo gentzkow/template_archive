@@ -1,13 +1,10 @@
 --------------------------------------------------------------------------------
-Makelog started: 2024-11-03 17:45:14
+Makelog started: 2024-11-03 18:16:14
 Working directory: /Users/danielashuman/Documents/Projects/IDCP/template_archive/data
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
-WARNING! The following target files have been modified according to git status:
-/Users/danielashuman/Documents/Projects/IDCP/template_archive/raw/chips.csv
-/Users/danielashuman/Documents/Projects/IDCP/template_archive/raw/tv.csv
 Version logs successfully written!
 Executing command: `python  "/Users/danielashuman/Documents/Projects/IDCP/template_archive/data/code/merge_data.py" `
 Executing command: `python  "/Users/danielashuman/Documents/Projects/IDCP/template_archive/data/code/clean_data.py" `
@@ -30,6 +27,6 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2024-11-03 17:45:18
+Makelog ended: 2024-11-03 18:16:19
 Working directory: /Users/danielashuman/Documents/Projects/IDCP/template_archive/data
 --------------------------------------------------------------------------------

@@ -11,6 +11,7 @@ def main():
 
 def plot_data(df):
     plt.hist(df['chips_sold'])
+    plt.gca().yaxis.set_major_formatter(plt.FuncFormatter(lambda y, _: f'{y / len(df)*100:.0f}%'))
     plt.savefig('output/chips_sold.pdf')
 
 def clean_data(df):
