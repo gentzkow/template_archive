@@ -1,18 +1,20 @@
 --------------------------------------------------------------------------------
-Makelog started: 2023-10-20 17:56:01
-Working directory: /Users/shiqiyang/Documents/github_folders/template/analysis
+Makelog started: 2024-11-03 15:12:08
+Working directory: /Users/danielashuman/Documents/Projects/IDCP/template_archive/analysis
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
+WARNING! The following target files have been modified according to git status:
+/Users/danielashuman/Documents/Projects/IDCP/template_archive/data/output/data_cleaned.csv
 Version logs successfully written!
-Executing command: `python  "/Users/shiqiyang/Documents/github_folders/template/analysis/code/analyze_data.py" `
-/usr/local/Caskroom/miniconda/base/envs/template/lib/python3.12/site-packages/linearmodels/panel/model.py:1214: MissingValueWarning: 
+Executing command: `python  "/Users/danielashuman/Documents/Projects/IDCP/template_archive/analysis/code/analyze_data.py" `
+/Users/danielashuman/anaconda3/envs/template/lib/python3.13/site-packages/linearmodels/panel/model.py:1260: MissingValueWarning: 
 Inputs contain missing values. Dropping rows with missing observations.
   super().__init__(dependent, exog, weights=weights, check_rank=check_rank)
 
 Output logs successfully written!
 --------------------------------------------------------------------------------
-Makelog ended: 2023-10-20 17:56:09
-Working directory: /Users/shiqiyang/Documents/github_folders/template/analysis
+Makelog ended: 2024-11-03 15:12:11
+Working directory: /Users/danielashuman/Documents/Projects/IDCP/template_archive/analysis
 --------------------------------------------------------------------------------
