@@ -1,24 +1,35 @@
 --------------------------------------------------------------------------------
-Makelog started: 2023-10-20 17:55:53
-Working directory: /Users/shiqiyang/Documents/github_folders/template/data
+Makelog started: 2024-11-03 17:45:14
+Working directory: /Users/danielashuman/Documents/Projects/IDCP/template_archive/data
 --------------------------------------------------------------------------------
 Input links successfully created!
 External links successfully created!
 Source logs successfully written!
+WARNING! The following target files have been modified according to git status:
+/Users/danielashuman/Documents/Projects/IDCP/template_archive/raw/chips.csv
+/Users/danielashuman/Documents/Projects/IDCP/template_archive/raw/tv.csv
 Version logs successfully written!
-Executing command: `python  "/Users/shiqiyang/Documents/github_folders/template/data/code/merge_data.py" `
-Executing command: `python  "/Users/shiqiyang/Documents/github_folders/template/data/code/clean_data.py" `
-/Users/shiqiyang/Documents/github_folders/template/data/code/clean_data.py:17: SettingWithCopyWarning: 
+Executing command: `python  "/Users/danielashuman/Documents/Projects/IDCP/template_archive/data/code/merge_data.py" `
+Executing command: `python  "/Users/danielashuman/Documents/Projects/IDCP/template_archive/data/code/clean_data.py" `
+/Users/danielashuman/Documents/Projects/IDCP/template_archive/data/code/clean_data.py:18: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  df['chips_sold'][df['chips_sold'] == -999999] = np.nan
+/Users/danielashuman/Documents/Projects/IDCP/template_archive/data/code/clean_data.py:18: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  df['chips_sold'][df['chips_sold'] == -999999] = np.NaN
+  df['chips_sold'][df['chips_sold'] == -999999] = np.nan
 
 Output logs successfully written!
-WARNING! Certain files tracked by git exceed the config size limit (0.5 MB). See below for list of files.
-/Users/shiqiyang/Documents/github_folders/template/data/output/data_merged.csv
-/Users/shiqiyang/Documents/github_folders/template/data/output/data_cleaned.csv
 --------------------------------------------------------------------------------
-Makelog ended: 2023-10-20 17:56:00
-Working directory: /Users/shiqiyang/Documents/github_folders/template/data
+Makelog ended: 2024-11-03 17:45:18
+Working directory: /Users/danielashuman/Documents/Projects/IDCP/template_archive/data
 --------------------------------------------------------------------------------
